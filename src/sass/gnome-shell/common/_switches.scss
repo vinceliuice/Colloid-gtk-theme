@@ -1,0 +1,32 @@
+/* Switches */
+
+.toggle-switch {
+  width: 40px;
+  height: 20px;
+  background-size: contain;
+  background-image: url("assets/toggle-off#{$asset_suffix}.svg");
+
+  &:checked {
+    @if $theme == 'grey' {
+      background-image: url("assets/toggle-on#{$asset_suffix}.svg");
+    }
+    @else {
+      background-image: url("assets/toggle-on.svg");
+    }
+  }
+
+  .popup-sub-menu & {
+    @if $variant == 'dark' { background-image: url("assets/toggle-off.svg"); }
+    @else { background-image: url("assets/toggle-off-dark.svg"); }
+
+    &:checked {
+      @if $theme == 'grey' {
+        @if $variant == 'dark' { background-image: url("assets/toggle-on.svg"); }
+        @else { background-image: url("assets/toggle-on-dark.svg"); }
+      }
+      @else {
+        background-image: url("assets/toggle-on.svg");
+      }
+    }
+  }
+}

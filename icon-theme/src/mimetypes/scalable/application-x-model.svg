@@ -1,0 +1,18 @@
+<svg width="64" height="64" version="1.1" viewBox="0 0 16.933 16.933" xmlns="http://www.w3.org/2000/svg">
+ <defs>
+  <filter id="a" x="-.039001" y="-.033428" width="1.078" height="1.0669" color-interpolation-filters="sRGB">
+   <feGaussianBlur stdDeviation="0.20637525"/>
+  </filter>
+ </defs>
+ <g fill-rule="evenodd">
+  <path d="m3.4395 1.3543c-0.73289 0-1.3229 0.59001-1.3229 1.3229v12.171c0 0.73289 0.59001 1.3229 1.3229 1.3229h10.054c0.73289 0 1.3229-0.59001 1.3229-1.3229v-10.319l-3.175-3.175z" filter="url(#a)" opacity=".15" stroke-width=".26458" style="paint-order:stroke fill markers"/>
+  <path d="m3.4395 1.0583c-0.73288 0-1.3229 0.58997-1.3229 1.3229v12.171c0 0.73284 0.59001 1.3229 1.3229 1.3229h10.054c0.73288 0 1.3229-0.58997 1.3229-1.3229v-10.319l-3.1749-3.1747z" fill="#f76628" stroke-width=".99998" style="paint-order:stroke fill markers"/>
+  <path d="m14.816 4.2332-3.1749-3.1749v1.852c0 0.73288 0.59001 1.3229 1.3229 1.3229z" fill="#fff" opacity=".35" style="paint-order:stroke fill markers"/>
+ </g>
+ <g transform="matrix(.066145 0 0 .066145 -1.5875 -1.7198)" enable-background="new" fill="none" stroke="#fff" stroke-width="8">
+  <path d="m100 124 52-28 52 28v60l-52 28-52-28z"/>
+  <path d="m204 124-52 28-52-28"/>
+  <path d="m152 148v64"/>
+ </g>
+ <path d="m11.641 2.9104v0.15451c0 0.79397 0.59 1.433 1.3229 1.433h1.852l1.42e-4 -0.26463-1.8522 5e-5c-0.73289 1.98e-5 -1.3229-0.59001-1.3229-1.3229z" fill-rule="evenodd" opacity=".1" stroke-width="1.0408" style="paint-order:stroke fill markers"/>
+</svg>

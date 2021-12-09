@@ -1,0 +1,18 @@
+<svg width="64" height="64" version="1.1" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+ <defs>
+  <filter id="a" x="-.033428" y="-.039001" width="1.0669" height="1.078" color-interpolation-filters="sRGB">
+   <feGaussianBlur stdDeviation="0.20637525"/>
+  </filter>
+  <filter id="b" x="-.12506" y="-.11533" width="1.2501" height="1.2307" color-interpolation-filters="sRGB">
+   <feGaussianBlur stdDeviation="0.27574037"/>
+  </filter>
+ </defs>
+ <g transform="scale(3.7796)" fill-rule="evenodd">
+  <path d="m15.875 3.6932c0-0.73289-0.59001-1.3229-1.3229-1.3229h-12.171c-0.73289 0-1.3229 0.59001-1.3229 1.3229v10.054c0 0.73289 0.59001 1.3229 1.3229 1.3229h10.319l3.175-3.175z" filter="url(#a)" opacity=".15" stroke-width=".26458" style="paint-order:stroke fill markers"/>
+  <path d="m15.875 3.4395c0-0.73289-0.59001-1.3229-1.3229-1.3229h-12.171c-0.73289 0-1.3229 0.59001-1.3229 1.3229v10.054c0 0.73289 0.59001 1.3229 1.3229 1.3229h10.319l3.175-3.175z" fill="#748290" stroke-width=".26458" style="paint-order:stroke fill markers"/>
+  <path d="m12.7 14.816 3.1749-3.1749h-1.852c-0.73288 0-1.3229 0.59001-1.3229 1.3229z" fill="#fff" opacity=".35" style="paint-order:stroke fill markers"/>
+ </g>
+ <path d="m6.0217 9c-1.2216 0.90994-2.0215 2.3529-2.0215 4h4v-4zm49.978 0v4h4v-0.03712c-0.01186-1.6316-0.80736-3.0598-2.0195-3.9629zm-52 6.0001v4h4v-4zm52 0v4h4v-4zm-52 6.0001v4h4v-4zm52 0v4h4v-4zm-52 6.0001v4h4v-4zm52 0v4h4v-4zm-52 6.0001v4h4v-4zm52 0v4h4v-4zm-52 6.0001v4h4v-4zm52 0v4h4v-4zm-52 6.0001v4h4v-4zm0 6.0001c0 1.6471 0.79988 3.0901 2.0215 4h1.9785v-4z" fill="#fff" opacity=".2" style="paint-order:fill markers stroke"/>
+ <path transform="scale(3.7796)" d="m6.0755 5.8665c-0.14072-7.23e-5 -0.25482 0.11424-0.25474 0.25523v5.2273c-3.61e-5 0.19391 0.20732 0.31698 0.37702 0.22376l4.7822-2.6136c0.17644-0.096792 0.17644-0.35071 0-0.44752l-4.3042-2.3524-0.47808-0.26118c-0.037465-0.020603-0.079521-0.031447-0.12228-0.031447z" color="#000000" color-rendering="auto" filter="url(#b)" image-rendering="auto" opacity=".15" shape-rendering="auto" solid-color="#000000" stroke-width=".035862" style="isolation:auto;mix-blend-mode:normal;text-decoration-color:#000000;text-decoration-line:none;text-decoration-style:solid;text-indent:0;text-transform:none;white-space:normal"/>
+ <path d="m22.963 21.156c-0.53186-2.73e-4 -0.96312 0.43178-0.96282 0.96467v19.757c-1.37e-4 0.7329 0.78359 1.1981 1.425 0.84572l18.075-9.8784c0.66687-0.36584 0.66687-1.3255 0-1.6914l-16.268-8.8911-1.807-0.98716c-0.1416-0.07787-0.30056-0.11886-0.46217-0.11886z" color="#000000" color-rendering="auto" fill="#edeef8" image-rendering="auto" shape-rendering="auto" solid-color="#000000" stroke-width=".13554" style="isolation:auto;mix-blend-mode:normal;text-decoration-color:#000000;text-decoration-line:none;text-decoration-style:solid;text-indent:0;text-transform:none;white-space:normal"/>
+</svg>

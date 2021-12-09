@@ -1,0 +1,189 @@
+// based css:
+// https://github.com/shimmerproject/Greybird/blob/master/gtk-3.0/_xfce.scss
+
+/**************
+ * Xfce4 Apps *
+ **************/
+.XfceHeading {
+  background-color: $base;
+}
+
+
+/***************
+ * xfce4-panel *
+ ***************/
+.xfce4-panel.background {
+  border: none; // Sadly the border is hard-coded
+  background-color: $panel;
+  color: on($panel, secondary);
+  font-weight: 500;
+
+  button {
+    @extend %button-flat;
+    @extend %button-on-dark;
+
+    min-height: 16px;
+    min-width: 16px;
+    padding: 0;
+    border-radius: 0;
+  }
+
+  .tasklist button {
+    // border-image: image(transparent) 0 0 2 / 0 0 2px;
+    //
+    // &:checked { border-image: image(currentColor) 0 0 2 / 0 0 2px; }
+
+    image { padding: 4px; }
+  }
+}
+
+// Workspace switcher provided by libwnck
+wnck-pager {
+  &:hover { background-color: $overlay-hover; }
+
+  &:active { background-color: $overlay-active; }
+
+  &:selected { background-color: $primary; }
+}
+
+XfdesktopIconView.view {
+  border-radius: $corner-radius;
+  background-color: transparent;
+  color: on(dark);
+
+  // XfdesktopIconView uses :active instead of :selected for selection
+  &:active {
+    @extend %selected_items;
+
+    box-shadow: none;
+  }
+
+  .rubberband {
+    @extend rubberband;
+
+    border-radius: 0;
+  }
+}
+
+window#whiskermenu-window {
+  border-radius: $window-radius;
+  background-color: transparent;
+  border: none;
+
+  entry.search:focus { background-color: $base; }
+
+  // Need to set Whisker menu background opacity less than 100
+  > frame > border {
+    border-radius: $window-radius;
+    padding: $space-size $space-size + 2px $space-size $space-size * 1.5;
+    margin: $space-size;
+    border: none;
+    background-color: $popover;
+
+    @if $rimless == 'true' {
+      box-shadow: $shadow-z4, inset 0 1px highlight($popover);
+    } @else {
+      box-shadow: $shadow-z4, 0 0 0 1px $window-border, inset 0 0 0 1px highlight($popover);
+    }
+  }
+
+  box.categories > button.radio { // sidebar categories button
+    padding: $space-size / 2 $space-size;
+    margin: 1px 0;
+
+    &:hover { background-color: $divider; }
+
+    &:checked, &:active {
+      background-color: $track;
+      color: $text;
+
+      &:hover { background-image: none; }
+    }
+  }
+
+  scrolledwindow.frame { // App list (tree)
+    padding: $space-size / 2;
+    background-color: $base;
+    border-radius: $corner-radius;
+
+    treeview.view {
+      border-radius: $corner-radius;
+
+      &:not(:hover):not(:selected) { background: none; }
+
+      &:selected:hover {
+        background-color: $divider;
+        color: $text;
+      }
+    }
+  }
+
+  .title-area > .commands-area > button.flat.command-button { // Bottom command buttons
+    &:checked, &:active {
+      background-color: $track;
+      color: $text;
+    }
+  }
+}
+
+#XfceNotifyWindow {
+  @if $rimless == 'true' {
+    box-shadow: $shadow-z4;
+  } @else {
+    box-shadow: $shadow-z4, 0 0 0 1px $window-border;
+  }
+
+  buttonbox { padding: 0; }
+
+  label#summary { font-weight: bold; }
+}
+
+// Xfwm4's alt-tab dialog, aka "tabwin"
+#xfwm-tabwin {
+  padding: 12px;
+  border-radius: $corner-radius;
+
+  // Set the application icon- and preview-size to 64px
+  -XfwmTabwinWidget-icon-size: 64px;
+  -XfwmTabwinWidget-preview-size: 64px;
+
+  button {
+  }
+}
+
+
+/**********
+ * Thunar *
+ **********/
+.thunar {
+  toolbar { box-shadow: inset 0 -1px $border; }
+
+  .standard-view.frame { border-style: none; }
+
+  .sidebar .view:not(:selected) { background-color: transparent; }
+
+  .path-bar.linked:not(.vertical) > button.path-bar-button {
+    margin-left: 2px;
+    margin-right: 2px;
+  }
+
+  statusbar {
+    margin: 0 -10px;
+    padding: 0 4px;
+    border-top: 1px solid $divider;
+  }
+
+  > grid.horizontal > paned.horizontal > scrolledwindow.frame.sidebar.shortcuts-pane {
+    border-top: none;
+  }
+}
+
+window.background.csd.thunar {
+  > grid.horizontal > paned.horizontal > scrolledwindow.frame.sidebar.shortcuts-pane {
+    border-bottom-left-radius: $window-radius;
+
+    treeview.view:not(:hover):not(:selected) {
+      background-color: transparent;
+    }
+  }
+}

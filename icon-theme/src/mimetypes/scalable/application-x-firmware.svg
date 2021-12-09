@@ -1,0 +1,59 @@
+<svg width="64" height="64" version="1.1" xmlns="http://www.w3.org/2000/svg">
+ <g fill="#b3b3b3">
+  <g transform="translate(-1,1)">
+   <rect transform="scale(1,-1)" x="25" y="-60" width="4" height="9.6429"/>
+   <rect transform="scale(1,-1)" x="23" y="-56" width="8" height="5.7857"/>
+  </g>
+  <g transform="translate(11,1)">
+   <rect transform="scale(1,-1)" x="25" y="-60" width="4" height="9.6429"/>
+   <rect transform="scale(1,-1)" x="23" y="-56" width="8" height="5.7857"/>
+  </g>
+  <g transform="translate(22,1)">
+   <rect transform="scale(1,-1)" x="25" y="-60" width="4" height="9.6429"/>
+   <rect transform="scale(1,-1)" x="23" y="-56" width="8" height="5.7857"/>
+  </g>
+  <g transform="translate(0,1)">
+   <rect transform="scale(1,-1)" x="13" y="-60" width="4" height="9.6429"/>
+   <rect transform="scale(1,-1)" x="11" y="-56" width="8" height="5.7857"/>
+  </g>
+ </g>
+ <g transform="translate(-1)">
+  <rect transform="scale(1,-1)" x="25" y="-60" width="4" height="9.6429" fill="#ececec"/>
+  <rect transform="scale(1,-1)" x="23" y="-56" width="8" height="5.7857" fill="#ccc"/>
+ </g>
+ <g transform="translate(11)">
+  <rect transform="scale(1,-1)" x="25" y="-60" width="4" height="9.6429" fill="#ececec"/>
+  <rect transform="scale(1,-1)" x="23" y="-56" width="8" height="5.7857" fill="#ccc"/>
+ </g>
+ <g transform="translate(22)">
+  <rect transform="scale(1,-1)" x="25" y="-60" width="4" height="9.6429" fill="#ececec"/>
+  <rect transform="scale(1,-1)" x="23" y="-56" width="8" height="5.7857" fill="#ccc"/>
+ </g>
+ <g transform="matrix(1.9286 0 0 1.9286 -271.07 -462.79)">
+  <rect x="153" y="241" width="2.0741" height="5.1852" fill="#ececec"/>
+  <rect x="151.96" y="243.07" width="4.1481" height="3" fill="#ccc"/>
+ </g>
+ <g transform="matrix(1.9286 0 0 1.9286 -259.07 -462.79)">
+  <rect x="153" y="241" width="2.0741" height="5.1852" fill="#ececec"/>
+  <rect x="151.96" y="243.07" width="4.1481" height="3" fill="#ccc"/>
+ </g>
+ <g transform="matrix(1.9286 0 0 1.9286 -248.07 -462.79)">
+  <rect x="153" y="241" width="2.0741" height="5.1852" fill="#ececec"/>
+  <rect x="151.96" y="243.07" width="4.1481" height="3" fill="#ccc"/>
+ </g>
+ <g>
+  <rect transform="scale(1,-1)" x="13" y="-60" width="4" height="9.6429" fill="#ececec"/>
+  <rect transform="scale(1,-1)" x="11" y="-56" width="8" height="5.7857" fill="#ccc"/>
+ </g>
+ <rect transform="matrix(0,-1,-1,0,0,0)" x="-56" y="-59" width="46" height="54" rx="5.75" ry="5.7857" enable-background="new" opacity=".15"/>
+ <g transform="matrix(1.9286 0 0 1.9286 -282.07 -462.79)">
+  <rect x="153" y="241" width="2.0741" height="5.1852" fill="#ececec"/>
+  <rect x="151.96" y="243.07" width="4.1481" height="3" fill="#ccc"/>
+ </g>
+ <g>
+  <rect transform="matrix(0,-1,-1,0,0,0)" x="-55" y="-59" width="46" height="54" rx="5.75" ry="5.7857" enable-background="new" fill="#666"/>
+  <rect x="13" y="40" width="38" height="2" enable-background="new" fill="#808080"/>
+  <rect x="13" y="44" width="27" height="2" enable-background="new" fill="#808080"/>
+  <path d="m10.785 9c-3.2053 0-5.7852 2.5645-5.7852 5.75v0.875c0-3.1162 2.5799-5.625 5.7852-5.625h42.43c3.2053 0 5.7852 2.5088 5.7852 5.625v-0.875c0-3.1855-2.5799-5.75-5.7852-5.75h-42.43z" enable-background="new" fill="#fff" opacity=".15"/>
+ </g>
+</svg>

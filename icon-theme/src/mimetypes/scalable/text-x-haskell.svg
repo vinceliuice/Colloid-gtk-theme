@@ -1,0 +1,19 @@
+<svg width="64" height="64" version="1.1" viewBox="0 0 16.933 16.933" xmlns="http://www.w3.org/2000/svg">
+ <defs>
+  <filter id="a" x="-.039001" y="-.033428" width="1.078" height="1.0669" color-interpolation-filters="sRGB">
+   <feGaussianBlur stdDeviation="0.20637525"/>
+  </filter>
+ </defs>
+ <path d="m3.4395 1.3543c-0.73289 0-1.3229 0.59001-1.3229 1.3229v12.171c0 0.73289 0.59001 1.3229 1.3229 1.3229h10.054c0.73289 0 1.3229-0.59001 1.3229-1.3229v-10.319l-3.175-3.175z" filter="url(#a)" opacity=".15" stroke-width=".26458" style="paint-order:stroke fill markers"/>
+ <g fill-rule="evenodd">
+  <path transform="scale(.26458)" d="m13 4c-2.77 0-5 2.23-5 5v46c0 2.77 2.23 5 5 5h38c2.77 0 5-2.23 5-5v-39l-12-12z" fill="#f4f4f4" style="paint-order:stroke fill markers"/>
+  <path d="m14.816 4.2332-3.1749-3.1749v1.852c0 0.73288 0.59001 1.3229 1.3229 1.3229z" fill="#bbb" style="paint-order:stroke fill markers"/>
+ </g>
+ <path d="m11.641 2.9104v0.15451c0 0.79397 0.59 1.433 1.3229 1.433h1.852l1.42e-4 -0.26463-1.8522 5e-5c-0.73289 1.98e-5 -1.3229-0.59001-1.3229-1.3229z" opacity=".1" stroke-width="1.0408" style="paint-order:stroke fill markers"/>
+ <g transform="matrix(.060632 0 0 .060632 -.6724 -.99217)" enable-background="new">
+  <path d="m83.997 204 32-48-32-48h24l32 48-32 48z" fill="#7839b7"/>
+  <path d="m116 204 32-48-32-48h24l64 96h-24l-20-30-20 30z" fill="#8c59d9"/>
+  <path transform="matrix(1.0909 0 0 1.0909 -13.818 -14.182)" d="m179.6 160 10.666 16h21.734v-16z" fill="#8f76e4"/>
+  <path transform="matrix(1.0909 0 0 1.0909 -13.818 -14.182)" d="m163.6 136 10.666 16h37.734v-16z" fill="#8f76e4"/>
+ </g>
+</svg>
