@@ -1,7 +1,6 @@
-<img src="https://github.com/vinceliuice/Sierra-gtk-theme/blob/imgs/logo.png" alt="Logo" align="right" /> Colloid icon theme
-======
+## Colloid icon theme
 
-MacOS Big Sur like icon theme for linux desktops
+Flat clean icon theme for linux desktops
 
 ![1](preview.png?raw=true)
 
