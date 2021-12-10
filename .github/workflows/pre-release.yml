@@ -1,0 +1,28 @@
+name: "pre-release"
+
+on: workflow_dispatch
+
+jobs:
+  pre-release:
+    runs-on: "ubuntu-latest"
+
+    steps:
+      - name: "Checkout source code"
+        uses: "actions/checkout@v2.3.4"
+        with:
+          lfs: true
+          fetch-depth: 0
+      - name: "Build release"
+        run: |
+            sudo apt-get install sassc
+            ./build.sh
+            ./install.sh -d $PWD/release
+            cd release && zip -r Colloid-gtk-theme.zip .
+
+      - uses: "marvinpinto/action-automatic-releases@latest"
+        with:
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          automatic_release_tag: "latest"
+          prerelease: true
+          title: "Development Build"
+          files: release/Colloid-gtk-theme.zip
