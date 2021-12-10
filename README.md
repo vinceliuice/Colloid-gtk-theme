@@ -1,6 +1,6 @@
 ## Colloid gtk theme
 
-![Colloid](preview.png?raw=true)
+![Colloid](colloid.png?raw=true)
 
 ## Requirements
 
