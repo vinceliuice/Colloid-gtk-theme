@@ -1754,6 +1754,7 @@ popover.background {
     } @else {
       border: 1px solid highlight($surface);
       box-shadow: $shadow-z4, 0 0 0 1px $window-border;
+      background-clip: border-box;
 
       &:backdrop { box-shadow: $shadow-z2, 0 0 0 1px $window-border; }
     }
