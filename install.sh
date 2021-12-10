@@ -327,6 +327,11 @@ while [[ $# -gt 0 ]]; do
             echo -e "Install Rimless version! ..."
             shift
             ;;
+          normal)
+            normal="true"
+            echo -e "Install Normal window button version! ..."
+            shift
+            ;;
           -*)
             break
             ;;
@@ -405,6 +410,10 @@ border_rimless() {
   sed -i "/\$rimless:/s/false/true/" ${SRC_DIR}/sass/_tweaks-temp.scss
 }
 
+normal_winbutton() {
+  sed -i "/\$window_button:/s/mac/normal/" ${SRC_DIR}/sass/_tweaks-temp.scss
+}
+
 theme_color() {
   if [[ "$theme" != '' ]]; then
     case "$theme" in
@@ -438,7 +447,7 @@ theme_color() {
 }
 
 theme_tweaks() {
-  if [[ "$accent" == 'true' || "$compact" == 'true' || "$nord" == 'true'  || "$rimless" == 'true' || "$blackness" == 'true' ]]; then
+  if [[ "$accent" == 'true' || "$compact" == 'true' || "$nord" == 'true'  || "$rimless" == 'true' || "$blackness" == 'true' || "$normal" == 'true' ]]; then
     tweaks='true'
     install_package; tweaks_temp
   fi
@@ -461,6 +470,10 @@ theme_tweaks() {
 
   if [[ "$rimless" = "true" ]] ; then
     border_rimless
+  fi
+
+  if [[ "$normal" = "true" ]] ; then
+    normal_winbutton
   fi
 }
 

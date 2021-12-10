@@ -3330,40 +3330,40 @@ stack scrolledwindow.frame viewport.frame list {
 }
 
 overshoot.top {
-  background-size: 200% 70%;
-  background-image: radial-gradient(farthest-side at top, rgba(91, 155, 248, 0.24) 99%, rgba(91, 155, 248, 0) 100%);
+  background-image: radial-gradient(farthest-side at top, alpha(currentColor, 0.12) 85%, alpha(currentColor, 0)), radial-gradient(farthest-side at top, alpha(currentColor, 0.05), alpha(currentColor, 0));
+  background-size: 100% 3%, 100% 50%;
   background-repeat: no-repeat;
-  background-position: center top;
+  background-position: top;
   background-color: transparent;
   border: none;
   box-shadow: none;
 }
 
 overshoot.bottom {
-  background-size: 200% 70%;
-  background-image: radial-gradient(farthest-side at bottom, rgba(91, 155, 248, 0.24) 99%, rgba(91, 155, 248, 0) 100%);
+  background-image: radial-gradient(farthest-side at bottom, alpha(currentColor, 0.12) 85%, alpha(currentColor, 0)), radial-gradient(farthest-side at bottom, alpha(currentColor, 0.05), alpha(currentColor, 0));
+  background-size: 100% 3%, 100% 50%;
   background-repeat: no-repeat;
-  background-position: center bottom;
+  background-position: bottom;
   background-color: transparent;
   border: none;
   box-shadow: none;
 }
 
 overshoot.left {
-  background-size: 200% 70%;
-  background-image: radial-gradient(farthest-side at left, rgba(91, 155, 248, 0.24) 99%, rgba(91, 155, 248, 0) 100%);
+  background-image: radial-gradient(farthest-side at left, alpha(currentColor, 0.12) 85%, alpha(currentColor, 0)), radial-gradient(farthest-side at left, alpha(currentColor, 0.05), alpha(currentColor, 0));
+  background-size: 3% 100%, 50% 100%;
   background-repeat: no-repeat;
-  background-position: left center;
+  background-position: left;
   background-color: transparent;
   border: none;
   box-shadow: none;
 }
 
 overshoot.right {
-  background-size: 200% 70%;
-  background-image: radial-gradient(farthest-side at right, rgba(91, 155, 248, 0.24) 99%, rgba(91, 155, 248, 0) 100%);
+  background-image: radial-gradient(farthest-side at right, alpha(currentColor, 0.12) 85%, alpha(currentColor, 0)), radial-gradient(farthest-side at right, alpha(currentColor, 0.05), alpha(currentColor, 0));
+  background-size: 3% 100%, 50% 100%;
   background-repeat: no-repeat;
-  background-position: right center;
+  background-position: right;
   background-color: transparent;
   border: none;
   box-shadow: none;
@@ -4345,6 +4345,57 @@ window.csd.maximized, window.csd.fullscreen, window.csd.tiled, window.csd.tiled-
   border-radius: 0;
 }
 
+windowcontrols button:not(.suggested-action):not(.destructive-action) {
+  min-height: 16px;
+  min-width: 16px;
+  padding: 0;
+  margin: 0 4px;
+}
+
+windowcontrols button.minimize:not(.suggested-action):not(.destructive-action), windowcontrols button.maximize:not(.suggested-action):not(.destructive-action), windowcontrols button.close:not(.suggested-action):not(.destructive-action) {
+  color: transparent;
+}
+
+windowcontrols button.minimize:not(.suggested-action):not(.destructive-action) image, windowcontrols button.maximize:not(.suggested-action):not(.destructive-action) image, windowcontrols button.close:not(.suggested-action):not(.destructive-action) image {
+  padding: 0;
+}
+
+windowcontrols button.minimize:hover:not(.suggested-action):not(.destructive-action), windowcontrols button.minimize:active:not(.suggested-action):not(.destructive-action), windowcontrols button.maximize:hover:not(.suggested-action):not(.destructive-action), windowcontrols button.maximize:active:not(.suggested-action):not(.destructive-action), windowcontrols button.close:hover:not(.suggested-action):not(.destructive-action), windowcontrols button.close:active:not(.suggested-action):not(.destructive-action) {
+  color: white;
+}
+
+windowcontrols button.minimize:backdrop:not(.suggested-action):not(.destructive-action), windowcontrols button.maximize:backdrop:not(.suggested-action):not(.destructive-action), windowcontrols button.close:backdrop:not(.suggested-action):not(.destructive-action) {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+windowcontrols button.minimize:backdrop:hover:not(.suggested-action):not(.destructive-action), windowcontrols button.minimize:backdrop:active:not(.suggested-action):not(.destructive-action), windowcontrols button.maximize:backdrop:hover:not(.suggested-action):not(.destructive-action), windowcontrols button.maximize:backdrop:active:not(.suggested-action):not(.destructive-action), windowcontrols button.close:backdrop:hover:not(.suggested-action):not(.destructive-action), windowcontrols button.close:backdrop:active:not(.suggested-action):not(.destructive-action) {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+windowcontrols button.minimize:not(.suggested-action):not(.destructive-action) {
+  background-color: #fdbe04;
+}
+
+windowcontrols button.minimize:active:not(.suggested-action):not(.destructive-action) {
+  background-color: #fece43;
+}
+
+windowcontrols button.maximize:not(.suggested-action):not(.destructive-action) {
+  background-color: #38c76a;
+}
+
+windowcontrols button.maximize:active:not(.suggested-action):not(.destructive-action) {
+  background-color: #6ad58f;
+}
+
+windowcontrols button.close:not(.suggested-action):not(.destructive-action) {
+  background-color: #fd5f51;
+}
+
+windowcontrols button.close:active:not(.suggested-action):not(.destructive-action) {
+  background-color: #fe877d;
+}
+
 windowcontrols {
   border-spacing: 6px;
 }
@@ -4357,57 +4408,6 @@ windowcontrols:not(.empty).start:dir(ltr), windowcontrols:not(.empty).end:dir(rt
 windowcontrols:not(.empty).start:dir(rtl), windowcontrols:not(.empty).end:dir(ltr) {
   margin-left: 6px;
   margin-right: 6px;
-}
-
-windowcontrols button:not(.suggested-action):not(.destructive-action) {
-  min-height: 16px;
-  min-width: 16px;
-  padding: 0;
-  margin: 0 4px;
-}
-
-windowcontrols button:not(.suggested-action):not(.destructive-action).minimize, windowcontrols button:not(.suggested-action):not(.destructive-action).maximize, windowcontrols button:not(.suggested-action):not(.destructive-action).close {
-  color: transparent;
-}
-
-windowcontrols button:not(.suggested-action):not(.destructive-action).minimize image, windowcontrols button:not(.suggested-action):not(.destructive-action).maximize image, windowcontrols button:not(.suggested-action):not(.destructive-action).close image {
-  padding: 0;
-}
-
-windowcontrols button:not(.suggested-action):not(.destructive-action).minimize:hover, windowcontrols button:not(.suggested-action):not(.destructive-action).minimize:active, windowcontrols button:not(.suggested-action):not(.destructive-action).maximize:hover, windowcontrols button:not(.suggested-action):not(.destructive-action).maximize:active, windowcontrols button:not(.suggested-action):not(.destructive-action).close:hover, windowcontrols button:not(.suggested-action):not(.destructive-action).close:active {
-  color: white;
-}
-
-windowcontrols button:not(.suggested-action):not(.destructive-action).minimize:backdrop, windowcontrols button:not(.suggested-action):not(.destructive-action).maximize:backdrop, windowcontrols button:not(.suggested-action):not(.destructive-action).close:backdrop {
-  background-color: rgba(255, 255, 255, 0.3);
-}
-
-windowcontrols button:not(.suggested-action):not(.destructive-action).minimize:backdrop:hover, windowcontrols button:not(.suggested-action):not(.destructive-action).minimize:backdrop:active, windowcontrols button:not(.suggested-action):not(.destructive-action).maximize:backdrop:hover, windowcontrols button:not(.suggested-action):not(.destructive-action).maximize:backdrop:active, windowcontrols button:not(.suggested-action):not(.destructive-action).close:backdrop:hover, windowcontrols button:not(.suggested-action):not(.destructive-action).close:backdrop:active {
-  color: rgba(255, 255, 255, 0.5);
-}
-
-windowcontrols button:not(.suggested-action):not(.destructive-action).minimize {
-  background-color: #fdbe04;
-}
-
-windowcontrols button:not(.suggested-action):not(.destructive-action).minimize:active {
-  background-color: #fece43;
-}
-
-windowcontrols button:not(.suggested-action):not(.destructive-action).maximize {
-  background-color: #38c76a;
-}
-
-windowcontrols button:not(.suggested-action):not(.destructive-action).maximize:active {
-  background-color: #6ad58f;
-}
-
-windowcontrols button:not(.suggested-action):not(.destructive-action).close {
-  background-color: #fd5f51;
-}
-
-windowcontrols button:not(.suggested-action):not(.destructive-action).close:active {
-  background-color: #fe877d;
 }
 
 gridview > child:selected, modelbutton.flat:selected, row:selected, calendar:selected, calendar > grid > label.day-number:selected {

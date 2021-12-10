@@ -1130,7 +1130,12 @@ searchbar > revealer > box {
   background-color: $titlebar;
   color: $titlebar-text;
   border-radius: $window-radius $window-radius 0 0;
-  box-shadow: inset 0 1px highlight($titlebar), inset 0 -1px $border;
+
+  @if $variant == 'dark' {
+    box-shadow: inset 0 -1px $border;
+  } @else {
+    box-shadow: inset 0 1px highlight($titlebar), inset 0 -1px $border;
+  }
 
   &:disabled { color: $titlebar-text-disabled; }
 
@@ -1276,8 +1281,8 @@ searchbar > revealer > box {
   &.default-decoration {
     min-height: $small-size;
     padding: $space-size $space-size * 2;
-    box-shadow: inset 0 1px highlight($titlebar);
     border-radius: $window-radius $window-radius 0 0;
+    box-shadow: inset 0 1px highlight($titlebar);
 
     .tiled &,
     .maximized &,
@@ -1331,7 +1336,9 @@ headerbar {
   }
 
   > box.left,
-  > box.right { padding: 0 $space-size; } // Titlebutton space
+  > box.right { // Titlebutton space
+    padding: 0 if($window_button == 'mac', $space-size, $space-size - 2px);
+  }
 
   button:not(.suggested-action):not(.destructive-action) {
     @extend %titlebar-button;
@@ -1346,7 +1353,7 @@ headerbar {
   + separator, + separator.sidebar {
     background-color: $titlebar;
     background-image: none;
-    box-shadow: inset 0 1px highlight($titlebar), inset 0 -1px $border;
+    box-shadow: inset 0 -1px $border;
     transition: all $duration $ease-out;
 
     &:backdrop {
@@ -1357,19 +1364,11 @@ headerbar {
   &.selection-mode + separator, &.selection-mode + separator.sidebar,
   .selection-mode & + separator, .selection-mode & + separator.sidebar {
     background-color: $primary;
-    box-shadow: inset 0 1px highlight($primary), inset 0 -1px $border;
+    box-shadow: inset 0 -1px $border;
 
     &:backdrop {
       background-color: $primary;
     }
-  }
-
-  window.background.csd.unified & + separator, + separator.sidebar,
-  window.background.csd.unified &.selection-mode + separator,
-  window.background.csd.unified &.selection-mode + separator.sidebar,
-  window.background.csd.unified .selection-mode & + separator,
-  window.background.csd.unified .selection-mode & + separator.sidebar {
-    box-shadow: inset 0 -1px $border;
   }
 
   switch {
@@ -1560,12 +1559,17 @@ treeview.view {
     button {
       @extend %row_activatable;
       padding: 2px $space-size;
-      border: none;
-      border-radius: $corner-radius;
+      border-style: none solid solid none;
+      border-width: 1px;
+      border-color: $divider;
+      border-radius: 0;
+      background-clip: border-box;
 
       &:not(:focus):not(:hover):not(:active) { color: $text-secondary; }
 
       &, &:disabled { background-color: $base; }
+
+      &:last-child { border-right-style: none; }
     }
   }
 
@@ -2787,18 +2791,18 @@ scrolledwindow {
     viewport.frame list { border: none; }
   }
 
-  // // This is used when content is touch-dragged past boundaries.
-  // // draws a box on top of the content, the size changes programmatically.
-  // @at-root overshoot {
-  //   &.top { @include overshoot(top); }
-  //
-  //   &.bottom { @include overshoot(bottom); }
-  //
-  //   &.left { @include overshoot(left); }
-  //
-  //   &.right { @include overshoot(right); }
-  // }
-  //
+  // This is used when content is touch-dragged past boundaries.
+  // draws a box on top of the content, the size changes programmatically.
+  @at-root overshoot {
+    &.top { @include overshoot(top); }
+
+    &.bottom { @include overshoot(bottom); }
+
+    &.left { @include overshoot(left); }
+
+    &.right { @include overshoot(right); }
+  }
+
   // // Overflow indication, works similarly to the overshoot, the size if fixed tho.
   // @at-root undershoot {
   //   &.top { @include undershoot(top); }
@@ -3041,7 +3045,7 @@ messagedialog { // Message Dialog styling
   .titlebar {
     min-height: $small-size;
     border-style: none;
-    box-shadow: inset 0 1px highlight($surface);
+    box-shadow: none;
     background-color: $surface;
     color: $text;
 
@@ -3627,6 +3631,12 @@ decoration {
     box-shadow: $shadow-z16, 0 0 36px transparent;
   } @else {
     box-shadow: $shadow-z16, 0 0 0 1px $window-border, 0 0 36px transparent;
+
+    @if $variant == 'dark' {
+      border: 1px solid highlight($background);
+      background-color: $background;
+      background-clip: border-box;
+    }
   }
 
   // FIXME rationalize shadows
@@ -3655,7 +3665,10 @@ decoration {
   .tiled-bottom &,
   .tiled-left & { border-radius: 0; }
 
-  .popup & { box-shadow: none; }
+  .popup & {
+    box-shadow: none;
+    border: none;
+  }
 
   // server-side decorations as used by mutter
   .ssd & {
@@ -3672,10 +3685,12 @@ decoration {
   .metacity & {
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
+    border: none;
   }
 
   .csd.popup & {
     border-radius: $menu-radius;
+    border: none;
 
     @if $rimless == 'true' {
       box-shadow: $shadow-z4;
@@ -3692,7 +3707,12 @@ decoration {
 
   messagedialog.csd & {
     border-radius: $window-radius;
-    border: none;
+
+    @if $variant == 'dark' {
+      border: 1px solid highlight($surface);
+      background-color: $surface;
+      background-clip: border-box;
+    }
   }
 
   .solid-csd & {
@@ -3708,8 +3728,8 @@ decoration {
 }
 
 // Windows button
-button.titlebutton:not(.suggested-action):not(.destructive-action) {
-  @extend %circular-button;
+
+%mac_window_button {
   min-height: 16px;
   min-width: 16px;
   padding: 0;
@@ -3753,6 +3773,42 @@ button.titlebutton:not(.suggested-action):not(.destructive-action) {
     &:active {
       background-color: mix($titlebar-text, $titlebutton-close, 25%);
     }
+  }
+}
+
+%normal_window_button {
+  min-height: 22px;
+  min-width: 22px;
+  padding: 0;
+  margin: 0 $space-size - 2px;
+
+  &.minimize, &.maximize, &.close {
+    color: $titlebar-text-secondary;
+    background-color: gtkalpha(currentColor, 0.1);
+
+    &:hover {
+      color: $titlebar-text;
+      background-color: gtkalpha(currentColor, 0.15);
+    }
+
+    &:active {
+      color: $titlebar-text;
+      background-color: gtkalpha(currentColor, 0.2);
+    }
+
+    &:backdrop {
+      opacity: 0.65;
+    }
+  }
+}
+
+button.titlebutton:not(.suggested-action):not(.destructive-action) {
+  @extend %circular-button;
+
+  @if $window_button == 'mac' {
+    @extend %mac_window_button;
+  } @else {
+    @extend %normal_window_button;
   }
 }
 

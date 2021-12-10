@@ -26,19 +26,22 @@ Run the following commands in the terminal:
 > Tip: `./install.sh` allows the following options:
 
 ```
--d, --dest DIR          Specify destination directory (Default: /usr/share/themes)
--n, --name NAME         Specify theme name (Default: Graphite)
+-d, --dest DIR          Specify destination directory (Default: ~/.themes)
+-n, --name NAME         Specify theme name (Default: Colloid)
 -t, --theme VARIANT...  Specify theme color variant(s) [default|purple|pink|red|orange|yellow|green|teal|grey|all] (Default: blue)
 -c, --color VARIANT...  Specify color variant(s) [standard|light|dark] (Default: All variants)
 -s, --size VARIANT...   Specify size variant [standard|compact] (Default: standard variant)
---tweaks                Specify versions for tweaks [nord|black|rimless] (nord can not mix use with black !)
+--tweaks                Specify versions for tweaks [nord|black|rimless|normal] (only nord and black can not mix use!)
                         1. nord:     Nord color version
                         2. black:    Blackness color version
                         3. rimless:  Remove the 2px outline about windows and menus
+                        4. normal:   normal windows button style
 -h, --help              Show help
 ```
 
 > For more information, run: `./install.sh --help`
+
+![tweaks](tweaks.png?raw=true)
 
 ### Flatpak Installation
 
