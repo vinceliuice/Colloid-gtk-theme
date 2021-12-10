@@ -3028,7 +3028,14 @@ calendar {
  * Dialogs *
  ***********/
 messagedialog { // Message Dialog styling
-  &.background { background-color: $surface; }
+  &.background {
+    background-color: $surface;
+
+    &.csd { // rounded bottom border styling for csd version
+      border-bottom-left-radius: $window-radius;
+      border-bottom-right-radius: $window-radius;
+    }
+  }
 
   .titlebar {
     min-height: $small-size;
@@ -3043,28 +3050,20 @@ messagedialog { // Message Dialog styling
     }
   }
 
-  &.csd { // rounded bottom border styling for csd version
-    &.background {
-      // bigger radius for better antialiasing
-      border-bottom-left-radius: $window-radius;
-      border-bottom-right-radius: $window-radius;
-    }
+  .dialog-action-box {
+    margin-top: -$space-size;
+    // padding: $space-size;
 
-    .dialog-action-box {
-      margin-top: -$space-size;
-      // padding: $space-size;
+    button, .linked:not(.vertical) > button {
+      @extend %button-flat;
 
-      button {
-        @extend %button-flat;
+      &, &:first-child, &:last-child { border-radius: $corner-radius; }
 
-        &, &:first-child, &:last-child { border-radius: $corner-radius; }
+      &:not(:last-child) { margin-right: $space-size; }
 
-        &:not(:last-child) { margin-right: $space-size; }
+      &.suggested-action:not(:disabled) { color: $suggested; }
 
-        &.suggested-action:not(:disabled) { color: $suggested; }
-
-        &.destructive-action:not(:disabled) { color: $destructive; }
-      }
+      &.destructive-action:not(:disabled) { color: $destructive; }
     }
   }
 }

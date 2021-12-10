@@ -499,7 +499,7 @@ button:drop(active) {
 
 placessidebar .navigation-sidebar > row button.sidebar-button, calendar > header > button, columnview.view > header > button button.circular,
 treeview.view > header > button button.circular, row.activatable button.circular, check,
-radio, scrollbar button, notebook > header > tabs > arrow, spinbutton.vertical > button, spinbutton:not(.vertical) > button, modelbutton.flat, filechooser #pathbarbox > stack > box > button, window.dialog.message.csd .dialog-action-area > button, .app-notification button, actionbar > revealer > box button:not(.suggested-action):not(.destructive-action), popover.background.menu button,
+radio, scrollbar button, notebook > header > tabs > arrow, spinbutton.vertical > button, spinbutton:not(.vertical) > button, modelbutton.flat, filechooser #pathbarbox > stack > box > button, window.dialog.message .dialog-action-area > button, .app-notification button, actionbar > revealer > box button:not(.suggested-action):not(.destructive-action), popover.background.menu button,
 popover.background button.model, headerbar button:not(.suggested-action):not(.destructive-action), .toolbar button,
 toolbar button, dropdown > .linked:not(.vertical) > button:not(:only-child),
 combobox > .linked:not(.vertical) > button:not(:only-child), button.flat {
@@ -512,7 +512,7 @@ combobox > .linked:not(.vertical) > button:not(:only-child), button.flat {
 
 placessidebar .navigation-sidebar > row button.sidebar-button:focus, calendar > header > button:focus, columnview.view > header > button button.circular:focus,
 treeview.view > header > button button.circular:focus, row.activatable button.circular:focus, check:focus,
-radio:focus, scrollbar button:focus, notebook > header > tabs > arrow:focus, spinbutton.vertical > button:focus, spinbutton:not(.vertical) > button:focus, modelbutton.flat:focus, filechooser #pathbarbox > stack > box > button:focus, window.dialog.message.csd .dialog-action-area > button:focus, .app-notification button:focus, actionbar > revealer > box button:focus:not(.suggested-action):not(.destructive-action), popover.background.menu button:focus,
+radio:focus, scrollbar button:focus, notebook > header > tabs > arrow:focus, spinbutton.vertical > button:focus, spinbutton:not(.vertical) > button:focus, modelbutton.flat:focus, filechooser #pathbarbox > stack > box > button:focus, window.dialog.message .dialog-action-area > button:focus, .app-notification button:focus, actionbar > revealer > box button:focus:not(.suggested-action):not(.destructive-action), popover.background.menu button:focus,
 popover.background button.model:focus, headerbar button:focus:not(.suggested-action):not(.destructive-action), .toolbar button:focus,
 toolbar button:focus, dropdown > .linked:not(.vertical) > button:focus:not(:only-child),
 combobox > .linked:not(.vertical) > button:focus:not(:only-child), button.flat:focus {
@@ -522,7 +522,7 @@ combobox > .linked:not(.vertical) > button:focus:not(:only-child), button.flat:f
 
 placessidebar .navigation-sidebar > row button.sidebar-button:hover, calendar > header > button:hover, columnview.view > header > button button.circular:hover,
 treeview.view > header > button button.circular:hover, row.activatable button.circular:hover, check:hover,
-radio:hover, scrollbar button:hover, notebook > header > tabs > arrow:hover, spinbutton.vertical > button:hover, spinbutton:not(.vertical) > button:hover, modelbutton.flat:hover, filechooser #pathbarbox > stack > box > button:hover, window.dialog.message.csd .dialog-action-area > button:hover, .app-notification button:hover, actionbar > revealer > box button:hover:not(.suggested-action):not(.destructive-action), popover.background.menu button:hover,
+radio:hover, scrollbar button:hover, notebook > header > tabs > arrow:hover, spinbutton.vertical > button:hover, spinbutton:not(.vertical) > button:hover, modelbutton.flat:hover, filechooser #pathbarbox > stack > box > button:hover, window.dialog.message .dialog-action-area > button:hover, .app-notification button:hover, actionbar > revealer > box button:hover:not(.suggested-action):not(.destructive-action), popover.background.menu button:hover,
 popover.background button.model:hover, headerbar button:hover:not(.suggested-action):not(.destructive-action), .toolbar button:hover,
 toolbar button:hover, dropdown > .linked:not(.vertical) > button:hover:not(:only-child),
 combobox > .linked:not(.vertical) > button:hover:not(:only-child), button.flat:hover {
@@ -532,7 +532,7 @@ combobox > .linked:not(.vertical) > button:hover:not(:only-child), button.flat:h
 
 placessidebar .navigation-sidebar > row button.sidebar-button:active, calendar > header > button:active, columnview.view > header > button button.circular:active,
 treeview.view > header > button button.circular:active, row.activatable button.circular:active, check:active,
-radio:active, scrollbar button:active, notebook > header > tabs > arrow:active, spinbutton.vertical > button:active, spinbutton:not(.vertical) > button:active, modelbutton.flat:active, filechooser #pathbarbox > stack > box > button:active, window.dialog.message.csd .dialog-action-area > button:active, .app-notification button:active, actionbar > revealer > box button:active:not(.suggested-action):not(.destructive-action), popover.background.menu button:active,
+radio:active, scrollbar button:active, notebook > header > tabs > arrow:active, spinbutton.vertical > button:active, spinbutton:not(.vertical) > button:active, modelbutton.flat:active, filechooser #pathbarbox > stack > box > button:active, window.dialog.message .dialog-action-area > button:active, .app-notification button:active, actionbar > revealer > box button:active:not(.suggested-action):not(.destructive-action), popover.background.menu button:active,
 popover.background button.model:active, headerbar button:active:not(.suggested-action):not(.destructive-action), .toolbar button:active,
 toolbar button:active, dropdown > .linked:not(.vertical) > button:active:not(:only-child),
 combobox > .linked:not(.vertical) > button:active:not(:only-child), button.flat:active {
@@ -543,7 +543,7 @@ combobox > .linked:not(.vertical) > button:active:not(:only-child), button.flat:
 
 placessidebar .navigation-sidebar > row button.sidebar-button:disabled, calendar > header > button:disabled, columnview.view > header > button button.circular:disabled,
 treeview.view > header > button button.circular:disabled, row.activatable button.circular:disabled, check:disabled,
-radio:disabled, scrollbar button:disabled, notebook > header > tabs > arrow:disabled, spinbutton.vertical > button:disabled, spinbutton:not(.vertical) > button:disabled, modelbutton.flat:disabled, filechooser #pathbarbox > stack > box > button:disabled, window.dialog.message.csd .dialog-action-area > button:disabled, .app-notification button:disabled, actionbar > revealer > box button:disabled:not(.suggested-action):not(.destructive-action), popover.background.menu button:disabled,
+radio:disabled, scrollbar button:disabled, notebook > header > tabs > arrow:disabled, spinbutton.vertical > button:disabled, spinbutton:not(.vertical) > button:disabled, modelbutton.flat:disabled, filechooser #pathbarbox > stack > box > button:disabled, window.dialog.message .dialog-action-area > button:disabled, .app-notification button:disabled, actionbar > revealer > box button:disabled:not(.suggested-action):not(.destructive-action), popover.background.menu button:disabled,
 popover.background button.model:disabled, headerbar button:disabled:not(.suggested-action):not(.destructive-action), .toolbar button:disabled,
 toolbar button:disabled, dropdown > .linked:not(.vertical) > button:disabled:not(:only-child),
 combobox > .linked:not(.vertical) > button:disabled:not(:only-child), button.flat:disabled {
@@ -552,7 +552,7 @@ combobox > .linked:not(.vertical) > button:disabled:not(:only-child), button.fla
   color: rgba(0, 0, 0, 0.26);
 }
 
-filechooser #pathbarbox > stack > box > button:checked, window.dialog.message.csd .dialog-action-area > button:checked, .app-notification button:checked, actionbar > revealer > box button:checked:not(.suggested-action):not(.destructive-action), popover.background.menu button:checked,
+filechooser #pathbarbox > stack > box > button:checked, window.dialog.message .dialog-action-area > button:checked, .app-notification button:checked, actionbar > revealer > box button:checked:not(.suggested-action):not(.destructive-action), popover.background.menu button:checked,
 popover.background button.model:checked, headerbar button:checked:not(.suggested-action):not(.destructive-action), .toolbar button:checked,
 toolbar button:checked, dropdown > .linked:not(.vertical) > button:checked:not(:only-child),
 combobox > .linked:not(.vertical) > button:checked:not(:only-child), button.flat:checked, button.flat:checked:hover {
@@ -560,7 +560,7 @@ combobox > .linked:not(.vertical) > button:checked:not(:only-child), button.flat
   color: rgba(0, 0, 0, 0.87);
 }
 
-filechooser #pathbarbox > stack > box > button:checked:disabled, window.dialog.message.csd .dialog-action-area > button:checked:disabled, .app-notification button:checked:disabled, actionbar > revealer > box button:checked:disabled:not(.suggested-action):not(.destructive-action), popover.background.menu button:checked:disabled,
+filechooser #pathbarbox > stack > box > button:checked:disabled, window.dialog.message .dialog-action-area > button:checked:disabled, .app-notification button:checked:disabled, actionbar > revealer > box button:checked:disabled:not(.suggested-action):not(.destructive-action), popover.background.menu button:checked:disabled,
 popover.background button.model:checked:disabled, headerbar button:checked:disabled:not(.suggested-action):not(.destructive-action), .toolbar button:checked:disabled,
 toolbar button:checked:disabled, dropdown > .linked:not(.vertical) > button:checked:disabled:not(:only-child),
 combobox > .linked:not(.vertical) > button:checked:disabled:not(:only-child), button.flat:checked:disabled {
@@ -3762,28 +3762,23 @@ window.dialog.message .titlebar:backdrop {
   color: rgba(0, 0, 0, 0.6);
 }
 
-window.dialog.message.csd.background {
-  border-bottom-left-radius: 12px;
-  border-bottom-right-radius: 12px;
-}
-
-window.dialog.message.csd .dialog-action-area {
+window.dialog.message .dialog-action-area {
   margin-top: -6px;
 }
 
-window.dialog.message.csd .dialog-action-area > button, window.dialog.message.csd .dialog-action-area > button:first-child, window.dialog.message.csd .dialog-action-area > button:last-child {
+window.dialog.message .dialog-action-area > button, window.dialog.message .dialog-action-area > button:first-child, window.dialog.message .dialog-action-area > button:last-child {
   border-radius: 9999px;
 }
 
-window.dialog.message.csd .dialog-action-area > button:not(:last-child) {
+window.dialog.message .dialog-action-area > button:not(:last-child) {
   margin-right: 6px;
 }
 
-window.dialog.message.csd .dialog-action-area > button:not(:disabled) {
+window.dialog.message .dialog-action-area > button:not(:disabled) {
   color: #3c84f7;
 }
 
-window.dialog.message.csd .dialog-action-area > button.destructive-action:not(:disabled) {
+window.dialog.message .dialog-action-area > button.destructive-action:not(:disabled) {
   color: #D93025;
 }
 
