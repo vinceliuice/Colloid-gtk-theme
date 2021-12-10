@@ -5378,40 +5378,50 @@ popover.emoji-completion .emoji:hover {
   background: none;
 }
 
-.nautilus-window.background.csd .nautilus-list-view {
+.nautilus-window.background.csd.unified notebook {
+  border-radius: 0;
+}
+
+.nautilus-window.background.csd:not(.unified) .nautilus-list-view {
   background-color: transparent;
   border-bottom-right-radius: 12px;
 }
 
-.nautilus-window.background.csd .nautilus-list-view treeview.view:not(:hover):not(:active):not(:selected), .nautilus-window.background.csd .nautilus-list-view window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view:not(:hover):not(:active):not(:selected):not(.progressbar):not(.trough), window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow .nautilus-window.background.csd .nautilus-list-view treeview.view:not(:hover):not(:active):not(:selected):not(.progressbar):not(.trough), .nautilus-window.background.csd .nautilus-list-view filechooser stack.view scrolledwindow treeview.view:not(:hover):not(:active):not(:selected), filechooser stack.view scrolledwindow .nautilus-window.background.csd .nautilus-list-view treeview.view:not(:hover):not(:active):not(:selected) {
+.nautilus-window.background.csd:not(.unified) .nautilus-list-view treeview.view:not(:hover):not(:active):not(:selected), .nautilus-window.background.csd:not(.unified) .nautilus-list-view window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view:not(:hover):not(:active):not(:selected):not(.progressbar):not(.trough), window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow .nautilus-window.background.csd:not(.unified) .nautilus-list-view treeview.view:not(:hover):not(:active):not(:selected):not(.progressbar):not(.trough), .nautilus-window.background.csd:not(.unified) .nautilus-list-view filechooser stack.view scrolledwindow treeview.view:not(:hover):not(:active):not(:selected), filechooser stack.view scrolledwindow .nautilus-window.background.csd:not(.unified) .nautilus-list-view treeview.view:not(:hover):not(:active):not(:selected) {
   background-color: transparent;
-  border-radius: 0;
 }
 
-.nautilus-window.background.csd notebook {
+.nautilus-window.background.csd:not(.unified) notebook {
   background-color: #FFFFFF;
-  border-radius: 0;
+  border-radius: 0 0 12px 12px;
 }
 
-.nautilus-window.background.csd notebook > stack {
-  background-color: #FFFFFF;
-}
-
-.nautilus-window.background.csd notebook scrolledwindow > .view:not(:selected):not(:hover):not(:checked), .nautilus-window.background.csd notebook window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow > treeview.view:not(:selected):not(:hover):not(:checked):not(.progressbar):not(.trough), .nautilus-window.background.csd notebook filechooser stack.view scrolledwindow > treeview.view:not(:selected):not(:hover):not(:checked), filechooser stack.view .nautilus-window.background.csd notebook scrolledwindow > treeview.view:not(:selected):not(:hover):not(:checked) {
+.nautilus-window.background.csd:not(.unified) notebook > stack {
   background-color: transparent;
 }
 
-.nautilus-window.background.csd notebook placesview > stack > frame > scrolledwindow > viewport > list {
+.nautilus-window.background.csd:not(.unified) notebook scrolledwindow > .view:not(:selected):not(:hover):not(:checked), .nautilus-window.background.csd:not(.unified) notebook window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow > treeview.view:not(:selected):not(:hover):not(:checked):not(.progressbar):not(.trough), .nautilus-window.background.csd:not(.unified) notebook filechooser stack.view scrolledwindow > treeview.view:not(:selected):not(:hover):not(:checked), filechooser stack.view .nautilus-window.background.csd:not(.unified) notebook scrolledwindow > treeview.view:not(:selected):not(:hover):not(:checked) {
   background-color: transparent;
 }
 
-.nautilus-window.background.csd notebook placesview > actionbar {
+.nautilus-window.background.csd:not(.unified) notebook placesview > stack > frame > scrolledwindow > viewport > list {
+  background-color: transparent;
+}
+
+.nautilus-window.background.csd:not(.unified) notebook placesview > actionbar {
   background-color: transparent;
   border-radius: 0 0 12px 12px;
 }
 
-.nautilus-window.background.csd notebook placesview > actionbar > revealer > box {
+.nautilus-window.background.csd:not(.unified) notebook placesview > actionbar > revealer > box {
   background-color: transparent;
+}
+
+.nautilus-window.background.csd:not(.unified) paned > separator {
+  min-width: 12px;
+  box-shadow: 12px 0 #FFFFFF;
+  background-color: #FFFFFF;
+  background-image: image(gainsboro);
 }
 
 .nautilus-window.maximized, .nautilus-window.maximized placessidebar {
