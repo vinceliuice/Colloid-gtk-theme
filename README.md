@@ -34,7 +34,7 @@ Run the following commands in the terminal:
 --tweaks                Specify versions for tweaks [nord|black|rimless|normal] (only nord and black can not mix use!)
                         1. nord:     Nord color version
                         2. black:    Blackness color version
-                        3. rimless:  Remove the 2px outline about windows and menus
+                        3. rimless:  Remove the 1px border about windows and menus
                         4. normal:   normal windows button style
 -h, --help              Show help
 ```
@@ -48,4 +48,3 @@ Run the following commands in the terminal:
 Automatically install your host GTK+ theme as a Flatpak. Use this:
 
 - [pakitheme](https://github.com/refi64/pakitheme)
-

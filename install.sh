@@ -54,7 +54,7 @@ OPTIONS:
   --tweaks                Specify versions for tweaks [nord|black|rimless] (nord can not mix use with black !)
                           1. nord:     Nord color version
                           2. black:    Blackness color version
-                          3. rimless:  Remove the 2px outline about windows and menus
+                          3. rimless:  Remove the 1px border about windows and menus
 
   -h, --help              Show help
 EOF
