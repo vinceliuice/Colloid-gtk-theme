@@ -493,8 +493,7 @@ button:drop(active) {
 }
 
 placessidebar .navigation-sidebar > row button.sidebar-button, calendar > header > button, columnview.view > header > button button.circular,
-treeview.view > header > button button.circular, row.activatable button.circular, check,
-radio, scrollbar button, notebook > header > tabs > arrow, spinbutton.vertical > button, spinbutton:not(.vertical) > button, modelbutton.flat, filechooser #pathbarbox > stack > box > button, window.dialog.message .dialog-action-area > button, .app-notification button, actionbar > revealer > box button:not(.suggested-action):not(.destructive-action), popover.background.menu button,
+treeview.view > header > button button.circular, row.activatable button.circular, scrollbar button, notebook > header > tabs > arrow, spinbutton.vertical > button, spinbutton:not(.vertical) > button, modelbutton.flat, filechooser #pathbarbox > stack > box > button, window.dialog.message .dialog-action-area > button, .app-notification button, actionbar > revealer > box button:not(.suggested-action):not(.destructive-action), popover.background.menu button,
 popover.background button.model, headerbar button:not(.suggested-action):not(.destructive-action), .toolbar button,
 toolbar button, dropdown > .linked:not(.vertical) > button:not(:only-child),
 combobox > .linked:not(.vertical) > button:not(:only-child), button.flat {
@@ -506,8 +505,7 @@ combobox > .linked:not(.vertical) > button:not(:only-child), button.flat {
 }
 
 placessidebar .navigation-sidebar > row button.sidebar-button:focus, calendar > header > button:focus, columnview.view > header > button button.circular:focus,
-treeview.view > header > button button.circular:focus, row.activatable button.circular:focus, check:focus,
-radio:focus, scrollbar button:focus, notebook > header > tabs > arrow:focus, spinbutton.vertical > button:focus, spinbutton:not(.vertical) > button:focus, modelbutton.flat:focus, filechooser #pathbarbox > stack > box > button:focus, window.dialog.message .dialog-action-area > button:focus, .app-notification button:focus, actionbar > revealer > box button:focus:not(.suggested-action):not(.destructive-action), popover.background.menu button:focus,
+treeview.view > header > button button.circular:focus, row.activatable button.circular:focus, scrollbar button:focus, notebook > header > tabs > arrow:focus, spinbutton.vertical > button:focus, spinbutton:not(.vertical) > button:focus, modelbutton.flat:focus, filechooser #pathbarbox > stack > box > button:focus, window.dialog.message .dialog-action-area > button:focus, .app-notification button:focus, actionbar > revealer > box button:focus:not(.suggested-action):not(.destructive-action), popover.background.menu button:focus,
 popover.background button.model:focus, headerbar button:focus:not(.suggested-action):not(.destructive-action), .toolbar button:focus,
 toolbar button:focus, dropdown > .linked:not(.vertical) > button:focus:not(:only-child),
 combobox > .linked:not(.vertical) > button:focus:not(:only-child), button.flat:focus {
@@ -516,8 +514,7 @@ combobox > .linked:not(.vertical) > button:focus:not(:only-child), button.flat:f
 }
 
 placessidebar .navigation-sidebar > row button.sidebar-button:hover, calendar > header > button:hover, columnview.view > header > button button.circular:hover,
-treeview.view > header > button button.circular:hover, row.activatable button.circular:hover, check:hover,
-radio:hover, scrollbar button:hover, notebook > header > tabs > arrow:hover, spinbutton.vertical > button:hover, spinbutton:not(.vertical) > button:hover, modelbutton.flat:hover, filechooser #pathbarbox > stack > box > button:hover, window.dialog.message .dialog-action-area > button:hover, .app-notification button:hover, actionbar > revealer > box button:hover:not(.suggested-action):not(.destructive-action), popover.background.menu button:hover,
+treeview.view > header > button button.circular:hover, row.activatable button.circular:hover, scrollbar button:hover, notebook > header > tabs > arrow:hover, spinbutton.vertical > button:hover, spinbutton:not(.vertical) > button:hover, modelbutton.flat:hover, filechooser #pathbarbox > stack > box > button:hover, window.dialog.message .dialog-action-area > button:hover, .app-notification button:hover, actionbar > revealer > box button:hover:not(.suggested-action):not(.destructive-action), popover.background.menu button:hover,
 popover.background button.model:hover, headerbar button:hover:not(.suggested-action):not(.destructive-action), .toolbar button:hover,
 toolbar button:hover, dropdown > .linked:not(.vertical) > button:hover:not(:only-child),
 combobox > .linked:not(.vertical) > button:hover:not(:only-child), button.flat:hover {
@@ -526,8 +523,7 @@ combobox > .linked:not(.vertical) > button:hover:not(:only-child), button.flat:h
 }
 
 placessidebar .navigation-sidebar > row button.sidebar-button:active, calendar > header > button:active, columnview.view > header > button button.circular:active,
-treeview.view > header > button button.circular:active, row.activatable button.circular:active, check:active,
-radio:active, scrollbar button:active, notebook > header > tabs > arrow:active, spinbutton.vertical > button:active, spinbutton:not(.vertical) > button:active, modelbutton.flat:active, filechooser #pathbarbox > stack > box > button:active, window.dialog.message .dialog-action-area > button:active, .app-notification button:active, actionbar > revealer > box button:active:not(.suggested-action):not(.destructive-action), popover.background.menu button:active,
+treeview.view > header > button button.circular:active, row.activatable button.circular:active, scrollbar button:active, notebook > header > tabs > arrow:active, spinbutton.vertical > button:active, spinbutton:not(.vertical) > button:active, modelbutton.flat:active, filechooser #pathbarbox > stack > box > button:active, window.dialog.message .dialog-action-area > button:active, .app-notification button:active, actionbar > revealer > box button:active:not(.suggested-action):not(.destructive-action), popover.background.menu button:active,
 popover.background button.model:active, headerbar button:active:not(.suggested-action):not(.destructive-action), .toolbar button:active,
 toolbar button:active, dropdown > .linked:not(.vertical) > button:active:not(:only-child),
 combobox > .linked:not(.vertical) > button:active:not(:only-child), button.flat:active {
@@ -537,8 +533,7 @@ combobox > .linked:not(.vertical) > button:active:not(:only-child), button.flat:
 }
 
 placessidebar .navigation-sidebar > row button.sidebar-button:disabled, calendar > header > button:disabled, columnview.view > header > button button.circular:disabled,
-treeview.view > header > button button.circular:disabled, row.activatable button.circular:disabled, check:disabled,
-radio:disabled, scrollbar button:disabled, notebook > header > tabs > arrow:disabled, spinbutton.vertical > button:disabled, spinbutton:not(.vertical) > button:disabled, modelbutton.flat:disabled, filechooser #pathbarbox > stack > box > button:disabled, window.dialog.message .dialog-action-area > button:disabled, .app-notification button:disabled, actionbar > revealer > box button:disabled:not(.suggested-action):not(.destructive-action), popover.background.menu button:disabled,
+treeview.view > header > button button.circular:disabled, row.activatable button.circular:disabled, scrollbar button:disabled, notebook > header > tabs > arrow:disabled, spinbutton.vertical > button:disabled, spinbutton:not(.vertical) > button:disabled, modelbutton.flat:disabled, filechooser #pathbarbox > stack > box > button:disabled, window.dialog.message .dialog-action-area > button:disabled, .app-notification button:disabled, actionbar > revealer > box button:disabled:not(.suggested-action):not(.destructive-action), popover.background.menu button:disabled,
 popover.background button.model:disabled, headerbar button:disabled:not(.suggested-action):not(.destructive-action), .toolbar button:disabled,
 toolbar button:disabled, dropdown > .linked:not(.vertical) > button:disabled:not(:only-child),
 combobox > .linked:not(.vertical) > button:disabled:not(:only-child), button.flat:disabled {
@@ -736,13 +731,11 @@ button.font > box > box > label, button.file > box > box > label {
   font-weight: bold;
 }
 
-windowcontrols button:not(.suggested-action):not(.destructive-action), filechooser #pathbarbox > stack > box > button, check,
-radio, button.close, button.circular {
+windowcontrols button:not(.suggested-action):not(.destructive-action), filechooser #pathbarbox > stack > box > button, button.close, button.circular {
   border-radius: 9999px;
 }
 
-windowcontrols button:not(.suggested-action):not(.destructive-action) label, filechooser #pathbarbox > stack > box > button label, check label,
-radio label, button.close label, button.circular label {
+windowcontrols button:not(.suggested-action):not(.destructive-action) label, filechooser #pathbarbox > stack > box > button label, button.close label, button.circular label {
   padding: 0;
 }
 
@@ -2533,58 +2526,64 @@ switch:focus slider, switch:hover slider, switch:focus:hover slider {
 checkbutton,
 radiobutton {
   outline: none;
-  border-spacing: 4px;
-}
-
-checkbutton.text-button,
-radiobutton.text-button {
-  padding: 2px;
-}
-
-checkbutton.text-button label:not(:only-child),
-radiobutton.text-button label:not(:only-child) {
-  margin: 0 4px;
+  border-spacing: 3px;
 }
 
 check,
 radio {
-  min-height: 24px;
-  min-width: 24px;
-  margin: -8px;
-  padding: 8px;
-}
-
-check, check:focus,
-radio,
-radio:focus {
-  color: alpha(currentColor, 0.08);
+  min-height: 20px;
+  min-width: 20px;
+  margin: 3px;
+  padding: 0;
+  border-radius: 9999px;
+  color: transparent;
+  background-color: rgba(255, 255, 255, 0.12);
+  transition: all 75ms cubic-bezier(0, 0, 0.2, 1), box-shadow 150ms cubic-bezier(0, 0, 0.2, 1);
 }
 
 check:hover,
 radio:hover {
-  color: alpha(currentColor, 0.16);
+  box-shadow: 0 0 0 6px rgba(255, 255, 255, 0.04);
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+check:active,
+radio:active {
+  box-shadow: 0 0 0 6px rgba(255, 255, 255, 0.12);
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+check:disabled,
+radio:disabled {
+  background-color: rgba(255, 255, 255, 0.04);
 }
 
 check:checked, check:indeterminate,
 radio:checked,
 radio:indeterminate {
-  color: #5b9bf8;
+  color: white;
+  background-color: #5b9bf8;
+}
+
+check:checked:hover, check:indeterminate:hover,
+radio:checked:hover,
+radio:indeterminate:hover {
+  box-shadow: 0 0 0 6px rgba(91, 155, 248, 0.15);
+  background-color: #8cb9fa;
+}
+
+check:checked:active, check:indeterminate:active,
+radio:checked:active,
+radio:indeterminate:active {
+  box-shadow: 0 0 0 6px rgba(91, 155, 248, 0.2);
+  background-color: #5b9bf8;
 }
 
 check:checked:disabled, check:indeterminate:disabled,
 radio:checked:disabled,
 radio:indeterminate:disabled {
-  color: rgba(255, 255, 255, 0.3);
-}
-
-check:disabled,
-radio:disabled {
-  color: alpha(currentColor, 0.05);
-}
-
-check:not(:hover):focus,
-radio:not(:hover):focus {
-  box-shadow: inset 0 0 0 9999px transparent;
+  color: rgba(255, 255, 255, 0.7);
+  background-color: rgba(91, 155, 248, 0.35);
 }
 
 popover modelbutton.flat check, popover modelbutton.flat check:focus, popover modelbutton.flat check:hover, popover modelbutton.flat check:focus:hover, popover modelbutton.flat check:active, popover modelbutton.flat check:disabled, popover modelbutton.flat radio, popover modelbutton.flat radio:focus, popover modelbutton.flat radio:hover, popover modelbutton.flat radio:focus:hover, popover modelbutton.flat radio:active, popover modelbutton.flat radio:disabled {
@@ -2593,27 +2592,14 @@ popover modelbutton.flat check, popover modelbutton.flat check:focus, popover mo
   background-image: none;
 }
 
-popover modelbutton.flat check:not(:checked):not(:indeterminate):not(:disabled), popover modelbutton.flat radio:not(:checked):not(:indeterminate):not(:disabled) {
-  color: rgba(255, 255, 255, 0.7);
-}
-
-popover modelbutton.flat check:not(:checked):not(:indeterminate):not(:disabled):hover, popover modelbutton.flat radio:not(:checked):not(:indeterminate):not(:disabled):hover {
-  color: inherit;
-}
-
-popover modelbutton.flat check, popover modelbutton.flat check:hover, popover modelbutton.flat check:disabled, popover modelbutton.flat radio, popover modelbutton.flat radio:hover, popover modelbutton.flat radio:disabled {
-  box-shadow: none;
-  color: inherit;
-}
-
 popover modelbutton.flat check.left:dir(rtl), popover modelbutton.flat radio.left:dir(rtl) {
-  margin-left: -12px;
-  margin-right: -4px;
+  margin-left: -3px;
+  margin-right: 6px;
 }
 
 popover modelbutton.flat check.right:dir(ltr), popover modelbutton.flat radio.right:dir(ltr) {
-  margin-left: -4px;
-  margin-right: -12px;
+  margin-left: 6px;
+  margin-right: -3px;
 }
 
 popover.menu check, popover.menu radio {
@@ -2623,56 +2609,47 @@ popover.menu check, popover.menu radio {
 }
 
 popover.menu check:dir(ltr), popover.menu radio:dir(ltr) {
-  margin-right: 8px;
+  margin-right: 6px;
+  margin-left: -3px;
 }
 
 popover.menu check:dir(rtl), popover.menu radio:dir(rtl) {
-  margin-left: 8px;
+  margin-left: 6px;
+  margin-right: -3px;
 }
 
-popover.menu check:not(:checked):not(:indeterminate):not(:disabled), popover.menu radio:not(:checked):not(:indeterminate):not(:disabled) {
-  color: rgba(255, 255, 255, 0.7);
-}
-
-popover.menu check:not(:checked):not(:indeterminate):not(:disabled):hover, popover.menu radio:not(:checked):not(:indeterminate):not(:disabled):hover {
-  color: inherit;
-}
-
-popover.menu check, popover.menu check:hover, popover.menu check:disabled, popover.menu radio, popover.menu radio:hover, popover.menu radio:disabled {
+popover.menu check, popover.menu check:hover, popover.menu check:disabled, popover.menu check:checked:hover, popover.menu check:indeterminate:hover, popover.menu radio, popover.menu radio:hover, popover.menu radio:disabled, popover.menu radio:checked:hover, popover.menu radio:indeterminate:hover {
   box-shadow: none;
-  color: inherit;
 }
 
 
 check {
-  -gtk-icon-size: 24px;
-  -gtk-icon-source: -gtk-recolor(url("assets/scalable/checkbox-unchecked-symbolic.svg"));
+  -gtk-icon-size: 20px;
 }
 
 
 check:checked {
-  -gtk-icon-source: -gtk-recolor(url("assets/scalable/checkbox-checked-symbolic.svg"));
+  -gtk-icon-source: -gtk-scaled(-gtk-recolor(url("assets/scalable/checkbox-checked-symbolic.svg")), -gtk-recolor(url("assets/scalable/checkbox-checked-symbolic@2.svg")));
 }
 
 
 check:indeterminate {
-  -gtk-icon-source: -gtk-recolor(url("assets/scalable/checkbox-mixed-symbolic.svg"));
+  -gtk-icon-source: -gtk-scaled(-gtk-recolor(url("assets/scalable/checkbox-mixed-symbolic.svg")), -gtk-recolor(url("assets/scalable/checkbox-mixed-symbolic@2.svg")));
 }
 
 
 radio {
-  -gtk-icon-size: 24px;
-  -gtk-icon-source: -gtk-recolor(url("assets/scalable/radio-unchecked-symbolic.svg"));
+  -gtk-icon-size: 20px;
 }
 
 
 radio:checked {
-  -gtk-icon-source: -gtk-recolor(url("assets/scalable/radio-checked-symbolic.svg"));
+  -gtk-icon-source: -gtk-scaled(-gtk-recolor(url("assets/scalable/radio-checked-symbolic.svg")), -gtk-recolor(url("assets/scalable/radio-checked-symbolic@2.svg")));
 }
 
 
 radio:indeterminate {
-  -gtk-icon-source: -gtk-recolor(url("assets/scalable/radio-mixed-symbolic.svg"));
+  -gtk-icon-source: -gtk-scaled(-gtk-recolor(url("assets/scalable/radio-mixed-symbolic.svg")), -gtk-recolor(url("assets/scalable/radio-mixed-symbolic@2.svg")));
 }
 
 
@@ -2680,83 +2657,65 @@ popover.menu check {
   min-height: 16px;
   min-width: 16px;
   -gtk-icon-size: 16px;
-  border-radius: 6px;
-  -gtk-icon-source: -gtk-recolor(url("assets/scalable/small-checkbox-unchecked-symbolic.svg"));
 }
 
 
 popover.menu check:checked {
-  -gtk-icon-source: -gtk-recolor(url("assets/scalable/small-checkbox-checked-symbolic.svg"));
+  -gtk-icon-source: -gtk-scaled(-gtk-recolor(url("assets/scalable/small-checkbox-checked-symbolic.svg")), -gtk-recolor(url("assets/scalable/small-checkbox-checked-symbolic@2.svg")));
 }
 
 
 popover.menu check:indeterminate {
-  -gtk-icon-source: -gtk-recolor(url("assets/scalable/small-checkbox-mixed-symbolic.svg"));
+  -gtk-icon-source: -gtk-scaled(-gtk-recolor(url("assets/scalable/small-checkbox-mixed-symbolic.svg")), -gtk-recolor(url("assets/scalable/small-checkbox-mixed-symbolic@2.svg")));
 }
 
 
 popover.menu radio {
   min-height: 16px;
   min-width: 16px;
-  border-image: none;
   -gtk-icon-size: 16px;
-  -gtk-icon-source: -gtk-recolor(url("assets/scalable/small-radio-unchecked-symbolic.svg"));
 }
 
 
 popover.menu radio:checked {
-  -gtk-icon-source: -gtk-recolor(url("assets/scalable/small-radio-checked-symbolic.svg"));
+  -gtk-icon-source: -gtk-scaled(-gtk-recolor(url("assets/scalable/small-radio-checked-symbolic.svg")), -gtk-recolor(url("assets/scalable/small-radio-checked-symbolic@2.svg")));
 }
 
 
 popover.menu radio:indeterminate {
-  -gtk-icon-source: -gtk-recolor(url("assets/scalable/small-radio-mixed-symbolic.svg"));
+  -gtk-icon-source: -gtk-scaled(-gtk-recolor(url("assets/scalable/small-radio-mixed-symbolic.svg")), -gtk-recolor(url("assets/scalable/small-radio-mixed-symbolic@2.svg")));
 }
 
-treeview.view check, treeview.view radio,
-columnview.view check,
-columnview.view radio {
-  padding: 0;
-  box-shadow: none;
-  background: none;
+check:not(:checked):active {
+  -gtk-icon-transform: rotate(90deg);
 }
 
-treeview.view check, treeview.view check:focus, treeview.view check:selected, treeview.view radio, treeview.view radio:focus, treeview.view radio:selected,
-columnview.view check,
-columnview.view check:focus,
-columnview.view check:selected,
+treeview.view radio, treeview.view check,
 columnview.view radio,
-columnview.view radio:focus,
-columnview.view radio:selected {
-  color: alpha(currentColor, 0.08);
+columnview.view check {
+  padding: 0;
+  margin: 0;
+  transition: none;
 }
 
-treeview.view check:hover, treeview.view radio:hover,
+treeview.view radio:not(:hover):not(:disabled):not(:checked):not(:indeterminate), treeview.view check:not(:hover):not(:disabled):not(:checked):not(:indeterminate),
+columnview.view radio:not(:hover):not(:disabled):not(:checked):not(:indeterminate),
+columnview.view check:not(:hover):not(:disabled):not(:checked):not(:indeterminate) {
+  background-color: rgba(255, 255, 255, 0.12);
+}
+
+treeview.view radio, treeview.view radio:hover, treeview.view radio:disabled, treeview.view radio:checked:hover, treeview.view radio:indeterminate:hover, treeview.view check, treeview.view check:hover, treeview.view check:disabled, treeview.view check:checked:hover, treeview.view check:indeterminate:hover,
+columnview.view radio,
+columnview.view radio:hover,
+columnview.view radio:disabled,
+columnview.view radio:checked:hover,
+columnview.view radio:indeterminate:hover,
+columnview.view check,
 columnview.view check:hover,
-columnview.view radio:hover {
-  color: alpha(currentColor, 0.16);
-}
-
-treeview.view check:checked, treeview.view check:indeterminate, treeview.view radio:checked, treeview.view radio:indeterminate,
-columnview.view check:checked,
-columnview.view check:indeterminate,
-columnview.view radio:checked,
-columnview.view radio:indeterminate {
-  color: #5b9bf8;
-}
-
-treeview.view check:checked:disabled, treeview.view check:indeterminate:disabled, treeview.view radio:checked:disabled, treeview.view radio:indeterminate:disabled,
-columnview.view check:checked:disabled,
-columnview.view check:indeterminate:disabled,
-columnview.view radio:checked:disabled,
-columnview.view radio:indeterminate:disabled {
-  color: rgba(255, 255, 255, 0.3);
-}
-
-treeview.view check:disabled, treeview.view radio:disabled,
 columnview.view check:disabled,
-columnview.view radio:disabled {
-  color: alpha(currentColor, 0.05);
+columnview.view check:checked:hover,
+columnview.view check:indeterminate:hover {
+  box-shadow: none;
 }
 
 treeview.view:hover check, treeview.view:hover radio, treeview.view:selected check, treeview.view:selected radio, treeview.view:focus check, treeview.view:focus radio, treeview.view:focus-within check, treeview.view:focus-within radio,
@@ -2770,11 +2729,6 @@ columnview.view:focus-within check,
 columnview.view:focus-within radio {
   box-shadow: none;
   background-color: transparent;
-}
-
-treeview.view radio:checked {
-  -gtk-icon-source: -gtk-recolor(url("assets/scalable/radio-checked-symbolic.svg"));
-  border-image: none;
 }
 
 /************

@@ -1114,8 +1114,7 @@ actionbar > revealer > box .linked > button:checked:disabled:not(.suggested-acti
 window.background > box.vertical > toolbar.primary-toolbar > toolitem > .linked > button:not(.toggle):not(.raised):not(.flat), window.background > box.vertical > toolbar.primary-toolbar > toolitem button.flat.scale, window.background > box.vertical > toolbar.primary-toolbar > toolitem > .linked > button.image-button.raised, window.csd > box.vertical > box.vertical > toolbar.horizontal > toolitem > .linked > button,
 window.csd > box.vertical > box.vertical > toolbar.horizontal > toolitem > box.horizontal > button,
 window.solid-csd > box.vertical > box.vertical > toolbar.horizontal > toolitem > .linked > button,
-window.solid-csd > box.vertical > box.vertical > toolbar.horizontal > toolitem > box.horizontal > button, .nautilus-window headerbar revealer > button, button.titlebutton:not(.suggested-action):not(.destructive-action), filechooser #pathbarbox > stack > box > button, check,
-radio, button.close, button.circular, .inline-toolbar button:not(.text-button) {
+window.solid-csd > box.vertical > box.vertical > toolbar.horizontal > toolitem > box.horizontal > button, .nautilus-window headerbar revealer > button, button.titlebutton:not(.suggested-action):not(.destructive-action), filechooser #pathbarbox > stack > box > button, button.close, button.circular, .inline-toolbar button:not(.text-button) {
   border-radius: 9999px;
 }
 
@@ -1123,8 +1122,7 @@ radio, button.close, button.circular, .inline-toolbar button:not(.text-button) {
 window.background > box.vertical > toolbar.primary-toolbar > toolitem > .linked > button:not(.toggle):not(.raised):not(.flat) label, window.background > box.vertical > toolbar.primary-toolbar > toolitem button.flat.scale label, window.background > box.vertical > toolbar.primary-toolbar > toolitem > .linked > button.image-button.raised label, window.csd > box.vertical > box.vertical > toolbar.horizontal > toolitem > .linked > button label,
 window.csd > box.vertical > box.vertical > toolbar.horizontal > toolitem > box.horizontal > button label,
 window.solid-csd > box.vertical > box.vertical > toolbar.horizontal > toolitem > .linked > button label,
-window.solid-csd > box.vertical > box.vertical > toolbar.horizontal > toolitem > box.horizontal > button label, .nautilus-window headerbar revealer > button label, button.titlebutton:not(.suggested-action):not(.destructive-action) label, filechooser #pathbarbox > stack > box > button label, check label,
-radio label, button.close label, button.circular label, .inline-toolbar button:not(.text-button) label {
+window.solid-csd > box.vertical > box.vertical > toolbar.horizontal > toolitem > box.horizontal > button label, .nautilus-window headerbar revealer > button label, button.titlebutton:not(.suggested-action):not(.destructive-action) label, filechooser #pathbarbox > stack > box > button label, button.close label, button.circular label, .inline-toolbar button:not(.text-button) label {
   padding: 0;
 }
 
@@ -1149,8 +1147,7 @@ button:drop(active) {
 
 .budgie-session-dialog .linked.horizontal > button,
 .budgie-polkit-dialog .linked.horizontal > button,
-.budgie-run-dialog .linked.horizontal > button, .drop-shadow button, .budgie-panel button, .budgie-popover row button, .budgie-settings-window buttonbox.inline-toolbar button, #mate-menu button, #MatePanelPopupWindow button, popover.messagepopover .popover-action-area button, tabbox > tab button, .gedit-search-slider .linked > button, placessidebar.sidebar row button.sidebar-button, calendar.button, .budgie-popover.budgie-menu button.flat:not(.image-button):not(.indicator-item) button.circular, .budgie-popover scrolledwindow.sidebar:not(.categories) list > row.activatable button.circular, treeview.view header button button.circular, filechooser stack.view scrolledwindow treeview.view header button button.circular, row.activatable button.circular, check,
-radio, scrollbar button, notebook > header > tabs > arrow, spinbutton.vertical button, spinbutton:not(.vertical) button, modelbutton.flat,
+.budgie-run-dialog .linked.horizontal > button, .drop-shadow button, .budgie-panel button, .budgie-popover row button, .budgie-settings-window buttonbox.inline-toolbar button, #mate-menu button, #MatePanelPopupWindow button, popover.messagepopover .popover-action-area button, tabbox > tab button, .gedit-search-slider .linked > button, placessidebar.sidebar row button.sidebar-button, calendar.button, .budgie-popover.budgie-menu button.flat:not(.image-button):not(.indicator-item) button.circular, .budgie-popover scrolledwindow.sidebar:not(.categories) list > row.activatable button.circular, treeview.view header button button.circular, filechooser stack.view scrolledwindow treeview.view header button button.circular, row.activatable button.circular, scrollbar button, notebook > header > tabs > arrow, spinbutton.vertical button, spinbutton:not(.vertical) button, modelbutton.flat,
 .menuitem.button.flat, .nemo-window .toolbar button, #buttonbox_frame button, .xfce4-panel.background button, .raven stackswitcher.linked > button, .lock-dialog button, .mate-panel-menu-bar button, window.background.csd.geary-main-window stack#conversation_viewer .geary-expanded > .geary-composer-embed headerbar button,
 window#GearyMainWindow.background.csd stack#conversation_viewer .geary-expanded > .geary-composer-embed headerbar button, layouttabbar button, filechooser #pathbarbox > stack > box > button, messagedialog .dialog-action-box button, messagedialog .dialog-action-box .linked:not(.vertical) > button, .app-notification button, actionbar > revealer > box button:not(.suggested-action):not(.destructive-action), popover.background.menu button,
 popover.background button.model, .nemo-window .primary-toolbar button:not(.text-button), headerbar button:not(.suggested-action):not(.destructive-action), toolbar button, combobox > .linked:not(.vertical) > button:not(:only-child), button.flat {
@@ -1167,8 +1164,7 @@ popover.background button.model, .nemo-window .primary-toolbar button:not(.text-
 
 .budgie-session-dialog .linked.horizontal > button:focus,
 .budgie-polkit-dialog .linked.horizontal > button:focus,
-.budgie-run-dialog .linked.horizontal > button:focus, .drop-shadow button:focus, .budgie-panel button:focus, .budgie-popover row button:focus, .budgie-settings-window buttonbox.inline-toolbar button:focus, #mate-menu button:focus, #MatePanelPopupWindow button:focus, popover.messagepopover .popover-action-area button:focus, tabbox > tab button:focus, .gedit-search-slider .linked > button:focus, placessidebar.sidebar row button.sidebar-button:focus, calendar.button:focus, .budgie-popover.budgie-menu button.flat:not(.image-button):not(.indicator-item) button.circular:focus, .budgie-popover scrolledwindow.sidebar:not(.categories) list > row.activatable button.circular:focus, treeview.view header button button.circular:focus, filechooser stack.view scrolledwindow treeview.view header button button.circular:focus, row.activatable button.circular:focus, check:focus,
-radio:focus, scrollbar button:focus, notebook > header > tabs > arrow:focus, spinbutton.vertical button:focus, spinbutton:not(.vertical) button:focus, modelbutton.flat:focus,
+.budgie-run-dialog .linked.horizontal > button:focus, .drop-shadow button:focus, .budgie-panel button:focus, .budgie-popover row button:focus, .budgie-settings-window buttonbox.inline-toolbar button:focus, #mate-menu button:focus, #MatePanelPopupWindow button:focus, popover.messagepopover .popover-action-area button:focus, tabbox > tab button:focus, .gedit-search-slider .linked > button:focus, placessidebar.sidebar row button.sidebar-button:focus, calendar.button:focus, .budgie-popover.budgie-menu button.flat:not(.image-button):not(.indicator-item) button.circular:focus, .budgie-popover scrolledwindow.sidebar:not(.categories) list > row.activatable button.circular:focus, treeview.view header button button.circular:focus, filechooser stack.view scrolledwindow treeview.view header button button.circular:focus, row.activatable button.circular:focus, scrollbar button:focus, notebook > header > tabs > arrow:focus, spinbutton.vertical button:focus, spinbutton:not(.vertical) button:focus, modelbutton.flat:focus,
 .menuitem.button.flat:focus, .nemo-window .toolbar button:focus, #buttonbox_frame button:focus, .xfce4-panel.background button:focus, .raven stackswitcher.linked > button:focus, .lock-dialog button:focus, .mate-panel-menu-bar button:focus, window.background.csd.geary-main-window stack#conversation_viewer .geary-expanded > .geary-composer-embed headerbar button:focus,
 window#GearyMainWindow.background.csd stack#conversation_viewer .geary-expanded > .geary-composer-embed headerbar button:focus, layouttabbar button:focus, filechooser #pathbarbox > stack > box > button:focus, messagedialog .dialog-action-box button:focus, messagedialog .dialog-action-box .linked:not(.vertical) > button:focus, .app-notification button:focus, actionbar > revealer > box button:focus:not(.suggested-action):not(.destructive-action), popover.background.menu button:focus,
 popover.background button.model:focus, .nemo-window .primary-toolbar button:focus:not(.text-button), headerbar button:focus:not(.suggested-action):not(.destructive-action), toolbar button:focus, combobox > .linked:not(.vertical) > button:focus:not(:only-child), button.flat:focus {
@@ -1178,8 +1174,7 @@ popover.background button.model:focus, .nemo-window .primary-toolbar button:focu
 
 .budgie-session-dialog .linked.horizontal > button:hover,
 .budgie-polkit-dialog .linked.horizontal > button:hover,
-.budgie-run-dialog .linked.horizontal > button:hover, .drop-shadow button:hover, .budgie-panel button:hover, .budgie-popover row button:hover, .budgie-settings-window buttonbox.inline-toolbar button:hover, #mate-menu button:hover, #MatePanelPopupWindow button:hover, popover.messagepopover .popover-action-area button:hover, tabbox > tab button:hover, .gedit-search-slider .linked > button:hover, placessidebar.sidebar row button.sidebar-button:hover, calendar.button:hover, .budgie-popover.budgie-menu button.flat:not(.image-button):not(.indicator-item) button.circular:hover, .budgie-popover scrolledwindow.sidebar:not(.categories) list > row.activatable button.circular:hover, treeview.view header button button.circular:hover, filechooser stack.view scrolledwindow treeview.view header button button.circular:hover, row.activatable button.circular:hover, check:hover,
-radio:hover, scrollbar button:hover, notebook > header > tabs > arrow:hover, spinbutton.vertical button:hover, spinbutton:not(.vertical) button:hover, modelbutton.flat:hover,
+.budgie-run-dialog .linked.horizontal > button:hover, .drop-shadow button:hover, .budgie-panel button:hover, .budgie-popover row button:hover, .budgie-settings-window buttonbox.inline-toolbar button:hover, #mate-menu button:hover, #MatePanelPopupWindow button:hover, popover.messagepopover .popover-action-area button:hover, tabbox > tab button:hover, .gedit-search-slider .linked > button:hover, placessidebar.sidebar row button.sidebar-button:hover, calendar.button:hover, .budgie-popover.budgie-menu button.flat:not(.image-button):not(.indicator-item) button.circular:hover, .budgie-popover scrolledwindow.sidebar:not(.categories) list > row.activatable button.circular:hover, treeview.view header button button.circular:hover, filechooser stack.view scrolledwindow treeview.view header button button.circular:hover, row.activatable button.circular:hover, scrollbar button:hover, notebook > header > tabs > arrow:hover, spinbutton.vertical button:hover, spinbutton:not(.vertical) button:hover, modelbutton.flat:hover,
 .menuitem.button.flat:hover, .nemo-window .toolbar button:hover, #buttonbox_frame button:hover, .xfce4-panel.background button:hover, .raven stackswitcher.linked > button:hover, .lock-dialog button:hover, .mate-panel-menu-bar button:hover, window.background.csd.geary-main-window stack#conversation_viewer .geary-expanded > .geary-composer-embed headerbar button:hover,
 window#GearyMainWindow.background.csd stack#conversation_viewer .geary-expanded > .geary-composer-embed headerbar button:hover, layouttabbar button:hover, filechooser #pathbarbox > stack > box > button:hover, messagedialog .dialog-action-box button:hover, messagedialog .dialog-action-box .linked:not(.vertical) > button:hover, .app-notification button:hover, actionbar > revealer > box button:hover:not(.suggested-action):not(.destructive-action), popover.background.menu button:hover,
 popover.background button.model:hover, .nemo-window .primary-toolbar button:hover:not(.text-button), headerbar button:hover:not(.suggested-action):not(.destructive-action), toolbar button:hover, combobox > .linked:not(.vertical) > button:hover:not(:only-child), button.flat:hover {
@@ -1189,8 +1184,7 @@ popover.background button.model:hover, .nemo-window .primary-toolbar button:hove
 
 .budgie-session-dialog .linked.horizontal > button:active,
 .budgie-polkit-dialog .linked.horizontal > button:active,
-.budgie-run-dialog .linked.horizontal > button:active, .drop-shadow button:active, .budgie-panel button:active, .budgie-popover row button:active, .budgie-settings-window buttonbox.inline-toolbar button:active, #mate-menu button:active, #MatePanelPopupWindow button:active, popover.messagepopover .popover-action-area button:active, tabbox > tab button:active, .gedit-search-slider .linked > button:active, placessidebar.sidebar row button.sidebar-button:active, calendar.button:active, .budgie-popover.budgie-menu button.flat:not(.image-button):not(.indicator-item) button.circular:active, .budgie-popover scrolledwindow.sidebar:not(.categories) list > row.activatable button.circular:active, treeview.view header button button.circular:active, filechooser stack.view scrolledwindow treeview.view header button button.circular:active, row.activatable button.circular:active, check:active,
-radio:active, scrollbar button:active, notebook > header > tabs > arrow:active, spinbutton.vertical button:active, spinbutton:not(.vertical) button:active, modelbutton.flat:active,
+.budgie-run-dialog .linked.horizontal > button:active, .drop-shadow button:active, .budgie-panel button:active, .budgie-popover row button:active, .budgie-settings-window buttonbox.inline-toolbar button:active, #mate-menu button:active, #MatePanelPopupWindow button:active, popover.messagepopover .popover-action-area button:active, tabbox > tab button:active, .gedit-search-slider .linked > button:active, placessidebar.sidebar row button.sidebar-button:active, calendar.button:active, .budgie-popover.budgie-menu button.flat:not(.image-button):not(.indicator-item) button.circular:active, .budgie-popover scrolledwindow.sidebar:not(.categories) list > row.activatable button.circular:active, treeview.view header button button.circular:active, filechooser stack.view scrolledwindow treeview.view header button button.circular:active, row.activatable button.circular:active, scrollbar button:active, notebook > header > tabs > arrow:active, spinbutton.vertical button:active, spinbutton:not(.vertical) button:active, modelbutton.flat:active,
 .menuitem.button.flat:active, .nemo-window .toolbar button:active, #buttonbox_frame button:active, .xfce4-panel.background button:active, .raven stackswitcher.linked > button:active, .lock-dialog button:active, .mate-panel-menu-bar button:active, window.background.csd.geary-main-window stack#conversation_viewer .geary-expanded > .geary-composer-embed headerbar button:active,
 window#GearyMainWindow.background.csd stack#conversation_viewer .geary-expanded > .geary-composer-embed headerbar button:active, layouttabbar button:active, filechooser #pathbarbox > stack > box > button:active, messagedialog .dialog-action-box button:active, messagedialog .dialog-action-box .linked:not(.vertical) > button:active, .app-notification button:active, actionbar > revealer > box button:active:not(.suggested-action):not(.destructive-action), popover.background.menu button:active,
 popover.background button.model:active, .nemo-window .primary-toolbar button:active:not(.text-button), headerbar button:active:not(.suggested-action):not(.destructive-action), toolbar button:active, combobox > .linked:not(.vertical) > button:active:not(:only-child), button.flat:active {
@@ -1204,8 +1198,7 @@ popover.background button.model:active, .nemo-window .primary-toolbar button:act
 
 .budgie-session-dialog .linked.horizontal > button:disabled,
 .budgie-polkit-dialog .linked.horizontal > button:disabled,
-.budgie-run-dialog .linked.horizontal > button:disabled, .drop-shadow button:disabled, .budgie-panel button:disabled, .budgie-popover row button:disabled, .budgie-settings-window buttonbox.inline-toolbar button:disabled, #mate-menu button:disabled, #MatePanelPopupWindow button:disabled, popover.messagepopover .popover-action-area button:disabled, tabbox > tab button:disabled, .gedit-search-slider .linked > button:disabled, placessidebar.sidebar row button.sidebar-button:disabled, calendar.button:disabled, .budgie-popover.budgie-menu button.flat:not(.image-button):not(.indicator-item) button.circular:disabled, .budgie-popover scrolledwindow.sidebar:not(.categories) list > row.activatable button.circular:disabled, treeview.view header button button.circular:disabled, filechooser stack.view scrolledwindow treeview.view header button button.circular:disabled, row.activatable button.circular:disabled, check:disabled,
-radio:disabled, scrollbar button:disabled, notebook > header > tabs > arrow:disabled, spinbutton.vertical button:disabled, spinbutton:not(.vertical) button:disabled, modelbutton.flat:disabled,
+.budgie-run-dialog .linked.horizontal > button:disabled, .drop-shadow button:disabled, .budgie-panel button:disabled, .budgie-popover row button:disabled, .budgie-settings-window buttonbox.inline-toolbar button:disabled, #mate-menu button:disabled, #MatePanelPopupWindow button:disabled, popover.messagepopover .popover-action-area button:disabled, tabbox > tab button:disabled, .gedit-search-slider .linked > button:disabled, placessidebar.sidebar row button.sidebar-button:disabled, calendar.button:disabled, .budgie-popover.budgie-menu button.flat:not(.image-button):not(.indicator-item) button.circular:disabled, .budgie-popover scrolledwindow.sidebar:not(.categories) list > row.activatable button.circular:disabled, treeview.view header button button.circular:disabled, filechooser stack.view scrolledwindow treeview.view header button button.circular:disabled, row.activatable button.circular:disabled, scrollbar button:disabled, notebook > header > tabs > arrow:disabled, spinbutton.vertical button:disabled, spinbutton:not(.vertical) button:disabled, modelbutton.flat:disabled,
 .menuitem.button.flat:disabled, .nemo-window .toolbar button:disabled, #buttonbox_frame button:disabled, .xfce4-panel.background button:disabled, .raven stackswitcher.linked > button:disabled, .lock-dialog button:disabled, .mate-panel-menu-bar button:disabled, window.background.csd.geary-main-window stack#conversation_viewer .geary-expanded > .geary-composer-embed headerbar button:disabled,
 window#GearyMainWindow.background.csd stack#conversation_viewer .geary-expanded > .geary-composer-embed headerbar button:disabled, layouttabbar button:disabled, filechooser #pathbarbox > stack > box > button:disabled, messagedialog .dialog-action-box button:disabled, messagedialog .dialog-action-box .linked:not(.vertical) > button:disabled, .app-notification button:disabled, actionbar > revealer > box button:disabled:not(.suggested-action):not(.destructive-action), popover.background.menu button:disabled,
 popover.background button.model:disabled, .nemo-window .primary-toolbar button:disabled:not(.text-button), headerbar button:disabled:not(.suggested-action):not(.destructive-action), toolbar button:disabled, combobox > .linked:not(.vertical) > button:disabled:not(:only-child), button.flat:disabled {
@@ -2976,43 +2969,59 @@ radiobutton.text-button label:not(:only-child) {
 
 check,
 radio {
-  min-height: 24px;
-  min-width: 24px;
-  margin: -4px;
-  padding: 4px;
-}
-
-check, check:focus,
-radio,
-radio:focus {
-  color: alpha(currentColor, 0.08);
+  min-height: 20px;
+  min-width: 20px;
+  margin: 3px;
+  padding: 0;
+  border-radius: 9999px;
+  color: transparent;
+  background-color: rgba(0, 0, 0, 0.12);
+  transition: all 75ms cubic-bezier(0, 0, 0.2, 1), box-shadow 150ms cubic-bezier(0, 0, 0.2, 1);
 }
 
 check:hover,
 radio:hover {
-  color: alpha(currentColor, 0.16);
+  box-shadow: 0 0 0 6px rgba(0, 0, 0, 0.04);
+  background-color: rgba(0, 0, 0, 0.15);
+}
+
+check:active,
+radio:active {
+  box-shadow: 0 0 0 6px rgba(0, 0, 0, 0.12);
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+check:disabled,
+radio:disabled {
+  background-color: rgba(0, 0, 0, 0.04);
 }
 
 check:checked, check:indeterminate,
 radio:checked,
 radio:indeterminate {
-  color: #3c84f7;
+  color: white;
+  background-color: #3c84f7;
+}
+
+check:checked:hover, check:indeterminate:hover,
+radio:checked:hover,
+radio:indeterminate:hover {
+  box-shadow: 0 0 0 6px rgba(60, 132, 247, 0.15);
+  background-color: #6da3f9;
+}
+
+check:checked:active, check:indeterminate:active,
+radio:checked:active,
+radio:indeterminate:active {
+  box-shadow: 0 0 0 6px rgba(60, 132, 247, 0.2);
+  background-color: #3c84f7;
 }
 
 check:checked:disabled, check:indeterminate:disabled,
 radio:checked:disabled,
 radio:indeterminate:disabled {
-  color: rgba(0, 0, 0, 0.26);
-}
-
-check:disabled,
-radio:disabled {
-  color: alpha(currentColor, 0.05);
-}
-
-check:not(:hover):focus,
-radio:not(:hover):focus {
-  box-shadow: inset 0 0 0 9999px transparent;
+  color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(60, 132, 247, 0.35);
 }
 
 popover modelbutton.flat check, popover modelbutton.flat check:focus, popover modelbutton.flat check:hover, popover modelbutton.flat check:focus:hover, popover modelbutton.flat check:active, popover modelbutton.flat check:disabled, popover modelbutton.flat radio, popover modelbutton.flat radio:focus, popover modelbutton.flat radio:hover, popover modelbutton.flat radio:focus:hover, popover modelbutton.flat radio:active, popover modelbutton.flat radio:disabled {
@@ -3022,13 +3031,13 @@ popover modelbutton.flat check, popover modelbutton.flat check:focus, popover mo
 }
 
 popover modelbutton.flat check.left:dir(rtl), popover modelbutton.flat radio.left:dir(rtl) {
-  margin-left: -12px;
-  margin-right: -4px;
+  margin-left: -3px;
+  margin-right: 6px;
 }
 
 popover modelbutton.flat check.right:dir(ltr), popover modelbutton.flat radio.right:dir(ltr) {
-  margin-left: -4px;
-  margin-right: -12px;
+  margin-left: 6px;
+  margin-right: -3px;
 }
 
 menu menuitem check, menu menuitem radio {
@@ -3038,20 +3047,17 @@ menu menuitem check, menu menuitem radio {
 }
 
 menu menuitem check:dir(ltr), menu menuitem radio:dir(ltr) {
-  margin-right: 8px;
+  margin-right: 6px;
+  margin-left: -3px;
 }
 
 menu menuitem check:dir(rtl), menu menuitem radio:dir(rtl) {
-  margin-left: 8px;
+  margin-left: 6px;
+  margin-right: -3px;
 }
 
-menu menuitem check, menu menuitem check:hover, menu menuitem check:disabled, menu menuitem radio, menu menuitem radio:hover, menu menuitem radio:disabled {
+menu menuitem check, menu menuitem check:hover, menu menuitem check:disabled, menu menuitem check:checked:hover, menu menuitem check:indeterminate:hover, menu menuitem radio, menu menuitem radio:hover, menu menuitem radio:disabled, menu menuitem radio:checked:hover, menu menuitem radio:indeterminate:hover {
   box-shadow: none;
-}
-
-
-check {
-  -gtk-icon-source: -gtk-recolor(url("assets/scalable/checkbox-unchecked-symbolic.svg"));
 }
 
 
@@ -3062,11 +3068,6 @@ check:checked {
 
 check:indeterminate {
   -gtk-icon-source: -gtk-recolor(url("assets/scalable/checkbox-mixed-symbolic.svg"));
-}
-
-
-radio {
-  -gtk-icon-source: -gtk-recolor(url("assets/scalable/radio-unchecked-symbolic.svg"));
 }
 
 
@@ -3083,8 +3084,6 @@ radio:indeterminate {
 menu menuitem check {
   min-height: 16px;
   min-width: 16px;
-  border-radius: 6px;
-  -gtk-icon-source: -gtk-recolor(url("assets/scalable/small-checkbox-unchecked-symbolic.svg"));
 }
 
 #MozillaGtkWidget > widget > checkbutton > check:checked,
@@ -3101,8 +3100,6 @@ menu menuitem check:indeterminate {
 menu menuitem radio {
   min-height: 16px;
   min-width: 16px;
-  border-image: none;
-  -gtk-icon-source: -gtk-recolor(url("assets/scalable/small-radio-unchecked-symbolic.svg"));
 }
 
 #MozillaGtkWidget > widget > radiobutton > radio:checked,
@@ -3124,76 +3121,23 @@ radio:not(:checked):indeterminate:active {
   -gtk-icon-transform: scaleX(-1);
 }
 
-check:not(:checked),
-radio:not(:checked) {
-  transition: all 75ms cubic-bezier(0, 0, 0.2, 1), background-size 300ms cubic-bezier(0, 0, 0.2, 1), background-image 1200ms cubic-bezier(0, 0, 0.2, 1), -gtk-icon-transform 0;
-}
-
-check:not(:checked):active,
-radio:not(:checked):active {
-  transition: all 75ms cubic-bezier(0, 0, 0.2, 1), background-size 0, background-image 0, -gtk-icon-transform 0;
-}
-
-menu menuitem check:not(:checked), menu menuitem radio:not(:checked) {
-  transition: none;
-}
-
-treeview.view check, filechooser stack.view scrolledwindow treeview.view check,
-treeview.view radio,
-filechooser stack.view scrolledwindow treeview.view radio {
+treeview.view radio, filechooser stack.view scrolledwindow treeview.view radio, treeview.view check, filechooser stack.view scrolledwindow treeview.view check {
   padding: 0;
+  margin: 0;
 }
 
-treeview.view check:hover, filechooser stack.view scrolledwindow treeview.view check:hover, treeview.view check:selected, filechooser stack.view scrolledwindow treeview.view check:selected,
-treeview.view radio:hover,
-filechooser stack.view scrolledwindow treeview.view radio:hover,
-treeview.view radio:selected,
-filechooser stack.view scrolledwindow treeview.view radio:selected {
+treeview.view radio:not(:hover):not(:disabled):not(:checked):not(:indeterminate), filechooser stack.view scrolledwindow treeview.view radio:not(:hover):not(:disabled):not(:checked):not(:indeterminate), treeview.view check:not(:hover):not(:disabled):not(:checked):not(:indeterminate), filechooser stack.view scrolledwindow treeview.view check:not(:hover):not(:disabled):not(:checked):not(:indeterminate) {
+  background-color: rgba(0, 0, 0, 0.12);
+}
+
+treeview.view radio, filechooser stack.view scrolledwindow treeview.view radio, treeview.view radio:hover, filechooser stack.view scrolledwindow treeview.view radio:hover, treeview.view radio:disabled, filechooser stack.view scrolledwindow treeview.view radio:disabled, treeview.view radio:checked:hover, filechooser stack.view scrolledwindow treeview.view radio:checked:hover, treeview.view radio:indeterminate:hover, filechooser stack.view scrolledwindow treeview.view radio:indeterminate:hover, treeview.view check, filechooser stack.view scrolledwindow treeview.view check, treeview.view check:hover, filechooser stack.view scrolledwindow treeview.view check:hover, treeview.view check:disabled, filechooser stack.view scrolledwindow treeview.view check:disabled, treeview.view check:checked:hover, filechooser stack.view scrolledwindow treeview.view check:checked:hover, treeview.view check:indeterminate:hover, filechooser stack.view scrolledwindow treeview.view check:indeterminate:hover {
   box-shadow: none;
-  background-color: transparent;
 }
 
-treeview.view check, filechooser stack.view scrolledwindow treeview.view check, treeview.view check:focus, filechooser stack.view scrolledwindow treeview.view check:focus, treeview.view check:selected, filechooser stack.view scrolledwindow treeview.view check:selected,
-treeview.view radio,
-filechooser stack.view scrolledwindow treeview.view radio,
-treeview.view radio:focus,
-filechooser stack.view scrolledwindow treeview.view radio:focus,
-treeview.view radio:selected,
-filechooser stack.view scrolledwindow treeview.view radio:selected {
-  color: alpha(currentColor, 0.08);
-}
-
-treeview.view check:hover, filechooser stack.view scrolledwindow treeview.view check:hover,
-treeview.view radio:hover,
-filechooser stack.view scrolledwindow treeview.view radio:hover {
-  color: alpha(currentColor, 0.16);
-}
-
-treeview.view check:checked, filechooser stack.view scrolledwindow treeview.view check:checked, treeview.view check:indeterminate, filechooser stack.view scrolledwindow treeview.view check:indeterminate,
-treeview.view radio:checked,
-filechooser stack.view scrolledwindow treeview.view radio:checked,
-treeview.view radio:indeterminate,
-filechooser stack.view scrolledwindow treeview.view radio:indeterminate {
-  color: #3c84f7;
-}
-
-treeview.view check:checked:disabled, filechooser stack.view scrolledwindow treeview.view check:checked:disabled, treeview.view check:indeterminate:disabled, filechooser stack.view scrolledwindow treeview.view check:indeterminate:disabled,
-treeview.view radio:checked:disabled,
-filechooser stack.view scrolledwindow treeview.view radio:checked:disabled,
-treeview.view radio:indeterminate:disabled,
-filechooser stack.view scrolledwindow treeview.view radio:indeterminate:disabled {
-  color: rgba(0, 0, 0, 0.26);
-}
-
-treeview.view check:disabled, filechooser stack.view scrolledwindow treeview.view check:disabled,
-treeview.view radio:disabled,
-filechooser stack.view scrolledwindow treeview.view radio:disabled {
-  color: alpha(currentColor, 0.05);
-}
-
-treeview.view radio:checked, filechooser stack.view scrolledwindow treeview.view radio:checked {
-  -gtk-icon-source: -gtk-recolor(url("assets/scalable/radio-checked-symbolic.svg"));
-  border-image: none;
+treeview.view:selected radio:checked, filechooser stack.view scrolledwindow treeview.view:selected radio:checked, treeview.view:selected radio:indeterminate, filechooser stack.view scrolledwindow treeview.view:selected radio:indeterminate, treeview.view:selected check:checked, filechooser stack.view scrolledwindow treeview.view:selected check:checked, treeview.view:selected check:indeterminate, filechooser stack.view scrolledwindow treeview.view:selected check:indeterminate, treeview.view:selected:focused radio:checked, filechooser stack.view scrolledwindow treeview.view:selected:focused radio:checked, treeview.view:selected:focused radio:indeterminate, filechooser stack.view scrolledwindow treeview.view:selected:focused radio:indeterminate, treeview.view:selected:focused check:checked, filechooser stack.view scrolledwindow treeview.view:selected:focused check:checked, treeview.view:selected:focused check:indeterminate, filechooser stack.view scrolledwindow treeview.view:selected:focused check:indeterminate {
+  background-color: #3c84f7;
+  color: white;
+  background-image: none;
 }
 
 /************

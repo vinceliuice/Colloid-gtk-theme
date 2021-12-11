@@ -21,14 +21,14 @@
      inkscape:pageshadow="2"
      inkscape:pageopacity="0.0"
      inkscape:pagecheckerboard="0"
-     showgrid="true"
-     inkscape:zoom="44.75"
-     inkscape:cx="6.424581"
-     inkscape:cy="8"
+     showgrid="false"
+     inkscape:zoom="22.375"
+     inkscape:cx="7.150838"
+     inkscape:cy="13.810056"
      inkscape:window-width="1920"
-     inkscape:window-height="1010"
+     inkscape:window-height="1012"
      inkscape:window-x="0"
-     inkscape:window-y="34"
+     inkscape:window-y="32"
      inkscape:window-maximized="1"
      inkscape:current-layer="svg4">
     <inkscape:grid
@@ -37,5 +37,6 @@
   </sodipodi:namedview>
   <path
      id="path2"
-     d="M 8 0 C 3.581722 0 0 3.581722 0 8 C 0 12.418278 3.581722 16 8 16 C 12.418278 16 16 12.418278 16 8 C 16 3.581722 12.418278 0 8 0 z M 4.5 8 L 11.5 8 C 11.777 8 12 8.223 12 8.5 C 12 8.777 11.777 9 11.5 9 L 4.5 9 C 4.223 9 4 8.777 4 8.5 C 4 8.223 4.223 8 4.5 8 z " />
+     d="m 4.5,8 h 7 C 11.777,8 12,8.223 12,8.5 12,8.777 11.777,9 11.5,9 h -7 C 4.223,9 4,8.777 4,8.5 4,8.223 4.223,8 4.5,8 Z"
+     sodipodi:nodetypes="sssssss" />
 </svg>
