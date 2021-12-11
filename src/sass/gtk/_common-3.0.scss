@@ -1131,10 +1131,10 @@ searchbar > revealer > box {
   color: $titlebar-text;
   border-radius: $window-radius $window-radius 0 0;
 
-  @if $variant == 'dark' {
-    box-shadow: inset 0 -1px $border;
+  @if $variant == 'light' or $rimless == 'true' {
+    box-shadow: inset 0 -1px $border, inset 0 1px highlight($titlebar);
   } @else {
-    box-shadow: inset 0 1px highlight($titlebar), inset 0 -1px $border;
+    box-shadow: inset 0 -1px $border;
   }
 
   &:disabled { color: $titlebar-text-disabled; }
@@ -1168,6 +1168,37 @@ searchbar > revealer > box {
   .titlebar {
     background-color: transparent;
     box-shadow: none;
+  }
+
+  // separator between headerbars
+  + separator, + separator.sidebar {
+    background-color: $titlebar;
+    background-image: none;
+    transition: all $duration $ease-out;
+
+    @if $variant == 'light' or $rimless == 'true' {
+      box-shadow: inset 0 -1px $border, inset 0 1px highlight($titlebar);
+    } @else {
+      box-shadow: inset 0 -1px $border;
+    }
+
+    &:backdrop {
+      background-color: $titlebar-backdrop;
+    }
+  }
+
+  &.selection-mode + separator, &.selection-mode + separator.sidebar,
+  .selection-mode & + separator, .selection-mode & + separator.sidebar {
+    background-color: $primary;
+
+    &:backdrop {
+      background-color: $primary;
+    }
+  }
+
+  .background.csd.unified & + separator,
+  .background.csd.unified & + separator.sidebar { // reset
+    box-shadow: inset 0 -1px $border;
   }
 
   entry { @extend %titlebar-entry; }
@@ -1348,27 +1379,6 @@ headerbar {
     margin-top: $large-size / 4;
     margin-bottom: $large-size / 4;
     background-color: transparent;
-  }
-
-  + separator, + separator.sidebar {
-    background-color: $titlebar;
-    background-image: none;
-    box-shadow: inset 0 -1px $border;
-    transition: all $duration $ease-out;
-
-    &:backdrop {
-      background-color: $titlebar-backdrop;
-    }
-  }
-
-  &.selection-mode + separator, &.selection-mode + separator.sidebar,
-  .selection-mode & + separator, .selection-mode & + separator.sidebar {
-    background-color: $primary;
-    box-shadow: inset 0 -1px $border;
-
-    &:backdrop {
-      background-color: $primary;
-    }
   }
 
   switch {
@@ -1755,12 +1765,18 @@ popover.background {
       box-shadow: $shadow-z4;
 
       &:backdrop { box-shadow: $shadow-z2; }
-    } @else {
+    } @else if $variant == 'dark' {
       border: 1px solid highlight($surface);
       box-shadow: $shadow-z4, 0 0 0 1px $window-border;
       background-clip: border-box;
 
       &:backdrop { box-shadow: $shadow-z2, 0 0 0 1px $window-border; }
+    } @else {
+      border: 1px solid rgba(black, 0.25);
+      box-shadow: $shadow-z4;
+      background-clip: padding-box;
+
+      &:backdrop { box-shadow: $shadow-z2; }
     }
   }
 

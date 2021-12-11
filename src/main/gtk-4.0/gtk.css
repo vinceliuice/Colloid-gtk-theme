@@ -245,11 +245,6 @@ entry:disabled {
   color: rgba(0, 0, 0, 0.38);
 }
 
-spinbutton.search.vertical, spinbutton.search:not(.vertical),
-entry.search {
-  border-radius: 9999px;
-}
-
 spinbutton.flat.vertical, spinbutton.flat:not(.vertical),
 entry.flat {
   min-height: 0;
@@ -1811,11 +1806,6 @@ menubar > item label:disabled {
   color: inherit;
 }
 
-menubar > item popover.menu.background > contents {
-  padding: 12px;
-  border-radius: 12px;
-}
-
 menubar > item popover.menu popover.menu {
   margin-left: 9px;
 }
@@ -1912,29 +1902,28 @@ popover.background, popover.background:backdrop {
   background-color: transparent;
 }
 
-popover.background > arrow {
-  border: none;
-  background: none;
-  padding: 0;
-  -gtk-icon-size: 0;
-  height: 0;
-}
-
+popover.background > arrow,
 popover.background > contents {
   transition: box-shadow 75ms cubic-bezier(0, 0, 0.2, 1);
   padding: 6px;
   background-color: #FFFFFF;
   border-radius: 12px;
-  border: none;
-  outline-color: rgba(255, 255, 255, 0.15);
-  outline-offset: -1px;
-  outline-style: solid;
-  outline-width: 1px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background-clip: border-box;
   box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.12), 0 2px 2.4px -1px rgba(0, 0, 0, 0.2), 0 4px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 6px 0 rgba(0, 0, 0, 0.12);
 }
 
+popover.background > arrow:backdrop,
 popover.background > contents:backdrop {
   box-shadow: 0 3px 2px -3px rgba(0, 0, 0, 0.3), 0 2px 2px -1px rgba(0, 0, 0, 0.24), 0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 0 0 1px rgba(0, 0, 0, 0.12);
+}
+
+popover.background > arrow {
+  border: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+popover.background > contents {
+  border: none;
 }
 
 popover.background > contents > list,
@@ -4568,7 +4557,7 @@ popover.emoji-picker > contents {
 button.emoji-section {
   margin: 0;
   padding: 6px;
-  border-radius: 3px;
+  border-radius: 6px;
 }
 
 button.emoji-section:checked {

@@ -1868,6 +1868,29 @@ searchbar > revealer > box {
   box-shadow: none;
 }
 
+.titlebar + separator, .titlebar + separator.sidebar {
+  background-color: #242424;
+  background-image: none;
+  transition: all 75ms cubic-bezier(0, 0, 0.2, 1);
+  box-shadow: inset 0 -1px rgba(255, 255, 255, 0.12);
+}
+
+.titlebar + separator:backdrop, .titlebar + separator.sidebar:backdrop {
+  background-color: #2C2C2C;
+}
+
+.titlebar.selection-mode + separator, .titlebar.selection-mode + separator.sidebar, .selection-mode .titlebar + separator, .selection-mode .titlebar + separator.sidebar {
+  background-color: #5b9bf8;
+}
+
+.titlebar.selection-mode + separator:backdrop, .titlebar.selection-mode + separator.sidebar:backdrop, .selection-mode .titlebar + separator:backdrop, .selection-mode .titlebar + separator.sidebar:backdrop {
+  background-color: #5b9bf8;
+}
+
+.background.csd.unified .titlebar + separator, .background.csd.unified .titlebar + separator.sidebar {
+  box-shadow: inset 0 -1px rgba(255, 255, 255, 0.12);
+}
+
 .titlebar .linked:not(.vertical) > entry {
   border-radius: 6px;
   margin-left: 3px;
@@ -2018,26 +2041,6 @@ headerbar separator.titlebutton {
   margin-top: 12px;
   margin-bottom: 12px;
   background-color: transparent;
-}
-
-headerbar + separator, headerbar + separator.sidebar {
-  background-color: #242424;
-  background-image: none;
-  box-shadow: inset 0 -1px rgba(255, 255, 255, 0.12);
-  transition: all 75ms cubic-bezier(0, 0, 0.2, 1);
-}
-
-headerbar + separator:backdrop, headerbar + separator.sidebar:backdrop {
-  background-color: #2C2C2C;
-}
-
-headerbar.selection-mode + separator, headerbar.selection-mode + separator.sidebar, .selection-mode headerbar + separator, .selection-mode headerbar + separator.sidebar {
-  background-color: #5b9bf8;
-  box-shadow: inset 0 -1px rgba(255, 255, 255, 0.12);
-}
-
-headerbar.selection-mode + separator:backdrop, headerbar.selection-mode + separator.sidebar:backdrop, .selection-mode headerbar + separator:backdrop, .selection-mode headerbar + separator.sidebar:backdrop {
-  background-color: #5b9bf8;
 }
 
 headerbar switch {

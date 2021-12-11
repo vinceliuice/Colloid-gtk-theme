@@ -256,7 +256,7 @@ entry {
 
     &:disabled { @include entry(disabled); }
 
-    &.search { border-radius: $circular-radius; }
+    // &.search { border-radius: $circular-radius; }
 
     &.flat {
       min-height: 0;
@@ -1582,7 +1582,7 @@ menubar {
   > item {
     transition: $transition;
     min-height: 20px;
-    padding: 4px 8px;
+    padding: $space-size - 2px $space-size + 2px;
     color: $titlebar-text-secondary;
 
     &:selected { // Seems like it :hover even with keyboard focus
@@ -1596,14 +1596,9 @@ menubar {
     label:disabled { color: inherit; } // to inherit the above color
   }
 
-  & > item popover.menu.background > contents {
-    padding: $menu-radius;
-    border-radius: $menu-radius;
-  }
-
   //nested submenus
   & > item popover.menu popover.menu {
-    margin-left: $space-size*1.5;
+    margin-left: $space-size * 1.5;
   }
 
   & > item popover.menu.background popover.menu.background > contents {
@@ -1699,28 +1694,19 @@ popover.background {
     background-color: transparent;
   }
 
-  > arrow {
-    border: none;
-    background: none;
-    padding: 0;
-    -gtk-icon-size: 0;
-    height: 0;
-  }
-
+  > arrow,
   > contents {
     transition: $transition-shadow;
     padding: $space-size;
     background-color: $surface;
     border-radius: $menu-radius;
-    border: none;
-    outline-color: highlight($surface);
-    outline-offset: -1px;
-    outline-style: solid;
-    outline-width: 1px;
 
     @if $rimless == 'true' {
+      border: none;
       box-shadow: $shadow-z4;
     } @else {
+      border: 1px solid highlight($surface);
+      background-clip: border-box;
       box-shadow: 0 0 0 1px $window-border, $shadow-z4;
     }
 
@@ -1730,6 +1716,16 @@ popover.background {
       } @else {
         box-shadow: $shadow-z2, 0 0 0 1px $window-border;
       }
+    }
+  }
+
+  @if $rimless == 'false' and $variant == 'light' {
+    > arrow {
+      border: 1px solid $window-border;
+    }
+
+    > contents {
+      border: none;
     }
   }
 
@@ -4279,7 +4275,7 @@ popover.emoji-picker {
 
 .emoji-toolbar {
   padding: 0;
-  border-spacing: $space-size/2;
+  border-spacing: $space-size / 2;
   border-top: 1px solid $divider;
   background: none;
 }
@@ -4287,7 +4283,7 @@ popover.emoji-picker {
 button.emoji-section {
   margin: 0;
   padding: $space-size;
-  border-radius: $corner-radius -$space-size/2;
+  border-radius: $corner-radius;
 
   &:checked {
     color: $primary;
@@ -4308,7 +4304,7 @@ popover.emoji-picker emoji {
 
 emoji-completion-row {
   min-height: $menuitem-size;
-  padding: 0 $space-size*2;
+  padding: 0 $space-size * 2;
 
   > box {
     border-spacing: $space-size;

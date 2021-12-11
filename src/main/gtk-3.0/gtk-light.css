@@ -1826,7 +1826,7 @@ searchbar > revealer > box {
   background-color: #FAFAFA;
   color: rgba(0, 0, 0, 0.87);
   border-radius: 12px 12px 0 0;
-  box-shadow: inset 0 1px rgba(255, 255, 255, 0.15), inset 0 -1px rgba(0, 0, 0, 0.12);
+  box-shadow: inset 0 -1px rgba(0, 0, 0, 0.12), inset 0 1px rgba(255, 255, 255, 0.15);
 }
 
 .titlebar:disabled {
@@ -1866,6 +1866,29 @@ searchbar > revealer > box {
 .titlebar .titlebar {
   background-color: transparent;
   box-shadow: none;
+}
+
+.titlebar + separator, .titlebar + separator.sidebar {
+  background-color: #FAFAFA;
+  background-image: none;
+  transition: all 75ms cubic-bezier(0, 0, 0.2, 1);
+  box-shadow: inset 0 -1px rgba(0, 0, 0, 0.12), inset 0 1px rgba(255, 255, 255, 0.15);
+}
+
+.titlebar + separator:backdrop, .titlebar + separator.sidebar:backdrop {
+  background-color: #FFFFFF;
+}
+
+.titlebar.selection-mode + separator, .titlebar.selection-mode + separator.sidebar, .selection-mode .titlebar + separator, .selection-mode .titlebar + separator.sidebar {
+  background-color: #3c84f7;
+}
+
+.titlebar.selection-mode + separator:backdrop, .titlebar.selection-mode + separator.sidebar:backdrop, .selection-mode .titlebar + separator:backdrop, .selection-mode .titlebar + separator.sidebar:backdrop {
+  background-color: #3c84f7;
+}
+
+.background.csd.unified .titlebar + separator, .background.csd.unified .titlebar + separator.sidebar {
+  box-shadow: inset 0 -1px rgba(0, 0, 0, 0.12);
 }
 
 .titlebar .linked:not(.vertical) > entry {
@@ -2018,26 +2041,6 @@ headerbar separator.titlebutton {
   margin-top: 12px;
   margin-bottom: 12px;
   background-color: transparent;
-}
-
-headerbar + separator, headerbar + separator.sidebar {
-  background-color: #FAFAFA;
-  background-image: none;
-  box-shadow: inset 0 -1px rgba(0, 0, 0, 0.12);
-  transition: all 75ms cubic-bezier(0, 0, 0.2, 1);
-}
-
-headerbar + separator:backdrop, headerbar + separator.sidebar:backdrop {
-  background-color: #FFFFFF;
-}
-
-headerbar.selection-mode + separator, headerbar.selection-mode + separator.sidebar, .selection-mode headerbar + separator, .selection-mode headerbar + separator.sidebar {
-  background-color: #3c84f7;
-  box-shadow: inset 0 -1px rgba(0, 0, 0, 0.12);
-}
-
-headerbar.selection-mode + separator:backdrop, headerbar.selection-mode + separator.sidebar:backdrop, .selection-mode headerbar + separator:backdrop, .selection-mode headerbar + separator.sidebar:backdrop {
-  background-color: #3c84f7;
 }
 
 headerbar switch {
@@ -2494,13 +2497,13 @@ popover.background {
 }
 
 popover.background, .csd popover.background {
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  box-shadow: 0 2px 2.4px -1px rgba(0, 0, 0, 0.2), 0 4px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 6px 0 rgba(0, 0, 0, 0.12), 0 0 0 1px rgba(0, 0, 0, 0.12);
-  background-clip: border-box;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  box-shadow: 0 2px 2.4px -1px rgba(0, 0, 0, 0.2), 0 4px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 6px 0 rgba(0, 0, 0, 0.12);
+  background-clip: padding-box;
 }
 
 popover.background:backdrop, .csd popover.background:backdrop {
-  box-shadow: 0 3px 2px -3px rgba(0, 0, 0, 0.3), 0 2px 2px -1px rgba(0, 0, 0, 0.24), 0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 0 0 1px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 3px 2px -3px rgba(0, 0, 0, 0.3), 0 2px 2px -1px rgba(0, 0, 0, 0.24), 0 1px 3px 0 rgba(0, 0, 0, 0.12);
 }
 
 popover.background > stack {
