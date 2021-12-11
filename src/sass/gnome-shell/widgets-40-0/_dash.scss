@@ -3,7 +3,7 @@ $dash_placeholder_size: 32px;
 $dash_padding: 10px; // 10px
 $dash_spacing: 2px;
 $dash_bottom_margin: 16px;
-$dash_border_radius: $base_radius + $dash_padding;
+$dash_border_radius: $icon_radius + $dash_padding - $dash_spacing;
 
 #dash {
   margin-top: $base_spacing * 2;
@@ -25,6 +25,7 @@ $dash_border_radius: $base_radius + $dash_padding;
   margin-bottom: $dash_bottom_margin;
   padding: $dash_padding;
   border-radius: $dash_border_radius;
+  box-shadow: inset 0 1px rgba(white, 0.08);
 }
 
 // Dash Items

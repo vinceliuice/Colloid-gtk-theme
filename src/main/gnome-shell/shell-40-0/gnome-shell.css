@@ -51,7 +51,7 @@ stage {
 .app-well-app .overview-icon,
 .grid-search-result .overview-icon {
   color: rgba(255, 255, 255, 0.7);
-  border-radius: 9px;
+  border-radius: 16px;
   padding: 6px;
   border: none;
   transition-duration: 100ms;
@@ -80,7 +80,7 @@ stage {
 }
 
 .app-well-app.app-folder {
-  border-radius: 12px;
+  border-radius: 16px;
 }
 
 .app-well-app.app-folder, .app-well-app.app-folder:hover, .app-well-app.app-folder:active {
@@ -89,7 +89,7 @@ stage {
 
 .app-well-app.app-folder .overview-icon {
   background-color: rgba(255, 255, 255, 0.12);
-  border-radius: 12px;
+  border-radius: 16px;
 }
 
 .app-well-app.app-folder:hover .overview-icon {
@@ -2991,7 +2991,8 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   background-color: rgba(255, 255, 255, 0.3);
   margin-bottom: 16px;
   padding: 10px;
-  border-radius: 16px;
+  border-radius: 24px;
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.08);
 }
 
 .dash-item-container .app-well-app, .show-apps {

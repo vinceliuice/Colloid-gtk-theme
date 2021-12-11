@@ -6,7 +6,7 @@
 %app-well-app {
   & .overview-icon {
     color: on($osd, secondary);
-    border-radius: $base_radius * 1.5;
+    border-radius: $icon_radius;
     padding: $base_padding;
     border: none;
     transition-duration: 100ms;
@@ -30,7 +30,7 @@
 
 // App Folders
 .app-well-app.app-folder {
-  border-radius: $base_radius * 2;
+  border-radius: $icon_radius;
 
   &, &:hover, &:active {
     background-color: transparent;
@@ -38,7 +38,7 @@
 
   .overview-icon {
     background-color: on(black, divider);
-    border-radius: $base_radius * 2;
+    border-radius: $icon_radius;
   }
 
   &:hover .overview-icon {
