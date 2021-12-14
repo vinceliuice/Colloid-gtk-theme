@@ -588,9 +588,15 @@ window.background.csd {
               background-color: transparent;
             }
           }
+
+          separator { @extend %hide_separators; }
         }
       }
     }
+  }
+
+  hdycolumn stack frame.view > stack > stack list > separator {
+    background-color: $border;
   }
 }
 

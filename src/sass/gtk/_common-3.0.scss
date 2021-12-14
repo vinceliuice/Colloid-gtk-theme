@@ -1375,7 +1375,7 @@ headerbar {
     @extend %titlebar-button;
   }
 
-  separator.titlebutton {
+  separator.titlebutton, separator.sidebar {
     margin-top: $large-size / 4;
     margin-bottom: $large-size / 4;
     background-color: transparent;

@@ -2484,7 +2484,7 @@ headerbar > box.right {
   padding: 0 6px;
 }
 
-headerbar separator.titlebutton {
+headerbar separator.titlebutton, headerbar separator.sidebar {
   margin-top: 12px;
   margin-bottom: 12px;
   background-color: transparent;
@@ -4162,7 +4162,9 @@ separator {
   background-color: rgba(255, 255, 255, 0.12);
 }
 
-preferences stacksidebar.sidebar list separator, hdyleaflet > box.vertical > scrolledwindow > viewport.frame list:not(.view):not(.tweak-group) separator, leaflet > box.vertical > scrolledwindow > viewport.frame list:not(.view):not(.tweak-group) separator, box.horizontal > stack.background > box.vertical > scrolledwindow > viewport.frame list:not(.view):not(.tweak-group) separator, .tweak-categories separator, placessidebar.sidebar list > separator, stacksidebar.sidebar + separator.vertical,
+preferences stacksidebar.sidebar list separator, hdyleaflet > box.vertical > scrolledwindow > viewport.frame list:not(.view):not(.tweak-group) separator, leaflet > box.vertical > scrolledwindow > viewport.frame list:not(.view):not(.tweak-group) separator, box.horizontal > stack.background > box.vertical > scrolledwindow > viewport.frame list:not(.view):not(.tweak-group) separator, window.background.csd > leaflet > box.vertical > scrolledwindow.view > viewport.frame > stack list separator,
+window.background.csd > hdyleaflet > box.vertical > scrolledwindow.view > viewport.frame > stack list separator,
+window.background.csd > box.horizontal > box.vertical > scrolledwindow.view > viewport.frame > stack list separator, .tweak-categories separator, placessidebar.sidebar list > separator, stacksidebar.sidebar + separator.vertical,
 stacksidebar.sidebar separator.horizontal, button.font separator, button.file separator {
   min-width: 0;
   min-height: 0;
@@ -5640,6 +5642,10 @@ window.background.csd > leaflet > box.vertical > scrolledwindow.view > viewport.
 window.background.csd > hdyleaflet > box.vertical > scrolledwindow.view > viewport.frame > stack list row.activatable:not(:hover):not(:active):not(:selected),
 window.background.csd > box.horizontal > box.vertical > scrolledwindow.view > viewport.frame > stack list row.activatable:not(:hover):not(:active):not(:selected) {
   background-color: transparent;
+}
+
+window.background.csd hdycolumn stack frame.view > stack > stack list > separator {
+  background-color: rgba(255, 255, 255, 0.12);
 }
 
 dialog.background.csd > box.vertical.dialog-vbox > notebook > stack > box.horizontal > notebook > stack {
@@ -7620,7 +7626,7 @@ MsdOsdWindow.background.osd .progressbar {
   border-style: solid;
   border-width: 1px;
   border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.2) rgba(0, 0, 0, 0.3);
-  border-radius: 6px;
+  border-radius: 12px;
   box-shadow: 0 2px 2.4px -1px rgba(0, 0, 0, 0.2), 0 4px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 6px 0 rgba(0, 0, 0, 0.12);
   background-color: #3C3C3C;
 }
@@ -7649,10 +7655,6 @@ MsdOsdWindow.background.osd .progressbar {
   box-shadow: none;
 }
 
-.budgie-popover row button {
-  border-radius: 0px;
-}
-
 .budgie-popover scrolledwindow.sidebar.categories {
   background-color: rgba(255, 255, 255, 0.04);
 }
@@ -7660,16 +7662,29 @@ MsdOsdWindow.background.osd .progressbar {
 .budgie-popover scrolledwindow.sidebar:not(.categories) {
   background-color: rgba(255, 255, 255, 0.04);
   border-right: none;
-  border-bottom-left-radius: 6px;
+  border-bottom-left-radius: 12px;
 }
 
 .budgie-popover scrolledwindow.sidebar:not(.categories) list > row.activatable {
   padding: 6px 8px;
 }
 
+.budgie-popover treeview.view.sidebar, .budgie-popover filechooser stack.view scrolledwindow treeview.sidebar.view, filechooser stack.view scrolledwindow .budgie-popover treeview.sidebar.view {
+  border-right: none;
+  background: none;
+}
+
+.budgie-popover treeview.view.sidebar:hover, .budgie-popover filechooser stack.view scrolledwindow treeview.sidebar.view:hover, filechooser stack.view scrolledwindow .budgie-popover treeview.sidebar.view:hover {
+  background-color: alpha(currentColor, 0.08);
+}
+
+.budgie-popover treeview.view.sidebar:selected, .budgie-popover filechooser stack.view scrolledwindow treeview.sidebar.view:selected, filechooser stack.view scrolledwindow .budgie-popover treeview.sidebar.view:selected {
+  background-color: alpha(currentColor, 0.12);
+}
+
 .budgie-popover.bottom scrolledwindow.sidebar:not(.categories) {
-  padding-top: 6px;
-  border-top-left-radius: 6px;
+  padding-top: 12px;
+  border-top-left-radius: 12px;
   border-bottom-left-radius: 0;
 }
 
@@ -7691,7 +7706,7 @@ MsdOsdWindow.background.osd .progressbar {
   padding: 0 8px;
   color: white;
   font-weight: normal;
-  border-radius: 0px;
+  border-radius: 6px;
 }
 
 .budgie-popover button.flat:not(.image-button):disabled {
@@ -7888,7 +7903,7 @@ MsdOsdWindow.background.osd .progressbar {
 }
 
 .budgie-panel.transparent {
-  background-color: #242424;
+  background-color: rgba(33, 33, 33, 0.75);
 }
 
 .budgie-panel button {
@@ -8092,7 +8107,7 @@ frame.raven-frame > border {
 .raven .raven-header.top stackswitcher button {
   margin: -4px 0 -5px;
   padding: 0 16px;
-  min-height: 36px;
+  min-height: 24px;
 }
 
 .raven .raven-header.bottom {
@@ -8125,6 +8140,7 @@ frame.raven-frame > border {
 .raven .powerstrip button {
   margin: 2px 0 1px;
   padding: 12px;
+  border-radius: 9999px;
 }
 
 .raven .option-subtitle {
@@ -8182,6 +8198,42 @@ calendar.raven-calendar:selected {
   padding: 12px;
 }
 
+.raven-notifications-view > .raven-background > viewport.frame {
+  padding: 0;
+}
+
+.raven-notifications-view > .raven-background > viewport.frame > list > row.activatable {
+  margin-left: -6px;
+  margin-right: -3px;
+}
+
+.raven-notifications-view > .raven-background > viewport.frame > list > row.activatable .raven-notifications-group-header {
+  padding: 0 12px;
+}
+
+.raven-notifications-view > .raven-background > viewport.frame > list > row.activatable list {
+  padding: 6px;
+  background: none;
+}
+
+.raven-notifications-view > .raven-background > viewport.frame > list > row.activatable list > row.activatable {
+  border: none;
+  padding: 6px;
+  padding-left: 12px;
+  margin: 3px;
+  border-radius: 6px;
+  background-color: rgba(255, 255, 255, 0.04);
+}
+
+.raven-notifications-view > .raven-background > viewport.frame > list > row.activatable list > row.activatable:hover, .raven-notifications-view > .raven-background > viewport.frame > list > row.activatable list > row.activatable:selected {
+  background-color: rgba(255, 255, 255, 0.12);
+}
+
+.raven-notifications-view > .raven-background > viewport.frame > list > row.activatable:selected, .raven-notifications-view > .raven-background > viewport.frame > list > row.activatable:selected:hover, .raven-notifications-view > .raven-background > viewport.frame > list > row.activatable:hover, .raven-notifications-view > .raven-background > viewport.frame > list > row.activatable:active, .raven-notifications-view > .raven-background > viewport.frame > list > row.activatable:focus {
+  background: none;
+  box-shadow: none;
+}
+
 .budgie-notification-window, .budgie-switcher-window, .budgie-osd-window {
   background-color: transparent;
 }
@@ -8217,16 +8269,24 @@ calendar.raven-calendar:selected {
 .budgie-session-dialog,
 .budgie-polkit-dialog,
 .budgie-run-dialog {
-  box-shadow: inset 0 1px rgba(255, 255, 255, 0.1);
   background-color: #3C3C3C;
+  border: none;
+  padding: 0;
 }
 
-.budgie-session-dialog.background.csd, .budgie-session-dialog decoration,
-.budgie-polkit-dialog.background.csd,
-.budgie-polkit-dialog decoration,
-.budgie-run-dialog.background.csd,
-.budgie-run-dialog decoration {
-  border-radius: 12px 12px 12px 12px;
+.budgie-session-dialog.background, .budgie-session-dialog > decoration,
+.budgie-polkit-dialog.background,
+.budgie-polkit-dialog > decoration,
+.budgie-run-dialog.background,
+.budgie-run-dialog > decoration {
+  border-radius: 12px;
+}
+
+.budgie-session-dialog > decoration,
+.budgie-polkit-dialog > decoration,
+.budgie-run-dialog > decoration {
+  border: none;
+  box-shadow: 0 8px 6px -5px rgba(0, 0, 0, 0.2), 0 16px 14.4px 2px rgba(0, 0, 0, 0.14), 0 6px 18px 5px rgba(0, 0, 0, 0.12), 0 0 0 1px rgba(0, 0, 0, 0.75);
 }
 
 .budgie-session-dialog label:not(:last-child),

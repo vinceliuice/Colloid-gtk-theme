@@ -30,7 +30,7 @@
   border-style: solid;
   border-width: 1px;
   border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.2) rgba(0, 0, 0, 0.3);
-  border-radius: $corner-radius;
+  border-radius: $menu-radius;
   box-shadow: $shadow-z4;
   background-color: $surface;
 
@@ -49,7 +49,7 @@
 
     button {
       @extend %button-flat-simple;
-      border-radius: $corner-radius - $space-size;
+      // border-radius: $corner-radius;
     }
   }
 
@@ -61,7 +61,7 @@
   scrolledwindow.sidebar:not(.categories) {
     background-color: $fill;
     border-right: none;
-    border-bottom-left-radius: $corner-radius;
+    border-bottom-left-radius: $menu-radius;
 
     list > row.activatable {
       @extend %row_activatable;
@@ -69,9 +69,17 @@
     }
   }
 
+  treeview.view.sidebar {
+    border-right: none;
+    background: none;
+
+    &:hover { background-color: $overlay-hover; }
+    &:selected { background-color: $overlay-active; }
+  }
+
   &.bottom scrolledwindow.sidebar:not(.categories) {
-    padding-top: $corner-radius;
-    border-top-left-radius: $corner-radius;
+    padding-top: $menu-radius;
+    border-top-left-radius: $menu-radius;
     border-bottom-left-radius: 0;
   }
 
@@ -95,7 +103,7 @@
     padding: 0 8px;
     color: $text;
     font-weight: normal;
-    border-radius: $corner-radius - $space-size;
+    border-radius: $corner-radius;
 
     &:disabled { color: $text-disabled; }
   }
@@ -167,8 +175,8 @@
 
     .name-button {
       image {
-        &:dir(ltr) { margin-right: 8px - 5px; }
-        &:dir(rtl) { margin-left: 8px - 5px; }
+        &:dir(ltr) { margin-right: $space-size / 2; }
+        &:dir(rtl) { margin-left: $space-size / 2; }
       }
     }
 
@@ -295,7 +303,7 @@
   color: on($panel, secondary);
   font-weight: 500;
 
-  &.transparent { background-color: $scrim; }
+  &.transparent { background-color: rgba($panel, 0.75); }
 
   button {
     @extend %button-flat-simple;
@@ -491,7 +499,7 @@ $pos_list: ((top, bottom), (bottom, top), (left, right), (right, left));
       stackswitcher button {
         margin: -4px 0 -5px; // remove unwanted vertical margins
         padding: 0 16px;
-        min-height: $medium-size;
+        min-height: $small-size;
       }
     }
 
@@ -522,6 +530,7 @@ $pos_list: ((top, bottom), (bottom, top), (left, right), (right, left));
   .powerstrip button {
     margin: 2px 0 1px;
     padding: ($large-size - 24px) / 2;
+    border-radius: $circular-radius;
   }
 
   .option-subtitle { font-size: smaller; }
@@ -585,6 +594,44 @@ calendar.raven-calendar {
   }
 }
 
+// notification list
+.raven-notifications-view {
+  > .raven-background > viewport.frame {
+    padding: 0; // reset padding for full-width list node
+
+    > list > row.activatable {
+      margin-left: -$space-size;
+      margin-right: -$space-size / 2;
+
+      .raven-notifications-group-header { padding: 0 $space-size * 2; }
+
+      // sub-list rows grouping
+      list {
+        padding: $space-size;
+        background: none;
+
+        > row.activatable {
+          border: none;
+          padding: $space-size;
+          padding-left: $space-size * 2;
+          margin: $space-size / 2;
+          border-radius: $corner-radius;
+          background-color: $fill;
+
+          &:hover, &:selected {
+            background-color: $divider;
+          }
+        }
+      }
+
+      &:selected, &:selected:hover, &:hover, &:active, &:focus {
+        background: none;
+        box-shadow: none;
+      }
+    }
+  }
+}
+
 // Notifications
 .budgie-notification-window { background-color: transparent; }
 
@@ -633,8 +680,9 @@ calendar.raven-calendar {
 }
 
 %budgie_dialog {
-  box-shadow: inset 0 1px highlight($surface);
   background-color: $surface;
+  border: none;
+  padding: 0;
 }
 
 // Session Dialog
@@ -643,7 +691,14 @@ calendar.raven-calendar {
 .budgie-run-dialog {
   @extend %budgie_dialog;
 
-  &.background.csd, decoration { border-radius: $window-radius $window-radius $window-radius $window-radius; }
+  &.background, & > decoration {
+    border-radius: $window-radius;
+  }
+
+  & > decoration {
+    border: none;
+    box-shadow: $shadow-z16, 0 0 0 1px $window-border;
+  }
 
   label:not(:last-child),
   .dialog-title {
