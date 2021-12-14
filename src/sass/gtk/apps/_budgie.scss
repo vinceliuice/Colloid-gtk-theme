@@ -27,14 +27,23 @@
 
 // Budgie popover
 .budgie-popover {
-  border-style: solid;
-  border-width: 1px;
-  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.2) rgba(0, 0, 0, 0.3);
-  border-radius: $menu-radius;
-  box-shadow: $shadow-z4;
-  background-color: $surface;
+  @if $rimless == 'true' {
+    border: none;
+    box-shadow: $shadow-z4;
+  } @else if $variant == 'dark' {
+    border: 1px solid highlight($surface);
+    box-shadow: $shadow-z4, 0 0 0 1px $window-border;
+    background-clip: border-box;
+  } @else {
+    border: 1px solid $border;
+    box-shadow: $shadow-z4;
+    background-clip: padding-box;
+  }
 
-  .container { padding: $space-size; }
+  background-color: $popover;
+  border-radius: $menu-radius;
+
+  .container { padding: 0; }
 
   separator { margin: $space-size / 2 0; }
 
@@ -43,22 +52,11 @@
   list { background-color: transparent; }
 
   row {
-    padding: 0;
-
     &:hover { box-shadow: none; }
 
     button {
       @extend %button-flat-simple;
       // border-radius: $corner-radius;
-    }
-  }
-
-  scrolledwindow.sidebar.categories { // AppMenu
-    background-color: $fill;
-    padding-bottom: $menu-radius;
-
-    button.flat.radio.category-button {
-      @extend %button-flat;
     }
   }
 
@@ -101,19 +99,7 @@
     }
   }
 
-  button { border-radius: $corner-radius - $space-size; }
-
-  button.flat:not(.image-button) {
-    min-height: $menuitem-size;
-    padding: 0 8px;
-    color: $text;
-    font-weight: normal;
-    border-radius: $corner-radius;
-
-    &:disabled { color: $text-disabled; }
-  }
-
-  &.budgie-menu {
+  &.budgie-menu {  // Budgie AppMenu
     .container { padding: 0; }
 
     .sidebar,
@@ -128,20 +114,23 @@
       font-size: 120%;
     }
 
-    button.flat:not(.image-button):not(.indicator-item) {
-      @extend %row_activatable;
-      min-height: 32px;
-      padding: 0 8px;
+    scrolledwindow.sidebar.categories {
+      background-color: $fill;
+      padding-bottom: $menu-radius;
+
+      button.flat.radio.category-button {
+        @extend %button-flat;
+        border-radius: 0;
+      }
+    }
+
+    scrolledwindow > viewport.frame > list > row.activatable > button.flat {
       border-radius: 0;
-
-      &:checked { @extend %selected_items; }
-
-      &:checked:disabled { background-color: transparent; } // remove pointless indicator
     }
   }
 
   &.user-menu {
-    // .container { padding: $space-size; }
+    .container { padding: $space-size; }
 
     list,
     row { // reset styling
@@ -159,9 +148,6 @@
       button.indicator-item {
         transition: none;
         animation: none;
-
-        &:hover {
-        }
       }
     }
   }
