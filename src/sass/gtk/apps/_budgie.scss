@@ -55,6 +55,11 @@
 
   scrolledwindow.sidebar.categories { // AppMenu
     background-color: $fill;
+    padding-bottom: $menu-radius;
+
+    button.flat.radio.category-button {
+      @extend %button-flat;
+    }
   }
 
   // AppMenu (Elementary)
@@ -374,6 +379,8 @@
   menubar,
   .menubar {
     color: on($panel, secondary);
+    box-shadow: none;
+    border: none;
 
     > menuitem {
       color: on($panel, secondary);
