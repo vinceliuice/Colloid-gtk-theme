@@ -2172,6 +2172,7 @@ switch {
   background-color: $text-disabled;
   background-clip: padding-box;
   font-size: 0;
+  color: transparent;
 
   &:checked {
     background-color: $primary;
@@ -2180,21 +2181,22 @@ switch {
   &:disabled { opacity: 0.5; }
 
   // hide on/off icons for >=3.24.5
-  image {
-    margin: -8px;
-    -gtk-icon-transform: scale(0);
-  }
+  // image {
+  //   margin: -8px;
+  //   -gtk-icon-transform: scale(0);
+  // }
 
   slider {
     transition: all $duration $ease-out;
     min-width: $small-size - 4px;
     min-height: $small-size - 4px;
-    margin: 1px;
+    margin: if($variant == 'light', 1px, 0);
     border-radius: $circular-radius;
     outline: none;
     box-shadow: none;
     background-color: white;
     border: none;
+    color: transparent;
   }
 
   &:focus slider,

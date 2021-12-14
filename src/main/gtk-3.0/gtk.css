@@ -3351,6 +3351,7 @@ switch {
   background-color: rgba(0, 0, 0, 0.38);
   background-clip: padding-box;
   font-size: 0;
+  color: transparent;
 }
 
 switch:checked {
@@ -3359,11 +3360,6 @@ switch:checked {
 
 switch:disabled {
   opacity: 0.5;
-}
-
-switch image {
-  margin: -8px;
-  -gtk-icon-transform: scale(0);
 }
 
 switch slider {
@@ -3376,6 +3372,7 @@ switch slider {
   box-shadow: none;
   background-color: white;
   border: none;
+  color: transparent;
 }
 
 switch:focus slider, switch:hover slider, switch:focus:hover slider {
