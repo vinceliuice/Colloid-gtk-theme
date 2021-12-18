@@ -26,6 +26,10 @@ $nautilus: if($variant == 'light' and $topbar == 'dark', $base-alt, $titlebar);
       }
     }
 
+    notebook widget.view:selected {
+      @extend %selected_items_color;
+    }
+
     &.unified {
       notebook {
         border-radius: 0;

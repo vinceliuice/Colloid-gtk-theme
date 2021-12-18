@@ -37,7 +37,7 @@
 
 %selected_items {
   color: $text;
-  background-color: mix($text, $base, 10%);
+  background-color: $overlay-checked;
 }
 
 %selected_items_color {
@@ -145,7 +145,9 @@
     &:hover { box-shadow: none; }
   }
 
-  .background.csd &:selected { @extend %selected_items_color; }
+  .background.csd &:selected {
+    @extend %selected_items;
+  }
 }
 
 widget.view {
@@ -1504,7 +1506,6 @@ treeview.view {
   // FIXME: Avoid transparency background-color being slightly darker
   &:selected {
     @extend %selected_items;
-    background-image: image($overlay-checked);
   }
 
   rubberband { @extend rubberband; } // to avoid borders being overridden by the previously set props
@@ -1550,7 +1551,17 @@ treeview.view {
     border-radius: $circular-radius;
     color: on($primary);
 
-    &:selected:hover { box-shadow: none; }
+    &:selected, &:selected:hover, &:selected:focus {
+      box-shadow: none;
+      background-color: mix($text, $primary, 15%);
+      color: on($primary);
+
+      &:backdrop { color: on($primary); }
+    }
+
+    &:backdrop, &:selected:backdrop {
+      background-color: $track;
+    }
   }
 
   &.trough { // progress bar trough in treeviews
@@ -1562,7 +1573,14 @@ treeview.view {
     padding: 0;
     margin: 0;
 
-    &:selected:hover { box-shadow: none; }
+    &:selected, &:selected:hover, &:selected:focus {
+      box-shadow: none;
+      background-color: $track-disabled;
+    }
+
+    &:backdrop, &:selected:backdrop {
+      background-color: $divider;
+    }
   }
 
   header {
@@ -2383,7 +2401,7 @@ treeview.view {
     }
   }
 
-  &:selected, &:selected:focused {
+  &:selected, &:selected:focus {
     radio, check {
       &:checked, &:indeterminate {
         background-color: $primary;
@@ -3105,11 +3123,6 @@ filechooser {
       border-radius: 0 0 $window-radius 0;
 
       list { background-color: transparent; }
-
-      treeview.view {
-        @extend .view;
-        background-color: transparent;
-      }
     }
 
     > placesview {
@@ -3638,13 +3651,13 @@ decoration {
     box-shadow: $shadow-z16, 0 0 0 1px $window-border, 0 0 36px transparent;
 
     @if $variant == 'dark' {
-      border: 1px solid highlight($background);
-      background-color: $background;
-      background-clip: border-box;
+      .csd & {
+        border: 1px solid highlight($background);
+        background-color: $background;
+        background-clip: border-box;
+      }
     }
   }
-
-  // FIXME rationalize shadows
 
   // this is used for the resize cursor area
   margin: 8px;

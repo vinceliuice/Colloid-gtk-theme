@@ -35,7 +35,8 @@ treeview.expander:disabled { -gtk-icon-filter: opacity(0.5); }
   &:disabled { color: $text-disabled; }
 
   &:selected {
-    @extend %selected_items_color;
+    color: $text;
+    @extend %selected_items;
   }
 }
 
@@ -1451,9 +1452,7 @@ treeview.view {
 
   // FIXME: Avoid transparency background-color being slightly darker
   &:selected {
-    background-color: $base;
-    background-image: image($overlay-checked);
-    box-shadow: none;
+    @extend %selected_items;
   }
 
   > rubberband { @extend rubberband; } // to avoid borders being overridden by the previously set props
@@ -3393,11 +3392,6 @@ filechooser {
       border-radius: 0 0 $window-radius 0;
 
       list { background-color: transparent; }
-
-      treeview.view {
-        @extend %view;
-        background-color: transparent;
-      }
     }
 
     > placesview {

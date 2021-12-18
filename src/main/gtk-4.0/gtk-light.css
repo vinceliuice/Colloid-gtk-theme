@@ -27,12 +27,16 @@ treeview.expander:disabled {
   -gtk-icon-filter: opacity(0.5);
 }
 
-filechooser stack.view scrolledwindow treeview.view, iconview, .view {
+iconview, .view {
   color: rgba(0, 0, 0, 0.87);
 }
 
-filechooser stack.view scrolledwindow treeview.view:disabled, iconview:disabled, .view:disabled {
+iconview:disabled, .view:disabled {
   color: rgba(0, 0, 0, 0.38);
+}
+
+iconview:selected, .view:selected {
+  color: rgba(0, 0, 0, 0.87);
 }
 
 textview text {
@@ -49,8 +53,9 @@ iconview:hover, iconview:selected {
 }
 
 rubberband, .content-view rubberband, .content-view columnview.view > rubberband,
-.content-view treeview.view > rubberband, .content-view .rubberband, columnview.view > rubberband,
-treeview.view > rubberband, gridview > rubberband, flowbox > rubberband {
+.content-view treeview.view > rubberband, .content-view .rubberband, columnview.view > rubberband, .content-view columnview.view > .rubberband,
+treeview.view > rubberband,
+.content-view treeview.view > .rubberband, gridview > rubberband, flowbox > rubberband {
   border: 1px solid #3c84f7;
   background-color: rgba(60, 132, 247, 0.3);
 }
@@ -1587,13 +1592,6 @@ columnview.view,
 treeview.view {
   border-left-color: #e0e0e0;
   border-top-color: #e0e0e0;
-}
-
-columnview.view:selected,
-treeview.view:selected {
-  background-color: #FFFFFF;
-  background-image: image(alpha(currentColor, 0.1));
-  box-shadow: none;
 }
 
 columnview.view:hover, columnview.view:selected,
@@ -3752,10 +3750,6 @@ filechooser stack.view scrolledwindow list {
   background-color: transparent;
 }
 
-filechooser stack.view scrolledwindow treeview.view {
-  background-color: transparent;
-}
-
 filechooser stack.view > placesview {
   background-color: transparent;
 }
@@ -4353,11 +4347,12 @@ windowcontrols:not(.empty).start:dir(rtl), windowcontrols:not(.empty).end:dir(lt
   margin-right: 6px;
 }
 
-gridview > child:selected, modelbutton.flat:selected, row:selected, calendar:selected, calendar > grid > label.day-number:selected {
+.view:selected, iconview:selected, gridview > child:selected, modelbutton.flat:selected, columnview.view:selected,
+treeview.view:selected, row:selected, calendar:selected, calendar > grid > label.day-number:selected {
   background-color: alpha(currentColor, 0.06);
 }
 
-.view:selected, iconview:selected, flowbox > flowboxchild:selected, calendar > grid > label.today, filechooser stack.view scrolledwindow treeview.view:selected {
+flowbox > flowboxchild:selected, calendar > grid > label.today {
   color: #3c84f7;
   background-color: rgba(60, 132, 247, 0.2);
 }
