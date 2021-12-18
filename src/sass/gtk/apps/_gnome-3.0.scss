@@ -583,6 +583,7 @@ window.background.csd {
 
         list { // left-pane
           background-color: transparent;
+          padding: $space-size / 2;
 
           row.activatable {
             border-radius: $corner-radius;
@@ -591,9 +592,15 @@ window.background.csd {
               background-color: transparent;
             }
           }
+
+          separator { @extend %hide_separators; }
         }
       }
     }
+  }
+
+  hdycolumn stack frame.view > stack > stack list > separator {
+    background-color: $border;
   }
 }
 
