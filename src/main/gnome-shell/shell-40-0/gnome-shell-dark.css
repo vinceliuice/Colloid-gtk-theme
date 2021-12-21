@@ -677,8 +677,16 @@ StWidget.focused .app-well-app-running-dot {
   border-radius: 6px;
 }
 
-.check-box, .check-box:focus StBin {
+.check-box StBin, .check-box:focus StBin {
   background-image: url("assets/checkbox-off.svg");
+}
+
+.check-box:hover StBin {
+  background-color: rgba(255, 255, 255, 0.12);
+}
+
+.check-box:active StBin {
+  background-color: rgba(255, 255, 255, 0.3);
 }
 
 .check-box:checked StBin, .check-box:focus:checked StBin {
