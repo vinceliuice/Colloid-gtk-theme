@@ -1702,18 +1702,18 @@ popover.background {
 
     @if $rimless == 'true' {
       border: none;
-      box-shadow: $shadow-z4;
+      box-shadow: $shadow-z5;
     } @else {
       border: 1px solid highlight($surface);
       background-clip: border-box;
-      box-shadow: 0 0 0 1px $window-border, $shadow-z4;
+      box-shadow: 0 0 0 1px $window-border, $shadow-z5;
     }
 
     &:backdrop {
       @if $rimless == 'true' {
-        box-shadow: $shadow-z2;
+        box-shadow: $shadow-z3;
       } @else {
-        box-shadow: $shadow-z2, 0 0 0 1px $window-border;
+        box-shadow: $shadow-z3, 0 0 0 1px $window-border;
       }
     }
   }
@@ -3828,44 +3828,44 @@ colorswatch {
   // nth-child is needed by the custom color strip.
 
   &.top {
-    border-top-left-radius: $menu-radius;
-    border-top-right-radius: $menu-radius;
+    border-top-left-radius: $corner-radius;
+    border-top-right-radius: $corner-radius;
 
     overlay {
-      border-top-left-radius: $menu-radius;
-      border-top-right-radius: $menu-radius;
+      border-top-left-radius: $corner-radius;
+      border-top-right-radius: $corner-radius;
     }
   }
 
   &.bottom {
-    border-bottom-left-radius: $menu-radius;
-    border-bottom-right-radius: $menu-radius;
+    border-bottom-left-radius: $corner-radius;
+    border-bottom-right-radius: $corner-radius;
 
     overlay {
-      border-bottom-left-radius: $menu-radius;
-      border-bottom-right-radius: $menu-radius;
+      border-bottom-left-radius: $corner-radius;
+      border-bottom-right-radius: $corner-radius;
     }
   }
 
   &.left,
   &:first-child:not(.top) {
-    border-top-left-radius: $menu-radius;
-    border-bottom-left-radius: $menu-radius;
+    border-top-left-radius: $corner-radius;
+    border-bottom-left-radius: $corner-radius;
 
     overlay {
-      border-top-left-radius: $menu-radius;
-      border-bottom-left-radius: $menu-radius;
+      border-top-left-radius: $corner-radius;
+      border-bottom-left-radius: $corner-radius;
     }
   }
 
   &.right,
   &:last-child:not(.bottom) {
-    border-top-right-radius: $menu-radius;
-    border-bottom-right-radius: $menu-radius;
+    border-top-right-radius: $corner-radius;
+    border-bottom-right-radius: $corner-radius;
 
     overlay {
-      border-top-right-radius: $menu-radius;
-      border-bottom-right-radius: $menu-radius;
+      border-top-right-radius: $corner-radius;
+      border-bottom-right-radius: $corner-radius;
     }
   }
 
@@ -3873,14 +3873,23 @@ colorswatch {
 
   &.light { color: on(light); }
 
+  colorchooser &:hover {
+    transition: $transition-shadow;
+    box-shadow: 0 0 0 2px $primary;
+  }
+
   &#add-color-button {
-    border-radius: $menu-radius $menu-radius 0 0;
+    border-radius: $corner-radius 0 0 $corner-radius;
     color: $text;
 
-    &:only-child { border-radius: $menu-radius; }
+    &:only-child { border-radius: $corner-radius; }
 
     overlay {
-      background-color: $surface;
+      background-color: $fill;
+
+      &:hover { background-color: $divider; box-shadow: none; }
+
+      &:active { background-color: $track; }
     }
   }
 
@@ -3891,9 +3900,11 @@ colorswatch {
   }
 
   &#editor-color-sample {
-    border-radius: $menu-radius;
+    border-radius: $corner-radius;
 
-    overlay { border-radius: $menu-radius; }
+    overlay { border-radius: $corner-radius; }
+
+    overlay:hover { box-shadow: $shadow-z1; }
   }
 }
 

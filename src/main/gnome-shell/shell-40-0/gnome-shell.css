@@ -2975,9 +2975,10 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .page-navigation-arrow {
-  margin: 6px;
+  margin: 0;
   width: 24px;
   height: 24px;
+  color: white;
 }
 
 #dash {

@@ -1780,21 +1780,21 @@ popover.background {
   &, .csd & {
     @if $rimless == 'true' {
       border: none;
-      box-shadow: $shadow-z4;
+      box-shadow: $shadow-z5;
 
-      &:backdrop { box-shadow: $shadow-z2; }
+      &:backdrop { box-shadow: $shadow-z3; }
     } @else if $variant == 'dark' {
       border: 1px solid highlight($surface);
-      box-shadow: $shadow-z4, 0 0 0 1px $window-border;
+      box-shadow: $shadow-z5, 0 0 0 1px $window-border;
       background-clip: border-box;
 
-      &:backdrop { box-shadow: $shadow-z2, 0 0 0 1px $window-border; }
+      &:backdrop { box-shadow: $shadow-z3, 0 0 0 1px $window-border; }
     } @else {
-      border: 1px solid rgba(black, 0.25);
-      box-shadow: $shadow-z4;
+      border: 1px solid rgba(black, 0.15);
+      box-shadow: $shadow-z5;
       background-clip: padding-box;
 
-      &:backdrop { box-shadow: $shadow-z2; }
+      &:backdrop { box-shadow: $shadow-z3; }
     }
   }
 
@@ -2724,10 +2724,7 @@ levelbar {
 
   // imitate the entry style
   trough {
-    // padding: 2px;
     border-radius: $corner-radius;
-    // box-shadow: $shadow-z1;
-    // background-color: $base;
 
     // &:disabled { background-color: $base-alt; }
   }
@@ -3570,12 +3567,10 @@ colorswatch {
     transition: $transition-shadow;
 
     &:hover { box-shadow: 0 0 0 2px $primary; }
-
-    // &:drop(active) { }
   }
 
   &#add-color-button {
-    border-radius: $corner-radius $corner-radius 0 0;
+    border-radius: $corner-radius 0 0 $corner-radius;
 
     &:only-child { border-radius: $corner-radius; }
 
@@ -3594,15 +3589,12 @@ colorswatch {
     overlay { box-shadow: none; }
   }
 
-  row:selected & {
-  }
-
   &#editor-color-sample {
     border-radius: $menu-radius;
 
     overlay { border-radius: $menu-radius; }
 
-    // overlay:hover { box-shadow: $shadow-z1; }
+    overlay:hover { box-shadow: $shadow-z1; }
   }
 }
 
@@ -3713,9 +3705,9 @@ decoration {
     border: none;
 
     @if $rimless == 'true' {
-      box-shadow: $shadow-z4;
+      box-shadow: $shadow-z5;
     } @else {
-      box-shadow: $shadow-z4, 0 0 0 1px $window-border;
+      box-shadow: $shadow-z5, 0 0 0 1px $window-border;
     }
   }
 
