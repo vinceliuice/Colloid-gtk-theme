@@ -1,13 +1,14 @@
 /* On-screen Keyboard */
 
-$key_size: 1.2em;
-$key_border_radius: $base_radius + 3px;
-$default_key_bg_color: if($variant=='light', $base, lighten($base, 2%));
-
+$key_size:             1.2em;
+$keyboard_bg_color:    if($variant == 'light', #d8dade, #1d1d1d);
+$key_border_radius:    $base_radius + 3px;
+$key_bg_color:         if($variant == 'light', white, #707070);
+$default_key_bg_color: if($variant == 'light', #adb3bc, #4b4b4b);
 
 // draw keys using button function
 #keyboard {
-  background-color: $scrim;
+  background-color: $keyboard_bg_color;
   box-shadow: none;
 
   .page-indicator {
@@ -33,11 +34,12 @@ $default_key_bg_color: if($variant=='light', $base, lighten($base, 2%));
   font-weight: bold;
   min-height: $key_size;
   min-width: $key_size;
+  padding: 0 !important;
   border-radius: $key_border_radius;
   border: none;
   color: $text-secondary;
-  background-color: $default_key_bg_color;
-  box-shadow: 0 1px 3px rgba(black, 0.15);
+  background-color: $key_bg_color;
+  box-shadow: inset 0 -1px if($variant == 'light', rgba(black, 0.35), rgba(black, 0.85));
 
   &:focus, &:hover {
     color: $text;
@@ -50,29 +52,28 @@ $default_key_bg_color: if($variant=='light', $base, lighten($base, 2%));
   }
 
   &:grayed { //FIXME
-    background-color: $background;
+    background-color: $default_key_bg_color;
     color: $text-secondary;
   }
 
   &.default-key { // non-character keys
-    background-color: darken($background, 2%);
-    box-shadow: 0 2px 3px rgba(black, 0.15);
+    background-color: $default_key_bg_color;
+    box-shadow: inset 0 -1px if($variant == 'light', rgba(black, 0.2), rgba(black, 0.85));
 
     &:focus, &:hover {
       color: $text;
-      background-color: if($variant == 'light', darken($background, 8%), lighten($background, 8%));
+      background-color: if($variant == 'light', darken($default_key_bg_color, 5%), lighten($default_key_bg_color, 5%));
     }
 
     &:checked, &:active {
       color: $text;
-      background-color: if($variant == 'light', darken($background, 15%), lighten($background, 15%));
+      background-color: if($variant == 'light', darken($default_key_bg_color, 12%), lighten($default_key_bg_color, 12%));
     }
   }
 
   &.enter-key { // enter key is suggested-action
     color: on($primary);
     background-color: $primary;
-    box-shadow: 0 2px 3px rgba(black, 0.15);
 
     &:focus, &:hover { color: on($primary); background-color: lighten($primary, 5%); }
     &:checked, &:active { color: on($primary); background-color: darken($primary, 10%); }
@@ -90,13 +91,13 @@ $default_key_bg_color: if($variant=='light', $base, lighten($base, 2%));
 .keyboard-subkeys { //long press on a key popup
   color: inherit;
   -arrow-border-radius: $menu_radius;
-  -arrow-background-color: $scrim;
+  -arrow-background-color: mix($text, $keyboard_bg_color, 10%);
   -arrow-border-width: 0;
   -arrow-border-color: transparent;
   -arrow-base: 20px;
   -arrow-rise: 10px;
-  -boxpointer-gap: 5px;
-  box-shadow: 0 2px 5px rgba(black, 0.25);
+  -boxpointer-gap: $base_spacing;
+  box-shadow: inset 0 -1px if($variant == 'light', rgba(black, 0.35), rgba(black, 0.85));
 }
 
 // emoji

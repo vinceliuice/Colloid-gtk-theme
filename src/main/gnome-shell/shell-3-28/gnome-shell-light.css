@@ -1129,7 +1129,7 @@ StEntry StLabel.hint-text, .popup-menu .search-entry StLabel.hint-text {
 
 /* On-screen Keyboard */
 #keyboard {
-  background-color: #242424;
+  background-color: #d8dade;
   box-shadow: none;
 }
 
@@ -1153,11 +1153,12 @@ StEntry StLabel.hint-text, .popup-menu .search-entry StLabel.hint-text {
   font-weight: bold;
   min-height: 1.2em;
   min-width: 1.2em;
+  padding: 0 !important;
   border-radius: 9px;
   border: none;
   color: rgba(0, 0, 0, 0.6);
-  background-color: #FFFFFF;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+  background-color: white;
+  box-shadow: inset 0 -1px rgba(0, 0, 0, 0.35);
 }
 
 .keyboard-key:focus, .keyboard-key:hover {
@@ -1171,29 +1172,28 @@ StEntry StLabel.hint-text, .popup-menu .search-entry StLabel.hint-text {
 }
 
 .keyboard-key:grayed {
-  background-color: #FFFFFF;
+  background-color: #adb3bc;
   color: rgba(0, 0, 0, 0.6);
 }
 
 .keyboard-key.default-key {
-  background-color: #fafafa;
-  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.15);
+  background-color: #adb3bc;
+  box-shadow: inset 0 -1px rgba(0, 0, 0, 0.2);
 }
 
 .keyboard-key.default-key:focus, .keyboard-key.default-key:hover {
   color: rgba(0, 0, 0, 0.87);
-  background-color: #ebebeb;
+  background-color: #9fa6b1;
 }
 
 .keyboard-key.default-key:checked, .keyboard-key.default-key:active {
   color: rgba(0, 0, 0, 0.87);
-  background-color: #d9d9d9;
+  background-color: #8b94a0;
 }
 
 .keyboard-key.enter-key {
   color: white;
   background-color: #3c84f7;
-  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.15);
 }
 
 .keyboard-key.enter-key:focus, .keyboard-key.enter-key:hover {
@@ -1217,13 +1217,13 @@ StEntry StLabel.hint-text, .popup-menu .search-entry StLabel.hint-text {
 .keyboard-subkeys {
   color: inherit;
   -arrow-border-radius: 12px;
-  -arrow-background-color: #242424;
+  -arrow-background-color: rgba(199, 201, 205, 0.987);
   -arrow-border-width: 0;
   -arrow-border-color: transparent;
   -arrow-base: 20px;
   -arrow-rise: 10px;
-  -boxpointer-gap: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+  -boxpointer-gap: 6px;
+  box-shadow: inset 0 -1px rgba(0, 0, 0, 0.35);
 }
 
 .emoji-page .keyboard-key {
