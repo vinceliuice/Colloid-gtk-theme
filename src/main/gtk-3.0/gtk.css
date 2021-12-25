@@ -1856,6 +1856,11 @@ menubar > menuitem label:disabled,
   color: inherit;
 }
 
+menubar > menuitem > window.popup.background > menu menuitem,
+.menubar > menuitem > window.popup.background > menu menuitem {
+  transition: none;
+}
+
 .background.popup {
   background-color: transparent;
 }
@@ -3728,6 +3733,10 @@ infobar.info > revealer > box, infobar.info:hover > revealer > box, infobar.info
   background-color: #FFFFFF;
 }
 
+infobar.info > revealer > box link:link, infobar.info:hover > revealer > box link:link, infobar.info:backdrop > revealer > box link:link {
+  color: white;
+}
+
 infobar.info > revealer > box button, infobar.info > revealer > box button.text-button:not(:disabled), infobar.info:hover > revealer > box button, infobar.info:hover > revealer > box button.text-button:not(:disabled), infobar.info:backdrop > revealer > box button, infobar.info:backdrop > revealer > box button.text-button:not(:disabled) {
   color: #3c84f7;
 }
@@ -3737,11 +3746,11 @@ infobar.action > revealer > box, infobar.action:backdrop > revealer > box, infob
   color: white;
 }
 
-infobar.action > revealer > box button, infobar.action > revealer > box button:hover, infobar.action > revealer > box button:focus, infobar.action > revealer > box button:active, infobar.action > revealer > box button:checked, infobar.action > revealer > box button.text-button:not(:disabled), infobar.action:backdrop > revealer > box button, infobar.action:backdrop > revealer > box button:hover, infobar.action:backdrop > revealer > box button:focus, infobar.action:backdrop > revealer > box button:active, infobar.action:backdrop > revealer > box button:checked, infobar.action:backdrop > revealer > box button.text-button:not(:disabled), infobar.question > revealer > box button, infobar.question > revealer > box button:hover, infobar.question > revealer > box button:focus, infobar.question > revealer > box button:active, infobar.question > revealer > box button:checked, infobar.question > revealer > box button.text-button:not(:disabled), infobar.question:backdrop > revealer > box button, infobar.question:backdrop > revealer > box button:hover, infobar.question:backdrop > revealer > box button:focus, infobar.question:backdrop > revealer > box button:active, infobar.question:backdrop > revealer > box button:checked, infobar.question:backdrop > revealer > box button.text-button:not(:disabled) {
+infobar.action > revealer > box link:link, infobar.action:backdrop > revealer > box link:link, infobar.question > revealer > box link:link, infobar.question:backdrop > revealer > box link:link {
   color: white;
 }
 
-infobar.action > revealer > box *:link, infobar.action:backdrop > revealer > box *:link, infobar.question > revealer > box *:link, infobar.question:backdrop > revealer > box *:link {
+infobar.action > revealer > box button, infobar.action > revealer > box button:hover, infobar.action > revealer > box button:focus, infobar.action > revealer > box button:active, infobar.action > revealer > box button:checked, infobar.action > revealer > box button.text-button:not(:disabled), infobar.action:backdrop > revealer > box button, infobar.action:backdrop > revealer > box button:hover, infobar.action:backdrop > revealer > box button:focus, infobar.action:backdrop > revealer > box button:active, infobar.action:backdrop > revealer > box button:checked, infobar.action:backdrop > revealer > box button.text-button:not(:disabled), infobar.question > revealer > box button, infobar.question > revealer > box button:hover, infobar.question > revealer > box button:focus, infobar.question > revealer > box button:active, infobar.question > revealer > box button:checked, infobar.question > revealer > box button.text-button:not(:disabled), infobar.question:backdrop > revealer > box button, infobar.question:backdrop > revealer > box button:hover, infobar.question:backdrop > revealer > box button:focus, infobar.question:backdrop > revealer > box button:active, infobar.question:backdrop > revealer > box button:checked, infobar.question:backdrop > revealer > box button.text-button:not(:disabled) {
   color: white;
 }
 
@@ -3754,11 +3763,11 @@ infobar.warning > revealer > box, infobar.warning:backdrop > revealer > box {
   color: rgba(0, 0, 0, 0.87);
 }
 
-infobar.warning > revealer > box button, infobar.warning > revealer > box button:hover, infobar.warning > revealer > box button:focus, infobar.warning > revealer > box button:active, infobar.warning > revealer > box button:checked, infobar.warning > revealer > box button.text-button:not(:disabled), infobar.warning:backdrop > revealer > box button, infobar.warning:backdrop > revealer > box button:hover, infobar.warning:backdrop > revealer > box button:focus, infobar.warning:backdrop > revealer > box button:active, infobar.warning:backdrop > revealer > box button:checked, infobar.warning:backdrop > revealer > box button.text-button:not(:disabled) {
+infobar.warning > revealer > box link:link, infobar.warning:backdrop > revealer > box link:link {
   color: rgba(0, 0, 0, 0.87);
 }
 
-infobar.warning > revealer > box *:link, infobar.warning:backdrop > revealer > box *:link {
+infobar.warning > revealer > box button, infobar.warning > revealer > box button:hover, infobar.warning > revealer > box button:focus, infobar.warning > revealer > box button:active, infobar.warning > revealer > box button:checked, infobar.warning > revealer > box button.text-button:not(:disabled), infobar.warning:backdrop > revealer > box button, infobar.warning:backdrop > revealer > box button:hover, infobar.warning:backdrop > revealer > box button:focus, infobar.warning:backdrop > revealer > box button:active, infobar.warning:backdrop > revealer > box button:checked, infobar.warning:backdrop > revealer > box button.text-button:not(:disabled) {
   color: rgba(0, 0, 0, 0.87);
 }
 
@@ -3771,11 +3780,11 @@ infobar.error > revealer > box, infobar.error:backdrop > revealer > box {
   color: white;
 }
 
-infobar.error > revealer > box button, infobar.error > revealer > box button:hover, infobar.error > revealer > box button:focus, infobar.error > revealer > box button:active, infobar.error > revealer > box button:checked, infobar.error > revealer > box button.text-button:not(:disabled), infobar.error:backdrop > revealer > box button, infobar.error:backdrop > revealer > box button:hover, infobar.error:backdrop > revealer > box button:focus, infobar.error:backdrop > revealer > box button:active, infobar.error:backdrop > revealer > box button:checked, infobar.error:backdrop > revealer > box button.text-button:not(:disabled) {
+infobar.error > revealer > box link:link, infobar.error:backdrop > revealer > box link:link {
   color: white;
 }
 
-infobar.error > revealer > box *:link, infobar.error:backdrop > revealer > box *:link {
+infobar.error > revealer > box button, infobar.error > revealer > box button:hover, infobar.error > revealer > box button:focus, infobar.error > revealer > box button:active, infobar.error > revealer > box button:checked, infobar.error > revealer > box button.text-button:not(:disabled), infobar.error:backdrop > revealer > box button, infobar.error:backdrop > revealer > box button:hover, infobar.error:backdrop > revealer > box button:focus, infobar.error:backdrop > revealer > box button:active, infobar.error:backdrop > revealer > box button:checked, infobar.error:backdrop > revealer > box button.text-button:not(:disabled) {
   color: white;
 }
 
@@ -7544,6 +7553,31 @@ window#whiskermenu-window .title-area > .commands-area > button.flat.command-but
 
 window.background.csd.thunar > grid.horizontal > paned.horizontal > scrolledwindow.frame.sidebar.shortcuts-pane {
   border-bottom-left-radius: 12px;
+}
+
+menubar.-vala-panel-appmenu-private,
+menubar.-vala-panel-background {
+  background: none;
+  border: none;
+  box-shadow: none;
+  animation: none;
+}
+
+menubar.-vala-panel-appmenu-private > menuitem,
+menubar.-vala-panel-background > menuitem {
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: normal;
+}
+
+menubar.-vala-panel-appmenu-private > menuitem:hover,
+menubar.-vala-panel-background > menuitem:hover {
+  color: white;
+  border-radius: 0;
+}
+
+menubar.-vala-panel-appmenu-private > menuitem:disabled,
+menubar.-vala-panel-background > menuitem:disabled {
+  color: rgba(255, 255, 255, 0.3);
 }
 
 /************************

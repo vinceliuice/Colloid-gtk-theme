@@ -1652,6 +1652,10 @@ menubar,
     &:disabled { color: $titlebar-text-secondary-disabled; }
 
     label:disabled { color: inherit; } // to inherit the above color
+
+    > window.popup.background > menu {
+      menuitem { transition: none; }
+    }
   }
 }
 
@@ -3398,6 +3402,8 @@ infobar {
     &:backdrop > revealer > box {
       background-color: $base;
 
+      link:link { color: on($primary); }
+
       button {
         &, &.text-button:not(:disabled) { color: $primary; }
       }
@@ -3411,11 +3417,11 @@ infobar {
       background-color: $primary;
       color: on($primary);
 
+      link:link { color: on($primary); }
+
       button {
         &, &:hover, &:focus, &:active, &:checked, &.text-button:not(:disabled) { color: on($primary); }
       }
-
-      *:link { color: on($primary); }
     }
 
     &:hover > revealer > box {
@@ -3429,13 +3435,13 @@ infobar {
       background-color: $warning;
       color: on($warning);
 
+      link:link { color: on($warning); }
+
       button {
         @extend %button-on-dark;
 
         &, &:hover, &:focus, &:active, &:checked, &.text-button:not(:disabled) { color: on($warning); }
       }
-
-      *:link { color: on($warning); }
     }
 
     &:hover > revealer > box {
@@ -3449,11 +3455,11 @@ infobar {
       background-color: $error;
       color: on($error);
 
+      link:link { color: on($error); }
+
       button {
         &, &:hover, &:focus, &:active, &:checked, &.text-button:not(:disabled) { color: on($error); }
       }
-
-      *:link { color: on($error); }
     }
 
     &:hover > revealer > box {
