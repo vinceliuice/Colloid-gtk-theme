@@ -37,7 +37,7 @@
 
 %selected_items {
   color: $text;
-  background-color: mix($text, $base, 10%);
+  background-color: $overlay-checked;
 }
 
 %selected_items_color {
@@ -145,7 +145,9 @@
     &:hover { box-shadow: none; }
   }
 
-  .background.csd &:selected { @extend %selected_items_color; }
+  .background.csd &:selected {
+    @extend %selected_items;
+  }
 }
 
 widget.view {
@@ -1504,7 +1506,6 @@ treeview.view {
   // FIXME: Avoid transparency background-color being slightly darker
   &:selected {
     @extend %selected_items;
-    background-image: image($overlay-checked);
   }
 
   rubberband { @extend rubberband; } // to avoid borders being overridden by the previously set props
@@ -1550,7 +1551,17 @@ treeview.view {
     border-radius: $circular-radius;
     color: on($primary);
 
-    &:selected:hover { box-shadow: none; }
+    &:selected, &:selected:hover, &:selected:focus {
+      box-shadow: none;
+      background-color: mix($text, $primary, 15%);
+      color: on($primary);
+
+      &:backdrop { color: on($primary); }
+    }
+
+    &:backdrop, &:selected:backdrop {
+      background-color: $track;
+    }
   }
 
   &.trough { // progress bar trough in treeviews
@@ -1562,7 +1573,14 @@ treeview.view {
     padding: 0;
     margin: 0;
 
-    &:selected:hover { box-shadow: none; }
+    &:selected, &:selected:hover, &:selected:focus {
+      box-shadow: none;
+      background-color: $track-disabled;
+    }
+
+    &:backdrop, &:selected:backdrop {
+      background-color: $divider;
+    }
   }
 
   header {
@@ -1634,6 +1652,10 @@ menubar,
     &:disabled { color: $titlebar-text-secondary-disabled; }
 
     label:disabled { color: inherit; } // to inherit the above color
+
+    > window.popup.background > menu {
+      menuitem { transition: none; }
+    }
   }
 }
 
@@ -1762,21 +1784,21 @@ popover.background {
   &, .csd & {
     @if $rimless == 'true' {
       border: none;
-      box-shadow: $shadow-z4;
+      box-shadow: $shadow-z5;
 
-      &:backdrop { box-shadow: $shadow-z2; }
+      &:backdrop { box-shadow: $shadow-z3; }
     } @else if $variant == 'dark' {
       border: 1px solid highlight($surface);
-      box-shadow: $shadow-z4, 0 0 0 1px $window-border;
+      box-shadow: $shadow-z5, 0 0 0 1px $window-border;
       background-clip: border-box;
 
-      &:backdrop { box-shadow: $shadow-z2, 0 0 0 1px $window-border; }
+      &:backdrop { box-shadow: $shadow-z3, 0 0 0 1px $window-border; }
     } @else {
-      border: 1px solid rgba(black, 0.25);
-      box-shadow: $shadow-z4;
+      border: 1px solid rgba(black, 0.15);
+      box-shadow: $shadow-z5;
       background-clip: padding-box;
 
-      &:backdrop { box-shadow: $shadow-z2; }
+      &:backdrop { box-shadow: $shadow-z3; }
     }
   }
 
@@ -2385,7 +2407,7 @@ treeview.view {
     }
   }
 
-  &:selected, &:selected:focused {
+  &:selected, &:selected:focus {
     radio, check {
       &:checked, &:indeterminate {
         background-color: $primary;
@@ -2706,10 +2728,7 @@ levelbar {
 
   // imitate the entry style
   trough {
-    // padding: 2px;
     border-radius: $corner-radius;
-    // box-shadow: $shadow-z1;
-    // background-color: $base;
 
     // &:disabled { background-color: $base-alt; }
   }
@@ -3107,11 +3126,6 @@ filechooser {
       border-radius: 0 0 $window-radius 0;
 
       list { background-color: transparent; }
-
-      treeview.view {
-        @extend .view;
-        background-color: transparent;
-      }
     }
 
     > placesview {
@@ -3388,6 +3402,8 @@ infobar {
     &:backdrop > revealer > box {
       background-color: $base;
 
+      link:link { color: on($primary); }
+
       button {
         &, &.text-button:not(:disabled) { color: $primary; }
       }
@@ -3401,11 +3417,11 @@ infobar {
       background-color: $primary;
       color: on($primary);
 
+      link:link { color: on($primary); }
+
       button {
         &, &:hover, &:focus, &:active, &:checked, &.text-button:not(:disabled) { color: on($primary); }
       }
-
-      *:link { color: on($primary); }
     }
 
     &:hover > revealer > box {
@@ -3419,13 +3435,13 @@ infobar {
       background-color: $warning;
       color: on($warning);
 
+      link:link { color: on($warning); }
+
       button {
         @extend %button-on-dark;
 
         &, &:hover, &:focus, &:active, &:checked, &.text-button:not(:disabled) { color: on($warning); }
       }
-
-      *:link { color: on($warning); }
     }
 
     &:hover > revealer > box {
@@ -3439,11 +3455,11 @@ infobar {
       background-color: $error;
       color: on($error);
 
+      link:link { color: on($error); }
+
       button {
         &, &:hover, &:focus, &:active, &:checked, &.text-button:not(:disabled) { color: on($error); }
       }
-
-      *:link { color: on($error); }
     }
 
     &:hover > revealer > box {
@@ -3557,12 +3573,10 @@ colorswatch {
     transition: $transition-shadow;
 
     &:hover { box-shadow: 0 0 0 2px $primary; }
-
-    // &:drop(active) { }
   }
 
   &#add-color-button {
-    border-radius: $corner-radius $corner-radius 0 0;
+    border-radius: $corner-radius 0 0 $corner-radius;
 
     &:only-child { border-radius: $corner-radius; }
 
@@ -3581,15 +3595,12 @@ colorswatch {
     overlay { box-shadow: none; }
   }
 
-  row:selected & {
-  }
-
   &#editor-color-sample {
     border-radius: $menu-radius;
 
     overlay { border-radius: $menu-radius; }
 
-    // overlay:hover { box-shadow: $shadow-z1; }
+    overlay:hover { box-shadow: $shadow-z1; }
   }
 }
 
@@ -3640,13 +3651,13 @@ decoration {
     box-shadow: $shadow-z16, 0 0 0 1px $window-border, 0 0 36px transparent;
 
     @if $variant == 'dark' {
-      border: 1px solid highlight($background);
-      background-color: $background;
-      background-clip: border-box;
+      .csd & {
+        border: 1px solid highlight($background);
+        background-color: $background;
+        background-clip: border-box;
+      }
     }
   }
-
-  // FIXME rationalize shadows
 
   // this is used for the resize cursor area
   margin: 8px;
@@ -3700,9 +3711,9 @@ decoration {
     border: none;
 
     @if $rimless == 'true' {
-      box-shadow: $shadow-z4;
+      box-shadow: $shadow-z5;
     } @else {
-      box-shadow: $shadow-z4, 0 0 0 1px $window-border;
+      box-shadow: $shadow-z5, 0 0 0 1px $window-border;
     }
   }
 

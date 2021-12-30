@@ -41,19 +41,19 @@
   outline-color: alpha(currentColor, 0.1);
 }
 
-XfdesktopIconView.view:active, calendar.raven-calendar:selected, box.vertical > widget > widget:selected, calendar:selected, treeview.view:selected, filechooser stack.view scrolledwindow treeview.view:selected, modelbutton.flat:selected,
-.menuitem.button.flat:selected {
+XfdesktopIconView.view:active, calendar.raven-calendar:selected, box.vertical > widget > widget:selected, calendar:selected, treeview.view:selected, modelbutton.flat:selected,
+.menuitem.button.flat:selected, .background.csd .view:selected {
   color: rgba(0, 0, 0, 0.87);
-  background-color: rgba(235, 235, 235, 0.987);
+  background-color: alpha(currentColor, 0.1);
 }
 
-.nemo-window .view selection, .nemo-window filechooser stack.view scrolledwindow treeview.view selection, filechooser stack.view scrolledwindow .nemo-window treeview.view selection, .nemo-window .view:selected, .nemo-window filechooser stack.view scrolledwindow treeview.view:selected, filechooser stack.view scrolledwindow .nemo-window treeview.view:selected, .nautilus-window notebook :not(treeview).view selection, .nautilus-window notebook filechooser stack.view scrolledwindow treeview.view:not(treeview) selection, filechooser stack.view scrolledwindow .nautilus-window notebook treeview.view:not(treeview) selection, .nautilus-window notebook :not(treeview).view:selected, .nautilus-window notebook filechooser stack.view scrolledwindow treeview.view:not(treeview):selected, filechooser stack.view scrolledwindow .nautilus-window notebook treeview.view:not(treeview):selected, .nautilus-window flowboxchild:selected .icon-item-background, flowbox flowboxchild:selected, .background.csd .view:selected, .background.csd filechooser stack.view scrolledwindow treeview.view:selected, filechooser stack.view scrolledwindow .background.csd treeview.view:selected {
+.nemo-window .view selection, .nemo-window .view:selected, .nautilus-window notebook .view:not(treeview) selection, .nautilus-window notebook .view:not(treeview):selected, .nautilus-window flowboxchild:selected .icon-item-background, .nautilus-window.background.csd notebook widget.view:selected, flowbox flowboxchild:selected {
   color: #3c84f7;
   background-color: rgba(60, 132, 247, 0.2);
 }
 
 .nemo-window .nemo-window-pane widget.entry:selected, window.background.csd evview.view.content-view:selected, window.background.csd evview.view.content-view:selected:backdrop, spinbutton.vertical selection, spinbutton:not(.vertical) selection,
-entry selection, label selection, textview text selection:focus, textview text selection, widget.view:selected, .view:selected, filechooser stack.view scrolledwindow treeview.view:selected {
+entry selection, label selection, textview text selection:focus, textview text selection, widget.view:selected, .view:selected {
   color: white;
   background-color: #3c84f7;
 }
@@ -139,20 +139,20 @@ entry selection, label selection, textview text selection:focus, textview text s
   color: white;
 }
 
-.view, filechooser stack.view scrolledwindow treeview.view {
+.view {
   background-color: #FFFFFF;
   color: rgba(0, 0, 0, 0.87);
 }
 
-.view:hover, filechooser stack.view scrolledwindow treeview.view:hover {
+.view:hover {
   box-shadow: inset 0 0 0 9999px alpha(currentColor, 0.08);
 }
 
-.view:disabled, filechooser stack.view scrolledwindow treeview.view:disabled {
+.view:disabled {
   color: rgba(0, 0, 0, 0.38);
 }
 
-.view:selected:hover, filechooser stack.view scrolledwindow treeview.view:selected:hover {
+.view:selected:hover {
   box-shadow: none;
 }
 
@@ -177,963 +177,17 @@ iconview:hover, iconview:selected {
 rubberband,
 XfdesktopIconView.view .rubberband,
 .content-view rubberband,
-.content-view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view .content-view .rubberband,
 .content-view treeview.view rubberband,
-.content-view treeview.view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view .content-view treeview.view .rubberband,
 treeview.view .content-view rubberband,
-treeview.view .content-view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view treeview.view .content-view .rubberband,
-.content-view filechooser stack.view scrolledwindow treeview.view rubberband,
-.content-view filechooser stack.view scrolledwindow treeview.view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view .content-view filechooser stack.view scrolledwindow treeview.view .rubberband,
-filechooser stack.view scrolledwindow treeview.view .content-view rubberband,
-filechooser stack.view scrolledwindow treeview.view .content-view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view filechooser stack.view scrolledwindow treeview.view .content-view .rubberband,
-.content-view filechooser stack.view scrolledwindow treeview.view flowbox rubberband,
-.content-view filechooser stack.view scrolledwindow treeview.view flowbox XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view .content-view filechooser stack.view scrolledwindow treeview.view flowbox .rubberband,
-filechooser stack.view scrolledwindow treeview.view flowbox .content-view rubberband,
-filechooser stack.view scrolledwindow treeview.view flowbox .content-view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view filechooser stack.view scrolledwindow treeview.view flowbox .content-view .rubberband,
-.content-view flowbox filechooser stack.view scrolledwindow treeview.view rubberband,
-.content-view flowbox filechooser stack.view scrolledwindow treeview.view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view .content-view flowbox filechooser stack.view scrolledwindow treeview.view .rubberband,
-flowbox filechooser stack.view scrolledwindow treeview.view .content-view rubberband,
-flowbox filechooser stack.view scrolledwindow treeview.view .content-view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view flowbox filechooser stack.view scrolledwindow treeview.view .content-view .rubberband,
-.content-view filechooser stack.view scrolledwindow flowbox treeview.view rubberband,
-.content-view filechooser stack.view scrolledwindow flowbox treeview.view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view .content-view filechooser stack.view scrolledwindow flowbox treeview.view .rubberband,
-filechooser stack.view scrolledwindow flowbox treeview.view .content-view rubberband,
-filechooser stack.view scrolledwindow flowbox treeview.view .content-view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view filechooser stack.view scrolledwindow flowbox treeview.view .content-view .rubberband,
 .content-view .rubberband,
 treeview.view rubberband,
-treeview.view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view treeview.view .rubberband,
-treeview.view .content-view rubberband,
-treeview.view .content-view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view treeview.view .content-view .rubberband,
-.content-view treeview.view rubberband,
-.content-view treeview.view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view .content-view treeview.view .rubberband,
-.content-view treeview.view rubberband,
-.content-view treeview.view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view .content-view treeview.view .rubberband,
-treeview.view .content-view rubberband,
-treeview.view .content-view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view treeview.view .content-view .rubberband,
-.content-view filechooser stack.view scrolledwindow treeview.view rubberband,
-.content-view filechooser stack.view scrolledwindow treeview.view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view .content-view filechooser stack.view scrolledwindow treeview.view .rubberband,
-filechooser stack.view scrolledwindow treeview.view .content-view rubberband,
-filechooser stack.view scrolledwindow treeview.view .content-view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view filechooser stack.view scrolledwindow treeview.view .content-view .rubberband,
-.content-view filechooser stack.view scrolledwindow treeview.view flowbox rubberband,
-.content-view filechooser stack.view scrolledwindow treeview.view flowbox XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view .content-view filechooser stack.view scrolledwindow treeview.view flowbox .rubberband,
-filechooser stack.view scrolledwindow treeview.view flowbox .content-view rubberband,
-filechooser stack.view scrolledwindow treeview.view flowbox .content-view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view filechooser stack.view scrolledwindow treeview.view flowbox .content-view .rubberband,
-.content-view flowbox filechooser stack.view scrolledwindow treeview.view rubberband,
-.content-view flowbox filechooser stack.view scrolledwindow treeview.view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view .content-view flowbox filechooser stack.view scrolledwindow treeview.view .rubberband,
-flowbox filechooser stack.view scrolledwindow treeview.view .content-view rubberband,
-flowbox filechooser stack.view scrolledwindow treeview.view .content-view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view flowbox filechooser stack.view scrolledwindow treeview.view .content-view .rubberband,
-.content-view filechooser stack.view scrolledwindow flowbox treeview.view rubberband,
-.content-view filechooser stack.view scrolledwindow flowbox treeview.view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view .content-view filechooser stack.view scrolledwindow flowbox treeview.view .rubberband,
-filechooser stack.view scrolledwindow flowbox treeview.view .content-view rubberband,
-filechooser stack.view scrolledwindow flowbox treeview.view .content-view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view filechooser stack.view scrolledwindow flowbox treeview.view .content-view .rubberband,
 treeview.view .content-view .rubberband,
 .content-view treeview.view .rubberband,
-filechooser stack.view scrolledwindow treeview.view rubberband,
-filechooser stack.view scrolledwindow treeview.view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view filechooser stack.view scrolledwindow treeview.view .rubberband,
-filechooser stack.view scrolledwindow treeview.view .content-view rubberband,
-filechooser stack.view scrolledwindow treeview.view .content-view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view filechooser stack.view scrolledwindow treeview.view .content-view .rubberband,
-.content-view filechooser stack.view scrolledwindow treeview.view rubberband,
-.content-view filechooser stack.view scrolledwindow treeview.view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view .content-view filechooser stack.view scrolledwindow treeview.view .rubberband,
-filechooser stack.view scrolledwindow .content-view treeview.view rubberband,
-filechooser stack.view scrolledwindow .content-view treeview.view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view filechooser stack.view scrolledwindow .content-view treeview.view .rubberband,
-.content-view filechooser stack.view scrolledwindow treeview.view rubberband,
-.content-view filechooser stack.view scrolledwindow treeview.view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view .content-view filechooser stack.view scrolledwindow treeview.view .rubberband,
-filechooser stack.view scrolledwindow treeview.view .content-view rubberband,
-filechooser stack.view scrolledwindow treeview.view .content-view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view filechooser stack.view scrolledwindow treeview.view .content-view .rubberband,
-.content-view filechooser stack.view scrolledwindow treeview.view rubberband,
-.content-view filechooser stack.view scrolledwindow treeview.view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view .content-view filechooser stack.view scrolledwindow treeview.view .rubberband,
-filechooser stack.view scrolledwindow treeview.view .content-view rubberband,
-filechooser stack.view scrolledwindow treeview.view .content-view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view filechooser stack.view scrolledwindow treeview.view .content-view .rubberband,
-.content-view filechooser stack.view scrolledwindow treeview.view flowbox rubberband,
-.content-view filechooser stack.view scrolledwindow treeview.view flowbox XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view .content-view filechooser stack.view scrolledwindow treeview.view flowbox .rubberband,
-filechooser stack.view scrolledwindow treeview.view flowbox .content-view rubberband,
-filechooser stack.view scrolledwindow treeview.view flowbox .content-view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view filechooser stack.view scrolledwindow treeview.view flowbox .content-view .rubberband,
-.content-view flowbox filechooser stack.view scrolledwindow treeview.view rubberband,
-.content-view flowbox filechooser stack.view scrolledwindow treeview.view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view .content-view flowbox filechooser stack.view scrolledwindow treeview.view .rubberband,
-flowbox filechooser stack.view scrolledwindow treeview.view .content-view rubberband,
-flowbox filechooser stack.view scrolledwindow treeview.view .content-view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view flowbox filechooser stack.view scrolledwindow treeview.view .content-view .rubberband,
-.content-view filechooser stack.view scrolledwindow flowbox treeview.view rubberband,
-.content-view filechooser stack.view scrolledwindow flowbox treeview.view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view .content-view filechooser stack.view scrolledwindow flowbox treeview.view .rubberband,
-filechooser stack.view scrolledwindow flowbox treeview.view .content-view rubberband,
-filechooser stack.view scrolledwindow flowbox treeview.view .content-view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view filechooser stack.view scrolledwindow flowbox treeview.view .content-view .rubberband,
-filechooser stack.view scrolledwindow treeview.view .content-view .rubberband,
-.content-view filechooser stack.view scrolledwindow treeview.view .rubberband,
 treeview.view flowbox rubberband,
-treeview.view flowbox XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view treeview.view flowbox .rubberband,
-treeview.view flowbox .content-view rubberband,
-treeview.view flowbox .content-view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view treeview.view flowbox .content-view .rubberband,
-.content-view treeview.view flowbox rubberband,
-.content-view treeview.view flowbox XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view .content-view treeview.view flowbox .rubberband,
-.content-view treeview.view flowbox rubberband,
-.content-view treeview.view flowbox XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view .content-view treeview.view flowbox .rubberband,
-treeview.view flowbox .content-view rubberband,
-treeview.view flowbox .content-view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view treeview.view flowbox .content-view .rubberband,
-treeview.view .content-view flowbox rubberband,
-treeview.view .content-view flowbox XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view treeview.view .content-view flowbox .rubberband,
-.content-view filechooser stack.view scrolledwindow treeview.view flowbox rubberband,
-.content-view filechooser stack.view scrolledwindow treeview.view flowbox XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view .content-view filechooser stack.view scrolledwindow treeview.view flowbox .rubberband,
-filechooser stack.view scrolledwindow treeview.view flowbox .content-view rubberband,
-filechooser stack.view scrolledwindow treeview.view flowbox .content-view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view filechooser stack.view scrolledwindow treeview.view flowbox .content-view .rubberband,
-filechooser stack.view scrolledwindow treeview.view .content-view flowbox rubberband,
-filechooser stack.view scrolledwindow treeview.view .content-view flowbox XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view filechooser stack.view scrolledwindow treeview.view .content-view flowbox .rubberband,
-.content-view filechooser stack.view scrolledwindow treeview.view flowbox rubberband,
-.content-view filechooser stack.view scrolledwindow treeview.view flowbox XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view .content-view filechooser stack.view scrolledwindow treeview.view flowbox .rubberband,
-filechooser stack.view scrolledwindow treeview.view flowbox .content-view rubberband,
-filechooser stack.view scrolledwindow treeview.view flowbox .content-view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view filechooser stack.view scrolledwindow treeview.view flowbox .content-view .rubberband,
-treeview.view .content-view flowbox filechooser stack.view scrolledwindow treeview.view rubberband,
-treeview.view .content-view flowbox filechooser stack.view scrolledwindow treeview.view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view treeview.view .content-view flowbox filechooser stack.view scrolledwindow treeview.view .rubberband,
-.content-view treeview.view flowbox filechooser stack.view scrolledwindow treeview.view rubberband,
-.content-view treeview.view flowbox filechooser stack.view scrolledwindow treeview.view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view .content-view treeview.view flowbox filechooser stack.view scrolledwindow treeview.view .rubberband,
-treeview.view flowbox filechooser stack.view scrolledwindow treeview.view .content-view rubberband,
-treeview.view flowbox filechooser stack.view scrolledwindow treeview.view .content-view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view treeview.view flowbox filechooser stack.view scrolledwindow treeview.view .content-view .rubberband,
-treeview.view .content-view filechooser stack.view scrolledwindow flowbox treeview.view rubberband,
-treeview.view .content-view filechooser stack.view scrolledwindow flowbox treeview.view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view treeview.view .content-view filechooser stack.view scrolledwindow flowbox treeview.view .rubberband,
-.content-view filechooser stack.view scrolledwindow treeview.view flowbox treeview.view rubberband,
-.content-view filechooser stack.view scrolledwindow treeview.view flowbox treeview.view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view .content-view filechooser stack.view scrolledwindow treeview.view flowbox treeview.view .rubberband,
-treeview.view filechooser stack.view scrolledwindow flowbox treeview.view .content-view rubberband,
-treeview.view filechooser stack.view scrolledwindow flowbox treeview.view .content-view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view treeview.view filechooser stack.view scrolledwindow flowbox treeview.view .content-view .rubberband,
-filechooser stack.view scrolledwindow treeview.view flowbox treeview.view .content-view rubberband,
-filechooser stack.view scrolledwindow treeview.view flowbox treeview.view .content-view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view filechooser stack.view scrolledwindow treeview.view flowbox treeview.view .content-view .rubberband,
-treeview.view flowbox .content-view .rubberband,
-.content-view treeview.view flowbox .rubberband,
-filechooser stack.view scrolledwindow treeview.view flowbox rubberband,
-filechooser stack.view scrolledwindow treeview.view flowbox XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view filechooser stack.view scrolledwindow treeview.view flowbox .rubberband,
-filechooser stack.view scrolledwindow treeview.view flowbox .content-view rubberband,
-filechooser stack.view scrolledwindow treeview.view flowbox .content-view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view filechooser stack.view scrolledwindow treeview.view flowbox .content-view .rubberband,
-.content-view filechooser stack.view scrolledwindow treeview.view flowbox rubberband,
-.content-view filechooser stack.view scrolledwindow treeview.view flowbox XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view .content-view filechooser stack.view scrolledwindow treeview.view flowbox .rubberband,
-filechooser stack.view scrolledwindow .content-view treeview.view flowbox rubberband,
-filechooser stack.view scrolledwindow .content-view treeview.view flowbox XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view filechooser stack.view scrolledwindow .content-view treeview.view flowbox .rubberband,
-.content-view filechooser stack.view scrolledwindow treeview.view flowbox rubberband,
-.content-view filechooser stack.view scrolledwindow treeview.view flowbox XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view .content-view filechooser stack.view scrolledwindow treeview.view flowbox .rubberband,
-filechooser stack.view scrolledwindow treeview.view flowbox .content-view rubberband,
-filechooser stack.view scrolledwindow treeview.view flowbox .content-view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view filechooser stack.view scrolledwindow treeview.view flowbox .content-view .rubberband,
-filechooser stack.view scrolledwindow treeview.view .content-view flowbox rubberband,
-filechooser stack.view scrolledwindow treeview.view .content-view flowbox XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view filechooser stack.view scrolledwindow treeview.view .content-view flowbox .rubberband,
-.content-view filechooser stack.view scrolledwindow treeview.view flowbox rubberband,
-.content-view filechooser stack.view scrolledwindow treeview.view flowbox XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view .content-view filechooser stack.view scrolledwindow treeview.view flowbox .rubberband,
-filechooser stack.view scrolledwindow treeview.view flowbox .content-view rubberband,
-filechooser stack.view scrolledwindow treeview.view flowbox .content-view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view filechooser stack.view scrolledwindow treeview.view flowbox .content-view .rubberband,
-filechooser stack.view scrolledwindow treeview.view .content-view flowbox rubberband,
-filechooser stack.view scrolledwindow treeview.view .content-view flowbox XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view filechooser stack.view scrolledwindow treeview.view .content-view flowbox .rubberband,
-.content-view filechooser stack.view scrolledwindow treeview.view flowbox rubberband,
-.content-view filechooser stack.view scrolledwindow treeview.view flowbox XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view .content-view filechooser stack.view scrolledwindow treeview.view flowbox .rubberband,
-filechooser stack.view scrolledwindow treeview.view flowbox .content-view rubberband,
-filechooser stack.view scrolledwindow treeview.view flowbox .content-view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view filechooser stack.view scrolledwindow treeview.view flowbox .content-view .rubberband,
-.content-view flowbox filechooser stack.view scrolledwindow treeview.view flowbox rubberband,
-.content-view flowbox filechooser stack.view scrolledwindow treeview.view flowbox XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view .content-view flowbox filechooser stack.view scrolledwindow treeview.view flowbox .rubberband,
-flowbox filechooser stack.view scrolledwindow treeview.view flowbox .content-view rubberband,
-flowbox filechooser stack.view scrolledwindow treeview.view flowbox .content-view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view flowbox filechooser stack.view scrolledwindow treeview.view flowbox .content-view .rubberband,
-flowbox filechooser stack.view scrolledwindow treeview.view .content-view flowbox rubberband,
-flowbox filechooser stack.view scrolledwindow treeview.view .content-view flowbox XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view flowbox filechooser stack.view scrolledwindow treeview.view .content-view flowbox .rubberband,
-.content-view filechooser stack.view scrolledwindow treeview.view flowbox treeview.view rubberband,
-.content-view filechooser stack.view scrolledwindow treeview.view flowbox treeview.view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view .content-view filechooser stack.view scrolledwindow treeview.view flowbox treeview.view .rubberband,
-filechooser stack.view scrolledwindow treeview.view flowbox treeview.view .content-view rubberband,
-filechooser stack.view scrolledwindow treeview.view flowbox treeview.view .content-view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view filechooser stack.view scrolledwindow treeview.view flowbox treeview.view .content-view .rubberband,
-filechooser stack.view scrolledwindow treeview.view flowbox .content-view .rubberband,
-.content-view filechooser stack.view scrolledwindow treeview.view flowbox .rubberband,
 flowbox treeview.view rubberband,
-flowbox treeview.view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view flowbox treeview.view .rubberband,
-flowbox treeview.view .content-view rubberband,
-flowbox treeview.view .content-view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view flowbox treeview.view .content-view .rubberband,
-.content-view flowbox treeview.view rubberband,
-.content-view flowbox treeview.view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view .content-view flowbox treeview.view .rubberband,
-flowbox .content-view treeview.view rubberband,
-flowbox .content-view treeview.view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view flowbox .content-view treeview.view .rubberband,
-.content-view flowbox treeview.view rubberband,
-.content-view flowbox treeview.view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view .content-view flowbox treeview.view .rubberband,
-flowbox treeview.view .content-view rubberband,
-flowbox treeview.view .content-view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view flowbox treeview.view .content-view .rubberband,
-flowbox .content-view filechooser stack.view scrolledwindow treeview.view rubberband,
-flowbox .content-view filechooser stack.view scrolledwindow treeview.view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view flowbox .content-view filechooser stack.view scrolledwindow treeview.view .rubberband,
-.content-view filechooser stack.view scrolledwindow flowbox treeview.view rubberband,
-.content-view filechooser stack.view scrolledwindow flowbox treeview.view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view .content-view filechooser stack.view scrolledwindow flowbox treeview.view .rubberband,
-flowbox filechooser stack.view scrolledwindow treeview.view .content-view rubberband,
-flowbox filechooser stack.view scrolledwindow treeview.view .content-view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view flowbox filechooser stack.view scrolledwindow treeview.view .content-view .rubberband,
-filechooser stack.view scrolledwindow flowbox treeview.view .content-view rubberband,
-filechooser stack.view scrolledwindow flowbox treeview.view .content-view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view filechooser stack.view scrolledwindow flowbox treeview.view .content-view .rubberband,
-flowbox .content-view filechooser stack.view scrolledwindow treeview.view flowbox rubberband,
-flowbox .content-view filechooser stack.view scrolledwindow treeview.view flowbox XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view flowbox .content-view filechooser stack.view scrolledwindow treeview.view flowbox .rubberband,
-.content-view filechooser stack.view scrolledwindow flowbox treeview.view flowbox rubberband,
-.content-view filechooser stack.view scrolledwindow flowbox treeview.view flowbox XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view .content-view filechooser stack.view scrolledwindow flowbox treeview.view flowbox .rubberband,
-flowbox filechooser stack.view scrolledwindow treeview.view flowbox .content-view rubberband,
-flowbox filechooser stack.view scrolledwindow treeview.view flowbox .content-view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view flowbox filechooser stack.view scrolledwindow treeview.view flowbox .content-view .rubberband,
-filechooser stack.view scrolledwindow flowbox treeview.view flowbox .content-view rubberband,
-filechooser stack.view scrolledwindow flowbox treeview.view flowbox .content-view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view filechooser stack.view scrolledwindow flowbox treeview.view flowbox .content-view .rubberband,
-.content-view flowbox filechooser stack.view scrolledwindow treeview.view rubberband,
-.content-view flowbox filechooser stack.view scrolledwindow treeview.view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view .content-view flowbox filechooser stack.view scrolledwindow treeview.view .rubberband,
-flowbox filechooser stack.view scrolledwindow treeview.view .content-view rubberband,
-flowbox filechooser stack.view scrolledwindow treeview.view .content-view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view flowbox filechooser stack.view scrolledwindow treeview.view .content-view .rubberband,
-.content-view filechooser stack.view scrolledwindow flowbox treeview.view rubberband,
-.content-view filechooser stack.view scrolledwindow flowbox treeview.view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view .content-view filechooser stack.view scrolledwindow flowbox treeview.view .rubberband,
-filechooser stack.view scrolledwindow flowbox treeview.view .content-view rubberband,
-filechooser stack.view scrolledwindow flowbox treeview.view .content-view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view filechooser stack.view scrolledwindow flowbox treeview.view .content-view .rubberband,
-flowbox treeview.view .content-view .rubberband,
-.content-view flowbox treeview.view .rubberband,
-flowbox filechooser stack.view scrolledwindow treeview.view rubberband,
-flowbox filechooser stack.view scrolledwindow treeview.view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view flowbox filechooser stack.view scrolledwindow treeview.view .rubberband,
-flowbox filechooser stack.view scrolledwindow treeview.view .content-view rubberband,
-flowbox filechooser stack.view scrolledwindow treeview.view .content-view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view flowbox filechooser stack.view scrolledwindow treeview.view .content-view .rubberband,
-.content-view flowbox filechooser stack.view scrolledwindow treeview.view rubberband,
-.content-view flowbox filechooser stack.view scrolledwindow treeview.view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view .content-view flowbox filechooser stack.view scrolledwindow treeview.view .rubberband,
-flowbox filechooser stack.view scrolledwindow .content-view treeview.view rubberband,
-flowbox filechooser stack.view scrolledwindow .content-view treeview.view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view flowbox filechooser stack.view scrolledwindow .content-view treeview.view .rubberband,
-.content-view flowbox filechooser stack.view scrolledwindow treeview.view rubberband,
-.content-view flowbox filechooser stack.view scrolledwindow treeview.view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view .content-view flowbox filechooser stack.view scrolledwindow treeview.view .rubberband,
-flowbox filechooser stack.view scrolledwindow treeview.view .content-view rubberband,
-flowbox filechooser stack.view scrolledwindow treeview.view .content-view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view flowbox filechooser stack.view scrolledwindow treeview.view .content-view .rubberband,
-flowbox .content-view filechooser stack.view scrolledwindow treeview.view rubberband,
-flowbox .content-view filechooser stack.view scrolledwindow treeview.view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view flowbox .content-view filechooser stack.view scrolledwindow treeview.view .rubberband,
-.content-view flowbox filechooser stack.view scrolledwindow treeview.view rubberband,
-.content-view flowbox filechooser stack.view scrolledwindow treeview.view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view .content-view flowbox filechooser stack.view scrolledwindow treeview.view .rubberband,
-flowbox filechooser stack.view scrolledwindow treeview.view .content-view rubberband,
-flowbox filechooser stack.view scrolledwindow treeview.view .content-view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view flowbox filechooser stack.view scrolledwindow treeview.view .content-view .rubberband,
-flowbox .content-view filechooser stack.view scrolledwindow treeview.view flowbox rubberband,
-flowbox .content-view filechooser stack.view scrolledwindow treeview.view flowbox XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view flowbox .content-view filechooser stack.view scrolledwindow treeview.view flowbox .rubberband,
-.content-view flowbox filechooser stack.view scrolledwindow treeview.view flowbox rubberband,
-.content-view flowbox filechooser stack.view scrolledwindow treeview.view flowbox XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view .content-view flowbox filechooser stack.view scrolledwindow treeview.view flowbox .rubberband,
-flowbox filechooser stack.view scrolledwindow treeview.view flowbox .content-view rubberband,
-flowbox filechooser stack.view scrolledwindow treeview.view flowbox .content-view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view flowbox filechooser stack.view scrolledwindow treeview.view flowbox .content-view .rubberband,
-.content-view flowbox filechooser stack.view scrolledwindow treeview.view rubberband,
-.content-view flowbox filechooser stack.view scrolledwindow treeview.view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view .content-view flowbox filechooser stack.view scrolledwindow treeview.view .rubberband,
-flowbox filechooser stack.view scrolledwindow treeview.view .content-view rubberband,
-flowbox filechooser stack.view scrolledwindow treeview.view .content-view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view flowbox filechooser stack.view scrolledwindow treeview.view .content-view .rubberband,
-flowbox .content-view filechooser stack.view scrolledwindow flowbox treeview.view rubberband,
-flowbox .content-view filechooser stack.view scrolledwindow flowbox treeview.view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view flowbox .content-view filechooser stack.view scrolledwindow flowbox treeview.view .rubberband,
-.content-view flowbox filechooser stack.view scrolledwindow flowbox treeview.view rubberband,
-.content-view flowbox filechooser stack.view scrolledwindow flowbox treeview.view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view .content-view flowbox filechooser stack.view scrolledwindow flowbox treeview.view .rubberband,
-flowbox filechooser stack.view scrolledwindow flowbox treeview.view .content-view rubberband,
-flowbox filechooser stack.view scrolledwindow flowbox treeview.view .content-view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view flowbox filechooser stack.view scrolledwindow flowbox treeview.view .content-view .rubberband,
-flowbox filechooser stack.view scrolledwindow treeview.view .content-view .rubberband,
-.content-view flowbox filechooser stack.view scrolledwindow treeview.view .rubberband,
-filechooser stack.view scrolledwindow flowbox treeview.view rubberband,
-filechooser stack.view scrolledwindow flowbox treeview.view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view filechooser stack.view scrolledwindow flowbox treeview.view .rubberband,
-filechooser stack.view scrolledwindow flowbox treeview.view .content-view rubberband,
-filechooser stack.view scrolledwindow flowbox treeview.view .content-view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view filechooser stack.view scrolledwindow flowbox treeview.view .content-view .rubberband,
-.content-view filechooser stack.view scrolledwindow flowbox treeview.view rubberband,
-.content-view filechooser stack.view scrolledwindow flowbox treeview.view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view .content-view filechooser stack.view scrolledwindow flowbox treeview.view .rubberband,
-filechooser stack.view scrolledwindow flowbox .content-view treeview.view rubberband,
-filechooser stack.view scrolledwindow flowbox .content-view treeview.view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view filechooser stack.view scrolledwindow flowbox .content-view treeview.view .rubberband,
-.content-view filechooser stack.view scrolledwindow flowbox treeview.view rubberband,
-.content-view filechooser stack.view scrolledwindow flowbox treeview.view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view .content-view filechooser stack.view scrolledwindow flowbox treeview.view .rubberband,
-filechooser stack.view scrolledwindow flowbox treeview.view .content-view rubberband,
-filechooser stack.view scrolledwindow flowbox treeview.view .content-view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view filechooser stack.view scrolledwindow flowbox treeview.view .content-view .rubberband,
-.content-view filechooser stack.view scrolledwindow flowbox treeview.view rubberband,
-.content-view filechooser stack.view scrolledwindow flowbox treeview.view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view .content-view filechooser stack.view scrolledwindow flowbox treeview.view .rubberband,
-filechooser stack.view scrolledwindow flowbox treeview.view .content-view rubberband,
-filechooser stack.view scrolledwindow flowbox treeview.view .content-view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view filechooser stack.view scrolledwindow flowbox treeview.view .content-view .rubberband,
-.content-view filechooser stack.view scrolledwindow flowbox treeview.view flowbox rubberband,
-.content-view filechooser stack.view scrolledwindow flowbox treeview.view flowbox XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view .content-view filechooser stack.view scrolledwindow flowbox treeview.view flowbox .rubberband,
-filechooser stack.view scrolledwindow flowbox treeview.view flowbox .content-view rubberband,
-filechooser stack.view scrolledwindow flowbox treeview.view flowbox .content-view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view filechooser stack.view scrolledwindow flowbox treeview.view flowbox .content-view .rubberband,
-.content-view flowbox filechooser stack.view scrolledwindow flowbox treeview.view rubberband,
-.content-view flowbox filechooser stack.view scrolledwindow flowbox treeview.view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view .content-view flowbox filechooser stack.view scrolledwindow flowbox treeview.view .rubberband,
-flowbox filechooser stack.view scrolledwindow flowbox treeview.view .content-view rubberband,
-flowbox filechooser stack.view scrolledwindow flowbox treeview.view .content-view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view flowbox filechooser stack.view scrolledwindow flowbox treeview.view .content-view .rubberband,
-.content-view filechooser stack.view scrolledwindow flowbox treeview.view rubberband,
-.content-view filechooser stack.view scrolledwindow flowbox treeview.view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view .content-view filechooser stack.view scrolledwindow flowbox treeview.view .rubberband,
-filechooser stack.view scrolledwindow flowbox treeview.view .content-view rubberband,
-filechooser stack.view scrolledwindow flowbox treeview.view .content-view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view filechooser stack.view scrolledwindow flowbox treeview.view .content-view .rubberband,
-filechooser stack.view scrolledwindow flowbox treeview.view .content-view .rubberband,
-.content-view filechooser stack.view scrolledwindow flowbox treeview.view .rubberband,
 flowbox rubberband,
-flowbox XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view flowbox .rubberband,
-flowbox .content-view rubberband,
-flowbox .content-view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view flowbox .content-view .rubberband,
-.content-view flowbox rubberband,
-.content-view flowbox XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view .content-view flowbox .rubberband,
-flowbox .content-view treeview.view rubberband,
-flowbox .content-view treeview.view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view flowbox .content-view treeview.view .rubberband,
-.content-view treeview.view flowbox rubberband,
-.content-view treeview.view flowbox XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view .content-view treeview.view flowbox .rubberband,
-flowbox treeview.view .content-view rubberband,
-flowbox treeview.view .content-view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view flowbox treeview.view .content-view .rubberband,
-treeview.view .content-view flowbox rubberband,
-treeview.view .content-view flowbox XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view treeview.view .content-view flowbox .rubberband,
-flowbox .content-view filechooser stack.view scrolledwindow treeview.view rubberband,
-flowbox .content-view filechooser stack.view scrolledwindow treeview.view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view flowbox .content-view filechooser stack.view scrolledwindow treeview.view .rubberband,
-.content-view filechooser stack.view scrolledwindow treeview.view flowbox rubberband,
-.content-view filechooser stack.view scrolledwindow treeview.view flowbox XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view .content-view filechooser stack.view scrolledwindow treeview.view flowbox .rubberband,
-flowbox filechooser stack.view scrolledwindow treeview.view .content-view rubberband,
-flowbox filechooser stack.view scrolledwindow treeview.view .content-view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view flowbox filechooser stack.view scrolledwindow treeview.view .content-view .rubberband,
-filechooser stack.view scrolledwindow treeview.view .content-view flowbox rubberband,
-filechooser stack.view scrolledwindow treeview.view .content-view flowbox XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view filechooser stack.view scrolledwindow treeview.view .content-view flowbox .rubberband,
-.content-view filechooser stack.view scrolledwindow treeview.view flowbox rubberband,
-.content-view filechooser stack.view scrolledwindow treeview.view flowbox XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view .content-view filechooser stack.view scrolledwindow treeview.view flowbox .rubberband,
-filechooser stack.view scrolledwindow treeview.view flowbox .content-view rubberband,
-filechooser stack.view scrolledwindow treeview.view flowbox .content-view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view filechooser stack.view scrolledwindow treeview.view flowbox .content-view .rubberband,
-.content-view flowbox filechooser stack.view scrolledwindow treeview.view rubberband,
-.content-view flowbox filechooser stack.view scrolledwindow treeview.view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view .content-view flowbox filechooser stack.view scrolledwindow treeview.view .rubberband,
-flowbox filechooser stack.view scrolledwindow treeview.view .content-view rubberband,
-flowbox filechooser stack.view scrolledwindow treeview.view .content-view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view flowbox filechooser stack.view scrolledwindow treeview.view .content-view .rubberband,
-.content-view filechooser stack.view scrolledwindow flowbox treeview.view rubberband,
-.content-view filechooser stack.view scrolledwindow flowbox treeview.view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view .content-view filechooser stack.view scrolledwindow flowbox treeview.view .rubberband,
-filechooser stack.view scrolledwindow flowbox treeview.view .content-view rubberband,
-filechooser stack.view scrolledwindow flowbox treeview.view .content-view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view filechooser stack.view scrolledwindow flowbox treeview.view .content-view .rubberband,
-flowbox .content-view .rubberband,
-.content-view flowbox .rubberband,
 flowbox treeview.view rubberband,
-flowbox treeview.view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view flowbox treeview.view .rubberband,
-flowbox treeview.view .content-view rubberband,
-flowbox treeview.view .content-view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view flowbox treeview.view .content-view .rubberband,
-.content-view flowbox treeview.view rubberband,
-.content-view flowbox treeview.view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view .content-view flowbox treeview.view .rubberband,
-flowbox .content-view treeview.view rubberband,
-flowbox .content-view treeview.view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view flowbox .content-view treeview.view .rubberband,
-.content-view flowbox treeview.view rubberband,
-.content-view flowbox treeview.view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view .content-view flowbox treeview.view .rubberband,
-flowbox treeview.view .content-view rubberband,
-flowbox treeview.view .content-view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view flowbox treeview.view .content-view .rubberband,
-flowbox .content-view filechooser stack.view scrolledwindow treeview.view rubberband,
-flowbox .content-view filechooser stack.view scrolledwindow treeview.view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view flowbox .content-view filechooser stack.view scrolledwindow treeview.view .rubberband,
-.content-view filechooser stack.view scrolledwindow flowbox treeview.view rubberband,
-.content-view filechooser stack.view scrolledwindow flowbox treeview.view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view .content-view filechooser stack.view scrolledwindow flowbox treeview.view .rubberband,
-flowbox filechooser stack.view scrolledwindow treeview.view .content-view rubberband,
-flowbox filechooser stack.view scrolledwindow treeview.view .content-view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view flowbox filechooser stack.view scrolledwindow treeview.view .content-view .rubberband,
-filechooser stack.view scrolledwindow flowbox treeview.view .content-view rubberband,
-filechooser stack.view scrolledwindow flowbox treeview.view .content-view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view filechooser stack.view scrolledwindow flowbox treeview.view .content-view .rubberband,
-flowbox .content-view filechooser stack.view scrolledwindow treeview.view flowbox rubberband,
-flowbox .content-view filechooser stack.view scrolledwindow treeview.view flowbox XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view flowbox .content-view filechooser stack.view scrolledwindow treeview.view flowbox .rubberband,
-.content-view filechooser stack.view scrolledwindow flowbox treeview.view flowbox rubberband,
-.content-view filechooser stack.view scrolledwindow flowbox treeview.view flowbox XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view .content-view filechooser stack.view scrolledwindow flowbox treeview.view flowbox .rubberband,
-flowbox filechooser stack.view scrolledwindow treeview.view flowbox .content-view rubberband,
-flowbox filechooser stack.view scrolledwindow treeview.view flowbox .content-view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view flowbox filechooser stack.view scrolledwindow treeview.view flowbox .content-view .rubberband,
-filechooser stack.view scrolledwindow flowbox treeview.view flowbox .content-view rubberband,
-filechooser stack.view scrolledwindow flowbox treeview.view flowbox .content-view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view filechooser stack.view scrolledwindow flowbox treeview.view flowbox .content-view .rubberband,
-.content-view flowbox filechooser stack.view scrolledwindow treeview.view rubberband,
-.content-view flowbox filechooser stack.view scrolledwindow treeview.view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view .content-view flowbox filechooser stack.view scrolledwindow treeview.view .rubberband,
-flowbox filechooser stack.view scrolledwindow treeview.view .content-view rubberband,
-flowbox filechooser stack.view scrolledwindow treeview.view .content-view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view flowbox filechooser stack.view scrolledwindow treeview.view .content-view .rubberband,
-.content-view filechooser stack.view scrolledwindow flowbox treeview.view rubberband,
-.content-view filechooser stack.view scrolledwindow flowbox treeview.view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view .content-view filechooser stack.view scrolledwindow flowbox treeview.view .rubberband,
-filechooser stack.view scrolledwindow flowbox treeview.view .content-view rubberband,
-filechooser stack.view scrolledwindow flowbox treeview.view .content-view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view filechooser stack.view scrolledwindow flowbox treeview.view .content-view .rubberband,
-flowbox treeview.view .content-view .rubberband,
-.content-view flowbox treeview.view .rubberband,
-flowbox filechooser stack.view scrolledwindow treeview.view rubberband,
-flowbox filechooser stack.view scrolledwindow treeview.view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view flowbox filechooser stack.view scrolledwindow treeview.view .rubberband,
-flowbox filechooser stack.view scrolledwindow treeview.view .content-view rubberband,
-flowbox filechooser stack.view scrolledwindow treeview.view .content-view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view flowbox filechooser stack.view scrolledwindow treeview.view .content-view .rubberband,
-.content-view flowbox filechooser stack.view scrolledwindow treeview.view rubberband,
-.content-view flowbox filechooser stack.view scrolledwindow treeview.view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view .content-view flowbox filechooser stack.view scrolledwindow treeview.view .rubberband,
-flowbox filechooser stack.view scrolledwindow .content-view treeview.view rubberband,
-flowbox filechooser stack.view scrolledwindow .content-view treeview.view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view flowbox filechooser stack.view scrolledwindow .content-view treeview.view .rubberband,
-.content-view flowbox filechooser stack.view scrolledwindow treeview.view rubberband,
-.content-view flowbox filechooser stack.view scrolledwindow treeview.view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view .content-view flowbox filechooser stack.view scrolledwindow treeview.view .rubberband,
-flowbox filechooser stack.view scrolledwindow treeview.view .content-view rubberband,
-flowbox filechooser stack.view scrolledwindow treeview.view .content-view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view flowbox filechooser stack.view scrolledwindow treeview.view .content-view .rubberband,
-flowbox .content-view filechooser stack.view scrolledwindow treeview.view rubberband,
-flowbox .content-view filechooser stack.view scrolledwindow treeview.view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view flowbox .content-view filechooser stack.view scrolledwindow treeview.view .rubberband,
-.content-view flowbox filechooser stack.view scrolledwindow treeview.view rubberband,
-.content-view flowbox filechooser stack.view scrolledwindow treeview.view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view .content-view flowbox filechooser stack.view scrolledwindow treeview.view .rubberband,
-flowbox filechooser stack.view scrolledwindow treeview.view .content-view rubberband,
-flowbox filechooser stack.view scrolledwindow treeview.view .content-view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view flowbox filechooser stack.view scrolledwindow treeview.view .content-view .rubberband,
-flowbox .content-view filechooser stack.view scrolledwindow treeview.view flowbox rubberband,
-flowbox .content-view filechooser stack.view scrolledwindow treeview.view flowbox XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view flowbox .content-view filechooser stack.view scrolledwindow treeview.view flowbox .rubberband,
-.content-view flowbox filechooser stack.view scrolledwindow treeview.view flowbox rubberband,
-.content-view flowbox filechooser stack.view scrolledwindow treeview.view flowbox XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view .content-view flowbox filechooser stack.view scrolledwindow treeview.view flowbox .rubberband,
-flowbox filechooser stack.view scrolledwindow treeview.view flowbox .content-view rubberband,
-flowbox filechooser stack.view scrolledwindow treeview.view flowbox .content-view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view flowbox filechooser stack.view scrolledwindow treeview.view flowbox .content-view .rubberband,
-.content-view flowbox filechooser stack.view scrolledwindow treeview.view rubberband,
-.content-view flowbox filechooser stack.view scrolledwindow treeview.view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view .content-view flowbox filechooser stack.view scrolledwindow treeview.view .rubberband,
-flowbox filechooser stack.view scrolledwindow treeview.view .content-view rubberband,
-flowbox filechooser stack.view scrolledwindow treeview.view .content-view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view flowbox filechooser stack.view scrolledwindow treeview.view .content-view .rubberband,
-flowbox .content-view filechooser stack.view scrolledwindow flowbox treeview.view rubberband,
-flowbox .content-view filechooser stack.view scrolledwindow flowbox treeview.view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view flowbox .content-view filechooser stack.view scrolledwindow flowbox treeview.view .rubberband,
-.content-view flowbox filechooser stack.view scrolledwindow flowbox treeview.view rubberband,
-.content-view flowbox filechooser stack.view scrolledwindow flowbox treeview.view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view .content-view flowbox filechooser stack.view scrolledwindow flowbox treeview.view .rubberband,
-flowbox filechooser stack.view scrolledwindow flowbox treeview.view .content-view rubberband,
-flowbox filechooser stack.view scrolledwindow flowbox treeview.view .content-view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view flowbox filechooser stack.view scrolledwindow flowbox treeview.view .content-view .rubberband,
-flowbox filechooser stack.view scrolledwindow treeview.view .content-view .rubberband,
-.content-view flowbox filechooser stack.view scrolledwindow treeview.view .rubberband,
-filechooser stack.view scrolledwindow flowbox treeview.view rubberband,
-filechooser stack.view scrolledwindow flowbox treeview.view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view filechooser stack.view scrolledwindow flowbox treeview.view .rubberband,
-filechooser stack.view scrolledwindow flowbox treeview.view .content-view rubberband,
-filechooser stack.view scrolledwindow flowbox treeview.view .content-view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view filechooser stack.view scrolledwindow flowbox treeview.view .content-view .rubberband,
-.content-view filechooser stack.view scrolledwindow flowbox treeview.view rubberband,
-.content-view filechooser stack.view scrolledwindow flowbox treeview.view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view .content-view filechooser stack.view scrolledwindow flowbox treeview.view .rubberband,
-filechooser stack.view scrolledwindow flowbox .content-view treeview.view rubberband,
-filechooser stack.view scrolledwindow flowbox .content-view treeview.view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view filechooser stack.view scrolledwindow flowbox .content-view treeview.view .rubberband,
-.content-view filechooser stack.view scrolledwindow flowbox treeview.view rubberband,
-.content-view filechooser stack.view scrolledwindow flowbox treeview.view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view .content-view filechooser stack.view scrolledwindow flowbox treeview.view .rubberband,
-filechooser stack.view scrolledwindow flowbox treeview.view .content-view rubberband,
-filechooser stack.view scrolledwindow flowbox treeview.view .content-view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view filechooser stack.view scrolledwindow flowbox treeview.view .content-view .rubberband,
-.content-view filechooser stack.view scrolledwindow flowbox treeview.view rubberband,
-.content-view filechooser stack.view scrolledwindow flowbox treeview.view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view .content-view filechooser stack.view scrolledwindow flowbox treeview.view .rubberband,
-filechooser stack.view scrolledwindow flowbox treeview.view .content-view rubberband,
-filechooser stack.view scrolledwindow flowbox treeview.view .content-view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view filechooser stack.view scrolledwindow flowbox treeview.view .content-view .rubberband,
-.content-view filechooser stack.view scrolledwindow flowbox treeview.view flowbox rubberband,
-.content-view filechooser stack.view scrolledwindow flowbox treeview.view flowbox XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view .content-view filechooser stack.view scrolledwindow flowbox treeview.view flowbox .rubberband,
-filechooser stack.view scrolledwindow flowbox treeview.view flowbox .content-view rubberband,
-filechooser stack.view scrolledwindow flowbox treeview.view flowbox .content-view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view filechooser stack.view scrolledwindow flowbox treeview.view flowbox .content-view .rubberband,
-.content-view flowbox filechooser stack.view scrolledwindow flowbox treeview.view rubberband,
-.content-view flowbox filechooser stack.view scrolledwindow flowbox treeview.view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view .content-view flowbox filechooser stack.view scrolledwindow flowbox treeview.view .rubberband,
-flowbox filechooser stack.view scrolledwindow flowbox treeview.view .content-view rubberband,
-flowbox filechooser stack.view scrolledwindow flowbox treeview.view .content-view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view flowbox filechooser stack.view scrolledwindow flowbox treeview.view .content-view .rubberband,
-.content-view filechooser stack.view scrolledwindow flowbox treeview.view rubberband,
-.content-view filechooser stack.view scrolledwindow flowbox treeview.view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view .content-view filechooser stack.view scrolledwindow flowbox treeview.view .rubberband,
-filechooser stack.view scrolledwindow flowbox treeview.view .content-view rubberband,
-filechooser stack.view scrolledwindow flowbox treeview.view .content-view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view filechooser stack.view scrolledwindow flowbox treeview.view .content-view .rubberband,
-filechooser stack.view scrolledwindow flowbox treeview.view .content-view .rubberband,
-.content-view filechooser stack.view scrolledwindow flowbox treeview.view .rubberband,
-treeview.view flowbox rubberband,
-treeview.view flowbox XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view treeview.view flowbox .rubberband,
-treeview.view flowbox .content-view rubberband,
-treeview.view flowbox .content-view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view treeview.view flowbox .content-view .rubberband,
-.content-view treeview.view flowbox rubberband,
-.content-view treeview.view flowbox XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view .content-view treeview.view flowbox .rubberband,
-.content-view treeview.view flowbox rubberband,
-.content-view treeview.view flowbox XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view .content-view treeview.view flowbox .rubberband,
-treeview.view flowbox .content-view rubberband,
-treeview.view flowbox .content-view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view treeview.view flowbox .content-view .rubberband,
-treeview.view .content-view flowbox rubberband,
-treeview.view .content-view flowbox XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view treeview.view .content-view flowbox .rubberband,
-.content-view filechooser stack.view scrolledwindow treeview.view flowbox rubberband,
-.content-view filechooser stack.view scrolledwindow treeview.view flowbox XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view .content-view filechooser stack.view scrolledwindow treeview.view flowbox .rubberband,
-filechooser stack.view scrolledwindow treeview.view flowbox .content-view rubberband,
-filechooser stack.view scrolledwindow treeview.view flowbox .content-view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view filechooser stack.view scrolledwindow treeview.view flowbox .content-view .rubberband,
-filechooser stack.view scrolledwindow treeview.view .content-view flowbox rubberband,
-filechooser stack.view scrolledwindow treeview.view .content-view flowbox XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view filechooser stack.view scrolledwindow treeview.view .content-view flowbox .rubberband,
-.content-view filechooser stack.view scrolledwindow treeview.view flowbox rubberband,
-.content-view filechooser stack.view scrolledwindow treeview.view flowbox XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view .content-view filechooser stack.view scrolledwindow treeview.view flowbox .rubberband,
-filechooser stack.view scrolledwindow treeview.view flowbox .content-view rubberband,
-filechooser stack.view scrolledwindow treeview.view flowbox .content-view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view filechooser stack.view scrolledwindow treeview.view flowbox .content-view .rubberband,
-treeview.view .content-view flowbox filechooser stack.view scrolledwindow treeview.view rubberband,
-treeview.view .content-view flowbox filechooser stack.view scrolledwindow treeview.view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view treeview.view .content-view flowbox filechooser stack.view scrolledwindow treeview.view .rubberband,
-.content-view treeview.view flowbox filechooser stack.view scrolledwindow treeview.view rubberband,
-.content-view treeview.view flowbox filechooser stack.view scrolledwindow treeview.view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view .content-view treeview.view flowbox filechooser stack.view scrolledwindow treeview.view .rubberband,
-treeview.view flowbox filechooser stack.view scrolledwindow treeview.view .content-view rubberband,
-treeview.view flowbox filechooser stack.view scrolledwindow treeview.view .content-view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view treeview.view flowbox filechooser stack.view scrolledwindow treeview.view .content-view .rubberband,
-treeview.view .content-view filechooser stack.view scrolledwindow flowbox treeview.view rubberband,
-treeview.view .content-view filechooser stack.view scrolledwindow flowbox treeview.view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view treeview.view .content-view filechooser stack.view scrolledwindow flowbox treeview.view .rubberband,
-.content-view filechooser stack.view scrolledwindow treeview.view flowbox treeview.view rubberband,
-.content-view filechooser stack.view scrolledwindow treeview.view flowbox treeview.view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view .content-view filechooser stack.view scrolledwindow treeview.view flowbox treeview.view .rubberband,
-treeview.view filechooser stack.view scrolledwindow flowbox treeview.view .content-view rubberband,
-treeview.view filechooser stack.view scrolledwindow flowbox treeview.view .content-view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view treeview.view filechooser stack.view scrolledwindow flowbox treeview.view .content-view .rubberband,
-filechooser stack.view scrolledwindow treeview.view flowbox treeview.view .content-view rubberband,
-filechooser stack.view scrolledwindow treeview.view flowbox treeview.view .content-view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view filechooser stack.view scrolledwindow treeview.view flowbox treeview.view .content-view .rubberband,
-treeview.view flowbox .content-view .rubberband,
-.content-view treeview.view flowbox .rubberband,
-filechooser stack.view scrolledwindow treeview.view flowbox rubberband,
-filechooser stack.view scrolledwindow treeview.view flowbox XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view filechooser stack.view scrolledwindow treeview.view flowbox .rubberband,
-filechooser stack.view scrolledwindow treeview.view flowbox .content-view rubberband,
-filechooser stack.view scrolledwindow treeview.view flowbox .content-view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view filechooser stack.view scrolledwindow treeview.view flowbox .content-view .rubberband,
-.content-view filechooser stack.view scrolledwindow treeview.view flowbox rubberband,
-.content-view filechooser stack.view scrolledwindow treeview.view flowbox XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view .content-view filechooser stack.view scrolledwindow treeview.view flowbox .rubberband,
-filechooser stack.view scrolledwindow .content-view treeview.view flowbox rubberband,
-filechooser stack.view scrolledwindow .content-view treeview.view flowbox XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view filechooser stack.view scrolledwindow .content-view treeview.view flowbox .rubberband,
-.content-view filechooser stack.view scrolledwindow treeview.view flowbox rubberband,
-.content-view filechooser stack.view scrolledwindow treeview.view flowbox XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view .content-view filechooser stack.view scrolledwindow treeview.view flowbox .rubberband,
-filechooser stack.view scrolledwindow treeview.view flowbox .content-view rubberband,
-filechooser stack.view scrolledwindow treeview.view flowbox .content-view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view filechooser stack.view scrolledwindow treeview.view flowbox .content-view .rubberband,
-filechooser stack.view scrolledwindow treeview.view .content-view flowbox rubberband,
-filechooser stack.view scrolledwindow treeview.view .content-view flowbox XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view filechooser stack.view scrolledwindow treeview.view .content-view flowbox .rubberband,
-.content-view filechooser stack.view scrolledwindow treeview.view flowbox rubberband,
-.content-view filechooser stack.view scrolledwindow treeview.view flowbox XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view .content-view filechooser stack.view scrolledwindow treeview.view flowbox .rubberband,
-filechooser stack.view scrolledwindow treeview.view flowbox .content-view rubberband,
-filechooser stack.view scrolledwindow treeview.view flowbox .content-view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view filechooser stack.view scrolledwindow treeview.view flowbox .content-view .rubberband,
-filechooser stack.view scrolledwindow treeview.view .content-view flowbox rubberband,
-filechooser stack.view scrolledwindow treeview.view .content-view flowbox XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view filechooser stack.view scrolledwindow treeview.view .content-view flowbox .rubberband,
-.content-view filechooser stack.view scrolledwindow treeview.view flowbox rubberband,
-.content-view filechooser stack.view scrolledwindow treeview.view flowbox XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view .content-view filechooser stack.view scrolledwindow treeview.view flowbox .rubberband,
-filechooser stack.view scrolledwindow treeview.view flowbox .content-view rubberband,
-filechooser stack.view scrolledwindow treeview.view flowbox .content-view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view filechooser stack.view scrolledwindow treeview.view flowbox .content-view .rubberband,
-.content-view flowbox filechooser stack.view scrolledwindow treeview.view flowbox rubberband,
-.content-view flowbox filechooser stack.view scrolledwindow treeview.view flowbox XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view .content-view flowbox filechooser stack.view scrolledwindow treeview.view flowbox .rubberband,
-flowbox filechooser stack.view scrolledwindow treeview.view flowbox .content-view rubberband,
-flowbox filechooser stack.view scrolledwindow treeview.view flowbox .content-view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view flowbox filechooser stack.view scrolledwindow treeview.view flowbox .content-view .rubberband,
-flowbox filechooser stack.view scrolledwindow treeview.view .content-view flowbox rubberband,
-flowbox filechooser stack.view scrolledwindow treeview.view .content-view flowbox XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view flowbox filechooser stack.view scrolledwindow treeview.view .content-view flowbox .rubberband,
-.content-view filechooser stack.view scrolledwindow treeview.view flowbox treeview.view rubberband,
-.content-view filechooser stack.view scrolledwindow treeview.view flowbox treeview.view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view .content-view filechooser stack.view scrolledwindow treeview.view flowbox treeview.view .rubberband,
-filechooser stack.view scrolledwindow treeview.view flowbox treeview.view .content-view rubberband,
-filechooser stack.view scrolledwindow treeview.view flowbox treeview.view .content-view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view filechooser stack.view scrolledwindow treeview.view flowbox treeview.view .content-view .rubberband,
-filechooser stack.view scrolledwindow treeview.view flowbox .content-view .rubberband,
-.content-view filechooser stack.view scrolledwindow treeview.view flowbox .rubberband,
-treeview.view flowbox rubberband,
-treeview.view flowbox XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view treeview.view flowbox .rubberband,
-treeview.view flowbox .content-view rubberband,
-treeview.view flowbox .content-view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view treeview.view flowbox .content-view .rubberband,
-.content-view treeview.view flowbox rubberband,
-.content-view treeview.view flowbox XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view .content-view treeview.view flowbox .rubberband,
-.content-view treeview.view flowbox rubberband,
-.content-view treeview.view flowbox XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view .content-view treeview.view flowbox .rubberband,
-treeview.view flowbox .content-view rubberband,
-treeview.view flowbox .content-view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view treeview.view flowbox .content-view .rubberband,
-treeview.view .content-view flowbox rubberband,
-treeview.view .content-view flowbox XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view treeview.view .content-view flowbox .rubberband,
-.content-view filechooser stack.view scrolledwindow treeview.view flowbox rubberband,
-.content-view filechooser stack.view scrolledwindow treeview.view flowbox XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view .content-view filechooser stack.view scrolledwindow treeview.view flowbox .rubberband,
-filechooser stack.view scrolledwindow treeview.view flowbox .content-view rubberband,
-filechooser stack.view scrolledwindow treeview.view flowbox .content-view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view filechooser stack.view scrolledwindow treeview.view flowbox .content-view .rubberband,
-filechooser stack.view scrolledwindow treeview.view .content-view flowbox rubberband,
-filechooser stack.view scrolledwindow treeview.view .content-view flowbox XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view filechooser stack.view scrolledwindow treeview.view .content-view flowbox .rubberband,
-.content-view filechooser stack.view scrolledwindow treeview.view flowbox rubberband,
-.content-view filechooser stack.view scrolledwindow treeview.view flowbox XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view .content-view filechooser stack.view scrolledwindow treeview.view flowbox .rubberband,
-filechooser stack.view scrolledwindow treeview.view flowbox .content-view rubberband,
-filechooser stack.view scrolledwindow treeview.view flowbox .content-view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view filechooser stack.view scrolledwindow treeview.view flowbox .content-view .rubberband,
-treeview.view .content-view flowbox filechooser stack.view scrolledwindow treeview.view rubberband,
-treeview.view .content-view flowbox filechooser stack.view scrolledwindow treeview.view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view treeview.view .content-view flowbox filechooser stack.view scrolledwindow treeview.view .rubberband,
-.content-view treeview.view flowbox filechooser stack.view scrolledwindow treeview.view rubberband,
-.content-view treeview.view flowbox filechooser stack.view scrolledwindow treeview.view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view .content-view treeview.view flowbox filechooser stack.view scrolledwindow treeview.view .rubberband,
-treeview.view flowbox filechooser stack.view scrolledwindow treeview.view .content-view rubberband,
-treeview.view flowbox filechooser stack.view scrolledwindow treeview.view .content-view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view treeview.view flowbox filechooser stack.view scrolledwindow treeview.view .content-view .rubberband,
-treeview.view .content-view filechooser stack.view scrolledwindow flowbox treeview.view rubberband,
-treeview.view .content-view filechooser stack.view scrolledwindow flowbox treeview.view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view treeview.view .content-view filechooser stack.view scrolledwindow flowbox treeview.view .rubberband,
-.content-view filechooser stack.view scrolledwindow treeview.view flowbox treeview.view rubberband,
-.content-view filechooser stack.view scrolledwindow treeview.view flowbox treeview.view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view .content-view filechooser stack.view scrolledwindow treeview.view flowbox treeview.view .rubberband,
-treeview.view filechooser stack.view scrolledwindow flowbox treeview.view .content-view rubberband,
-treeview.view filechooser stack.view scrolledwindow flowbox treeview.view .content-view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view treeview.view filechooser stack.view scrolledwindow flowbox treeview.view .content-view .rubberband,
-filechooser stack.view scrolledwindow treeview.view flowbox treeview.view .content-view rubberband,
-filechooser stack.view scrolledwindow treeview.view flowbox treeview.view .content-view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view filechooser stack.view scrolledwindow treeview.view flowbox treeview.view .content-view .rubberband,
-treeview.view flowbox .content-view .rubberband,
-.content-view treeview.view flowbox .rubberband,
-filechooser stack.view scrolledwindow treeview.view flowbox rubberband,
-filechooser stack.view scrolledwindow treeview.view flowbox XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view filechooser stack.view scrolledwindow treeview.view flowbox .rubberband,
-filechooser stack.view scrolledwindow treeview.view flowbox .content-view rubberband,
-filechooser stack.view scrolledwindow treeview.view flowbox .content-view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view filechooser stack.view scrolledwindow treeview.view flowbox .content-view .rubberband,
-.content-view filechooser stack.view scrolledwindow treeview.view flowbox rubberband,
-.content-view filechooser stack.view scrolledwindow treeview.view flowbox XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view .content-view filechooser stack.view scrolledwindow treeview.view flowbox .rubberband,
-filechooser stack.view scrolledwindow .content-view treeview.view flowbox rubberband,
-filechooser stack.view scrolledwindow .content-view treeview.view flowbox XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view filechooser stack.view scrolledwindow .content-view treeview.view flowbox .rubberband,
-.content-view filechooser stack.view scrolledwindow treeview.view flowbox rubberband,
-.content-view filechooser stack.view scrolledwindow treeview.view flowbox XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view .content-view filechooser stack.view scrolledwindow treeview.view flowbox .rubberband,
-filechooser stack.view scrolledwindow treeview.view flowbox .content-view rubberband,
-filechooser stack.view scrolledwindow treeview.view flowbox .content-view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view filechooser stack.view scrolledwindow treeview.view flowbox .content-view .rubberband,
-filechooser stack.view scrolledwindow treeview.view .content-view flowbox rubberband,
-filechooser stack.view scrolledwindow treeview.view .content-view flowbox XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view filechooser stack.view scrolledwindow treeview.view .content-view flowbox .rubberband,
-.content-view filechooser stack.view scrolledwindow treeview.view flowbox rubberband,
-.content-view filechooser stack.view scrolledwindow treeview.view flowbox XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view .content-view filechooser stack.view scrolledwindow treeview.view flowbox .rubberband,
-filechooser stack.view scrolledwindow treeview.view flowbox .content-view rubberband,
-filechooser stack.view scrolledwindow treeview.view flowbox .content-view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view filechooser stack.view scrolledwindow treeview.view flowbox .content-view .rubberband,
-filechooser stack.view scrolledwindow treeview.view .content-view flowbox rubberband,
-filechooser stack.view scrolledwindow treeview.view .content-view flowbox XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view filechooser stack.view scrolledwindow treeview.view .content-view flowbox .rubberband,
-.content-view filechooser stack.view scrolledwindow treeview.view flowbox rubberband,
-.content-view filechooser stack.view scrolledwindow treeview.view flowbox XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view .content-view filechooser stack.view scrolledwindow treeview.view flowbox .rubberband,
-filechooser stack.view scrolledwindow treeview.view flowbox .content-view rubberband,
-filechooser stack.view scrolledwindow treeview.view flowbox .content-view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view filechooser stack.view scrolledwindow treeview.view flowbox .content-view .rubberband,
-.content-view flowbox filechooser stack.view scrolledwindow treeview.view flowbox rubberband,
-.content-view flowbox filechooser stack.view scrolledwindow treeview.view flowbox XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view .content-view flowbox filechooser stack.view scrolledwindow treeview.view flowbox .rubberband,
-flowbox filechooser stack.view scrolledwindow treeview.view flowbox .content-view rubberband,
-flowbox filechooser stack.view scrolledwindow treeview.view flowbox .content-view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view flowbox filechooser stack.view scrolledwindow treeview.view flowbox .content-view .rubberband,
-flowbox filechooser stack.view scrolledwindow treeview.view .content-view flowbox rubberband,
-flowbox filechooser stack.view scrolledwindow treeview.view .content-view flowbox XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view flowbox filechooser stack.view scrolledwindow treeview.view .content-view flowbox .rubberband,
-.content-view filechooser stack.view scrolledwindow treeview.view flowbox treeview.view rubberband,
-.content-view filechooser stack.view scrolledwindow treeview.view flowbox treeview.view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view .content-view filechooser stack.view scrolledwindow treeview.view flowbox treeview.view .rubberband,
-filechooser stack.view scrolledwindow treeview.view flowbox treeview.view .content-view rubberband,
-filechooser stack.view scrolledwindow treeview.view flowbox treeview.view .content-view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view filechooser stack.view scrolledwindow treeview.view flowbox treeview.view .content-view .rubberband,
-filechooser stack.view scrolledwindow treeview.view flowbox .content-view .rubberband,
-.content-view filechooser stack.view scrolledwindow treeview.view flowbox .rubberband,
-flowbox treeview.view rubberband,
-flowbox treeview.view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view flowbox treeview.view .rubberband,
-flowbox treeview.view .content-view rubberband,
-flowbox treeview.view .content-view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view flowbox treeview.view .content-view .rubberband,
-.content-view flowbox treeview.view rubberband,
-.content-view flowbox treeview.view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view .content-view flowbox treeview.view .rubberband,
-flowbox .content-view treeview.view rubberband,
-flowbox .content-view treeview.view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view flowbox .content-view treeview.view .rubberband,
-.content-view flowbox treeview.view rubberband,
-.content-view flowbox treeview.view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view .content-view flowbox treeview.view .rubberband,
-flowbox treeview.view .content-view rubberband,
-flowbox treeview.view .content-view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view flowbox treeview.view .content-view .rubberband,
-flowbox .content-view filechooser stack.view scrolledwindow treeview.view rubberband,
-flowbox .content-view filechooser stack.view scrolledwindow treeview.view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view flowbox .content-view filechooser stack.view scrolledwindow treeview.view .rubberband,
-.content-view filechooser stack.view scrolledwindow flowbox treeview.view rubberband,
-.content-view filechooser stack.view scrolledwindow flowbox treeview.view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view .content-view filechooser stack.view scrolledwindow flowbox treeview.view .rubberband,
-flowbox filechooser stack.view scrolledwindow treeview.view .content-view rubberband,
-flowbox filechooser stack.view scrolledwindow treeview.view .content-view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view flowbox filechooser stack.view scrolledwindow treeview.view .content-view .rubberband,
-filechooser stack.view scrolledwindow flowbox treeview.view .content-view rubberband,
-filechooser stack.view scrolledwindow flowbox treeview.view .content-view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view filechooser stack.view scrolledwindow flowbox treeview.view .content-view .rubberband,
-flowbox .content-view filechooser stack.view scrolledwindow treeview.view flowbox rubberband,
-flowbox .content-view filechooser stack.view scrolledwindow treeview.view flowbox XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view flowbox .content-view filechooser stack.view scrolledwindow treeview.view flowbox .rubberband,
-.content-view filechooser stack.view scrolledwindow flowbox treeview.view flowbox rubberband,
-.content-view filechooser stack.view scrolledwindow flowbox treeview.view flowbox XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view .content-view filechooser stack.view scrolledwindow flowbox treeview.view flowbox .rubberband,
-flowbox filechooser stack.view scrolledwindow treeview.view flowbox .content-view rubberband,
-flowbox filechooser stack.view scrolledwindow treeview.view flowbox .content-view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view flowbox filechooser stack.view scrolledwindow treeview.view flowbox .content-view .rubberband,
-filechooser stack.view scrolledwindow flowbox treeview.view flowbox .content-view rubberband,
-filechooser stack.view scrolledwindow flowbox treeview.view flowbox .content-view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view filechooser stack.view scrolledwindow flowbox treeview.view flowbox .content-view .rubberband,
-.content-view flowbox filechooser stack.view scrolledwindow treeview.view rubberband,
-.content-view flowbox filechooser stack.view scrolledwindow treeview.view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view .content-view flowbox filechooser stack.view scrolledwindow treeview.view .rubberband,
-flowbox filechooser stack.view scrolledwindow treeview.view .content-view rubberband,
-flowbox filechooser stack.view scrolledwindow treeview.view .content-view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view flowbox filechooser stack.view scrolledwindow treeview.view .content-view .rubberband,
-.content-view filechooser stack.view scrolledwindow flowbox treeview.view rubberband,
-.content-view filechooser stack.view scrolledwindow flowbox treeview.view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view .content-view filechooser stack.view scrolledwindow flowbox treeview.view .rubberband,
-filechooser stack.view scrolledwindow flowbox treeview.view .content-view rubberband,
-filechooser stack.view scrolledwindow flowbox treeview.view .content-view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view filechooser stack.view scrolledwindow flowbox treeview.view .content-view .rubberband,
-flowbox treeview.view .content-view .rubberband,
-.content-view flowbox treeview.view .rubberband,
-flowbox filechooser stack.view scrolledwindow treeview.view rubberband,
-flowbox filechooser stack.view scrolledwindow treeview.view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view flowbox filechooser stack.view scrolledwindow treeview.view .rubberband,
-flowbox filechooser stack.view scrolledwindow treeview.view .content-view rubberband,
-flowbox filechooser stack.view scrolledwindow treeview.view .content-view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view flowbox filechooser stack.view scrolledwindow treeview.view .content-view .rubberband,
-.content-view flowbox filechooser stack.view scrolledwindow treeview.view rubberband,
-.content-view flowbox filechooser stack.view scrolledwindow treeview.view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view .content-view flowbox filechooser stack.view scrolledwindow treeview.view .rubberband,
-flowbox filechooser stack.view scrolledwindow .content-view treeview.view rubberband,
-flowbox filechooser stack.view scrolledwindow .content-view treeview.view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view flowbox filechooser stack.view scrolledwindow .content-view treeview.view .rubberband,
-.content-view flowbox filechooser stack.view scrolledwindow treeview.view rubberband,
-.content-view flowbox filechooser stack.view scrolledwindow treeview.view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view .content-view flowbox filechooser stack.view scrolledwindow treeview.view .rubberband,
-flowbox filechooser stack.view scrolledwindow treeview.view .content-view rubberband,
-flowbox filechooser stack.view scrolledwindow treeview.view .content-view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view flowbox filechooser stack.view scrolledwindow treeview.view .content-view .rubberband,
-flowbox .content-view filechooser stack.view scrolledwindow treeview.view rubberband,
-flowbox .content-view filechooser stack.view scrolledwindow treeview.view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view flowbox .content-view filechooser stack.view scrolledwindow treeview.view .rubberband,
-.content-view flowbox filechooser stack.view scrolledwindow treeview.view rubberband,
-.content-view flowbox filechooser stack.view scrolledwindow treeview.view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view .content-view flowbox filechooser stack.view scrolledwindow treeview.view .rubberband,
-flowbox filechooser stack.view scrolledwindow treeview.view .content-view rubberband,
-flowbox filechooser stack.view scrolledwindow treeview.view .content-view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view flowbox filechooser stack.view scrolledwindow treeview.view .content-view .rubberband,
-flowbox .content-view filechooser stack.view scrolledwindow treeview.view flowbox rubberband,
-flowbox .content-view filechooser stack.view scrolledwindow treeview.view flowbox XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view flowbox .content-view filechooser stack.view scrolledwindow treeview.view flowbox .rubberband,
-.content-view flowbox filechooser stack.view scrolledwindow treeview.view flowbox rubberband,
-.content-view flowbox filechooser stack.view scrolledwindow treeview.view flowbox XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view .content-view flowbox filechooser stack.view scrolledwindow treeview.view flowbox .rubberband,
-flowbox filechooser stack.view scrolledwindow treeview.view flowbox .content-view rubberband,
-flowbox filechooser stack.view scrolledwindow treeview.view flowbox .content-view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view flowbox filechooser stack.view scrolledwindow treeview.view flowbox .content-view .rubberband,
-.content-view flowbox filechooser stack.view scrolledwindow treeview.view rubberband,
-.content-view flowbox filechooser stack.view scrolledwindow treeview.view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view .content-view flowbox filechooser stack.view scrolledwindow treeview.view .rubberband,
-flowbox filechooser stack.view scrolledwindow treeview.view .content-view rubberband,
-flowbox filechooser stack.view scrolledwindow treeview.view .content-view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view flowbox filechooser stack.view scrolledwindow treeview.view .content-view .rubberband,
-flowbox .content-view filechooser stack.view scrolledwindow flowbox treeview.view rubberband,
-flowbox .content-view filechooser stack.view scrolledwindow flowbox treeview.view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view flowbox .content-view filechooser stack.view scrolledwindow flowbox treeview.view .rubberband,
-.content-view flowbox filechooser stack.view scrolledwindow flowbox treeview.view rubberband,
-.content-view flowbox filechooser stack.view scrolledwindow flowbox treeview.view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view .content-view flowbox filechooser stack.view scrolledwindow flowbox treeview.view .rubberband,
-flowbox filechooser stack.view scrolledwindow flowbox treeview.view .content-view rubberband,
-flowbox filechooser stack.view scrolledwindow flowbox treeview.view .content-view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view flowbox filechooser stack.view scrolledwindow flowbox treeview.view .content-view .rubberband,
-flowbox filechooser stack.view scrolledwindow treeview.view .content-view .rubberband,
-.content-view flowbox filechooser stack.view scrolledwindow treeview.view .rubberband,
-filechooser stack.view scrolledwindow flowbox treeview.view rubberband,
-filechooser stack.view scrolledwindow flowbox treeview.view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view filechooser stack.view scrolledwindow flowbox treeview.view .rubberband,
-filechooser stack.view scrolledwindow flowbox treeview.view .content-view rubberband,
-filechooser stack.view scrolledwindow flowbox treeview.view .content-view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view filechooser stack.view scrolledwindow flowbox treeview.view .content-view .rubberband,
-.content-view filechooser stack.view scrolledwindow flowbox treeview.view rubberband,
-.content-view filechooser stack.view scrolledwindow flowbox treeview.view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view .content-view filechooser stack.view scrolledwindow flowbox treeview.view .rubberband,
-filechooser stack.view scrolledwindow flowbox .content-view treeview.view rubberband,
-filechooser stack.view scrolledwindow flowbox .content-view treeview.view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view filechooser stack.view scrolledwindow flowbox .content-view treeview.view .rubberband,
-.content-view filechooser stack.view scrolledwindow flowbox treeview.view rubberband,
-.content-view filechooser stack.view scrolledwindow flowbox treeview.view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view .content-view filechooser stack.view scrolledwindow flowbox treeview.view .rubberband,
-filechooser stack.view scrolledwindow flowbox treeview.view .content-view rubberband,
-filechooser stack.view scrolledwindow flowbox treeview.view .content-view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view filechooser stack.view scrolledwindow flowbox treeview.view .content-view .rubberband,
-.content-view filechooser stack.view scrolledwindow flowbox treeview.view rubberband,
-.content-view filechooser stack.view scrolledwindow flowbox treeview.view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view .content-view filechooser stack.view scrolledwindow flowbox treeview.view .rubberband,
-filechooser stack.view scrolledwindow flowbox treeview.view .content-view rubberband,
-filechooser stack.view scrolledwindow flowbox treeview.view .content-view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view filechooser stack.view scrolledwindow flowbox treeview.view .content-view .rubberband,
-.content-view filechooser stack.view scrolledwindow flowbox treeview.view flowbox rubberband,
-.content-view filechooser stack.view scrolledwindow flowbox treeview.view flowbox XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view .content-view filechooser stack.view scrolledwindow flowbox treeview.view flowbox .rubberband,
-filechooser stack.view scrolledwindow flowbox treeview.view flowbox .content-view rubberband,
-filechooser stack.view scrolledwindow flowbox treeview.view flowbox .content-view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view filechooser stack.view scrolledwindow flowbox treeview.view flowbox .content-view .rubberband,
-.content-view flowbox filechooser stack.view scrolledwindow flowbox treeview.view rubberband,
-.content-view flowbox filechooser stack.view scrolledwindow flowbox treeview.view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view .content-view flowbox filechooser stack.view scrolledwindow flowbox treeview.view .rubberband,
-flowbox filechooser stack.view scrolledwindow flowbox treeview.view .content-view rubberband,
-flowbox filechooser stack.view scrolledwindow flowbox treeview.view .content-view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view flowbox filechooser stack.view scrolledwindow flowbox treeview.view .content-view .rubberband,
-.content-view filechooser stack.view scrolledwindow flowbox treeview.view rubberband,
-.content-view filechooser stack.view scrolledwindow flowbox treeview.view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view .content-view filechooser stack.view scrolledwindow flowbox treeview.view .rubberband,
-filechooser stack.view scrolledwindow flowbox treeview.view .content-view rubberband,
-filechooser stack.view scrolledwindow flowbox treeview.view .content-view XfdesktopIconView.view .rubberband,
-XfdesktopIconView.view filechooser stack.view scrolledwindow flowbox treeview.view .content-view .rubberband,
-filechooser stack.view scrolledwindow flowbox treeview.view .content-view .rubberband,
-.content-view filechooser stack.view scrolledwindow flowbox treeview.view .rubberband {
+treeview.view flowbox rubberband {
   border: 1px solid #3c84f7;
   background-color: rgba(60, 132, 247, 0.3);
 }
@@ -1601,7 +655,7 @@ button:drop(active) {
 
 .budgie-session-dialog .linked.horizontal > button,
 .budgie-polkit-dialog .linked.horizontal > button,
-.budgie-run-dialog .linked.horizontal > button, .drop-shadow button, .budgie-panel button, .budgie-popover row button, .budgie-settings-window buttonbox.inline-toolbar button, #mate-menu button, #MatePanelPopupWindow button, popover.messagepopover .popover-action-area button, tabbox > tab button, .gedit-search-slider .linked > button, placessidebar.sidebar row button.sidebar-button, calendar.button, .budgie-popover scrolledwindow.sidebar:not(.categories) list > row.activatable button.circular, treeview.view header button button.circular, filechooser stack.view scrolledwindow treeview.view header button button.circular, row.activatable button.circular, scrollbar button, notebook > header > tabs > arrow, spinbutton.vertical button, spinbutton:not(.vertical) button, modelbutton.flat,
+.budgie-run-dialog .linked.horizontal > button, .drop-shadow button, .budgie-panel button, .budgie-popover row button, .budgie-settings-window buttonbox.inline-toolbar button, #mate-menu button, #MatePanelPopupWindow button, popover.messagepopover .popover-action-area button, tabbox > tab button, .gedit-search-slider .linked > button, placessidebar.sidebar row button.sidebar-button, calendar.button, .budgie-popover scrolledwindow.sidebar:not(.categories) list > row.activatable button.circular, treeview.view header button button.circular, row.activatable button.circular, scrollbar button, notebook > header > tabs > arrow, spinbutton.vertical button, spinbutton:not(.vertical) button, modelbutton.flat,
 .menuitem.button.flat, .nemo-window .toolbar button, #buttonbox_frame button, .xfce4-panel.background button, .raven stackswitcher.linked > button, .budgie-popover.budgie-menu scrolledwindow.sidebar.categories button.flat.radio.category-button, .lock-dialog button, .mate-panel-menu-bar button, window.background.csd.geary-main-window stack#conversation_viewer .geary-expanded > .geary-composer-embed headerbar button,
 window#GearyMainWindow.background.csd stack#conversation_viewer .geary-expanded > .geary-composer-embed headerbar button, layouttabbar button, filechooser #pathbarbox > stack > box > button, messagedialog .dialog-action-box button, messagedialog .dialog-action-box .linked:not(.vertical) > button, .app-notification button, actionbar > revealer > box button:not(.suggested-action):not(.destructive-action), popover.background.menu button,
 popover.background button.model, .nemo-window .primary-toolbar button:not(.text-button), headerbar button:not(.suggested-action):not(.destructive-action), toolbar button, combobox > .linked:not(.vertical) > button:not(:only-child), button.flat {
@@ -1618,7 +672,7 @@ popover.background button.model, .nemo-window .primary-toolbar button:not(.text-
 
 .budgie-session-dialog .linked.horizontal > button:focus,
 .budgie-polkit-dialog .linked.horizontal > button:focus,
-.budgie-run-dialog .linked.horizontal > button:focus, .drop-shadow button:focus, .budgie-panel button:focus, .budgie-popover row button:focus, .budgie-settings-window buttonbox.inline-toolbar button:focus, #mate-menu button:focus, #MatePanelPopupWindow button:focus, popover.messagepopover .popover-action-area button:focus, tabbox > tab button:focus, .gedit-search-slider .linked > button:focus, placessidebar.sidebar row button.sidebar-button:focus, calendar.button:focus, .budgie-popover scrolledwindow.sidebar:not(.categories) list > row.activatable button.circular:focus, treeview.view header button button.circular:focus, filechooser stack.view scrolledwindow treeview.view header button button.circular:focus, row.activatable button.circular:focus, scrollbar button:focus, notebook > header > tabs > arrow:focus, spinbutton.vertical button:focus, spinbutton:not(.vertical) button:focus, modelbutton.flat:focus,
+.budgie-run-dialog .linked.horizontal > button:focus, .drop-shadow button:focus, .budgie-panel button:focus, .budgie-popover row button:focus, .budgie-settings-window buttonbox.inline-toolbar button:focus, #mate-menu button:focus, #MatePanelPopupWindow button:focus, popover.messagepopover .popover-action-area button:focus, tabbox > tab button:focus, .gedit-search-slider .linked > button:focus, placessidebar.sidebar row button.sidebar-button:focus, calendar.button:focus, .budgie-popover scrolledwindow.sidebar:not(.categories) list > row.activatable button.circular:focus, treeview.view header button button.circular:focus, row.activatable button.circular:focus, scrollbar button:focus, notebook > header > tabs > arrow:focus, spinbutton.vertical button:focus, spinbutton:not(.vertical) button:focus, modelbutton.flat:focus,
 .menuitem.button.flat:focus, .nemo-window .toolbar button:focus, #buttonbox_frame button:focus, .xfce4-panel.background button:focus, .raven stackswitcher.linked > button:focus, .budgie-popover.budgie-menu scrolledwindow.sidebar.categories button.flat.radio.category-button:focus, .lock-dialog button:focus, .mate-panel-menu-bar button:focus, window.background.csd.geary-main-window stack#conversation_viewer .geary-expanded > .geary-composer-embed headerbar button:focus,
 window#GearyMainWindow.background.csd stack#conversation_viewer .geary-expanded > .geary-composer-embed headerbar button:focus, layouttabbar button:focus, filechooser #pathbarbox > stack > box > button:focus, messagedialog .dialog-action-box button:focus, messagedialog .dialog-action-box .linked:not(.vertical) > button:focus, .app-notification button:focus, actionbar > revealer > box button:focus:not(.suggested-action):not(.destructive-action), popover.background.menu button:focus,
 popover.background button.model:focus, .nemo-window .primary-toolbar button:focus:not(.text-button), headerbar button:focus:not(.suggested-action):not(.destructive-action), toolbar button:focus, combobox > .linked:not(.vertical) > button:focus:not(:only-child), button.flat:focus {
@@ -1628,7 +682,7 @@ popover.background button.model:focus, .nemo-window .primary-toolbar button:focu
 
 .budgie-session-dialog .linked.horizontal > button:hover,
 .budgie-polkit-dialog .linked.horizontal > button:hover,
-.budgie-run-dialog .linked.horizontal > button:hover, .drop-shadow button:hover, .budgie-panel button:hover, .budgie-popover row button:hover, .budgie-settings-window buttonbox.inline-toolbar button:hover, #mate-menu button:hover, #MatePanelPopupWindow button:hover, popover.messagepopover .popover-action-area button:hover, tabbox > tab button:hover, .gedit-search-slider .linked > button:hover, placessidebar.sidebar row button.sidebar-button:hover, calendar.button:hover, .budgie-popover scrolledwindow.sidebar:not(.categories) list > row.activatable button.circular:hover, treeview.view header button button.circular:hover, filechooser stack.view scrolledwindow treeview.view header button button.circular:hover, row.activatable button.circular:hover, scrollbar button:hover, notebook > header > tabs > arrow:hover, spinbutton.vertical button:hover, spinbutton:not(.vertical) button:hover, modelbutton.flat:hover,
+.budgie-run-dialog .linked.horizontal > button:hover, .drop-shadow button:hover, .budgie-panel button:hover, .budgie-popover row button:hover, .budgie-settings-window buttonbox.inline-toolbar button:hover, #mate-menu button:hover, #MatePanelPopupWindow button:hover, popover.messagepopover .popover-action-area button:hover, tabbox > tab button:hover, .gedit-search-slider .linked > button:hover, placessidebar.sidebar row button.sidebar-button:hover, calendar.button:hover, .budgie-popover scrolledwindow.sidebar:not(.categories) list > row.activatable button.circular:hover, treeview.view header button button.circular:hover, row.activatable button.circular:hover, scrollbar button:hover, notebook > header > tabs > arrow:hover, spinbutton.vertical button:hover, spinbutton:not(.vertical) button:hover, modelbutton.flat:hover,
 .menuitem.button.flat:hover, .nemo-window .toolbar button:hover, #buttonbox_frame button:hover, .xfce4-panel.background button:hover, .raven stackswitcher.linked > button:hover, .budgie-popover.budgie-menu scrolledwindow.sidebar.categories button.flat.radio.category-button:hover, .lock-dialog button:hover, .mate-panel-menu-bar button:hover, window.background.csd.geary-main-window stack#conversation_viewer .geary-expanded > .geary-composer-embed headerbar button:hover,
 window#GearyMainWindow.background.csd stack#conversation_viewer .geary-expanded > .geary-composer-embed headerbar button:hover, layouttabbar button:hover, filechooser #pathbarbox > stack > box > button:hover, messagedialog .dialog-action-box button:hover, messagedialog .dialog-action-box .linked:not(.vertical) > button:hover, .app-notification button:hover, actionbar > revealer > box button:hover:not(.suggested-action):not(.destructive-action), popover.background.menu button:hover,
 popover.background button.model:hover, .nemo-window .primary-toolbar button:hover:not(.text-button), headerbar button:hover:not(.suggested-action):not(.destructive-action), toolbar button:hover, combobox > .linked:not(.vertical) > button:hover:not(:only-child), button.flat:hover {
@@ -1638,7 +692,7 @@ popover.background button.model:hover, .nemo-window .primary-toolbar button:hove
 
 .budgie-session-dialog .linked.horizontal > button:active,
 .budgie-polkit-dialog .linked.horizontal > button:active,
-.budgie-run-dialog .linked.horizontal > button:active, .drop-shadow button:active, .budgie-panel button:active, .budgie-popover row button:active, .budgie-settings-window buttonbox.inline-toolbar button:active, #mate-menu button:active, #MatePanelPopupWindow button:active, popover.messagepopover .popover-action-area button:active, tabbox > tab button:active, .gedit-search-slider .linked > button:active, placessidebar.sidebar row button.sidebar-button:active, calendar.button:active, .budgie-popover scrolledwindow.sidebar:not(.categories) list > row.activatable button.circular:active, treeview.view header button button.circular:active, filechooser stack.view scrolledwindow treeview.view header button button.circular:active, row.activatable button.circular:active, scrollbar button:active, notebook > header > tabs > arrow:active, spinbutton.vertical button:active, spinbutton:not(.vertical) button:active, modelbutton.flat:active,
+.budgie-run-dialog .linked.horizontal > button:active, .drop-shadow button:active, .budgie-panel button:active, .budgie-popover row button:active, .budgie-settings-window buttonbox.inline-toolbar button:active, #mate-menu button:active, #MatePanelPopupWindow button:active, popover.messagepopover .popover-action-area button:active, tabbox > tab button:active, .gedit-search-slider .linked > button:active, placessidebar.sidebar row button.sidebar-button:active, calendar.button:active, .budgie-popover scrolledwindow.sidebar:not(.categories) list > row.activatable button.circular:active, treeview.view header button button.circular:active, row.activatable button.circular:active, scrollbar button:active, notebook > header > tabs > arrow:active, spinbutton.vertical button:active, spinbutton:not(.vertical) button:active, modelbutton.flat:active,
 .menuitem.button.flat:active, .nemo-window .toolbar button:active, #buttonbox_frame button:active, .xfce4-panel.background button:active, .raven stackswitcher.linked > button:active, .budgie-popover.budgie-menu scrolledwindow.sidebar.categories button.flat.radio.category-button:active, .lock-dialog button:active, .mate-panel-menu-bar button:active, window.background.csd.geary-main-window stack#conversation_viewer .geary-expanded > .geary-composer-embed headerbar button:active,
 window#GearyMainWindow.background.csd stack#conversation_viewer .geary-expanded > .geary-composer-embed headerbar button:active, layouttabbar button:active, filechooser #pathbarbox > stack > box > button:active, messagedialog .dialog-action-box button:active, messagedialog .dialog-action-box .linked:not(.vertical) > button:active, .app-notification button:active, actionbar > revealer > box button:active:not(.suggested-action):not(.destructive-action), popover.background.menu button:active,
 popover.background button.model:active, .nemo-window .primary-toolbar button:active:not(.text-button), headerbar button:active:not(.suggested-action):not(.destructive-action), toolbar button:active, combobox > .linked:not(.vertical) > button:active:not(:only-child), button.flat:active {
@@ -1652,7 +706,7 @@ popover.background button.model:active, .nemo-window .primary-toolbar button:act
 
 .budgie-session-dialog .linked.horizontal > button:disabled,
 .budgie-polkit-dialog .linked.horizontal > button:disabled,
-.budgie-run-dialog .linked.horizontal > button:disabled, .drop-shadow button:disabled, .budgie-panel button:disabled, .budgie-popover row button:disabled, .budgie-settings-window buttonbox.inline-toolbar button:disabled, #mate-menu button:disabled, #MatePanelPopupWindow button:disabled, popover.messagepopover .popover-action-area button:disabled, tabbox > tab button:disabled, .gedit-search-slider .linked > button:disabled, placessidebar.sidebar row button.sidebar-button:disabled, calendar.button:disabled, .budgie-popover scrolledwindow.sidebar:not(.categories) list > row.activatable button.circular:disabled, treeview.view header button button.circular:disabled, filechooser stack.view scrolledwindow treeview.view header button button.circular:disabled, row.activatable button.circular:disabled, scrollbar button:disabled, notebook > header > tabs > arrow:disabled, spinbutton.vertical button:disabled, spinbutton:not(.vertical) button:disabled, modelbutton.flat:disabled,
+.budgie-run-dialog .linked.horizontal > button:disabled, .drop-shadow button:disabled, .budgie-panel button:disabled, .budgie-popover row button:disabled, .budgie-settings-window buttonbox.inline-toolbar button:disabled, #mate-menu button:disabled, #MatePanelPopupWindow button:disabled, popover.messagepopover .popover-action-area button:disabled, tabbox > tab button:disabled, .gedit-search-slider .linked > button:disabled, placessidebar.sidebar row button.sidebar-button:disabled, calendar.button:disabled, .budgie-popover scrolledwindow.sidebar:not(.categories) list > row.activatable button.circular:disabled, treeview.view header button button.circular:disabled, row.activatable button.circular:disabled, scrollbar button:disabled, notebook > header > tabs > arrow:disabled, spinbutton.vertical button:disabled, spinbutton:not(.vertical) button:disabled, modelbutton.flat:disabled,
 .menuitem.button.flat:disabled, .nemo-window .toolbar button:disabled, #buttonbox_frame button:disabled, .xfce4-panel.background button:disabled, .raven stackswitcher.linked > button:disabled, .budgie-popover.budgie-menu scrolledwindow.sidebar.categories button.flat.radio.category-button:disabled, .lock-dialog button:disabled, .mate-panel-menu-bar button:disabled, window.background.csd.geary-main-window stack#conversation_viewer .geary-expanded > .geary-composer-embed headerbar button:disabled,
 window#GearyMainWindow.background.csd stack#conversation_viewer .geary-expanded > .geary-composer-embed headerbar button:disabled, layouttabbar button:disabled, filechooser #pathbarbox > stack > box > button:disabled, messagedialog .dialog-action-box button:disabled, messagedialog .dialog-action-box .linked:not(.vertical) > button:disabled, .app-notification button:disabled, actionbar > revealer > box button:disabled:not(.suggested-action):not(.destructive-action), popover.background.menu button:disabled,
 popover.background button.model:disabled, .nemo-window .primary-toolbar button:disabled:not(.text-button), headerbar button:disabled:not(.suggested-action):not(.destructive-action), toolbar button:disabled, combobox > .linked:not(.vertical) > button:disabled:not(:only-child), button.flat:disabled {
@@ -2126,12 +1180,12 @@ frame.documents-dropdown, .app-notification, toolbar.osd {
   transition: box-shadow 75ms cubic-bezier(0, 0, 0.2, 1);
   padding: 6px;
   border-radius: 6px;
-  box-shadow: 0 2px 2.4px -1px rgba(0, 0, 0, 0.2), 0 4px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 6px 0 rgba(0, 0, 0, 0.12), inset 0 1px rgba(255, 255, 255, 0.15);
+  box-shadow: 0 2px 3px -1px rgba(0, 0, 0, 0.15), 0 4px 3px 0 rgba(0, 0, 0, 0.18), 0 1px 6px 0 rgba(0, 0, 0, 0.12), inset 0 1px rgba(255, 255, 255, 0.15);
   background-color: #FFFFFF;
 }
 
 frame.documents-dropdown:backdrop, .app-notification:backdrop, toolbar.osd:backdrop {
-  box-shadow: 0 3px 2px -3px rgba(0, 0, 0, 0.3), 0 2px 2px -1px rgba(0, 0, 0, 0.24), 0 1px 3px 0 rgba(0, 0, 0, 0.12), inset 0 1px rgba(255, 255, 255, 0.15);
+  box-shadow: 0 3px 2px -3px rgba(0, 0, 0, 0.2), 0 2px 2px -1px rgba(0, 0, 0, 0.24), 0 1px 3px 0 rgba(0, 0, 0, 0.12), inset 0 1px rgba(255, 255, 255, 0.15);
 }
 
 frame.left.documents-dropdown, .left.app-notification, frame.right.documents-dropdown, .right.app-notification, frame.top.documents-dropdown, .top.app-notification, frame.bottom.documents-dropdown, .bottom.app-notification, toolbar.osd.left, toolbar.osd.right, toolbar.osd.top, toolbar.osd.bottom {
@@ -2601,7 +1655,7 @@ headerbar.windowhandle viewswitchertitle > squeezer > viewswitcher > box.horizon
 /**************
  * Tree Views *
  **************/
-treeview.view, filechooser stack.view scrolledwindow treeview.view {
+treeview.view {
   border-left-color: rgba(0, 0, 0, 0.26);
   border-top-color: rgba(0, 0, 0, 0.12);
   padding: 3px;
@@ -2616,60 +1670,56 @@ treeview.view, filechooser stack.view scrolledwindow treeview.view {
   -GtkTreeView-expander-size: 16;
 }
 
-.csd treeview.view:not(:selected):not(:hover):not(.progressbar):not(.expander):not(.trough):not(.separator), .csd filechooser stack.view scrolledwindow treeview.view:not(:selected):not(:hover):not(.progressbar):not(.expander):not(.trough):not(.separator), filechooser stack.view scrolledwindow .csd treeview.view:not(:selected):not(:hover):not(.progressbar):not(.expander):not(.trough):not(.separator) {
+.csd treeview.view:not(:selected):not(:hover):not(.progressbar):not(.expander):not(.trough):not(.separator) {
   background-color: transparent;
 }
 
-treeview.view:selected, filechooser stack.view scrolledwindow treeview.view:selected {
-  background-image: image(alpha(currentColor, 0.1));
-}
-
-treeview.view:hover, filechooser stack.view scrolledwindow treeview.view:hover, treeview.view:selected, filechooser stack.view scrolledwindow treeview.view:selected {
+treeview.view:hover, treeview.view:selected {
   border-radius: 0;
 }
 
-treeview.view.separator, filechooser stack.view scrolledwindow treeview.separator.view {
+treeview.view.separator {
   min-height: 6px;
   color: rgba(0, 0, 0, 0.12);
 }
 
-treeview.view:drop(active), filechooser stack.view scrolledwindow treeview.view:drop(active) {
+treeview.view:drop(active) {
   border-style: solid none;
   border-width: 9999px;
   border-color: alpha(currentColor, 0.08);
 }
 
-treeview.view:drop(active).after, filechooser stack.view scrolledwindow treeview.view:drop(active).after {
+treeview.view:drop(active).after {
   border-top-style: none;
 }
 
-treeview.view:drop(active).before, filechooser stack.view scrolledwindow treeview.view:drop(active).before {
+treeview.view:drop(active).before {
   border-bottom-style: none;
 }
 
-treeview.view.expander, filechooser stack.view scrolledwindow treeview.expander.view {
+treeview.view.expander {
   -gtk-icon-source: -gtk-icontheme("pan-down-symbolic");
   -gtk-icon-transform: rotate(-90deg);
   color: rgba(0, 0, 0, 0.6);
 }
 
-treeview.view.expander:dir(rtl), filechooser stack.view scrolledwindow treeview.expander.view:dir(rtl) {
+treeview.view.expander:dir(rtl) {
   -gtk-icon-transform: rotate(90deg);
 }
 
-treeview.view.expander:checked, filechooser stack.view scrolledwindow treeview.expander.view:checked {
+treeview.view.expander:checked {
   -gtk-icon-transform: unset;
 }
 
-treeview.view.expander:hover, filechooser stack.view scrolledwindow treeview.expander.view:hover, treeview.view.expander:active, filechooser stack.view scrolledwindow treeview.expander.view:active {
+treeview.view.expander:hover, treeview.view.expander:active {
   color: rgba(0, 0, 0, 0.87);
 }
 
-treeview.view.expander:disabled, filechooser stack.view scrolledwindow treeview.expander.view:disabled {
+treeview.view.expander:disabled {
   color: rgba(0, 0, 0, 0.26);
 }
 
-treeview.view.progressbar, filechooser stack.view scrolledwindow treeview.progressbar.view {
+treeview.view.progressbar {
   border: none;
   box-shadow: none;
   background-color: #3c84f7;
@@ -2678,11 +1728,21 @@ treeview.view.progressbar, filechooser stack.view scrolledwindow treeview.progre
   color: white;
 }
 
-treeview.view.progressbar:selected:hover, filechooser stack.view scrolledwindow treeview.progressbar.view:selected:hover {
+treeview.view.progressbar:selected, treeview.view.progressbar:selected:hover, treeview.view.progressbar:selected:focus {
   box-shadow: none;
+  background-color: rgba(53, 116, 217, 0.9805);
+  color: white;
 }
 
-treeview.view.trough, filechooser stack.view scrolledwindow treeview.trough.view {
+treeview.view.progressbar:selected:backdrop, treeview.view.progressbar:selected:hover:backdrop, treeview.view.progressbar:selected:focus:backdrop {
+  color: white;
+}
+
+treeview.view.progressbar:backdrop, treeview.view.progressbar:selected:backdrop {
+  background-color: rgba(0, 0, 0, 0.26);
+}
+
+treeview.view.trough {
   border: none;
   box-shadow: none;
   background-color: rgba(0, 0, 0, 0.12);
@@ -2692,11 +1752,16 @@ treeview.view.trough, filechooser stack.view scrolledwindow treeview.trough.view
   margin: 0;
 }
 
-treeview.view.trough:selected:hover, filechooser stack.view scrolledwindow treeview.trough.view:selected:hover {
+treeview.view.trough:selected, treeview.view.trough:selected:hover, treeview.view.trough:selected:focus {
   box-shadow: none;
+  background-color: rgba(0, 0, 0, 0.12);
 }
 
-treeview.view header button, filechooser stack.view scrolledwindow treeview.view header button {
+treeview.view.trough:backdrop, treeview.view.trough:selected:backdrop {
+  background-color: rgba(0, 0, 0, 0.12);
+}
+
+treeview.view header button {
   padding: 2px 6px;
   border-style: none solid solid none;
   border-width: 1px;
@@ -2705,21 +1770,20 @@ treeview.view header button, filechooser stack.view scrolledwindow treeview.view
   background-clip: border-box;
 }
 
-treeview.view header button:not(:focus):not(:hover):not(:active), filechooser stack.view scrolledwindow treeview.view header button:not(:focus):not(:hover):not(:active) {
+treeview.view header button:not(:focus):not(:hover):not(:active) {
   color: rgba(0, 0, 0, 0.6);
 }
 
-treeview.view header button, filechooser stack.view scrolledwindow treeview.view header button, treeview.view header button:disabled, filechooser stack.view scrolledwindow treeview.view header button:disabled {
+treeview.view header button, treeview.view header button:disabled {
   background-color: #FFFFFF;
 }
 
-treeview.view header button:last-child, filechooser stack.view scrolledwindow treeview.view header button:last-child {
+treeview.view header button:last-child {
   border-right-style: none;
 }
 
-treeview.view button.dnd, filechooser stack.view scrolledwindow treeview.view button.dnd,
-treeview.view header.button.dnd,
-filechooser stack.view scrolledwindow treeview.view header.button.dnd {
+treeview.view button.dnd,
+treeview.view header.button.dnd {
   padding: 2px 6px;
   border-style: none solid solid;
   border-width: 1px;
@@ -2731,7 +1795,7 @@ filechooser stack.view scrolledwindow treeview.view header.button.dnd {
   color: #3c84f7;
 }
 
-treeview.view acceleditor > label, filechooser stack.view scrolledwindow treeview.view acceleditor > label {
+treeview.view acceleditor > label {
   background-color: #3c84f7;
 }
 
@@ -2781,6 +1845,11 @@ menubar > menuitem:disabled,
 menubar > menuitem label:disabled,
 .menubar > menuitem label:disabled {
   color: inherit;
+}
+
+menubar > menuitem > window.popup.background > menu menuitem,
+.menubar > menuitem > window.popup.background > menu menuitem {
+  transition: none;
 }
 
 .background.popup {
@@ -2875,13 +1944,9 @@ menu menuitem label:dir(rtl), menu menuitem label:dir(ltr),
   color: inherit;
 }
 
-menu .view:selected, menu filechooser stack.view scrolledwindow treeview.view:selected, filechooser stack.view scrolledwindow menu treeview.view:selected,
+menu .view:selected,
 .menu .view:selected,
-.menu filechooser stack.view scrolledwindow treeview.view:selected,
-filechooser stack.view scrolledwindow .menu treeview.view:selected,
-.context-menu .view:selected,
-.context-menu filechooser stack.view scrolledwindow treeview.view:selected,
-filechooser stack.view scrolledwindow .context-menu treeview.view:selected {
+.context-menu .view:selected {
   background-color: rgba(235, 235, 235, 0.987);
 }
 
@@ -2944,13 +2009,13 @@ popover.background {
 }
 
 popover.background, .csd popover.background {
-  border: 1px solid rgba(0, 0, 0, 0.25);
-  box-shadow: 0 2px 2.4px -1px rgba(0, 0, 0, 0.2), 0 4px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 6px 0 rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  box-shadow: 0 2px 3px -1px rgba(0, 0, 0, 0.05), 0 4px 6px 0 rgba(0, 0, 0, 0.06), 0 1px 10px 0 rgba(0, 0, 0, 0.05);
   background-clip: padding-box;
 }
 
 popover.background:backdrop, .csd popover.background:backdrop {
-  box-shadow: 0 3px 2px -3px rgba(0, 0, 0, 0.3), 0 2px 2px -1px rgba(0, 0, 0, 0.24), 0 1px 3px 0 rgba(0, 0, 0, 0.12);
+  box-shadow: 0 3px 2px -2px rgba(0, 0, 0, 0.05), 0 2px 3px -1px rgba(0, 0, 0, 0.06), 0 1px 4px 0 rgba(0, 0, 0, 0.05);
 }
 
 popover.background > stack {
@@ -2963,7 +2028,6 @@ popover.background > toolbar {
 
 popover.background > list,
 popover.background > .view,
-filechooser stack.view scrolledwindow popover.background > treeview.view,
 popover.background > toolbar {
   border-style: none;
   box-shadow: none;
@@ -2980,7 +2044,7 @@ popover.background > scrolledwindow > viewport.frame > list > row {
   padding: 6px;
 }
 
-popover.background .view:not(:selected), popover.background filechooser stack.view scrolledwindow treeview.view:not(:selected), filechooser stack.view scrolledwindow popover.background treeview.view:not(:selected),
+popover.background .view:not(:selected),
 popover.background toolbar {
   background-color: #FFFFFF;
 }
@@ -3373,7 +2437,7 @@ switch:focus slider, switch:hover slider, switch:focus:hover slider {
 /*************************
  * Check and Radio items *
  *************************/
-.view.content-view.check:not(list), filechooser stack.view scrolledwindow treeview.content-view.check.view:not(list),
+.view.content-view.check:not(list),
 .content-view .tile check:not(list) {
   min-height: 40px;
   min-width: 40px;
@@ -3384,12 +2448,12 @@ switch:focus slider, switch:hover slider, switch:focus:hover slider {
   background-image: none;
 }
 
-.view.content-view.check:not(list), filechooser stack.view scrolledwindow treeview.content-view.check.view:not(list),
+.view.content-view.check:not(list),
 .content-view .tile check:not(list) {
   -gtk-icon-source: -gtk-scaled(url("assets/selectionmode-checkbox-unchecked.png"), url("assets/selectionmode-checkbox-unchecked@2.png"));
 }
 
-.view.content-view.check:not(list):checked, filechooser stack.view scrolledwindow treeview.content-view.check.view:not(list):checked,
+.view.content-view.check:not(list):checked,
 .content-view .tile check:not(list):checked {
   -gtk-icon-source: -gtk-scaled(url("assets/selectionmode-checkbox-checked.png"), url("assets/selectionmode-checkbox-checked@2.png"));
 }
@@ -3563,20 +2627,20 @@ radio:not(:checked):indeterminate:active {
   -gtk-icon-transform: scaleX(-1);
 }
 
-treeview.view radio, filechooser stack.view scrolledwindow treeview.view radio, treeview.view check, filechooser stack.view scrolledwindow treeview.view check {
+treeview.view radio, treeview.view check {
   padding: 0;
   margin: 0;
 }
 
-treeview.view radio:not(:hover):not(:disabled):not(:checked):not(:indeterminate), filechooser stack.view scrolledwindow treeview.view radio:not(:hover):not(:disabled):not(:checked):not(:indeterminate), treeview.view check:not(:hover):not(:disabled):not(:checked):not(:indeterminate), filechooser stack.view scrolledwindow treeview.view check:not(:hover):not(:disabled):not(:checked):not(:indeterminate) {
+treeview.view radio:not(:hover):not(:disabled):not(:checked):not(:indeterminate), treeview.view check:not(:hover):not(:disabled):not(:checked):not(:indeterminate) {
   background-color: rgba(0, 0, 0, 0.12);
 }
 
-treeview.view radio, filechooser stack.view scrolledwindow treeview.view radio, treeview.view radio:hover, filechooser stack.view scrolledwindow treeview.view radio:hover, treeview.view radio:disabled, filechooser stack.view scrolledwindow treeview.view radio:disabled, treeview.view radio:checked:hover, filechooser stack.view scrolledwindow treeview.view radio:checked:hover, treeview.view radio:indeterminate:hover, filechooser stack.view scrolledwindow treeview.view radio:indeterminate:hover, treeview.view check, filechooser stack.view scrolledwindow treeview.view check, treeview.view check:hover, filechooser stack.view scrolledwindow treeview.view check:hover, treeview.view check:disabled, filechooser stack.view scrolledwindow treeview.view check:disabled, treeview.view check:checked:hover, filechooser stack.view scrolledwindow treeview.view check:checked:hover, treeview.view check:indeterminate:hover, filechooser stack.view scrolledwindow treeview.view check:indeterminate:hover {
+treeview.view radio, treeview.view radio:hover, treeview.view radio:disabled, treeview.view radio:checked:hover, treeview.view radio:indeterminate:hover, treeview.view check, treeview.view check:hover, treeview.view check:disabled, treeview.view check:checked:hover, treeview.view check:indeterminate:hover {
   box-shadow: none;
 }
 
-treeview.view:selected radio:checked, filechooser stack.view scrolledwindow treeview.view:selected radio:checked, treeview.view:selected radio:indeterminate, filechooser stack.view scrolledwindow treeview.view:selected radio:indeterminate, treeview.view:selected check:checked, filechooser stack.view scrolledwindow treeview.view:selected check:checked, treeview.view:selected check:indeterminate, filechooser stack.view scrolledwindow treeview.view:selected check:indeterminate, treeview.view:selected:focused radio:checked, filechooser stack.view scrolledwindow treeview.view:selected:focused radio:checked, treeview.view:selected:focused radio:indeterminate, filechooser stack.view scrolledwindow treeview.view:selected:focused radio:indeterminate, treeview.view:selected:focused check:checked, filechooser stack.view scrolledwindow treeview.view:selected:focused check:checked, treeview.view:selected:focused check:indeterminate, filechooser stack.view scrolledwindow treeview.view:selected:focused check:indeterminate {
+treeview.view:selected radio:checked, treeview.view:selected radio:indeterminate, treeview.view:selected check:checked, treeview.view:selected check:indeterminate, treeview.view:selected:focus radio:checked, treeview.view:selected:focus radio:indeterminate, treeview.view:selected:focus check:checked, treeview.view:selected:focus check:indeterminate {
   background-color: #3c84f7;
   color: white;
   background-image: none;
@@ -4069,8 +3133,7 @@ frame > border,
 }
 
 frame > border.view,
-.frame.view,
-filechooser stack.view scrolledwindow treeview.frame.view {
+.frame.view {
   border-radius: 6px;
 }
 
@@ -4227,7 +3290,7 @@ list.navigation-sidebar > row {
   border-radius: 6px;
 }
 
-.budgie-popover scrolledwindow.sidebar:not(.categories) list > row.activatable, treeview.view header button, filechooser stack.view scrolledwindow treeview.view header button, row.activatable {
+.budgie-popover scrolledwindow.sidebar:not(.categories) list > row.activatable, treeview.view header button, row.activatable {
   transition: all 75ms cubic-bezier(0, 0, 0.2, 1), background-size 300ms cubic-bezier(0, 0, 0.2, 1), background-image 1200ms cubic-bezier(0, 0, 0.2, 1);
   outline: none;
   box-shadow: inset 0 0 0 9999px transparent;
@@ -4237,16 +3300,16 @@ list.navigation-sidebar > row {
   background-size: 1000% 1000%;
 }
 
-.budgie-popover scrolledwindow.sidebar:not(.categories) list > row.activatable:focus, treeview.view header button:focus, filechooser stack.view scrolledwindow treeview.view header button:focus, row.activatable:focus {
+.budgie-popover scrolledwindow.sidebar:not(.categories) list > row.activatable:focus, treeview.view header button:focus, row.activatable:focus {
   box-shadow: inset 0 0 0 9999px alpha(currentColor, 0.08);
 }
 
-.budgie-popover scrolledwindow.sidebar:not(.categories) list > row.activatable:hover, treeview.view header button:hover, filechooser stack.view scrolledwindow treeview.view header button:hover, row.activatable:hover {
+.budgie-popover scrolledwindow.sidebar:not(.categories) list > row.activatable:hover, treeview.view header button:hover, row.activatable:hover {
   transition: all 75ms cubic-bezier(0, 0, 0.2, 1), box-shadow 0ms, background-size 300ms cubic-bezier(0, 0, 0.2, 1), background-image 1200ms cubic-bezier(0, 0, 0.2, 1);
   box-shadow: inset 0 0 0 9999px alpha(currentColor, 0.08);
 }
 
-.budgie-popover scrolledwindow.sidebar:not(.categories) list > row.has-open-popup.activatable, treeview.view header button.has-open-popup, filechooser stack.view scrolledwindow treeview.view header button.has-open-popup, .budgie-popover scrolledwindow.sidebar:not(.categories) list > row.activatable:active, treeview.view header button:active, filechooser stack.view scrolledwindow treeview.view header button:active, row.activatable.has-open-popup, row.activatable:active {
+.budgie-popover scrolledwindow.sidebar:not(.categories) list > row.has-open-popup.activatable, treeview.view header button.has-open-popup, .budgie-popover scrolledwindow.sidebar:not(.categories) list > row.activatable:active, treeview.view header button:active, row.activatable.has-open-popup, row.activatable:active {
   transition: all 75ms cubic-bezier(0, 0, 0.2, 1), background-size 0ms, background-image 0ms;
   animation: ripple 225ms cubic-bezier(0, 0, 0.2, 1) forwards;
   box-shadow: inset 0 0 0 9999px alpha(currentColor, 0.08);
@@ -4420,10 +3483,6 @@ filechooser stack.view scrolledwindow {
 }
 
 filechooser stack.view scrolledwindow list {
-  background-color: transparent;
-}
-
-filechooser stack.view scrolledwindow treeview.view, filechooser stack.view scrolledwindow treeview.view {
   background-color: transparent;
 }
 
@@ -4665,6 +3724,10 @@ infobar.info > revealer > box, infobar.info:hover > revealer > box, infobar.info
   background-color: #FFFFFF;
 }
 
+infobar.info > revealer > box link:link, infobar.info:hover > revealer > box link:link, infobar.info:backdrop > revealer > box link:link {
+  color: white;
+}
+
 infobar.info > revealer > box button, infobar.info > revealer > box button.text-button:not(:disabled), infobar.info:hover > revealer > box button, infobar.info:hover > revealer > box button.text-button:not(:disabled), infobar.info:backdrop > revealer > box button, infobar.info:backdrop > revealer > box button.text-button:not(:disabled) {
   color: #3c84f7;
 }
@@ -4674,11 +3737,11 @@ infobar.action > revealer > box, infobar.action:backdrop > revealer > box, infob
   color: white;
 }
 
-infobar.action > revealer > box button, infobar.action > revealer > box button:hover, infobar.action > revealer > box button:focus, infobar.action > revealer > box button:active, infobar.action > revealer > box button:checked, infobar.action > revealer > box button.text-button:not(:disabled), infobar.action:backdrop > revealer > box button, infobar.action:backdrop > revealer > box button:hover, infobar.action:backdrop > revealer > box button:focus, infobar.action:backdrop > revealer > box button:active, infobar.action:backdrop > revealer > box button:checked, infobar.action:backdrop > revealer > box button.text-button:not(:disabled), infobar.question > revealer > box button, infobar.question > revealer > box button:hover, infobar.question > revealer > box button:focus, infobar.question > revealer > box button:active, infobar.question > revealer > box button:checked, infobar.question > revealer > box button.text-button:not(:disabled), infobar.question:backdrop > revealer > box button, infobar.question:backdrop > revealer > box button:hover, infobar.question:backdrop > revealer > box button:focus, infobar.question:backdrop > revealer > box button:active, infobar.question:backdrop > revealer > box button:checked, infobar.question:backdrop > revealer > box button.text-button:not(:disabled) {
+infobar.action > revealer > box link:link, infobar.action:backdrop > revealer > box link:link, infobar.question > revealer > box link:link, infobar.question:backdrop > revealer > box link:link {
   color: white;
 }
 
-infobar.action > revealer > box *:link, infobar.action:backdrop > revealer > box *:link, infobar.question > revealer > box *:link, infobar.question:backdrop > revealer > box *:link {
+infobar.action > revealer > box button, infobar.action > revealer > box button:hover, infobar.action > revealer > box button:focus, infobar.action > revealer > box button:active, infobar.action > revealer > box button:checked, infobar.action > revealer > box button.text-button:not(:disabled), infobar.action:backdrop > revealer > box button, infobar.action:backdrop > revealer > box button:hover, infobar.action:backdrop > revealer > box button:focus, infobar.action:backdrop > revealer > box button:active, infobar.action:backdrop > revealer > box button:checked, infobar.action:backdrop > revealer > box button.text-button:not(:disabled), infobar.question > revealer > box button, infobar.question > revealer > box button:hover, infobar.question > revealer > box button:focus, infobar.question > revealer > box button:active, infobar.question > revealer > box button:checked, infobar.question > revealer > box button.text-button:not(:disabled), infobar.question:backdrop > revealer > box button, infobar.question:backdrop > revealer > box button:hover, infobar.question:backdrop > revealer > box button:focus, infobar.question:backdrop > revealer > box button:active, infobar.question:backdrop > revealer > box button:checked, infobar.question:backdrop > revealer > box button.text-button:not(:disabled) {
   color: white;
 }
 
@@ -4691,11 +3754,11 @@ infobar.warning > revealer > box, infobar.warning:backdrop > revealer > box {
   color: rgba(0, 0, 0, 0.87);
 }
 
-infobar.warning > revealer > box button, infobar.warning > revealer > box button:hover, infobar.warning > revealer > box button:focus, infobar.warning > revealer > box button:active, infobar.warning > revealer > box button:checked, infobar.warning > revealer > box button.text-button:not(:disabled), infobar.warning:backdrop > revealer > box button, infobar.warning:backdrop > revealer > box button:hover, infobar.warning:backdrop > revealer > box button:focus, infobar.warning:backdrop > revealer > box button:active, infobar.warning:backdrop > revealer > box button:checked, infobar.warning:backdrop > revealer > box button.text-button:not(:disabled) {
+infobar.warning > revealer > box link:link, infobar.warning:backdrop > revealer > box link:link {
   color: rgba(0, 0, 0, 0.87);
 }
 
-infobar.warning > revealer > box *:link, infobar.warning:backdrop > revealer > box *:link {
+infobar.warning > revealer > box button, infobar.warning > revealer > box button:hover, infobar.warning > revealer > box button:focus, infobar.warning > revealer > box button:active, infobar.warning > revealer > box button:checked, infobar.warning > revealer > box button.text-button:not(:disabled), infobar.warning:backdrop > revealer > box button, infobar.warning:backdrop > revealer > box button:hover, infobar.warning:backdrop > revealer > box button:focus, infobar.warning:backdrop > revealer > box button:active, infobar.warning:backdrop > revealer > box button:checked, infobar.warning:backdrop > revealer > box button.text-button:not(:disabled) {
   color: rgba(0, 0, 0, 0.87);
 }
 
@@ -4708,11 +3771,11 @@ infobar.error > revealer > box, infobar.error:backdrop > revealer > box {
   color: white;
 }
 
-infobar.error > revealer > box button, infobar.error > revealer > box button:hover, infobar.error > revealer > box button:focus, infobar.error > revealer > box button:active, infobar.error > revealer > box button:checked, infobar.error > revealer > box button.text-button:not(:disabled), infobar.error:backdrop > revealer > box button, infobar.error:backdrop > revealer > box button:hover, infobar.error:backdrop > revealer > box button:focus, infobar.error:backdrop > revealer > box button:active, infobar.error:backdrop > revealer > box button:checked, infobar.error:backdrop > revealer > box button.text-button:not(:disabled) {
+infobar.error > revealer > box link:link, infobar.error:backdrop > revealer > box link:link {
   color: white;
 }
 
-infobar.error > revealer > box *:link, infobar.error:backdrop > revealer > box *:link {
+infobar.error > revealer > box button, infobar.error > revealer > box button:hover, infobar.error > revealer > box button:focus, infobar.error > revealer > box button:active, infobar.error > revealer > box button:checked, infobar.error > revealer > box button.text-button:not(:disabled), infobar.error:backdrop > revealer > box button, infobar.error:backdrop > revealer > box button:hover, infobar.error:backdrop > revealer > box button:focus, infobar.error:backdrop > revealer > box button:active, infobar.error:backdrop > revealer > box button:checked, infobar.error:backdrop > revealer > box button.text-button:not(:disabled) {
   color: white;
 }
 
@@ -4807,7 +3870,7 @@ colorswatch overlay:hover {
 }
 
 colorswatch#add-color-button {
-  border-radius: 6px 6px 0 0;
+  border-radius: 6px 0 0 6px;
 }
 
 colorswatch#add-color-button:only-child {
@@ -4843,15 +3906,19 @@ colorswatch#editor-color-sample overlay {
   border-radius: 12px;
 }
 
+colorswatch#editor-color-sample overlay:hover {
+  box-shadow: 0 2px 2px -2px rgba(0, 0, 0, 0.3), 0 1px 2px -1px rgba(0, 0, 0, 0.24), 0 1px 2px -0.6px rgba(0, 0, 0, 0.17);
+}
+
 colorchooser .popover.osd {
   transition: box-shadow 75ms cubic-bezier(0, 0, 0.2, 1);
   border-radius: 6px;
-  box-shadow: 0 2px 2.4px -1px rgba(0, 0, 0, 0.2), 0 4px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 6px 0 rgba(0, 0, 0, 0.12), inset 0 1px rgba(255, 255, 255, 0.15);
+  box-shadow: 0 2px 3px -1px rgba(0, 0, 0, 0.15), 0 4px 3px 0 rgba(0, 0, 0, 0.18), 0 1px 6px 0 rgba(0, 0, 0, 0.12), inset 0 1px rgba(255, 255, 255, 0.15);
   background-color: #FFFFFF;
 }
 
 colorchooser .popover.osd:backdrop {
-  box-shadow: 0 3px 2px -3px rgba(0, 0, 0, 0.3), 0 2px 2px -1px rgba(0, 0, 0, 0.24), 0 1px 3px 0 rgba(0, 0, 0, 0.12), inset 0 1px rgba(255, 255, 255, 0.15);
+  box-shadow: 0 3px 2px -3px rgba(0, 0, 0, 0.2), 0 2px 2px -1px rgba(0, 0, 0, 0.24), 0 1px 3px 0 rgba(0, 0, 0, 0.12), inset 0 1px rgba(255, 255, 255, 0.15);
 }
 
 /********
@@ -4867,12 +3934,12 @@ colorchooser .popover.osd:backdrop {
 decoration {
   transition: box-shadow 75ms cubic-bezier(0, 0, 0.2, 1);
   border-radius: 12px;
-  box-shadow: 0 8px 6px -5px rgba(0, 0, 0, 0.2), 0 16px 14.4px 2px rgba(0, 0, 0, 0.14), 0 6px 18px 5px rgba(0, 0, 0, 0.12), 0 0 0 1px rgba(0, 0, 0, 0.12), 0 0 36px transparent;
+  box-shadow: 0 8px 6px -5px rgba(0, 0, 0, 0.2), 0 16px 15px 2px rgba(0, 0, 0, 0.14), 0 6px 18px 5px rgba(0, 0, 0, 0.12), 0 0 0 1px rgba(0, 0, 0, 0.12), 0 0 36px transparent;
   margin: 8px;
 }
 
 decoration:backdrop {
-  box-shadow: 0 2px 2.4px -1px rgba(0, 0, 0, 0.2), 0 4px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 6px 0 rgba(0, 0, 0, 0.12), 0 0 0 1px rgba(0, 0, 0, 0.12), 0 0 36px transparent;
+  box-shadow: 0 2px 3px -1px rgba(0, 0, 0, 0.15), 0 4px 3px 0 rgba(0, 0, 0, 0.18), 0 1px 6px 0 rgba(0, 0, 0, 0.12), 0 0 0 1px rgba(0, 0, 0, 0.12), 0 0 36px transparent;
 }
 
 .maximized decoration, .fullscreen decoration, .tiled decoration, .tiled-top decoration, .tiled-right decoration, .tiled-bottom decoration, .tiled-left decoration {
@@ -4899,7 +3966,7 @@ decoration:backdrop {
 .csd.popup decoration {
   border-radius: 12px;
   border: none;
-  box-shadow: 0 2px 2.4px -1px rgba(0, 0, 0, 0.2), 0 4px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 6px 0 rgba(0, 0, 0, 0.12), 0 0 0 1px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 2px 3px -1px rgba(0, 0, 0, 0.05), 0 4px 6px 0 rgba(0, 0, 0, 0.06), 0 1px 10px 0 rgba(0, 0, 0, 0.05), 0 0 0 1px rgba(0, 0, 0, 0.12);
 }
 
 tooltip.csd decoration {
@@ -5168,7 +4235,7 @@ popover.emoji-completion .emoji:hover {
   background-color: transparent;
 }
 
-.nautilus-window.background.csd:not(.unified) notebook scrolledwindow > .view:not(:selected):not(:hover):not(:checked), .nautilus-window.background.csd:not(.unified) notebook filechooser stack.view scrolledwindow > treeview.view:not(:selected):not(:hover):not(:checked), filechooser stack.view .nautilus-window.background.csd:not(.unified) notebook scrolledwindow > treeview.view:not(:selected):not(:hover):not(:checked) {
+.nautilus-window.background.csd:not(.unified) notebook scrolledwindow > .view:not(:selected):not(:hover):not(:checked) {
   background-color: transparent;
 }
 
@@ -5329,7 +4396,7 @@ popover.emoji-completion .emoji:hover {
   background-color: transparent;
 }
 
-.nautilus-window notebook :not(treeview).view, .nautilus-window notebook filechooser stack.view scrolledwindow treeview.view:not(treeview), filechooser stack.view scrolledwindow .nautilus-window notebook treeview.view:not(treeview) {
+.nautilus-window notebook :not(treeview).view {
   border-radius: 6px;
 }
 
@@ -5595,11 +4662,9 @@ window.background.csd > box.horizontal > stack.background > widget > box.vertica
   border-bottom-right-radius: 12px;
 }
 
-window.background.csd > leaflet > stack.background > widget > box.vertical > box.vertical > scrolledwindow > viewport.frame > box.vertical.view, filechooser stack.view window.background.csd > leaflet > stack.background > widget > box.vertical > box.vertical > scrolledwindow > viewport.frame > treeview.vertical.view,
+window.background.csd > leaflet > stack.background > widget > box.vertical > box.vertical > scrolledwindow > viewport.frame > box.vertical.view,
 window.background.csd > hdyleaflet > stack.background > widget > box.vertical > box.vertical > scrolledwindow > viewport.frame > box.vertical.view,
-filechooser stack.view window.background.csd > hdyleaflet > stack.background > widget > box.vertical > box.vertical > scrolledwindow > viewport.frame > treeview.vertical.view,
-window.background.csd > box.horizontal > stack.background > widget > box.vertical > box.vertical > scrolledwindow > viewport.frame > box.vertical.view,
-filechooser stack.view window.background.csd > box.horizontal > stack.background > widget > box.vertical > box.vertical > scrolledwindow > viewport.frame > treeview.vertical.view {
+window.background.csd > box.horizontal > stack.background > widget > box.vertical > box.vertical > scrolledwindow > viewport.frame > box.vertical.view {
   background: none;
 }
 
@@ -5836,7 +4901,7 @@ stack.view.polari-entry-area {
   border-bottom-right-radius: 12px;
 }
 
-stack:disabled.view.polari-entry-area, filechooser stack.view scrolledwindow treeview.view:disabled.polari-entry-area {
+stack:disabled.view.polari-entry-area {
   background-image: image(#FFFFFF);
 }
 
@@ -6173,7 +5238,7 @@ GdMainIconView.content-view {
 .documents-counter {
   margin: 8px;
   border-radius: 9999px;
-  box-shadow: 0 2px 2.4px -1px rgba(0, 0, 0, 0.2), 0 4px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 6px 0 rgba(0, 0, 0, 0.12);
+  box-shadow: 0 2px 3px -1px rgba(0, 0, 0, 0.15), 0 4px 3px 0 rgba(0, 0, 0, 0.18), 0 1px 6px 0 rgba(0, 0, 0, 0.12);
   background-color: #3c84f7;
   color: white;
   font-weight: bold;
@@ -6232,19 +5297,19 @@ overlay grid.horizontal > revealer > scrolledwindow.frame:dir(rtl) {
   border-color: rgba(0, 0, 0, 0.12);
 }
 
-.side-panel .view, .side-panel filechooser stack.view scrolledwindow treeview.view, filechooser stack.view scrolledwindow .side-panel treeview.view {
+.side-panel .view {
   background-image: image(#FAFAFA);
 }
 
-.side-panel .view:hover, .side-panel filechooser stack.view scrolledwindow treeview.view:hover, filechooser stack.view scrolledwindow .side-panel treeview.view:hover {
+.side-panel .view:hover {
   background-image: image(rgba(234, 234, 234, 0.9896));
 }
 
-.side-panel .view:selected, .side-panel filechooser stack.view scrolledwindow treeview.view:selected, filechooser stack.view scrolledwindow .side-panel treeview.view:selected {
+.side-panel .view:selected {
   background-image: image(#3c84f7);
 }
 
-.side-panel .view:selected:hover, .side-panel filechooser stack.view scrolledwindow treeview.view:selected:hover, filechooser stack.view scrolledwindow .side-panel treeview.view:selected:hover {
+.side-panel .view:selected:hover {
   background-image: image(#4c8ef8);
 }
 
@@ -6307,7 +5372,7 @@ window.background.csd evview.view.content-view {
   background-color: #FFFFFF;
 }
 
-.background.csd > grid.horizontal > paned.horizontal > scrolledwindow > treeview.view:not(:hover):not(:selected):not(:selected):not(:hover):not(.progressbar):not(.expander):not(.trough):not(.separator), filechooser stack.view .background.csd > grid.horizontal > paned.horizontal > scrolledwindow > treeview.view:not(:hover):not(:selected):not(:selected):not(:hover):not(.progressbar):not(.expander):not(.trough):not(.separator) {
+.background.csd > grid.horizontal > paned.horizontal > scrolledwindow > treeview.view:not(:hover):not(:selected):not(:selected):not(:hover):not(.progressbar):not(.expander):not(.trough):not(.separator) {
   background-color: #FFFFFF;
 }
 
@@ -6545,13 +5610,13 @@ window#GearyMainWindow.background.csd stack#conversation_viewer .geary-composer-
   padding: 3px;
 }
 
-.geary-main-window.unified frame.geary-conversation-frame scrolledwindow treeview.view, .geary-main-window.unified frame.geary-conversation-frame filechooser stack.view scrolledwindow treeview.view, filechooser stack.view .geary-main-window.unified frame.geary-conversation-frame scrolledwindow treeview.view {
+.geary-main-window.unified frame.geary-conversation-frame scrolledwindow treeview.view {
   border: 1px solid transparent;
   border-radius: 6px;
   padding: 6px;
 }
 
-.geary-main-window.unified frame.geary-conversation-frame scrolledwindow treeview.view:selected, .geary-main-window.unified frame.geary-conversation-frame filechooser stack.view scrolledwindow treeview.view:selected, filechooser stack.view .geary-main-window.unified frame.geary-conversation-frame scrolledwindow treeview.view:selected, .geary-main-window.unified frame.geary-conversation-frame scrolledwindow treeview.view:active, .geary-main-window.unified frame.geary-conversation-frame filechooser stack.view scrolledwindow treeview.view:active, filechooser stack.view .geary-main-window.unified frame.geary-conversation-frame scrolledwindow treeview.view:active {
+.geary-main-window.unified frame.geary-conversation-frame scrolledwindow treeview.view:selected, .geary-main-window.unified frame.geary-conversation-frame scrolledwindow treeview.view:active {
   border-radius: 6px;
   background-color: #3c84f7;
   color: white;
@@ -6657,7 +5722,7 @@ dialog.background.csd stack scrolledwindow.frame textview.view > text {
   background: none;
 }
 
-dialog.background.csd stack scrolledwindow viewport.frame.view, dialog.background.csd filechooser stack.view scrolledwindow treeview.frame.view, filechooser dialog.background.csd stack.view scrolledwindow treeview.frame.view {
+dialog.background.csd stack scrolledwindow viewport.frame.view {
   border-radius: 6px;
 }
 
@@ -6702,7 +5767,7 @@ window.background.csd.unified.fullscreen > decoration-overlay {
  *********/
 overlay > revealer.left > scrolledwindow.frame, overlay > revealer.right > scrolledwindow.frame {
   border-style: none;
-  box-shadow: 0 8px 6px -5px rgba(0, 0, 0, 0.2), 0 16px 14.4px 2px rgba(0, 0, 0, 0.14), 0 6px 18px 5px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 8px 6px -5px rgba(0, 0, 0, 0.2), 0 16px 15px 2px rgba(0, 0, 0, 0.14), 0 6px 18px 5px rgba(0, 0, 0, 0.12);
 }
 
 overlay > revealer.left > scrolledwindow.frame {
@@ -6807,12 +5872,12 @@ window.background.chromium textview.view {
   background-color: transparent;
 }
 
-window.background.chromium treeview.view.cell:selected:focus, window.background.chromium filechooser stack.view scrolledwindow treeview.cell.view:selected:focus, filechooser stack.view scrolledwindow window.background.chromium treeview.cell.view:selected:focus {
+window.background.chromium treeview.view.cell:selected:focus {
   background-color: #3c84f7;
   color: white;
 }
 
-window.background.chromium treeview.view button, window.background.chromium filechooser stack.view scrolledwindow treeview.view button, filechooser stack.view scrolledwindow window.background.chromium treeview.view button {
+window.background.chromium treeview.view button {
   border: 1px solid rgba(0, 0, 0, 0.26);
   background-color: #FFFFFF;
 }
@@ -7459,10 +6524,8 @@ na-tray-applet {
   border-radius: 6px;
 }
 
-.caja-desktop.view .entry, filechooser stack.view scrolledwindow treeview.caja-desktop.view .entry,
-.caja-navigation-window .view .entry,
-.caja-navigation-window filechooser stack.view scrolledwindow treeview.view .entry,
-filechooser stack.view scrolledwindow .caja-navigation-window treeview.view .entry {
+.caja-desktop.view .entry,
+.caja-navigation-window .view .entry {
   border: none;
   border-radius: 6px;
   background-color: rgba(0, 0, 0, 0.04);
@@ -7470,20 +6533,18 @@ filechooser stack.view scrolledwindow .caja-navigation-window treeview.view .ent
   color: rgba(0, 0, 0, 0.87);
 }
 
-.caja-desktop.view .entry:selected, filechooser stack.view scrolledwindow treeview.caja-desktop.view .entry:selected,
-.caja-navigation-window .view .entry:selected,
-.caja-navigation-window filechooser stack.view scrolledwindow treeview.view .entry:selected,
-filechooser stack.view scrolledwindow .caja-navigation-window treeview.view .entry:selected {
+.caja-desktop.view .entry:selected,
+.caja-navigation-window .view .entry:selected {
   background-color: alpha(currentColor, 0.06);
 }
 
-.caja-desktop.view .entry, filechooser stack.view scrolledwindow treeview.caja-desktop.view .entry {
+.caja-desktop.view .entry {
   background-color: #2C2C2C;
   color: white;
   caret-color: currentColor;
 }
 
-.caja-desktop.view .entry:selected, filechooser stack.view scrolledwindow treeview.caja-desktop.view .entry:selected {
+.caja-desktop.view .entry:selected {
   background-color: alpha(currentColor, 0.06);
 }
 
@@ -7565,7 +6626,7 @@ filechooser stack.view scrolledwindow .caja-navigation-window treeview.view .ent
 .lock-dialog {
   border: 1px solid rgba(0, 0, 0, 0.12);
   border-radius: 7px;
-  box-shadow: 0 2px 2.4px -1px rgba(0, 0, 0, 0.2), 0 4px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 6px 0 rgba(0, 0, 0, 0.12), inset 0 1px rgba(255, 255, 255, 0.15);
+  box-shadow: 0 2px 3px -1px rgba(0, 0, 0, 0.15), 0 4px 3px 0 rgba(0, 0, 0, 0.18), 0 1px 6px 0 rgba(0, 0, 0, 0.12), inset 0 1px rgba(255, 255, 255, 0.15);
   background-color: #FFFFFF;
 }
 
@@ -7615,7 +6676,7 @@ MsdOsdWindow.background.osd .progressbar {
 
 .budgie-popover {
   border: 1px solid rgba(0, 0, 0, 0.12);
-  box-shadow: 0 2px 2.4px -1px rgba(0, 0, 0, 0.2), 0 4px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 6px 0 rgba(0, 0, 0, 0.12);
+  box-shadow: 0 2px 3px -1px rgba(0, 0, 0, 0.15), 0 4px 3px 0 rgba(0, 0, 0, 0.18), 0 1px 6px 0 rgba(0, 0, 0, 0.12);
   background-clip: padding-box;
   background-color: #FFFFFF;
   border-radius: 12px;
@@ -7651,16 +6712,16 @@ MsdOsdWindow.background.osd .progressbar {
   padding: 6px 8px;
 }
 
-.budgie-popover treeview.view.sidebar, .budgie-popover filechooser stack.view scrolledwindow treeview.sidebar.view, filechooser stack.view scrolledwindow .budgie-popover treeview.sidebar.view {
+.budgie-popover treeview.view.sidebar {
   border-right: none;
   background: none;
 }
 
-.budgie-popover treeview.view.sidebar:hover, .budgie-popover filechooser stack.view scrolledwindow treeview.sidebar.view:hover, filechooser stack.view scrolledwindow .budgie-popover treeview.sidebar.view:hover {
+.budgie-popover treeview.view.sidebar:hover {
   background-color: alpha(currentColor, 0.08);
 }
 
-.budgie-popover treeview.view.sidebar:selected, .budgie-popover filechooser stack.view scrolledwindow treeview.sidebar.view:selected, filechooser stack.view scrolledwindow .budgie-popover treeview.sidebar.view:selected {
+.budgie-popover treeview.view.sidebar:selected {
   background-color: alpha(currentColor, 0.12);
 }
 
@@ -8054,7 +7115,7 @@ frame.raven-frame > border {
 
 .raven {
   background-color: #FFFFFF;
-  box-shadow: 0 8px 6px -5px rgba(0, 0, 0, 0.2), 0 16px 14.4px 2px rgba(0, 0, 0, 0.14), 0 6px 18px 5px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 8px 6px -5px rgba(0, 0, 0, 0.2), 0 16px 15px 2px rgba(0, 0, 0, 0.14), 0 6px 18px 5px rgba(0, 0, 0, 0.12);
 }
 
 .raven > box {
@@ -8233,7 +7294,7 @@ calendar.raven-calendar:selected {
   margin: 5px 9px;
   padding: 3px;
   border-radius: 12px;
-  box-shadow: 0 2px 2.4px -1px rgba(0, 0, 0, 0.2), 0 4px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 6px 0 rgba(0, 0, 0, 0.12), inset 0 1px rgba(255, 255, 255, 0.15);
+  box-shadow: 0 2px 3px -1px rgba(0, 0, 0, 0.15), 0 4px 3px 0 rgba(0, 0, 0, 0.18), 0 1px 6px 0 rgba(0, 0, 0, 0.12), inset 0 1px rgba(255, 255, 255, 0.15);
   background-color: #FFFFFF;
 }
 
@@ -8261,7 +7322,7 @@ calendar.raven-calendar:selected {
 .budgie-polkit-dialog > decoration,
 .budgie-run-dialog > decoration {
   border: none;
-  box-shadow: 0 8px 6px -5px rgba(0, 0, 0, 0.2), 0 16px 14.4px 2px rgba(0, 0, 0, 0.14), 0 6px 18px 5px rgba(0, 0, 0, 0.12), 0 0 0 1px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 8px 6px -5px rgba(0, 0, 0, 0.2), 0 16px 15px 2px rgba(0, 0, 0, 0.14), 0 6px 18px 5px rgba(0, 0, 0, 0.12), 0 0 0 1px rgba(0, 0, 0, 0.12);
 }
 
 .budgie-session-dialog label:not(:last-child),
@@ -8387,7 +7448,7 @@ window#whiskermenu-window > frame > border {
   margin: 6px;
   border: none;
   background-color: #FFFFFF;
-  box-shadow: 0 2px 2.4px -1px rgba(0, 0, 0, 0.2), 0 4px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 6px 0 rgba(0, 0, 0, 0.12), 0 0 0 1px rgba(0, 0, 0, 0.12), inset 0 0 0 1px rgba(255, 255, 255, 0.15);
+  box-shadow: 0 2px 3px -1px rgba(0, 0, 0, 0.15), 0 4px 3px 0 rgba(0, 0, 0, 0.18), 0 1px 6px 0 rgba(0, 0, 0, 0.12), 0 0 0 1px rgba(0, 0, 0, 0.12), inset 0 0 0 1px rgba(255, 255, 255, 0.15);
 }
 
 window#whiskermenu-window box.categories > button.radio {
@@ -8433,7 +7494,7 @@ window#whiskermenu-window .title-area > .commands-area > button.flat.command-but
 }
 
 #XfceNotifyWindow {
-  box-shadow: 0 2px 2.4px -1px rgba(0, 0, 0, 0.2), 0 4px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 6px 0 rgba(0, 0, 0, 0.12), 0 0 0 1px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 2px 3px -1px rgba(0, 0, 0, 0.15), 0 4px 3px 0 rgba(0, 0, 0, 0.18), 0 1px 6px 0 rgba(0, 0, 0, 0.12), 0 0 0 1px rgba(0, 0, 0, 0.12);
 }
 
 #XfceNotifyWindow buttonbox {
@@ -8462,7 +7523,7 @@ window#whiskermenu-window .title-area > .commands-area > button.flat.command-but
   border-style: none;
 }
 
-.thunar .sidebar .view:not(:selected), .thunar .sidebar filechooser stack.view scrolledwindow treeview.view:not(:selected), filechooser stack.view scrolledwindow .thunar .sidebar treeview.view:not(:selected) {
+.thunar .sidebar .view:not(:selected) {
   background-color: transparent;
 }
 
@@ -8483,6 +7544,31 @@ window#whiskermenu-window .title-area > .commands-area > button.flat.command-but
 
 window.background.csd.thunar > grid.horizontal > paned.horizontal > scrolledwindow.frame.sidebar.shortcuts-pane {
   border-bottom-left-radius: 12px;
+}
+
+menubar.-vala-panel-appmenu-private,
+menubar.-vala-panel-background {
+  background: none;
+  border: none;
+  box-shadow: none;
+  animation: none;
+}
+
+menubar.-vala-panel-appmenu-private > menuitem,
+menubar.-vala-panel-background > menuitem {
+  color: rgba(0, 0, 0, 0.6);
+  font-weight: normal;
+}
+
+menubar.-vala-panel-appmenu-private > menuitem:hover,
+menubar.-vala-panel-background > menuitem:hover {
+  color: rgba(0, 0, 0, 0.87);
+  border-radius: 0;
+}
+
+menubar.-vala-panel-appmenu-private > menuitem:disabled,
+menubar.-vala-panel-background > menuitem:disabled {
+  color: rgba(0, 0, 0, 0.26);
 }
 
 /************************
@@ -8523,7 +7609,7 @@ window.background.csd.thunar > grid.horizontal > paned.horizontal > scrolledwind
 #restart_dialog {
   margin: 8px;
   border-radius: 6px;
-  box-shadow: 0 2px 2.4px -1px rgba(0, 0, 0, 0.2), 0 4px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 6px 0 rgba(0, 0, 0, 0.12), inset 0 1px rgba(255, 255, 255, 0.15);
+  box-shadow: 0 2px 3px -1px rgba(0, 0, 0, 0.15), 0 4px 3px 0 rgba(0, 0, 0, 0.18), 0 1px 6px 0 rgba(0, 0, 0, 0.12), inset 0 1px rgba(255, 255, 255, 0.15);
   background-color: #FFFFFF;
 }
 
@@ -8604,11 +7690,11 @@ window.background.csd.thunar > grid.horizontal > paned.horizontal > scrolledwind
   border-style: none;
 }
 
-.nemo-window scrolledwindow.frame .view:not(:selected), .nemo-window filechooser stack.view scrolledwindow.frame treeview.view:not(:selected), filechooser stack.view .nemo-window scrolledwindow.frame treeview.view:not(:selected) {
+.nemo-window scrolledwindow.frame .view:not(:selected) {
   background-color: transparent;
 }
 
-.nemo-window .nemo-inactive-pane .view:not(:selected), .nemo-window .nemo-inactive-pane filechooser stack.view scrolledwindow treeview.view:not(:selected), filechooser stack.view scrolledwindow .nemo-window .nemo-inactive-pane treeview.view:not(:selected) {
+.nemo-window .nemo-inactive-pane .view:not(:selected) {
   background-color: #FAFAFA;
 }
 

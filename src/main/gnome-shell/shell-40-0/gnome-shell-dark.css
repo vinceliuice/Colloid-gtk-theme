@@ -677,8 +677,16 @@ StWidget.focused .app-well-app-running-dot {
   border-radius: 6px;
 }
 
-.check-box, .check-box:focus StBin {
+.check-box StBin, .check-box:focus StBin {
   background-image: url("assets/checkbox-off.svg");
+}
+
+.check-box:hover StBin {
+  background-color: rgba(255, 255, 255, 0.12);
+}
+
+.check-box:active StBin {
+  background-color: rgba(255, 255, 255, 0.3);
 }
 
 .check-box:checked StBin, .check-box:focus:checked StBin {
@@ -1121,7 +1129,7 @@ StEntry StLabel.hint-text, .popup-menu .search-entry StLabel.hint-text {
 
 /* On-screen Keyboard */
 #keyboard {
-  background-color: #242424;
+  background-color: #1d1d1d;
   box-shadow: none;
 }
 
@@ -1145,47 +1153,47 @@ StEntry StLabel.hint-text, .popup-menu .search-entry StLabel.hint-text {
   font-weight: bold;
   min-height: 1.2em;
   min-width: 1.2em;
+  padding: 0 !important;
   border-radius: 9px;
   border: none;
   color: rgba(255, 255, 255, 0.7);
-  background-color: #313131;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+  background-color: #707070;
+  box-shadow: inset 0 -1px rgba(0, 0, 0, 0.85);
 }
 
 .keyboard-key:focus, .keyboard-key:hover {
   color: white;
-  background-color: #4b4b4b;
+  background-color: #656565;
 }
 
 .keyboard-key:checked, .keyboard-key:active {
   color: white;
-  background-color: #575757;
+  background-color: #717171;
 }
 
 .keyboard-key:grayed {
-  background-color: #2C2C2C;
+  background-color: #4b4b4b;
   color: rgba(255, 255, 255, 0.7);
 }
 
 .keyboard-key.default-key {
-  background-color: #272727;
-  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.15);
+  background-color: #4b4b4b;
+  box-shadow: inset 0 -1px rgba(0, 0, 0, 0.85);
 }
 
 .keyboard-key.default-key:focus, .keyboard-key.default-key:hover {
   color: white;
-  background-color: #404040;
+  background-color: #585858;
 }
 
 .keyboard-key.default-key:checked, .keyboard-key.default-key:active {
   color: white;
-  background-color: #525252;
+  background-color: #6a6a6a;
 }
 
 .keyboard-key.enter-key {
   color: white;
   background-color: #5b9bf8;
-  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.15);
 }
 
 .keyboard-key.enter-key:focus, .keyboard-key.enter-key:hover {
@@ -1209,13 +1217,13 @@ StEntry StLabel.hint-text, .popup-menu .search-entry StLabel.hint-text {
 .keyboard-subkeys {
   color: inherit;
   -arrow-border-radius: 12px;
-  -arrow-background-color: #242424;
+  -arrow-background-color: #343434;
   -arrow-border-width: 0;
   -arrow-border-color: transparent;
   -arrow-base: 20px;
   -arrow-rise: 10px;
-  -boxpointer-gap: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+  -boxpointer-gap: 6px;
+  box-shadow: inset 0 -1px rgba(0, 0, 0, 0.85);
 }
 
 .emoji-page .keyboard-key {
@@ -2967,9 +2975,10 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .page-navigation-arrow {
-  margin: 6px;
+  margin: 0;
   width: 24px;
   height: 24px;
+  color: white;
 }
 
 #dash {

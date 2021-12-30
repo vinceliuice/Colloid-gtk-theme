@@ -27,12 +27,16 @@ treeview.expander:disabled {
   -gtk-icon-filter: opacity(0.5);
 }
 
-filechooser stack.view scrolledwindow treeview.view, iconview, .view {
+iconview, .view {
   color: rgba(0, 0, 0, 0.87);
 }
 
-filechooser stack.view scrolledwindow treeview.view:disabled, iconview:disabled, .view:disabled {
+iconview:disabled, .view:disabled {
   color: rgba(0, 0, 0, 0.38);
+}
+
+iconview:selected, .view:selected {
+  color: rgba(0, 0, 0, 0.87);
 }
 
 textview text {
@@ -49,8 +53,9 @@ iconview:hover, iconview:selected {
 }
 
 rubberband, .content-view rubberband, .content-view columnview.view > rubberband,
-.content-view treeview.view > rubberband, .content-view .rubberband, columnview.view > rubberband,
-treeview.view > rubberband, gridview > rubberband, flowbox > rubberband {
+.content-view treeview.view > rubberband, .content-view .rubberband, columnview.view > rubberband, .content-view columnview.view > .rubberband,
+treeview.view > rubberband,
+.content-view treeview.view > .rubberband, gridview > rubberband, flowbox > rubberband {
   border: 1px solid #3c84f7;
   background-color: rgba(60, 132, 247, 0.3);
 }
@@ -134,7 +139,7 @@ popover.background.magnifier > contents, .osd {
 .osd {
   padding: 6px;
   margin: 6px;
-  box-shadow: 0 2px 2.4px -1px rgba(0, 0, 0, 0.2), 0 4px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 6px 0 rgba(0, 0, 0, 0.12);
+  box-shadow: 0 2px 3px -1px rgba(0, 0, 0, 0.15), 0 4px 3px 0 rgba(0, 0, 0, 0.18), 0 1px 6px 0 rgba(0, 0, 0, 0.12);
 }
 
 .osd.circular {
@@ -1128,13 +1133,13 @@ toolbar.osd {
   transition: box-shadow 75ms cubic-bezier(0, 0, 0.2, 1);
   padding: 6px;
   border-radius: 6px;
-  box-shadow: 0 2px 2.4px -1px rgba(0, 0, 0, 0.2), 0 4px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 6px 0 rgba(0, 0, 0, 0.12), inset 0 1px rgba(255, 255, 255, 0.15);
+  box-shadow: 0 2px 3px -1px rgba(0, 0, 0, 0.15), 0 4px 3px 0 rgba(0, 0, 0, 0.18), 0 1px 6px 0 rgba(0, 0, 0, 0.12), inset 0 1px rgba(255, 255, 255, 0.15);
   background-color: #FFFFFF;
 }
 
 .app-notification:backdrop, .toolbar.osd:backdrop,
 toolbar.osd:backdrop {
-  box-shadow: 0 3px 2px -3px rgba(0, 0, 0, 0.3), 0 2px 2px -1px rgba(0, 0, 0, 0.24), 0 1px 3px 0 rgba(0, 0, 0, 0.12), inset 0 1px rgba(255, 255, 255, 0.15);
+  box-shadow: 0 3px 2px -3px rgba(0, 0, 0, 0.2), 0 2px 2px -1px rgba(0, 0, 0, 0.24), 0 1px 3px 0 rgba(0, 0, 0, 0.12), inset 0 1px rgba(255, 255, 255, 0.15);
 }
 
 .left.app-notification, .right.app-notification, .top.app-notification, .bottom.app-notification, .toolbar.osd.left, .toolbar.osd.right, .toolbar.osd.top, .toolbar.osd.bottom,
@@ -1598,13 +1603,6 @@ treeview.view {
   border-top-color: #e0e0e0;
 }
 
-columnview.view:selected,
-treeview.view:selected {
-  background-color: #FFFFFF;
-  background-image: image(alpha(currentColor, 0.1));
-  box-shadow: none;
-}
-
 columnview.view:hover, columnview.view:selected,
 treeview.view:hover,
 treeview.view:selected {
@@ -1903,12 +1901,12 @@ popover.background > contents {
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.15);
   background-clip: border-box;
-  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.12), 0 2px 2.4px -1px rgba(0, 0, 0, 0.2), 0 4px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 6px 0 rgba(0, 0, 0, 0.12);
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.12), 0 2px 3px -1px rgba(0, 0, 0, 0.05), 0 4px 6px 0 rgba(0, 0, 0, 0.06), 0 1px 10px 0 rgba(0, 0, 0, 0.05);
 }
 
 popover.background > arrow:backdrop,
 popover.background > contents:backdrop {
-  box-shadow: 0 3px 2px -3px rgba(0, 0, 0, 0.3), 0 2px 2px -1px rgba(0, 0, 0, 0.24), 0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 0 0 1px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 3px 2px -2px rgba(0, 0, 0, 0.05), 0 2px 3px -1px rgba(0, 0, 0, 0.06), 0 1px 4px 0 rgba(0, 0, 0, 0.05), 0 0 0 1px rgba(0, 0, 0, 0.12);
 }
 
 popover.background > arrow {
@@ -3761,10 +3759,6 @@ filechooser stack.view scrolledwindow list {
   background-color: transparent;
 }
 
-filechooser stack.view scrolledwindow treeview.view {
-  background-color: transparent;
-}
-
 filechooser stack.view > placesview {
   background-color: transparent;
 }
@@ -4148,7 +4142,7 @@ tooltip {
 tooltip.background {
   background-color: rgba(52, 52, 52, 0.9);
   color: white;
-  box-shadow: 0 2px 2.4px -1px rgba(0, 0, 0, 0.2), 0 4px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 6px 0 rgba(0, 0, 0, 0.12);
+  box-shadow: 0 2px 3px -1px rgba(0, 0, 0, 0.15), 0 4px 3px 0 rgba(0, 0, 0, 0.18), 0 1px 6px 0 rgba(0, 0, 0, 0.12);
   border-radius: 3px;
   margin: 2px 6px 8px 6px;
   border: none;
@@ -4162,43 +4156,43 @@ tooltip > box {
  * Color Chooser *
  *****************/
 colorswatch.top {
-  border-top-left-radius: 12px;
-  border-top-right-radius: 12px;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
 }
 
 colorswatch.top overlay {
-  border-top-left-radius: 12px;
-  border-top-right-radius: 12px;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
 }
 
 colorswatch.bottom {
-  border-bottom-left-radius: 12px;
-  border-bottom-right-radius: 12px;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
 }
 
 colorswatch.bottom overlay {
-  border-bottom-left-radius: 12px;
-  border-bottom-right-radius: 12px;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
 }
 
 colorswatch.left, colorswatch:first-child:not(.top) {
-  border-top-left-radius: 12px;
-  border-bottom-left-radius: 12px;
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
 }
 
 colorswatch.left overlay, colorswatch:first-child:not(.top) overlay {
-  border-top-left-radius: 12px;
-  border-bottom-left-radius: 12px;
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
 }
 
 colorswatch.right, colorswatch:last-child:not(.bottom) {
-  border-top-right-radius: 12px;
-  border-bottom-right-radius: 12px;
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
 }
 
 colorswatch.right overlay, colorswatch:last-child:not(.bottom) overlay {
-  border-top-right-radius: 12px;
-  border-bottom-right-radius: 12px;
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
 }
 
 colorswatch.dark {
@@ -4209,17 +4203,31 @@ colorswatch.light {
   color: rgba(0, 0, 0, 0.87);
 }
 
+colorchooser colorswatch:hover {
+  transition: box-shadow 75ms cubic-bezier(0, 0, 0.2, 1);
+  box-shadow: 0 0 0 2px #3c84f7;
+}
+
 colorswatch#add-color-button {
-  border-radius: 12px 12px 0 0;
+  border-radius: 6px 0 0 6px;
   color: rgba(0, 0, 0, 0.87);
 }
 
 colorswatch#add-color-button:only-child {
-  border-radius: 12px;
+  border-radius: 6px;
 }
 
 colorswatch#add-color-button overlay {
-  background-color: #FFFFFF;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+
+colorswatch#add-color-button overlay:hover {
+  background-color: rgba(0, 0, 0, 0.12);
+  box-shadow: none;
+}
+
+colorswatch#add-color-button overlay:active {
+  background-color: rgba(0, 0, 0, 0.26);
 }
 
 colorswatch:disabled {
@@ -4231,22 +4239,26 @@ colorswatch:disabled overlay {
 }
 
 colorswatch#editor-color-sample {
-  border-radius: 12px;
+  border-radius: 6px;
 }
 
 colorswatch#editor-color-sample overlay {
-  border-radius: 12px;
+  border-radius: 6px;
+}
+
+colorswatch#editor-color-sample overlay:hover {
+  box-shadow: 0 2px 2px -2px rgba(0, 0, 0, 0.3), 0 1px 2px -1px rgba(0, 0, 0, 0.24), 0 1px 2px -0.6px rgba(0, 0, 0, 0.17);
 }
 
 colorchooser .popover.osd {
   transition: box-shadow 75ms cubic-bezier(0, 0, 0.2, 1);
   border-radius: 6px;
-  box-shadow: 0 2px 2.4px -1px rgba(0, 0, 0, 0.2), 0 4px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 6px 0 rgba(0, 0, 0, 0.12), inset 0 1px rgba(255, 255, 255, 0.15);
+  box-shadow: 0 2px 3px -1px rgba(0, 0, 0, 0.15), 0 4px 3px 0 rgba(0, 0, 0, 0.18), 0 1px 6px 0 rgba(0, 0, 0, 0.12), inset 0 1px rgba(255, 255, 255, 0.15);
   background-color: #FFFFFF;
 }
 
 colorchooser .popover.osd:backdrop {
-  box-shadow: 0 3px 2px -3px rgba(0, 0, 0, 0.3), 0 2px 2px -1px rgba(0, 0, 0, 0.24), 0 1px 3px 0 rgba(0, 0, 0, 0.12), inset 0 1px rgba(255, 255, 255, 0.15);
+  box-shadow: 0 3px 2px -3px rgba(0, 0, 0, 0.2), 0 2px 2px -1px rgba(0, 0, 0, 0.24), 0 1px 3px 0 rgba(0, 0, 0, 0.12), inset 0 1px rgba(255, 255, 255, 0.15);
 }
 
 /********
@@ -4266,11 +4278,11 @@ window.csd {
   outline-offset: -1px;
   outline-style: solid;
   outline-width: 1px;
-  box-shadow: 0 8px 6px -5px rgba(0, 0, 0, 0.2), 0 16px 14.4px 2px rgba(0, 0, 0, 0.14), 0 6px 18px 5px rgba(0, 0, 0, 0.12), 0 0 0 1px rgba(0, 0, 0, 0.12), 0 0 36px transparent;
+  box-shadow: 0 8px 6px -5px rgba(0, 0, 0, 0.2), 0 16px 15px 2px rgba(0, 0, 0, 0.14), 0 6px 18px 5px rgba(0, 0, 0, 0.12), 0 0 0 1px rgba(0, 0, 0, 0.12), 0 0 36px transparent;
 }
 
 window.csd:backdrop {
-  box-shadow: 0 2px 2.4px -1px rgba(0, 0, 0, 0.2), 0 4px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 6px 0 rgba(0, 0, 0, 0.12), 0 0 0 1px rgba(0, 0, 0, 0.12), 0 0 36px transparent;
+  box-shadow: 0 2px 3px -1px rgba(0, 0, 0, 0.15), 0 4px 3px 0 rgba(0, 0, 0, 0.18), 0 1px 6px 0 rgba(0, 0, 0, 0.12), 0 0 0 1px rgba(0, 0, 0, 0.12), 0 0 36px transparent;
 }
 
 window.csd.popup {
@@ -4362,11 +4374,12 @@ windowcontrols:not(.empty).start:dir(rtl), windowcontrols:not(.empty).end:dir(lt
   margin-right: 6px;
 }
 
-gridview > child:selected, modelbutton.flat:selected, row:selected, calendar:selected, calendar > grid > label.day-number:selected {
+.view:selected, iconview:selected, gridview > child:selected, modelbutton.flat:selected, columnview.view:selected,
+treeview.view:selected, row:selected, calendar:selected, calendar > grid > label.day-number:selected {
   background-color: alpha(currentColor, 0.06);
 }
 
-.view:selected, iconview:selected, flowbox > flowboxchild:selected, calendar > grid > label.today, filechooser stack.view scrolledwindow treeview.view:selected {
+flowbox > flowboxchild:selected, calendar > grid > label.today {
   color: #3c84f7;
   background-color: rgba(60, 132, 247, 0.2);
 }

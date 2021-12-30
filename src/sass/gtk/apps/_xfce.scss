@@ -187,3 +187,26 @@ window.background.csd.thunar {
     // }
   }
 }
+
+// vala-panel-appmenu
+menubar.-vala-panel-appmenu-private, // xfce4 appmenu plugin
+menubar.-vala-panel-background {
+  background: none;
+  border: none;
+  box-shadow: none;
+  animation: none;
+
+  > menuitem {
+    color: $panel-text-secondary;
+    font-weight: normal;
+
+    &:hover {
+      color: $panel-text;
+      border-radius: 0;
+    }
+
+    &:disabled {
+      color: $panel-text-secondary-disabled;
+    }
+  }
+}
