@@ -3683,9 +3683,9 @@ decoration {
     border-radius: $window-radius $window-radius 0 0;
 
     @if $rimless == 'true' {
-      box-shadow: 0 3px 3px rgba(0, 0, 0, 0.16);
+      box-shadow: none;
     } @else {
-      box-shadow: 0 3px 3px rgba(0, 0, 0, 0.16), 0 0 0 1px $window-border; // just doing borders, wm draws actual shadows
+      box-shadow: 0 0 0 1px $window-border; // just doing borders, wm draws actual shadows
     }
   }
 
