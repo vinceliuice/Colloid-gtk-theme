@@ -20,10 +20,10 @@
   <sodipodi:namedview
      inkscape:document-rotation="0"
      inkscape:window-maximized="0"
-     inkscape:window-y="78"
-     inkscape:window-x="547"
-     inkscape:window-height="974"
-     inkscape:window-width="1601"
+     inkscape:window-y="104"
+     inkscape:window-x="79"
+     inkscape:window-height="1047"
+     inkscape:window-width="1717"
      inkscape:guide-bbox="true"
      showguides="true"
      fit-margin-bottom="10"
@@ -43,9 +43,9 @@
      showgrid="false"
      inkscape:current-layer="layer1"
      inkscape:document-units="px"
-     inkscape:cy="100"
-     inkscape:cx="322.00002"
-     inkscape:zoom="0.99999995"
+     inkscape:cy="99.375005"
+     inkscape:cx="104.12501"
+     inkscape:zoom="3.9999998"
      inkscape:pageshadow="2"
      inkscape:pageopacity="0"
      borderopacity="1.0"
@@ -85,9 +85,9 @@
            height="34"
            width="32"
            id="rect1683"
-           style="fill:#fafafa;fill-opacity:1;stroke:none;stroke-width:1.27242;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+           style="fill:#fafafa" />
         <rect
-           style="fill:#b3b3b3;fill-opacity:1;stroke:none;stroke-width:1.1547;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+           style="fill:#b3b3b3"
            id="rect1685"
            width="32"
            height="1"
@@ -112,7 +112,7 @@
            height="34"
            width="32"
            id="rect2007"
-           style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1.27242;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+           style="fill:#ffffff" />
         <rect
            style="fill:#b3b3b3;fill-opacity:1;stroke:none;stroke-width:1.1547;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
            id="rect2009"

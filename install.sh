@@ -9,6 +9,7 @@ ROOT_UID=0
 DEST_DIR=
 
 ctype=
+window=
 
 # Destination directory
 if [ "$UID" -eq "$ROOT_UID" ]; then
@@ -51,10 +52,11 @@ OPTIONS:
 
   -s, --size VARIANT      Specify size variant [standard|compact] (Default: standard variants)
 
-  --tweaks                Specify versions for tweaks [nord|black|rimless] (nord can not mix use with black !)
+  --tweaks                Specify versions for tweaks [nord|black|rimless|normal] (only nord and black can not mix use with!)
                           1. nord:     Nord color version
                           2. black:    Blackness color version
                           3. rimless:  Remove the 1px border about windows and menus
+                          4. normal:   Normal windows button style (titlebuttons: max/min/close)
 
   -h, --help              Show help
 EOF
@@ -67,6 +69,7 @@ install() {
   local color="${4}"
   local size="${5}"
   local ctype="${6}"
+  local window="${7}"
 
   [[ "${color}" == '-light' ]] && local ELSE_LIGHT="${color}"
   [[ "${color}" == '-dark' ]] && local ELSE_DARK="${color}"
@@ -172,15 +175,15 @@ install() {
   cd "${THEME_DIR}/metacity-1" && ln -s metacity-theme-2.xml metacity-theme-1.xml
 
   mkdir -p                                                                                   "${THEME_DIR}/xfwm4"
-  cp -r "${SRC_DIR}/assets/xfwm4/assets${ELSE_LIGHT:-}${ctype}/"*.png                        "${THEME_DIR}/xfwm4"
+  cp -r "${SRC_DIR}/assets/xfwm4/assets${ELSE_LIGHT:-}${ctype}${window}/"*.png               "${THEME_DIR}/xfwm4"
   cp -r "${SRC_DIR}/main/xfwm4/themerc${ELSE_LIGHT:-}"                                       "${THEME_DIR}/xfwm4/themerc"
   mkdir -p                                                                                   "${THEME_DIR}-hdpi/xfwm4"
-  cp -r "${SRC_DIR}/assets/xfwm4/assets${ELSE_LIGHT:-}${ctype}-hdpi/"*.png                   "${THEME_DIR}-hdpi/xfwm4"
+  cp -r "${SRC_DIR}/assets/xfwm4/assets${ELSE_LIGHT:-}${ctype}${window}-hdpi/"*.png          "${THEME_DIR}-hdpi/xfwm4"
   cp -r "${SRC_DIR}/main/xfwm4/themerc${ELSE_LIGHT:-}"                                       "${THEME_DIR}-hdpi/xfwm4/themerc"
   mkdir -p                                                                                   "${THEME_DIR}-xhdpi/xfwm4"
-  cp -r "${SRC_DIR}/assets/xfwm4/assets${ELSE_LIGHT:-}${ctype}-xhdpi/"*.png                  "${THEME_DIR}-xhdpi/xfwm4"
+  cp -r "${SRC_DIR}/assets/xfwm4/assets${ELSE_LIGHT:-}${ctype}${window}-xhdpi/"*.png         "${THEME_DIR}-xhdpi/xfwm4"
   cp -r "${SRC_DIR}/main/xfwm4/themerc${ELSE_LIGHT:-}"                                       "${THEME_DIR}-xhdpi/xfwm4/themerc"
-  
+
   mkdir -p                                                                                   "${THEME_DIR}/plank"
   if [[ "$color" == '-light' ]]; then
     cp -r "${SRC_DIR}/main/plank/theme-light/"*                                              "${THEME_DIR}/plank"
@@ -336,6 +339,7 @@ while [[ $# -gt 0 ]]; do
             ;;
           normal)
             normal="true"
+            window="-normal"
             echo -e "Install Normal window button version! ..."
             shift
             ;;
@@ -488,7 +492,7 @@ install_theme() {
   for theme in "${themes[@]}"; do
     for color in "${colors[@]}"; do
       for size in "${sizes[@]}"; do
-        install "${dest:-$DEST_DIR}" "${_name:-$THEME_NAME}" "$theme" "$color" "$size" "$ctype"
+        install "${dest:-$DEST_DIR}" "${_name:-$THEME_NAME}" "$theme" "$color" "$size" "$ctype" "$window"
       done
     done
   done
