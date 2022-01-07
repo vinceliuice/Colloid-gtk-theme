@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32" height="32" version="1.1" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <metadata>
+  <rdf:RDF>
+   <cc:Work rdf:about="">
+    <dc:format>image/svg+xml</dc:format>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <linearGradient id="f" x1="399.57" x2="399.57" y1="545.8" y2="517.8" gradientTransform="translate(-384.57,-515.8)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#3889e9" offset="0"/>
+   <stop stop-color="#5ea5fb" offset="1"/>
+  </linearGradient>
+ </defs>
+ <rect x="1" y=".99997" width="30" height="30" rx="8" ry="8" fill="#43d07c"/>
+ <circle cx="16" cy="16" r="0" fill="url(#f)"/>
+ <circle cx="16.075" cy="16.058" r="15.646" fill-opacity="0" stroke-width="1.1176"/>
+ <g transform="matrix(.066838 0 0 .066838 493.54 13.6)" fill="#fff">
+  <g transform="matrix(.70353 0 0 .70353 -6823.1 -40.25)" fill="#fff">
+   <g transform="translate(-654.86,-88.217)" fill="#fff">
+    <g transform="matrix(1.0301,0,0,1.0301,-2.8242,-15.71)" fill="#fff">
+     <g transform="matrix(.92594 0 0 .92594 -33.98 -.030807)" fill="#fff">
+      <g fill="#fff">
+       <g fill="#fff">
+        <polygon points="241.9 306.47 484.01 189.84 484.01 179.19 241.9 62.561 0 179.08 0 189.95"/>
+        <path d="m83.808 251.57v69.7l145.84 70.25h24.506l145.44-70.057c0.14-0.307 0.271-0.613 0.402-0.922v-68.972l-158.09 76.152-158.09-76.151z"/>
+        <polygon points="445.74 421.44 452.12 421.44 470.98 396.2 458.51 358.2 458.51 222.6 439.36 232.26 439.36 358.2 426.88 396.2"/>
+       </g>
+      </g>
+     </g>
+    </g>
+   </g>
+  </g>
+ </g>
+</svg>

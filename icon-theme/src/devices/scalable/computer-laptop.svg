@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64" height="64" version="1.1" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+ <filter id="d" x="-.01448" y="-.016908" width="1.029" height="1.0338" color-interpolation-filters="sRGB">
+  <feGaussianBlur stdDeviation=".74992302"/>
+ </filter>
+ <filter id="g" x="-.040865" y="-.504" width="1.0817" height="2.008" color-interpolation-filters="sRGB">
+  <feGaussianBlur stdDeviation=".32830532"/>
+ </filter>
+ <filter id="h" x="-.080467" y="-.24545" width="1.1609" height="1.4909" color-interpolation-filters="sRGB">
+  <feGaussianBlur stdDeviation="1.4789442"/>
+ </filter>
+ <rect width="64" height="64" opacity="0" stroke-width="2" style="paint-order:fill markers stroke"/>
+ <g fill-rule="evenodd">
+  <g>
+   <rect x="4" y="12" width="56" height="40" rx="2" ry="2" fill="#1a1a1a" style="paint-order:fill markers stroke"/>
+   <rect x="6" y="14" width="52" height="34" fill="#1babf6" style="paint-order:fill markers stroke"/>
+   <path d="m4.572 50h59.428v2.0018c0 0.73866-3.4674 1.9983-6 1.9983h-52c-2.5326 0-6-1.2596-6-1.9983v-2.0018z" fill="#d5d6d9" style="paint-order:fill markers stroke"/>
+  </g>
+  <path d="m22 50c0 1.108 0.892 2 2 2h16c1.108 0 2-0.892 2-2z" opacity=".35" stroke-width=".5" style="paint-order:fill markers stroke"/>
+ </g>
+</svg>

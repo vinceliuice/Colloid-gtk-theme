@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32" height="32" version="1.1" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+ <defs>
+  <linearGradient id="linearGradient3426" x2="0" y1="545.8" y2="517.8" gradientTransform="translate(-384.57,-515.8)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#3889e9" offset="0"/>
+   <stop stop-color="#5ea5fb" offset="1"/>
+  </linearGradient>
+ </defs>
+ <metadata>
+  <rdf:RDF>
+   <cc:Work rdf:about="">
+    <dc:format>image/svg+xml</dc:format>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <rect x="1" y=".99999" width="30" height="30" rx="8" ry="8" fill="#26a6ff"/>
+ <path d="m8 5v3h-3v1h3v4h-3v1h3v4h-3v1h3v4h-3v1h3v3h1v-3h4v3h1v-3h4v3h1v-3h4v3h1v-3h3v-1h-3v-4h3v-1h-3v-4h3v-1h-3v-4h3v-1h-3v-3h-1v3h-4v-3h-1v3h-4v-3h-1v3h-4v-3zm1 4h4v4h-4zm5 0h4v4h-4zm5 0h4v4h-4zm-10 5h4v4h-4zm5 0h4v4h-4zm5 0h4v4h-4zm-10 5h4v4h-4zm5 0h4v4h-4zm5 0h4v4h-4z" color="#000000" color-rendering="auto" fill="#fcfcfc" fill-opacity=".058824" image-rendering="auto" shape-rendering="auto" stroke-opacity=".31372"/>
+ <circle cx="16" cy="16" r="0" fill="url(#linearGradient3426)" stroke-width="4"/>
+ <path d="m18.143 8.0137c-1.0474 0.077128-2.1426 0.48203-3.1426 0.98242 2 0 3 0.99921 4 2l2 2.002v1.002l1 1 3-3.002-1-1.002h-1l-2-2c-0.81038-0.8089-1.81-1.0595-2.8574-0.98242zm0.85742 2.9863-4 4h-1l-6 6 2 2 6-6v-1l4-4z" fill="#fff" fill-rule="evenodd"/>
+ <path d="m9 4c-2.77 0-5 2.23-5 5v14c0 2.77 2.23 5 5 5h14c2.77 0 5-2.23 5-5v-14c0-2.77-2.23-5-5-5zm0 1h14c2.216 0 4 1.784 4 4v14c0 2.216-1.784 4-4 4h-14c-2.216 0-4-1.784-4-4v-14c0-2.216 1.784-4 4-4z" fill="#fff" opacity=".25"/>
+</svg>

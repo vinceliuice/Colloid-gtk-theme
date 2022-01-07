@@ -48,8 +48,8 @@ install() {
   sed -i "s/WhiteSur/WhiteSur${color}/g" index.theme
 
   if [[ ${color} == '' ]]; then
-    cp -r ${SRC_DIR}/src/{apps,places,mimetypes}                                           ${THEME_DIR}
-    cp -r ${SRC_DIR}/links/{apps,places,mimetypes}                                         ${THEME_DIR}
+    cp -r ${SRC_DIR}/src/*                                                                 ${THEME_DIR}
+    cp -r ${SRC_DIR}/links/*                                                               ${THEME_DIR}
 
     if [[ ${theme} != '' ]]; then
       cp -r ${SRC_DIR}/colors/color${theme}/*.svg                                          ${THEME_DIR}/places/scalable
@@ -57,25 +57,38 @@ install() {
   fi
 
   if [[ ${color} == '-dark' ]]; then
-    mkdir -p                                                                               ${THEME_DIR}/{apps,places,mimetypes}
+    mkdir -p                                                                               ${THEME_DIR}/{apps,actions,devices,places,status}
+    cp -r ${SRC_DIR}/src/actions/{16,22,24,32}                                             ${THEME_DIR}/actions
     cp -r ${SRC_DIR}/src/places/{16,22,24}                                                 ${THEME_DIR}/places
+    cp -r ${SRC_DIR}/src/devices/{16,22,24}                                                ${THEME_DIR}/devices
+    cp -r ${SRC_DIR}/src/status/{16,22,24}                                                 ${THEME_DIR}/status
 
     # Change icon color for dark theme
-    sed -i "s/#363636/#dedede/g" "${THEME_DIR}"/places/{16,22,24}/*
+    sed -i "s/#363636/#dedede/g" "${THEME_DIR}"/{actions,devices,places,status}/{16,22,24}/*
+    sed -i "s/#363636/#dedede/g" "${THEME_DIR}"/actions/32/*
 
+    cp -r ${SRC_DIR}/links/actions/{16,22,24,32}                                           ${THEME_DIR}/actions
     cp -r ${SRC_DIR}/links/places/{16,22,24}                                               ${THEME_DIR}/places
+    cp -r ${SRC_DIR}/links/devices/{16,22,24}                                              ${THEME_DIR}/devices
+    cp -r ${SRC_DIR}/links/status/{16,22,24}                                               ${THEME_DIR}/status
 
     cd ${dest}
     ln -s ../../${name}${theme}/apps/scalable ${name}${theme}-dark/apps/scalable
+    ln -s ../../${name}${theme}/devices/scalable ${name}${theme}-dark/devices/scalable
     ln -s ../../${name}${theme}/places/scalable ${name}${theme}-dark/places/scalable
-    ln -s ../../${name}${theme}/mimetypes/scalable ${name}${theme}-dark/mimetypes/scalable
+    ln -s ../${name}${theme}/categories ${name}${theme}-dark/categories
+    ln -s ../${name}${theme}/mimetypes ${name}${theme}-dark/mimetypes
   fi
 
   (
     cd ${THEME_DIR}
+    ln -sf actions actions@2x
     ln -sf apps apps@2x
-    ln -sf places places@2x
+    ln -sf categories categories@2x
+    ln -sf devices devices@2x
     ln -sf mimetypes mimetypes@2x
+    ln -sf places places@2x
+    ln -sf status status@2x
   )
 
   gtk-update-icon-cache ${THEME_DIR}
