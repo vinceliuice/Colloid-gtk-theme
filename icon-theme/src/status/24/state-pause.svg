@@ -26,8 +26,8 @@
     </rdf:RDF>
   </metadata>
   <sodipodi:namedview
-     pagecolor="#ffffff"
-     bordercolor="#ffffff"
+     pagecolor="#363636"
+     bordercolor="#363636"
      borderopacity="1"
      objecttolerance="10"
      gridtolerance="10"
@@ -51,7 +51,7 @@
        type="text/css"
        id="current-color-scheme">
       .ColorScheme-Text {
-        color:#ffffff
+        color:#363636
       }
       </style>
     <linearGradient
@@ -100,5 +100,5 @@
      id="path8855"
      d="m 12.896549,17.7469 1.714285,0 0,-6 -1.714285,0 m -3.4285725,6 1.7142865,0 0,-6 -1.7142865,0 0,6 z"
      inkscape:connector-curvature="0"
-     style="fill:#ffffff;fill-opacity:1" />
+     style="fill:#363636;fill-opacity:1" />
 </svg>

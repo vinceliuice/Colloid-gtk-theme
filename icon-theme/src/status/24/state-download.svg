@@ -27,8 +27,8 @@
     </rdf:RDF>
   </metadata>
   <sodipodi:namedview
-     pagecolor="#ffffff"
-     bordercolor="#ffffff"
+     pagecolor="#363636"
+     bordercolor="#363636"
      borderopacity="1"
      objecttolerance="10"
      gridtolerance="10"
@@ -52,7 +52,7 @@
        type="text/css"
        id="current-color-scheme">
       .ColorScheme-Text {
-        color:#ffffff
+        color:#363636
       }
       </style>
     <linearGradient
@@ -95,42 +95,42 @@
      id="path3377"
      style="opacity:1;fill:url(#linearGradient4181);fill-opacity:1;stroke:none;stroke-width:1.29999995;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
   <g
-     style="fill:#ffffff;fill-opacity:0.8509804"
+     style="fill:#363636;fill-opacity:0.8509804"
      inkscape:label="Capa 1"
      id="layer1-5"
      transform="matrix(0.47500003,0,0,0.47500003,-148.14407,-244.289)">
     <g
-       style="fill:#ffffff;fill-opacity:0.8509804"
+       style="fill:#363636;fill-opacity:0.8509804"
        transform="matrix(1.3842982,0,0,1.3842982,325.81138,-900.22806)"
        id="layer1-3-3"
        inkscape:label="Capa 1">
       <g
-         style="fill:#ffffff;fill-opacity:0.8509804;stroke:#4f96d1;stroke-opacity:1"
+         style="fill:#363636;fill-opacity:0.8509804;stroke:#4f96d1;stroke-opacity:1"
          inkscape:label="Capa 1"
          id="layer1-0"
          transform="matrix(0.90537551,0,0,0.90537551,-365.91682,562.06022)" />
       <g
-         style="fill:#ffffff;fill-opacity:0.8509804"
+         style="fill:#363636;fill-opacity:0.8509804"
          inkscape:label="Capa 1"
          id="layer1-00"
          transform="translate(-401.01229,510.63371)">
         <g
-           style="fill:#ffffff;fill-opacity:0.8509804"
+           style="fill:#363636;fill-opacity:0.8509804"
            inkscape:label="Capa 1"
            id="layer1-4"
            transform="translate(5.05585,-5.251147)">
           <g
-             style="fill:#ffffff;stroke:#000000;stroke-opacity:0.8;fill-opacity:0.8509804"
+             style="fill:#363636;stroke:#000000;stroke-opacity:0.8;fill-opacity:0.8509804"
              inkscape:label="Capa 1"
              id="layer1-9"
              transform="translate(-11.317,5.8824915)">
             <g
-               style="fill:#ffffff;fill-opacity:0.8509804"
+               style="fill:#363636;fill-opacity:0.8509804"
                inkscape:label="Capa 1"
                id="layer1-79"
                transform="translate(1.8733025,-0.28410538)">
               <g
-                 style="fill:#ffffff;fill-opacity:0.8509804"
+                 style="fill:#363636;fill-opacity:0.8509804"
                  id="g4187-8"
                  transform="matrix(0.7863692,0,0,0.78394543,93.525529,112.35451)">
                 <path
@@ -138,7 +138,7 @@
                    d="m 412.38917,537.3326 c -0.40104,-0.40373 -1.05169,-0.40373 -1.45321,0 l -4.05675,4.4969 -4.05677,-4.4969 c -0.40151,-0.40373 -1.05168,-0.40373 -1.45319,0 -0.40152,0.40373 -0.40152,1.05767 0,1.4614 l 4.71901,5.23147 c 0.21722,0.21815 0.5065,0.31434 0.79095,0.29636 0.28395,0.018 0.57373,-0.0783 0.79093,-0.29636 l 4.71903,-5.23147 c 0.40102,-0.40373 0.40102,-1.05767 0,-1.4614 z m -5.51601,-4.35143 c 0.93509,0 1.69313,-0.76131 1.69313,-1.70042 0,-0.93912 -0.75804,-1.70043 -1.69313,-1.70043 -0.93509,0 -1.69314,0.76131 -1.69314,1.70043 0,0.93911 0.75805,1.70042 1.69314,1.70042 z m 0,4.85836 c 0.93509,0 1.69313,-0.76131 1.69313,-1.70043 0,-0.93912 -0.75804,-1.70042 -1.69313,-1.70042 -0.93509,0 -1.69314,0.7613 -1.69314,1.70042 0,0.93912 0.75805,1.70043 1.69314,1.70043 z"
                    id="Download"
                    sketch:type="MSShapeGroup"
-                   style="fill:#ffffff;fill-opacity:0.8509804;stroke:none;stroke-opacity:0.8" />
+                   style="fill:#363636;fill-opacity:0.8509804;stroke:none;stroke-opacity:0.8" />
               </g>
             </g>
           </g>

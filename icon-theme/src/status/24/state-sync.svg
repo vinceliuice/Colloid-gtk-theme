@@ -26,8 +26,8 @@
     </rdf:RDF>
   </metadata>
   <sodipodi:namedview
-     pagecolor="#ffffff"
-     bordercolor="#ffffff"
+     pagecolor="#363636"
+     bordercolor="#363636"
      borderopacity="1"
      objecttolerance="10"
      gridtolerance="10"
@@ -51,7 +51,7 @@
        type="text/css"
        id="current-color-scheme">
       .ColorScheme-Text {
-        color:#ffffff
+        color:#363636
       }
       </style>
     <linearGradient
@@ -98,7 +98,7 @@
      ry="6" />
   <path
      d="m 12.008355,10.826294 c 0.878276,0.0019 1.768851,0.27565 2.464503,0.817454 0.489041,0.563382 -0.442799,1.166743 -0.862477,0.617395 -1.2634,-0.76447 -3.045193,-0.495303 -3.9957538,0.647612 -0.5057392,0.56717 -0.7906731,1.324029 -0.7873335,2.08381 l 0.8349242,0 -1.3358786,2.003818 -1.3358786,-2.003818 0.8349241,0 c -0.026653,-1.814033 1.2780762,-3.539757 3.0298112,-4.009563 0.375716,-0.103081 0.762992,-0.160883 1.153159,-0.156708 z m 3.665317,2.170802 1.335879,2.003818 -0.834925,0 c 0.02367,1.835838 -1.314363,3.580861 -3.096701,4.02594 -1.202676,0.335864 -2.562607,0.09078 -3.5509969,-0.677605 -0.5043263,-0.57279 0.4404546,-1.170339 0.8640499,-0.615949 1.224095,0.742665 2.938259,0.50712 3.904555,-0.553619 0.559399,-0.576419 0.881166,-1.375377 0.876992,-2.178831 l -0.834925,0 1.335879,-2.003818 z"
-     style="opacity:1;fill:#ffffff;fill-opacity:0.85887098;stroke-width:1.31742239;stroke-miterlimit:4;stroke-dasharray:none;enable-background:new"
+     style="opacity:1;fill:#363636;fill-opacity:0.85887098;stroke-width:1.31742239;stroke-miterlimit:4;stroke-dasharray:none;enable-background:new"
      id="path5634"
      inkscape:connector-curvature="0" />
 </svg>
