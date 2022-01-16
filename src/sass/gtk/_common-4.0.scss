@@ -157,15 +157,41 @@ window.assistant {
   background-clip: padding-box;
   border-radius: $corner-radius;
   border: none;
+  box-shadow: $shadow-z4, inset 0 1px highlight($surface);
 }
 
 .osd {
   @extend %osd;
   padding: $space-size;
   margin: $space-size;
-  box-shadow: $shadow-z4;
 
   &.circular { border-radius: $circular-radius; }
+}
+
+
+/**********
+ * Toasts *
+ **********/
+
+toast {
+  margin: $space-size * 2;
+  margin-bottom: $space-size * 4;
+  border-radius: $circular-radius;
+  border-spacing: $space-size;
+  padding: $space-size;
+  box-shadow: $shadow-z6;
+  background-color: $osd;
+  color: on($osd);
+  border: none;
+
+  &:dir(ltr) { padding-left: $space-size * 2; }
+  &:dir(rtl) { padding-right: $space-size * 2; }
+
+  > label {
+    margin: 0 $space-size;
+  }
+
+  button, button.circular.flat { @extend %button-on-dark; }
 }
 
 
@@ -769,7 +795,7 @@ spinbutton {
       @extend %small-button;
 
       // margin: $space-size;
-      border: solid $space-size transparent;
+      border: $space-size solid transparent;
 
       // Remove unwanted focus indicator
       &:focus:not(:hover):not(:active):not(:disabled) {
@@ -827,13 +853,14 @@ spinbutton {
   // Misc
   treeview &:not(.vertical),
   row &:not(.vertical) {
-    min-height: 0;
-    border-style: none;
-    border-radius: 0;
+    > button {
+      margin: $space-size;
 
-    > text {
-      min-height: 0;
-      padding: 1px 2px;
+      &.up:dir(ltr),
+      &.down:dir(rtl) { margin-left: $space-size / 2; }
+
+      &.up:dir(rtl),
+      &.down:dir(ltr) { margin-right: $space-size / 2; }
     }
   }
 }
@@ -1775,9 +1802,6 @@ popover.background {
     > arrow,
     > contents {
       @extend %osd;
-
-      border: none;
-      box-shadow: none;
     }
   }
 
@@ -3932,7 +3956,12 @@ colorchooser .popover.osd {
 }
 
 .scale-popup {
-  // .osd & { @extend %osd; }
+  .osd & {
+    > arrow,
+    > contents {
+      @extend %osd;
+    }
+  }
 
   // .osd & button.flat { // FIXME: quick hack, redo properly
   // }

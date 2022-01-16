@@ -125,7 +125,8 @@ window.assistant .sidebar label.highlight {
   color: white;
 }
 
-.osd popover.background > arrow,
+.osd .scale-popup > arrow,
+.osd .scale-popup > contents, .osd popover.background > arrow,
 .osd popover.background > contents, popover.background.touch-selection > arrow,
 popover.background.touch-selection > contents, popover.background.magnifier > arrow,
 popover.background.magnifier > contents, .osd {
@@ -134,16 +135,43 @@ popover.background.magnifier > contents, .osd {
   background-clip: padding-box;
   border-radius: 6px;
   border: none;
+  box-shadow: 0 2px 3px -1px rgba(0, 0, 0, 0.15), 0 4px 3px 0 rgba(0, 0, 0, 0.18), 0 1px 6px 0 rgba(0, 0, 0, 0.12), inset 0 1px rgba(255, 255, 255, 0.1);
 }
 
 .osd {
   padding: 6px;
   margin: 6px;
-  box-shadow: 0 2px 3px -1px rgba(0, 0, 0, 0.15), 0 4px 3px 0 rgba(0, 0, 0, 0.18), 0 1px 6px 0 rgba(0, 0, 0, 0.12);
 }
 
 .osd.circular {
   border-radius: 9999px;
+}
+
+/**********
+ * Toasts *
+ **********/
+toast {
+  margin: 12px;
+  margin-bottom: 24px;
+  border-radius: 9999px;
+  border-spacing: 6px;
+  padding: 6px;
+  box-shadow: 0 2px 3px -1px rgba(0, 0, 0, 0.1), 0 4px 6px 0 rgba(0, 0, 0, 0.12), 0 1px 10px 0 rgba(0, 0, 0, 0.1);
+  background-color: #212121;
+  color: white;
+  border: none;
+}
+
+toast:dir(ltr) {
+  padding-left: 12px;
+}
+
+toast:dir(rtl) {
+  padding-right: 12px;
+}
+
+toast > label {
+  margin: 0 6px;
 }
 
 /*********************
@@ -427,19 +455,19 @@ editablelabel > stack > text {
   }
 }
 
-infobar.warning > revealer > box button, infobar.warning:backdrop > revealer > box button, popover.background.touch-selection button, popover.background.magnifier button, headerbar.selection-mode button:not(.suggested-action):not(.destructive-action) {
+infobar.warning > revealer > box button, infobar.warning:backdrop > revealer > box button, popover.background.touch-selection button, popover.background.magnifier button, headerbar.selection-mode button:not(.suggested-action):not(.destructive-action), toast button, toast button.circular.flat {
   color: rgba(255, 255, 255, 0.7);
 }
 
-infobar.warning > revealer > box button:focus, popover.background.touch-selection button:focus, popover.background.magnifier button:focus, headerbar.selection-mode button:focus:not(.suggested-action):not(.destructive-action), infobar.warning > revealer > box button:hover, popover.background.touch-selection button:hover, popover.background.magnifier button:hover, headerbar.selection-mode button:hover:not(.suggested-action):not(.destructive-action), infobar.warning > revealer > box button:active, popover.background.touch-selection button:active, popover.background.magnifier button:active, headerbar.selection-mode button:active:not(.suggested-action):not(.destructive-action), infobar.warning > revealer > box button:checked, popover.background.touch-selection button:checked, popover.background.magnifier button:checked, headerbar.selection-mode button:checked:not(.suggested-action):not(.destructive-action) {
+infobar.warning > revealer > box button:focus, popover.background.touch-selection button:focus, popover.background.magnifier button:focus, headerbar.selection-mode button:focus:not(.suggested-action):not(.destructive-action), toast button:focus, toast button.circular.flat:focus, infobar.warning > revealer > box button:hover, popover.background.touch-selection button:hover, popover.background.magnifier button:hover, headerbar.selection-mode button:hover:not(.suggested-action):not(.destructive-action), toast button:hover, toast button.circular.flat:hover, infobar.warning > revealer > box button:active, popover.background.touch-selection button:active, popover.background.magnifier button:active, headerbar.selection-mode button:active:not(.suggested-action):not(.destructive-action), toast button:active, toast button.circular.flat:active, infobar.warning > revealer > box button:checked, popover.background.touch-selection button:checked, popover.background.magnifier button:checked, headerbar.selection-mode button:checked:not(.suggested-action):not(.destructive-action), toast button:checked, toast button.circular.flat:checked {
   color: white;
 }
 
-infobar.warning > revealer > box button:disabled, popover.background.touch-selection button:disabled, popover.background.magnifier button:disabled, headerbar.selection-mode button:disabled:not(.suggested-action):not(.destructive-action) {
+infobar.warning > revealer > box button:disabled, popover.background.touch-selection button:disabled, popover.background.magnifier button:disabled, headerbar.selection-mode button:disabled:not(.suggested-action):not(.destructive-action), toast button:disabled, toast button.circular.flat:disabled {
   color: rgba(255, 255, 255, 0.3);
 }
 
-infobar.warning > revealer > box button:checked:disabled, popover.background.touch-selection button:checked:disabled, popover.background.magnifier button:checked:disabled, headerbar.selection-mode button:checked:disabled:not(.suggested-action):not(.destructive-action) {
+infobar.warning > revealer > box button:checked:disabled, popover.background.touch-selection button:checked:disabled, popover.background.magnifier button:checked:disabled, headerbar.selection-mode button:checked:disabled:not(.suggested-action):not(.destructive-action), toast button:checked:disabled {
   color: rgba(255, 255, 255, 0.5);
 }
 
@@ -895,7 +923,7 @@ spinbutton:not(.vertical) > text {
 }
 
 spinbutton:not(.vertical) > button {
-  border: solid 6px transparent;
+  border: 6px solid transparent;
 }
 
 spinbutton:not(.vertical) > button:focus:not(:hover):not(:active):not(:disabled) {
@@ -948,15 +976,16 @@ spinbutton.vertical > button.down {
   margin: 0 3px;
 }
 
-treeview spinbutton:not(.vertical), row spinbutton:not(.vertical) {
-  min-height: 0;
-  border-style: none;
-  border-radius: 0;
+treeview spinbutton:not(.vertical) > button, row spinbutton:not(.vertical) > button {
+  margin: 6px;
 }
 
-treeview spinbutton:not(.vertical) > text, row spinbutton:not(.vertical) > text {
-  min-height: 0;
-  padding: 1px 2px;
+treeview spinbutton:not(.vertical) > button.up:dir(ltr), treeview spinbutton:not(.vertical) > button.down:dir(rtl), row spinbutton:not(.vertical) > button.up:dir(ltr), row spinbutton:not(.vertical) > button.down:dir(rtl) {
+  margin-left: 3px;
+}
+
+treeview spinbutton:not(.vertical) > button.up:dir(rtl), treeview spinbutton:not(.vertical) > button.down:dir(ltr), row spinbutton:not(.vertical) > button.up:dir(rtl), row spinbutton:not(.vertical) > button.down:dir(ltr) {
+  margin-right: 3px;
 }
 
 /**************
@@ -1950,14 +1979,6 @@ popover.background button.model {
 
 .osd popover.background, popover.background.touch-selection, popover.background.magnifier {
   background-color: transparent;
-}
-
-.osd popover.background > arrow,
-.osd popover.background > contents, popover.background.touch-selection > arrow,
-popover.background.touch-selection > contents, popover.background.magnifier > arrow,
-popover.background.magnifier > contents {
-  border: none;
-  box-shadow: none;
 }
 
 magnifier {
