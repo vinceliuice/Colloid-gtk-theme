@@ -13,6 +13,8 @@
   - `gtk2-engines-murrine` on Debian, Ubuntu, etc.
 - `sassc` — build dependency
 
+- `Icon theme` [Colloid](https://github.com/vinceliuice/Colloid-icon-theme)
+
 ## Installation
 
 ### Manual Installation
