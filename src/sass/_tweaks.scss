@@ -1,3 +1,9 @@
+
+// Theme ColorScheme palette: default/nord
+@import 'color-palette-default';
+
+$colorscheme: 'default';
+
 // transparent opacity
 $opacity: 'default';
 
@@ -15,9 +21,6 @@ $panel_opacity: 1.0;
 
 // Blackness style
 $blackness: 'false';
-
-// Theme color type : default/nord/blackness
-$color_type: 'default';
 
 // Windows outline style
 $rimless: 'false';

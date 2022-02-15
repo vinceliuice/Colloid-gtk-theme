@@ -1,4 +1,4 @@
-#!/bin/bash
+#! /usr/bin/env bash
 
 RENDER_SVG="$(command -v rendersvg)" || true
 INKSCAPE="$(command -v inkscape)" || true
@@ -6,8 +6,10 @@ OPTIPNG="$(command -v optipng)" || true
 
 INDEX="assets.txt"
 
-for theme in '' '-purple' '-pink' '-red' '-orange' '-yellow' '-green' '-blue' '-teal'; do
-for type in '' '-nord'; do
+./make-assets.sh
+
+for theme in '' '-purple' '-pink' '-red' '-orange' '-yellow' '-green' '-grey' '-teal'; do
+for type in '' '-nord' '-dracula'; do
 
 ASSETS_DIR="assets${theme}${type}"
 SRC_FILE="assets${theme}${type}.svg"
@@ -54,3 +56,16 @@ fi
 done
 done
 done
+
+for theme in '' '-purple' '-pink' '-red' '-orange' '-yellow' '-green' '-teal' '-grey'; do
+    for type in '' '-nord' '-dracula'; do
+      if [[ "${theme}" == '' && "${type}" == '' ]]; then
+        echo "keep assets.svg file..."
+      else
+        ASSETS_FILE="assets${theme}${type}.svg"
+        rm -rf "${ASSETS_FILE}"
+      fi
+    done
+done
+
+echo -e "DONE!"

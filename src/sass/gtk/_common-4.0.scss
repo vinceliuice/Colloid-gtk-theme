@@ -2388,7 +2388,7 @@ switch {
   color: transparent;
 
   &:checked {
-    background-color: $primary;
+    background-color: $assets-color;
   }
 
   &:disabled { opacity: 0.5; }
@@ -2477,22 +2477,22 @@ radio {
   }
 
   &:checked, &:indeterminate {
-    color: on($primary);
-    background-color: $primary;
+    color: on($assets-color);
+    background-color: $assets-color;
 
     &:hover {
-      box-shadow: 0 0 0 6px rgba($primary, 0.15);
-      background-color: lighten($primary, 10%);
+      box-shadow: 0 0 0 6px rgba($assets-color, 0.15);
+      background-color: lighten($assets-color, 10%);
     }
 
     &:active {
-      box-shadow: 0 0 0 6px rgba($primary, 0.20);
-      background-color: $primary;
+      box-shadow: 0 0 0 6px rgba($assets-color, 0.20);
+      background-color: $assets-color;
     }
 
     &:disabled {
-      color: on($primary, secondary);
-      background-color: rgba($primary, 0.35);
+      color: on($assets-color, secondary);
+      background-color: rgba($assets-color, 0.35);
     }
   }
 
@@ -4043,7 +4043,7 @@ window {
     image { padding: 0; }
 
     &:hover, &:active {
-      color: on($applet-primary);
+      color: if($colorscheme != 'dracula', white, rgba(black, 0.5));
     }
 
     &:backdrop {

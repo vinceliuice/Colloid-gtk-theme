@@ -6,7 +6,7 @@
 // hard-coded css:
 // https://gitlab.gnome.org/GNOME/nautilus/blob/master/src/resources/css/nautilus.css
 
-$nautilus: if($variant == 'light' and $topbar == 'dark', $base-alt, $titlebar);
+$nautilus: $base-alt;
 
 .nautilus-window {
   &.background.csd {

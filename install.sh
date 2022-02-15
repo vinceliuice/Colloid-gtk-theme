@@ -124,14 +124,14 @@ install() {
   ln -s assets/no-notifications.svg no-notifications.svg
 
   mkdir -p                                                                                   "${THEME_DIR}/gtk-2.0"
-  cp -r "${SRC_DIR}/main/gtk-2.0/gtkrc${theme}${ELSE_DARK:-}"                                "${THEME_DIR}/gtk-2.0/gtkrc"
+  cp -r "${SRC_DIR}/main/gtk-2.0/gtkrc${theme}${ELSE_DARK:-}${ctype}"                        "${THEME_DIR}/gtk-2.0/gtkrc"
   cp -r "${SRC_DIR}/main/gtk-2.0/common/"*'.rc'                                              "${THEME_DIR}/gtk-2.0"
-  cp -r "${SRC_DIR}/assets/gtk-2.0/assets${theme}${ELSE_DARK:-}"                             "${THEME_DIR}/gtk-2.0/assets"
+  cp -r "${SRC_DIR}/assets/gtk-2.0/assets${theme}${ELSE_DARK:-}${ctype}"                     "${THEME_DIR}/gtk-2.0/assets"
 
   mkdir -p                                                                                   "${THEME_DIR}/gtk-3.0"
   cp -r "${SRC_DIR}/assets/gtk/assets${theme}${ctype}"                                       "${THEME_DIR}/gtk-3.0/assets"
   cp -r "${SRC_DIR}/assets/gtk/scalable"                                                     "${THEME_DIR}/gtk-3.0/assets"
-  cp -r "${SRC_DIR}/assets/gtk/thumbnail${ELSE_DARK:-}.png"                                  "${THEME_DIR}/gtk-3.0/thumbnail.png"
+  cp -r "${SRC_DIR}/assets/gtk/thumbnails/thumbnail${ELSE_DARK:-}.png"                       "${THEME_DIR}/gtk-3.0/thumbnail.png"
 
   if [[ "$tweaks" == 'true' ]]; then
     sassc $SASSC_OPT "${SRC_DIR}/main/gtk-3.0/gtk${color}.scss"                              "${THEME_DIR}/gtk-3.0/gtk.css"
@@ -144,7 +144,7 @@ install() {
   mkdir -p                                                                                   "${THEME_DIR}/gtk-4.0"
   cp -r "${SRC_DIR}/assets/gtk/assets${theme}${ctype}"                                       "${THEME_DIR}/gtk-4.0/assets"
   cp -r "${SRC_DIR}/assets/gtk/scalable"                                                     "${THEME_DIR}/gtk-4.0/assets"
-  cp -r "${SRC_DIR}/assets/gtk/thumbnail${ELSE_DARK:-}.png"                                  "${THEME_DIR}/gtk-4.0/thumbnail.png"
+  cp -r "${SRC_DIR}/assets/gtk/thumbnails/thumbnail${ELSE_DARK:-}.png"                       "${THEME_DIR}/gtk-4.0/thumbnail.png"
 
   if [[ "$tweaks" == 'true' ]]; then
     sassc $SASSC_OPT "${SRC_DIR}/main/gtk-4.0/gtk${color}.scss"                              "${THEME_DIR}/gtk-4.0/gtk.css"
@@ -324,7 +324,13 @@ while [[ $# -gt 0 ]]; do
           nord)
             nord="true"
             ctype="-nord"
-            echo -e "Install Nord version! ..."
+            echo -e "Install Nord ColorScheme version! ..."
+            shift
+            ;;
+          dracula)
+            dracula="true"
+            ctype="-dracula"
+            echo -e "Install Dracula ColorScheme version! ..."
             shift
             ;;
           black)
@@ -410,11 +416,17 @@ compact_size() {
 }
 
 nord_color() {
-  sed -i "/\$color_type:/s/default/nord/" ${SRC_DIR}/sass/_tweaks-temp.scss
+  sed -i "/\@import/s/color-palette-default/color-palette-nord/" ${SRC_DIR}/sass/_tweaks-temp.scss
+  sed -i "/\$colorscheme:/s/default/nord/" ${SRC_DIR}/sass/_tweaks-temp.scss
+}
+
+dracula_color() {
+  sed -i "/\@import/s/color-palette-default/color-palette-dracula/" ${SRC_DIR}/sass/_tweaks-temp.scss
+  sed -i "/\$colorscheme:/s/default/dracula/" ${SRC_DIR}/sass/_tweaks-temp.scss
 }
 
 blackness_color() {
-  sed -i "/\$color_type:/s/default/blackness/" ${SRC_DIR}/sass/_tweaks-temp.scss
+  sed -i "/\$blackness:/s/false/true/" ${SRC_DIR}/sass/_tweaks-temp.scss
 }
 
 border_rimless() {
@@ -458,7 +470,7 @@ theme_color() {
 }
 
 theme_tweaks() {
-  if [[ "$accent" == 'true' || "$compact" == 'true' || "$nord" == 'true'  || "$rimless" == 'true' || "$blackness" == 'true' || "$normal" == 'true' ]]; then
+  if [[ "$accent" == 'true' || "$compact" == 'true' || "$nord" == 'true' || "$dracula" == 'true' || "$rimless" == 'true' || "$blackness" == 'true' || "$normal" == 'true' ]]; then
     tweaks='true'
     install_package; tweaks_temp
   fi
@@ -473,6 +485,10 @@ theme_tweaks() {
 
   if [[ "$nord" = "true" ]] ; then
     nord_color
+  fi
+
+  if [[ "$dracula" = "true" ]] ; then
+    dracula_color
   fi
 
   if [[ "$blackness" = "true" ]] ; then
