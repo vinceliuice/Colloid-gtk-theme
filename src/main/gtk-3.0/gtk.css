@@ -4430,7 +4430,7 @@ popover.emoji-completion .emoji:hover {
   background-color: transparent;
 }
 
-.nautilus-window.background.csd:not(.unified) paned > separator {
+.nautilus-window.background.csd:not(.unified) paned > separator.wide {
   min-width: 12px;
   box-shadow: 12px 0 #FFFFFF;
   background-color: #FFFFFF;

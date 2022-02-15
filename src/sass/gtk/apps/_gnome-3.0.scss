@@ -69,7 +69,7 @@ $nautilus: $base-alt;
         }
       }
 
-      paned > separator { // Use paned separator to hide stack border-bottom-left-radius
+      paned > separator.wide { // Use paned separator to hide stack border-bottom-left-radius
         min-width: $window-radius;
         box-shadow: $window-radius 0 $base;
         background-color: $base;
