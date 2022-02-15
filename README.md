@@ -33,11 +33,12 @@ Run the following commands in the terminal:
 -t, --theme VARIANT...  Specify theme color variant(s) [default|purple|pink|red|orange|yellow|green|teal|grey|all] (Default: blue)
 -c, --color VARIANT...  Specify color variant(s) [standard|light|dark] (Default: All variants)
 -s, --size VARIANT...   Specify size variant [standard|compact] (Default: standard variant)
---tweaks                Specify versions for tweaks [nord|black|rimless|normal] (only nord and black can not mix use!)
-                        1. nord:     Nord color version
-                        2. black:    Blackness color version
-                        3. rimless:  Remove the 1px border about windows and menus
-                        4. normal:   normal windows button style
+--tweaks                Specify versions for tweaks [nord|dracula|black|rimless|normal] (only nord and dracula can not mix use with!)
+                        1. nord:     Nord ColorScheme version
+                        2. dracula   Dracula ColorScheme version
+                        3. black:    Blackness color version
+                        4. rimless:  Remove the 1px border about windows and menus
+                        5. normal:   Normal windows button style (titlebuttons: max/min/close)
 -h, --help              Show help
 ```
 
