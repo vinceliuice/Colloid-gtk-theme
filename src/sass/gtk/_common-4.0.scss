@@ -1729,7 +1729,7 @@ popover.background {
 
     @if $rimless == 'true' {
       border: none;
-      box-shadow: $shadow-z5;
+      box-shadow: $shadow-z4;
     } @else {
       border: 1px solid highlight($surface);
       background-clip: border-box;

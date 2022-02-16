@@ -1795,7 +1795,7 @@ popover.background {
   &, .csd & {
     @if $rimless == 'true' {
       border: none;
-      box-shadow: $shadow-z5;
+      box-shadow: $shadow-z4;
 
       &:backdrop { box-shadow: $shadow-z3; }
     } @else if $variant == 'dark' {
@@ -3722,7 +3722,7 @@ decoration {
     border: none;
 
     @if $rimless == 'true' {
-      box-shadow: $shadow-z5;
+      box-shadow: $shadow-z4;
     } @else {
       box-shadow: $shadow-z5, 0 0 0 1px $window-border;
     }
