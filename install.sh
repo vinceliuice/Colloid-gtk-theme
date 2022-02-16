@@ -117,7 +117,7 @@ install() {
 
   cp -r "${SRC_DIR}/assets/gnome-shell/common-assets"                                        "${THEME_DIR}/gnome-shell/assets"
   cp -r "${SRC_DIR}/assets/gnome-shell/assets${ELSE_DARK:-}/"*.svg                           "${THEME_DIR}/gnome-shell/assets"
-  cp -r "${SRC_DIR}/assets/gnome-shell/theme${theme}/"*.svg                                  "${THEME_DIR}/gnome-shell/assets"
+  cp -r "${SRC_DIR}/assets/gnome-shell/theme${theme}${ctype}/"*.svg                          "${THEME_DIR}/gnome-shell/assets"
 
   cd "${THEME_DIR}/gnome-shell"
   ln -s assets/no-events.svg no-events.svg
@@ -132,7 +132,7 @@ install() {
   mkdir -p                                                                                   "${THEME_DIR}/gtk-3.0"
   cp -r "${SRC_DIR}/assets/gtk/assets${theme}${ctype}"                                       "${THEME_DIR}/gtk-3.0/assets"
   cp -r "${SRC_DIR}/assets/gtk/scalable"                                                     "${THEME_DIR}/gtk-3.0/assets"
-  cp -r "${SRC_DIR}/assets/gtk/thumbnails/thumbnail${ELSE_DARK:-}.png"                       "${THEME_DIR}/gtk-3.0/thumbnail.png"
+  cp -r "${SRC_DIR}/assets/gtk/thumbnails/thumbnail${theme}${ELSE_DARK:-}.png"               "${THEME_DIR}/gtk-3.0/thumbnail.png"
 
   if [[ "$tweaks" == 'true' ]]; then
     sassc $SASSC_OPT "${SRC_DIR}/main/gtk-3.0/gtk${color}.scss"                              "${THEME_DIR}/gtk-3.0/gtk.css"
@@ -145,7 +145,7 @@ install() {
   mkdir -p                                                                                   "${THEME_DIR}/gtk-4.0"
   cp -r "${SRC_DIR}/assets/gtk/assets${theme}${ctype}"                                       "${THEME_DIR}/gtk-4.0/assets"
   cp -r "${SRC_DIR}/assets/gtk/scalable"                                                     "${THEME_DIR}/gtk-4.0/assets"
-  cp -r "${SRC_DIR}/assets/gtk/thumbnails/thumbnail${ELSE_DARK:-}.png"                       "${THEME_DIR}/gtk-4.0/thumbnail.png"
+  cp -r "${SRC_DIR}/assets/gtk/thumbnails/thumbnail${theme}${ELSE_DARK:-}.png"               "${THEME_DIR}/gtk-4.0/thumbnail.png"
 
   if [[ "$tweaks" == 'true' ]]; then
     sassc $SASSC_OPT "${SRC_DIR}/main/gtk-4.0/gtk${color}.scss"                              "${THEME_DIR}/gtk-4.0/gtk.css"
@@ -158,7 +158,7 @@ install() {
   mkdir -p                                                                                   "${THEME_DIR}/cinnamon"
   cp -r "${SRC_DIR}/assets/cinnamon/common-assets"                                           "${THEME_DIR}/cinnamon/assets"
   cp -r "${SRC_DIR}/assets/cinnamon/assets${ELSE_DARK:-}/"*'.svg'                            "${THEME_DIR}/cinnamon/assets"
-  cp -r "${SRC_DIR}/assets/cinnamon/theme${theme}/"*'.svg'                                   "${THEME_DIR}/cinnamon/assets"
+  cp -r "${SRC_DIR}/assets/cinnamon/theme${theme}${ctype}/"*'.svg'                           "${THEME_DIR}/cinnamon/assets"
 
   if [[ "$tweaks" == 'true' ]]; then
     sassc $SASSC_OPT "${SRC_DIR}/main/cinnamon/cinnamon${color}.scss"                        "${THEME_DIR}/cinnamon/cinnamon.css"
@@ -166,7 +166,7 @@ install() {
     cp -r "${SRC_DIR}/main/cinnamon/cinnamon${color}.css"                                    "${THEME_DIR}/cinnamon/cinnamon.css"
   fi
 
-  cp -r "${SRC_DIR}/assets/cinnamon/thumbnail${color}.png"                                   "${THEME_DIR}/cinnamon/thumbnail.png"
+  cp -r "${SRC_DIR}/assets/cinnamon/thumbnails/thumbnail${theme}${ctype}${color}.png"        "${THEME_DIR}/cinnamon/thumbnail.png"
 
   mkdir -p                                                                                   "${THEME_DIR}/metacity-1"
   cp -r "${SRC_DIR}/main/metacity-1/metacity-theme-2${color}.xml"                            "${THEME_DIR}/metacity-1/metacity-theme-2.xml"

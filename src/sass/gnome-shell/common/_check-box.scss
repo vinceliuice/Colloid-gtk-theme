@@ -7,7 +7,6 @@
     width: 24px;
     height: 24px;
     padding: $base_padding / 2;
-    border-radius: $base_radius;
   }
 
   StBin, &:focus StBin {
@@ -15,19 +14,14 @@
   }
 
   &:hover StBin {
-    background-color: $divider;
+    background-image: url("assets/checkbox-off-hover.svg");
   }
 
   &:active StBin {
-    background-color: $track;
+    background-image: url("assets/checkbox-off-active.svg");
   }
 
   &:checked StBin, &:focus:checked StBin {
-    @if $theme == 'default' {
-      background-image: url("assets/checkbox#{$asset_suffix}.svg");
-    }
-    @else {
-      background-image: url("assets/checkbox.svg");
-    }
+    background-image: url("assets/checkbox#{$asset_suffix}.svg");
   }
 }

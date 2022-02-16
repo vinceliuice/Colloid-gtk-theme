@@ -247,18 +247,13 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   width: 40px;
   height: 20px;
   background-size: contain;
+}
+
+.toggle-switch, .popup-menu-item:active .toggle-switch {
   background-image: url("assets/toggle-off.svg");
 }
 
-.toggle-switch:checked {
-  background-image: url("assets/toggle-on.svg");
-}
-
-.popup-menu-item:active .toggle-switch {
-  background-image: url("assets/toggle-off.svg");
-}
-
-.popup-menu-item:active .toggle-switch:checked {
+.toggle-switch:checked, .popup-menu-item:active .toggle-switch:checked {
   background-image: url("assets/toggle-on.svg");
 }
 

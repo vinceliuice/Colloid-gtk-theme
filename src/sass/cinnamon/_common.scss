@@ -187,11 +187,7 @@ StScrollBar {
 
   StBin, &:focus StBin { background-image: url("#{$asset_path}/checkbox-off.svg"); }
 
-  @if $variant == 'dark' and $theme == 'default' {
-    &:checked StBin, &:focus:checked StBin { background-image: url("#{$asset_path}/checkbox-dark.svg"); }
-  } @else {
-    &:checked StBin, &:focus:checked StBin { background-image: url("#{$asset_path}/checkbox.svg"); }
-  }
+  &:checked StBin, &:focus:checked StBin { background-image: url("#{$asset_path}/checkbox#{$asset-suffix}.svg"); }
 }
 
 //
@@ -217,11 +213,7 @@ StScrollBar {
 
   StBin, &:focus StBin { background-image: url("#{$asset_path}/radiobutton-off.svg"); }
 
-  @if $variant == 'dark' and $theme == 'default' {
-    &:checked StBin, &:focus:checked StBin { background-image: url("#{$asset_path}/radiobutton-dark.svg"); }
-  } @else {
-    &:checked StBin, &:focus:checked StBin { background-image: url("#{$asset_path}/radiobutton.svg"); }
-  }
+  &:checked StBin, &:focus:checked StBin { background-image: url("#{$asset_path}/radiobutton#{$asset-suffix}.svg"); }
 }
 
 //
@@ -231,22 +223,11 @@ StScrollBar {
   width: 40px;
   height: 20px;
   background-size: contain;
-  background-image: url("#{$asset_path}/toggle-off.svg");
 
-  @if $variant == 'dark' and $theme == 'grey' {
-    &:checked { background-image: url("#{$asset_path}/toggle-on-dark.svg"); }
-  } @else {
-    &:checked { background-image: url("#{$asset_path}/toggle-on.svg"); }
-  }
-
-  .popup-menu-item:active & {
+  &, .popup-menu-item:active & {
     background-image: url("#{$asset_path}/toggle-off.svg");
 
-    @if $variant == 'dark' and $theme == 'grey' {
-      &:checked { background-image: url("#{$asset_path}/toggle-on-dark.svg"); }
-    } @else {
-      &:checked { background-image: url("#{$asset_path}/toggle-on.svg"); }
-    }
+    &:checked { background-image: url("#{$asset_path}/toggle-on#{$asset-suffix}.svg"); }
   }
 }
 

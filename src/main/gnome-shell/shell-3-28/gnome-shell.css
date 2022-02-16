@@ -674,7 +674,6 @@ StWidget.focused .app-well-app-running-dot {
   width: 24px;
   height: 24px;
   padding: 3px;
-  border-radius: 6px;
 }
 
 .check-box StBin, .check-box:focus StBin {
@@ -682,11 +681,11 @@ StWidget.focused .app-well-app-running-dot {
 }
 
 .check-box:hover StBin {
-  background-color: rgba(0, 0, 0, 0.12);
+  background-image: url("assets/checkbox-off-hover.svg");
 }
 
 .check-box:active StBin {
-  background-color: rgba(0, 0, 0, 0.26);
+  background-image: url("assets/checkbox-off-active.svg");
 }
 
 .check-box:checked StBin, .check-box:focus:checked StBin {
@@ -2861,18 +2860,13 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   width: 40px;
   height: 20px;
   background-size: contain;
+}
+
+.toggle-switch, .popup-sub-menu .toggle-switch {
   background-image: url("assets/toggle-off.svg");
 }
 
-.toggle-switch:checked {
-  background-image: url("assets/toggle-on.svg");
-}
-
-.popup-sub-menu .toggle-switch {
-  background-image: url("assets/toggle-off-dark.svg");
-}
-
-.popup-sub-menu .toggle-switch:checked {
+.toggle-switch:checked, .popup-sub-menu .toggle-switch:checked {
   background-image: url("assets/toggle-on.svg");
 }
 
