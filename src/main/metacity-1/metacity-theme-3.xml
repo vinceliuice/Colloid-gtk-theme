@@ -1,11 +1,11 @@
 <?xml version="1.0"?>
 <metacity_theme>
 <info>
-  <name>Orchis</name>
+  <name>Colloid</name>
   <author>vinceliucie</author>
   <copyright>GPL</copyright>
-  <date>2021</date>
-  <description>Graphite Metacity theme</description>
+  <date>2022</date>
+  <description>Colloid Metacity theme</description>
 </info>
 
 <!-- meaningful constants -->
@@ -16,18 +16,25 @@
 <constant name="C_highlight_unfocused" value="gtk:custom(wm_highlight,gtk:base[NORMAL])"/>
 <constant name="C_title_focused" value="gtk:custom(wm_title,gtk:fg[NORMAL])"/>
 <constant name="C_title_unfocused" value="gtk:custom(wm_unfocused_title,gtk:fg[INSENSITIVE])"/>
+<constant name="C_button_icon" value="gtk:custom(wm_button_icon,gtk:base[NORMAL])" />
+<constant name="C_button_close_hover_bg" value="gtk:custom(wm_button_close_hover_bg,gtk:fg[INSENSITIVE])"/>
+<constant name="C_button_close_active_bg" value="gtk:custom(wm_button_close_active_bg,gtk:fg[INSENSITIVE])"/>
+<constant name="C_button_max_hover_bg" value="gtk:custom(wm_button_max_hover_bg,gtk:fg[INSENSITIVE])"/>
+<constant name="C_button_max_active_bg" value="gtk:custom(wm_button_max_active_bg,gtk:fg[INSENSITIVE])"/>
+<constant name="C_button_min_hover_bg" value="gtk:custom(wm_button_min_hover_bg,gtk:fg[INSENSITIVE])"/>
+<constant name="C_button_min_active_bg" value="gtk:custom(wm_button_min_active_bg,gtk:fg[INSENSITIVE])"/>
 
 <!-- geometries -->
 
-<frame_geometry name="normal" title_scale="medium" rounded_top_left="4" rounded_top_right="4">
+<frame_geometry name="normal" title_scale="medium" rounded_top_left="12" rounded_top_right="12">
   <distance name="left_width" value="0"/>
   <distance name="right_width" value="0"/>
   <distance name="bottom_height" value="0"/>
-  <distance name="left_titlebar_edge" value="0"/>
-  <distance name="right_titlebar_edge" value="0"/>
-  <distance name="title_vertical_pad" value="12"/>
-  <border name="title_border" left="10" right="10" top="0" bottom="0"/>
-  <border name="button_border" left="0" right="0" top="0" bottom="0"/>
+  <distance name="left_titlebar_edge" value="6"/>
+  <distance name="right_titlebar_edge" value="6"/>
+  <distance name="title_vertical_pad" value="10"/>
+  <border name="title_border" left="10" right="10" top="6" bottom="6"/>
+  <border name="button_border" left="0" right="0" top="5" bottom="5"/>
   <aspect_ratio name="button" value="1"/>
 </frame_geometry>
 
@@ -73,8 +80,8 @@
   <border name="title_border" left="0" right="0" top="0" bottom="0"/>
 </frame_geometry>
 
-<frame_geometry name="attached" hide_buttons="true" rounded_bottom_left="4" rounded_bottom_right="4" parent="normal">
-  <distance name="title_vertical_pad" value="4"/>
+<frame_geometry name="attached" hide_buttons="true" rounded_bottom_left="8" rounded_bottom_right="8" parent="normal">
+  <distance name="title_vertical_pad" value="8"/>
 </frame_geometry>
 
 <!-- drawing operations -->
@@ -142,105 +149,113 @@
 <!-- close -->
 
 <draw_ops name="close_focused">
-  <image filename="assets/close.svg" x="(width - object_width) / 2" y="(height - object_height) / 2" width="object_width" height="object_height" alpha="0.7" colorize="C_title_focused"/>
+  <image filename="assets/button.svg" colorize="C_button_close_hover_bg" x="(width - object_width) / 2" y="(height - object_height) / 2" width="object_width" height="object_height"/>
 </draw_ops>
 
 <draw_ops name="close_focused_prelight">
-  <include name="close_focused"/>
+  <image filename="assets/button.svg" colorize="C_button_close_hover_bg" x="(width - object_width) / 2" y="(height - object_height) / 2" width="object_width" height="object_height"/>
+  <image filename="assets/close.svg" x="(width - object_width) / 2" y="(height - object_height) / 2" width="object_width" height="object_height" colorize="C_button_icon"/>
 </draw_ops>
 
 <draw_ops name="close_focused_pressed">
-  <include name="close_focused"/>
+  <image filename="assets/button.svg" colorize="C_button_close_active_bg" x="(width - object_width) / 2" y="(height - object_height) / 2" width="object_width" height="object_height"/>
+  <image filename="assets/close.svg" x="(width - object_width) / 2" y="(height - object_height) / 2" width="object_width" height="object_height" colorize="C_button_icon"/>
 </draw_ops>
 
 <draw_ops name="close_unfocused">
-  <image filename="assets/close.svg" x="(width - object_width) / 2" y="(height - object_height) / 2" width="object_width" height="object_height" alpha="0.7" colorize="C_title_unfocused"/>
+  <image filename="assets/button.svg" colorize="C_title_unfocused" x="(width - object_width) / 2" y="(height - object_height) / 2" alpha="0.25" width="object_width" height="object_height"/>
 </draw_ops>
 
 <draw_ops name="close_unfocused_prelight">
-  <include name="close_unfocused"/>
+  <include name="close_focused_prelight"/>
 </draw_ops>
 
 <draw_ops name="close_unfocused_pressed">
-  <include name="close_unfocused"/>
+  <include name="close_focused_pressed"/>
 </draw_ops>
 
 <!-- maximize -->
 
 <draw_ops name="maximize_focused">
-  <image filename="assets/maximize.svg" x="(width - object_width) / 2" y="(height - object_height) / 2" width="object_width" height="object_height" alpha="0.7" colorize="C_title_focused"/>
+  <image filename="assets/button.svg" colorize="C_button_max_hover_bg" x="(width - object_width) / 2" y="(height - object_height) / 2" width="object_width" height="object_height"/>
 </draw_ops>
 
 <draw_ops name="maximize_focused_prelight">
-  <include name="maximize_focused"/>
+  <image filename="assets/button.svg" colorize="C_button_max_hover_bg" x="(width - object_width) / 2" y="(height - object_height) / 2" width="object_width" height="object_height"/>
+  <image filename="assets/maximize.svg" x="(width - object_width) / 2" y="(height - object_height) / 2" width="object_width" height="object_height" colorize="C_button_icon"/>
 </draw_ops>
 
 <draw_ops name="maximize_focused_pressed">
-  <include name="maximize_focused"/>
+  <image filename="assets/button.svg" colorize="C_button_max_active_bg" x="(width - object_width) / 2" y="(height - object_height) / 2" width="object_width" height="object_height"/>
+  <image filename="assets/maximize.svg" x="(width - object_width) / 2" y="(height - object_height) / 2" width="object_width" height="object_height" colorize="C_button_icon"/>
 </draw_ops>
 
 <draw_ops name="maximize_unfocused">
-  <image filename="assets/maximize.svg" x="(width - object_width) / 2" y="(height - object_height) / 2" width="object_width" height="object_height" alpha="0.7" colorize="C_title_unfocused"/>
+  <include name="close_unfocused"/>
 </draw_ops>
 
 <draw_ops name="maximize_unfocused_prelight">
-  <include name="maximize_unfocused"/>
+  <include name="maximize_focused_prelight"/>
 </draw_ops>
 
 <draw_ops name="maximize_unfocused_pressed">
-  <include name="maximize_unfocused"/>
+  <include name="maximize_focused_pressed"/>
 </draw_ops>
 
 <!-- unmaximize -->
 
 <draw_ops name="unmaximize_focused">
-  <image filename="assets/unmaximize.svg" x="(width - object_width) / 2" y="(height - object_height) / 2" width="object_width" height="object_height" alpha="0.7" colorize="C_title_focused"/>
+  <image filename="assets/button.svg" colorize="C_button_max_hover_bg" x="(width - object_width) / 2" y="(height - object_height) / 2" width="object_width" height="object_height"/>
 </draw_ops>
 
 <draw_ops name="unmaximize_focused_prelight">
-  <include name="unmaximize_focused"/>
+  <image filename="assets/button.svg" colorize="C_button_max_hover_bg" x="(width - object_width) / 2" y="(height - object_height) / 2" width="object_width" height="object_height"/>
+  <image filename="assets/unmaximize.svg" x="(width - object_width) / 2" y="(height - object_height) / 2" width="object_width" height="object_height" colorize="C_button_icon"/>
 </draw_ops>
 
 <draw_ops name="unmaximize_focused_pressed">
-  <include name="unmaximize_focused"/>
+  <image filename="assets/button.svg" colorize="C_button_max_active_bg" x="(width - object_width) / 2" y="(height - object_height) / 2" width="object_width" height="object_height"/>
+  <image filename="assets/unmaximize.svg" x="(width - object_width) / 2" y="(height - object_height) / 2" width="object_width" height="object_height" colorize="C_button_icon"/>
 </draw_ops>
 
 <draw_ops name="unmaximize_unfocused">
-  <image filename="assets/unmaximize.svg" x="(width - object_width) / 2" y="(height - object_height) / 2" width="object_width" height="object_height" alpha="0.7" colorize="C_title_unfocused"/>
+  <include name="close_unfocused"/>
 </draw_ops>
 
 <draw_ops name="unmaximize_unfocused_prelight">
-  <include name="unmaximize_unfocused"/>
+  <include name="unmaximize_focused_prelight"/>
 </draw_ops>
 
 <draw_ops name="unmaximize_unfocused_pressed">
-  <include name="unmaximize_unfocused"/>
+  <include name="unmaximize_focused_pressed"/>
 </draw_ops>
 
 <!-- minimize -->
 
 <draw_ops name="minimize_focused">
-  <image filename="assets/minimize.svg" x="(width - object_width) / 2" y="(height - object_height) / 2" width="object_width" height="object_height" alpha="0.7" colorize="C_title_focused"/>
+  <image filename="assets/button.svg" colorize="C_button_min_hover_bg" x="(width - object_width) / 2" y="(height - object_height) / 2" width="object_width" height="object_height"/>
 </draw_ops>
 
 <draw_ops name="minimize_focused_prelight">
-  <include name="minimize_focused"/>
+  <image filename="assets/button.svg" colorize="C_button_min_hover_bg" x="(width - object_width) / 2" y="(height - object_height) / 2" width="object_width" height="object_height"/>
+  <image filename="assets/minimize.svg" x="(width - object_width) / 2" y="(height - object_height) / 2" width="object_width" height="object_height" colorize="C_button_icon"/>
 </draw_ops>
 
 <draw_ops name="minimize_focused_pressed">
-  <include name="minimize_focused"/>
+  <image filename="assets/button.svg" colorize="C_button_min_active_bg" x="(width - object_width) / 2" y="(height - object_height) / 2" width="object_width" height="object_height"/>
+  <image filename="assets/minimize.svg" x="(width - object_width) / 2" y="(height - object_height) / 2" width="object_width" height="object_height" colorize="C_button_icon"/>
 </draw_ops>
 
 <draw_ops name="minimize_unfocused">
-  <image filename="assets/minimize.svg" x="(width - object_width) / 2" y="(height - object_height) / 2" width="object_width" height="object_height" alpha="0.7" colorize="C_title_unfocused"/>
+  <include name="close_unfocused"/>
 </draw_ops>
 
 <draw_ops name="minimize_unfocused_prelight">
-  <include name="minimize_unfocused"/>
+  <include name="minimize_focused_prelight"/>
 </draw_ops>
 
 <draw_ops name="minimize_unfocused_pressed">
-  <include name="minimize_unfocused"/>
+  <include name="minimize_focused_pressed"/>
 </draw_ops>
 
 <!-- menu -->

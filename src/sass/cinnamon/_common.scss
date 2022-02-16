@@ -233,7 +233,7 @@ StScrollBar {
   background-size: contain;
   background-image: url("#{$asset_path}/toggle-off.svg");
 
-  @if $variant == 'dark' and $theme == 'default' {
+  @if $variant == 'dark' and $theme == 'grey' {
     &:checked { background-image: url("#{$asset_path}/toggle-on-dark.svg"); }
   } @else {
     &:checked { background-image: url("#{$asset_path}/toggle-on.svg"); }
@@ -242,7 +242,7 @@ StScrollBar {
   .popup-menu-item:active & {
     background-image: url("#{$asset_path}/toggle-off.svg");
 
-    @if $variant == 'dark' and $theme == 'default' {
+    @if $variant == 'dark' and $theme == 'grey' {
       &:checked { background-image: url("#{$asset_path}/toggle-on-dark.svg"); }
     } @else {
       &:checked { background-image: url("#{$asset_path}/toggle-on.svg"); }
@@ -414,8 +414,8 @@ $menu_item_radius: $corner-radius;
 
     &:dnd {
       background-gradient-direction: vertical;
-      background-gradient-start: rgba(255,0,0,0.05);
-      background-gradient-end: rgba(255,0,0,0.2);
+      background-gradient-start: rgba($error, 0.35);
+      background-gradient-end: rgba($error, 0.35);
     }
 
     &:ltr { padding-right: 4px; }
@@ -432,8 +432,8 @@ $menu_item_radius: $corner-radius;
   &Right {
     &:dnd {
       background-gradient-direction: vertical;
-      background-gradient-start: rgba(0,0,255,0.05);
-      background-gradient-end: rgba(0,0,255,0.2);
+      background-gradient-start: rgba($suggested, 0.35);
+      background-gradient-end: rgba($suggested, 0.35);
     }
 
     &:ltr { padding-left: $space-size; spacing: 0px; }
@@ -452,8 +452,8 @@ $menu_item_radius: $corner-radius;
 
     &:dnd {
       background-gradient-direction: vertical;
-      background-gradient-start: rgba(0,255,0,0.05);
-      background-gradient-end: rgba(0,255,0,0.2);
+      background-gradient-start: rgba($success, 0.35);
+      background-gradient-end: rgba($success, 0.35);
     }
   }
 }
@@ -682,10 +682,41 @@ $menu_item_radius: $corner-radius;
 //
 // Calendar
 //
+
+//calendar-background allows the date applet calendar to be themed separately from other applet menus*/
+.calendar-background {
+}
+
+.calendar-main-box {
+  margin: 0 $space-size;
+}
+
 .calendar {
-  padding: .4em 1.75em;
+  // padding: .4em 1.75em;
   spacing-rows: 0px;
   spacing-columns: 0px;
+}
+
+.calendar-today-home-button,
+.calendar-today-home-button-enabled {
+  margin: $space-size 0;
+  padding: $space-size;
+  @extend %flat_button;
+}
+
+.calendar-today-day-label {
+  font-size: 1.75em;
+  color: $text-secondary;
+  font-weight: bold;
+  text-align: center;
+  padding-bottom: .1em;
+}
+
+.calendar-today-date-label {
+  font-size: 1.1em;
+  color: $text-disabled;
+  font-weight: bold;
+  text-align: center;
 }
 
 .calendar-month-label {
@@ -741,6 +772,14 @@ $menu_item_radius: $corner-radius;
   padding: 0;
   margin: 2px;
   border-radius: $circular-radius;
+
+  &:hover {
+    background-color: $fill;
+  }
+
+  &:active {
+    background-color: $divider;
+  }
 }
 
 .calendar-day-heading {
@@ -795,6 +834,137 @@ $menu_item_radius: $corner-radius;
     padding: 0;
     margin-top: 3px;
   }
+}
+
+.calendar-events-main-box {
+  height: 300px;
+  margin: $space-size + 2px 0.8em 0 0;
+  padding: $space-size + 2px;
+  min-width: 350px;
+  border: none;
+  border-radius: $corner-radius;
+  background-gradient-direction: vertical;
+  background-gradient-start: $fill;
+  background-gradient-end: $fill;
+  color: $text-secondary;
+}
+
+.calendar-events-no-events-box {
+}
+
+.calendar-events-no-events-button {
+  margin: $space-size 0;
+  padding: $space-size;
+  border-radius: $corner-radius;
+
+  &:hover {
+    background-gradient-direction: vertical;
+    background-gradient-start: $fill;
+    background-gradient-end: $fill;
+    box-shadow: none;
+  }
+}
+
+.calendar-events-no-events-icon {
+  color: $text-disabled;
+}
+
+.calendar-events-no-events-label {
+  font-size: 1.1em;
+  color: $text-disabled;
+  font-weight: bold;
+  text-align: center;
+  margin-top: $space-size * 1.5;
+}
+
+.calendar-events-date-label {
+  padding: $space-size / 2 0 $space-size * 2 $space-size / 2;
+  font-size: 1.1em;
+  color: $text-secondary;
+  font-weight: bold;
+  text-align: center;
+}
+
+.calendar-events-event-container {
+  padding: 2px;
+}
+
+.calendar-events-scrollbox {
+}
+
+.calendar-events-main-box .separator {
+  -margin-horizontal: 1em;
+  -gradient-height: 1px;
+  -gradient-start: $border;
+  -gradient-end: $border;
+}
+
+.calendar-event-button {
+  margin: $space-size 0 $space-size 0;
+  border-radius: $corner-radius;
+
+  &:hover {
+    background-gradient-direction: vertical;
+    background-gradient-start: $fill;
+    background-gradient-end: $fill;
+    box-shadow: none;
+  }
+}
+
+.calendar-event-color-strip {
+  width: 4px;
+  border-radius: 4px 0 0 4px;
+}
+
+.calendar-event-row-content {
+  margin: $space-size;
+}
+
+.calendar-event-time-past {
+  color: $text-secondary-disabled;
+  font-weight: bold;
+  text-align: left;
+  margin-bottom: .6em;
+}
+
+.calendar-event-time-present {
+  font-weight: bold;
+  text-align: left;
+  margin-bottom: .6em;
+}
+
+.calendar-event-time-present:all-day {
+  color: rgba($success, 0.6);
+}
+
+.calendar-event-time-future {
+  text-align: left;
+  margin-bottom: .6em;
+}
+
+.calendar-event-countdown {
+  color: $text-disabled;
+  font-weight: bold;
+  text-align: right;
+  margin-bottom: .6em;
+}
+
+.calendar-event-countdown:soon {
+  color: white;
+}
+
+.calendar-event-countdown:imminent {
+  color: rgba($warning, 0.6);
+}
+
+.calendar-event-countdown:current {
+  color: rgba($success, 0.6);
+}
+
+.calendar-event-summary {
+  color: $text-disabled;
+  text-align: left;
+  width: 200px;
 }
 
 //
@@ -1471,7 +1641,7 @@ $menu_item_radius: $corner-radius;
 
   // >= 3.6.7
   &-preview { // thumbnail popup windows = .switcher-list
-    padding: $space-size*2; // = .switcher-list - .item-box
+    padding: $space-size; // = .switcher-list - .item-box
     spacing: $space-size; // = .switcher-list-item-container
     border: none;
     background-color: $base;
