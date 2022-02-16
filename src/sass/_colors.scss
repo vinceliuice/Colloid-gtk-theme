@@ -73,16 +73,17 @@
   @if ($type == 'b') { @return $grey-050; }
   @if ($type == 'c') { @return $grey-100; }
   @if ($type == 'd') { @return $grey-250; }
-  @if ($type == 'e') { @return $grey-800; }
-  @if ($type == 'f') { @return $grey-750; }
-  @if ($type == 'g') { @return $grey-700; }
-  @if ($type == 'h') { @return $grey-650; }
 
   @if ($blackness == 'true') {
     @if ($type == 'e') { @return $black; }
     @if ($type == 'f') { @return $grey-950; }
     @if ($type == 'g') { @return $grey-900; }
     @if ($type == 'h') { @return $grey-850; }
+  } @else {
+    @if ($type == 'e') { @return $grey-800; }
+    @if ($type == 'f') { @return $grey-750; }
+    @if ($type == 'g') { @return $grey-700; }
+    @if ($type == 'h') { @return $grey-650; }
   }
 }
 
