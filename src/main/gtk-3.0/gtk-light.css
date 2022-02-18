@@ -3302,7 +3302,7 @@ frame > border, .frame {
   border-style: none;
 }
 
-frame.flat > border, statusbar frame > border {
+frame.flat > border, frame > border.flat, statusbar frame > border {
   border: none;
 }
 

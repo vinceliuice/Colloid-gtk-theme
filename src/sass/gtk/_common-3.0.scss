@@ -2793,6 +2793,7 @@ frame {
   & > border { @extend %frame; }
 
   &.flat > border,
+  & > border.flat,
   statusbar & > border { border: none; } // for backward compatibility
 }
 
