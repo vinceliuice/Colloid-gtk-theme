@@ -487,7 +487,7 @@ frame.gedit-map-frame > border {
 
   @extend %circular_list;
 
-  row.activatable { @extend %circular_row; }
+  row { @extend %circular_row; }
 
   row.tweak-startup {
     border-radius: $corner-radius;
@@ -502,7 +502,7 @@ list {
     list {
       @extend %circular_list;
 
-      row.activatable { @extend %circular_row; }
+      row { @extend %circular_row; }
     }
   }
 }
@@ -560,6 +560,8 @@ window.background.csd {
     > stack.background {
       background: none;
 
+      frame > border { border: none; }
+
       > widget {
         > box.vertical > box.vertical { // Gnome 3.34 Wallpaper setting
           > scrolledwindow > viewport.frame {
@@ -572,6 +574,11 @@ window.background.csd {
           }
         }
       }
+    }
+
+    frame.view { // Wifi setting
+      border-radius: $corner-radius;
+      background: none;
     }
 
     > box.vertical > scrolledwindow.view { // > 3.25.90
@@ -594,6 +601,33 @@ window.background.csd {
           }
 
           separator { @extend %hide_separators; }
+        }
+      }
+    }
+  }
+
+  stack.background clamp.medium {
+    frame > box.vertical > box.vertical { // VPN setting
+      > list {
+        border-top-width: 0;
+        border-bottom-width: 0;
+
+        &, > row { border-radius: 0; }
+      }
+
+      &:first-child {
+        > list {
+          border-top-width: 1px;
+
+          &, > row { border-radius: $corner-radius $corner-radius 0 0; }
+        }
+      }
+
+      &:last-child {
+        > list {
+          border-bottom-width: 1px;
+
+          &, > row { border-radius:  0 0 $corner-radius $corner-radius; }
         }
       }
     }
@@ -622,7 +656,7 @@ hdyleaflet, leaflet, box.horizontal > stack.background {
   frame:not(.view) list:not(.contacts-contact-list) {
     @extend %circular_list;
 
-    row.activatable { @extend %circular_row; }
+    row { @extend %circular_row; }
   }
 
   stack.background, overlay {
@@ -630,12 +664,10 @@ hdyleaflet, leaflet, box.horizontal > stack.background {
       list {
         @extend %circular_list;
 
-        row.activatable { @extend %circular_row; }
+        row { @extend %circular_row; }
       }
     }
   }
-
-  frame > border { border: none; }
 
   > box.vertical > scrolledwindow > viewport.frame {
     list:not(.view):not(.tweak-group) {
@@ -649,25 +681,10 @@ hdyleaflet, leaflet, box.horizontal > stack.background {
     }
   }
 
-  frame.view {
-    @extend %circular_list;
-
-    list {
-      background: none;
-
-      > separator {
-        background: none;
-        min-height: 0;
-      }
-
-      row.activatable { @extend %circular_row; }
-    }
-  }
-
   list.view, list.frame {
     @extend %circular_list;
 
-    row.activatable { @extend %circular_row; }
+    row { @extend %circular_row; }
   }
 }
 
@@ -787,7 +804,7 @@ window.background.csd.unified {
     list {
       @extend %circular_list;
 
-      row.activatable { @extend %circular_row; }
+      row { @extend %circular_row; }
     }
   }
 }
@@ -1661,7 +1678,7 @@ preferencesgroup, .geary-accounts-editor-pane {
   list {
     @extend %circular_list;
 
-    row.activatable { @extend %circular_row; }
+    row { @extend %circular_row; }
   }
 }
 
@@ -1760,7 +1777,7 @@ window.background.csd {
     > list {
       @extend %circular_list;
 
-      row.activatable { @extend %circular_row; }
+      row { @extend %circular_row; }
     }
   }
 
@@ -1776,7 +1793,7 @@ window.background.csd {
     > list {
       @extend %circular_list;
 
-      row.activatable { @extend %circular_row; }
+      row { @extend %circular_row; }
     }
   }
 

@@ -2781,7 +2781,6 @@ printdialog {
   box-shadow: none;
 }
 
-frame > border,
 .frame {
   @extend %frame;
 
@@ -2791,7 +2790,7 @@ frame > border,
 }
 
 frame {
-  // & > border { @extend %frame; }
+  & > border { @extend %frame; }
 
   &.flat > border,
   statusbar & > border { border: none; } // for backward compatibility
@@ -2880,10 +2879,17 @@ separator {
   border-radius: $corner-radius + 1px;
   box-shadow: none;
   border: 1px solid $divider;
+
+  > separator {
+    background: none;
+    min-height: 0;
+  }
 }
 
 %circular_row {
   border-radius: 0;
+
+  &:not(:first-child) { border-top: 1px solid $border; }
 
   &:first-child {
     border-top-left-radius: $corner-radius;

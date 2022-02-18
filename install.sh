@@ -181,9 +181,11 @@ install() {
   mkdir -p                                                                                   "${THEME_DIR}-hdpi/xfwm4"
   cp -r "${SRC_DIR}/assets/xfwm4/assets${ELSE_LIGHT:-}${ctype}${window}-hdpi/"*.png          "${THEME_DIR}-hdpi/xfwm4"
   cp -r "${SRC_DIR}/main/xfwm4/themerc${ELSE_LIGHT:-}"                                       "${THEME_DIR}-hdpi/xfwm4/themerc"
+  sed -i "s/button_offset=6/button_offset=9/"                                                 "${THEME_DIR}-hdpi/xfwm4/themerc"
   mkdir -p                                                                                   "${THEME_DIR}-xhdpi/xfwm4"
   cp -r "${SRC_DIR}/assets/xfwm4/assets${ELSE_LIGHT:-}${ctype}${window}-xhdpi/"*.png         "${THEME_DIR}-xhdpi/xfwm4"
   cp -r "${SRC_DIR}/main/xfwm4/themerc${ELSE_LIGHT:-}"                                       "${THEME_DIR}-xhdpi/xfwm4/themerc"
+  sed -i "s/button_offset=6/button_offset=12/"                                                "${THEME_DIR}-xhdpi/xfwm4/themerc"
 
   mkdir -p                                                                                   "${THEME_DIR}/plank"
   if [[ "$color" == '-light' ]]; then
@@ -513,6 +515,10 @@ install_theme() {
       done
     done
   done
+
+  if [[ "$DESKTOP_SESSION" == 'xfce' ]]; then
+    sed -i "s|.*menu-opacity=.*|menu-opacity=95|" "$HOME/.config/xfce4/panel/whiskermenu"*".rc"
+  fi
 }
 
 install_theme
