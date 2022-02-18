@@ -4,12 +4,12 @@
 //
 
 $asset_path: assets;
-$font-size: 9;
+$font-size: 10;
 $panel_bg: rgba($panel-solid, 0.75);
 $panel_fg: on($panel-solid, secondary);
 
 stage {
-  @include fontsize($font-size);
+  // @include fontsize($font-size);
   color: $text;
 }
 
@@ -451,12 +451,12 @@ $menu_item_radius: $corner-radius;
     .panel-status-button {
       &:hover {
         color: $text;
-        background-color: $divider;
+        background-color: $fill;
       }
 
       &:active {
-        color: on($primary);
-        background-color: $primary;
+        color: $text;
+        background-color: $divider;
       }
     }
   }
@@ -658,6 +658,17 @@ $menu_item_radius: $corner-radius;
     font-size: 10px;
     color: #888;
   }
+}
+
+#LookingGlassDialog {
+  background-color: $base;
+  spacing: $space-size;
+  padding: $space-size;
+  margin: 32px;
+  border-radius: $window_radius;
+  color: $text;
+  box-shadow: $shadow-z16;
+  border: none;
 }
 
 //
@@ -2023,12 +2034,12 @@ $menu_item_radius: $corner-radius;
 
     &:hover {
       color: $panel_fg;
-      background-color: rgba($panel_fg, 0.15);
+      background-color: $fill;
     }
 
     &:checked, &:checked:hover {
-      color: on($applet-primary);
-      background-color: $applet-primary;
+      color: $panel_fg;
+      background-color: $divider;
     }
 
     &:highlight {
@@ -2043,7 +2054,7 @@ $menu_item_radius: $corner-radius;
     color: $panel_fg;
 
     .applet-box:checked & {
-      color: on($applet-primary);
+      color: $panel_fg;
       text-shadow: none;
     }
   }

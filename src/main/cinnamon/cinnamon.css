@@ -1,5 +1,4 @@
 stage {
-  font-size: 9pt;
   color: rgba(0, 0, 0, 0.87);
 }
 
@@ -522,7 +521,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .panel-left .panel-status-button:hover, .panel-right .panel-button:hover,
 .panel-right .panel-status-button:hover {
   color: rgba(0, 0, 0, 0.87);
-  background-color: rgba(0, 0, 0, 0.12);
+  background-color: rgba(0, 0, 0, 0.04);
 }
 
 .panel-top .panel-button:active,
@@ -530,8 +529,8 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .panel-bottom .panel-status-button:active, .panel-left .panel-button:active,
 .panel-left .panel-status-button:active, .panel-right .panel-button:active,
 .panel-right .panel-status-button:active {
-  color: #FFFFFF;
-  background-color: #3c84f7;
+  color: rgba(0, 0, 0, 0.87);
+  background-color: rgba(0, 0, 0, 0.12);
 }
 
 .panel-dummy {
@@ -739,6 +738,17 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   padding-left: 7px;
   font-size: 10px;
   color: #888;
+}
+
+#LookingGlassDialog {
+  background-color: #FFFFFF;
+  spacing: 6px;
+  padding: 6px;
+  margin: 32px;
+  border-radius: 12px;
+  color: rgba(0, 0, 0, 0.87);
+  box-shadow: 0 8px 6px -5px rgba(0, 0, 0, 0.2), 0 16px 15px 2px rgba(0, 0, 0, 0.14), 0 6px 18px 5px rgba(0, 0, 0, 0.12);
+  border: none;
 }
 
 .calendar-main-box {
@@ -2194,12 +2204,12 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .applet-box:hover {
   color: rgba(255, 255, 255, 0.7);
-  background-color: rgba(255, 255, 255, 0.15);
+  background-color: rgba(0, 0, 0, 0.04);
 }
 
 .applet-box:checked, .applet-box:checked:hover {
-  color: #FFFFFF;
-  background-color: #3c84f7;
+  color: rgba(255, 255, 255, 0.7);
+  background-color: rgba(0, 0, 0, 0.12);
 }
 
 .applet-box:highlight {
@@ -2214,7 +2224,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .applet-box:checked .applet-label {
-  color: #FFFFFF;
+  color: rgba(255, 255, 255, 0.7);
   text-shadow: none;
 }
 
