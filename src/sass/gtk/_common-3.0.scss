@@ -523,14 +523,11 @@ button {
   }
 
   &.text-button {
-    min-width: 64px - 16px * 2;
-    padding-left: 16px;
-    padding-right: 16px;
+    min-width: 32px;
+    padding-left: $space-size * 2 + 4px;
+    padding-right: $space-size * 2 + 4px;
 
     &.flat {
-      min-width: 64px - 8px * 2;
-      padding-left: 8px;
-      padding-right: 8px;
     }
   }
 
