@@ -6,35 +6,21 @@
    version="1.1"
    id="svg715"
    sodipodi:docname="assets-common.svg"
-   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20, custom)"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns="http://www.w3.org/2000/svg"
-   xmlns:svg="http://www.w3.org/2000/svg"
-   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-   xmlns:cc="http://creativecommons.org/ns#"
-   xmlns:dc="http://purl.org/dc/elements/1.1/">
-  <metadata
-     id="metadata717">
-    <rdf:RDF>
-      <cc:Work
-         rdf:about="">
-        <dc:format>image/svg+xml</dc:format>
-        <dc:type
-           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-      </cc:Work>
-    </rdf:RDF>
-  </metadata>
+   xmlns:svg="http://www.w3.org/2000/svg">
   <sodipodi:namedview
      showgrid="false"
      id="namedview4"
      inkscape:document-rotation="0"
-     inkscape:zoom="0.74100003"
-     inkscape:cx="137.65182"
-     inkscape:cy="296.89608"
+     inkscape:zoom="1.4820001"
+     inkscape:cx="224.02158"
+     inkscape:cy="340.75572"
      inkscape:window-width="1440"
-     inkscape:window-height="750"
+     inkscape:window-height="742"
      inkscape:window-x="0"
      inkscape:window-y="32"
      inkscape:window-maximized="1"
@@ -122,13 +108,6 @@
          stop-color="#000000"
          stop-opacity="0.12"
          id="stop26" />
-    </linearGradient>
-    <linearGradient
-       id="color-background">
-      <stop
-         offset="1"
-         stop-color="#F2F2F2"
-         id="stop35" />
     </linearGradient>
     <linearGradient
        id="color-base">
@@ -454,585 +433,6 @@
     </g>
     <clipPath
        clipPathUnits="userSpaceOnUse"
-       id="clipPath2990">
-      <rect
-         style="opacity:0.03;fill:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
-         id="rect2992"
-         width="36"
-         height="132"
-         x="432"
-         y="48"
-         rx="0"
-         ry="0" />
-    </clipPath>
-    <clipPath
-       clipPathUnits="userSpaceOnUse"
-       id="clipPath2996">
-      <rect
-         style="opacity:0.03;fill:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
-         id="rect2998"
-         width="36"
-         height="132"
-         x="432"
-         y="48"
-         rx="0"
-         ry="0" />
-    </clipPath>
-    <clipPath
-       clipPathUnits="userSpaceOnUse"
-       id="clipPath3002">
-      <rect
-         style="opacity:0.03;fill:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
-         id="rect3004"
-         width="36"
-         height="132"
-         x="432"
-         y="48"
-         rx="0"
-         ry="0" />
-    </clipPath>
-    <clipPath
-       clipPathUnits="userSpaceOnUse"
-       id="clipPath3037">
-      <rect
-         style="opacity:0.03;fill:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
-         id="rect3039"
-         width="36"
-         height="132"
-         x="432"
-         y="48"
-         rx="0"
-         ry="0" />
-    </clipPath>
-    <clipPath
-       clipPathUnits="userSpaceOnUse"
-       id="clipPath3276">
-      <rect
-         style="opacity:0.03;fill:#000000;stroke-width:1.05131;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
-         id="rect3278"
-         width="28"
-         height="18"
-         x="432"
-         y="72"
-         rx="0"
-         ry="0" />
-    </clipPath>
-    <clipPath
-       clipPathUnits="userSpaceOnUse"
-       id="clipPath3280">
-      <rect
-         style="opacity:0.03;fill:#000000;stroke-width:1.05131;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
-         id="rect3282"
-         width="28"
-         height="18"
-         x="432"
-         y="40"
-         rx="0"
-         ry="0" />
-    </clipPath>
-    <clipPath
-       clipPathUnits="userSpaceOnUse"
-       id="clipPath3284">
-      <rect
-         style="opacity:0.03;fill:#000000;stroke-width:1.05131;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
-         id="rect3286"
-         width="28"
-         height="18"
-         x="432"
-         y="8"
-         rx="0"
-         ry="0" />
-    </clipPath>
-    <clipPath
-       clipPathUnits="userSpaceOnUse"
-       id="clipPath3288">
-      <rect
-         style="opacity:0.03;fill:#000000;stroke-width:1.05131;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
-         id="rect3290"
-         width="28"
-         height="18"
-         x="432"
-         y="-24"
-         rx="0"
-         ry="0" />
-    </clipPath>
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#color-background"
-       id="linearGradient2272"
-       x1="6"
-       y1="6"
-       x2="18"
-       y2="6"
-       gradientUnits="userSpaceOnUse" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#color-text-secondary-disabled"
-       id="linearGradient2274"
-       x1="6"
-       y1="6"
-       x2="18"
-       y2="6"
-       gradientUnits="userSpaceOnUse" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#color-text-disabled"
-       id="linearGradient2280"
-       x1="0"
-       y1="-1"
-       x2="17"
-       y2="-1"
-       gradientUnits="userSpaceOnUse" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#color-text-secondary"
-       id="linearGradient2282"
-       x1="0"
-       y1="-1"
-       x2="17"
-       y2="-1"
-       gradientUnits="userSpaceOnUse" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#color-text"
-       id="linearGradient2284"
-       x1="0"
-       y1="-1"
-       x2="17"
-       y2="-1"
-       gradientUnits="userSpaceOnUse" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#color-text-secondary-disabled"
-       id="linearGradient2286"
-       x1="0"
-       y1="-1"
-       x2="17"
-       y2="-1"
-       gradientUnits="userSpaceOnUse" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#color-text-disabled"
-       id="linearGradient2288"
-       x1="-1"
-       y1="0"
-       x2="16"
-       y2="0"
-       gradientUnits="userSpaceOnUse" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#color-text-secondary"
-       id="linearGradient2290"
-       x1="-1"
-       y1="0"
-       x2="16"
-       y2="0"
-       gradientUnits="userSpaceOnUse" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#color-text"
-       id="linearGradient2292"
-       x1="-1"
-       y1="0"
-       x2="16"
-       y2="0"
-       gradientUnits="userSpaceOnUse" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#color-text-secondary-disabled"
-       id="linearGradient2294"
-       x1="-1"
-       y1="0"
-       x2="16"
-       y2="0"
-       gradientUnits="userSpaceOnUse" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#color-text-disabled"
-       id="linearGradient2296"
-       x1="0"
-       y1="0"
-       x2="17"
-       y2="0"
-       gradientUnits="userSpaceOnUse" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#color-text-secondary"
-       id="linearGradient2298"
-       x1="0"
-       y1="0"
-       x2="17"
-       y2="0"
-       gradientUnits="userSpaceOnUse" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#color-text"
-       id="linearGradient2300"
-       x1="0"
-       y1="0"
-       x2="17"
-       y2="0"
-       gradientUnits="userSpaceOnUse" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#color-text-secondary-disabled"
-       id="linearGradient2302"
-       x1="0"
-       y1="0"
-       x2="17"
-       y2="0"
-       gradientUnits="userSpaceOnUse" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#color-text-disabled"
-       id="linearGradient2304"
-       gradientTransform="scale(2,0.5)"
-       x1="0"
-       y1="0"
-       x2="8"
-       y2="0"
-       gradientUnits="userSpaceOnUse" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#color-text-secondary"
-       id="linearGradient2306"
-       gradientTransform="scale(2,0.5)"
-       x1="0"
-       y1="0"
-       x2="8"
-       y2="0"
-       gradientUnits="userSpaceOnUse" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#color-text"
-       id="linearGradient2308"
-       gradientTransform="scale(2,0.5)"
-       x1="0"
-       y1="0"
-       x2="8"
-       y2="0"
-       gradientUnits="userSpaceOnUse" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#color-text-disabled"
-       id="linearGradient2310"
-       gradientTransform="scale(0.5,2)"
-       x1="0"
-       y1="0"
-       x2="8"
-       y2="0"
-       gradientUnits="userSpaceOnUse" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#color-text-secondary"
-       id="linearGradient2312"
-       gradientTransform="scale(0.5,2)"
-       x1="0"
-       y1="0"
-       x2="8"
-       y2="0"
-       gradientUnits="userSpaceOnUse" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#color-text"
-       id="linearGradient2314"
-       gradientTransform="scale(0.5,2)"
-       x1="0"
-       y1="0"
-       x2="8"
-       y2="0"
-       gradientUnits="userSpaceOnUse" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#color-text"
-       id="linearGradient2316"
-       x1="0"
-       y1="0"
-       x2="16"
-       y2="0"
-       gradientUnits="userSpaceOnUse" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#color-text-disabled"
-       id="linearGradient2318"
-       x1="0"
-       y1="0"
-       x2="16"
-       y2="0"
-       gradientUnits="userSpaceOnUse" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#color-text-secondary"
-       id="linearGradient2320"
-       x1="0"
-       y1="0"
-       x2="16"
-       y2="0"
-       gradientUnits="userSpaceOnUse" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#color-text-secondary-disabled"
-       id="linearGradient2322"
-       x1="0"
-       y1="0"
-       x2="16"
-       y2="0"
-       gradientUnits="userSpaceOnUse" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#color-text"
-       id="linearGradient2324"
-       x1="0"
-       y1="0"
-       x2="16"
-       y2="0"
-       gradientUnits="userSpaceOnUse" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#color-text-disabled"
-       id="linearGradient2326"
-       x1="0"
-       y1="0"
-       x2="16"
-       y2="0"
-       gradientUnits="userSpaceOnUse" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#color-text-secondary"
-       id="linearGradient2328"
-       x1="0"
-       y1="0"
-       x2="16"
-       y2="0"
-       gradientUnits="userSpaceOnUse" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#color-text-secondary-disabled"
-       id="linearGradient2330"
-       x1="0"
-       y1="0"
-       x2="16"
-       y2="0"
-       gradientUnits="userSpaceOnUse" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#color-text"
-       id="linearGradient2332"
-       x1="0"
-       y1="0"
-       x2="16"
-       y2="0"
-       gradientUnits="userSpaceOnUse" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#color-text-disabled"
-       id="linearGradient2334"
-       x1="0"
-       y1="0"
-       x2="16"
-       y2="0"
-       gradientUnits="userSpaceOnUse" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#color-text-secondary"
-       id="linearGradient2336"
-       x1="0"
-       y1="0"
-       x2="16"
-       y2="0"
-       gradientUnits="userSpaceOnUse" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#color-text-secondary-disabled"
-       id="linearGradient2338"
-       x1="0"
-       y1="0"
-       x2="16"
-       y2="0"
-       gradientUnits="userSpaceOnUse" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#color-text"
-       id="linearGradient2340"
-       x1="0"
-       y1="0"
-       x2="16"
-       y2="0"
-       gradientUnits="userSpaceOnUse" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#color-text-disabled"
-       id="linearGradient2342"
-       x1="0"
-       y1="0"
-       x2="16"
-       y2="0"
-       gradientUnits="userSpaceOnUse" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#color-text-secondary"
-       id="linearGradient2344"
-       x1="0"
-       y1="0"
-       x2="16"
-       y2="0"
-       gradientUnits="userSpaceOnUse" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#color-text-secondary-disabled"
-       id="linearGradient2346"
-       x1="0"
-       y1="0"
-       x2="16"
-       y2="0"
-       gradientUnits="userSpaceOnUse" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#color-text"
-       id="linearGradient2348"
-       x1="0"
-       y1="0"
-       x2="16"
-       y2="0"
-       gradientUnits="userSpaceOnUse" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#color-text"
-       id="linearGradient2350"
-       x1="0"
-       y1="0"
-       x2="16"
-       y2="0"
-       gradientUnits="userSpaceOnUse" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#color-divider"
-       id="linearGradient2352"
-       x1="0"
-       y1="0"
-       x2="1"
-       y2="0"
-       gradientUnits="userSpaceOnUse" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#color-background"
-       id="linearGradient2358"
-       x1="0"
-       y1="0"
-       x2="4"
-       y2="0"
-       gradientUnits="userSpaceOnUse" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#color-track-disabled"
-       id="linearGradient2360"
-       gradientUnits="userSpaceOnUse"
-       x1="0"
-       y1="0"
-       x2="24"
-       y2="0" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#color-frame"
-       id="linearGradient2362"
-       x1="0"
-       y1="0"
-       x2="3"
-       y2="0"
-       gradientUnits="userSpaceOnUse" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#color-frame"
-       id="linearGradient2365"
-       x1="0"
-       y1="0"
-       x2="3"
-       y2="0"
-       gradientUnits="userSpaceOnUse" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#color-base"
-       id="linearGradient2367"
-       x1="1"
-       y1="1"
-       x2="2"
-       y2="1"
-       gradientUnits="userSpaceOnUse" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#color-frame"
-       id="linearGradient2369"
-       gradientTransform="scale(1.2247449,0.81649658)"
-       x1="0"
-       y1="0"
-       x2="2.4494896"
-       y2="0"
-       gradientUnits="userSpaceOnUse" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#color-divider"
-       id="linearGradient2371"
-       x1="0"
-       y1="0"
-       x2="10"
-       y2="0"
-       gradientUnits="userSpaceOnUse" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#color-text"
-       id="linearGradient2373"
-       x1="0"
-       y1="0"
-       x2="2"
-       y2="0"
-       gradientUnits="userSpaceOnUse" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#color-text"
-       id="linearGradient2375"
-       x1="0"
-       y1="0"
-       x2="2"
-       y2="0"
-       gradientUnits="userSpaceOnUse" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#color-text"
-       id="linearGradient2377"
-       x1="0"
-       y1="0"
-       x2="2"
-       y2="0"
-       gradientUnits="userSpaceOnUse" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#color-text"
-       id="linearGradient2379"
-       x1="-2"
-       y1="0"
-       x2="0"
-       y2="0"
-       gradientUnits="userSpaceOnUse" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#color-text"
-       id="linearGradient2381"
-       x1="-2"
-       y1="0"
-       x2="0"
-       y2="0"
-       gradientUnits="userSpaceOnUse" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#color-text"
-       id="linearGradient2383"
-       x1="-2"
-       y1="0"
-       x2="0"
-       y2="0"
-       gradientUnits="userSpaceOnUse" />
-    <clipPath
-       clipPathUnits="userSpaceOnUse"
        id="clipPath6274">
       <rect
          style="opacity:0.35;fill:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
@@ -1110,222 +510,6 @@
          ry="0" />
     </clipPath>
   </defs>
-  <use
-     x="0"
-     y="0"
-     xlink:href="#g2474"
-     id="use2857"
-     transform="translate(278,-16)"
-     width="100%"
-     height="100%"
-     clip-path="url(#clipPath2990)" />
-  <use
-     x="0"
-     y="0"
-     xlink:href="#g2463"
-     id="use2859"
-     transform="translate(278,-16)"
-     width="100%"
-     height="100%"
-     clip-path="url(#clipPath3037)" />
-  <use
-     x="0"
-     y="0"
-     xlink:href="#g2471"
-     id="use2861"
-     transform="translate(278,-16)"
-     width="100%"
-     height="100%"
-     clip-path="url(#clipPath2996)" />
-  <use
-     x="0"
-     y="0"
-     xlink:href="#g2467"
-     id="use2863"
-     transform="translate(278,-16)"
-     width="100%"
-     height="100%"
-     clip-path="url(#clipPath3002)" />
-  <use
-     x="0"
-     y="0"
-     xlink:href="#g2474"
-     id="use3121"
-     transform="translate(330,-16)"
-     width="100%"
-     height="100%"
-     clip-path="url(#clipPath3288)" />
-  <use
-     x="0"
-     y="0"
-     xlink:href="#g2463"
-     id="use3123"
-     transform="translate(330,-16)"
-     width="100%"
-     height="100%"
-     clip-path="url(#clipPath3276)" />
-  <use
-     x="0"
-     y="0"
-     xlink:href="#g2471"
-     id="use3125"
-     transform="translate(330,-16)"
-     width="100%"
-     height="100%"
-     clip-path="url(#clipPath3284)" />
-  <use
-     x="0"
-     y="0"
-     xlink:href="#g2467"
-     id="use3127"
-     transform="translate(330,-16)"
-     width="100%"
-     height="100%"
-     clip-path="url(#clipPath3280)" />
-  <use
-     x="0"
-     y="0"
-     xlink:href="#g2474"
-     id="use3129"
-     transform="matrix(-1,0,0,1,606,-16)"
-     width="100%"
-     height="100%"
-     clip-path="url(#clipPath2990)" />
-  <use
-     x="0"
-     y="0"
-     xlink:href="#g2463"
-     id="use3131"
-     transform="matrix(-1,0,0,1,606,-16)"
-     width="100%"
-     height="100%"
-     clip-path="url(#clipPath3037)" />
-  <use
-     x="0"
-     y="0"
-     xlink:href="#g2471"
-     id="use3133"
-     transform="matrix(-1,0,0,1,606,-16)"
-     width="100%"
-     height="100%"
-     clip-path="url(#clipPath2996)" />
-  <use
-     x="0"
-     y="0"
-     xlink:href="#g2467"
-     id="use3135"
-     transform="matrix(-1,0,0,1,606,-16)"
-     width="100%"
-     height="100%"
-     clip-path="url(#clipPath3002)" />
-  <use
-     x="0"
-     y="0"
-     xlink:href="#g2474"
-     id="use3292"
-     transform="matrix(1,0,0,-1,330,44)"
-     width="100%"
-     height="100%"
-     clip-path="url(#clipPath3288)" />
-  <use
-     x="0"
-     y="0"
-     xlink:href="#g2474"
-     id="use3294"
-     transform="matrix(-1,0,0,1,658,-16)"
-     width="100%"
-     height="100%"
-     clip-path="url(#clipPath3288)" />
-  <use
-     x="0"
-     y="0"
-     xlink:href="#g2474"
-     id="use3296"
-     transform="rotate(180,329,22)"
-     width="100%"
-     height="100%"
-     clip-path="url(#clipPath3288)" />
-  <use
-     x="0"
-     y="0"
-     xlink:href="#g2471"
-     id="use3298"
-     transform="matrix(1,0,0,-1,330,108)"
-     width="100%"
-     height="100%"
-     clip-path="url(#clipPath3284)" />
-  <use
-     x="0"
-     y="0"
-     xlink:href="#g2471"
-     id="use3300"
-     transform="matrix(-1,0,0,1,658,-16)"
-     width="100%"
-     height="100%"
-     clip-path="url(#clipPath3284)" />
-  <use
-     x="0"
-     y="0"
-     xlink:href="#g2471"
-     id="use3302"
-     transform="rotate(180,329,54)"
-     width="100%"
-     height="100%"
-     clip-path="url(#clipPath3284)" />
-  <use
-     x="0"
-     y="0"
-     xlink:href="#g2467"
-     id="use3304"
-     transform="matrix(1,0,0,-1,330,172)"
-     width="100%"
-     height="100%"
-     clip-path="url(#clipPath3280)" />
-  <use
-     x="0"
-     y="0"
-     xlink:href="#g2467"
-     id="use3306"
-     transform="matrix(-1,0,0,1,658,-16)"
-     width="100%"
-     height="100%"
-     clip-path="url(#clipPath3280)" />
-  <use
-     x="0"
-     y="0"
-     xlink:href="#g2467"
-     id="use3308"
-     transform="rotate(180,329,86)"
-     width="100%"
-     height="100%"
-     clip-path="url(#clipPath3280)" />
-  <use
-     x="0"
-     y="0"
-     xlink:href="#g2463"
-     id="use3310"
-     transform="matrix(1,0,0,-1,330,236)"
-     width="100%"
-     height="100%"
-     clip-path="url(#clipPath3276)" />
-  <use
-     x="0"
-     y="0"
-     xlink:href="#g2463"
-     id="use3312"
-     transform="matrix(-1,0,0,1,658,-16)"
-     width="100%"
-     height="100%"
-     clip-path="url(#clipPath3276)" />
-  <use
-     x="0"
-     y="0"
-     xlink:href="#g2463"
-     id="use3314"
-     transform="rotate(180,329,118)"
-     width="100%"
-     height="100%"
-     clip-path="url(#clipPath3276)" />
   <g
      inkscape:groupmode="layer"
      id="layer2"
@@ -1366,8 +550,7 @@
          cy="12"
          r="6"
          fill="url(#color-text-secondary-disabled)"
-         id="circle529"
-         style="fill:url(#linearGradient2274)" />
+         id="circle529" />
     </g>
     <g
        id="scale-horz-trough"
@@ -1376,7 +559,6 @@
          xlink:href="#base-scale-horz-trough"
          fill="url(#color-track)"
          id="use532"
-         style="fill:url(#color-track)"
          x="0"
          y="0"
          width="100%"
@@ -1389,7 +571,6 @@
          xlink:href="#base-scale-horz-trough"
          fill="url(#color-track-disabled)"
          id="use538"
-         style="fill:url(#color-track-disabled)"
          x="0"
          y="0"
          width="100%"
@@ -1402,7 +583,6 @@
          xlink:href="#base-scale-vert-trough"
          fill="url(#color-track)"
          id="use541"
-         style="fill:url(#color-track)"
          x="0"
          y="0"
          width="100%"
@@ -1415,7 +595,6 @@
          xlink:href="#base-scale-vert-trough"
          fill="url(#color-track-disabled)"
          id="use547"
-         style="fill:url(#color-track-disabled)"
          x="0"
          y="0"
          width="100%"
@@ -1428,7 +607,6 @@
          xlink:href="#base-scrollbar-horz-slider"
          fill="url(#color-text-disabled)"
          id="use550"
-         style="fill:url(#linearGradient2280)"
          x="0"
          y="0"
          width="100%"
@@ -1441,7 +619,6 @@
          xlink:href="#base-scrollbar-horz-slider"
          fill="url(#color-text-secondary)"
          id="use553"
-         style="fill:url(#linearGradient2282)"
          x="0"
          y="0"
          width="100%"
@@ -1454,7 +631,6 @@
          xlink:href="#base-scrollbar-horz-slider"
          fill="url(#color-text)"
          id="use556"
-         style="fill:url(#linearGradient2284)"
          x="0"
          y="0"
          width="100%"
@@ -1467,7 +643,6 @@
          xlink:href="#base-scrollbar-horz-slider"
          fill="url(#color-text-secondary-disabled)"
          id="use559"
-         style="fill:url(#linearGradient2286)"
          x="0"
          y="0"
          width="100%"
@@ -1491,7 +666,6 @@
          xlink:href="#base-scrollbar-vert-ltr-slider"
          fill="url(#color-text-disabled)"
          id="use565"
-         style="fill:url(#linearGradient2288)"
          x="0"
          y="0"
          width="100%"
@@ -1504,7 +678,6 @@
          xlink:href="#base-scrollbar-vert-ltr-slider"
          fill="url(#color-text-secondary)"
          id="use568"
-         style="fill:url(#linearGradient2290)"
          x="0"
          y="0"
          width="100%"
@@ -1517,7 +690,6 @@
          xlink:href="#base-scrollbar-vert-ltr-slider"
          fill="url(#color-text)"
          id="use571"
-         style="fill:url(#linearGradient2292)"
          x="0"
          y="0"
          width="100%"
@@ -1530,7 +702,6 @@
          xlink:href="#base-scrollbar-vert-ltr-slider"
          fill="url(#color-text-secondary-disabled)"
          id="use574"
-         style="fill:url(#linearGradient2294)"
          x="0"
          y="0"
          width="100%"
@@ -1554,7 +725,6 @@
          xlink:href="#base-scrollbar-vert-rtl-slider"
          fill="url(#color-text-disabled)"
          id="use580"
-         style="fill:url(#linearGradient2296)"
          x="0"
          y="0"
          width="100%"
@@ -1567,7 +737,6 @@
          xlink:href="#base-scrollbar-vert-rtl-slider"
          fill="url(#color-text-secondary)"
          id="use583"
-         style="fill:url(#linearGradient2298)"
          x="0"
          y="0"
          width="100%"
@@ -1580,7 +749,6 @@
          xlink:href="#base-scrollbar-vert-rtl-slider"
          fill="url(#color-text)"
          id="use586"
-         style="fill:url(#linearGradient2300)"
          x="0"
          y="0"
          width="100%"
@@ -1593,7 +761,6 @@
          xlink:href="#base-scrollbar-vert-rtl-slider"
          fill="url(#color-text-secondary-disabled)"
          id="use589"
-         style="fill:url(#linearGradient2302)"
          x="0"
          y="0"
          width="100%"
@@ -1617,7 +784,6 @@
          xlink:href="#base-handle-horz"
          fill="url(#color-text-disabled)"
          id="use595"
-         style="fill:url(#linearGradient2304)"
          x="0"
          y="0"
          width="100%"
@@ -1630,7 +796,6 @@
          xlink:href="#base-handle-horz"
          fill="url(#color-text-secondary)"
          id="use598"
-         style="fill:url(#linearGradient2306)"
          x="0"
          y="0"
          width="100%"
@@ -1643,7 +808,6 @@
          xlink:href="#base-handle-horz"
          fill="url(#color-text)"
          id="use601"
-         style="fill:url(#linearGradient2308)"
          x="0"
          y="0"
          width="100%"
@@ -1656,7 +820,6 @@
          xlink:href="#base-handle-vert"
          fill="url(#color-text-disabled)"
          id="use604"
-         style="fill:url(#linearGradient2310)"
          x="0"
          y="0"
          width="100%"
@@ -1669,7 +832,6 @@
          xlink:href="#base-handle-vert"
          fill="url(#color-text-secondary)"
          id="use607"
-         style="fill:url(#linearGradient2312)"
          x="0"
          y="0"
          width="100%"
@@ -1682,7 +844,6 @@
          xlink:href="#base-handle-vert"
          fill="url(#color-text)"
          id="use610"
-         style="fill:url(#linearGradient2314)"
          x="0"
          y="0"
          width="100%"
@@ -1695,7 +856,6 @@
          xlink:href="#base-pan-up"
          fill="url(#color-text)"
          id="use613"
-         style="fill:url(#linearGradient2316)"
          x="0"
          y="0"
          width="100%"
@@ -1708,7 +868,6 @@
          xlink:href="#base-pan-up"
          fill="url(#color-text-disabled)"
          id="use616"
-         style="fill:url(#linearGradient2318)"
          x="0"
          y="0"
          width="100%"
@@ -1721,7 +880,6 @@
          xlink:href="#base-pan-up"
          fill="url(#color-text-secondary)"
          id="use619"
-         style="fill:url(#linearGradient2320)"
          x="0"
          y="0"
          width="100%"
@@ -1734,7 +892,6 @@
          xlink:href="#base-pan-up"
          fill="url(#color-text-secondary-disabled)"
          id="use622"
-         style="fill:url(#linearGradient2322)"
          x="0"
          y="0"
          width="100%"
@@ -1747,7 +904,6 @@
          xlink:href="#base-pan-down"
          fill="url(#color-text)"
          id="use625"
-         style="fill:url(#linearGradient2324)"
          x="0"
          y="0"
          width="100%"
@@ -1760,7 +916,6 @@
          xlink:href="#base-pan-down"
          fill="url(#color-text-disabled)"
          id="use628"
-         style="fill:url(#linearGradient2326)"
          x="0"
          y="0"
          width="100%"
@@ -1773,7 +928,6 @@
          xlink:href="#base-pan-down"
          fill="url(#color-text-secondary)"
          id="use631"
-         style="fill:url(#linearGradient2328)"
          x="0"
          y="0"
          width="100%"
@@ -1786,7 +940,6 @@
          xlink:href="#base-pan-down"
          fill="url(#color-text-secondary-disabled)"
          id="use634"
-         style="fill:url(#linearGradient2330)"
          x="0"
          y="0"
          width="100%"
@@ -1799,7 +952,6 @@
          xlink:href="#base-pan-left"
          fill="url(#color-text)"
          id="use637"
-         style="fill:url(#linearGradient2332)"
          x="0"
          y="0"
          width="100%"
@@ -1812,7 +964,6 @@
          xlink:href="#base-pan-left"
          fill="url(#color-text-disabled)"
          id="use640"
-         style="fill:url(#linearGradient2334)"
          x="0"
          y="0"
          width="100%"
@@ -1825,7 +976,6 @@
          xlink:href="#base-pan-left"
          fill="url(#color-text-secondary)"
          id="use643"
-         style="fill:url(#linearGradient2336)"
          x="0"
          y="0"
          width="100%"
@@ -1838,7 +988,6 @@
          xlink:href="#base-pan-left"
          fill="url(#color-text-secondary-disabled)"
          id="use646"
-         style="fill:url(#linearGradient2338)"
          x="0"
          y="0"
          width="100%"
@@ -1851,7 +1000,6 @@
          xlink:href="#base-pan-right"
          fill="url(#color-text)"
          id="use649"
-         style="fill:url(#linearGradient2340)"
          x="0"
          y="0"
          width="100%"
@@ -1864,7 +1012,6 @@
          xlink:href="#base-pan-right"
          fill="url(#color-text-disabled)"
          id="use652"
-         style="fill:url(#linearGradient2342)"
          x="0"
          y="0"
          width="100%"
@@ -1877,7 +1024,6 @@
          xlink:href="#base-pan-right"
          fill="url(#color-text-secondary)"
          id="use655"
-         style="fill:url(#linearGradient2344)"
          x="0"
          y="0"
          width="100%"
@@ -1890,7 +1036,6 @@
          xlink:href="#base-pan-right"
          fill="url(#color-text-secondary-disabled)"
          id="use658"
-         style="fill:url(#linearGradient2346)"
          x="0"
          y="0"
          width="100%"
@@ -1903,7 +1048,6 @@
          xlink:href="#base-pan-left-semi"
          fill="url(#color-text)"
          id="use661"
-         style="fill:url(#linearGradient2348)"
          x="0"
          y="0"
          width="100%"
@@ -1916,7 +1060,6 @@
          xlink:href="#base-pan-right-semi"
          fill="url(#color-text)"
          id="use664"
-         style="fill:url(#linearGradient2350)"
          x="0"
          y="0"
          width="100%"
@@ -1930,7 +1073,6 @@
          height="1"
          fill="url(#color-divider)"
          id="rect667"
-         style="fill:url(#linearGradient2352)"
          x="0"
          y="0" />
     </g>
@@ -1950,7 +1092,6 @@
          height="4"
          fill="url(#color-track-disabled)"
          id="rect678"
-         style="fill:url(#linearGradient2360)"
          x="0"
          y="0" />
     </g>
@@ -1965,8 +1106,7 @@
          fill="none"
          stroke="url(#color-frame)"
          stroke-width="1"
-         id="rect681"
-         style="stroke:url(#linearGradient2362)" />
+         id="rect681" />
     </g>
     <g
        id="frame-notebook"
@@ -1976,7 +1116,6 @@
          height="3"
          fill="url(#color-frame)"
          id="rect684"
-         style="fill:url(#linearGradient2365)"
          x="0"
          y="0" />
       <rect
@@ -1985,8 +1124,7 @@
          width="1"
          height="1"
          fill="url(#color-base)"
-         id="rect686"
-         style="fill:url(#linearGradient2367)" />
+         id="rect686" />
     </g>
     <g
        id="frame-inline"
@@ -1996,7 +1134,6 @@
          height="2"
          fill="url(#color-frame)"
          id="rect689"
-         style="fill:url(#linearGradient2369)"
          x="0"
          y="0" />
       <rect
@@ -2005,7 +1142,6 @@
          height="1"
          fill="url(#color-base-alt)"
          id="rect691"
-         style="fill:url(#color-base-alt)"
          y="0" />
     </g>
     <g
@@ -2020,8 +1156,7 @@
          fill="none"
          stroke="url(#color-divider)"
          stroke-width="2"
-         id="rect694"
-         style="stroke:url(#linearGradient2371)" />
+         id="rect694" />
     </g>
     <g
        id="treeview-ltr-button"
@@ -2031,7 +1166,6 @@
          fill="url(#color-text)"
          fill-opacity="0"
          id="use697"
-         style="fill:url(#linearGradient2373)"
          x="0"
          y="0"
          width="100%"
@@ -2045,7 +1179,6 @@
          fill="url(#color-text)"
          fill-opacity="0.08"
          id="use700"
-         style="fill:url(#linearGradient2375)"
          x="0"
          y="0"
          width="100%"
@@ -2059,7 +1192,6 @@
          fill="url(#color-text)"
          fill-opacity="0.2"
          id="use703"
-         style="fill:url(#linearGradient2377)"
          x="0"
          y="0"
          width="100%"
@@ -2073,7 +1205,6 @@
          fill="url(#color-text)"
          fill-opacity="0"
          id="use706"
-         style="fill:url(#linearGradient2379)"
          x="0"
          y="0"
          width="100%"
@@ -2087,7 +1218,6 @@
          fill="url(#color-text)"
          fill-opacity="0.08"
          id="use709"
-         style="fill:url(#linearGradient2381)"
          x="0"
          y="0"
          width="100%"
@@ -2101,7 +1231,6 @@
          fill="url(#color-text)"
          fill-opacity="0.2"
          id="use712"
-         style="fill:url(#linearGradient2383)"
          x="0"
          y="0"
          width="100%"

@@ -2235,6 +2235,7 @@ style "combo_button_padding" {
 style "notebook" {
   xthickness = 3
   ythickness = 3
+  bg[NORMAL] = @base_color
 }
 
 style "notebook_tab_label" {
@@ -2571,6 +2572,7 @@ style "toolbar_separator" {
 
 style "inline_toolbar" {
   # GtkToolbar::button-relief = GTK_RELIEF_NORMAL
+  bg[NORMAL]   = @base_color
 
   engine "pixmap" {
     image {
