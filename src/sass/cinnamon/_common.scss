@@ -684,7 +684,7 @@ $menu_item_radius: $corner-radius;
 }
 
 .calendar {
-  // padding: .4em 1.75em;
+  padding: $space-size $space-size * 2;
   spacing-rows: 0px;
   spacing-columns: 0px;
 }

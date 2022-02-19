@@ -757,6 +757,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .calendar {
+  padding: 6px 12px;
   spacing-rows: 0px;
   spacing-columns: 0px;
 }
