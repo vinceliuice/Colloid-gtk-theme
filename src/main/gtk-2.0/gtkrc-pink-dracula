@@ -18,7 +18,7 @@ gtk-color-scheme = "fg_color:#242632\nbg_color:#f9f9fb"
 # Selected foreground/background
 gtk-color-scheme = "selected_fg_color:#f9f9fb\nselected_bg_color:#f04cab"
 # Titlebar foreground/background
-gtk-color-scheme = "titlebar_fg_color:#242632\ntitlebar_bg_color:#f9f9fb"
+gtk-color-scheme = "titlebar_fg_color:#242632\ntitlebar_bg_color:#f0f1f4"
 # Menus
 gtk-color-scheme = "menu_color:#f9f9fb"
 # Tooltips foreground/background

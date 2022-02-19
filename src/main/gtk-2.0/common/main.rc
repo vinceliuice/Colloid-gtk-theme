@@ -1308,12 +1308,12 @@ style "default" {
     # Menubar #
     ###########
 
-    # image {
-    #   function = BOX
-    #   detail   = "menubar"
-    #   file     = "assets/border.png"
-    #   border   = {0, 0, 0, 1}
-    # }
+    image {
+      function = BOX
+      detail   = "menubar"
+      file     = "assets/border.png"
+      border   = {0, 0, 0, 1}
+    }
 
     #########
     # Menus #
@@ -1656,6 +1656,7 @@ style "menubar" {
   fg[NORMAL]      = mix(0.7, @titlebar_fg_color, @titlebar_bg_color)
   fg[PRELIGHT]    = @titlebar_fg_color
   fg[INSENSITIVE] = mix(0.3, @titlebar_fg_color, @titlebar_bg_color)
+  bg[INSENSITIVE] = @bg_color
   # Needed to fix Firefox's menubar text
   bg[SELECTED]    = mix(0.12, @titlebar_fg_color, @titlebar_bg_color)
   fg[SELECTED]    = @titlebar_fg_color

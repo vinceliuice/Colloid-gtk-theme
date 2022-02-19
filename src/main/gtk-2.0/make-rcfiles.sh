@@ -201,12 +201,16 @@ for type in '' '-nord' '-dracula'; do
         background_dark='#242932'
         background_darker='#333a47'
         background_alt='#3a4150'
+        titlebar_light='#f0f1f4'
+        titlebar_dark='#1e222a'
         ;;
       -dracula)
         background_light='#f9f9fb'
         background_dark='#242632'
         background_darker='#343746'
         background_alt='#3c3f51'
+        titlebar_light='#f0f1f4'
+        titlebar_dark='#1f2029'
         ;;
     esac
 
@@ -217,9 +221,11 @@ for type in '' '-nord' '-dracula'; do
     sed -i "s/#464646/${background_alt}/g" "gtkrc${theme}${color}${type}"
     if [[ "$color" == '' ]]; then
       sed -i "s/#3c84f7/${theme_color}/g" "gtkrc${theme}${color}${type}"
+      sed -i "s/#F2F2F2/${titlebar_light}/g" "gtkrc${theme}${color}${type}"
     else
       sed -i "s/#5b9bf8/${theme_color}/g" "gtkrc${theme}${color}${type}"
       sed -i "s/#3C3C3C/${background_darker}/g" "gtkrc${theme}${color}${type}"
+      sed -i "s/#242424/${titlebar_dark}/g" "gtkrc${theme}${color}${type}"
     fi
   elif [[ "$theme" != '' ]]; then
     cp -r "gtkrc${color}" "gtkrc${theme}${color}"
@@ -227,7 +233,6 @@ for type in '' '-nord' '-dracula'; do
       sed -i "s/#3c84f7/${theme_color}/g" "gtkrc${theme}${color}"
     else
       sed -i "s/#5b9bf8/${theme_color}/g" "gtkrc${theme}${color}"
-      sed -i "s/#3C3C3C/${background_darker}/g" "gtkrc${theme}${color}"
     fi
   fi
 
