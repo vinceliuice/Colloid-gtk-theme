@@ -4712,6 +4712,7 @@ read if you used those and something break with a version upgrade you're on your
 @define-color wm_title rgba(0, 0, 0, 0.87);
 @define-color wm_unfocused_title rgba(0, 0, 0, 0.6);
 @define-color wm_highlight rgba(255, 255, 255, 0.15);
+@define-color wm_border #a6a6a6;
 @define-color wm_bg #F2F2F2;
 @define-color wm_unfocused_bg #FAFAFA;
 @define-color wm_button_icon white;

@@ -3844,6 +3844,39 @@ decoration {
   }
 }
 
+%firefox_window_button {
+  &.minimize, &.maximize, &.close {
+    background-repeat: no-repeat;
+    background-size: 16px 16px;
+    background-position: center;
+
+    &, &:hover, &:active {
+      box-shadow: none;
+      color: transparent;
+      animation: none;
+      transition: $transition;
+    }
+  }
+
+  &.minimize { // Window minimize button
+    &:hover, &:active {
+      background-image: url("assets/scalable/minimize.svg");
+    }
+  }
+
+  &.maximize { // Window maximize button
+    &:hover, &:active {
+      background-image: url("assets/scalable/maximize.svg");
+    }
+  }
+
+  &.close { // Window close button
+    &:hover, &:active {
+      background-image: url("assets/scalable/close.svg");
+    }
+  }
+}
+
 button.titlebutton:not(.suggested-action):not(.destructive-action) {
   @extend %circular-button;
 
@@ -3851,6 +3884,16 @@ button.titlebutton:not(.suggested-action):not(.destructive-action) {
     @extend %mac_window_button;
   } @else {
     @extend %normal_window_button;
+  }
+
+  .background.csd headerbar.titlebar.default-decoration & {
+    @extend %firefox_window_button;
+  }
+
+  .background.csd.maximized headerbar.titlebar.default-decoration &.maximize {
+    &:hover, &:active {
+      background-image: url("assets/scalable/unmaximize.svg");
+    }
   }
 }
 

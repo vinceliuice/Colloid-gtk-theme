@@ -121,7 +121,12 @@ tooltip.background.chromium { background-color: rgba($tooltip, 1); }
 /***********
  * Firefox *
  ***********/
+
 #MozillaGtkWidget {
+  &.background headerbar.titlebar.default-decoration button.titlebutton {
+    @extend %firefox_window_button;
+  }
+
   > widget {
     // For popover, entry in toolbar, etc.
     text { background-color: $surface; }
