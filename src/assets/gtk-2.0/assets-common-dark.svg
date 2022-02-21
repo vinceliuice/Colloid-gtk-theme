@@ -21,9 +21,9 @@
      inkscape:pageopacity="0"
      inkscape:pagecheckerboard="0"
      showgrid="false"
-     inkscape:zoom="38.2"
-     inkscape:cx="292.98429"
-     inkscape:cy="298.56021"
+     inkscape:zoom="0.84410872"
+     inkscape:cx="37.909808"
+     inkscape:cy="180.07159"
      inkscape:window-width="1440"
      inkscape:window-height="742"
      inkscape:window-x="0"
@@ -1193,174 +1193,6 @@
          height="100%" />
     </g>
     <g
-       id="checkbox-unchecked-hover"
-       transform="translate(-268,64)">
-      <rect
-         style="opacity:0;fill:#000000;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
-         id="rect3491"
-         width="24"
-         height="24"
-         x="284"
-         y="120"
-         rx="0"
-         ry="0" />
-      <path
-         d="m 296,122 c -5.52,0 -10,4.48 -10,10 0,5.52 4.48,10 10,10 5.52,0 10,-4.48 10,-10 0,-5.52 -4.48,-10 -10,-10 z m 0,18 c -4.42,0 -8,-3.58 -8,-8 0,-4.42 3.58,-8 8,-8 4.42,0 8,3.58 8,8 0,4.42 -3.58,8 -8,8 z"
-         id="path3334"
-         style="opacity:0.65;fill:#ffffff" />
-    </g>
-    <g
-       id="radio-unchecked-hover"
-       transform="translate(-268,64)">
-      <rect
-         style="opacity:0;fill:#000000;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
-         id="rect1131"
-         width="24"
-         height="24"
-         x="312"
-         y="120"
-         rx="0"
-         ry="0" />
-      <path
-         d="m 324,122 c -5.52,0 -10,4.48 -10,10 0,5.52 4.48,10 10,10 5.52,0 10,-4.48 10,-10 0,-5.52 -4.48,-10 -10,-10 z m 0,18 c -4.42,0 -8,-3.58 -8,-8 0,-4.42 3.58,-8 8,-8 4.42,0 8,3.58 8,8 0,4.42 -3.58,8 -8,8 z"
-         id="path3361"
-         style="opacity:0.65;fill:#ffffff" />
-    </g>
-    <g
-       id="checkbox-unchecked-disabled"
-       transform="translate(-268,36)">
-      <rect
-         style="opacity:0;fill:#000000;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
-         id="rect1129"
-         width="24"
-         height="24"
-         x="284"
-         y="204"
-         rx="0"
-         ry="0" />
-      <path
-         d="m 296,206 c -5.52,0 -10,4.48 -10,10 0,5.52 4.48,10 10,10 5.52,0 10,-4.48 10,-10 0,-5.52 -4.48,-10 -10,-10 z m 0,18 c -4.42,0 -8,-3.58 -8,-8 0,-4.42 3.58,-8 8,-8 4.42,0 8,3.58 8,8 0,4.42 -3.58,8 -8,8 z"
-         id="path1221"
-         style="opacity:0.25;fill:#ffffff" />
-    </g>
-    <g
-       id="radio-unchecked-disabled"
-       transform="translate(-268,36)">
-      <rect
-         style="opacity:0;fill:#000000;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
-         id="rect1137"
-         width="24"
-         height="24"
-         x="312"
-         y="204"
-         rx="0"
-         ry="0" />
-      <path
-         d="m 324,206 c -5.52,0 -10,4.48 -10,10 0,5.52 4.48,10 10,10 5.52,0 10,-4.48 10,-10 0,-5.52 -4.48,-10 -10,-10 z m 0,18 c -4.42,0 -8,-3.58 -8,-8 0,-4.42 3.58,-8 8,-8 4.42,0 8,3.58 8,8 0,4.42 -3.58,8 -8,8 z"
-         id="path1223"
-         style="opacity:0.25;fill:#ffffff" />
-    </g>
-    <g
-       id="menu-checkbox-unchecked-disabled"
-       transform="translate(-268,-20)">
-      <path
-         d="m 356,208 a 8,8 0 0 0 -8,8 8,8 0 0 0 8,8 8,8 0 0 0 8,-8 8,8 0 0 0 -8,-8 z m 0,2 a 6,6 0 0 1 6,6 6,6 0 0 1 -6,6 6,6 0 0 1 -6,-6 6,6 0 0 1 6,-6 z"
-         id="path2146"
-         style="opacity:0.25;fill:#ffffff" />
-    </g>
-    <g
-       id="menu-radio-unchecked-disabled"
-       transform="translate(-268,-20)">
-      <path
-         d="m 380,208 a 8,8 0 0 0 -8,8 8,8 0 0 0 8,8 8,8 0 0 0 8,-8 8,8 0 0 0 -8,-8 z m 0,2 a 6,6 0 0 1 6,6 6,6 0 0 1 -6,6 6,6 0 0 1 -6,-6 6,6 0 0 1 6,-6 z"
-         id="path2148"
-         style="opacity:0.25;fill:#ffffff" />
-    </g>
-    <g
-       id="checkbox-unchecked"
-       transform="translate(-268,36)">
-      <rect
-         style="opacity:0;fill:#000000;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
-         id="rect2221"
-         width="24"
-         height="24"
-         x="284"
-         y="120"
-         rx="0"
-         ry="0" />
-      <path
-         d="m 296,122 c -5.52,0 -10,4.48 -10,10 0,5.52 4.48,10 10,10 5.52,0 10,-4.48 10,-10 0,-5.52 -4.48,-10 -10,-10 z m 0,18 c -4.42,0 -8,-3.58 -8,-8 0,-4.42 3.58,-8 8,-8 4.42,0 8,3.58 8,8 0,4.42 -3.58,8 -8,8 z"
-         id="path2223"
-         style="opacity:0.5;fill:#ffffff" />
-    </g>
-    <g
-       id="radio-unchecked"
-       transform="translate(-268,36)">
-      <rect
-         style="opacity:0;fill:#000000;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
-         id="rect2227"
-         width="24"
-         height="24"
-         x="312"
-         y="120"
-         rx="0"
-         ry="0" />
-      <path
-         d="m 324,122 c -5.52,0 -10,4.48 -10,10 0,5.52 4.48,10 10,10 5.52,0 10,-4.48 10,-10 0,-5.52 -4.48,-10 -10,-10 z m 0,18 c -4.42,0 -8,-3.58 -8,-8 0,-4.42 3.58,-8 8,-8 4.42,0 8,3.58 8,8 0,4.42 -3.58,8 -8,8 z"
-         id="path2229"
-         style="opacity:0.5;fill:#ffffff" />
-    </g>
-    <g
-       id="menu-checkbox-unchecked"
-       transform="translate(-268,36)">
-      <path
-         d="m 356,124 a 8,8 0 0 0 -8,8 8,8 0 0 0 8,8 8,8 0 0 0 8,-8 8,8 0 0 0 -8,-8 z m 0,2 a 6,6 0 0 1 6,6 6,6 0 0 1 -6,6 6,6 0 0 1 -6,-6 6,6 0 0 1 6,-6 z"
-         id="path2233"
-         style="opacity:0.5;fill:#ffffff" />
-    </g>
-    <g
-       id="menu-radio-unchecked"
-       transform="translate(-268,36)">
-      <path
-         d="m 380,124 a 8,8 0 0 0 -8,8 8,8 0 0 0 8,8 8,8 0 0 0 8,-8 8,8 0 0 0 -8,-8 z m 0,2 a 6,6 0 0 1 6,6 6,6 0 0 1 -6,6 6,6 0 0 1 -6,-6 6,6 0 0 1 6,-6 z"
-         id="path2237"
-         style="opacity:0.5;fill:#ffffff" />
-    </g>
-    <g
-       id="checkbox-unchecked-active"
-       transform="translate(-268,92)">
-      <rect
-         style="opacity:0;fill:#000000;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
-         id="rect2259"
-         width="24"
-         height="24"
-         x="284"
-         y="120"
-         rx="0"
-         ry="0" />
-      <path
-         d="m 296,122 c -5.52,0 -10,4.48 -10,10 0,5.52 4.48,10 10,10 5.52,0 10,-4.48 10,-10 0,-5.52 -4.48,-10 -10,-10 z m 0,18 c -4.42,0 -8,-3.58 -8,-8 0,-4.42 3.58,-8 8,-8 4.42,0 8,3.58 8,8 0,4.42 -3.58,8 -8,8 z"
-         id="path2261"
-         style="opacity:0.8;fill:#ffffff" />
-    </g>
-    <g
-       id="radio-unchecked-active"
-       transform="translate(-268,92)">
-      <rect
-         style="opacity:0;fill:#000000;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
-         id="rect2265"
-         width="24"
-         height="24"
-         x="312"
-         y="120"
-         rx="0"
-         ry="0" />
-      <path
-         d="m 324,122 c -5.52,0 -10,4.48 -10,10 0,5.52 4.48,10 10,10 5.52,0 10,-4.48 10,-10 0,-5.52 -4.48,-10 -10,-10 z m 0,18 c -4.42,0 -8,-3.58 -8,-8 0,-4.42 3.58,-8 8,-8 4.42,0 8,3.58 8,8 0,4.42 -3.58,8 -8,8 z"
-         id="path2267"
-         style="opacity:0.8;fill:#ffffff" />
-    </g>
-    <g
        id="flat-button"
        transform="translate(-268,36)">
       <rect
@@ -1695,5 +1527,176 @@
        width="100%"
        height="100%"
        clip-path="url(#clipPath6494)" />
+    <g
+       id="checkbox-unchecked-hover"
+       transform="translate(-268,64)">
+      <rect
+         style="opacity:0;fill:#000000;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+         id="rect3491"
+         width="24"
+         height="24"
+         x="284"
+         y="120"
+         rx="0"
+         ry="0" />
+      <path
+         d="m 296,122 c -5.52,0 -10,4.48 -10,10 0,5.52 4.48,10 10,10 5.52,0 10,-4.48 10,-10 0,-5.52 -4.48,-10 -10,-10 z"
+         id="path3334"
+         style="opacity:0.15;fill:#ffffff"
+         sodipodi:nodetypes="sssss" />
+    </g>
+    <g
+       id="radio-unchecked-hover"
+       transform="translate(-268,64)">
+      <rect
+         style="opacity:0;fill:#000000;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+         id="rect1131"
+         width="24"
+         height="24"
+         x="312"
+         y="120"
+         rx="0"
+         ry="0" />
+      <path
+         d="m 324,122 c -5.52,0 -10,4.48 -10,10 0,5.52 4.48,10 10,10 5.52,0 10,-4.48 10,-10 0,-5.52 -4.48,-10 -10,-10 z"
+         id="path3361"
+         style="opacity:0.15;fill:#ffffff"
+         sodipodi:nodetypes="sssss" />
+    </g>
+    <g
+       id="checkbox-unchecked-disabled"
+       transform="translate(-268,36)">
+      <rect
+         style="opacity:0;fill:#000000;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+         id="rect1129"
+         width="24"
+         height="24"
+         x="284"
+         y="204"
+         rx="0"
+         ry="0" />
+      <path
+         d="m 296,206 c -5.52,0 -10,4.48 -10,10 0,5.52 4.48,10 10,10 5.52,0 10,-4.48 10,-10 0,-5.52 -4.48,-10 -10,-10 z"
+         id="path1221"
+         style="opacity:0.05;fill:#ffffff" />
+    </g>
+    <g
+       id="radio-unchecked-disabled"
+       transform="translate(-268,36)">
+      <rect
+         style="opacity:0;fill:#000000;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+         id="rect1137"
+         width="24"
+         height="24"
+         x="312"
+         y="204"
+         rx="0"
+         ry="0" />
+      <path
+         d="m 324,206 c -5.52,0 -10,4.48 -10,10 0,5.52 4.48,10 10,10 5.52,0 10,-4.48 10,-10 0,-5.52 -4.48,-10 -10,-10 z"
+         id="path1223"
+         style="opacity:0.05;fill:#ffffff" />
+    </g>
+    <g
+       id="menu-checkbox-unchecked-disabled"
+       transform="translate(-268,-20)">
+      <path
+         d="m 356,208 c -4.41828,0 -8,3.58172 -8,8 0,4.41828 3.58172,8 8,8 4.41828,0 8,-3.58172 8,-8 0,-4.41828 -3.58172,-8 -8,-8 z"
+         id="path2146"
+         style="opacity:0.05;fill:#ffffff" />
+    </g>
+    <g
+       id="menu-radio-unchecked-disabled"
+       transform="translate(-268,-20)">
+      <path
+         d="m 380,208 c -4.41828,0 -8,3.58172 -8,8 0,4.41828 3.58172,8 8,8 4.41828,0 8,-3.58172 8,-8 0,-4.41828 -3.58172,-8 -8,-8 z"
+         id="path2148"
+         style="opacity:0.05;fill:#ffffff" />
+    </g>
+    <g
+       id="checkbox-unchecked"
+       transform="translate(-268,36)">
+      <rect
+         style="opacity:0;fill:#000000;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+         id="rect2221"
+         width="24"
+         height="24"
+         x="284"
+         y="120"
+         rx="0"
+         ry="0" />
+      <path
+         d="m 296,122 c -5.52,0 -10,4.48 -10,10 0,5.52 4.48,10 10,10 5.52,0 10,-4.48 10,-10 0,-5.52 -4.48,-10 -10,-10 z"
+         id="path2223"
+         style="opacity:0.12;fill:#ffffff;stroke-width:1" />
+    </g>
+    <g
+       id="radio-unchecked"
+       transform="translate(-268,36)">
+      <rect
+         style="opacity:0;fill:#000000;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+         id="rect2227"
+         width="24"
+         height="24"
+         x="312"
+         y="120"
+         rx="0"
+         ry="0" />
+      <path
+         d="m 324,122 c -5.52,0 -10,4.48 -10,10 0,5.52 4.48,10 10,10 5.52,0 10,-4.48 10,-10 0,-5.52 -4.48,-10 -10,-10 z"
+         id="path2229"
+         style="opacity:0.12;fill:#ffffff" />
+    </g>
+    <g
+       id="menu-checkbox-unchecked"
+       transform="translate(-268,36)">
+      <path
+         d="m 356,124 c -4.41828,0 -8,3.58172 -8,8 0,4.41828 3.58172,8 8,8 4.41828,0 8,-3.58172 8,-8 0,-4.41828 -3.58172,-8 -8,-8 z"
+         id="path2233"
+         style="opacity:0.12;fill:#ffffff"
+         sodipodi:nodetypes="sssss" />
+    </g>
+    <g
+       id="menu-radio-unchecked"
+       transform="translate(-268,36)">
+      <path
+         d="m 380,124 c -4.41828,0 -8,3.58172 -8,8 0,4.41828 3.58172,8 8,8 4.41828,0 8,-3.58172 8,-8 0,-4.41828 -3.58172,-8 -8,-8 z"
+         id="path2237"
+         style="opacity:0.12;fill:#ffffff" />
+    </g>
+    <g
+       id="checkbox-unchecked-active"
+       transform="translate(-268,92)">
+      <rect
+         style="opacity:0;fill:#000000;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+         id="rect2259"
+         width="24"
+         height="24"
+         x="284"
+         y="120"
+         rx="0"
+         ry="0" />
+      <path
+         d="m 296,122 c -5.52,0 -10,4.48 -10,10 0,5.52 4.48,10 10,10 5.52,0 10,-4.48 10,-10 0,-5.52 -4.48,-10 -10,-10 z"
+         id="path2261"
+         style="opacity:0.2;fill:#ffffff" />
+    </g>
+    <g
+       id="radio-unchecked-active"
+       transform="translate(-268,92)">
+      <rect
+         style="opacity:0;fill:#000000;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+         id="rect2265"
+         width="24"
+         height="24"
+         x="312"
+         y="120"
+         rx="0"
+         ry="0" />
+      <path
+         d="m 324,122 c -5.52,0 -10,4.48 -10,10 0,5.52 4.48,10 10,10 5.52,0 10,-4.48 10,-10 0,-5.52 -4.48,-10 -10,-10 z"
+         id="path2267"
+         style="opacity:0.2;fill:#ffffff" />
+    </g>
   </g>
 </svg>
