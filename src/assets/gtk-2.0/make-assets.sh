@@ -212,7 +212,7 @@ for theme in '' '-purple' '-pink' '-red' '-orange' '-yellow' '-green' '-teal' '-
           # sed -i "s/#2C2C2C/${background_color}/g" "assets-common${color}${type}.svg"
         fi
       elif [[ "$theme" != '' ]]; then
-        cp -r "assets.svg" "assets${theme}${color}.svg"
+        cp -r "assets${color}.svg" "assets${theme}${color}.svg"
         if [[ "$color" == '' ]]; then
           sed -i "s/#3c84f7/${theme_color}/g" "assets${theme}${color}.svg"
         else

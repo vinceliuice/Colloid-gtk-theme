@@ -1,9 +1,19 @@
-#! /usr/bin/env bash
+make_gtkrc() {
+  local dest="${1}"
+  local name="${2}"
+  local theme="${3}"
+  local color="${4}"
+  local size="${5}"
+  local ctype="${6}"
+  local window="${7}"
 
-for theme in '' '-purple' '-pink' '-red' '-orange' '-yellow' '-green' '-teal' '-grey'; do
-for color in '' '-dark'; do
-for type in '' '-nord' '-dracula'; do
-  if [[ "$color" == '' ]]; then
+  [[ "${color}" == '-light' ]] && local ELSE_LIGHT="${color}"
+  [[ "${color}" == '-dark' ]] && local ELSE_DARK="${color}"
+
+  local GTKRC_DIR="${SRC_DIR}/main/gtk-2.0"
+  local THEME_DIR="${1}/${2}${3}${4}${5}${6}"
+
+  if [[ "${color}" != '-dark' ]]; then
     case "$theme" in
       '')
         theme_color='#3c84f7'
@@ -34,7 +44,7 @@ for type in '' '-nord' '-dracula'; do
         ;;
     esac
 
-    if [[ "$type" == '-nord' ]]; then
+    if [[ "$ctype" == '-nord' ]]; then
       case "$theme" in
         '')
           theme_color='#5e81ac'
@@ -66,7 +76,7 @@ for type in '' '-nord' '-dracula'; do
       esac
     fi
 
-    if [[ "$type" == '-dracula' ]]; then
+    if [[ "$ctype" == '-dracula' ]]; then
       case "$theme" in
         '')
           theme_color='#a679ec'
@@ -128,7 +138,7 @@ for type in '' '-nord' '-dracula'; do
         ;;
     esac
 
-    if [[ "$type" == '-nord' ]]; then
+    if [[ "$ctype" == '-nord' ]]; then
       case "$theme" in
         '')
           theme_color='#89a3c2'
@@ -160,9 +170,7 @@ for type in '' '-nord' '-dracula'; do
       esac
     fi
 
-    if [[ "$type" == '-dracula' ]]; then
-      background_color='#242632'
-
+    if [[ "$ctype" == '-dracula' ]]; then
       case "$theme" in
         '')
           theme_color='#bd93f9'
@@ -195,7 +203,43 @@ for type in '' '-nord' '-dracula'; do
     fi
   fi
 
-    case "$type" in
+  if [[ "$blackness" == 'true' ]]; then
+    case "$ctype" in
+      '')
+        background_light='#FFFFFF'
+        background_dark='#0F0F0F'
+        background_darker='#121212'
+        background_alt='#212121'
+        titlebar_light='#F2F2F2'
+        titlebar_dark='#030303'
+        ;;
+      -nord)
+        background_light='#f8fafc'
+        background_dark='#0d0e11'
+        background_darker='#0f1115'
+        background_alt='#1c1f26'
+        titlebar_light='#f0f1f4'
+        titlebar_dark='#020203'
+        ;;
+      -dracula)
+        background_light='#f9f9fb'
+        background_dark='#0d0d11'
+        background_darker='#0f1015'
+        background_alt='#1c1e26'
+        titlebar_light='#f0f1f4'
+        titlebar_dark='#020203'
+        ;;
+    esac
+  else
+    case "$ctype" in
+      '')
+        background_light='#FFFFFF'
+        background_dark='#2C2C2C'
+        background_darker='#3C3C3C'
+        background_alt='#464646'
+        titlebar_light='#F2F2F2'
+        titlebar_dark='#242424'
+        ;;
       -nord)
         background_light='#f8fafc'
         background_dark='#242932'
@@ -213,31 +257,19 @@ for type in '' '-nord' '-dracula'; do
         titlebar_dark='#1f2029'
         ;;
     esac
-
-  if [[ "$type" != '' ]]; then
-    cp -r "gtkrc${color}" "gtkrc${theme}${color}${type}"
-    sed -i "s/#FFFFFF/${background_light}/g" "gtkrc${theme}${color}${type}"
-    sed -i "s/#2C2C2C/${background_dark}/g" "gtkrc${theme}${color}${type}"
-    sed -i "s/#464646/${background_alt}/g" "gtkrc${theme}${color}${type}"
-    if [[ "$color" == '' ]]; then
-      sed -i "s/#3c84f7/${theme_color}/g" "gtkrc${theme}${color}${type}"
-      sed -i "s/#F2F2F2/${titlebar_light}/g" "gtkrc${theme}${color}${type}"
-    else
-      sed -i "s/#5b9bf8/${theme_color}/g" "gtkrc${theme}${color}${type}"
-      sed -i "s/#3C3C3C/${background_darker}/g" "gtkrc${theme}${color}${type}"
-      sed -i "s/#242424/${titlebar_dark}/g" "gtkrc${theme}${color}${type}"
-    fi
-  elif [[ "$theme" != '' ]]; then
-    cp -r "gtkrc${color}" "gtkrc${theme}${color}"
-    if [[ "$color" == '' ]]; then
-      sed -i "s/#3c84f7/${theme_color}/g" "gtkrc${theme}${color}"
-    else
-      sed -i "s/#5b9bf8/${theme_color}/g" "gtkrc${theme}${color}"
-    fi
   fi
 
-done
-done
-done
+  cp -r "${GTKRC_DIR}/gtkrc${ELSE_DARK:-}-default"                              "${THEME_DIR}/gtk-2.0/gtkrc"
+  sed -i "s/#FFFFFF/${background_light}/g"                                      "${THEME_DIR}/gtk-2.0/gtkrc"
+  sed -i "s/#2C2C2C/${background_dark}/g"                                       "${THEME_DIR}/gtk-2.0/gtkrc"
+  sed -i "s/#464646/${background_alt}/g"                                        "${THEME_DIR}/gtk-2.0/gtkrc"
 
-echo -e "DONE!"
+  if [[ "${color}" == '-dark' ]]; then
+    sed -i "s/#5b9bf8/${theme_color}/g"                                         "${THEME_DIR}/gtk-2.0/gtkrc"
+    sed -i "s/#3C3C3C/${background_darker}/g"                                   "${THEME_DIR}/gtk-2.0/gtkrc"
+    sed -i "s/#242424/${titlebar_dark}/g"                                       "${THEME_DIR}/gtk-2.0/gtkrc"
+  else
+    sed -i "s/#3c84f7/${theme_color}/g"                                         "${THEME_DIR}/gtk-2.0/gtkrc"
+    sed -i "s/#F2F2F2/${titlebar_light}/g"                                      "${THEME_DIR}/gtk-2.0/gtkrc"
+  fi
+}

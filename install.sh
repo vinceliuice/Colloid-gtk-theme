@@ -5,6 +5,8 @@ set -Eeo pipefail
 REPO_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)"
 SRC_DIR="${REPO_DIR}/src"
 
+source "${REPO_DIR}/gtkrc.sh"
+
 ROOT_UID=0
 DEST_DIR=
 
@@ -125,7 +127,7 @@ install() {
   ln -s assets/no-notifications.svg no-notifications.svg
 
   mkdir -p                                                                                   "${THEME_DIR}/gtk-2.0"
-  cp -r "${SRC_DIR}/main/gtk-2.0/gtkrc${theme}${ELSE_DARK:-}${ctype}"                        "${THEME_DIR}/gtk-2.0/gtkrc"
+  # cp -r "${SRC_DIR}/main/gtk-2.0/gtkrc${theme}${ELSE_DARK:-}${ctype}"                        "${THEME_DIR}/gtk-2.0/gtkrc"
   cp -r "${SRC_DIR}/main/gtk-2.0/common/"*'.rc'                                              "${THEME_DIR}/gtk-2.0"
   cp -r "${SRC_DIR}/assets/gtk-2.0/assets-common${ELSE_DARK:-}"                              "${THEME_DIR}/gtk-2.0/assets"
   cp -r "${SRC_DIR}/assets/gtk-2.0/assets${theme}${ELSE_DARK:-}${ctype}/"*"png"              "${THEME_DIR}/gtk-2.0/assets"
@@ -512,6 +514,7 @@ install_theme() {
     for color in "${colors[@]}"; do
       for size in "${sizes[@]}"; do
         install "${dest:-$DEST_DIR}" "${_name:-$THEME_NAME}" "$theme" "$color" "$size" "$ctype" "$window"
+        make_gtkrc "${dest:-$DEST_DIR}" "${_name:-$THEME_NAME}" "$theme" "$color" "$size" "$ctype" "$window"
       done
     done
   done
