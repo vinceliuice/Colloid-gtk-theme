@@ -27,7 +27,7 @@ radio:disabled,
 treeview.expander:disabled { -gtk-icon-filter: opacity(0.5); }
 
 %view, .view {
-  // background-color: $base;
+  background-color: $base;
   color: $text;
 
   // &:selected:hover { box-shadow: inset 0 0 0 9999px rgba($primary, 0.08); }
@@ -544,6 +544,11 @@ button {
     }
 
     &:focus { box-shadow: inset 0 0 0 9999px $overlay-focus; }
+  }
+
+  .linked:not(.vertical) > menubutton > & {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
   }
 
   // big standalone buttons like in Documents pager
@@ -2454,6 +2459,7 @@ radio {
   margin: $space-size / 2;
   padding: 0;
   border-radius: $circular-radius;
+  border: none;
   color: transparent;
   background-color: $divider;
   transition: $transition,
@@ -3529,13 +3535,14 @@ separator.sidebar {
  **********************/
 
 .navigation-sidebar {
-  padding: $space-size; //only vertical padding. horizontal row size would clip
+  padding: $space-size / 2 0; //only vertical padding. horizontal row size would clip
   border-right: none;
 
   > row {
     min-height: $small-size;
     padding: $space-size;
     border-radius: $corner-radius;
+    margin: $space-size / 2 $space-size;
 
     &:hover,
     &:focus-visible:focus-within {

@@ -381,32 +381,30 @@ window.org-gnome-gedit {
 }
 
 .gedit-search-slider {
-  margin: 4px 4px 8px;
+  margin: 0 6px 10px;
+  padding: $space-size;
+  background-color: $surface;
+  border-radius: 0 0 $menu-radius $menu-radius;
+
+  @if $rimless == 'true' {
+    box-shadow: $shadow-z5;
+  } @else {
+    box-shadow: $shadow-z5, 0 0 0 1px $window-border;
+  }
 
   .linked:not(.vertical) > entry {
-    border-radius: $corner-radius;
-    @extend %entry_raised;
-
     .gedit-search-entry-occurrences-tag {
       all: unset;
       color: $text-secondary;
     }
 
-    $buttons_width: $small-size * 2 + $space-size * 3;
-
     &:dir(ltr) {
-      margin-right: -$buttons_width;
-      padding-right: $buttons_width;
-
       .gedit-search-entry-occurrences-tag { margin-left: $space-size; }
 
       image.right { margin-right: 0; }
     }
 
     &:dir(rtl) {
-      margin-left: -$buttons_width;
-      padding-left: $buttons_width;
-
       .gedit-search-entry-occurrences-tag { margin-right: $space-size; }
 
       image.left { margin-left: 0; }
@@ -421,20 +419,6 @@ window.org-gnome-gedit {
 
       &:disabled { color: on($error, secondary-disabled); }
     }
-  }
-
-  .linked > button {
-    border: solid $space-size transparent;
-    border-radius: $circular-radius;
-
-    @extend %button-flat-simple;
-    @extend %small-button;
-
-    &:last-child:dir(ltr),
-    &:not(:first-child):dir(rtl) { margin-left: -$space-size / 2; }
-
-    &:first-child:dir(rtl),
-    &:not(:last-child):dir(ltr) { margin-right: -$space-size / 2; }
   }
 }
 

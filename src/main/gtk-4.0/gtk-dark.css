@@ -28,6 +28,7 @@ treeview.expander:disabled {
 }
 
 iconview, .view {
+  background-color: #2C2C2C;
   color: #FFFFFF;
 }
 
@@ -634,6 +635,11 @@ button.text-button.image-button image:not(:only-child) {
 
 .linked:not(.vertical) > button.flat:focus, .linked.vertical > button.flat:focus {
   box-shadow: inset 0 0 0 9999px alpha(currentColor, 0.08);
+}
+
+.linked:not(.vertical) > menubutton > button {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
 }
 
 button.osd {
@@ -2549,6 +2555,7 @@ radio {
   margin: 3px;
   padding: 0;
   border-radius: 9999px;
+  border: none;
   color: transparent;
   background-color: rgba(255, 255, 255, 0.12);
   transition: all 75ms cubic-bezier(0, 0, 0.2, 1), box-shadow 150ms cubic-bezier(0, 0, 0.2, 1);
@@ -3854,7 +3861,7 @@ separator.sidebar.selection-mode, .selection-mode separator.sidebar {
  * Navigation Sidebar *
  **********************/
 .navigation-sidebar {
-  padding: 6px;
+  padding: 3px 0;
   border-right: none;
 }
 
@@ -3862,6 +3869,7 @@ separator.sidebar.selection-mode, .selection-mode separator.sidebar {
   min-height: 24px;
   padding: 6px;
   border-radius: 6px;
+  margin: 3px 6px;
 }
 
 .navigation-sidebar > row:hover, .navigation-sidebar > row:focus-visible:focus-within {

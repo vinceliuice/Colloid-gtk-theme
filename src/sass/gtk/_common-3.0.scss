@@ -3890,7 +3890,9 @@ button.titlebutton:not(.suggested-action):not(.destructive-action) {
     @extend %firefox_window_button;
   }
 
-  .background.csd.maximized headerbar.titlebar.default-decoration &.maximize {
+  .background.csd.maximized headerbar.titlebar.default-decoration &.maximize,
+  .background.csd.fullscreen headerbar.titlebar.default-decoration &.maximize,
+  .background.csd.tiled headerbar.titlebar.default-decoration &.maximize {
     &:hover, &:active {
       background-image: url("assets/scalable/unmaximize.svg");
     }
