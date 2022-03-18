@@ -1890,12 +1890,15 @@ menubar,
 
 menubar:backdrop,
 .menubar:backdrop {
-  background-color: #FAFAFA;
   color: rgba(0, 0, 0, 0.6);
 }
 
 .csd menubar, .csd .menubar {
   transition: all 75ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.csd menubar:backdrop, .csd .menubar:backdrop {
+  background-color: #FAFAFA;
 }
 
 menubar > menuitem,
@@ -1912,6 +1915,11 @@ menubar > menuitem:hover,
   transition: none;
   background-color: alpha(currentColor, 0.1);
   color: rgba(0, 0, 0, 0.87);
+}
+
+menubar > menuitem:backdrop,
+.menubar > menuitem:backdrop {
+  color: rgba(0, 0, 0, 0.38);
 }
 
 menubar > menuitem:disabled,
@@ -7787,6 +7795,10 @@ menubar.-vala-panel-background > menuitem:disabled {
 }
 
 .nemo-window .primary-toolbar button.text-button:disabled {
+  color: rgba(0, 0, 0, 0.26);
+}
+
+.nemo-window .primary-toolbar button.text-button:backdrop {
   color: rgba(0, 0, 0, 0.38);
 }
 

@@ -36,7 +36,9 @@
 
       &:hover, &:active, &:checked { color: $titlebar-text; }
 
-      &:disabled { color: $titlebar-text-disabled; }
+      &:disabled { color: $titlebar-text-secondary-disabled; }
+
+      &:backdrop { color: $titlebar-text-disabled; }
     }
 
     .path-bar.linked:not(.vertical) > button {

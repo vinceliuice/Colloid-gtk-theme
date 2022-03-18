@@ -1638,11 +1638,16 @@ menubar,
   box-shadow: inset 0 -1px $border;
 
   &:backdrop {
-    background-color: $titlebar-backdrop;
     color: $titlebar-text-secondary;
   }
 
-  .csd & { transition: $transition; }
+  .csd & {
+    transition: $transition;
+
+    &:backdrop {
+      background-color: $titlebar-backdrop;
+    }
+  }
 
   > menuitem {
     transition: $transition;
@@ -1656,6 +1661,8 @@ menubar,
       background-color: $overlay-checked;
       color: $titlebar-text;
     }
+
+    &:backdrop { color: $titlebar-text-disabled; }
 
     &:disabled { color: $titlebar-text-secondary-disabled; }
 
