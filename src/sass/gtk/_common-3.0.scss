@@ -1139,10 +1139,13 @@ searchbar > revealer > box {
   &:disabled { color: $titlebar-text-disabled; }
 
   &:backdrop {
-    background-color: $titlebar-backdrop;
     color: $titlebar-text-secondary;
 
     &:disabled { color: $titlebar-text-secondary-disabled; }
+  }
+
+  .csd &:backdrop {
+    background-color: $titlebar-backdrop;
   }
 
   .title {
