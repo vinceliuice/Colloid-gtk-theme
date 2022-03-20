@@ -772,14 +772,20 @@ button.link {
  * GtkSpinButton *
  *****************/
 spinbutton {
+  border-radius: $corner-radius;
+  padding: 0;
+  border-spacing: 0;
+  min-height: 0;
+  @include entry(normal);
+
+  &:focus-within { @include entry(checked); }
+
+  &:disabled { @include entry(disabled); }
+
   &:not(.vertical) {
     // in this horizontal configuration, the whole spinbutton
     // behaves as the entry, so we extend the entry styling
     // and nuke the style on the internal entry
-    @extend %entry;
-
-    padding: 0;
-    border-spacing: 0;
 
     > text {
       min-width: $large-size - 8px * 2;
@@ -815,12 +821,6 @@ spinbutton {
 
   // Vertical
   &.vertical {
-    @extend %entry;
-
-    padding: 0;
-
-    &:disabled { color: $text-disabled; }
-
     > text {
       margin: 0;
       border-image: none;
@@ -837,7 +837,6 @@ spinbutton {
       @extend %button-flat-simple;
       @extend %small-button;
       padding: 0;
-
       border: solid $space-size transparent;
 
       // Remove unwanted focus indicator
@@ -853,8 +852,8 @@ spinbutton {
   }
 
   // Misc
-  treeview &:not(.vertical),
-  row &:not(.vertical) {
+  // treeview &:not(.vertical),
+  list > row &:not(.vertical) {
     > button {
       margin: $space-size;
 
@@ -1069,13 +1068,6 @@ toolbar {
 
     switch { margin: 2px + $space-size 2px; }
   }
-}
-
-// oldstyle toolbar buttons
-.toolbar button {
-  margin: 1px;
-  @extend %button-flat;
-  border-radius: $corner-radius / 2;
 }
 
 // searchbar
@@ -1454,14 +1446,9 @@ pathbar > button {
     color: $text;
   }
 
-  label:not(:only-child) {
-    &:first-child { margin-left: 0; }
-
-    &:last-child { margin-right: 0; }
-  }
-
-  &.text-button {
-    min-width: 0;
+  label, image {
+    margin-left: $space-size / 2;
+    margin-right: $space-size / 2;
   }
 
   &.slider-button {
@@ -1488,7 +1475,6 @@ treeview.view {
 
   &:hover, &:selected {
     border-radius: 0;
-    box-shadow: none;
   }
 
   &.separator {
@@ -1590,6 +1576,9 @@ treeview.view {
   acceleditor > label { background-color: $primary; } // see tests/testaccel to test
 }
 
+stack.view treeview.view {
+  min-height: $medium-size;
+}
 
 /*********
  * Menus *
@@ -2597,10 +2586,9 @@ columnview.view {
     }
   }
 
-  &:hover, &:selected, &:focus, &:focus-within {
+  &:hover, &:selected, &:focus {
     check, radio {
       box-shadow: none;
-      background-color: transparent;
     }
   }
 }
@@ -3178,6 +3166,10 @@ row {
     }
   }
 
+  button &.activatable {
+    &:focus, &:hover, &:active { box-shadow: none; }
+  }
+
   &:selected {
     @extend %selected_items;
     color: inherit; // for overlays
@@ -3469,14 +3461,14 @@ filechooserbutton:drop(active) {
     &:dir(ltr),
     &.left,
     &.left:dir(rtl) {
-      border-right: 1px solid $divider;
+      border-right: 1px solid $border;
       border-left-style: none;
     }
 
     @at-root %sidebar_right,
     &:dir(rtl),
     &.right {
-      border-left: 1px solid $divider;
+      border-left: 1px solid $border;
       border-right-style: none;
     }
   }
@@ -3520,7 +3512,7 @@ stacksidebar {
 }
 
 separator.sidebar {
-  background-color: $divider;
+  background-color: $border;
   border-right: none;
 
   &.selection-mode,
@@ -3580,26 +3572,17 @@ row image.sidebar-icon {
   &:disabled { color: $text-secondary-disabled; }
 }
 
-placessidebar {
+placessidebar.sidebar {
   > viewport.frame { border-style: none; }
 
-  list { padding: 1px 0 4px; }
+  list > separator { margin: $space-size / 2 0; }
 
-  .navigation-sidebar > row {
-    // Needs overriding of the GtkListBoxRow padding
-    min-height: 32px;
-    margin: -1px 4px -1px 0; // Remove unwanted hard-coded vertical margins with -1px
-    padding: 0;
-    border-radius: 0 $circular_radius $circular_radius 0;
-
-    // Using margins/padding directly in the SidebarRow
-    // will make the animation of the new bookmark row jump
-    > revealer { padding: 0 8px 0 16px; }
-
+  row {
     &:selected {
-      background-color: $overlay-selected;
-      color: $text;
+      background-color: $divider;
       font-weight: 500;
+
+      // &, image.sidebar-icon, button.sidebar-button { color: $text; }
     }
 
     &:disabled { color: $text-disabled; }
@@ -3630,8 +3613,6 @@ placessidebar {
     }
 
     &:drop(active) {
-      transition: $transition,
-                  box-shadow 0ms;
       box-shadow: inset 0 0 0 9999px $overlay-hover;
     }
   }
@@ -3666,7 +3647,7 @@ paned {
     border-style: none; // just to be sure
     background-color: transparent;
     // workaround, using background istead of a border since the border will get rendered twice (?)
-    background-image: image($divider);
+    background-image: image($solid-border);
     background-size: 1px 1px;
     background-clip: content-box; // avoids borders image being rendered twice (?)
 
@@ -3674,7 +3655,7 @@ paned {
       min-width: 6px;
       min-height: 6px;
       background-color: $background;
-      background-image: image($divider), image($divider);
+      background-image: image($solid-border), image($solid-border);
       background-size: 1px 1px, 1px 1px;
     }
   }

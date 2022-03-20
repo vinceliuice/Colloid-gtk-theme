@@ -1471,14 +1471,9 @@ headerbar {
     color: $text;
   }
 
-  label:not(:only-child) {
-    &:first-child { margin-left: 0; }
-
-    &:last-child { margin-right: 0; }
-  }
-
-  &.text-button {
-    min-width: 0;
+  label, image {
+    margin-left: $space-size / 2;
+    margin-right: $space-size / 2;
   }
 
   &.slider-button {

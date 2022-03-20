@@ -247,7 +247,7 @@ spinner:checked:disabled {
 /****************
  * Text Entries *
  ****************/
-spinbutton.vertical, spinbutton:not(.vertical),
+
 entry {
   min-height: 36px;
   padding: 0 8px;
@@ -260,26 +260,26 @@ entry {
   color: rgba(0, 0, 0, 0.87);
 }
 
-spinbutton.vertical:focus-within, spinbutton:focus-within:not(.vertical),
+
 entry:focus-within {
   background-color: rgba(0, 0, 0, 0.04);
   box-shadow: inset 0 0 0 2px #3c84f7;
 }
 
-spinbutton.vertical:drop(active), spinbutton:drop(active):not(.vertical),
+
 entry:drop(active) {
   background-color: alpha(currentColor, 0.08);
   box-shadow: inset 0 0 0 2px alpha(currentColor, 0.08);
 }
 
-spinbutton.vertical:disabled, spinbutton:disabled:not(.vertical),
+
 entry:disabled {
   box-shadow: inset 0 0 0 2px transparent;
   background-color: rgba(0, 0, 0, 0.04);
   color: rgba(0, 0, 0, 0.38);
 }
 
-spinbutton.flat.vertical, spinbutton.flat:not(.vertical),
+
 entry.flat {
   min-height: 0;
   padding: 2px;
@@ -287,35 +287,35 @@ entry.flat {
   background-color: transparent;
 }
 
-spinbutton.vertical image, spinbutton:not(.vertical) image,
+
 entry image {
   color: rgba(0, 0, 0, 0.6);
 }
 
-spinbutton.vertical image:hover, spinbutton:not(.vertical) image:hover, spinbutton.vertical image:active, spinbutton:not(.vertical) image:active,
+
 entry image:hover,
 entry image:active {
   color: rgba(0, 0, 0, 0.87);
 }
 
-spinbutton.vertical image:disabled, spinbutton:not(.vertical) image:disabled,
+
 entry image:disabled {
   color: rgba(0, 0, 0, 0.38);
 }
 
-spinbutton.vertical image.left, spinbutton:not(.vertical) image.left,
+
 entry image.left {
   margin-left: 2px;
   margin-right: 6px;
 }
 
-spinbutton.vertical image.right, spinbutton:not(.vertical) image.right,
+
 entry image.right {
   margin-left: 6px;
   margin-right: 2px;
 }
 
-spinbutton.vertical undershoot.left, spinbutton:not(.vertical) undershoot.left,
+
 entry undershoot.left {
   background-color: transparent;
   background-image: linear-gradient(to top, transparent 50%, rgba(0, 0, 0, 0.26) 50%);
@@ -328,7 +328,7 @@ entry undershoot.left {
   margin: 4px 0;
 }
 
-spinbutton.vertical undershoot.right, spinbutton:not(.vertical) undershoot.right,
+
 entry undershoot.right {
   background-color: transparent;
   background-image: linear-gradient(to top, transparent 50%, rgba(0, 0, 0, 0.26) 50%);
@@ -341,7 +341,7 @@ entry undershoot.right {
   margin: 4px 0;
 }
 
-spinbutton.error.vertical, spinbutton.error:not(.vertical),
+
 entry.error {
   transition: all 75ms cubic-bezier(0, 0, 0.2, 1), box-shadow 300ms cubic-bezier(0, 0, 0.2, 1);
   box-shadow: inset 0 0 0 2px transparent;
@@ -349,20 +349,20 @@ entry.error {
   color: rgba(0, 0, 0, 0.87);
 }
 
-spinbutton.error.vertical:focus-within, spinbutton.error:focus-within:not(.vertical),
+
 entry.error:focus-within {
   background-color: rgba(0, 0, 0, 0.04);
   box-shadow: inset 0 0 0 2px #E53935;
 }
 
-spinbutton.error.vertical:disabled, spinbutton.error:disabled:not(.vertical),
+
 entry.error:disabled {
   box-shadow: inset 0 0 0 2px transparent;
   background-color: rgba(0, 0, 0, 0.04);
   color: rgba(0, 0, 0, 0.38);
 }
 
-spinbutton.warning.vertical, spinbutton.warning:not(.vertical),
+
 entry.warning {
   transition: all 75ms cubic-bezier(0, 0, 0.2, 1), box-shadow 300ms cubic-bezier(0, 0, 0.2, 1);
   box-shadow: inset 0 0 0 2px transparent;
@@ -370,22 +370,20 @@ entry.warning {
   color: rgba(0, 0, 0, 0.87);
 }
 
-spinbutton.warning.vertical:focus-within, spinbutton.warning:focus-within:not(.vertical),
+
 entry.warning:focus-within {
   background-color: rgba(0, 0, 0, 0.04);
   box-shadow: inset 0 0 0 2px #FFD600;
 }
 
-spinbutton.warning.vertical:disabled, spinbutton.warning:disabled:not(.vertical),
+
 entry.warning:disabled {
   box-shadow: inset 0 0 0 2px transparent;
   background-color: rgba(0, 0, 0, 0.04);
   color: rgba(0, 0, 0, 0.38);
 }
 
-spinbutton.vertical > progress, spinbutton:not(.vertical) > progress,
-spinbutton.vertical progress > trough > progress,
-spinbutton:not(.vertical) progress > trough > progress,
+
 entry > progress,
 entry progress > trough > progress {
   margin: 2px -8px;
@@ -526,7 +524,7 @@ button:drop(active) {
   box-shadow: inset 0 0 0 9999px alpha(currentColor, 0.08);
 }
 
-placessidebar .navigation-sidebar > row button.sidebar-button, calendar > header > button, columnview.view > header > button button.circular,
+placessidebar.sidebar row button.sidebar-button, calendar > header > button, columnview.view > header > button button.circular,
 treeview.view > header > button button.circular, row.activatable button.circular, scrollbar button, notebook > header > tabs > arrow, spinbutton.vertical > button, spinbutton:not(.vertical) > button, modelbutton.flat, filechooser #pathbarbox > stack > box > button, window.dialog.message .dialog-action-area > button, .app-notification button, actionbar > revealer > box button:not(.suggested-action):not(.destructive-action), popover.background.menu button,
 popover.background button.model, headerbar button:not(.suggested-action):not(.destructive-action), .toolbar button,
 toolbar button, dropdown > .linked:not(.vertical) > button:not(:only-child),
@@ -538,7 +536,7 @@ combobox > .linked:not(.vertical) > button:not(:only-child), button.flat {
   color: rgba(0, 0, 0, 0.6);
 }
 
-placessidebar .navigation-sidebar > row button.sidebar-button:focus, calendar > header > button:focus, columnview.view > header > button button.circular:focus,
+placessidebar.sidebar row button.sidebar-button:focus, calendar > header > button:focus, columnview.view > header > button button.circular:focus,
 treeview.view > header > button button.circular:focus, row.activatable button.circular:focus, scrollbar button:focus, notebook > header > tabs > arrow:focus, spinbutton.vertical > button:focus, spinbutton:not(.vertical) > button:focus, modelbutton.flat:focus, filechooser #pathbarbox > stack > box > button:focus, window.dialog.message .dialog-action-area > button:focus, .app-notification button:focus, actionbar > revealer > box button:focus:not(.suggested-action):not(.destructive-action), popover.background.menu button:focus,
 popover.background button.model:focus, headerbar button:focus:not(.suggested-action):not(.destructive-action), .toolbar button:focus,
 toolbar button:focus, dropdown > .linked:not(.vertical) > button:focus:not(:only-child),
@@ -547,7 +545,7 @@ combobox > .linked:not(.vertical) > button:focus:not(:only-child), button.flat:f
   color: rgba(0, 0, 0, 0.87);
 }
 
-placessidebar .navigation-sidebar > row button.sidebar-button:hover, calendar > header > button:hover, columnview.view > header > button button.circular:hover,
+placessidebar.sidebar row button.sidebar-button:hover, calendar > header > button:hover, columnview.view > header > button button.circular:hover,
 treeview.view > header > button button.circular:hover, row.activatable button.circular:hover, scrollbar button:hover, notebook > header > tabs > arrow:hover, spinbutton.vertical > button:hover, spinbutton:not(.vertical) > button:hover, modelbutton.flat:hover, filechooser #pathbarbox > stack > box > button:hover, window.dialog.message .dialog-action-area > button:hover, .app-notification button:hover, actionbar > revealer > box button:hover:not(.suggested-action):not(.destructive-action), popover.background.menu button:hover,
 popover.background button.model:hover, headerbar button:hover:not(.suggested-action):not(.destructive-action), .toolbar button:hover,
 toolbar button:hover, dropdown > .linked:not(.vertical) > button:hover:not(:only-child),
@@ -556,7 +554,7 @@ combobox > .linked:not(.vertical) > button:hover:not(:only-child), button.flat:h
   color: rgba(0, 0, 0, 0.87);
 }
 
-placessidebar .navigation-sidebar > row button.sidebar-button:active, calendar > header > button:active, columnview.view > header > button button.circular:active,
+placessidebar.sidebar row button.sidebar-button:active, calendar > header > button:active, columnview.view > header > button button.circular:active,
 treeview.view > header > button button.circular:active, row.activatable button.circular:active, scrollbar button:active, notebook > header > tabs > arrow:active, spinbutton.vertical > button:active, spinbutton:not(.vertical) > button:active, modelbutton.flat:active, filechooser #pathbarbox > stack > box > button:active, window.dialog.message .dialog-action-area > button:active, .app-notification button:active, actionbar > revealer > box button:active:not(.suggested-action):not(.destructive-action), popover.background.menu button:active,
 popover.background button.model:active, headerbar button:active:not(.suggested-action):not(.destructive-action), .toolbar button:active,
 toolbar button:active, dropdown > .linked:not(.vertical) > button:active:not(:only-child),
@@ -566,7 +564,7 @@ combobox > .linked:not(.vertical) > button:active:not(:only-child), button.flat:
   color: rgba(0, 0, 0, 0.87);
 }
 
-placessidebar .navigation-sidebar > row button.sidebar-button:disabled, calendar > header > button:disabled, columnview.view > header > button button.circular:disabled,
+placessidebar.sidebar row button.sidebar-button:disabled, calendar > header > button:disabled, columnview.view > header > button button.circular:disabled,
 treeview.view > header > button button.circular:disabled, row.activatable button.circular:disabled, scrollbar button:disabled, notebook > header > tabs > arrow:disabled, spinbutton.vertical > button:disabled, spinbutton:not(.vertical) > button:disabled, modelbutton.flat:disabled, filechooser #pathbarbox > stack > box > button:disabled, window.dialog.message .dialog-action-area > button:disabled, .app-notification button:disabled, actionbar > revealer > box button:disabled:not(.suggested-action):not(.destructive-action), popover.background.menu button:disabled,
 popover.background button.model:disabled, headerbar button:disabled:not(.suggested-action):not(.destructive-action), .toolbar button:disabled,
 toolbar button:disabled, dropdown > .linked:not(.vertical) > button:disabled:not(:only-child),
@@ -772,7 +770,7 @@ windowcontrols button:not(.suggested-action):not(.destructive-action) label, fil
   padding: 0;
 }
 
-placessidebar .navigation-sidebar > row button.sidebar-button, notebook > header tab button.flat, popover.menu box.circular-buttons button.circular.image-button.model, spinbutton.vertical > button, spinbutton:not(.vertical) > button {
+placessidebar.sidebar row button.sidebar-button, notebook > header tab button.flat, popover.menu box.circular-buttons button.circular.image-button.model, spinbutton.vertical > button, spinbutton:not(.vertical) > button {
   min-height: 24px;
   min-width: 24px;
   padding: 0;
@@ -792,39 +790,39 @@ stackswitcher > button.needs-attention > image:dir(rtl) {
   background-position: left 3px;
 }
 
-.linked:not(.vertical) > spinbutton.vertical, .linked:not(.vertical) > spinbutton:not(.vertical), .linked:not(.vertical) > entry, .linked:not(.vertical) > button, .linked:not(.vertical) > button.image-button {
+.linked:not(.vertical) > entry, .linked:not(.vertical) > button, .linked:not(.vertical) > button.image-button {
   border-radius: 0;
 }
 
-.linked:not(.vertical) > spinbutton.vertical:first-child, .linked:not(.vertical) > spinbutton:first-child:not(.vertical), .linked:not(.vertical) > entry:first-child, .linked:not(.vertical) > button:first-child {
+.linked:not(.vertical) > entry:first-child, .linked:not(.vertical) > button:first-child {
   border-top-left-radius: 6px;
   border-bottom-left-radius: 6px;
 }
 
-.linked:not(.vertical) > spinbutton.vertical:last-child, .linked:not(.vertical) > spinbutton:last-child:not(.vertical), .linked:not(.vertical) > entry:last-child, .linked:not(.vertical) > button:last-child {
+.linked:not(.vertical) > entry:last-child, .linked:not(.vertical) > button:last-child {
   border-top-right-radius: 6px;
   border-bottom-right-radius: 6px;
 }
 
-.linked:not(.vertical) > spinbutton.vertical:only-child, .linked:not(.vertical) > spinbutton:only-child:not(.vertical), .linked:not(.vertical) > entry:only-child, .linked:not(.vertical) > button:only-child {
+.linked:not(.vertical) > entry:only-child, .linked:not(.vertical) > button:only-child {
   border-radius: 6px;
 }
 
-.linked.vertical > spinbutton.vertical, .linked.vertical > spinbutton:not(.vertical), .linked.vertical > entry, .linked.vertical > button, .linked.vertical > button.image-button {
+.linked.vertical > entry, .linked.vertical > button, .linked.vertical > button.image-button {
   border-radius: 0;
 }
 
-.linked.vertical > spinbutton.vertical:first-child, .linked.vertical > spinbutton:first-child:not(.vertical), .linked.vertical > entry:first-child, .linked.vertical > button:first-child {
+.linked.vertical > entry:first-child, .linked.vertical > button:first-child {
   border-top-left-radius: 6px;
   border-top-right-radius: 6px;
 }
 
-.linked.vertical > spinbutton.vertical:last-child, .linked.vertical > spinbutton:last-child:not(.vertical), .linked.vertical > entry:last-child, .linked.vertical > button:last-child {
+.linked.vertical > entry:last-child, .linked.vertical > button:last-child {
   border-bottom-left-radius: 6px;
   border-bottom-right-radius: 6px;
 }
 
-.linked.vertical > spinbutton.vertical:only-child, .linked.vertical > spinbutton:only-child:not(.vertical), .linked.vertical > entry:only-child, .linked.vertical > button:only-child {
+.linked.vertical > entry:only-child, .linked.vertical > button:only-child {
   border-radius: 6px;
 }
 
@@ -907,9 +905,26 @@ button.link > label {
 /*****************
  * GtkSpinButton *
  *****************/
-spinbutton:not(.vertical) {
+spinbutton {
+  border-radius: 6px;
   padding: 0;
   border-spacing: 0;
+  min-height: 0;
+  transition: all 75ms cubic-bezier(0, 0, 0.2, 1), box-shadow 300ms cubic-bezier(0, 0, 0.2, 1);
+  box-shadow: inset 0 0 0 2px transparent;
+  background-color: rgba(0, 0, 0, 0.04);
+  color: rgba(0, 0, 0, 0.87);
+}
+
+spinbutton:focus-within {
+  background-color: rgba(0, 0, 0, 0.04);
+  box-shadow: inset 0 0 0 2px #3c84f7;
+}
+
+spinbutton:disabled {
+  box-shadow: inset 0 0 0 2px transparent;
+  background-color: rgba(0, 0, 0, 0.04);
+  color: rgba(0, 0, 0, 0.38);
 }
 
 spinbutton:not(.vertical) > text {
@@ -937,14 +952,6 @@ spinbutton:not(.vertical) > button.up:dir(ltr), spinbutton:not(.vertical) > butt
 
 spinbutton:not(.vertical) > button.up:dir(rtl), spinbutton:not(.vertical) > button.down:dir(ltr) {
   margin-right: -3px;
-}
-
-spinbutton.vertical {
-  padding: 0;
-}
-
-spinbutton.vertical:disabled {
-  color: rgba(0, 0, 0, 0.38);
 }
 
 spinbutton.vertical > text {
@@ -976,15 +983,15 @@ spinbutton.vertical > button.down {
   margin: 0 3px;
 }
 
-treeview spinbutton:not(.vertical) > button, row spinbutton:not(.vertical) > button {
+list > row spinbutton:not(.vertical) > button {
   margin: 6px;
 }
 
-treeview spinbutton:not(.vertical) > button.up:dir(ltr), treeview spinbutton:not(.vertical) > button.down:dir(rtl), row spinbutton:not(.vertical) > button.up:dir(ltr), row spinbutton:not(.vertical) > button.down:dir(rtl) {
+list > row spinbutton:not(.vertical) > button.up:dir(ltr), list > row spinbutton:not(.vertical) > button.down:dir(rtl) {
   margin-left: 3px;
 }
 
-treeview spinbutton:not(.vertical) > button.up:dir(rtl), treeview spinbutton:not(.vertical) > button.down:dir(ltr), row spinbutton:not(.vertical) > button.up:dir(rtl), row spinbutton:not(.vertical) > button.down:dir(ltr) {
+list > row spinbutton:not(.vertical) > button.up:dir(rtl), list > row spinbutton:not(.vertical) > button.down:dir(ltr) {
   margin-right: 3px;
 }
 
@@ -1235,11 +1242,6 @@ toolbar:not(.inline-toolbar):not(.osd) spinbutton button {
 .toolbar:not(.inline-toolbar):not(.osd) switch,
 toolbar:not(.inline-toolbar):not(.osd) switch {
   margin: 8px 2px;
-}
-
-.toolbar button {
-  margin: 1px;
-  border-radius: 3px;
 }
 
 searchbar > revealer > box {
@@ -1603,18 +1605,10 @@ pathbar > button:checked {
 }
 
 
-pathbar > button label:not(:only-child):first-child {
-  margin-left: 0;
-}
-
-
-pathbar > button label:not(:only-child):last-child {
-  margin-right: 0;
-}
-
-
-pathbar > button.text-button {
-  min-width: 0;
+pathbar > button label,
+pathbar > button image {
+  margin-left: 3px;
+  margin-right: 3px;
 }
 
 
@@ -1636,7 +1630,6 @@ columnview.view:hover, columnview.view:selected,
 treeview.view:hover,
 treeview.view:selected {
   border-radius: 0;
-  box-shadow: none;
 }
 
 columnview.view.separator,
@@ -1785,6 +1778,10 @@ treeview.view header.button.dnd {
 columnview.view acceleditor > label,
 treeview.view acceleditor > label {
   background-color: #3c84f7;
+}
+
+stack.view treeview.view {
+  min-height: 36px;
 }
 
 /*********
@@ -2755,17 +2752,14 @@ columnview.view check:indeterminate:hover {
   box-shadow: none;
 }
 
-treeview.view:hover check, treeview.view:hover radio, treeview.view:selected check, treeview.view:selected radio, treeview.view:focus check, treeview.view:focus radio, treeview.view:focus-within check, treeview.view:focus-within radio,
+treeview.view:hover check, treeview.view:hover radio, treeview.view:selected check, treeview.view:selected radio, treeview.view:focus check, treeview.view:focus radio,
 columnview.view:hover check,
 columnview.view:hover radio,
 columnview.view:selected check,
 columnview.view:selected radio,
 columnview.view:focus check,
-columnview.view:focus radio,
-columnview.view:focus-within check,
-columnview.view:focus-within radio {
+columnview.view:focus radio {
   box-shadow: none;
-  background-color: transparent;
 }
 
 /************
@@ -3414,15 +3408,7 @@ stacksidebar separator.horizontal, button.font separator, button.file separator 
 /*********
  * Lists *
  *********/
-window.background.csd stack stack stack frame > list,
-window.background.csd > stack > stack > box > frame > list,
-window.background.csd > stack > stack > box > box > frame > list,
-window.background.csd > stack > box > stack > box > frame > list,
-window.background.csd > stack > box > stack > scrolledwindow > viewport frame > list,
-window.background.csd > stack > box > stack > box > scrolledwindow > viewport > frame > list,
-window.background.csd > stack > grid > scrolledwindow > viewport > box > frame > list, window.background.csd > stack > list,
-window.background.csd > stack > scrolledwindow > viewport > box > list,
-window.background.csd > box > stack > scrolledwindow > viewport > box > list, listview.boxed-list,
+listview.boxed-list,
 list.boxed-list, listview.content:not(.conversation-listbox),
 list.content:not(.conversation-listbox) {
   border-radius: 7px;
@@ -3432,8 +3418,13 @@ list.content:not(.conversation-listbox) {
 
 window.background.csd stack stack stack frame > list row.activatable,
 window.background.csd > stack > stack > box > frame > list row.activatable,
+window.background.csd > stack > stack > box > box > frame > list row.activatable,
+window.background.csd > stack > box > stack > box > frame > list row.activatable,
 window.background.csd > stack > box > stack > scrolledwindow > viewport frame > list row.activatable,
-window.background.csd > stack > grid > scrolledwindow > viewport > box > frame > list row.activatable, window.background.csd > stack > list row.activatable, listview.boxed-list > row.expander list > row,
+window.background.csd > stack > box > stack > box > scrolledwindow > viewport > frame > list row.activatable,
+window.background.csd > stack > grid > scrolledwindow > viewport > box > frame > list row.activatable, window.background.csd > stack > list row.activatable,
+window.background.csd > stack > scrolledwindow > viewport > box > list row.activatable,
+window.background.csd > box > stack > scrolledwindow > viewport > box > list row.activatable, listview.boxed-list > row.expander list > row,
 list.boxed-list > row.expander list > row, listview.boxed-list > row,
 list.boxed-list > row, listview.content:not(.conversation-listbox) > row,
 list.content:not(.conversation-listbox) > row {
@@ -3546,6 +3537,10 @@ treeview.view > header > button:active, row.activatable.has-open-popup, row.acti
   color: rgba(0, 0, 0, 0.87);
   transition: all 75ms cubic-bezier(0, 0, 0.2, 1);
   box-shadow: inset 0 0 0 9999px alpha(currentColor, 0.12);
+}
+
+button row.activatable:focus, button row.activatable:hover, button row.activatable:active {
+  box-shadow: none;
 }
 
 row:selected {
@@ -3927,69 +3922,56 @@ row image.sidebar-icon:disabled {
   color: rgba(0, 0, 0, 0.26);
 }
 
-placessidebar > viewport.frame {
+placessidebar.sidebar > viewport.frame {
   border-style: none;
 }
 
-placessidebar list {
-  padding: 1px 0 4px;
+placessidebar.sidebar list > separator {
+  margin: 3px 0;
 }
 
-placessidebar .navigation-sidebar > row {
-  min-height: 32px;
-  margin: -1px 4px -1px 0;
-  padding: 0;
-  border-radius: 0 9999px 9999px 0;
-}
-
-placessidebar .navigation-sidebar > row > revealer {
-  padding: 0 8px 0 16px;
-}
-
-placessidebar .navigation-sidebar > row:selected {
-  background-color: alpha(currentColor, 0.06);
-  color: rgba(0, 0, 0, 0.87);
+placessidebar.sidebar row:selected {
+  background-color: rgba(0, 0, 0, 0.12);
   font-weight: 500;
 }
 
-placessidebar .navigation-sidebar > row:disabled {
+placessidebar.sidebar row:disabled {
   color: rgba(0, 0, 0, 0.38);
 }
 
-placessidebar .navigation-sidebar > row image.sidebar-icon:dir(ltr) {
+placessidebar.sidebar row image.sidebar-icon:dir(ltr) {
   padding-right: 8px;
 }
 
-placessidebar .navigation-sidebar > row image.sidebar-icon:dir(rtl) {
+placessidebar.sidebar row image.sidebar-icon:dir(rtl) {
   padding-left: 8px;
 }
 
-placessidebar .navigation-sidebar > row label.sidebar-label {
+placessidebar.sidebar row label.sidebar-label {
   color: inherit;
 }
 
-placessidebar .navigation-sidebar > row label.sidebar-label:dir(ltr) {
+placessidebar.sidebar row label.sidebar-label:dir(ltr) {
   padding-right: 2px;
 }
 
-placessidebar .navigation-sidebar > row label.sidebar-label:dir(rtl) {
+placessidebar.sidebar row label.sidebar-label:dir(rtl) {
   padding-left: 2px;
 }
 
-placessidebar .navigation-sidebar > row.sidebar-placeholder-row {
+placessidebar.sidebar row.sidebar-placeholder-row {
   background-color: alpha(currentColor, 0.08);
 }
 
-placessidebar .navigation-sidebar > row.sidebar-new-bookmark-row {
+placessidebar.sidebar row.sidebar-new-bookmark-row {
   color: #3c84f7;
 }
 
-placessidebar .navigation-sidebar > row.sidebar-new-bookmark-row image.sidebar-icon {
+placessidebar.sidebar row.sidebar-new-bookmark-row image.sidebar-icon {
   color: #3c84f7;
 }
 
-placessidebar .navigation-sidebar > row:drop(active) {
-  transition: all 75ms cubic-bezier(0, 0, 0.2, 1), box-shadow 0ms;
+placessidebar.sidebar row:drop(active) {
   box-shadow: inset 0 0 0 9999px alpha(currentColor, 0.08);
 }
 
@@ -4016,7 +3998,7 @@ paned > separator {
   -gtk-icon-source: none;
   border-style: none;
   background-color: transparent;
-  background-image: image(rgba(0, 0, 0, 0.12));
+  background-image: image(#e0e0e0);
   background-size: 1px 1px;
   background-clip: content-box;
 }
@@ -4025,7 +4007,7 @@ paned > separator.wide {
   min-width: 6px;
   min-height: 6px;
   background-color: #FFFFFF;
-  background-image: image(rgba(0, 0, 0, 0.12)), image(rgba(0, 0, 0, 0.12));
+  background-image: image(#e0e0e0), image(#e0e0e0);
   background-size: 1px 1px, 1px 1px;
 }
 
@@ -4416,7 +4398,7 @@ flowbox > flowboxchild:selected, calendar > grid > label.today {
 }
 
 textview text selection:focus, textview text selection, label > selection,
-entry > text > selection, spinbutton:not(.vertical) > text > selection, spinbutton.vertical > text > selection, calendar > grid > label.today:selected {
+entry > text > selection, calendar > grid > label.today:selected {
   color: #FFFFFF;
   background-color: #3c84f7;
 }
@@ -4591,52 +4573,6 @@ emoji-completion-row emoji:hover, emoji-completion-row emoji:focus {
 
 popover.entry-completion > contents {
   padding: 0;
-}
-
-window.background.csd stack stack stack frame > list,
-window.background.csd > stack > stack > box > frame > list,
-window.background.csd > stack > stack > box > box > frame > list,
-window.background.csd > stack > box > stack > box > frame > list,
-window.background.csd > stack > box > stack > scrolledwindow > viewport frame > list,
-window.background.csd > stack > box > stack > box > scrolledwindow > viewport > frame > list,
-window.background.csd > stack > grid > scrolledwindow > viewport > box > frame > list, window.background.csd > stack > list,
-window.background.csd > stack > scrolledwindow > viewport > box > list,
-window.background.csd > box > stack > scrolledwindow > viewport > box > list, listview.content:not(.conversation-listbox),
-list.content:not(.conversation-listbox), listview.boxed-list,
-list.boxed-list {
-  border-radius: 7px;
-  box-shadow: none;
-  border: 1px solid rgba(0, 0, 0, 0.12);
-}
-
-window.background.csd stack stack stack frame > list row.activatable:first-child, window.background.csd > stack > list row.activatable:first-child, listview.content:not(.conversation-listbox) > row:first-child,
-list.content:not(.conversation-listbox) > row:first-child, listview.boxed-list > row:first-child,
-list.boxed-list > row:first-child, listview.boxed-list > row.expander list > row:first-child,
-list.boxed-list > row.expander list > row:first-child {
-  border-top-left-radius: 6px;
-  border-top-right-radius: 6px;
-}
-
-window.background.csd stack stack stack frame > list row.activatable:last-child, window.background.csd > stack > list row.activatable:last-child, listview.content:not(.conversation-listbox) > row:last-child,
-list.content:not(.conversation-listbox) > row:last-child, listview.boxed-list > row:last-child,
-list.boxed-list > row:last-child, listview.boxed-list > row.expander list > row:last-child,
-list.boxed-list > row.expander list > row:last-child {
-  border-bottom-left-radius: 6px;
-  border-bottom-right-radius: 6px;
-}
-
-window.background.csd stack stack stack frame > list row.activatable:only-child, window.background.csd > stack > list row.activatable:only-child, listview.content:not(.conversation-listbox) > row:only-child,
-list.content:not(.conversation-listbox) > row:only-child, listview.boxed-list > row:only-child,
-list.boxed-list > row:only-child, listview.boxed-list > row.expander list > row:only-child,
-list.boxed-list > row.expander list > row:only-child {
-  border-radius: 6px;
-}
-
-window.background.csd stack stack stack frame > list row.activatable:focus, window.background.csd > stack > list row.activatable:focus, listview.content:not(.conversation-listbox) > row:focus,
-list.content:not(.conversation-listbox) > row:focus, listview.boxed-list > row:focus,
-list.boxed-list > row:focus, listview.boxed-list > row.expander list > row:focus,
-list.boxed-list > row.expander list > row:focus {
-  box-shadow: inset 0 0 0 2px alpha(currentColor, 0.08);
 }
 
 /**************

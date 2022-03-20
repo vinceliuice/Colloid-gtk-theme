@@ -1701,19 +1701,11 @@ headerbar.windowhandle viewswitchertitle > squeezer > viewswitcher > box.horizon
   color: rgba(0, 0, 0, 0.87);
 }
 
-.caja-pathbar button label:not(:only-child):first-child,
-.path-bar.linked:not(.vertical) > button label:not(:only-child):first-child {
-  margin-left: 0;
-}
-
-.caja-pathbar button label:not(:only-child):last-child,
-.path-bar.linked:not(.vertical) > button label:not(:only-child):last-child {
-  margin-right: 0;
-}
-
-.caja-pathbar button.text-button,
-.path-bar.linked:not(.vertical) > button.text-button {
-  min-width: 0;
+.caja-pathbar button label, .caja-pathbar button image,
+.path-bar.linked:not(.vertical) > button label,
+.path-bar.linked:not(.vertical) > button image {
+  margin-left: 3px;
+  margin-right: 3px;
 }
 
 .caja-pathbar button.slider-button,
