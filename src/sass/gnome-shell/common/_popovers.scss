@@ -6,8 +6,8 @@
   -arrow-background-color: transparent;
   -arrow-border-width: 0;
   -arrow-border-color: transparent;
-  -arrow-base: 64px;
-  -arrow-rise: 6px;
+  -arrow-base: $base_padding * 2;
+  -arrow-rise: $base_padding;
   -arrow-box-shadow: none; //dreaming. bug #689995
   background: transparent; // needs to reset?
   box-shadow: none;
@@ -21,7 +21,7 @@
   font-weight: normal;
   border-radius: $menu_radius;
   box-shadow: 0 3px 6px rgba(black, 0.08);
-  margin: 0 3px;
+  margin: 0 $base_padding / 2;
   @include fontsize($font_size - 1);
 
   .popup-menu-content {
@@ -38,7 +38,7 @@
   }
 
   .popup-menu-item {
-    spacing: $base_spacing * 1.5;
+    spacing: $base_spacing;
     padding: $base_padding 0;
     color: $text-secondary;
     text-shadow: none;

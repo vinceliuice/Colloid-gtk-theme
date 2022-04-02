@@ -2338,7 +2338,7 @@ StEntry StLabel.hint-text, .popup-menu .search-entry StLabel.hint-text {
   -arrow-background-color: transparent;
   -arrow-border-width: 0;
   -arrow-border-color: transparent;
-  -arrow-base: 64px;
+  -arrow-base: 12px;
   -arrow-rise: 6px;
   -arrow-box-shadow: none;
   background: transparent;
@@ -2367,7 +2367,7 @@ StEntry StLabel.hint-text, .popup-menu .search-entry StLabel.hint-text {
 }
 
 .popup-menu .popup-menu-item {
-  spacing: 9px;
+  spacing: 6px;
   padding: 6px 0;
   color: rgba(0, 0, 0, 0.6);
   text-shadow: none;

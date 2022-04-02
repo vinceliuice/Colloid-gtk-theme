@@ -3955,7 +3955,7 @@ cursor-handle {
 stackswitcher {
   min-height: 0;
   padding: $space-size / 2;
-  margin: $space-size 0;
+  // margin: $space-size 0;
   border-radius: $corner-radius + $space-size / 2;
   background-color: $fill;
   border: none;
