@@ -3887,12 +3887,9 @@ button.titlebutton:not(.suggested-action):not(.destructive-action) {
 
   @if $window_button == 'mac' {
     @extend %mac_window_button;
+    .background.csd headerbar.titlebar.default-decoration & { @extend %firefox_window_button; }
   } @else {
     @extend %normal_window_button;
-  }
-
-  .background.csd headerbar.titlebar.default-decoration & {
-    @extend %firefox_window_button;
   }
 
   .background.csd.maximized headerbar.titlebar.default-decoration &.maximize,
