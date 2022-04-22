@@ -1079,6 +1079,7 @@ searchbar > revealer > box {
   border-color: $divider;
   background-color: $background;
   background-clip: border-box;
+  box-shadow: none;
 }
 
 /***************

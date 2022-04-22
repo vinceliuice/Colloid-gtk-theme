@@ -5,6 +5,7 @@
   width: if($compact == 'true', 25.5em, 31.5em);
   text-shadow: none;
   border: none;
+  padding: 0;
 
   .message-list-placeholder { spacing: $base_spacing * 2; }
 }
@@ -21,12 +22,19 @@
 
 // message bubbles
 .message {
+  margin: $base_spacing / 2 0;
+
   .popup-menu & {
     @extend %popover_bubble;
   }
 
   // icon container
   .message-icon-bin {
+    padding: $base_padding * 3;
+
+    &:ltr { padding-right: $base_padding; }
+    &:rtl { padding-left: $base_padding; }
+
     // icon size and color
     > StIcon {
       icon-size: 32px; // 32px
@@ -92,6 +100,10 @@
 .message-media-control {
   border-radius: $circular_radius;
   color: $text-secondary;
+
+  &:last-child:ltr { margin-right: $base_margin * 4; }
+  &:last-child:rtl { margin-left: $base_margin * 4; }
+
   &:hover, &:focus { color: $text; background-color: $divider; }
   &:active { color: $text; background-color: $track; }
   &:insensitive { color: $text-secondary-disabled; }
@@ -104,7 +116,7 @@
   &.fallback {
     icon-size: 32px !important;
     border: none;
-    border-radius: $menu_radius;
+    border-radius: $base_radius;
     background-color: $divider;
     color: $text-disabled;
   }

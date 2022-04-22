@@ -1,9 +1,3 @@
-/* Message List */
-// a.k.a. notifications in the menu
-
-.message-list {
-  padding: 0 $base_padding * 2;
-}
 
 // do-not-disturb + clear button
 .message-list-controls {
@@ -13,30 +7,16 @@
   spacing: $base_spacing * 2;
 }
 
-// message bubbles
-.message {
-  margin: $base_spacing / 2 0;
-  
-  // icon container
-  .message-icon-bin {
-    margin: 8px 0;
-    padding: 8px 0px 8px 8px;
-
-    &:rtl { padding: 8px 8px 8px 0px; }
-  }
-}
-
 .message-media-control {
-  margin: 18px $base_padding;
+  margin: $base_padding * 3 + 6px $base_padding;
   padding: $base_padding * 1.5;
-
-  &:last-child:ltr { margin-right: $base_margin * 4; }
-  &:last-child:rtl { margin-left: $base_margin * 4; }
 }
 
 // album-art
 .media-message-cover-icon {
+  padding: $base_padding;
+
   &.fallback {
-    padding: 0;
+    padding: $base_padding;
   }
 }
