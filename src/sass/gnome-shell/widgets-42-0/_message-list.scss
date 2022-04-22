@@ -1,0 +1,47 @@
+/* Message List */
+// a.k.a. notifications in the menu
+
+.message-list {
+  padding: 0;
+}
+
+// do-not-disturb + clear button
+.message-list-controls {
+  padding: $base_padding $base_padding $base_padding $base_padding * 5 !important;
+  spacing: $base_spacing;
+  font-weight: normal;
+
+  .dnd-button {
+    font-weight: normal;
+  }
+}
+
+// message bubbles
+.message {
+  margin: $base_padding / 2 0;
+
+  // icon container
+  .message-icon-bin {
+    padding: ($base_padding * 3);
+
+    &:ltr {padding-right: $base_padding; }
+    &:rtl {padding-left: $base_padding; }
+  }
+}
+
+.message-media-control {
+  margin: ($base_padding * 3 + 8px) $base_padding;
+  padding: $base_padding * 2;
+
+  &:last-child:ltr { margin-right: $base_margin * 4; }
+  &:last-child:rtl { margin-left: $base_margin * 4; }
+}
+
+// album-art
+.media-message-cover-icon {
+  padding: $base_padding * 2;
+
+  &.fallback {
+    padding: $base_padding * 2;
+  }
+}

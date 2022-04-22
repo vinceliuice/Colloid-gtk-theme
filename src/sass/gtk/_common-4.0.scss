@@ -3456,23 +3456,6 @@ filechooserbutton:drop(active) {
   border-style: none;
   background-color: $base-alt;
 
-  &:not(separator) {
-    @at-root %sidebar_left,
-    &:dir(ltr),
-    &.left,
-    &.left:dir(rtl) {
-      border-right: 1px solid $border;
-      border-left-style: none;
-    }
-
-    @at-root %sidebar_right,
-    &:dir(rtl),
-    &.right {
-      border-left: 1px solid $border;
-      border-right-style: none;
-    }
-  }
-
   listview.view,
   list { background-color: transparent; }
 

@@ -16,7 +16,7 @@
 // container of the popover menu
 .popup-menu {
   min-width: if($compact == 'true', 10em, 12em);
-  color: $text-secondary;
+  color: $text-secondary !important;
   padding: 0 !important;
   font-weight: normal;
   border-radius: $menu_radius;
@@ -34,87 +34,81 @@
     @if $rimless == 'false' {
       border: 1px solid $window-border;
       box-shadow: inset 0 0 0 1px highlight($popover);
-    }
+    } @else { border: none; }
   }
 
   .popup-menu-item {
     spacing: $base_spacing;
-    padding: $base_padding 0;
-    color: $text-secondary;
+    color: $text-secondary !important;
     text-shadow: none;
     border-radius: $base_radius;
     margin: 0 $base_padding;
     font-weight: normal;
 
-    &:ltr { padding-right: 1.5em !important; padding-left: 0 !important; }
-    &:rtl { padding-right: 0 !important; padding-left: 1.5em !important; }
-
     &:checked {
       font-weight: normal;
       border: none;
       box-shadow: none;
-      color: $text;
-      background-color: $divider;
+      color: $text !important;
+      background-color: $divider !important;
       border-radius: $base_radius $base_radius 0 0;
 
-      &.hover, &.selected {
-        color: $text;
-        background-color: $overlay-hover;
+      &:focus, &:hover, &.selected {
+        color: $text !important;
+        background-color: $overlay-hover !important;
       }
 
       &:active {
-        color: $text;
-        background-color: $overlay-active;
+        color: $text !important;
+        background-color: $overlay-active !important;
       }
 
-      &:insensitive { color: $text-secondary-disabled; }
+      &:insensitive { color: $text-secondary-disabled !important; }
     }
 
-    &.selected {
-      color: $text;
-      background-color: $divider;
+    &:focus, &:hover, &.selected {
+      color: $text !important;
+      background-color: $divider !important;
       transition-duration: 0;
     }
 
     &:active, &.selected:active {
-      color: $text;
-      background-color: $track;
+      color: $text !important;
+      background-color: $track !important;
     }
 
-    &:insensitive { color: $text-secondary-disabled; }
+    &:insensitive { color: $text-secondary-disabled !important; }
   }
 
   .popup-sub-menu {
-    background-color: $divider;
-    color: $text-secondary;
+    background-color: $divider !important;
+    color: $text-secondary !important;
     border: none;
     box-shadow: none;
     margin: 0 $base_padding;
     border-radius: 0 0 $base_radius $base_radius;
 
     .popup-menu-item {
-      color: $text-secondary;
-      border-radius: $base_radius;
       margin: 0;
 
-      &.selected {
-        color: $text;
-        background-color: $divider;
+      &:focus, &:hover, &.selected {
+        color: $text !important;
+        background-color: $divider !important;
       }
 
       &:active, &.selected:active {
-        color: $text;
-        background-color: $track;
+        color: $text !important;
+        background-color: $track !important;
       }
 
-      &:insensitive { color: $text-secondary-disabled; }
+      &:insensitive { color: $text-secondary-disabled !important; }
     }
   }
 
   .popup-inactive-menu-item { //all icons and other graphical elements
-    color: $text-secondary;
+    color: $text-secondary !important;
 
-    &:insensitive { color: $text-secondary-disabled; }
+    &:insensitive { color: $text-secondary-disabled !important; }
   }
 
   //.popup-status-menu-item { font-weight: normal;  color: pink; } //dunno what that is
@@ -123,6 +117,7 @@
     margin-bottom: 1.75em;
   }
 }
+
 // symbolic icons in popover
 .popup-menu-arrow,
 .popup-menu-icon { icon-size: $base_icon_size; }
@@ -131,27 +126,8 @@
 .popup-menu-ornament {
   width: 1.2em;
 
-  &:ltr { text-align: right };
-  &:rtl { text-align: left };
-}
-
-// separator
-.popup-separator-menu-item {
-  padding: 0 0;
-
-  .popup-separator-menu-item-separator {
-    height: 1px; //not really the whole box
-    margin: 0 0;
-    background-color: $border;
-    padding: 0 0;
-
-    .popup-sub-menu & { //submenu separators
-      padding: 0 0;
-      margin: 0 32px 0 0;
-      height: 1px;
-      background-color: $border;
-    }
-  }
+  &:ltr { text-align: right; }
+  &:rtl { text-align: left; }
 }
 
 // desktop background menu
@@ -169,10 +145,5 @@
     padding: 0;
     margin: 0 $base_padding / 2;
     -st-icon-style: symbolic;
-  }
-
-  .popup-sub-menu .popup-menu-item > :first-child {
-    &:ltr { padding-left: $base_padding * 2 + 6px; margin-left: 1em; }
-    &:rtl { padding-right: $base_padding * 2 + 6px; margin-right: 1em; }
   }
 }
