@@ -179,9 +179,9 @@ toast {
   border-radius: $circular-radius;
   border-spacing: $space-size;
   padding: $space-size;
-  box-shadow: $shadow-z6;
-  background-color: $osd;
-  color: on($osd);
+  box-shadow: $shadow-z6, inset 0 1px highlight($popover);
+  background-color: $popover;
+  color: on($popover);
   border: none;
 
   &:dir(ltr) { padding-left: $space-size * 2; }
@@ -449,9 +449,9 @@ editablelabel > stack > text {
 
   &:focus { @include button(focus); }
 
-  &:hover { @include button(hover); }
+  &:hover { @include button(hover); -gtk-icon-filter: brightness(1.2); }
 
-  &:active { @include button(active); }
+  &.keyboard-activating, &:active { @include button(active); }
 
   &:disabled { @include button(disabled); }
 
@@ -460,6 +460,36 @@ editablelabel > stack > text {
   &:checked:hover { @include button(checked-hover); }
 
   &:checked:disabled { @include button(checked-disabled); }
+}
+
+%opaque_button {
+  box-shadow: none;
+
+  .osd &:focus:focus-visible {
+    outline-color: rgba(white, 0.15)
+  }
+
+  &:hover {
+    background-image: image(gtkalpha(currentColor, .1));
+  }
+
+  &.keyboard-activating,
+  &:active {
+    background-image: image(transparentize(black, .8));
+  }
+
+  &:checked {
+    background-image: image(transparentize(black, .85));
+
+    &:hover {
+      background-image: image(transparentize(black, .95));
+    }
+
+    &.keyboard-activating,
+    &:active {
+      background-image: image(transparentize(black, .7));
+    }
+  }
 }
 
 button {
@@ -490,13 +520,19 @@ button {
     &:checked:disabled { @include button(flat-checked-disabled); }
   }
 
+  separator { margin: 4px 1px; }
+
+  &.opaque {
+    @extend %opaque_button;
+
+    background-color: mix($background, $text, 80%);
+    color: $text;
+  }
+
   &.text-button {
     min-width: 32px;
     padding-left: $space-size * 2 + 4px;
     padding-right: $space-size * 2 + 4px;
-
-    &.flat {
-    }
   }
 
   &.image-button {
@@ -507,10 +543,20 @@ button {
   }
 
   // NOTE: Some image-only buttons use this as well
-  &.text-button.image-button {
+  &.text-button.image-button, &.image-text-button {
     min-width: 24px;
     padding: ($medium-size - 24px) / 2;
     border-radius: $corner-radius;
+
+    > box,
+    > box > box {
+      border-spacing: $space-size - 2px;
+
+      > label {
+        padding-left: 2px;
+        padding-right: 2px;
+      }
+    }
 
     label {
       &:first-child { margin-left: 16px - ($medium-size - 24px) / 2; }
@@ -525,6 +571,56 @@ button {
     }
 
     image:not(:only-child) { margin: 0 (24px - 16px) / 2; }
+  }
+
+  &.arrow-button {
+    padding-left: $space-size * 1.5;
+    padding-right: $space-size * 1.5;
+
+    > box { border-spacing: $space-size - 2px; }
+
+    &.text-button {
+      > box { border-spacing: $space-size - 2px; }
+    }
+  }
+
+  @at-root %pill-button,
+  &.pill {
+    padding: $space-size * 1.5 $space-size * 5;
+    border-radius: $circular-radius;
+  }
+
+  &.card {
+    background-color: $fill;
+    background-clip: padding-box;
+    font-weight: inherit;
+    padding: 0;
+
+    &:hover {
+      background-image: image(gtkalpha(currentColor, 0.03));
+    }
+
+    &.keyboard-activating,
+    &:active {
+      background-image: image(gtkalpha(currentColor, 0.08));
+    }
+
+    &:checked {
+      background-color: $fill;
+      background-image: image(gtkalpha(currentColor, 0.1));
+
+      &:hover { background-image: image(gtkalpha(currentColor, 0.13)); }
+
+      &.keyboard-activating,
+      &:active { background-image: image(gtkalpha(currentColor, 0.19)); }
+
+      &.has-open-popup { background-image: image(gtkalpha(currentColor, 0.13)); }
+    }
+
+    &:drop(active) {
+      color: $drop_target_color;
+      box-shadow: inset 0 0 0 1px $drop_target_color;
+    }
   }
 
   .linked:not(.vertical) > &,
@@ -652,6 +748,214 @@ button {
     min-width: $small-size;
     padding: 0;
     border-radius: $circular-radius;
+  }
+}
+
+menubutton {
+  &.osd {
+    background: none;
+    color: inherit;
+  }
+
+  &.circular > button { @extend %circular-button; }
+  &.flat > button { @extend %button-flat; }
+  &.pill > button { @extend %pill-button; }
+
+  &.suggested-action {
+    background-color: $suggested;
+    color: white;
+  }
+
+  &.destructive-action {
+    background-color: $destructive;
+    color: white;
+  }
+
+  &.opaque {
+    background-color: mix($background, $text, 80%);
+    color: $text;
+  }
+
+  &.suggested-action,
+  &.destructive-action,
+  &.opaque {
+    border-radius: $corner-radius;
+
+    &.circular, &.pill {
+      border-radius: $circular-radius;
+    }
+
+    > button {
+      @extend %button-flat;
+
+      &, &:checked {
+        background-color: transparent;
+        color: inherit;
+      }
+    }
+  }
+
+  &.image-button > button {
+    min-width: 24px;
+    padding-left: $space-size;
+    padding-right: $space-size;
+  }
+
+  arrow {
+    min-height: 16px;
+    min-width: 16px;
+    &.none {
+      -gtk-icon-source: -gtk-icontheme('open-menu-symbolic');
+    }
+    &.down {
+      -gtk-icon-source: -gtk-icontheme('pan-down-symbolic');
+    }
+    &.up {
+      -gtk-icon-source: -gtk-icontheme('pan-up-symbolic');
+    }
+    &.left {
+      -gtk-icon-source: -gtk-icontheme('pan-start-symbolic');
+    }
+    &.right {
+      -gtk-icon-source: -gtk-icontheme('pan-end-symbolic');
+    }
+  }
+}
+
+splitbutton {
+  border-radius: $corner-radius;
+
+  &, & > separator {
+    transition: $transition;
+    transition-property: background;
+  }
+
+  > separator {
+    margin-top: $space-size;
+    margin-bottom: $space-size;
+    background: none;
+  }
+
+  > menubutton > button {
+    padding-left: $space-size - 2px;
+    padding-right: $space-size - 2px;
+  }
+
+  // Since the inner button doesn't have any style classes on it,
+  // we have to add them manually
+  &.image-button > button {
+    min-width: 24px;
+    padding-left: $space-size;
+    padding-right: $space-size;
+  }
+
+  &.text-button.image-button > button,
+  &.image-text-button > button {
+    padding-left: $space-size * 1.5;
+    padding-right: $space-size * 1.5;
+
+    > box {
+      border-spacing: $space-size;
+    }
+  }
+
+  // Reimplementing linked so we don't blow up css
+  > button:dir(ltr),
+  > menubutton > button:dir(rtl) {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    margin-right: -1px;
+  }
+
+  > button:dir(rtl),
+  > menubutton > button:dir(ltr) {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    margin-left: -1px;
+  }
+
+  @at-root %flat_split_button,
+  &.flat {
+    > separator {
+      background: $border;
+    }
+
+    &:hover,
+    &:active,
+    &:checked {
+      background: gtkalpha(currentColor, 0.07);
+
+      > separator {
+        background: none;
+      }
+    }
+
+    &:focus-within:focus-visible > separator {
+      background: none;
+    }
+
+    > button,
+    > menubutton > button {
+      @extend %button-flat-simple;
+
+      border-radius: $corner-radius;
+    }
+  }
+
+  &.suggested-action {
+    background-color: $suggested;
+    color: white;
+  }
+
+  &.destructive-action {
+    background-color: $destructive;
+    color: white;
+  }
+
+  &.opaque {
+    background-color: mix($background, $text, 80%);
+    color: $text;
+  }
+
+  &.suggested-action,
+  &.destructive-action,
+  &.opaque {
+    > button, > menubutton > button {
+      @extend %button-flat;
+
+      &, &:checked {
+        color: inherit;
+        background-color: transparent;
+      }
+    }
+
+    > menubutton > button {
+      &:dir(ltr) { box-shadow: inset 1px 0 $border; }
+      &:dir(rtl) { box-shadow: inset -1px 0 $border; }
+    }
+  }
+
+  > menubutton > button > arrow.none {
+    -gtk-icon-source: -gtk-icontheme('pan-down-symbolic');
+  }
+}
+
+buttoncontent {
+  border-spacing: $space-size;
+
+  > label {
+    font-weight: bold;
+
+    &:dir(ltr) { padding-right: 2px; }
+    &:dir(rtl) { padding-left: 2px; }
+  }
+
+  .arrow-button > box > &,
+  splitbutton > button > & {
+    > label {
+      &:dir(ltr) { padding-right: 0; }
+      &:dir(rtl) { padding-left: 0; }
+    }
   }
 }
 
@@ -901,16 +1205,16 @@ combobox {
    padding: 0;
 
    listview {
-      margin: $space-size 0;
+     margin: $space-size 0;
 
-      & > row {
-         padding: $space-size;
+     & > row {
+       padding: $space-size;
 
-         &:selected {
-           color: $text;
-           background-color: $overlay-selected;
-         }
-      }
+       &:selected {
+         color: $text;
+         background-color: $overlay-selected;
+       }
+     }
    }
 
     // drodowns with searchboxes on top
@@ -1505,7 +1809,7 @@ treeview.view {
   &.expander {
     min-width: 16px;
     min-height: 16px;
-    -gtk-icon-source: -gtk-icontheme('pan-down-symbolic');
+    -gtk-icon-source: -gtk-icontheme('pan-end-symbolic');
 
     &:dir(rtl) { -gtk-icon-source: -gtk-icontheme('pan-end-symbolic-rtl'); }
 
@@ -3045,6 +3349,7 @@ separator {
   min-width: 0;
   min-height: 0;
   background-color: transparent;
+  background-image: none;
 }
 
 
@@ -3127,16 +3432,40 @@ listview.view {
 
   popover.menu & {
     padding: 0;
+    border-radius: $corner-radius;
 
     > row {
       margin-left: 0;
       margin-right: 0;
+      border-radius: $corner-radius;
     }
   }
 }
 
 row {
   color: $text-secondary;
+  background-clip: padding-box;
+
+  label.subtitle {
+    font-size: smaller;
+    @extend .dim-label;
+  }
+
+  > box.header {
+    margin-left: $space-size * 2;
+    margin-right: $space-size * 2;
+    min-height: $large-size;
+
+    > .icon:disabled {
+      filter: opacity(0.35);
+    }
+
+    > box.title {
+      margin-top: $space-size;
+      margin-bottom: $space-size;
+      border-spacing: $space-size / 2;
+    }
+  }
 
   @at-root %row_activatable, &.activatable {
     transition: $transition;
@@ -3185,6 +3514,33 @@ row {
       image,
       label { color: $text-disabled; }
     }
+  }
+}
+
+columnview {
+  // move padding to child cells
+  > listview > row {
+    padding: 0;
+
+    // align horizontal sizing with header buttons
+    > cell {
+      padding: $space-size + 2px $space-size;
+
+      &:not(:first-child) {
+        border-left: 1px solid transparent;
+      }
+    }
+  }
+
+  // make column separators visible when :show-column-separators is true
+  &.column-separators > listview > row > cell {
+    border-left-color: $border;
+  }
+
+  // shrink vertically for .data-table
+  &.data-table > listview > row > cell {
+    padding-top: 2px;
+    padding-bottom: 2px;
   }
 }
 
@@ -3254,6 +3610,8 @@ expander {
   &:dir(rtl) { -gtk-icon-source: -gtk-icontheme('pan-end-symbolic-rtl'); }
 
   &:hover, &:active { color: $text; }
+
+  &:checked { -gtk-icon-source: -gtk-icontheme('pan-down-symbolic'); }
 
   &:disabled { color: $text-secondary-disabled; }
 }
@@ -3457,8 +3815,26 @@ filechooserbutton:drop(active) {
   border-style: none;
   background-color: $base-alt;
 
+  &:not(separator) {
+    &:dir(ltr),
+    &.left,
+    &.left:dir(rtl) {
+      border-right: 1px solid $border;
+      border-left-style: none;
+    }
+
+    &:dir(rtl),
+    &.right {
+      border-left: 1px solid $border;
+      border-right-style: none;
+    }
+  }
+
   listview.view,
-  list { background-color: transparent; }
+  list {
+    background-color: transparent;
+    color: inherit;
+  }
 
   paned & { &.left, &.right, &.left:dir(rtl), &:dir(rtl), &:dir(ltr), & { border-style: none; }}
 }
@@ -3466,6 +3842,10 @@ filechooserbutton:drop(active) {
 stacksidebar {
   + separator.vertical,
   separator.horizontal { @extend %hide_separators; }
+
+  leaflet.unfolded > box > &.sidebar {
+    border: none;
+  }
 
   list {
     padding: $space-size;
@@ -3511,14 +3891,24 @@ separator.sidebar {
  **********************/
 
 .navigation-sidebar {
-  padding: $space-size / 2 0; //only vertical padding. horizontal row size would clip
+  padding: $space-size * 0.75 0; //only vertical padding. horizontal row size would clip
   border-right: none;
+
+  &, &.view {
+    background-color: transparent;
+    color: inherit;
+  }
+
+  &.background {
+    background-color: $base-alt;
+    color: $text-secondary;
+  }
 
   > row {
     min-height: $small-size;
     padding: $space-size;
     border-radius: $corner-radius;
-    margin: $space-size / 2 $space-size;
+    margin: $space-size / 4 $space-size;
 
     &:hover,
     &:focus-visible:focus-within {
