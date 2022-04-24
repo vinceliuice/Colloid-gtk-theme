@@ -890,9 +890,11 @@ combobox {
 
   decoration { transition: none; } // workaround for menuitem selection
 
-  button.combo cellview {
-    &:dir(ltr) { margin-left: 8px - ($medium-size - 16px) / 2; }
-    &:dir(rtl) { margin-right: 8px - ($medium-size - 16px) / 2; }
+  button.combo {
+    cellview {
+      &:dir(ltr) { margin-left: 8px - ($medium-size - 16px) / 2; }
+      &:dir(rtl) { margin-right: 8px - ($medium-size - 16px) / 2; }
+    }
   }
 
   &.linked {
@@ -937,6 +939,10 @@ combobox {
 // the combo is a composite widget so the way we do button linking doesn't
 // work, special case needed. See
 // https://bugzilla.gnome.org/show_bug.cgi?id=733979
+
+combobox > .linked > button.combo {
+  padding: ($medium-size - 24px) / 2 ($medium-size - 16px) / 2; // reset
+}
 
 .linked:not(.vertical) > combobox {
   &:not(:first-child) > box > button.combo {
