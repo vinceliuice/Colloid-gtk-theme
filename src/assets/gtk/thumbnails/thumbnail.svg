@@ -6,7 +6,7 @@
    viewBox="0 0 52.917 39.688"
    id="svg202"
    sodipodi:docname="thumbnail.svg"
-   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04, custom)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -22,14 +22,14 @@
      inkscape:pageopacity="0.0"
      inkscape:pagecheckerboard="0"
      showgrid="false"
-     inkscape:zoom="1.6876282"
-     inkscape:cx="138.65613"
-     inkscape:cy="85.030577"
-     inkscape:window-width="1104"
-     inkscape:window-height="547"
-     inkscape:window-x="277"
-     inkscape:window-y="105"
-     inkscape:window-maximized="0"
+     inkscape:zoom="0.8438141"
+     inkscape:cx="181.31956"
+     inkscape:cy="114.36168"
+     inkscape:window-width="1920"
+     inkscape:window-height="1012"
+     inkscape:window-x="0"
+     inkscape:window-y="32"
+     inkscape:window-maximized="1"
      inkscape:current-layer="svg202">
     <inkscape:grid
        type="xygrid"
@@ -75,7 +75,7 @@
        style="stroke-width:0.264587" />
   </g>
   <g
-     id="thumbnail-dark"
+     id="thumbnail-Dark"
      transform="translate(-3.1752195,-0.00240006)">
     <rect
        x="12.171"

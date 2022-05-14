@@ -6,9 +6,9 @@ OPTIPNG="/usr/bin/optipng"
 INDEX="assets.txt"
 
 for i in `cat $INDEX`; do
-  for color in '' '-light'; do
-    for theme in '' '-nord' '-dracula'; do
-      for window in '' '-normal'; do
+  for color in '' '-Light'; do
+    for theme in '' '-Nord' '-Dracula'; do
+      for window in '' '-Normal'; do
         for screen in '' '-hdpi' '-xhdpi'; do
           ASSETS_DIR="assets${color}${theme}${window}${screen}"
           SRC_FILE="assets${color}${theme}${window}.svg"

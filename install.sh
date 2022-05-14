@@ -23,9 +23,9 @@ fi
 SASSC_OPT="-M -t expanded"
 
 THEME_NAME=Colloid
-THEME_VARIANTS=('' '-purple' '-pink' '-red' '-orange' '-yellow' '-green' '-teal' '-grey')
-COLOR_VARIANTS=('' '-light' '-dark')
-SIZE_VARIANTS=('' '-compact')
+THEME_VARIANTS=('' '-Purple' '-Pink' '-Red' '-Orange' '-Yellow' '-Green' '-Teal' '-Grey')
+COLOR_VARIANTS=('' '-Light' '-Dark')
+SIZE_VARIANTS=('' '-Compact')
 
 if [[ "$(command -v gnome-shell)" ]]; then
   gnome-shell --version
@@ -53,9 +53,9 @@ OPTIONS:
 
   -t, --theme VARIANT     Specify theme color variant(s) [default|purple|pink|red|orange|yellow|green|teal|grey|all] (Default: blue)
 
-  -c, --color VARIANT     Specify color variant(s) [standard|light|dark] (Default: All variants)s)
+  -c, --color VARIANT     Specify color variant(s) [standard|light|dark] (Default: All variants))
 
-  -s, --size VARIANT      Specify size variant [standard|compact] (Default: standard variants)
+  -s, --size VARIANT      Specify size variant [standard|compact] (Default: standard variant)
 
   --tweaks                Specify versions for tweaks [nord|dracula|black|rimless|normal] (only nord and dracula can not mix use with!)
                           1. nord:     Nord ColorScheme version
@@ -77,8 +77,8 @@ install() {
   local ctype="${6}"
   local window="${7}"
 
-  [[ "${color}" == '-light' ]] && local ELSE_LIGHT="${color}"
-  [[ "${color}" == '-dark' ]] && local ELSE_DARK="${color}"
+  [[ "${color}" == '-Light' ]] && local ELSE_LIGHT="${color}"
+  [[ "${color}" == '-Dark' ]] && local ELSE_DARK="${color}"
 
   local THEME_DIR="${1}/${2}${3}${4}${5}${6}"
 
@@ -127,14 +127,14 @@ install() {
   cp -r "${SRC_DIR}/assets/gtk/scalable"                                                     "${THEME_DIR}/gtk-3.0/assets"
   cp -r "${SRC_DIR}/assets/gtk/thumbnails/thumbnail${theme}${ctype}${ELSE_DARK:-}.png"       "${THEME_DIR}/gtk-3.0/thumbnail.png"
   sassc $SASSC_OPT "${SRC_DIR}/main/gtk-3.0/gtk${color}.scss"                                "${THEME_DIR}/gtk-3.0/gtk.css"
-  sassc $SASSC_OPT "${SRC_DIR}/main/gtk-3.0/gtk-dark.scss"                                   "${THEME_DIR}/gtk-3.0/gtk-dark.css"
+  sassc $SASSC_OPT "${SRC_DIR}/main/gtk-3.0/gtk-Dark.scss"                                   "${THEME_DIR}/gtk-3.0/gtk-dark.css"
 
   mkdir -p                                                                                   "${THEME_DIR}/gtk-4.0"
   cp -r "${SRC_DIR}/assets/gtk/assets${theme}${ctype}"                                       "${THEME_DIR}/gtk-4.0/assets"
   cp -r "${SRC_DIR}/assets/gtk/scalable"                                                     "${THEME_DIR}/gtk-4.0/assets"
   cp -r "${SRC_DIR}/assets/gtk/thumbnails/thumbnail${theme}${ctype}${ELSE_DARK:-}.png"       "${THEME_DIR}/gtk-4.0/thumbnail.png"
   sassc $SASSC_OPT "${SRC_DIR}/main/gtk-4.0/gtk${color}.scss"                                "${THEME_DIR}/gtk-4.0/gtk.css"
-  sassc $SASSC_OPT "${SRC_DIR}/main/gtk-4.0/gtk-dark.scss"                                   "${THEME_DIR}/gtk-4.0/gtk-dark.css"
+  sassc $SASSC_OPT "${SRC_DIR}/main/gtk-4.0/gtk-Dark.scss"                                   "${THEME_DIR}/gtk-4.0/gtk-dark.css"
 
   # link gtk4.0 for libadwaita
   mkdir -p                                                                                   "${HOME}/.config/gtk-4.0"
@@ -169,10 +169,10 @@ install() {
   sed -i "s/button_offset=6/button_offset=12/"                                               "${THEME_DIR}-xhdpi/xfwm4/themerc"
 
   mkdir -p                                                                                   "${THEME_DIR}/plank"
-  if [[ "$color" == '-light' ]]; then
-    cp -r "${SRC_DIR}/main/plank/theme-light${ctype}/"*                                      "${THEME_DIR}/plank"
+  if [[ "$color" == '-Light' ]]; then
+    cp -r "${SRC_DIR}/main/plank/theme-Light${ctype}/"*                                      "${THEME_DIR}/plank"
   else
-    cp -r "${SRC_DIR}/main/plank/theme-dark${ctype}/"*                                       "${THEME_DIR}/plank"
+    cp -r "${SRC_DIR}/main/plank/theme-Dark${ctype}/"*                                       "${THEME_DIR}/plank"
   fi
 }
 
@@ -307,13 +307,13 @@ while [[ $# -gt 0 ]]; do
         case "$variant" in
           nord)
             nord="true"
-            ctype="-nord"
+            ctype="-Nord"
             echo -e "Install Nord ColorScheme version! ..."
             shift
             ;;
           dracula)
             dracula="true"
-            ctype="-dracula"
+            ctype="-Dracula"
             echo -e "Install Dracula ColorScheme version! ..."
             shift
             ;;
@@ -329,7 +329,7 @@ while [[ $# -gt 0 ]]; do
             ;;
           normal)
             normal="true"
-            window="-normal"
+            window="-Normal"
             echo -e "Install Normal window button version! ..."
             shift
             ;;
@@ -391,8 +391,7 @@ install_package() {
   fi
 }
 
-sass_temp() {
-  cp -rf ${SRC_DIR}/sass/gnome-shell/_common.scss ${SRC_DIR}/sass/gnome-shell/_common-temp.scss
+tweaks_temp() {
   cp -rf ${SRC_DIR}/sass/_tweaks.scss ${SRC_DIR}/sass/_tweaks-temp.scss
 }
 
@@ -423,6 +422,8 @@ normal_winbutton() {
 }
 
 gnome_shell_version() {
+  cp -rf ${SRC_DIR}/sass/gnome-shell/_common.scss ${SRC_DIR}/sass/gnome-shell/_common-temp.scss
+
   sed -i "/\widgets/s/40-0/${GS_VERSION}/" ${SRC_DIR}/sass/gnome-shell/_common-temp.scss
 
   if [[ "${GS_VERSION}" == '3-28' ]]; then
@@ -433,31 +434,32 @@ gnome_shell_version() {
 theme_color() {
   if [[ "$theme" != '' ]]; then
     case "$theme" in
-      -purple)
+      -Purple)
         theme_color='purple'
         ;;
-      -pink)
+      -Pink)
         theme_color='pink'
         ;;
-      -red)
+      -Red)
         theme_color='red'
         ;;
-      -orange)
+      -Orange)
         theme_color='orange'
         ;;
-      -yellow)
+      -Yellow)
         theme_color='yellow'
         ;;
-      -green)
+      -Green)
         theme_color='green'
         ;;
-      -teal)
+      -Teal)
         theme_color='teal'
         ;;
-      -grey)
+      -Grey)
         theme_color='grey'
         ;;
     esac
+    tweaks_temp
     sed -i "/\$theme:/s/default/${theme_color}/" ${SRC_DIR}/sass/_tweaks-temp.scss
   fi
 }
@@ -507,7 +509,9 @@ install_theme() {
   fi
 }
 
-install_package && sass_temp && gnome_shell_version && install_theme
+./clean-old-theme.sh
+
+install_package && tweaks_temp && gnome_shell_version && install_theme
 
 echo
 echo Done.

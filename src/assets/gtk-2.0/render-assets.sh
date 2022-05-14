@@ -9,7 +9,7 @@ INDEX_THEME="assets-theme.txt"
 
 ./make-assets.sh
 
-for color in '' '-dark'; do
+for color in '' '-Dark'; do
     ASSETS_DIR="assets-common${color}"
     SRC_FILE="assets-common${color}.svg"
 
@@ -36,9 +36,9 @@ for color in '' '-dark'; do
     done
 done
 
-for theme in '' '-purple' '-pink' '-red' '-orange' '-yellow' '-green' '-teal' '-grey'; do
-  for color in '' '-dark'; do
-    for type in '' '-nord' '-dracula'; do
+for theme in '' '-Purple' '-Pink' '-Red' '-Orange' '-Yellow' '-Green' '-Teal' '-Grey'; do
+  for color in '' '-Dark'; do
+    for type in '' '-Nord' '-Dracula'; do
       ASSETS_DIR="assets${theme}${color}${type}"
       SRC_FILE="assets${theme}${color}${type}.svg"
 
@@ -67,9 +67,9 @@ for theme in '' '-purple' '-pink' '-red' '-orange' '-yellow' '-green' '-teal' '-
   done
 done
 
-for theme in '' '-purple' '-pink' '-red' '-orange' '-yellow' '-green' '-teal' '-grey'; do
-  for color in '' '-dark'; do
-    for type in '' '-nord' '-dracula'; do
+for theme in '' '-Purple' '-Pink' '-Red' '-Orange' '-Yellow' '-Green' '-Teal' '-Grey'; do
+  for color in '' '-Dark'; do
+    for type in '' '-Nord' '-Dracula'; do
       if [[ "${theme}" == '' && "${type}" == '' ]]; then
         echo "keep assets${color}.svg file..."
       else

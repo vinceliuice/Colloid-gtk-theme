@@ -1866,7 +1866,7 @@ popover.background {
     // &:checked { color: $primary; }
   }
 
-  separator { margin: 4px 0; }
+  separator { margin: $space-size / 2 0; }
 
   list separator { margin: 0; }
 }

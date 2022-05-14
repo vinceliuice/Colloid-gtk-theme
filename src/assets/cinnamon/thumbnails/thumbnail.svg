@@ -5,7 +5,7 @@
    version="1.1"
    id="svg9100"
    sodipodi:docname="thumbnail.svg"
-   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04, custom)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -33,13 +33,13 @@
      guidetolerance="10"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:window-width="1440"
-     inkscape:window-height="742"
+     inkscape:window-width="1920"
+     inkscape:window-height="1012"
      id="namedview9102"
      showgrid="false"
-     inkscape:zoom="5.6568544"
-     inkscape:cx="138.7697"
-     inkscape:cy="6.8942909"
+     inkscape:zoom="1.4142136"
+     inkscape:cx="178.1909"
+     inkscape:cy="50.558133"
      inkscape:window-x="0"
      inkscape:window-y="32"
      inkscape:window-maximized="1"
@@ -841,7 +841,7 @@
     </g>
   </g>
   <g
-     id="thumbnail-dark">
+     id="thumbnail-Dark">
     <rect
        style="opacity:1;fill:none;fill-opacity:1;stroke-width:1.94666;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:2"
        id="rect1194"
@@ -1457,7 +1457,7 @@
     </g>
   </g>
   <g
-     id="thumbnail-light"
+     id="thumbnail-Light"
      transform="translate(0,-100.40286)">
     <rect
        style="opacity:1;fill:none;fill-opacity:1;stroke-width:1.94666;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:2"

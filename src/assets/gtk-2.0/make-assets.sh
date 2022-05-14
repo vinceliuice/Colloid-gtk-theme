@@ -1,102 +1,102 @@
 #! /usr/bin/env bash
 
-for theme in '' '-purple' '-pink' '-red' '-orange' '-yellow' '-green' '-teal' '-grey'; do
-  for color in '' '-dark'; do
-    for type in '' '-nord' '-dracula'; do
+for theme in '' '-Purple' '-Pink' '-Red' '-Orange' '-Yellow' '-Green' '-Teal' '-Grey'; do
+  for color in '' '-Dark'; do
+    for type in '' '-Nord' '-Dracula'; do
       if [[ "$color" == '' ]]; then
         case "$theme" in
           '')
             theme_color='#3c84f7'
             ;;
-          -purple)
+          -Purple)
             theme_color='#AB47BC'
             ;;
-          -pink)
+          -Pink)
             theme_color='#EC407A'
             ;;
-          -red)
+          -Red)
             theme_color='#E53935'
             ;;
-          -orange)
+          -Orange)
             theme_color='#F57C00'
             ;;
-          -yellow)
+          -Yellow)
             theme_color='#FBC02D'
             ;;
-          -green)
+          -Green)
             theme_color='#4CAF50'
             ;;
-          -teal)
+          -Teal)
             theme_color='#009688'
             ;;
-          -grey)
+          -Grey)
             theme_color='#464646'
             ;;
         esac
 
-        if [[ "$type" == '-nord' ]]; then
+        if [[ "$type" == '-Nord' ]]; then
           background_color='#f8fafc'
 
           case "$theme" in
             '')
               theme_color='#5e81ac'
               ;;
-            -purple)
+            -Purple)
               theme_color='#b57daa'
               ;;
-            -pink)
+            -Pink)
               theme_color='#cd7092'
               ;;
-            -red)
+            -Red)
               theme_color='#c35b65'
               ;;
-            -orange)
+            -Orange)
               theme_color='#d0846c'
               ;;
-            -yellow)
+            -Yellow)
               theme_color='#e4b558'
               ;;
-            -green)
+            -Green)
               theme_color='#82ac5d'
               ;;
-            -teal)
+            -Teal)
               theme_color='#83b9b8'
               ;;
-            -grey)
+            -Grey)
               theme_color='#3a4150'
               ;;
           esac
         fi
 
-        if [[ "$type" == '-dracula' ]]; then
+        if [[ "$type" == '-Dracula' ]]; then
           background_color='#f9f9fb'
 
           case "$theme" in
             '')
               theme_color='#a679ec'
               ;;
-            -purple)
+            -Purple)
               theme_color='#a679ec'
               ;;
-            -pink)
+            -Pink)
               theme_color='#f04cab'
               ;;
-            -red)
+            -Red)
               theme_color='#f44d4d'
               ;;
-            -orange)
+            -Orange)
               theme_color='#f8a854'
               ;;
-            -yellow)
+            -Yellow)
               theme_color='#e8f467'
               ;;
-            -green)
+            -Green)
               theme_color='#4be772'
               ;;
-            -teal)
+            -Teal)
               theme_color='#20eed9'
               ;;
-            -grey)
+            -Grey)
               theme_color='#3c3f51'
               ;;
           esac
@@ -106,95 +106,95 @@ for theme in '' '-purple' '-pink' '-red' '-orange' '-yellow' '-green' '-teal' '-
           '')
             theme_color='#5b9bf8'
             ;;
-          -purple)
+          -Purple)
             theme_color='#BA68C8'
             ;;
-          -pink)
+          -Pink)
             theme_color='#F06292'
             ;;
-          -red)
+          -Red)
             theme_color='#F44336'
             ;;
-          -orange)
+          -Orange)
             theme_color='#FB8C00'
             ;;
-          -yellow)
+          -Yellow)
             theme_color='#FFD600'
             ;;
-          -green)
+          -Green)
             theme_color='#66BB6A'
             ;;
-          -teal)
+          -Teal)
             theme_color='#4DB6AC'
             ;;
-          -grey)
+          -Grey)
             theme_color='#DDDDDD'
             ;;
         esac
 
-        if [[ "$type" == '-nord' ]]; then
+        if [[ "$type" == '-Nord' ]]; then
           background_color='#242932'
 
           case "$theme" in
             '')
               theme_color='#89a3c2'
               ;;
-            -purple)
+            -Purple)
               theme_color='#c89dbf'
               ;;
-            -pink)
+            -Pink)
               theme_color='#dc98b1'
               ;;
-            -red)
+            -Red)
               theme_color='#d4878f'
               ;;
-            -orange)
+            -Orange)
               theme_color='#dca493'
               ;;
-            -yellow)
+            -Yellow)
               theme_color='#eac985'
               ;;
-            -green)
+            -Green)
               theme_color='#a0c082'
               ;;
-            -teal)
+            -Teal)
               theme_color='#83b9b8'
               ;;
-            -grey)
+            -Grey)
               theme_color='#d9dce3'
               ;;
           esac
         fi
 
-        if [[ "$type" == '-dracula' ]]; then
+        if [[ "$type" == '-Dracula' ]]; then
           background_color='#242632'
 
           case "$theme" in
             '')
               theme_color='#bd93f9'
               ;;
-            -purple)
+            -Purple)
               theme_color='#bd93f9'
               ;;
-            -pink)
+            -Pink)
               theme_color='#ff79c6'
               ;;
-            -red)
+            -Red)
               theme_color='#ff5555'
               ;;
-            -orange)
+            -Orange)
               theme_color='#ffb86c'
               ;;
-            -yellow)
+            -Yellow)
               theme_color='#f1fa8c'
               ;;
-            -green)
+            -Green)
               theme_color='#50fa7b'
               ;;
-            -teal)
+            -Teal)
               theme_color='#50fae9'
               ;;
-            -grey)
+            -Grey)
               theme_color='#d9dae3'
               ;;
           esac
