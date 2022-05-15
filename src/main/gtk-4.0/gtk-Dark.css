@@ -1556,6 +1556,10 @@ searchbar > revealer > box {
   box-shadow: none;
 }
 
+searchbar > revealer > box entry {
+  margin: 0;
+}
+
 /***************
  * Header bars *
  ***************/
@@ -2803,7 +2807,7 @@ switch > slider {
   transition: all 75ms cubic-bezier(0, 0, 0.2, 1);
   min-width: 20px;
   min-height: 20px;
-  margin: 1px;
+  margin: 0;
   border-radius: 9999px;
   outline: none;
   box-shadow: none;

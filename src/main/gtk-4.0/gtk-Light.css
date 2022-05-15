@@ -1556,6 +1556,10 @@ searchbar > revealer > box {
   box-shadow: none;
 }
 
+searchbar > revealer > box entry {
+  margin: 0;
+}
+
 /***************
  * Header bars *
  ***************/

@@ -2700,7 +2700,7 @@ switch {
     transition: all $duration $ease-out;
     min-width: $small-size - 4px;
     min-height: $small-size - 4px;
-    margin: 1px;
+    margin: if($variant == 'light', 1px, 0);
     border-radius: $circular-radius;
     outline: none;
     box-shadow: none;

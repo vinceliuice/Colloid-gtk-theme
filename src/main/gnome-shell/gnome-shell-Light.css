@@ -765,9 +765,9 @@ StWidget.focused .app-well-app-running-dot {
 }
 
 .modal-dialog-linked-button {
-  min-height: 32px;
-  padding: 6px;
-  margin: 3px;
+  min-height: 32px !important;
+  padding: 6px !important;
+  margin: 3px !important;
   border: none !important;
   border-radius: 6px;
 }
@@ -1685,12 +1685,32 @@ StEntry StLabel.hint-text, .popup-menu .search-entry StLabel.hint-text {
   padding: 0;
 }
 
+.message-list:ltr {
+  margin-left: 0;
+  margin-right: 0;
+  padding-right: 0;
+  border-right-width: 0;
+}
+
+.message-list:rtl {
+  margin-right: 0;
+  margin-left: 0;
+  padding-left: 0;
+  border-left-width: 0;
+}
+
 .message-list .message-list-placeholder {
   spacing: 12px;
 }
 
+.message-list .message-list-placeholder > StIcon {
+  icon-size: 48px;
+  margin-bottom: 12px;
+  -st-icon-style: symbolic;
+}
+
 .message-list-sections {
-  margin: 0 16px;
+  margin: 0 8px 0 16px;
 }
 
 .message-list-section,
@@ -1733,7 +1753,7 @@ StEntry StLabel.hint-text, .popup-menu .search-entry StLabel.hint-text {
   color: rgba(0, 0, 0, 0.38);
   font-size: 9pt;
   text-align: right;
-  padding-bottom: 0.13em;
+  padding-bottom: 0.12em;
 }
 
 .message .message-secondary-bin > .event-time:ltr {
@@ -1750,7 +1770,8 @@ StEntry StLabel.hint-text, .popup-menu .search-entry StLabel.hint-text {
 }
 
 .message .message-content {
-  padding: 14px;
+  padding: 9px;
+  margin-bottom: 8px;
   spacing: 4px;
   color: rgba(0, 0, 0, 0.38);
 }
@@ -1811,7 +1832,8 @@ StEntry StLabel.hint-text, .popup-menu .search-entry StLabel.hint-text {
 }
 
 .media-message-cover-icon {
-  icon-size: 32px !important;
+  icon-size: 48px;
+  border-radius: 6px;
 }
 
 .media-message-cover-icon.fallback {

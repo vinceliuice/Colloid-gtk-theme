@@ -44,9 +44,9 @@
   @extend %theme_dialogs;
 
   &-linked-button {
-    min-height: $item_size;
-    padding: $base_padding;
-    margin: $base_padding / 2;
+    min-height: $item_size !important;
+    padding: $base_padding !important;
+    margin: $base_padding / 2 !important;
     border: none !important;
     border-radius: $base_radius;
     @extend %flat_button;
