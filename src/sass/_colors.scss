@@ -150,7 +150,7 @@ $assets-color:                          $primary;
 $frame:                                 if($variant == 'light', rgba($black, 0.12), rgba($black, 0.20));
 $border:                                if($variant == 'light', rgba($black, 0.12), rgba($white, 0.12));
 $window-border:                         if($variant == 'light', rgba($black, 0.12), rgba($black, 0.75));
-$solid-border:                          if($variant == 'light', darken($background, 12%), lighten($background, 12%));
+$solid-border:                          if($variant == 'light', mix(black, $base, 12%), mix(white, $base, 12%));
 $border-alt:                            rgba($black, 0.16); // darker border color for Chrome and Firefox
 
 //

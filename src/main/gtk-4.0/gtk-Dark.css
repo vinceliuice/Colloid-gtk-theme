@@ -1923,8 +1923,8 @@ pathbar > button.slider-button {
  **************/
 columnview.view,
 treeview.view {
-  border-left-color: #4b4b4b;
-  border-top-color: #4b4b4b;
+  border-left-color: #454545;
+  border-top-color: #454545;
 }
 
 columnview.view:hover, columnview.view:selected,
@@ -4355,16 +4355,17 @@ paned > separator {
   -gtk-icon-source: none;
   border-style: none;
   background-color: transparent;
-  background-image: image(#4b4b4b);
+  background-image: image(#454545);
   background-size: 1px 1px;
   background-clip: content-box;
+  box-shadow: none;
 }
 
 paned > separator.wide {
   min-width: 6px;
   min-height: 6px;
   background-color: #2C2C2C;
-  background-image: image(#4b4b4b), image(#4b4b4b);
+  background-image: image(#454545), image(#454545);
   background-size: 1px 1px, 1px 1px;
 }
 
@@ -4660,7 +4661,7 @@ window.csd.dialog.message {
   padding: 2px;
   border-radius: 0;
   background-color: #242424;
-  border: 1px solid #4b4b4b;
+  border: 1px solid #454545;
 }
 
 .solid-csd window.csd:backdrop {

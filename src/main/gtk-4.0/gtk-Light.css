@@ -4366,6 +4366,7 @@ paned > separator {
   background-image: image(#e0e0e0);
   background-size: 1px 1px;
   background-clip: content-box;
+  box-shadow: none;
 }
 
 paned > separator.wide {

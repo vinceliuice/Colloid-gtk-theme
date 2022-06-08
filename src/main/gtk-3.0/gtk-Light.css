@@ -1724,7 +1724,6 @@ headerbar.windowhandle viewswitchertitle > squeezer > viewswitcher > box.horizon
 treeview.view {
   border-left-color: rgba(0, 0, 0, 0.26);
   border-top-color: rgba(0, 0, 0, 0.12);
-  padding: 3px;
 }
 
 * {

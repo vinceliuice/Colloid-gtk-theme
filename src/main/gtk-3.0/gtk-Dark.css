@@ -1724,7 +1724,6 @@ headerbar.windowhandle viewswitchertitle > squeezer > viewswitcher > box.horizon
 treeview.view {
   border-left-color: rgba(255, 255, 255, 0.3);
   border-top-color: rgba(255, 255, 255, 0.12);
-  padding: 3px;
 }
 
 * {
@@ -1948,7 +1947,7 @@ menu,
   background-color: #3C3C3C;
   background-clip: border-box;
   border-radius: 12px;
-  border: 1px solid #4b4b4b;
+  border: 1px solid #454545;
 }
 
 .csd menu, .csd .menu, .csd .context-menu {
@@ -4089,7 +4088,7 @@ messagedialog.csd decoration {
   border-radius: 0;
   box-shadow: none;
   background-color: #242424;
-  border: 1px solid #4b4b4b;
+  border: 1px solid #454545;
 }
 
 .solid-csd decoration:backdrop {
@@ -6007,7 +6006,7 @@ window.background.chromium {
 
 window.background.chromium entry,
 window.background.chromium > button {
-  border: 1px solid #4b4b4b;
+  border: 1px solid #454545;
 }
 
 window.background.chromium > button {
@@ -6070,7 +6069,7 @@ tooltip.background.chromium {
 }
 
 #MozillaGtkWidget > widget > separator {
-  color: #4b4b4b;
+  color: #454545;
 }
 
 #MozillaGtkWidget > widget > scrollbar {
@@ -6078,12 +6077,12 @@ tooltip.background.chromium {
 }
 
 #MozillaGtkWidget > widget > frame > border {
-  border-color: #4b4b4b;
+  border-color: #454545;
 }
 
 #MozillaGtkWidget > widget > entry,
 #MozillaGtkWidget > widget > button > button {
-  border: 1px solid #4b4b4b;
+  border: 1px solid #454545;
   border-radius: 6px;
   box-shadow: none;
 }
@@ -6159,11 +6158,11 @@ tooltip.background.chromium {
 }
 
 #MozillaGtkWidget > widget > frame {
-  color: #4b4b4b;
+  color: #454545;
 }
 
 #MozillaGtkWidget menu > separator {
-  color: #4b4b4b;
+  color: #454545;
 }
 
 window.background:not(.csd) > window > menu menuitem {
