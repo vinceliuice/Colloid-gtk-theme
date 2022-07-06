@@ -757,14 +757,15 @@ window.background.csd {
  ************************/
 
 tabbox { // Gnome 40.0
-  background-color: $background;
-  box-shadow: inset 0 -1px $divider;
-  padding: ($space-size / 2) ($space-size / 2) 0;
+  background-color: $fill;
+  border-radius: 0;
+  margin: 0;
+  padding: $space-size / 2 $space-size;
+  border-bottom: 1px solid $border;
+  background-clip: border-box;
 
   > tab {
     @extend %tabs_tab;
-    border-radius: $corner-radius $corner-radius 0 0;
-    border-bottom: none;
 
     // close button
     button {

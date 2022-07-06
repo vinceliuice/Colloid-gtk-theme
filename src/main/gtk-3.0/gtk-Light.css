@@ -4933,14 +4933,12 @@ window.background.csd scrolledwindow.contacts-contact-form {
  * Epiphany (Gnome Web) *
  ************************/
 tabbox {
-  background-color: #FFFFFF;
-  box-shadow: inset 0 -1px rgba(0, 0, 0, 0.12);
-  padding: 3px 3px 0;
-}
-
-tabbox > tab {
-  border-radius: 6px 6px 0 0;
-  border-bottom: none;
+  background-color: rgba(0, 0, 0, 0.04);
+  border-radius: 0;
+  margin: 0;
+  padding: 3px 6px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  background-clip: border-box;
 }
 
 tabbox > tab button {
