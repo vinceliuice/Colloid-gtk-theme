@@ -4109,6 +4109,7 @@ infobar {
     &:hover > revealer > box,
     &:backdrop > revealer > box {
       background-color: $base;
+      color: $text;
 
       button {
         &, &.text-button:not(:disabled) { color: $primary; }
