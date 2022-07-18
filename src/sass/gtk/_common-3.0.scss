@@ -3677,7 +3677,7 @@ decoration {
     box-shadow: $shadow-z16, 0 0 0 1px $window-border, 0 0 36px transparent;
 
     @if $variant == 'dark' {
-      .csd & {
+      .background.csd & {
         border: 1px solid highlight($background);
         background-clip: border-box;
       }

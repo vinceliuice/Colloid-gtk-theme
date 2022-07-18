@@ -121,8 +121,9 @@ tooltip.background.chromium { background-color: rgba($tooltip, 1); }
 /***********
  * Firefox *
  ***********/
-
 #MozillaGtkWidget {
+  decoration { border: none; }
+
   &.background headerbar.titlebar.default-decoration button.titlebutton {
     @extend %firefox_window_button;
   }

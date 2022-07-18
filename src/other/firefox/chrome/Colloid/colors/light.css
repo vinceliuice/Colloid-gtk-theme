@@ -1,0 +1,114 @@
+@namespace xul url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+/* Variables that start with --gnome- are added by me and are assigned
+ * to elements somewhere in this code. The rest of the variables are
+ * built-in in Firefox, so you need to add an !important if you wanna
+ * override them. */
+
+:root {
+	/* Browser area before a page starts loading */
+	--gnome-browser-before-load-background: #F7F7F7;
+	
+	/* Accent */
+	--gnome-accent-bg: #5b9bf8;
+	--gnome-accent: #3c84f7;
+
+	/* Toolbars */
+	--gnome-toolbar-background: #f2f2f2;
+	--gnome-toolbar-color: rgb(46, 52, 54);
+	--gnome-toolbar-border-color: rgba(0, 0, 0, .15);
+	--gnome-toolbar-icon-fill: #2e3436;
+	--gnome-inactive-toolbar-background: #fafafa;
+	--gnome-inactive-toolbar-color: #d5d0cc;
+	--gnome-inactive-toolbar-border-color: #DCDCDC;
+	--gnome-inactive-toolbar-icon-fill: #929595;
+
+	/* Sidebar */
+	--gnome-sidebar-background: var(--gnome-toolbar-background);
+	--gnome-inactive-sidebar-background: var(--gnome-sidebar-background);
+
+	/* Menu */
+	--gnome-menu-background: #ffffff;
+	--gnome-menu-border-color: rgba(0, 0, 0, .14);
+	--gnome-menu-shadow: 0 1px 5px 1px rgba(0,0,0, .09), 0 2px 14px 3px rgba(0,0,0, .05);
+	--gnome-menu-button-hover-background: var(--gnome-button-background);
+	--gnome-menu-separator-color: rgba(0, 0, 0, 0.1);
+
+	/* Header bar */
+	--gnome-headerbar-background: #EBEBEB;
+	--gnome-headerbar-border-color: var(--gnome-toolbar-border-color);
+	--gnome-inactive-headerbar-background: var(--gnome-inactive-toolbar-background);
+	--gnome-inactive-headerbar-border-color: var(--gnome-inactive-toolbar-border-color);
+
+	/* Buttons */
+	--gnome-button-background: rgba(0, 0, 0, .08);
+	--gnome-button-hover-background: rgba(0, 0, 0, .12);
+	--gnome-button-active-background: rgba(0, 0, 0, .24);
+	--gnome-button-flat-hover-background: rgba(0, 0, 0, .056);
+	--gnome-button-flat-active-background: rgba(0, 0, 0, .128);
+	--gnome-button-suggested-action-background: var(--gnome-accent-bg);
+	--gnome-button-destructive-action-background: #e01b24;
+	
+	--gnome-button-close-background: var(--gnome-button-flat-hover-background);
+	--gnome-button-hover-close-background:var(--gnome-button-hover-background);
+	--gnome-button-active-close-background: var(--gnome-button-active-background);
+
+	/* TitleButtons */
+	--gnome-titlebutton-min-background: #fdbe04;
+	--gnome-titlebutton-max-background: #38c76a;
+	--gnome-titlebutton-close-background: #fd5f51;
+	--gnome-titlebutton-min-hover-background: #fdbe04;
+	--gnome-titlebutton-max-hover-background: #38c76a;
+	--gnome-titlebutton-close-hover-background: #fd5f51;
+	--gnome-titlebutton-min-active-background: #fdcd43;
+	--gnome-titlebutton-max-active-background: #6ad48e;
+	--gnome-titlebutton-close-active-background: #fb857c;
+
+	/* Entries */
+	--gnome-entry-background: rgba(0, 0, 0, .08);
+	--gnome-entry-color: #303030;
+	--gnome-inactive-entry-color: #303030;
+	--gnome-focused-urlbar-border-color: rgba(28, 113, 216, .5);
+
+	/* Switch */
+	--gnome-switch-background: rgba(0, 0, 0, .12);
+	--gnome-switch-slider-background: #ffffff;
+	--gnome-switch-active-background: var(--gnome-accent-bg);
+	--gnome-switch-active-slider-background: #ffffff;
+
+	/* Tabs */
+	--gnome-tabbar-tab-background: #eeeeee;
+	--gnome-tabbar-tab-border-color: var(--gnome-toolbar-border-color);
+	--gnome-tabbar-tab-hover-background: #dedede;
+	--gnome-tabbar-tab-active-background: #ffffff;
+	--gnome-tabbar-tab-active-background-contrast: #FAFAFA;
+	--gnome-tabbar-tab-active-hover-background: #fafafa;
+	--gnome-inactive-tabbar-tab-background: #EFEFEF;
+	--gnome-inactive-tabbar-tab-active-background: #FAFAFA;
+	--gnome-tab-button-background: rgba(255, 255, 255, .5);
+	--gnome-tab-button-hover-background: rgba(255, 255, 255, .6);
+	--gnome-tabbar-tab-identity-base-opacity: .1;
+}
+
+/* Private window colors */
+:root {
+	--gnome-private-accent: #272F42;
+	
+	/* Toolbars */
+	--gnome-private-toolbar-background: #EAF0F7;
+	--gnome-private-inactive-toolbar-background: var(--gnome-private-toolbar-background);
+	/* Menus */
+	--gnome-private-menu-background: #D7E3F0;
+	/* Header bar */
+	--gnome-private-headerbar-background: #D7E3F0;
+	--gnome-private-inactive-headerbar-background: var(--gnome-private-toolbar-background);
+
+	/* Text color for Firefox Logo in new private tab */
+	--gnome-private-wordmark: #20123A;
+
+	/* New private tab background */
+	--gnome-private-in-content-page-background: #EAF0F7;
+
+	/* Private browsing info box */
+	--gnome-private-text-primary-color: #15141A;
+}
