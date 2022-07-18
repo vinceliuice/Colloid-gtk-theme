@@ -53,6 +53,6 @@ Automatically install your host GTK+ theme as a Flatpak. Use this:
 - [pakitheme](https://github.com/refi64/pakitheme)
 
 ## Firefox theme
-[Intall Firefox theme](src/other/firefox)
+[Install Firefox theme](src/other/firefox)
 
 ![01](src/other/firefox/screenshot.png?raw=true)
