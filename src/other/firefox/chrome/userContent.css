@@ -1,7 +1,7 @@
-@import "theme/colors/light.css";
-@import "theme/colors/dark.css";
+@import "Colloid/colors/light.css";
+@import "Colloid/colors/dark.css";
 
-@import "theme/pages/newtab.css";
-@import "theme/pages/privatebrowsing.css";
+@import "Colloid/pages/newtab.css";
+@import "Colloid/pages/privatebrowsing.css";
 
-@import "theme/parts/video-player.css";
+@import "Colloid/parts/video-player.css";

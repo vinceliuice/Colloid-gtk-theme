@@ -1,6 +1,6 @@
 
 /* Import theme */
-@import "theme/gnome-theme.css";
+@import "Colloid/theme.css";
 
 /* Import a custom stylesheet
  * Everything you add in your customChrome.css file (it doesn't exist by
