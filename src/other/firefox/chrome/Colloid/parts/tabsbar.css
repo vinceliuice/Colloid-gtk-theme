@@ -28,9 +28,8 @@
 }
 
 tab > stack {
-	height: 24px !important;
-	min-height: 24px !important;
-	padding: 0 !important;
+	height: 32px !important;
+	min-height: 32px !important;
 }
 
 /* Remove hover effects on tab bar buttons */
@@ -78,7 +77,7 @@ tab > stack {
 
 #tabbrowser-tabs[movingtab=true] #tabbrowser-arrowscrollbox::after  {
 	bottom: unset;
-	top: 24px;
+	top: 32px;
 }
 
 /* Remove tab separators */
@@ -93,15 +92,10 @@ tab > stack {
 .tabbrowser-tab {
 	border: none !important;
 	padding-inline: 0 !important;
-	margin: 0 !important;
-	border-radius: 0 !important;
 	padding: 3px 2px 4px !important;
 }
 #TabsToolbar {
 	padding: 0 !important;
-}
-
-#TabsToolbar {
 	margin-right: -1px !important;
 }
 
@@ -203,7 +197,7 @@ tab {
 }
 
 .tab-icon-stack:is([soundplaying], [muted], [activemedia-blocked]) image {
-	 margin: auto !important;
+	margin: auto !important;
 }
 
 /* Always show the muted icon when poresent */
