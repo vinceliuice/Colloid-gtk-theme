@@ -14,7 +14,7 @@
 	--gnome-accent: #3c84f7;
 
 	/* Toolbars */
-	--gnome-toolbar-background: #f2f2f2;
+	--gnome-toolbar-background: #efefef;
 	--gnome-toolbar-color: rgb(46, 52, 54);
 	--gnome-toolbar-border-color: rgba(0, 0, 0, .15);
 	--gnome-toolbar-icon-fill: #2e3436;
@@ -29,15 +29,15 @@
 
 	/* Menu */
 	--gnome-menu-background: #ffffff;
-	--gnome-menu-border-color: rgba(0, 0, 0, .14);
+	--gnome-menu-border-color: rgba(0, 0, 0, .2);
 	--gnome-menu-shadow: 0 1px 5px 1px rgba(0,0,0, .09), 0 2px 14px 3px rgba(0,0,0, .05);
 	--gnome-menu-button-hover-background: var(--gnome-button-background);
 	--gnome-menu-separator-color: rgba(0, 0, 0, 0.1);
 
 	/* Header bar */
-	--gnome-headerbar-background: #EBEBEB;
+	--gnome-headerbar-background: #f2f2f2;
 	--gnome-headerbar-border-color: var(--gnome-toolbar-border-color);
-	--gnome-inactive-headerbar-background: var(--gnome-inactive-toolbar-background);
+	--gnome-inactive-headerbar-background: #fafafa;
 	--gnome-inactive-headerbar-border-color: var(--gnome-inactive-toolbar-border-color);
 
 	/* Buttons */
@@ -77,13 +77,13 @@
 	--gnome-switch-active-slider-background: #ffffff;
 
 	/* Tabs */
-	--gnome-tabbar-tab-background: #eeeeee;
+	--gnome-tabbar-tab-background: #efefef;
 	--gnome-tabbar-tab-border-color: var(--gnome-toolbar-border-color);
 	--gnome-tabbar-tab-hover-background: #dedede;
 	--gnome-tabbar-tab-active-background: #ffffff;
 	--gnome-tabbar-tab-active-background-contrast: #FAFAFA;
 	--gnome-tabbar-tab-active-hover-background: #fafafa;
-	--gnome-inactive-tabbar-tab-background: #EFEFEF;
+	--gnome-inactive-tabbar-tab-background: #f0f0f0;
 	--gnome-inactive-tabbar-tab-active-background: #FAFAFA;
 	--gnome-tab-button-background: rgba(255, 255, 255, .5);
 	--gnome-tab-button-hover-background: rgba(255, 255, 255, .6);

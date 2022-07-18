@@ -29,8 +29,8 @@
 
 /* Set theme version text in customization panel */
 #customization-footer::before {
-	background: url(../icon.svg) no-repeat;
+	background: url(icons/icon.svg) no-repeat;
 	background-size: contain;
-	content: "Firefox GNOME theme v102";
+	content: "Colloid firefox theme";
 	padding: 9px 9px 9px 50px;
 }
