@@ -57,6 +57,20 @@ button.close::before,
 	fill: var(--gnome-inactive-toolbar-icon-fill) !important;
 }
 
+.checkbox-check {
+	color: var(--gnome-inactive-toolbar-icon-fill) !important;
+	background-color: var(--gnome-toolbar-background) !important;
+	border: 1px solid var(--gnome-inactive-toolbar-icon-fill) !important;
+	border-radius: 3px !important;
+}
+
+.checkbox-check[checked] {
+	border-color: var(--gnome-accent) !important;
+	background-color: var(--gnome-accent) !important;
+	fill: white !important;
+	color: white !important;
+}
+
 /* Menu checkbox */
 menuitem[type="checkbox"] {
 	list-style-image: none !important;
@@ -136,32 +150,6 @@ menuitem[type="radio"][disabled="true"] .menu-iconic-icon {
 	list-style-image: url("../icons/pan-start-symbolic.svg") !important;
 }
 
-/* Popovers subview menu arrow */
-#identity-popup-mainView .subviewbutton-nav::after,
-.widget-overflow-list .subviewbutton-nav::after,
-.PanelUI-subView .subviewbutton-nav::after {
-	content: "" !important;
-	background: url("../icons/pan-end-symbolic.svg");
-	background-size: contain;
-	height: 16px;
-	width: 16px;
-	margin-top: -2px !important;
-}
-.protections-popup-category::after {
-	content: url("../icons/pan-start-symbolic.svg") !important;
-}
-.identity-popup-content-blocking-category::after {
-	content: url("../icons/pan-start-symbolic.svg") !important;
-}
-#identity-popup-security-expander .button-icon {
-	list-style-image: url("../icons/pan-start-symbolic.svg") !important;
-}
-
-/* Popovers subview back button */
-.subviewbutton-back {
-	list-style-image: url("../icons/pan-start-symbolic.svg") !important;
-}
-
 /* Scroll icons */
 #scrollbutton-up {
 	list-style-image: var(--scrollbutton-icon-name) !important;
@@ -174,6 +162,32 @@ arrowscrollbox {
 }
 arrowscrollbox[orient="horizontal"] {
 	--scrollbutton-icon-name: url("../icons/pan-start-symbolic.svg");
+}
+
+/* Popovers subview menu arrow */
+#identity-popup-mainView .subviewbutton-nav::after,
+.widget-overflow-list .subviewbutton-nav::after,
+.PanelUI-subView .subviewbutton-nav::after {
+	content: "" !important;
+	background: url("../icons/pan-end-symbolic.svg");
+	background-size: contain;
+	height: 16px;
+	width: 16px;
+	margin-top: -2px !important;
+}
+.protections-popup-category::after {
+	content: url("../icons/pan-end-symbolic.svg") !important;
+}
+.identity-popup-content-blocking-category::after {
+	content: url("../icons/pan-end-symbolic.svg") !important;
+}
+#identity-popup-security-expander .button-icon {
+	list-style-image: url("../icons/pan-end-symbolic.svg") !important;
+}
+
+/* Popovers subview back button */
+.subviewbutton-back {
+	list-style-image: url("../icons/pan-start-symbolic.svg") !important;
 }
 
 /* Sub menu arrow */
