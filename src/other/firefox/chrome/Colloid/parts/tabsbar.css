@@ -77,7 +77,7 @@ tab > stack {
 
 #tabbrowser-tabs[movingtab=true] #tabbrowser-arrowscrollbox::after  {
 	bottom: unset;
-	top: 32px;
+	top: 38px;
 }
 
 /* Remove tab separators */
