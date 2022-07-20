@@ -17,7 +17,7 @@ toolbarspring {
 	box-shadow: none !important;
 }
 #urlbar-background {
-	box-shadow: var(--gnome-entry-box-shadow) !important;
+	box-shadow: none !important;
 	border: 0 !important;
 	background: transparent !important;
 }
@@ -35,15 +35,21 @@ toolbarspring {
 
 /* URL bar results */
 .urlbarView {
-	background: transparent !important;
+	background: var(--gnome-menu-background) !important;
 	color: var(--gnome-toolbar-color) !important;
 	margin: 6px 0 0 0 !important;
 	width: 100% !important;
 	position: absolute !important;
-	box-shadow: var(--gnome-menu-shadow) !important;
+	box-shadow: var(--gnome-urlbarView-shadow) !important;
 	border-radius: 12px !important;
+	border: 0 !important;
 }
 
+@media (prefers-color-scheme: dark) {
+	.urlbarView {
+		border: 1px solid rgba(255, 255, 255, 0.1) !important;
+	}
+}
 /* Search bar result */
 #PopupSearchAutoComplete {
 	margin-top: 7px !important;
@@ -52,10 +58,11 @@ toolbarspring {
 .urlbarView-body-outer {
 	--item-padding-start: 0 !important;
 	--item-padding-end: 0 !important;
-	background: var(--gnome-menu-background) !important;
+	background: none !important;
 	overflow-x: auto;
 	padding: 2px 6px !important;
 	border-radius: 8px 8px 0 0 !important;
+	border: none !important;
 }
 
 .urlbarView-body-inner {
@@ -85,7 +92,7 @@ toolbarspring {
 /* Search engines buttons */
 .search-one-offs {
 	padding: 8px !important;
-	background: var(--gnome-menu-background) !important;
+	background: var(--gnome-entry-background) !important;
 	border-top: 1px solid var(--gnome-menu-separator-color) !important;
 	border-radius: 0 0 8px 8px !important;
 }

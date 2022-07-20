@@ -8,7 +8,7 @@
 	:root {
 		/* Browser area before a page starts loading */
 		--gnome-browser-before-load-background: #242424;
-		
+
 		/* Accent */
 		--gnome-accent-bg: #3584e4;
 		--gnome-accent: #78aeed;
@@ -30,7 +30,9 @@
 		/* Menus */
 		--gnome-menu-background: #383838;
 		--gnome-menu-border-color: rgba(0, 0, 0, .65);
-		--gnome-menu-shadow: 0 1px 5px 1px rgba(0,0,0, .09), 0 2px 14px 3px rgba(0,0,0, .05);
+		--gnome-menu-shadow: 0 1px 5px 1px rgba(0,0,0, .09),
+		                     0 2px 14px 3px rgba(0,0,0, .05),
+		                     inset 0 0 0 1px rgba(255, 255, 255, 0.1);
 		--gnome-menu-button-hover-background: var(--gnome-button-background);
 		--gnome-menu-separator-color: rgba(255, 255, 255, .1);
 
@@ -65,10 +67,13 @@
 		--gnome-titlebutton-close-active-background: #fb857c;
 
 		/* Entries */
-		--gnome-entry-background: rgba(255, 255, 255, .1);
+		--gnome-entry-background: rgba(255, 255, 255, .08);
 		--gnome-entry-color: #ffffff;
 		--gnome-inactive-entry-color: #d6d6d6;
 		--gnome-focused-urlbar-border-color: rgba(120, 174, 237, .5); /* Same as --gnome-accent but with opacity*/
+		--gnome-urlbarView-shadow: 0 1px 5px 1px rgba(0,0,0, .2),
+		                           0 2px 14px 3px rgba(0,0,0, .15),
+		                           0 0 0 1px rgba(0, 0, 0, 0.75);
 
 		/* Switch */
 		--gnome-switch-background: rgba(255, 255, 255, .15);
@@ -79,10 +84,10 @@
 		/* Tabs */
 		--gnome-tabbar-tab-background: #2c2c2c;
 		--gnome-tabbar-tab-border-color: var(--gnome-toolbar-border-color);
-		--gnome-tabbar-tab-hover-background: #303030;
-		--gnome-tabbar-tab-active-background: #383838;
+		--gnome-tabbar-tab-hover-background: #363636;
+		--gnome-tabbar-tab-active-background: #404040;
 		--gnome-tabbar-tab-active-background-contrast: #4F4F4F;
-		--gnome-tabbar-tab-active-hover-background: #424242;
+		--gnome-tabbar-tab-active-hover-background: #444444;
 		--gnome-inactive-tabbar-tab-background: #2c2c2c;
 		--gnome-inactive-tabbar-tab-active-background: #323232;
 		--gnome-tab-button-background: rgba(0, 0, 0, .5);

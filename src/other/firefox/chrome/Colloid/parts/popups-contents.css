@@ -78,7 +78,7 @@
 }
 #editBookmarkPanelBottomContent,
 #editBookmarkPanelRows vbox {
-		margin: 6px 0;
+	margin: 6px 0;
 
 }
 
@@ -144,8 +144,8 @@
 #permission-popup-mainView,
 #protections-popup-mainView,
 #identity-popup-mainView-panel-header {
-  max-width: calc(var(--popup-width) + (var(--gnome-menu-padding) * 2)) !important;
-  min-width: calc(var(--popup-width) + (var(--gnome-menu-padding) * 2)) !important;
+	max-width: calc(var(--popup-width) + (var(--gnome-menu-padding) * 2)) !important;
+	min-width: calc(var(--popup-width) + (var(--gnome-menu-padding) * 2)) !important;
 }
 
 /* Identity popup */
@@ -179,18 +179,18 @@
 	padding: 0 !important;
 }
 #permission-popup-mainView {
-  min-width: unset !important;
-  max-width: unset !important;
+	min-width: unset !important;
+	max-width: unset !important;
 }
 
 .permission-popup-permission-item:first-child, #permission-popup-storage-access-permission-list-header {
-    margin-top: 0 !important;
+	margin-top: 0 !important;
 }
 .permission-popup-permission-remove-button {
 	opacity: 1 !important;
 }
 .permission-popup-permission-state-label {
-    display: none !important;
+	display: none !important;
 }
 
 #permission-popup-permission-list-default-anchor:empty {
@@ -218,7 +218,7 @@
 
 /* Protections popup */
 .protections-popup-section,
-#protections-popup-not-blocking-section-header {	
+#protections-popup-not-blocking-section-header {
 	border: 0 !important;
 }
 #protections-popup-mainView-panel-header-section {
@@ -254,11 +254,11 @@
 }
 
 #messaging-system-message-container {
-    height: 120px !important;
+	height: 120px !important;
 	border: 0 !important;
 }
 #protections-popup #messaging-system-message-container[disabled] {
-    margin-bottom: -120px !important;
+	margin-bottom: -120px !important;
 }
 #protections-popup-message {
 	background: none !important;
@@ -313,7 +313,7 @@
 	opacity: 0.7;
 }
 
-#protections-popup-footer  {
+#protections-popup-footer {
 	display: flex;
 	justify-content: flex-start;
 	flex-wrap: wrap;
@@ -326,20 +326,20 @@
 	height: 32px !important;
 }
 #protections-popup-trackers-blocked-counter-box,
-#protections-popup-footer-protection-type-label  {
+#protections-popup-footer-protection-type-label {
 	margin: 0 !important;
 	margin-inline: 0 !important;
 }
 .protections-popup-description {
-    border-bottom: 0 !important;
+	border-bottom: 0 !important;
 }
 .protections-popup-description > description {
-    margin: 8px !important;
+	margin: 8px !important;
 }
 
 /* Feature recommendation notification, fix width */
 #contextual-feature-recommendation-notification {
-    width: auto !important;
+	width: auto !important;
 }
 
 /* Extensions sometimes assume a white background */

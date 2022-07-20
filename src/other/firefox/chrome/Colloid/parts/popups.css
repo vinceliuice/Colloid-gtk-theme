@@ -39,11 +39,15 @@ panel:not([remote]) {
 	--arrowpanel-background: var(--gnome-menu-background) !important;
 	--panel-item-hover-bgcolor: var(--gnome-menu-button-hover-background) !important;
 }
-panel  {
-	--arrowpanel-padding: 0 !important;
+panel {
+	--arrowpanel-padding: 1px !important;
 	--arrowpanel-border-color: var(--gnome-menu-border-color) !important;
 	--arrowpanel-border-radius: 12px !important;
 	--gnome-menu-padding: 6px;
+}
+panelview {
+	border-radius: 12px !important;
+	box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1) !important;
 }
 
 /* Padding rules */
@@ -81,7 +85,7 @@ panel  {
 .panel-subview-body > .panel-subview-body {
 	padding: 0 !important;
 }
-/* Padding with margign */
+/* Padding with margin */
 .subviewbutton.panel-subview-footer-button:not(#downloadsHistory) {
 	margin: var(--gnome-menu-padding) !important;
 }
@@ -106,9 +110,10 @@ panel  {
 /* Panel arrow */
 .panel-arrowcontent {
 	background: var(--arrowpanel-background) !important;
-	border: 1px solid var(--gnome-menu-border-color) !important;
+	border: 1px solid rgba(255, 255, 255, 0.1) !important;
 	border-radius: 12px !important;
 	color: var(--gnome-toolbar-color) !important;
+	box-shadow: 0 0 0 1px var(--gnome-menu-border-color)!important;
 }
 .panel-arrow {
 	fill: var(--arrowpanel-background) !important;
