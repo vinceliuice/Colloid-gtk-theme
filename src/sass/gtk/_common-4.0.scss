@@ -2124,6 +2124,7 @@ magnifier {
   min-height: $small-size;
   min-width: $small-size;
   padding: $space-size / 2 $space-size * 2;
+  margin: 0;
   border: none;
   outline: none;
   background-clip: padding-box;
@@ -2137,6 +2138,7 @@ magnifier {
     background-color: $fill;
     background-image: none;
     color: $text;
+    box-shadow: none;
   }
 
   &:disabled { color: $text-secondary-disabled; }
@@ -2145,7 +2147,7 @@ magnifier {
     transition: $transition;
     background-color: if($variant == 'light', rgba($base, 1), rgba(white, 0.15));
     color: $text;
-    box-shadow: 0 1px 3px rgba(black, 0.06);
+    box-shadow: 0 1px 3px rgba(black, 0.1);
     background-image: none;
 
     &:disabled { color: $text-disabled; }
@@ -2236,55 +2238,57 @@ notebook {
       }
     }
 
-    > tabs > arrow {
-      @extend %button-flat-simple;
+    > tabs {
+      > arrow {
+        @extend %button-flat-simple;
 
-      min-height: 16px;
-      min-width: 16px;
-      border-radius: $corner-radius;
-    }
-
-    tab {
-      @extend %tabs_tab;
-
-      // FIXME: The tab node doesn't have :drop(active), instead its child box has it.
-      > box {
-        transition: background-color $duration $ease-out;
-        margin: -$space-size -12px;
-        padding: $space-size 12px;
-
-        &:drop(active) {
-          background-color: $divider;
-          color: $text;
-        }
+        min-height: 16px;
+        min-width: 16px;
+        border-radius: $corner-radius;
       }
 
-      // colors the button like the label, overridden otherwise
-      button.flat {
-        @extend %small-button;
+      > tab {
+        @extend %tabs_tab;
 
-        &:last-child {
-          margin-left: $space-size;
-          margin-right: $space-size - 12px;
+        // FIXME: The tab node doesn't have :drop(active), instead its child box has it.
+        > box {
+          transition: background-color $duration $ease-out;
+          margin: -$space-size -12px;
+          padding: $space-size 12px;
+
+          &:drop(active) {
+            background-color: $divider;
+            color: $text;
+          }
         }
 
-        &:first-child {
-          margin-left: $space-size - 12px;
-          margin-right: $space-size;
-        }
-      }
+        // colors the button like the label, overridden otherwise
+        button.flat {
+          @extend %small-button;
 
-      button.close-button {
-        min-width: $small-size;
-        min-height: $small-size;
+          &:last-child {
+            margin-left: $space-size;
+            margin-right: $space-size - 12px;
+          }
+
+          &:first-child {
+            margin-left: $space-size - 12px;
+            margin-right: $space-size;
+          }
+        }
+
+        button.close-button {
+          min-width: $small-size;
+          min-height: $small-size;
+        }
       }
     }
 
     &.top,
     &.bottom {
-      tabs {
-        // padding-left: 8px;
-        // padding-right: 8px;
+      > tabs {
+        padding-left: 0;
+        padding-right: 0;
 
         &:not(:only-child) {
           &:first-child { margin-left: 0; }
@@ -2298,9 +2302,9 @@ notebook {
 
     &.left,
     &.right {
-      tabs {
-        // padding-top: 8px;
-        // padding-bottom: 8px;
+      > tabs {
+        padding-top: 0;
+        padding-bottom: 0;
 
         &:not(:only-child) {
           &:first-child { margin-top: 0; }
@@ -2563,22 +2567,29 @@ scrollbar {
   &.right { border-left: 1px solid $divider; }
 
   // slider
-  > range > trough > slider {
-    transition: background-color $duration $ease-out;
-    min-width: 8px;
-    min-height: 8px;
-    border: 4px solid transparent;
-    border-radius: $circular-radius;
-    background-clip: padding-box;
-    background-color: $text-disabled;
-    box-shadow: none;
+  > range > trough {
+    border: none;
+    background: none;
+    padding: 0;
     outline: none;
 
-    &:hover { background-color: $text-secondary; }
+    > slider {
+      transition: background-color $duration $ease-out;
+      min-width: 8px;
+      min-height: 8px;
+      border: 4px solid transparent;
+      border-radius: $circular-radius;
+      background-clip: padding-box;
+      background-color: $text-disabled;
+      box-shadow: none;
+      outline: none;
 
-    &:active { background-color: $text; }
+      &:hover { background-color: $text-secondary; }
 
-    &:disabled { background-color: $text-secondary-disabled; }
+      &:active { background-color: $text; }
+
+      &:disabled { background-color: $text-secondary-disabled; }
+    }
   }
 
   > range.fine-tune {

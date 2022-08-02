@@ -2353,7 +2353,6 @@ StEntry StLabel.hint-text, .popup-menu .search-entry StLabel.hint-text {
   -arrow-rise: 6px;
   -arrow-box-shadow: none;
   background: transparent;
-  box-shadow: none;
 }
 
 .popup-menu {

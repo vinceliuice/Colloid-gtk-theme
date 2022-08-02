@@ -881,7 +881,7 @@ windowcontrols button:not(.suggested-action):not(.destructive-action) label, fil
   padding: 0;
 }
 
-placessidebar.sidebar row button.sidebar-button, notebook > header tab button.flat, popover.menu box.circular-buttons button.circular.image-button.model, spinbutton.vertical > button, spinbutton:not(.vertical) > button {
+placessidebar.sidebar row button.sidebar-button, notebook > header > tabs > tab button.flat, popover.menu box.circular-buttons button.circular.image-button.model, spinbutton.vertical > button, spinbutton:not(.vertical) > button {
   min-height: 24px;
   min-width: 24px;
   padding: 0;
@@ -2303,11 +2303,12 @@ magnifier {
 /*************
  * Notebooks *
  *************/
-tabbar tab, notebook > header tab {
+tabbar tab, notebook > header > tabs > tab {
   transition: all 75ms cubic-bezier(0, 0, 0.2, 1), background-size 0ms, background-image 0ms;
   min-height: 24px;
   min-width: 24px;
   padding: 3px 12px;
+  margin: 0;
   border: none;
   outline: none;
   background-clip: padding-box;
@@ -2318,25 +2319,26 @@ tabbar tab, notebook > header tab {
   background-color: transparent;
 }
 
-tabbar tab:hover, notebook > header tab:hover {
+tabbar tab:hover, notebook > header > tabs > tab:hover {
   background-color: rgba(0, 0, 0, 0.04);
   background-image: none;
   color: rgba(0, 0, 0, 0.87);
+  box-shadow: none;
 }
 
-tabbar tab:disabled, notebook > header tab:disabled {
+tabbar tab:disabled, notebook > header > tabs > tab:disabled {
   color: rgba(0, 0, 0, 0.26);
 }
 
-tabbar tab:checked, notebook > header tab:checked {
+tabbar tab:checked, notebook > header > tabs > tab:checked {
   transition: all 75ms cubic-bezier(0, 0, 0.2, 1);
   background-color: white;
   color: rgba(0, 0, 0, 0.87);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   background-image: none;
 }
 
-tabbar tab:checked:disabled, notebook > header tab:checked:disabled {
+tabbar tab:checked:disabled, notebook > header > tabs > tab:checked:disabled {
   color: rgba(0, 0, 0, 0.38);
 }
 
@@ -2418,53 +2420,63 @@ notebook > header > tabs > arrow {
   border-radius: 6px;
 }
 
-notebook > header tab > box {
+notebook > header > tabs > tab > box {
   transition: background-color 75ms cubic-bezier(0, 0, 0.2, 1);
   margin: -6px -12px;
   padding: 6px 12px;
 }
 
-notebook > header tab > box:drop(active) {
+notebook > header > tabs > tab > box:drop(active) {
   background-color: rgba(0, 0, 0, 0.12);
   color: rgba(0, 0, 0, 0.87);
 }
 
-notebook > header tab button.flat:last-child {
+notebook > header > tabs > tab button.flat:last-child {
   margin-left: 6px;
   margin-right: -6px;
 }
 
-notebook > header tab button.flat:first-child {
+notebook > header > tabs > tab button.flat:first-child {
   margin-left: -6px;
   margin-right: 6px;
 }
 
-notebook > header tab button.close-button {
+notebook > header > tabs > tab button.close-button {
   min-width: 24px;
   min-height: 24px;
 }
 
-notebook > header.top tabs:not(:only-child):first-child, notebook > header.bottom tabs:not(:only-child):first-child {
+notebook > header.top > tabs, notebook > header.bottom > tabs {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+notebook > header.top > tabs:not(:only-child):first-child, notebook > header.bottom > tabs:not(:only-child):first-child {
   margin-left: 0;
 }
 
-notebook > header.top tabs:not(:only-child):last-child, notebook > header.bottom tabs:not(:only-child):last-child {
+notebook > header.top > tabs:not(:only-child):last-child, notebook > header.bottom > tabs:not(:only-child):last-child {
   margin-right: 0;
 }
 
-notebook > header.top tabs tab.reorderable-page, notebook > header.bottom tabs tab.reorderable-page {
+notebook > header.top > tabs tab.reorderable-page, notebook > header.bottom > tabs tab.reorderable-page {
   border-style: solid;
 }
 
-notebook > header.left tabs:not(:only-child):first-child, notebook > header.right tabs:not(:only-child):first-child {
+notebook > header.left > tabs, notebook > header.right > tabs {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+notebook > header.left > tabs:not(:only-child):first-child, notebook > header.right > tabs:not(:only-child):first-child {
   margin-top: 0;
 }
 
-notebook > header.left tabs:not(:only-child):last-child, notebook > header.right tabs:not(:only-child):last-child {
+notebook > header.left > tabs:not(:only-child):last-child, notebook > header.right > tabs:not(:only-child):last-child {
   margin-bottom: 0;
 }
 
-notebook > header.left tabs tab.reorderable-page, notebook > header.right tabs tab.reorderable-page {
+notebook > header.left > tabs tab.reorderable-page, notebook > header.right > tabs tab.reorderable-page {
   border-style: solid;
 }
 
@@ -2663,6 +2675,13 @@ scrollbar.left {
 
 scrollbar.right {
   border-left: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+scrollbar > range > trough {
+  border: none;
+  background: none;
+  padding: 0;
+  outline: none;
 }
 
 scrollbar > range > trough > slider {

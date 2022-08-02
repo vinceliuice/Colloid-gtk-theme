@@ -1899,7 +1899,7 @@ popover.background {
     transition: $transition;
     background-color: if($variant == 'light', rgba($base, 1), rgba(white, 0.15));
     color: $text;
-    box-shadow: 0 1px 3px rgba(black, 0.06);
+    box-shadow: 0 1px 3px rgba(black, 0.1);
 
     &:disabled { color: $text-disabled; }
   }

@@ -2192,7 +2192,7 @@ tabbox > tab:checked, notebook > header tab:checked {
   transition: all 75ms cubic-bezier(0, 0, 0.2, 1);
   background-color: rgba(255, 255, 255, 0.15);
   color: #FFFFFF;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 tabbox > tab:checked:disabled, notebook > header tab:checked:disabled {
