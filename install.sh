@@ -538,7 +538,7 @@ link_libadwaita() {
 
 link_theme() {
   for theme in "${themes[@]}"; do
-    for color in "${colors[1]}"; do
+    for color in "${colors[0]}"; do
       for size in "${sizes[@]}"; do
         link_libadwaita "${dest:-$DEST_DIR}" "${_name:-$THEME_NAME}" "$theme" "$color" "$size" "$ctype"
       done
