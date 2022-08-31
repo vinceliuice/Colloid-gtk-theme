@@ -2077,7 +2077,7 @@ popover.background {
   .linked > button:not(.radio) {
     background-color: transparent;
     box-shadow: none;
-    border-radius: $corner-radius;s
+    border-radius: $corner-radius;
     &:first-child { border-radius: $corner-radius; }
     &:last-child { border-radius: $corner-radius; }
     &:only-child { border-radius: $corner-radius; }
