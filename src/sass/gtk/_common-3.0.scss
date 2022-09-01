@@ -3669,7 +3669,7 @@ colorchooser .popover.osd {
 decoration {
   transition: $transition-shadow;
   border-radius: $window-radius;
-  background-color: $background;
+  // background-color: $background;
 
   @if $rimless == 'true' {
     box-shadow: $shadow-z16, 0 0 36px transparent;
