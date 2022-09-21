@@ -1,7 +1,35 @@
 
+/************
+ * Nautilus *
+ ************/
+
+.nautilus-window {
+  placesview {
+    label { color: $text-secondary; }
+  }
+}
+
+#NautilusPathBar {
+  border-radius: $corner-radius;
+  background: none;
+}
+
+#NautilusPathButton {
+  margin: $space-size / 2;
+  border-radius: $corner-radius - $space-size / 2;
+}
+
+#NautilusViewCell {
+  clamp box {
+    margin: 0;
+    border-spacing: 0;
+  }
+}
+
 /**************
  * Extensions *
  **************/
+
 window.background.csd {
   > stack, // GameMode setting
   > stack > scrolledwindow > viewport > box, // User Themes (Workspace) setting
@@ -36,5 +64,104 @@ window.background.csd {
 
   > stack > box > .sidebar > scrolledwindow > viewport > list {
     padding: 0 0;
+  }
+}
+
+//
+// Calculator
+//
+
+.history-view { background-color: $base; }
+
+//
+// Contacts
+//
+
+.contacts-contact-list list.navigation-sidebar {
+  background: none;
+}
+
+.small .card {
+  border-radius: 0;
+  box-shadow: none;
+  border-bottom: 1px solid $border;
+}
+
+//
+// Gnome Software
+//
+
+flowboxchild > button.card {
+  &.category-work {
+    background-color: $yellow-dark;
+    color: on($yellow-dark);
+  }
+
+  &.category-develop {
+    background-color: $grey-700;
+    color: on($grey-700);
+  }
+
+  &.category-tile {
+    padding: $space-size * 3.5;
+  }
+
+  &.category-tile-iconless {
+    padding: $space-size * 1.5 $space-size * 2.5;
+  }
+}
+
+app-context-bar {
+  > box:not(:first-child) > button.flat {
+    border-radius: 0;
+
+    &:last-child {
+      border-radius: 0 $corner-radius $corner-radius 0;
+    }
+  }
+
+  > box:first-child > button.flat {
+    border-radius: 0;
+
+    &:first-child {
+      border-radius: $corner-radius 0 0 $corner-radius;
+    }
+  }
+}
+
+// Leaflets
+window > contents > leaflet { // Gnome control center
+  > box > stack.background {
+    background-color: transparent;
+    background-image: linear-gradient(to bottom,
+                                      transparent,
+                                      transparent $large-size,
+                                      $background $large-size,
+                                      $background);
+  }
+}
+
+//
+// dialogs
+//
+
+window.dialog {
+  > .dialog-vbox > box > scrolledwindow > viewport > widget {
+    > list.boxed-list {
+      border: none;
+      border-radius: 0;
+
+      > row {
+        &:first-child, &:last-child { border-radius: 0; }
+      }
+    }
+  }
+}
+
+window.aboutdialog {
+  stack scrolledwindow.frame > {
+    &, viewport.view {
+      border-radius: $window-radius - $space-size;
+    }
   }
 }

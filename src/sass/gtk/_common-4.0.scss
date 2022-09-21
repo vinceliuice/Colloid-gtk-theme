@@ -190,8 +190,6 @@ toast {
   > label {
     margin: 0 $space-size;
   }
-
-  button, button.circular.flat { @extend %button-on-dark; }
 }
 
 
@@ -2068,6 +2066,10 @@ popover.background {
     }
 
     list separator { margin: 0; }
+
+    stack > box { padding: 0; }
+
+    > box > button { margin: 0; }
   }
 
   // FIXME: Use the popover color instead of transparent as a workaround for .view
