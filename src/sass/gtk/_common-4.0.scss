@@ -4351,58 +4351,56 @@ colorchooser .popover.osd {
  * Window Decorations *
  **********************/
 window {
-  &.csd {
-    transition: $transition-shadow;
-    border-radius: $window-radius;
-    outline-color: highlight($background);
-    outline-offset: -1px;
-    outline-style: solid;
-    outline-width: 1px;
+  transition: $transition-shadow;
+  border-radius: $window-radius;
+  outline-color: highlight($background);
+  outline-offset: -1px;
+  outline-style: solid;
+  outline-width: 1px;
 
-    @if $rimless == 'true' {
-      box-shadow: $shadow-z16, 0 0 36px transparent;
-    } @else {
-      box-shadow: $shadow-z16, 0 0 0 1px $window-border, 0 0 36px transparent;
-    }
-
-    &:backdrop {
-      // the transparent shadow here is to enforce that the shadow extents don't
-      // change when we go to backdrop, to prevent jumping windows.
-      // The biggest shadow should be in the same order then in the active state
-      // or the jumping will happen during the transition.
-      @if $rimless == 'true' {
-        box-shadow: $shadow-z4, 0 0 36px transparent;
-      } @else {
-        box-shadow: $shadow-z4, 0 0 0 1px $window-border, 0 0 36px transparent;
-      }
-    }
-
-    &.popup {
-      border-radius: $menu-radius;
-    }
-
-    &.dialog.message {
-      border-radius: $window-radius;
-    }
-
-    .solid-csd & {
-      margin: 0;
-      padding: 2px;
-      border-radius: 0;
-      background-color: $titlebar;
-      border: 1px solid $solid-border;
-
-      &:backdrop { background-color: $titlebar-backdrop; }
-    }
-
-    &.maximized,
-    &.fullscreen,
-    &.tiled,
-    &.tiled-top,
-    &.tiled-right,
-    &.tiled-bottom,
-    &.tiled-left { border-radius: 0; }
+  @if $rimless == 'true' {
+    box-shadow: $shadow-z16, 0 0 36px transparent;
+  } @else {
+    box-shadow: $shadow-z16, 0 0 0 1px $window-border, 0 0 36px transparent;
   }
+
+  &:backdrop {
+    // the transparent shadow here is to enforce that the shadow extents don't
+    // change when we go to backdrop, to prevent jumping windows.
+    // The biggest shadow should be in the same order then in the active state
+    // or the jumping will happen during the transition.
+    @if $rimless == 'true' {
+      box-shadow: $shadow-z4, 0 0 36px transparent;
+    } @else {
+      box-shadow: $shadow-z4, 0 0 0 1px $window-border, 0 0 36px transparent;
+    }
+  }
+
+  &.popup {
+    border-radius: $menu-radius;
+  }
+
+  &.dialog.message {
+    border-radius: $window-radius;
+  }
+
+  .solid-csd & {
+    margin: 0;
+    padding: 2px;
+    border-radius: 0;
+    background-color: $titlebar;
+    border: 1px solid $solid-border;
+
+    &:backdrop { background-color: $titlebar-backdrop; }
+  }
+
+  &.maximized,
+  &.fullscreen,
+  &.tiled,
+  &.tiled-top,
+  &.tiled-right,
+  &.tiled-bottom,
+  &.tiled-left { border-radius: 0; }
 }
 
 // Windows button

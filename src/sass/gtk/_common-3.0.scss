@@ -3680,6 +3680,7 @@ decoration {
       .background.csd & {
         border: 1px solid highlight($background);
         background-clip: border-box;
+        background-color: $background;
       }
     }
   }
