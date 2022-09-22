@@ -536,6 +536,8 @@ link_libadwaita() {
 
   local THEME_DIR="${1}/${2}${3}${4}${5}${6}"
 
+  rm -rf "${HOME}/.config/gtk-4.0/"{assets,gtk.css,gtk-dark.css}
+
   echo -e "\nLink '$THEME_DIR/gtk-4.0' to '${HOME}/.config/gtk-4.0' for libadwaita..."
 
   mkdir -p                                                                      "${HOME}/.config/gtk-4.0"

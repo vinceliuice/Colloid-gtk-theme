@@ -3375,7 +3375,7 @@ separator {
 %circular_list {
   border-radius: $corner-radius + 1px;
   box-shadow: none;
-  border: 1px solid $divider;
+  border: 1px solid $border;
 }
 
 %circular_row {
@@ -3395,6 +3395,10 @@ separator {
     border-radius: $corner-radius;
   }
 
+  &:not(:last-child) {
+    border-bottom: 1px solid $border;
+  }
+
   &:focus {
     box-shadow: inset 0 0 0 1000px $overlay-focus;
   }
@@ -3402,7 +3406,7 @@ separator {
 
 listview,
 list {
-  border-color: $divider;
+  border-color: $border;
   background-color: $base;
 
   row { padding: $space-size; }
