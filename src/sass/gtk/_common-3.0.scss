@@ -192,6 +192,7 @@ flowbox {
   flowboxchild {
     padding: 4px;
     border-radius: $corner-radius;
+    color: $text;
 
     &:selected { @extend %selected_items_color; }
   }
