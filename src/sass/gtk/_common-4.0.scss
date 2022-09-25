@@ -3764,11 +3764,6 @@ window.dialog.message { // Message Dialog styling
 }
 
 filechooser {
-  .csd & {
-    background-color: $base;
-    border-radius: 0 0 $window-radius $window-radius;
-  }
-
   .dialog-action-box { border-top: 1px solid $divider; }
 
   #pathbarbox {
@@ -3782,38 +3777,7 @@ filechooser {
   }
 
   stack.view {
-    background-color: transparent;
-
-    scrolledwindow {
-      background-color: transparent;
-      border-radius: 0 0 $window-radius 0;
-
-      list { background-color: transparent; }
-    }
-
-    > placesview {
-      background-color: transparent;
-      // border-bottom-right-radius: $window-radius;
-
-      > actionbar {
-        &, > revealer > box {
-          background-color: transparent;
-        }
-      }
-    }
-
     frame > border { border: none; }
-  }
-
-  .csd & placessidebar {
-    background: none;
-    border-bottom-left-radius: $window-radius;
-  }
-
-  actionbar {
-    &, > revealer > box {
-      background-color: transparent;
-    }
   }
 }
 
