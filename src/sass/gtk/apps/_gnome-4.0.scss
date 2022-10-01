@@ -7,6 +7,24 @@
   placesview {
     label { color: $text-secondary; }
   }
+
+  .floating-bar {
+    min-height: 32px;
+    padding: 0;
+    margin: $space-size;
+    border-style: none;
+    border-radius: $corner-radius;
+    background-color: $primary;
+    color: on($primary);
+    box-shadow: $shadow-z3;
+
+    button {
+      margin: (32px - $small-size) / 2;
+      color: on($primary);
+
+      @extend %small-button;
+    }
+  }
 }
 
 #NautilusPathBar {
@@ -23,6 +41,38 @@
   clamp box {
     margin: 0;
     border-spacing: 0;
+  }
+}
+
+#NautilusQueryEditor { // search entry
+  > menubutton > button {
+    min-width: 16px;
+    min-height: 16px;
+    margin: 0;
+  }
+
+  > text { margin: 0; }
+}
+
+#NautilusPathBar {
+  background-color: $titlebar-fill;
+  border-radius: $corner-radius;
+  margin: $space-size 0;
+
+  #NautilusPathButton {
+    margin: 0 $space-size / 2;
+    border-radius: $corner-radius;
+
+    &.current-dir {
+      color: $titlebar-text;
+
+      &:hover, &:active {
+        background: none;
+        box-shadow: none;
+      }
+    }
+
+    &:first-child { margin-left: 0; }
   }
 }
 
@@ -73,18 +123,29 @@ window.background.csd {
 
 .history-view { background-color: $base; }
 
+#displayitem {
+  border-top: 1px solid $border;
+}
+
+.small .card {
+  border-radius: 0;
+  box-shadow: none;
+  border: none;
+  border-bottom: 1px solid $border;
+}
+
+leaflet {
+  button.number-button {
+    background-color: rgba($text, if($variant == 'light', 0.1, 0.15));
+  }
+}
+
 //
 // Contacts
 //
 
 .contacts-contact-list list.navigation-sidebar {
   background: none;
-}
-
-.small .card {
-  border-radius: 0;
-  box-shadow: none;
-  border-bottom: 1px solid $border;
 }
 
 //

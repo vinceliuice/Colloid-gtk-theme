@@ -5,7 +5,7 @@
   width: if($compact == 'true', 25.5em, 31.5em);
   text-shadow: none;
   border: none;
-  padding: 0;
+  padding: $base_margin 0;
 
   // padding and margins to account for scrollbar
   &:ltr { margin-left: 0; margin-right: 0; padding-right: 0; border-right-width: 0; }

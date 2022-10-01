@@ -230,9 +230,7 @@ tab {
 }
 
 .tab-icon-overlay[crashed] {
-	list-style-image: none !important;
-	top: 0 !important;
-	inset-inline-end: 0 !important;
+	list-style-image: url("../icons/info-symbolic.svg") !important;
 }
 
 /* Close tab button */

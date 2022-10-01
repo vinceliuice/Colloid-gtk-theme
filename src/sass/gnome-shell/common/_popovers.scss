@@ -16,7 +16,7 @@
 .popup-menu {
   min-width: if($compact == 'true', 10em, 12em);
   color: $text-secondary !important;
-  padding: 0 !important;
+  padding: 0;
   font-weight: normal;
   border-radius: $menu_radius;
   box-shadow: 0 3px 6px rgba(black, 0.08);
@@ -24,7 +24,7 @@
   @include fontsize($font_size - 1);
 
   .popup-menu-content {
-    padding: $base_padding 0 !important;
+    padding: $base_padding;
     background-color: $popover;
     border-radius: $menu_radius;
     margin: 0;
@@ -41,8 +41,10 @@
     color: $text-secondary !important;
     text-shadow: none;
     border-radius: $base_radius;
-    margin: 0 $base_padding;
+    margin: 0;
+    transition-duration: 100ms;
     font-weight: normal;
+    background-color: transparent;
 
     &:checked {
       font-weight: normal;
@@ -84,7 +86,7 @@
     color: $text-secondary !important;
     border: none;
     box-shadow: none;
-    margin: 0 $base_padding;
+    margin: 0;
     border-radius: 0 0 $base_radius $base_radius;
 
     .popup-menu-item {
@@ -144,5 +146,22 @@
     padding: 0;
     margin: 0 $base_padding / 2;
     -st-icon-style: symbolic;
+  }
+}
+
+// right-click (and panel) app menu
+.app-menu {
+  max-width: 27.25em;
+
+  // this is unneeded at the top-level in this menu, hide it
+  .popup-menu-ornament { width: 0 !important; }
+
+  .popup-inactive-menu-item:first-child {
+    // "Open Windows" label
+    > StLabel {
+      @extend %caption_heading;
+      &:ltr {margin-right: $base_margin * 2;}
+      &:rtl {margin-left: $base_margin * 2;}
+    }
   }
 }
