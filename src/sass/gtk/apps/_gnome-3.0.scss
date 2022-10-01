@@ -86,11 +86,12 @@ $nautilus: $base-alt;
   .floating-bar {
     min-height: 32px;
     padding: 0;
-    margin: 6px;
-    border-style: none;
+    margin: $space-size;
+    border: none;
     border-radius: $corner-radius;
     background-color: $primary;
     color: on($primary);
+    box-shadow: $shadow-z3;
 
     button {
       margin: (32px - $small-size) / 2;

@@ -45,10 +45,10 @@ avatar {
 .card {
   @at-root %card, & {
     border-radius: $corner-radius;
-    box-shadow: $shadow-z3;
+    box-shadow: none;
     border: 1px solid $border;
     background-clip: border-box;
-    background-color: $surface;
+    background-color: $button;
     color: $text-secondary;
   }
 }
@@ -100,6 +100,8 @@ preferencesgroup > box {
       outline-color: $primary;
     }
   }
+
+  .cutout-button { background-color: $base-alt; }
 }
 
 //

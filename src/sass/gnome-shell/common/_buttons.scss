@@ -21,8 +21,20 @@
   padding: 0 $base_padding * 2;
   border-radius: $base_radius;
   border: none;
+  @extend %button;
 
   .popup-menu & {
     @extend %flat_button;
   }
+}
+
+// buttons on OSD elements
+// that are undecorated by default and use OSD colors
+%osd_button {
+  @include button(flat-normal, $tc:on($osd));
+  &:insensitive { @include button(insensitive, $tc:on($osd), $bc:$osd); }
+  &:focus { @include button(focus, $tc:on($osd), $bc:$osd);}
+  &:hover { @include button(hover, $tc:on($osd), $bc:$osd);}
+  &:active { @include button(active, $tc:on($osd), $bc:$osd);}
+  &:outlined, &:checked { @include button(checked, $tc:on($osd), $bc:$osd);}
 }

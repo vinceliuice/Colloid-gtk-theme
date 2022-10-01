@@ -12,11 +12,13 @@
 .popup-separator-menu-item {
   padding: 0;
 
+  .popup-menu-ornament {
+    width: 0 !important;
+  }
+
   .popup-separator-menu-item-separator {
     height: 1px; //not really the whole box
     background-color: $divider;
-    padding-top: 0 !important;
-    padding-bottom: 0 !important;
     margin: $base_padding 32px;
 
     .popup-sub-menu & { //submenu separators
