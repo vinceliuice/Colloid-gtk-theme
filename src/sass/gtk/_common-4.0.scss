@@ -2129,7 +2129,7 @@ magnifier {
               background-image 0ms;
   min-height: $small-size;
   min-width: $small-size;
-  padding: $space-size / 2 $space-size * 2;
+  padding: $space-size / 2 $space-size;
   margin: 0;
   border: none;
   outline: none;
@@ -2149,7 +2149,7 @@ magnifier {
 
   &:disabled { color: $text-secondary-disabled; }
 
-  &:checked {
+  &:checked, &:selected {
     transition: $transition;
     background-color: if($variant == 'light', rgba($base, 1), rgba(white, 0.15));
     color: $text;
@@ -2375,6 +2375,10 @@ $tab_needs_attention_gradient: radial-gradient(ellipse at bottom,
 }
 
 tabbar {
+  > revealer > box {
+    box-shadow: none;
+  }
+
   .box {
     min-height: $medium-size;
     border-bottom: none;
@@ -2394,13 +2398,15 @@ tabbar {
       border-right-width: 1px;
     }
 
-    tabbox > background {
-      &:dir(ltr) {
-        box-shadow: inset -1px 0 $border;
-      }
+    tabbox {
+      > background {
+        &:dir(ltr) {
+          box-shadow: inset -1px 0 $border;
+        }
 
-      &:dir(rtl) {
-        box-shadow: inset 1px 0 $border;
+        &:dir(rtl) {
+          box-shadow: inset 1px 0 $border;
+        }
       }
     }
   }
@@ -2426,14 +2432,22 @@ tabbar {
   }
 
   tabbox {
-    background-color: $fill;
+    background-color: rgba($text, if($variant == 'light', 0.08, 0.04));
     background-image: none;
-    padding: $space-size / 2;
+    padding: $space-size / 2 0;
     margin: $space-size / 2;
     border-radius: $modal-radius + $space-size / 2;
 
     > background {
       background: none;
+    }
+
+    > tabboxchild {
+      margin: 0;
+
+      > tab {
+        @extend %tabs_tab;
+      }
     }
   }
 
