@@ -2229,12 +2229,12 @@ switch {
 
   slider {
     transition: all $duration $ease-out;
-    min-width: $small-size - 4px;
-    min-height: $small-size - 4px;
-    margin: if($variant == 'light', 1px, 0);
+    min-width: $small-size - 6px;
+    min-height: $small-size - 6px;
+    margin: $space-size / 2;
     border-radius: $circular-radius;
     outline: none;
-    box-shadow: none;
+    box-shadow: $shadow-z3;
     background-color: white;
     border: none;
     color: transparent;
