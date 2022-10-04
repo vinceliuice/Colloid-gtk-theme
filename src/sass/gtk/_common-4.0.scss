@@ -648,6 +648,7 @@ button {
   // big standalone buttons like in Documents pager
   &.osd {
     padding: ($large-size - 24px) / 2 ($large-size - 16px) / 2;
+    box-shadow: none;
 
     &.image-button { padding: ($large-size - 24px) / 2; }
 
@@ -1327,6 +1328,7 @@ toolbar {
     border-radius: $corner-radius;
     box-shadow: $shadow-z4, inset 0 1px highlight($surface);
     background-color: $surface;
+    color: $text;
 
     &:backdrop { box-shadow: $shadow-z2, inset 0 1px highlight($surface); }
 
@@ -2080,14 +2082,15 @@ popover.background {
   .view:not(:selected),
   toolbar { background-color: $surface; }
 
-  .linked > button:not(.radio) {
-    background-color: transparent;
-    box-shadow: none;
-    border-radius: $corner-radius;
-    &:first-child { border-radius: $corner-radius; }
-    &:last-child { border-radius: $corner-radius; }
-    &:only-child { border-radius: $corner-radius; }
-  }
+  // .linked > button:not(.radio) {
+  //   background-color: transparent;
+  //   box-shadow: none;
+  //   border-radius: $corner-radius;
+  //
+  //   &:first-child { border-radius: $corner-radius; }
+  //   &:last-child { border-radius: $corner-radius; }
+  //   &:only-child { border-radius: $corner-radius; }
+  // }
 
   &.menu button,
   button.model {
@@ -2350,9 +2353,9 @@ $tab_needs_attention_gradient: radial-gradient(ellipse at bottom,
 
 @mixin need-attention-gradient($dir) {
   background: linear-gradient(to #{$dir},
-                              gtkalpha($accent_color, .5),
-                              gtkalpha($accent_color, .3) 1px,
-                              gtkalpha($accent_color, 0) 20px);
+                              gtkalpha($primary, .5),
+                              gtkalpha($primary, .3) 1px,
+                              gtkalpha($primary, 0) 20px);
 }
 
 $tab_needs_attention_gradient: radial-gradient(ellipse at bottom,
@@ -3634,6 +3637,7 @@ columnview {
   border-spacing: $space-size * 1.5;
   padding: $space-size * 1.5;
   border: none;
+  background-image: none;
 
   button {
     @extend %button-flat;
@@ -3753,14 +3757,37 @@ calendar {
 /***********
  * Dialogs *
  ***********/
+
+%dialog_action_button {
+  border-radius: 0;
+  min-height: $menuitem-size;
+  padding: $space-size $space-size * 2;
+
+  &:first-child { border-radius: 0 0 0 $window-radius; }
+
+  &:last-child { border-radius: 0 0 $window-radius 0; }
+
+  &:only-child { border-radius: 0 0 $window-radius $window-radius; }
+
+  &:not(:last-child) { border-right: 1px solid $border; }
+
+  &.destructive-action:not(:disabled) { color: $destructive; }
+}
+
 window.dialog.message { // Message Dialog styling
   &.background { background-color: $surface; }
 
   box.dialog-vbox.vertical {
-    border-spacing: $space-size * 2;
+    margin-top: $space-size;
+    border-spacing: $space-size * 4;
 
     > box.vertical {
       margin-bottom: $space-size;
+    }
+
+    > box > box > box > label.title {
+      font-weight: 800;
+      font-size: 15pt;
     }
   }
 
@@ -3778,23 +3805,82 @@ window.dialog.message { // Message Dialog styling
   }
 
   .dialog-action-area {
-    margin-top: $space-size;
-    // padding: $space-size;
+    // margin-top: $space-size;
+    border-top: 1px solid $border;
+    margin: 0;
+    border-spacing: 0;
 
     > button {
-      @extend %button-flat;
-      border-radius: 0;
       border: none;
-      min-height: $menuitem-size;
-      padding: $space-size $space-size * 2;
+      @extend %button-flat;
+      @extend %dialog_action_button;
 
-      &:first-child { border-radius: 0 0 0 $window-radius; }
+      &.suggested-action {
+        color: $suggested;
+      }
 
-      &:last-child { border-radius: 0 0 $window-radius 0; }
+      &.destructive-action {
+        color: $destructive;
+      }
+    }
+  }
+}
 
-      &:not(:last-child) { border-right: 1px solid $border; }
+/********************
+ * AdwMessageDialog *
+ ********************/
 
-      &.destructive-action:not(:disabled) { color: $destructive; }
+window.messagedialog {
+  background-color: $surface;
+  color: $text;
+
+  .message-area {
+    padding: 24px 30px;
+    border-spacing: 10px;
+  }
+
+  .response-area > box > button {
+    @extend %dialog_action_button;
+
+    &.suggested {
+      color: $primary;
+    }
+
+    &.destructive {
+      color: $destructive;
+    }
+  }
+
+  &.csd:not(.solid-csd) {
+    border-radius: $window-radius;
+
+    .response-area {
+      > box.horizontal > button {
+        margin-top: -1px;
+        margin-right: -1px;
+        margin-left: -1px;
+
+        &:first-child {
+          border-bottom-left-radius: $window-radius;
+          margin-left: 0;
+        }
+
+        &:last-child {
+          border-bottom-right-radius: $window-radius;
+          margin-right: 0;
+        }
+      }
+
+      > box.vertical > button {
+          margin-top: -1px;
+          margin-bottom: -1px;
+
+        &:last-child {
+          border-bottom-left-radius: $window-radius;
+          border-bottom-right-radius: $window-radius;
+          margin-bottom: 0;
+        }
+      }
     }
   }
 }
