@@ -76,44 +76,15 @@
   }
 }
 
-/**************
- * Extensions *
- **************/
-
-window.background.csd {
-  > stack, // GameMode setting
-  > stack > scrolledwindow > viewport > box, // User Themes (Workspace) setting
-  > box > stack > scrolledwindow > viewport > box {
-    > list {
-      // @extend %circular_list;
-
-      row.activatable { @extend %circular_row; }
+//
+// Gnome Control Center
+//
+window.dialog {
+  > box > stack > box > box {
+    > notebook.frame {
+      border-width: 0 0 0 1px;
+      border-radius: 0;
     }
-  }
-
-  stack stack stack frame, // ArcMenu setting
-  > stack > stack > box > frame, // Night Theme Switcher setting
-  > stack > stack > box > box > frame, // Night Theme Switcher setting bottom lists
-  > stack > box > stack > box > frame, // ArcMenu setting
-  > stack > box > stack > scrolledwindow > viewport frame, // ArcMenu setting
-  > stack > box > stack > box > scrolledwindow > viewport > frame, // ArcMenu setting
-  > stack > grid > scrolledwindow > viewport > box > frame { // GSConnect setting
-    > border { border: none; }
-
-    > list {
-      // @extend %circular_list;
-
-      row.activatable { @extend %circular_row; }
-    }
-  }
-
-  > stack > box > box > list,
-  > stack > box > stack > scrolledwindow > viewport > list { // ArcMenu setting sidebar
-    border-bottom-left-radius: $window-radius;
-  }
-
-  > stack > box > .sidebar > scrolledwindow > viewport > list {
-    padding: 0 0;
   }
 }
 
@@ -130,8 +101,14 @@ window.background.csd {
 .small .card {
   border-radius: 0;
   box-shadow: none;
-  border: none;
-  border-bottom: 1px solid $border;
+
+  &.forecast-card {
+    border-width: 1px 0;
+  }
+
+  &.display-container {
+    border-width: 0 0 1px 0;
+  }
 }
 
 leaflet {
@@ -186,7 +163,7 @@ app-context-bar {
   }
 }
 
-.carousel.card {
+carousel.card {
   border: none;
 }
 
@@ -226,76 +203,88 @@ screenshot-carousel box.frame.view {
 .category-tile.category-create {
   background: linear-gradient(180deg, #ce8cd7 0%, #2861c6 100%);
   color: white;
-}
-.category-tile.category-create:hover {
-  background: linear-gradient(180deg, shade(#ce8cd7, 1.07) 0%, shade(#2861c6, 1.1) 100%);
-}
-.category-tile.category-create:active {
-  background: linear-gradient(180deg, shade(#ce8cd7, .95) 0%, shade(#2861c6, .95) 100%);
+
+  &:hover {
+    background: linear-gradient(180deg, shade(#ce8cd7, 1.07) 0%, shade(#2861c6, 1.1) 100%);
+  }
+
+  &:active {
+    background: linear-gradient(180deg, shade(#ce8cd7, .95) 0%, shade(#2861c6, .95) 100%);
+  }
 }
 
 .category-tile.category-develop {
   background: #5e5c64;
   color: white;
-}
-.category-tile.category-develop:hover {
-  background: shade(#5e5c64, 1.2);
-}
-.category-tile.category-develop:active {
-  background-color: shade(#5e5c64, .95);
+
+  &:hover {
+    background: shade(#5e5c64, 1.2);
+  }
+
+  &:active {
+    background-color: shade(#5e5c64, .95);
+  }
 }
 
 .category-tile.category-learn {
   background: linear-gradient(180deg, #2ec27e 30%, #27a66c 100%);
   color: white;
-}
-.category-tile.category-learn:hover {
-  background: linear-gradient(180deg, shade(#2ec27e, 1.06) 30%, shade(#27a66c, 1.06) 100%);
-}
-.category-tile.category-learn:active {
-  background: linear-gradient(180deg, shade(#2ec27e, .95) 30%, shade(#27a66c, .95) 100%);
+
+  &:hover {
+    background: linear-gradient(180deg, shade(#2ec27e, 1.06) 30%, shade(#27a66c, 1.06) 100%);
+  }
+
+  &:active {
+    background: linear-gradient(180deg, shade(#2ec27e, .95) 30%, shade(#27a66c, .95) 100%);
+  }
 }
 
 .category-tile.category-play {
   background: linear-gradient(75deg, #f9e2a7 0%, #eb5ec3 50%, #6d53e0 100%);
   color: #393484;
-}
-.category-tile.category-play:hover {
-  background: linear-gradient(75deg, shade(#f9e2a7, 1.07) 0%, shade(#eb5ec3, 1.07) 50%, shade(#6d53e0, 1.07) 100%);
-}
-.category-tile.category-play:active {
-  background: linear-gradient(75deg, shade(#f9e2a7, .97) 0%, shade(#eb5ec3, .95) 50%, shade(#6d53e0, 1.07) 100%);
+
+  &:hover {
+    background: linear-gradient(75deg, shade(#f9e2a7, 1.07) 0%, shade(#eb5ec3, 1.07) 50%, shade(#6d53e0, 1.07) 100%);
+  }
+
+  &:active {
+    background: linear-gradient(75deg, shade(#f9e2a7, .97) 0%, shade(#eb5ec3, .95) 50%, shade(#6d53e0, 1.07) 100%);
+  }
 }
 
 .category-tile.category-socialize {
   background: linear-gradient(90deg, #ef4e9b 0%, #f77466 100%);
   color: $text-secondary;
-}
-.category-tile.category-socialize:hover {
-  background: linear-gradient(90deg, shade(#ef4e9b, 1.08) 0%, shade(#f77466, 1.08) 100%);
-}
-.category-tile.category-socialize:active {
-  background: linear-gradient(90deg, shade(#ef4e9b, .95) 0%, shade(#f77466, .95) 100%);
+
+  &:hover {
+    background: linear-gradient(90deg, shade(#ef4e9b, 1.08) 0%, shade(#f77466, 1.08) 100%);
+  }
+
+  &:active {
+    background: linear-gradient(90deg, shade(#ef4e9b, .95) 0%, shade(#f77466, .95) 100%);
+  }
 }
 
 .category-tile.category-work {
-	padding: 1px; /* FIXME: work around https://gitlab.gnome.org/GNOME/gtk/-/issues/4324 */
-	color: #1c71d8;
-	background-color:#fdf8d7;
-	background-image: linear-gradient(#deddda 1px, transparent 1px),
-	                  linear-gradient(90deg, #deddda 1px, transparent 1px);
-	background-size: 10px 10px, 10px 10px;
-	background-position: -1px -4px, center -1px;
-}
-.category-tile.category-work:hover {
-	background-color: shade(#fdf8d7, 1.03);
-	background-image: linear-gradient(shade(#deddda, 1.04) 1px, transparent 1px),
-	                  linear-gradient(90deg, shade(#deddda, 1.04) 1px, transparent 1px);
-}
-.category-tile.category-work:active {
-	background-color: shade(#fdf8d7, .93);
-	background-image: linear-gradient(shade(#deddda, .97) 1px, transparent 1px),
-	                  linear-gradient(90deg, shade(#deddda, .97) 1px, transparent 1px);
+  padding: 1px; /* FIXME: work around https://gitlab.gnome.org/GNOME/gtk/-/issues/4324 */
+  color: #1c71d8;
+  background-color:#fdf8d7;
+  background-image: linear-gradient($border 1px, transparent 1px),
+           linear-gradient(90deg, $border 1px, transparent 1px);
+  background-size: 10px 10px, 10px 10px;
+  background-position: -1px -4px, center -1px;
+
+  &:hover {
+    background-color: lighten(#fdf8d7, 5%);
+    background-image: linear-gradient($border 1px, transparent 1px),
+             linear-gradient(90deg, $border 1px, transparent 1px);
+  }
+
+  &:active {
+    background-color: darken(#fdf8d7, 5%);
+    background-image: linear-gradient($border 1px, transparent 1px),
+             linear-gradient(90deg, $border 1px, transparent 1px);
+  }
 }
 
 // Leaflets

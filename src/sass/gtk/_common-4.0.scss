@@ -649,6 +649,15 @@ button {
   &.osd {
     padding: ($large-size - 24px) / 2 ($large-size - 16px) / 2;
     box-shadow: none;
+    @include button(normal);
+
+    &:focus { @include button(flat-focus); }
+
+    &:hover { @include button(flat-hover); }
+
+    &:active { @include button(flat-active); }
+
+    &:disabled { @include button(flat-disabled); }
 
     &.image-button { padding: ($large-size - 24px) / 2; }
 
@@ -3358,15 +3367,15 @@ scrolledwindow {
   }
 
   // Overflow indication, works similarly to the overshoot, the size if fixed tho.
-  @at-root undershoot {
-    &.top { @include undershoot(top); }
-
-    &.bottom { @include undershoot(bottom); }
-
-    &.left { @include undershoot(left); }
-
-    &.right { @include undershoot(right); }
-  }
+  // @at-root undershoot {
+  //   &.top { @include undershoot(top); }
+  //
+  //   &.bottom { @include undershoot(bottom); }
+  //
+  //   &.left { @include undershoot(left); }
+  //
+  //   &.right { @include undershoot(right); }
+  // }
 
   @at-root junction { // the small square between two scrollbars
     border-style: solid none none solid;
