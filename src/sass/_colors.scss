@@ -19,7 +19,7 @@
     @if ($state == 'primary') { @return rgba($black, 0.87); }
     @if ($state == 'secondary') { @return rgba($black, 0.6); }
     @if ($state == 'disabled') { @return rgba($black, 0.38); }
-    @if ($state == 'secondary-disabled') { @return rgba($black, 0.26); }
+    @if ($state == 'secondary-disabled') { @return rgba($black, 0.3); }
     @if ($state == 'track') { @return rgba($black, 0.26); }
     @if ($state == 'track-disabled') { @return rgba($black, 0.12); }
     @if ($state == 'divider') { @return rgba($black, 0.12); }
@@ -29,7 +29,7 @@
     @if ($state == 'primary') { @return $white; }
     @if ($state == 'secondary') { @return rgba($white, 0.7); }
     @if ($state == 'disabled') { @return rgba($white, 0.5); }
-    @if ($state == 'secondary-disabled') { @return rgba($white, 0.3); }
+    @if ($state == 'secondary-disabled') { @return rgba($white, 0.32); }
     @if ($state == 'track') { @return rgba($white, 0.3); }
     @if ($state == 'track-disabled') { @return rgba($white, 0.12); }
     @if ($state == 'divider') { @return rgba($white, 0.12); }

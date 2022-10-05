@@ -168,8 +168,8 @@ carousel.card {
 }
 
 .context-tile-lozenge {
-  min-height: 24px;
-  min-width: 24px;
+  min-height: 28px;
+  min-width: 28px;
   padding: $space-size;
 
   &.grey {
@@ -177,19 +177,30 @@ carousel.card {
     background-color: $divider;
   }
 
-  &.green {
-    color: $success;
+  &.green, &.details-rating-0 {
+    color: darken($success, 15%);
     background-color: rgba($success, 0.15);
   }
 
-  &.red {
-    color: $error;
-    background-color: rgba($error, 0.15);
+  &.blue,
+  &.details-rating-5 {
+    color: $blue-light;
+    background-color: rgba($blue-light, 0.15);
   }
 
-  &.details-rating-12 {
-    color: $warning;
+  &.yellow, &.details-rating-12 {
+    color: darken($warning, 15%);
     background-color: rgba($warning, 0.15);
+  }
+
+  &.details-rating-15 {
+    color: $orange-light;
+    background-color: rgba($orange-light, .15);
+  }
+
+  &.red, &.details-rating-18 {
+    color: darken($error, 15%);
+    background-color: rgba($error, 0.15);
   }
 }
 
