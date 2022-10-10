@@ -103,7 +103,15 @@ window.dialog {
 
 leaflet {
   button.number-button {
-    background-color: rgba($text, if($variant == 'light', 0.1, 0.15));
+    background-color: rgba($text, 0.1);
+
+    &:hover {
+      background-color: rgba($text, 0.2);
+    }
+
+    &:active {
+      background-color: rgba($text, 0.3);
+    }
   }
 }
 

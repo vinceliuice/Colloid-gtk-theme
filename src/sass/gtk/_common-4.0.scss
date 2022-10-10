@@ -3489,7 +3489,10 @@ row {
   }
 
   button &.activatable {
-    &:focus, &:hover, &:active { box-shadow: none; }
+    &:focus, &:hover, &:active {
+      box-shadow: none;
+      background: none;
+    }
   }
 
   button:checked &.activatable {
