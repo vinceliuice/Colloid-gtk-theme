@@ -11,6 +11,7 @@
 // Budgie setting
 .budgie-settings-window {
   list.sidebar {
+    background: none;
     border-radius: 0 0 0 $window-radius;
   }
 
@@ -43,7 +44,7 @@
   background-color: $popover;
   border-radius: $menu-radius;
 
-  .container { padding: 0; }
+  .container, list, row { padding: 0; }
 
   separator { margin: $space-size / 2 0; }
 
@@ -99,7 +100,7 @@
     }
   }
 
-  &.budgie-menu {  // Budgie AppMenu
+  &.budgie-menu { // Budgie AppMenu
     .container { padding: 0; }
 
     .sidebar,
@@ -141,7 +142,7 @@
 
     // top-row (user-name and avatar)
     > frame.container > box.vertical row.activatable:first-child {
-      margin-bottom: $space-size / 2;
+      margin-bottom: 0;
       outline-width: 0;
       border-radius: $corner-radius;
 
@@ -152,8 +153,14 @@
     }
   }
 
-  &.sound-popover {
-    // separator { margin: $space-size / 2 0; }
+  // &.sound-popover {
+  //   separator { margin: $space-size / 2 0; }
+  // }
+
+  &.caffeine-popover {
+    frame > .container {
+      padding: $space-size;
+    }
   }
 
   &.night-light-indicator {

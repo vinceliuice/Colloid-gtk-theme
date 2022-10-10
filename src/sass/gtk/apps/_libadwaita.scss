@@ -42,24 +42,149 @@ avatar {
   &.image { background: none; }
 }
 
+// Card
 .card {
   @at-root %card, & {
+    @include button(normal);
     border-radius: $corner-radius;
-    box-shadow: none;
     border: 1px solid $border;
     background-clip: border-box;
-    background-color: $button;
     color: $text-secondary;
+    box-shadow: none;
+  }
+
+  &.activatable {
+    transition: $transition;
+
+    &:hover {
+      background-image: none;
+      @include button(hover);
+    }
+
+    &:active {
+      background-image: none;
+      @include button(active);
+    }
   }
 }
+
+//
+// Toasts
+//
+
+toast {
+  margin: $space-size * 2;
+  margin-bottom: $space-size * 4;
+  border-radius: $circular-radius;
+  border-spacing: $space-size;
+  padding: $space-size;
+  box-shadow: $shadow-z6, inset 0 1px highlight($popover);
+  background-color: $popover;
+  color: on($popover);
+  border: none;
+
+  &:dir(ltr) { padding-left: $space-size * 2; }
+  &:dir(rtl) { padding-right: $space-size * 2; }
+
+  > label {
+    margin: 0 $space-size;
+  }
+}
+
+//
+// viewswitcher
+//
+
+viewswitcher {
+  margin: 0;
+
+  &.wide {
+    border-spacing: $space-size / 2;
+  }
+
+  &.narrow button.toggle {
+    border-radius: 0;
+    margin: 0;
+
+    &:focus-within, &:focus { box-shadow: none; }
+  }
+
+  button.toggle {
+    font-weight: bold;
+    padding: 0;
+
+    > stack > box {
+      &.narrow {
+        font-size: 0.75rem;
+        padding-top: $space-size;
+        padding-bottom: $space-size - 2px;
+        border-spacing: $space-size - 2px;
+
+        > stack > label {
+          padding-left: $space-size;
+          padding-right: $space-size;
+        }
+      }
+
+      &.wide {
+        padding: 2px $space-size * 2;
+        border-spacing: $space-size;
+      }
+    }
+  }
+}
+
+// AdwViewSwitcherBar
+viewswitcherbar actionbar > revealer > box {
+  padding: 0;
+}
+
+// AdwViewSwitcherTitle
+viewswitchertitle viewswitcher {
+  margin-left: $space-size * 2;
+  margin-right: $space-size * 2;
+}
+
+// AdwIndicatorBin
+indicatorbin {
+  > indicator, > mask {
+    min-width: $space-size;
+    min-height: $space-size;
+    border-radius: $circular-radius;
+  }
+
+  > indicator {
+    margin: 1px;
+    background-color: gtkalpha(currentColor, .4);
+
+    > label {
+      font-size: 0.6rem;
+      font-weight: bold;
+      padding: 1px 4px;
+      color: white;
+    }
+  }
+
+  > mask {
+    padding: 1px;
+    background: black;
+  }
+
+  &.needs-attention > indicator {
+    background-color: $primary;
+
+    > label { color: on($primary); }
+  }
+}
+
 
 //
 // preferencespage
 //
 
 preferencespage > scrolledwindow > viewport > clamp > box {
-  margin: 24px 12px;
-  border-spacing: 24px;
+  margin: $space-size * 4 $space-size * 2;
+  border-spacing: $space-size *4;
 }
 
 preferencesgroup > box {
@@ -105,13 +230,51 @@ preferencesgroup > box {
 }
 
 //
+// AdwAboutWindow
+//
+
+ window.about {
+  .main-page {
+    > viewport > clamp > box {
+      margin: $space-size * 2;
+      border-spacing: $space-size;
+
+      > box {
+        margin-top: $space-size * 3;
+        border-spacing: $space-size * 3;
+        margin-bottom: $space-size;
+      }
+    }
+
+    .app-version {
+      padding: $space-size / 2 $space-size * 3;
+      color: $primary;
+      border-radius: $corner-radius;
+      margin-top: $space-size / 2;
+    }
+  }
+
+  .subpage {
+    > viewport > clamp > box {
+      margin: $space-size * 3 $space-size * 2;
+      border-spacing: $space-size * 3;
+    }
+
+    > clamp > textview {
+      background: none;
+      color: inherit;
+    }
+  }
+}
+
+//
 // AdwStatusPage
 //
 
 statuspage {
   > scrolledwindow > viewport > box {
-    margin: 36px $space-size * 2;
-    border-spacing: 36px;
+    margin: $space-size * 6 $space-size * 2;
+    border-spacing: $space-size * 6;
 
     > clamp > box {
       border-spacing: $space-size * 2;
@@ -126,15 +289,15 @@ statuspage {
         }
 
         &:not(:last-child) {
-          margin-bottom: 24px;
+          margin-bottom: $space-size * 4;
         }
       }
     }
   }
 
   &.compact > scrolledwindow > viewport > box {
-    margin: 24px 12px;
-    border-spacing: 24px;
+    margin: $space-size * 4 $space-size * 2;
+    border-spacing: $space-size * 4;
 
     > clamp > box {
       > .icon {

@@ -190,11 +190,18 @@ flowbox {
   rubberband { @extend rubberband; }
 
   flowboxchild {
-    padding: 4px;
+    padding: $space-size / 2;
     border-radius: $corner-radius;
     color: $text;
 
     &:selected { @extend %selected_items_color; }
+
+    button.osd.remove-button {
+      min-height: 28px;
+      min-width: 28px;
+      padding: 0;
+      margin: $space-size;
+    }
   }
 }
 
@@ -532,10 +539,6 @@ button {
   &.image-button {
     min-width: 24px;
     padding: ($medium-size - 24px) / 2;
-
-    // @extend %circular-button;
-
-    // &.destructive-action { border-radius: $corner-radius; }
   }
 
   // NOTE: Some image-only buttons use this as well
@@ -576,7 +579,7 @@ button {
     &:not(:only-child) { // specificity bump
       border-radius: $corner-radius;
 
-      &.image-button:not(.text-button) { border-radius: $circular-radius; }
+      // &.image-button:not(.text-button) { border-radius: $circular-radius; }
     }
 
     // &:focus { box-shadow: inset 0 0 0 9999px $overlay-focus; }
@@ -586,18 +589,29 @@ button {
   &.osd {
     min-width: $small-size;
     min-width: $small-size;
-    padding: ($large-size - 24px) / 2 ($large-size - 16px) / 2;
-    background-color: $primary;
-    color: on($primary);
+    padding: ($medium-size - 24px) / 2;
+    box-shadow: none;
+    background-color: rgba(black, 0.35);
+    color: white;
+
+    &:focus {
+      box-shadow: inset 0 0 0 2px rgba(black, 0.1);
+      color: white;
+    }
 
     &:hover {
-      background-color: mix(on($primary), $primary, 12%);
-      color: on($primary);
+      background-color: rgba(black, 0.45);
+      color: white;
     }
 
     &:active {
-      background-color: mix(on($primary), $primary, 26%);
-      color: on($primary);
+      background-color: rgba(black, 0.65);
+      color: white;
+    }
+
+    &:disabled {
+      background-color: rgba(black, 0.15);
+      color: rgba(white, 0.35);
     }
 
     &.image-button, &.circular {
@@ -605,8 +619,6 @@ button {
 
       > image { padding: 0; }
     }
-
-    &:disabled { opacity: 0; }
   }
 
   // overlay / OSD style
@@ -822,7 +834,6 @@ spinbutton {
     &:disabled { color: $text-disabled; }
 
     entry {
-      // @extend %entry_raised;
       margin: 0;
       border-image: none;
       border-radius: 0;

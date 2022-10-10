@@ -703,13 +703,6 @@ window#gnome-system-monitor.background.csd {
     border-radius: 0 0 $window-radius $window-radius;
 
     > box.vertical {
-      // > scrolledwindow {
-      //   treeview.view:not(.progressbar):not(.trough) {
-      //     background: none;
-      //     @extend .view;
-      //   }
-      // }
-
       > revealer > actionbar > revealer > box {
         border-radius: 0 0 $window-radius $window-radius;
       }
@@ -774,6 +767,7 @@ tabbox { // Gnome 40.0
       border-radius: $circular-radius;
       border: none;
       padding: 0;
+      margin-right: -6px;
       @extend %button-flat-simple;
     }
   }
