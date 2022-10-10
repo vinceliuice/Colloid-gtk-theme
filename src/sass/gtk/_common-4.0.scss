@@ -478,7 +478,7 @@ button {
     @at-root %button-flat-simple, & {
       @include button(flat-normal);
 
-      &:focus { @include button(flat-focus); }
+      &:focus:not(:hover):not(:active) { @include button(flat-focus); }
 
       &:hover { @include button(flat-hover); }
 
@@ -487,7 +487,7 @@ button {
       &:disabled { @include button(flat-disabled); }
     }
 
-    &:checked, &:checked:hover { @include button(flat-checked); }
+    &:checked, &:checked:hover, &:checked:focus { @include button(flat-checked); }
 
     &:checked:disabled { @include button(flat-checked-disabled); }
   }
@@ -1446,7 +1446,8 @@ headerbar {
   background-color: $titlebar;
   color: $titlebar-text;
   min-height: $large-size;
-  padding: 0 $space-size;
+  padding: 0;
+  margin: 0;
 
   &:disabled { color: $titlebar-text-disabled; }
 
@@ -1493,7 +1494,7 @@ headerbar {
   }
 
   > windowhandle > box {
-    padding: 0 $space-size / 2;
+    padding: 0 $space-size;
 
     &,
     > box.start,
@@ -1659,6 +1660,8 @@ pathbar > button {
   padding-right: ($medium-size - 24px) / 2;
   border-radius: $corner-radius;
   background-color: $overlay-focus;
+  border: none;
+  box-shadow: none;
 
   &:disabled { background-color: $overlay-normal; }
 
@@ -1697,6 +1700,12 @@ pathbar > button {
     margin-bottom: 0;
     min-height: 20px;
     border-radius: $corner-radius - 2px;
+    border: none;
+    box-shadow: none;
+
+    &:last-child {
+      @include button(flat-checked);
+    }
   }
 }
 
@@ -4482,7 +4491,7 @@ window {
   }
 }
 
-$window-space: if($window_button == 'mac', $space-size, $space-size - 2px);
+$window-space: if($window_button == 'mac', $space-size * 1.5, $space-size);
 
 windowcontrols {
   border-spacing: $space-size;
