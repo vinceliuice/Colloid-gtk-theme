@@ -9,9 +9,15 @@ menupopup {
 	padding: 8px !important;
 	margin: -8px !important;
 }
+
+menupopup label {
+	color: var(--gnome-toolbar-color);
+}
+
 menu menupopup {
 	margin-top: -6px !important;
 }
+
 .menupopup-arrowscrollbox {
 	-moz-appearance: none !important;
 	background: var(--gnome-menu-background) !important;
@@ -25,6 +31,7 @@ menu menupopup {
 menuitem[type="checkbox"] image, menuitem[type="radio"] image {
 	visibility: visible !important;
 }
+
 menuitem[disabled="true"]:hover, menupopup menu[disabled="true"]:hover {
 	background: transparent !important;
 }

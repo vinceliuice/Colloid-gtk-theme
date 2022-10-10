@@ -1544,12 +1544,6 @@ headerbar {
     margin-bottom: ($large-size - 24px) / 2;
   }
 
-  // reset button margins of the spinbutton
-  spinbutton button {
-    margin-top: 0;
-    margin-bottom: 0;
-  }
-
   // FIXME: This is a hacky workaround.
   .entry-tag {
     margin-top: 5px;

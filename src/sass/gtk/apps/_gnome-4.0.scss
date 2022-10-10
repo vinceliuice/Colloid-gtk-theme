@@ -27,16 +27,6 @@
   }
 }
 
-#NautilusPathBar {
-  border-radius: $corner-radius;
-  background: none;
-}
-
-#NautilusPathButton {
-  margin: $space-size / 2;
-  border-radius: $corner-radius - $space-size / 2;
-}
-
 #NautilusViewCell {
   clamp box {
     margin: 0;
