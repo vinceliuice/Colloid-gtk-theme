@@ -259,7 +259,7 @@
 }
 
 %panel_circular_button {
-  padding: 0 0;
+  padding: 0;
   margin: ($space-size / 2) 0;
   min-width: 16px;
   min-height: 16px;
@@ -317,18 +317,14 @@
 
     // Menu Button
     &.budgie-menu-launcher {
-      // padding: 0 2px;
-      @extend %panel_circular_button;
-      // @extend %button-flat;
-      // @extend %button-on-dark;
+      // @extend %panel_circular_button;
       color: on($panel, secondary);
-      // border-radius: $menu-radius;
 
       &:focus { // Fixed issues when global menubar item is hovering
-        background: none;
+        // background: none;
         box-shadow: none;
         border: none;
-        color: on($panel, secondary);
+        color: on($panel);
       }
     }
 
@@ -348,9 +344,9 @@
   .alert { color: $destructive; }
 
   // End Section needs to be fancy
-  .end-region {
-    // background-color: rgba(0,0,0, 0.2);
-  }
+  // .end-region {
+  //   background-color: rgba(0,0,0, 0.2);
+  // }
 
   // budgie-pixel-saver-applet
   .titlebar:not(headerbar) {
