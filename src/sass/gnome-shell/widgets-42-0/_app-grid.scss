@@ -61,6 +61,7 @@ $app_icon_spacing: 6px;
     width: 24px;
     height: 24px;
     border-radius: $circular-radius;
+    color: on($osd, secondary);
   }
 
   &:insensitive > StIcon {

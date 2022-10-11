@@ -6,6 +6,10 @@
     padding: $base_padding * 1.75;
   }
 
+  &.popup-menu {
+    border-radius: $base_radius + $base_padding * 3 !important;
+  }
+
   .popup-menu-content {
     padding: $base_padding * 2 !important;
   }

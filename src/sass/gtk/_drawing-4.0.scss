@@ -86,6 +86,7 @@
 
   @if $t == hover {
     background-color: $overlay-hover;
+    color: $text;
   }
 
   @if $t == focus {
@@ -96,6 +97,7 @@
     transition: $transition,
                 background-color $ripple-fade-in-duration $ease-out;
     background-color: $overlay-active;
+    color: $text;
   }
 
   @if $t == disabled {

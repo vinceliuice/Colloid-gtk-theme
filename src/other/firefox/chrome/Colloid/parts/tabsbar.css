@@ -80,17 +80,24 @@ tab > stack {
 	top: 38px;
 }
 
-/* Remove tab separators */
-.tabbrowser-tab::after,
-.tabbrowser-tab::before {
-	border-color: transparent !important;
-	border-image: none !important;
-	border-width: 0 !important;
+/* Tab separators */
+.tabbrowser-tab:not([selected], :hover, [last-visible-tab="true"], [beforeselected-visible="true"], [beforehovered="true"])::after {
+	content: "";
+	display: block;
+	border-left: 1px solid var(--gnome-toolbar-border-color) !important;
+/*	height: 26px;*/
+	position: absolute;
+	top: 10px;
+	bottom: 10px;
+}
+
+.tabbrowser-tab::after {
+	right: -1px;
 }
 
 /* Space between tabs */
 .tabbrowser-tab {
-	border: none !important;
+/*	border: none !important;*/
 	padding-inline: 0 !important;
 	padding: 3px 2px 4px !important;
 }

@@ -3508,10 +3508,13 @@ tooltip {
     // see https://bugzilla.gnome.org/show_bug.cgi?id=736155 for details.
     background-color: $tooltip;
     color: on($tooltip);
-    box-shadow: $shadow-z3;
+    border-radius: $corner-radius;
   }
 
-  &.background.csd { border-radius: $corner-radius; }
+  &.background.csd {
+    border-radius: $corner-radius;
+    box-shadow: $shadow-z3;
+  }
 
   // padding: 4px; /* not working */
   box-shadow: none; // otherwise it gets inherited by windowframe.csd

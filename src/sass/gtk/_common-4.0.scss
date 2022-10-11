@@ -1088,7 +1088,7 @@ spinbutton {
     // and nuke the style on the internal entry
 
     > text {
-      min-width: $large-size - 8px * 2;
+      min-width: $large-size - 16px;
       // reset all the other props since the spinbutton node is styled here
       padding-left: $space-size * 2;
     }
@@ -3160,6 +3160,9 @@ progressbar {
     min-width: $space-size;
     min-height: $space-size;
     background-color: transparent;
+    box-shadow: none;
+    margin: 0;
+    padding: 0;
 
     trough { background-color: transparent; }
 
@@ -3312,14 +3315,11 @@ scrolledwindow {
   //   &.right { @include undershoot(right); }
   // }
 
-  // @at-root junction { // the small square between two scrollbars
-  //   border-style: solid none none solid;
-  //   border-width: 1px;
-  //   border-color: $divider;
-  //   background-color: $base;
-
-  //   &:dir(rtl) { border-style: solid solid none none; }
-  // }
+  @at-root junction { // the small square between two scrollbars
+    border: none;
+    // background-color: $base;
+    background-image: none;
+  }
 }
 
 // vbox and hbox separators
