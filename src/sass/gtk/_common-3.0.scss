@@ -992,7 +992,7 @@ button.combo:only-child {
  ************/
 toolbar {
   -GtkWidget-window-dragging: true;
-  padding: 2px;
+  padding: 2px 3px;
   background-color: $background;
 
   button { @extend %button-flat; }
@@ -1034,7 +1034,7 @@ toolbar {
     scale,
     entry,
     spinbutton,
-    button { margin: 2px; }
+    button { margin: 2px 1px; }
 
     .linked entry,
     .linked spinbutton,
@@ -1341,6 +1341,8 @@ searchbar > revealer > box {
     }
 
     .background.csd & {
+      padding: $space-size;
+
       @if $rimless == 'false' and $variant == 'dark' {
         box-shadow: inset 0 -1px $border;
       } @else {
@@ -3506,22 +3508,22 @@ tooltip {
     // see https://bugzilla.gnome.org/show_bug.cgi?id=736155 for details.
     background-color: $tooltip;
     color: on($tooltip);
+    box-shadow: $shadow-z3;
   }
 
-  &.background.csd {
-    border-radius: $corner-radius;
-  }
+  &.background.csd { border-radius: $corner-radius; }
 
   // padding: 4px; /* not working */
-  border-radius: $corner-radius/2;
   box-shadow: none; // otherwise it gets inherited by windowframe.csd
 
   // FIXME: we need a border or tooltips vanish on black background.
-  decoration { background-color: transparent; }
+  decoration {
+    background-color: transparent;
+  }
 
   > box {
     margin: -6px; // Remove hard-coded 6px margin
-    min-height: 32px - 4px * 2;
+    min-height: 24px;
     padding: 4px 8px;
   }
 }
@@ -3736,7 +3738,7 @@ decoration {
   }
 
   tooltip.csd & {
-    border-radius: $menu-radius;
+    border-radius: $corner-radius;
     box-shadow: none;
     border: none;
   }

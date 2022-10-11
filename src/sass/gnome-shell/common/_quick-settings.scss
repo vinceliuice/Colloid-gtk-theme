@@ -119,7 +119,12 @@
 
     &:focus, &:hover, &.selected {
       color: $text !important;
-      background-color: $divider !important;
+      background-color: rgba($text, 0.1) !important;
+    }
+
+    &:active {
+      color: $text !important;
+      background-color: rgba($text, 0.2) !important;
     }
 
     > StIcon { -st-icon-style: symbolic; }
@@ -150,9 +155,6 @@
       @extend %caption_heading;
     }
   }
-}
-
-.quick-toggle-menu-container {
 }
 
 .quick-settings-system-item {

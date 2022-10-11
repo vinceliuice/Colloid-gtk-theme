@@ -106,7 +106,7 @@
 
   & .icon-grid {
     row-spacing: $base_spacing * 2;
-    column-spacing: $base_spacing * 5;
+    column-spacing: $base_spacing * 4;
     page-padding-top: 0;
     page-padding-bottom: 0;
     page-padding-left: 0;
@@ -120,8 +120,8 @@
 
 .app-folder-dialog-container {
   padding: $base_padding;
-  width: 620px;
-  height: 620px;
+  width: $base_padding * 50 + 420px;
+  height: $base_padding * 50 + 420px;
 }
 
 // Running app indicator (also shown in dash)

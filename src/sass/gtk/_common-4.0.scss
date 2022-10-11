@@ -1055,12 +1055,32 @@ spinbutton {
   border-radius: $corner-radius;
   padding: 0;
   border-spacing: 0;
-  min-height: 0;
   @include entry(normal);
 
   &:focus-within { @include entry(checked); }
 
   &:disabled { @include entry(disabled); }
+
+  > text {
+    border-image: none;
+    border-radius: 0;
+    box-shadow: none;
+    background-color: transparent;
+    margin: 0;
+
+    > selection { @extend %selected_items_primary; }
+  }
+
+  > button {
+    @extend %button-flat-simple;
+    @extend %small-button;
+    border: none;
+
+    // Remove unwanted focus indicator
+    &:focus:not(:hover):not(:active):not(:disabled) {
+      box-shadow: none;
+    }
+  }
 
   &:not(.vertical) {
     // in this horizontal configuration, the whole spinbutton
@@ -1070,71 +1090,11 @@ spinbutton {
     > text {
       min-width: $large-size - 8px * 2;
       // reset all the other props since the spinbutton node is styled here
-      margin: 0;
       padding-left: $space-size * 2;
-      border-image: none;
-      border-radius: 0;
-      box-shadow: none;
-      background-color: transparent;
     }
 
     > button {
-      @extend %button-flat-simple;
-      @extend %small-button;
-
-      // margin: $space-size;
-      border: $space-size solid transparent;
-
-      // Remove unwanted focus indicator
-      &:focus:not(:hover):not(:active):not(:disabled) {
-        box-shadow: inset 0 0 0 9999px transparent;
-        color: $text-secondary;
-      }
-
-      &.up:dir(ltr),
-      &.down:dir(rtl) { margin-left: -$space-size / 2; }
-
-      &.up:dir(rtl),
-      &.down:dir(ltr) { margin-right: -$space-size / 2; }
-    }
-  }
-
-  // Vertical
-  &.vertical {
-    > text {
-      margin: 0;
-      border-image: none;
-      border-radius: 0;
-      box-shadow: none;
-      background-color: transparent;
-
-      min-height: $medium-size;
-      min-width: $large-size - $space-size;
       padding: 0;
-    }
-
-    > button {
-      @extend %button-flat-simple;
-      @extend %small-button;
-      padding: 0;
-      border: solid $space-size transparent;
-
-      // Remove unwanted focus indicator
-      &:focus:not(:hover):not(:active) {
-        box-shadow: inset 0 0 0 9999px transparent;
-        color: $text-secondary;
-      }
-
-      &.up { margin: 0 $space-size / 2; }
-
-      &.down { margin: 0 $space-size / 2; }
-    }
-  }
-
-  // Misc
-  // treeview &:not(.vertical),
-  list > row &:not(.vertical) {
-    > button {
       margin: $space-size;
 
       &.up:dir(ltr),
@@ -1142,6 +1102,41 @@ spinbutton {
 
       &.up:dir(rtl),
       &.down:dir(ltr) { margin-right: $space-size / 2; }
+    }
+  }
+
+  cell.activatable &:not(.vertical) {
+    margin: $space-size / 2 0;
+
+    > button {
+      margin: 0;
+      padding: 0;
+      min-height: $small-size;
+      border-radius: 0;
+  
+      &:last-child {
+        border-radius: 0 $corner-radius $corner-radius 0;
+      }
+  
+      &.up:dir(ltr),
+      &.down:dir(rtl) { margin-left: 0; }
+  
+      &.up:dir(rtl),
+      &.down:dir(ltr) { margin-right: 0; }
+    }
+  }
+
+  // Vertical
+  &.vertical {
+    > text {
+      min-height: $medium-size;
+      min-width: $large-size - $space-size;
+      padding: 0;
+    }
+
+    > button {
+      padding: 0;
+      margin: $space-size ($large-size - $space-size - $small-size) / 2;
     }
   }
 }
@@ -2124,7 +2119,7 @@ notebook {
   > header {
     border: none;
     background-color: $fill;
-    padding: $space-size / 2;
+    // padding: $space-size / 2;
     margin: $space-size / 2;
     border-radius: $modal-radius + $space-size / 2;
     // background-clip: border-box;
@@ -2194,6 +2189,7 @@ notebook {
 
       > tab {
         @extend %tabs_tab;
+        margin: $space-size / 2;
 
         // FIXME: The tab node doesn't have :drop(active), instead its child box has it.
         > box {
@@ -2213,11 +2209,11 @@ notebook {
 
           &:last-child {
             margin-left: $space-size;
-            margin-right: $space-size - 12px;
+            margin-right: -$space-size / 2;
           }
 
           &:first-child {
-            margin-left: $space-size - 12px;
+            margin-left: -$space-size / 2;
             margin-right: $space-size;
           }
         }
@@ -2241,6 +2237,12 @@ notebook {
           &:last-child { margin-right: 0; }
         }
 
+        > tab {
+          &:not(:last-child) {
+            margin-right: 0;
+          }
+        }
+
         tab.reorderable-page { border-style: solid; }
       }
     }
@@ -2257,6 +2259,12 @@ notebook {
           &:last-child { margin-bottom: 0; }
         }
 
+        > tab {
+          &:not(:last-child) {
+            margin-bottom: 0;
+          }
+        }
+
         tab.reorderable-page { border-style: solid; }
       }
     }
@@ -2265,7 +2273,7 @@ notebook {
       padding: $space-size / 2;
       min-width: $small-size;
       min-height: $small-size;
-      margin-left: $space-size / 2;
+      margin: 0 $space-size / 2;
     }
   }
 
@@ -2500,6 +2508,10 @@ dnd {
       min-width: $small-size;
       min-height: $small-size;
       border-radius: $circular-radius;
+
+      &.tab-close-button {
+        margin-right: -$space-size / 2;
+      }
     }
   }
 }
@@ -2823,6 +2835,8 @@ radio {
 }
 
 %small_check,
+// treeview.view check,
+// columnview.view check,
 popover.menu check {
   min-height: 16px;
   min-width: 16px;
@@ -2833,6 +2847,8 @@ popover.menu check {
 }
 
 %small_radio,
+// treeview.view radio,
+// columnview.view radio,
 popover.menu radio {
   min-height: 16px;
   min-width: 16px;
@@ -3296,14 +3312,14 @@ scrolledwindow {
   //   &.right { @include undershoot(right); }
   // }
 
-  @at-root junction { // the small square between two scrollbars
-    border-style: solid none none solid;
-    border-width: 1px;
-    border-color: $divider;
-    background-color: $base;
+  // @at-root junction { // the small square between two scrollbars
+  //   border-style: solid none none solid;
+  //   border-width: 1px;
+  //   border-color: $divider;
+  //   background-color: $base;
 
-    &:dir(rtl) { border-style: solid solid none none; }
-  }
+  //   &:dir(rtl) { border-style: solid solid none none; }
+  // }
 }
 
 // vbox and hbox separators
@@ -3569,6 +3585,8 @@ columnview {
   & > row {
     padding: $space-size * 1.5 $space-size * 2;
     min-height: 32px; /* should be tall even when only containing a label */
+
+    &:last-child { border-bottom: none; }
 
     & > box {
       border-spacing: $space-size * 2;
@@ -4202,10 +4220,9 @@ tooltip {
     // see https://bugzilla.gnome.org/show_bug.cgi?id=736155 for details.
     background-color: $tooltip;
     color: on($tooltip);
-    box-shadow: $shadow-z4;
-    border-radius: $corner-radius / 2;
+    box-shadow: $shadow-z3;
+    border-radius: $corner-radius;
     margin: 2px 6px 8px 6px;
-    border: none;
   }
 
   padding: $space-size $space-size * 2;

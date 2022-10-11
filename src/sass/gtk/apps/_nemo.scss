@@ -11,6 +11,7 @@
   .primary-toolbar {
     background-color: $titlebar;
     border-bottom: 1px solid $divider;
+    padding: 2px 3px;
 
     // FIXME: workaround for wrong size allocation of Nemo
     entry {
@@ -19,6 +20,7 @@
       @extend %titlebar-entry;
     }
 
+    > toolitem > box > button.image-button,
     > toolitem > .linked > button.image-button {
       margin-left: 1px;
       margin-right: 1px;
@@ -88,7 +90,19 @@
     &:selected { @extend %selected_items_primary; }
   }
 
-  .toolbar button { @extend %button-flat; }
+  .toolbar {
+    padding: 0;
+
+    button {
+      @extend %button-flat;
+      margin: $space-size / 2 0;
+      padding: $space-size / 2;
+    }
+
+    separator {
+      margin: $space-size 0;
+    }
+  }
 
   .view {
     selection,

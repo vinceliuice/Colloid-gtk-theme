@@ -149,6 +149,7 @@
 
   @if $t == flat-disabled {
     color: $text-secondary-disabled;
+    background-color: transparent;
   }
 
   @if $t == flat-checked {
