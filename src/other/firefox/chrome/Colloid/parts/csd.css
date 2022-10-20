@@ -40,7 +40,7 @@
 	
 	/* Window buttons box */
 	:root[tabsintitlebar] #titlebar .titlebar-buttonbox-container {
-		left: 0;
+		left: 9px;
 		right: auto !important;
 	}
 
