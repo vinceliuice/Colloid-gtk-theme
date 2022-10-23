@@ -9,7 +9,17 @@
 /* Fix tabs bar icon sizes */
 #TabsToolbar {
 	--toolbarbutton-inner-padding: var(--toolbarbutton-inner-padding) !important;
-	border-bottom: 0 !important;
+	--lwt-tab-line-color: transparent !important;
+}
+
+#TabsToolbar {
+	background-color: var(--gnome-tabbar-tab-background) !important;
+	padding: 0 1px !important;
+	border-bottom: 1px solid var(--gnome-tabbar-tab-border-color);
+}
+
+#TabsToolbar:-moz-window-inactive {
+	background-color: var(--gnome-inactive-tabbar-tab-background) !important;
 }
 
 /* Tabs bar height */
@@ -17,14 +27,6 @@
 #tabbrowser-tabs arrowscrollbox {
 	height: auto !important;
 	min-height: auto !important;
-}
-
-#TabsToolbar {
-	background-color: var(--gnome-tabbar-tab-background) !important;
-}
-
-#TabsToolbar:-moz-window-inactive {
-	background-color: var(--gnome-inactive-tabbar-tab-background) !important;
 }
 
 tab > stack {
@@ -36,15 +38,16 @@ tab > stack {
 #TabsToolbar {
 	--toolbarbutton-active-background: transparent !important;
 	--toolbarbutton-hover-background: transparent !important;
-	padding: 0 3px !important;
 }
 
 /* Tabsbar buttons */
 #TabsToolbar .toolbarbutton-1:not(#hack) {
 	border: none !important;
 	border-radius: 6px !important;
-	margin: 3px 4px 4px 2px !important;
-	padding: 0 10px !important;
+	margin: 3px 2px !important;
+	padding: 0 !important;
+	height: 32px !important;
+	width: 32px !important;
 }
 
 #TabsToolbar .toolbarbutton-1:not([disabled]):not(:active):not([open]):hover {
@@ -54,25 +57,28 @@ tab > stack {
 	background-color: var(--gnome-tabbar-tab-border-color) !important;
 }
 
+/* firefox-view-button */
+:root:not([privatebrowsingmode="temporary"]):not([firefoxviewhidden]) :is(#firefox-view-button, #wrapper-firefox-view-button) + #tabbrowser-tabs {
+	border-inline-start: 1px solid var(--gnome-tabbar-tab-border-color) !important;
+	padding-inline-start: calc(var(--tab-overflow-pinned-tabs-width) + 1px) !important;
+	margin-inline-start: 1px !important;
+}
+
+#firefox-view-button {
+	list-style-image: url("../icons/icon.svg") !important;
+}
+
+#firefox-view-button > .toolbarbutton-icon {
+	filter: none !important;
+	width: 22px !important;
+	height: 22px !important;
+	box-shadow: none !important;
+}
+
 /* Remove shadow next to tab scroll buttons */
 .arrowscrollbox-overflow-start-indicator,
 .arrowscrollbox-overflow-end-indicator {
 	display: none;
-}
-
-/* Fake tabsbar border */
-#tabbrowser-arrowscrollbox::after {
-	content: "";
-	display: block;
-	width: 100%;
-	background: var(--gnome-toolbar-background);
-	border-bottom: 1px solid var(--gnome-tabbar-tab-border-color);
-	height: 0;
-	min-height: 0;
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	z-index: 2;
 }
 
 #tabbrowser-tabs[movingtab=true] #tabbrowser-arrowscrollbox::after  {
@@ -99,11 +105,7 @@ tab > stack {
 .tabbrowser-tab {
 /*	border: none !important;*/
 	padding-inline: 0 !important;
-	padding: 3px 2px 4px !important;
-}
-#TabsToolbar {
-	padding: 0 !important;
-	margin-right: -1px !important;
+	padding: 3px 2px 3px !important;
 }
 
 /* Tab labels */
@@ -337,9 +339,9 @@ tab {
 	border-image: none !important;
 	box-shadow: 0 2px 3px rgba(0, 0, 0, 0.08) !important;
 }
+
 .tab-background[selected=true]:-moz-window-inactive {
 	background-color: var(--gnome-inactive-tabbar-tab-active-background) !important;
-	border-bottom-color: var(--gnome-tabbar-tab-border-color) !important; 
 }
 
 /* Hover tab */
