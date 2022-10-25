@@ -124,10 +124,12 @@ for theme in '' '-Purple' '-Pink' '-Red' '-Orange' '-Yellow' '-Green' '-Teal' '-
     fi
 
     if [[ "$type" != '' ]]; then
+      rm -rf "theme${theme}${type}"
       cp -rf "theme" "theme${theme}${type}"
       sed -i "s/#3c84f7/${theme_color_dark}/g" "theme${theme}${type}"/*.svg
       sed -i "s/#5b9bf8/${theme_color_light}/g" "theme${theme}${type}"/*.svg
     elif [[ "$theme" != '' ]]; then
+      rm -rf "theme${theme}"
       cp -rf "theme" "theme${theme}"
       sed -i "s/#3c84f7/${theme_color_dark}/g" "theme${theme}"/*.svg
       sed -i "s/#5b9bf8/${theme_color_light}/g" "theme${theme}"/*.svg
