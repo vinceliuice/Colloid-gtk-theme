@@ -17,6 +17,10 @@ dnd {
 
 .large-icons {
   -gtk-icon-size: 32px;
+
+  .aboutdialog & {
+    -gtk-icon-size: 128px;
+  }
 }
 
 spinner:disabled,
@@ -2894,10 +2898,6 @@ columnview.view {
     margin: 0;
     transition: none;
 
-    &:not(:hover):not(:disabled):not(:checked):not(:indeterminate) {
-      background-color: $divider;
-    }
-
     &, &:hover, &:disabled, &:checked:hover, &:indeterminate:hover {
       box-shadow: none;
     }
@@ -2906,6 +2906,11 @@ columnview.view {
   &:hover, &:selected, &:focus {
     check, radio {
       box-shadow: none;
+
+      &:checked {
+        color: on($assets-color);
+        background-color: $assets-color;
+      }
     }
   }
 }
@@ -3813,6 +3818,18 @@ window.dialog.message { // Message Dialog styling
     }
   }
 }
+
+// About dialog
+window.aboutdialog {
+  &.background.csd {
+    scrolledwindow.frame {
+      &, > viewport.view, > textview.view, > textview.view > text {
+        border-radius: $corner-radius;
+      }
+    }
+  }
+}
+
 
 /********************
  * AdwMessageDialog *
