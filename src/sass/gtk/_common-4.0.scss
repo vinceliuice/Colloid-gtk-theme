@@ -567,26 +567,39 @@ button {
     background-clip: padding-box;
     font-weight: inherit;
     padding: 0;
+    border: 1px solid $border;
+    background-clip: border-box;
 
     &:hover {
-      background-image: image(gtkalpha(currentColor, 0.03));
+      background-image: none;
+      @include button(hover);
     }
 
     &.keyboard-activating,
     &:active {
-      background-image: image(gtkalpha(currentColor, 0.08));
+      background-image: none;
+      @include button(active);
     }
 
     &:checked {
-      background-color: $fill;
-      background-image: image(gtkalpha(currentColor, 0.1));
+      background-image: none;
+      @include button(checked);
+      border-color: $primary;
 
-      &:hover { background-image: image(gtkalpha(currentColor, 0.13)); }
+      &:hover {
+        background-image: none;
+        @include button(checked-hover);
+      }
+
+      &:disabled { @include button(checked-disabled); }
+
 
       &.keyboard-activating,
-      &:active { background-image: image(gtkalpha(currentColor, 0.19)); }
+      &:active { background-image: none; }
 
-      &.has-open-popup { background-image: image(gtkalpha(currentColor, 0.13)); }
+      &.has-open-popup {
+        background-image: none;
+      }
     }
 
     &:drop(active) {
