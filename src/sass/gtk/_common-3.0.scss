@@ -607,10 +607,7 @@ button {
       color: on($osd);
     }
 
-    &:disabled {
-      background-color: transparent;
-      color: transparent;
-    }
+    &:disabled { opacity: 0; }
 
     &.image-button, &.circular {
       padding: ($large-size - 24px) / 2;
