@@ -3435,7 +3435,7 @@ infobar {
       link:link { color: on($primary); }
 
       button {
-        &, &.text-button:not(:disabled) { color: $primary; }
+        &.text-button:not(:disabled):not(.suggested-action):not(.destructive-action) { color: $primary; }
       }
     }
   }
