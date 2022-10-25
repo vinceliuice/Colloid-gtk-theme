@@ -1728,6 +1728,11 @@ treeview.view {
     border-radius: 0;
   }
 
+  &:focus {
+    box-shadow: none;
+    outline: none;
+  }
+
   &.separator {
     min-height: 1px + 2px * 2;
     color: $divider;

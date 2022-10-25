@@ -52,3 +52,80 @@
   &-sunset-icon,
   &-build-icon { color: $text-secondary; }
 }
+
+//
+// Cosmic desktop (Pop_OS)
+//
+
+.cosmic-application-dialog {
+  box-shadow: 0 3px 6px 0 rgba(black, 0.15);
+  background-color: $popover;
+  color: $text;
+
+  .overview-icon {
+    color: $text;
+  }
+}
+
+.cosmic-applications-separator {
+	background: $border;
+}
+
+.cosmic-folder-edit-button {
+	box-shadow: none;
+	border-radius: $corner-radius;
+	border-width: 0;
+  color: $text;
+  background: $fill;
+  
+  .cosmic-folder-edit-button:hover {
+    background: $divider;
+  }
+}
+
+.cosmic-applications-icon {
+	color: $text-secondary;
+}
+
+.cosmic-applications-folder-title {
+	color: $text-secondary;
+}
+
+.cosmic-applications-available {
+	color: $text;
+}
+
+// pop-shell
+.pop-shell-active-hint {
+  border-style: solid;
+  border-color: $warning;
+  border-radius: $corner-radius;
+  box-shadow: none;
+}
+
+.pop-shell-overlay {
+  background-color: rgba($primary, 0.3);
+}
+
+.pop-shell-search-element:select{
+  background: $divider;
+  border-radius: $corner-radius;
+  color: $text;
+}
+
+.pop-shell-tab {
+  border: 1px solid $border;
+  color: $text;
+}
+
+.pop-shell-tab-active {
+  background: $warning;
+}
+
+.pop-shell-tab-inactive {
+  background: rgba($warning, 0.35);
+}
+
+.pop-shell-tab-urgent {
+  background: $error;
+}
