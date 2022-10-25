@@ -1860,12 +1860,6 @@ dialog.background.csd {
         }
       }
 
-      // > box.vertical > stack.view {
-      //   > scrolledwindow > treeview.view:not(:hover):not(:selected):not(:active) {
-      //     background-color: transparent;
-      //   }
-      // }
-
       toolbar.toolbar {
         border-radius: 0 0 $window-radius $window-radius;
       }
@@ -1889,8 +1883,6 @@ dialog.background.csd {
           background: none;
         }
       }
-
-      // treeview.view:not(:hover):not(:selected) { background: none; }
     }
 
     viewport.frame {
