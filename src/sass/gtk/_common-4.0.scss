@@ -326,9 +326,9 @@ entry {
 
         image {
           color: rgba($e_color, 0.75);
-  
+
           &:hover, &:active { color: $e_color; }
-  
+
           &:disabled { color: rgba($e_color, 0.35); }
         }
       }
@@ -1113,14 +1113,14 @@ spinbutton {
       padding: 0;
       min-height: $small-size;
       border-radius: 0;
-  
+
       &:last-child {
         border-radius: 0 $corner-radius $corner-radius 0;
       }
-  
+
       &.up:dir(ltr),
       &.down:dir(rtl) { margin-left: 0; }
-  
+
       &.up:dir(rtl),
       &.down:dir(ltr) { margin-right: 0; }
     }
@@ -1502,6 +1502,7 @@ headerbar {
   entry,
   spinbutton,
   button,
+  menubutton,
   stackswitcher,
   separator:not(.sidebar) {
     margin-top: $space-size;
@@ -1510,7 +1511,10 @@ headerbar {
 
   menubutton > button,
   spinbutton > button,
-  splitbutton > button {
+  splitbutton > button,
+  splitbutton > menubutton,
+  .linked > menubutton,
+  entry > menubutton {
     margin-top: 0;
     margin-bottom: 0;
   }
