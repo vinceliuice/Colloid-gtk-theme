@@ -4411,12 +4411,22 @@ colorchooser .popover.osd {
  * Window Decorations *
  **********************/
 window {
+  border: none;
   transition: $transition-shadow;
-  border-radius: $window-radius;
-  outline-color: highlight($background);
-  outline-offset: -1px;
-  outline-style: solid;
-  outline-width: 1px;
+
+  &.csd {
+    border-radius: $window-radius;
+    outline-offset: -1px;
+    outline: 1px solid highlight($background);
+
+    &.maximized,
+    &.fullscreen,
+    &.tiled,
+    &.tiled-top,
+    &.tiled-right,
+    &.tiled-bottom,
+    &.tiled-left { border-radius: 0; }
+  }
 
   @if $rimless == 'true' {
     box-shadow: $shadow-z16, 0 0 36px transparent;
@@ -4436,15 +4446,7 @@ window {
     }
   }
 
-  &.popup {
-    border-radius: $menu-radius;
-  }
-
-  &.dialog.message {
-    border-radius: $window-radius;
-  }
-
-  .solid-csd & {
+  &.solid-csd {
     margin: 0;
     padding: 2px;
     border-radius: 0;
@@ -4454,13 +4456,10 @@ window {
     &:backdrop { background-color: $titlebar-backdrop; }
   }
 
-  &.maximized,
-  &.fullscreen,
-  &.tiled,
-  &.tiled-top,
-  &.tiled-right,
-  &.tiled-bottom,
-  &.tiled-left { border-radius: 0; }
+  &.ssd {
+    // just doing borders, wm draws actual shadows
+    box-shadow: 0 0 0 1px $border;
+  }
 }
 
 // Windows button
