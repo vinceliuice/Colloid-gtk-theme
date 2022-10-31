@@ -3525,10 +3525,10 @@ row {
         &:hover { background-color: $overlay-focus-hover; }
       }
     }
+  }
 
-    button.circular {
-      @extend %button-flat-simple;
-    }
+  button {
+    @extend %button-flat-simple;
   }
 
   button &.activatable {
