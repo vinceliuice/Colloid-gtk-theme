@@ -45,12 +45,14 @@ avatar {
 // Card
 .card {
   @at-root %card, & {
-    @include button(normal);
     border-radius: $corner-radius;
     border: 1px solid $border;
     background-clip: border-box;
     color: $text-secondary;
     box-shadow: none;
+    outline: none;
+    background-color: $base;
+    color: $text;
   }
 
   &.activatable {

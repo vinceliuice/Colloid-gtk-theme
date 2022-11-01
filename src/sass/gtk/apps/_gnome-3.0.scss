@@ -1415,6 +1415,13 @@ box.vertical > revealer > toolbar.search-bar {
   }
 }
 
+window.background.csd {
+  > stack > box > revealer > actionbar > revealer > box {
+    border-bottom-left-radius: $window-radius;
+    border-bottom-right-radius: $window-radius;
+  }
+}
+
 
 /*******************
  * Document Viewer *
