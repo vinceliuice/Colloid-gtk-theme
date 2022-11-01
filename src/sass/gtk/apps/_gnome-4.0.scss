@@ -1088,11 +1088,11 @@ window > contents > leaflet { // Gnome control center
 // Gnome Weather
 //
 
-$weather_temp_chart_fill_color: rgba(248, 228, 92, 0.5);
-$weather_temp_chart_stroke_color: rgba(246, 211, 45, 1.0);
+@define-color weather_temp_chart_fill_color: #{rgba(248, 228, 92, 0.5)};
+@define-color weather_temp_chart_stroke_color: #{rgba(246, 211, 45, 1.0)};
 
-$weather_thermometer_warm_color: if($variant == 'light', $yellow-dark, $yellow-light);
-$weather_thermometer_cold_color: if($variant == 'light', $blue-dark, $blue-light);
+@define-color weather_thermometer_warm_color: #{if($variant == 'light', $yellow-dark, $yellow-light)};
+@define-color weather_thermometer_cold_color: #{if($variant == 'light', $blue-dark, $blue-light)};
 
 $weather_thermometer_high_color: $yellow-light;
 $weather_thermometer_low_color: $blue-light;
@@ -1208,12 +1208,12 @@ image.circular {
   border-radius: $circular_radius;
 }
 
-WeatherThermometerScale {
-  border-radius: $circular_radius;
-  background-image: linear-gradient(to bottom, $weather_thermometer_warm_color, $weather_thermometer_cold_color);
-  margin: 0 36px;
-  padding: 0;
-}
+// WeatherThermometerScale {
+//   border-radius: $circular_radius;
+//   background-image: linear-gradient(to bottom, $weather_thermometer_warm_color, $weather_thermometer_cold_color);
+//   margin: 0 36px;
+//   padding: 0;
+// }
 
 //
 // Gnome Clocks
