@@ -26,18 +26,11 @@
   }
 }
 
-#NautilusViewCell {
-  clamp box {
-    margin: 0;
-    border-spacing: 0;
-  }
-}
-
 #NautilusQueryEditor { // search entry
-  > menubutton > button {
-    min-width: 16px;
-    min-height: 16px;
-    margin: 4px 0;
+  > menubutton > button.image-button {
+    min-width: 24px;
+    min-height: 24px;
+    margin: 5px 0;
   }
 
   > text { margin: 0; }
@@ -47,21 +40,28 @@
   background-color: $titlebar-fill;
   border-radius: $corner-radius;
   margin: $space-size 0;
+}
 
-  #NautilusPathButton {
-    margin: 0 $space-size / 2;
-    border-radius: $corner-radius;
+#NautilusPathButton {
+  margin: 0 $space-size / 2;
+  border-radius: $corner-radius;
 
-    &.current-dir {
-      color: $titlebar-text;
+  &.current-dir {
+    color: $titlebar-text;
 
-      &:hover, &:active {
-        background: none;
-        box-shadow: none;
-      }
+    &:hover, &:active {
+      background: none;
+      box-shadow: none;
     }
+  }
 
-    &:first-child { margin-left: 0; }
+  &:first-child { margin-left: 0; }
+}
+
+#NautilusViewCell {
+  clamp box {
+    margin: 0;
+    border-spacing: 0;
   }
 }
 
@@ -118,14 +118,6 @@ leaflet {
 //
 // Calendar
 //
-
-datechooser.view {
-  button.flat.pill, button.circular.day {
-    min-height: 24px;
-    min-width: 24px;
-    padding: $space-size;
-  }
-}
 
 // labels
 label {
@@ -249,10 +241,10 @@ popover.event-popover > contents {
 // calendar popover
 .calendar-list {
   background-color: transparent;
-}
 
-.calendar-list > list {
-  border-radius: 4px;
+  > list {
+    border-radius: 4px;
+  }
 }
 
 // Edit dialog's header button
@@ -262,11 +254,11 @@ popover.event-popover > contents {
   border-radius: 0;
   border-top-style: none;
   border-bottom-style: none;
-}
 
-.sources-button:hover:not(:backdrop) {
-  background-image: none;
-  text-shadow: none;
+  &:hover:not(:backdrop) {
+    background-image: none;
+    text-shadow: none;
+  }
 }
 
 // defeats the ugly hover effect of the calendar color dot on buttons
@@ -297,7 +289,11 @@ datechooser {
   navigator {
     label { font-weight: bold; }
 
-    button { padding: 0; }
+    button, button.image-button {
+      min-height: $medium-size;
+      min-width: $medium-size;
+      padding: 0;
+    }
   }
 
   // day names and week numbers
@@ -311,8 +307,9 @@ datechooser {
     font-size: 10pt;
     font-weight: normal;
     margin: $space-size / 2;
-    min-height: $menuitem-size;
-    min-width: $menuitem-size;
+    padding: 0;
+    min-height: $medium-size;
+    min-width: $medium-size;
     transition: none;
 
     dot {
@@ -394,24 +391,32 @@ weekgrid > widget.now-strip {
   min-height: 3px;
 }
 
-weekgrid:selected,
-.week-header:selected {
-  background-color: gtkalpha($primary, 0.25);
-}
-
-weekgrid.dnd, .week-header.dnd {
-  background-color: gtkalpha($primary, 0.25);
+weekgrid,
+.week-header {
+  &:selected, &.dnd {
+    background-color: gtkalpha($primary, 0.25);
+  }
 }
 
 // Month cell
 monthcell {
   border: solid 1px $border;
   border-width: 1px 0 0 1px;
-  background: transparent;
+  background-color: transparent;
   transition: background-color 200ms;
+
+  &:hover:not(.out-of-month):not(.today) {
+    background-color: $base-alt;
+    transition: background-color 200ms;
+    color: $text;
+  }
 
   &:selected {
     background-color: gtkalpha($primary, 0.1);
+
+    &:hover {
+      background-color: gtkalpha($primary, 0.2);
+    }
 
     label.day-label { font-weight: bold; }
   }
@@ -419,31 +424,37 @@ monthcell {
   &:nth-child(7n + 1) { border-left-width: 0; }
 
   &.today {
-    background-color: gtkalpha($primary, 0.25);
+    background-color: gtkalpha($primary, 0.2);
 
-    &:selected { background-color: gtkalpha($primary, 0.33); }
-  }
+    &:hover {
+      background-color: gtkalpha($primary, 0.3);
+      color: $primary;
+    }
 
-  &.out-of-month {
-    background-color: $fill;
+    &:selected {
+      background-color: gtkalpha($primary, 0.25);
+
+      &:hover {
+        background-color: gtkalpha($primary, 0.35);
+      }
+    }
   }
 
   label {
     color: $text;
     font-size: 0.9rem;
+
+    &.day-label {
+      font-size: 1rem;
+    }
   }
 
-  label.day-label {
-    font-size: 1rem;
-  }
+  &.out-of-month {
+    background-color: $fill;
 
-  &.out-of-month label {
-    color: $text-secondary;
-  }
-
-  &:hover:not(.out-of-month) {
-    background-color: $background;
-    transition: background-color 200ms;
+    label {
+      color: $text-secondary;
+    }
   }
 
   button {
