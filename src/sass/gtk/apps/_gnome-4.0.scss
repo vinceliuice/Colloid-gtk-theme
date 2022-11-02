@@ -100,8 +100,20 @@ window.dialog {
 
 .history-view { background-color: $base; }
 
-#displayitem {
+.sourceview {
+  padding: 0 12px 8px 0;
+  font-size: 1.4em;
   border-top: 1px solid $border;
+}
+
+.math-buttons button {
+  font-size: 1.1em;
+  padding: 2px $space-size;
+
+  &.text-button {
+    padding-left: $space-size * 2 + 4px;
+    padding-right: $space-size * 2 + 4px;
+  }
 }
 
 .small .card {
@@ -1206,7 +1218,7 @@ button.osd.circular {
 }
 
 button.osd.circular > image {
-  padding: $space-size * 2;
+  padding: 0;
 }
 
 scrolledwindow.inline list,
