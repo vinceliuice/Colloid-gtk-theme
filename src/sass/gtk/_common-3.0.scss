@@ -2911,7 +2911,7 @@ separator {
   }
 
   &:focus {
-    box-shadow: inset 0 0 0 1000px $overlay-focus;
+    box-shadow: inset 0 0 0 1000px $overlay-normal;
   }
 }
 
@@ -2953,7 +2953,7 @@ row {
     background-size: 1000% 1000%;
 
     &:focus {
-      box-shadow: inset 0 0 0 9999px $overlay-focus;
+      box-shadow: inset 0 0 0 9999px $overlay-normal;
     }
 
     &:hover {
@@ -2961,7 +2961,7 @@ row {
                   box-shadow 0ms,
                   background-size $ripple-fade-out-duration $ease-out,
                   background-image $ripple-fade-out-opacity-duration $ease-out;
-      box-shadow: inset 0 0 0 9999px $overlay-hover;
+      box-shadow: inset 0 0 0 9999px $overlay-normal;
     }
 
     &.has-open-popup, // this is for indicathing which row generated a popover see https://bugzilla.gnome.org/show_bug.cgi?id=754411
@@ -2970,8 +2970,8 @@ row {
                   background-size 0ms,
                   background-image 0ms;
       animation: ripple $ripple-fade-in-duration $ease-out forwards;
-      box-shadow: inset 0 0 0 9999px $overlay-hover;
-      background-image: radial-gradient(circle, $overlay-active 10%, transparent 0%);
+      box-shadow: inset 0 0 0 9999px $overlay-normal;
+      background-image: radial-gradient(circle, $overlay-normal 10%, transparent 0%);
       background-size: 0% 0%;
     }
 
@@ -2982,7 +2982,7 @@ row {
 
   &:selected {
     color: inherit; // for overlays
-    background-color: $divider;
+    background-color: $overlay-selected;
 
     image,
     label { color: $text; }
