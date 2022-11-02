@@ -465,6 +465,34 @@ editablelabel > stack > text {
   &:checked:disabled { @include button(checked-disabled); }
 }
 
+%button-flat-simple {
+  @include button(flat-normal);
+
+  &:focus:not(:hover):not(:active) { @include button(flat-focus); }
+
+  &:hover { @include button(flat-hover); }
+
+  &:active { @include button(flat-active); }
+
+  &:disabled { @include button(flat-disabled); }
+}
+
+%button-flat {
+  @include button(flat-normal);
+
+  &:focus:not(:hover):not(:active) { @include button(flat-focus); }
+
+  &:hover { @include button(flat-hover); }
+
+  &:active { @include button(flat-active); }
+
+  &:disabled { @include button(flat-disabled); }
+
+  &:checked, &:checked:hover { @include button(flat-checked); }
+
+  &:checked:disabled { @include button(flat-checked-disabled); }
+}
+
 %opaque_button {
   box-shadow: none;
 
@@ -512,23 +540,7 @@ button {
 
   &:drop(active) { @include button(hover); }
 
-  @at-root %button-flat, &.flat {
-    @at-root %button-flat-simple, & {
-      @include button(flat-normal);
-
-      &:focus:not(:hover):not(:active) { @include button(flat-focus); }
-
-      &:hover { @include button(flat-hover); }
-
-      &:active { @include button(flat-active); }
-
-      &:disabled { @include button(flat-disabled); }
-    }
-
-    &:checked, &:checked:hover, &:checked:focus { @include button(flat-checked); }
-
-    &:checked:disabled { @include button(flat-checked-disabled); }
-  }
+  &.flat { @extend %button-flat; }
 
   separator { margin: 4px 1px; }
 
@@ -1437,7 +1449,7 @@ searchbar > revealer > box {
   background-clip: border-box;
   box-shadow: none;
 
-  entry { margin: 0; }
+  entry, button, menubutton { margin: 0; }
 }
 
 /***************
@@ -1733,8 +1745,13 @@ pathbar > button {
   &:disabled { background-color: $overlay-normal; }
 
   &:checked {
-    background-color: $overlay-focus-hover;
+    background-color: $overlay-checked;
     color: $text;
+
+    &:hover {
+      background-color: $overlay-focus-hover;
+      color: $text;
+    }
   }
 
   label, image {
@@ -3368,6 +3385,13 @@ actionbar > revealer > box {
   background-color: $base;
   background-clip: border-box;
   border: none;
+
+  button, entry,
+  menubutton, menubutton > button,
+  splitbutton, splitbutton > button,
+  spinbutton {
+    margin: 0;
+  }
 }
 
 statusbar {
