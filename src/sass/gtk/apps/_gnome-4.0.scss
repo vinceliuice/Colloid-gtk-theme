@@ -7,6 +7,12 @@
     label { color: $text-secondary; }
   }
 
+  .nautilus-grid-view {
+    child.activatable {
+      @extend %row_activatable;
+    }
+  }
+
   .floating-bar {
     min-height: 32px;
     padding: 0;
@@ -30,10 +36,20 @@
   > menubutton > button.image-button {
     min-width: 24px;
     min-height: 24px;
-    margin: 5px 0;
   }
 
-  > text { margin: 0; }
+  > text, > box, > menubutton > button.image-button {
+    margin: $space-size 0;
+  }
+}
+
+#NautilusQueryEditorTag {
+  background-color: $divider;
+
+  > button.image-button {
+    margin: 0;
+    padding: 0;
+  }
 }
 
 #NautilusPathBar {

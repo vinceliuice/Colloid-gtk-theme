@@ -269,7 +269,7 @@ spinner {
  ****************/
 %entry,
 entry {
-  %entry_basic, & {
+  %entry-basic, & {
     min-height: $medium-size;
     padding: 0 8px;
     border-spacing: $space-size;
@@ -362,7 +362,7 @@ entry {
 
   > progress,
   progress > trough > progress {
-    margin: 2px -8px;
+    margin: 0 -4px;
     border-bottom: 2px solid $primary;
     background-color: transparent;
   }
@@ -493,6 +493,13 @@ editablelabel > stack > text {
       background-image: image(transparentize(black, .7));
     }
   }
+}
+
+%small-button {
+  min-height: $small-size;
+  min-width: $small-size;
+  padding: 0;
+  border-radius: $circular-radius;
 }
 
 button {
@@ -638,11 +645,10 @@ button {
     }
   }
 
-  .linked > & {
-    &:focus {
-      box-shadow: none;
-      outline: none;
-    }
+  .linked:not(.vertical) > &:focus,
+  .linked.vertical > &:focus {
+    box-shadow: none;
+    outline: none;
   }
 
   .linked:not(.vertical) > &,
@@ -658,10 +664,13 @@ button {
   .linked:not(.vertical) > &.flat,
   .linked.vertical > &.flat {
     &:not(:only-child) { // specificity bump
-      border-radius: $corner-radius;
+      background-color: $overlay-normal;
     }
 
-    &:focus { box-shadow: inset 0 0 0 9999px $overlay-focus; }
+    &:focus {
+      box-shadow: none;
+      outline: none;
+    }
   }
 
   .linked:not(.vertical) > menubutton > & {
@@ -784,13 +793,6 @@ button {
     border-radius: $circular-radius;
 
     label { padding: 0; }
-  }
-
-  @at-root %small-button {
-    min-height: $small-size;
-    min-width: $small-size;
-    padding: 0;
-    border-radius: $circular-radius;
   }
 }
 
@@ -1437,11 +1439,7 @@ searchbar > revealer > box {
   color: $titlebar-text-secondary;
   border: none;
 
-  .linked:not(.vertical) > & {
-    border-radius: $corner-radius;
-  }
-
-  &:focus, &:hover, &:active, &:checked { color: $titlebar-text; }
+  &:hover, &:active, &:checked { color: $titlebar-text; }
 
   &:disabled { color: $titlebar-text-secondary-disabled; }
 
@@ -1573,33 +1571,23 @@ headerbar {
     @extend %titlebar-button;
   }
 
-  separator:not(.sidebar) {
-    // margin-top: $large-size / 4;
-    // margin-bottom: $large-size / 4;
-    background-color: $titlebar-divider;
-  }
-
-  switch {
-    margin-top: ($large-size - 24px) / 2;
-    margin-bottom: ($large-size - 24px) / 2;
-  }
-
-  // FIXME: This is a hacky workaround.
-  .entry-tag {
-    margin-top: 5px;
-    margin-bottom: 5px;
+  button.suggested-action,
+  button.destructive-action {
+    &:disabled {
+      background-color: $titlebar-fill;
+      color: $titlebar-text-disabled;
+      opacity: 1;
+    }
   }
 
   entry { @extend %titlebar-entry; }
 
   .linked:not(.vertical) > entry:not(:only-child) { border-radius: $corner-radius; }
 
-  button.suggested-action, button.destructive-action {
-    &:disabled {
-      background-color: $titlebar-fill;
-      color: $titlebar-text-disabled;
-      label { opacity: 1; }
-    }
+  // FIXME: This is a hacky workaround.
+  .entry-tag {
+    margin-top: 5px;
+    margin-bottom: 5px;
   }
 
   @if $variant == 'light' and $topbar == 'dark' {
@@ -1615,11 +1603,37 @@ headerbar {
     }
   }
 
+  popover.background { // reset popover
+    button:not(.suggested-action):not(.destructive-action):not(.flat) {
+      @extend %button-basic;
+    }
+
+    button.suggested-action,
+    button.destructive-action {
+      &:disabled {
+        background-color: $titlebar-fill;
+        color: $titlebar-text-disabled;
+      }
+    }
+
+    entry { @extend %entry-basic; }
+  }
+
+  separator:not(.sidebar) {
+    // margin-top: $large-size / 4;
+    // margin-bottom: $large-size / 4;
+    background-color: $titlebar-divider;
+  }
+
+  switch {
+    margin-top: ($large-size - 24px) / 2;
+    margin-bottom: ($large-size - 24px) / 2;
+  }
+
   &.selection-mode {
     // 0.1ms was a workaround for https://gitlab.gnome.org/GNOME/gtk/issues/698
     // but let's keep it for backwards compatibility.
     transition: background-color 0.1ms $ripple-fade-in-duration, color $duration $ease-out;
-    box-shadow: inset 0 1px highlight($primary);
     background-color: $primary;
     color: on($primary);
 
@@ -1640,12 +1654,6 @@ headerbar {
       .arrow { -gtk-icon-source: -gtk-icontheme('pan-down-symbolic'); }
     }
   }
-
-  .selection-mode {
-    box-shadow: inset 0 1px highlight($primary); // Avoid double shadows
-    background-color: $primary;
-  }
-
 
   &.default-decoration {
     min-height: $small-size;
@@ -1679,7 +1687,7 @@ headerbar {
 }
 
 window.devel {
-  headerbar.titlebar {
+  headerbar {
     $c: $titlebar;
     $gradient: cross-fade(10% -gtk-icontheme("system-run-symbolic"), image(transparent)) 90% 0/256px 256px no-repeat,
                linear-gradient(to right, transparent 65%, transparentize($primary, 0.8)),
@@ -2029,6 +2037,7 @@ popover.background {
     padding: $space-size;
     background-color: $surface;
     border-radius: $menu-radius;
+    color: $text;
 
     @if $rimless == 'true' {
       border: none;
@@ -2091,11 +2100,8 @@ popover.background {
 
   &.menu button,
   button.model {
-    @extend %button-flat;
-
     min-height: 32px;
     padding: 0 8px;
-    border-radius: $corner-radius;
   }
 
   .osd &,
@@ -2124,36 +2130,37 @@ magnifier {
  *************/
 
 %tabs_tab {
-  transition: $transition,
-              background-size 0ms,
-              background-image 0ms;
   min-height: $small-size;
   min-width: $small-size;
   padding: $space-size / 2 $space-size;
   border: none;
-  outline: none;
   background-clip: padding-box;
-  color: $text-secondary;
   font-weight: 500;
   border-radius: $modal-radius;
-  background-image: none;
-  background-color: transparent;
+  @include button(flat-normal);
 
   &:hover:not(:checked):not(:selected) {
-    background-color: $fill;
-    background-image: none;
-    color: $text;
+    @include button(flat-hover);
+  }
+
+  &:disabled {
+    @include button(flat-disabled);
+  }
+
+  &:active {
+    @include button(flat-active);
     box-shadow: none;
   }
 
-  &:disabled { color: $text-secondary-disabled; }
-
-  &:checked, &:selected {
-    transition: $transition;
-    background-color: if($variant == 'light', rgba($base, 1), rgba(white, 0.15));
+  &:checked:not(:active), &:selected:not(:active) {
+    transition: $transition,
+                border-image $ripple-fade-in-duration $ease-out,
+                background-size 0ms,
+                background-image 0ms,
+                background-color 0ms;
+    background-color: if($variant == 'light', $base, rgba(white, 0.15));
     color: $text;
     box-shadow: 0 1px 3px rgba(black, 0.1);
-    background-image: none;
 
     &:disabled { color: $text-disabled; }
   }
@@ -3524,7 +3531,8 @@ row {
   @at-root %row_activatable, &.activatable {
     transition: $transition,
                 background-size $ripple-fade-out-duration $ease-out,
-                background-image $ripple-fade-out-opacity-duration $ease-out;
+                background-image $ripple-fade-out-opacity-duration $ease-out,
+                font-weight 0;
     outline: none;
     box-shadow: none;
     background-color: transparent;
@@ -3536,24 +3544,25 @@ row {
 
     &:focus {
       color: $text;
-      background-color: $overlay-focus;
+      background-color: $overlay-normal;
       box-shadow: none;
     }
 
     &:hover, &.has-open-popup {
       color: $text;
-      background-color: $overlay-hover;
+      background-color: $overlay-normal;
       box-shadow: none;
     }
 
     &:active {
       transition: $transition,
                   background-size 0ms,
-                  background-image 0ms;
+                  background-image 0ms,
+                  font-weight 0ms;
       animation: ripple $ripple-fade-in-duration $ease-out forwards;
-      background-image: radial-gradient(circle, $overlay-active 10%, transparent 0%);
+      background-image: radial-gradient(circle, $overlay-normal 10%, transparent 0%);
       background-size: 0% 0%;
-      background-color: $overlay-hover;
+      background-color: $overlay-normal;
       color: $text;
       box-shadow: none;
     }
@@ -3562,14 +3571,7 @@ row {
       background-color: $overlay-selected;
 
       &:hover {
-        background-color: $overlay-focus-hover;
-      }
-
-      &:focus-visible:focus-within {
-        outline: none;
-        background-color: $overlay-focus;
-
-        &:hover { background-color: $overlay-focus-hover; }
+        background-color: $overlay-hover;
       }
     }
   }
@@ -3585,10 +3587,22 @@ row {
     color: on($primary);
   }
 
-  &:selected, &:selected:focus {
+  &:selected {
     background-color: $overlay-selected;
     color: inherit; // for overlays
     box-shadow: none;
+
+    &:hover {
+      background-color: $overlay-hover;
+    }
+
+    &:focus,
+    &:focus-visible:focus-within {
+      outline: none;
+      background-color: $overlay-focus;
+
+      &:hover { background-color: $overlay-focus-hover; }
+    }
 
     image,
     label { color: $text; }
@@ -4951,7 +4965,11 @@ stackswitcher {
     &:active { @include button(active); }
 
     &:checked {
-      transition: $transition;
+      transition: $transition,
+                  border-image $ripple-fade-in-duration $ease-out,
+                  background-size 0ms,
+                  background-image 0ms,
+                  background-color 0ms;
       background-color: if($variant == 'light', rgba($base, 1), rgba(white, 0.15));
       color: $text;
       box-shadow: 0 1px 3px rgba(black, 0.1);
