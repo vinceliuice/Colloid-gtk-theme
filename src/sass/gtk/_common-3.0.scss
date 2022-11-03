@@ -137,8 +137,6 @@
 
   &:disabled { color: $text-disabled; }
 
-  // &:hover, &:selected { border-radius: $corner-radius; }
-
   &:selected {
     @extend %selected_items_primary;
 
@@ -1513,8 +1511,6 @@ treeview.view {
   }
 
   rubberband { @extend rubberband; } // to avoid borders being overridden by the previously set props
-
-  &:hover, &:selected { border-radius: 0; }
 
   &.separator {
     min-height: $space-size;
@@ -3857,19 +3853,22 @@ decoration {
 
   &.minimize { // Window minimize button
     &:hover, &:active {
-      background-image: url("assets/scalable/minimize.svg");
+      background-image: -gtk-scaled(url("assets/scalable/minimize-symbolic.svg"),
+                                    url("assets/scalable/minimize-symbolic@2.svg"));
     }
   }
 
   &.maximize { // Window maximize button
     &:hover, &:active {
-      background-image: url("assets/scalable/maximize.svg");
+      background-image: -gtk-scaled(url("assets/scalable/maximize-symbolic.svg"),
+                                    url("assets/scalable/maximize-symbolic@2.svg"));
     }
   }
 
   &.close { // Window close button
     &:hover, &:active {
-      background-image: url("assets/scalable/close.svg");
+      background-image: -gtk-scaled(url("assets/scalable/close-symbolic.svg"),
+                                    url("assets/scalable/close-symbolic@2.svg"));
     }
   }
 }
@@ -3884,11 +3883,10 @@ button.titlebutton:not(.suggested-action):not(.destructive-action) {
     @extend %normal_window_button;
   }
 
-  .background.csd.maximized headerbar.titlebar.default-decoration &.maximize,
-  .background.csd.fullscreen headerbar.titlebar.default-decoration &.maximize,
-  .background.csd.tiled headerbar.titlebar.default-decoration &.maximize {
+  .background.csd.maximized headerbar.titlebar.default-decoration &.maximize {
     &:hover, &:active {
-      background-image: url("assets/scalable/unmaximize.svg");
+      background-image: -gtk-scaled(url("assets/scalable/unmaximize-symbolic.svg"),
+                                    url("assets/scalable/unmaximize-symbolic@2.svg"))
     }
   }
 }

@@ -3578,8 +3578,9 @@ row {
 
     &:focus {
       color: $text;
-      background-color: $overlay-normal;
+      background-color: transparent;
       box-shadow: none;
+      outline: none;
     }
 
     &:hover, &.has-open-popup {
