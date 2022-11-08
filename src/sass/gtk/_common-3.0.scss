@@ -1631,14 +1631,11 @@ menubar,
 
   &:backdrop {
     color: $titlebar-text-secondary;
+    background-color: $titlebar-backdrop;
   }
 
   .csd & {
     transition: $transition;
-
-    &:backdrop {
-      background-color: $titlebar-backdrop;
-    }
   }
 
   > menuitem {
