@@ -1127,11 +1127,10 @@ window > contents > leaflet { // Gnome control center
 // Gnome Weather
 //
 
-@define-color weather_temp_chart_fill_color: #{rgba(248, 228, 92, 0.5)};
-@define-color weather_temp_chart_stroke_color: #{rgba(246, 211, 45, 1.0)};
-
-@define-color weather_thermometer_warm_color: #{if($variant == 'light', $yellow-dark, $yellow-light)};
-@define-color weather_thermometer_cold_color: #{if($variant == 'light', $blue-dark, $blue-light)};
+@define-color weather_temp_chart_fill_color #{rgba($warning, 0.5)};
+@define-color weather_temp_chart_stroke_color #{darken($warning, 10%)};
+@define-color weather_thermometer_warm_color #{if($variant == 'light', $yellow-dark, $yellow-light)};
+@define-color weather_thermometer_cold_color #{if($variant == 'light', $blue-dark, $blue-light)};
 
 $weather_thermometer_high_color: $yellow-light;
 $weather_thermometer_low_color: $blue-light;
@@ -1481,14 +1480,6 @@ window.dialog {
       > row {
         &:first-child, &:last-child { border-radius: 0; }
       }
-    }
-  }
-}
-
-window.aboutdialog {
-  stack scrolledwindow.frame > {
-    &, viewport.view {
-      border-radius: $window-radius - $space-size;
     }
   }
 }

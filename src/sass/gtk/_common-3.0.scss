@@ -1311,6 +1311,11 @@ searchbar > revealer > box {
     padding: $space-size $space-size * 2;
     border-radius: $window-radius $window-radius 0 0;
     box-shadow: inset 0 1px highlight($titlebar);
+    background-color: $titlebar;
+
+    &:backdrop {
+      background-color: $titlebar-backdrop;
+    }
 
     .tiled &,
     .maximized &,
@@ -3648,7 +3653,6 @@ colorchooser .popover.osd {
 decoration {
   transition: $transition-shadow;
   border-radius: $window-radius;
-  // background-color: $background;
 
   @if $rimless == 'true' {
     box-shadow: $shadow-z16, 0 0 36px transparent;

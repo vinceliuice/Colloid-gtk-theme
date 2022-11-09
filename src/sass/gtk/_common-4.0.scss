@@ -1625,7 +1625,7 @@ headerbar {
     }
   }
 
-  popover.background { // reset popover
+  popover.background { // reset popovers
     button:not(.suggested-action):not(.destructive-action):not(.flat) {
       @extend %button-basic;
     }
@@ -1639,6 +1639,16 @@ headerbar {
     }
 
     entry { @extend %entry-basic; }
+
+    entry,
+    spinbutton,
+    button,
+    menubutton,
+    stackswitcher,
+    separator:not(.sidebar) {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
   }
 
   separator:not(.sidebar) {
@@ -2490,8 +2500,8 @@ tabbar {
     }
 
     > separator {
-      margin-top: 9px;
-      margin-bottom: 9px;
+      margin: 9px 0;
+      min-width: 1px;
       transition: opacity 150ms ease-in-out;
 
       &.hidden {
@@ -2501,6 +2511,7 @@ tabbar {
 
     > tabboxchild {
       margin: 0 -3px;
+      padding: 0;
 
       > tab {
         @extend %tabs_tab;
