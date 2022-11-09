@@ -98,12 +98,14 @@ window.dialog {
 // Calculator
 //
 
-.history-view { background-color: $base; }
+.display-container {
+  .history-view { background-color: $base; }
 
-.sourceview {
-  padding: 0 12px 8px 0;
-  font-size: 1.4em;
-  border-top: 1px solid $border;
+  #displayitem {
+    padding: 0 12px 8px 0;
+    font-size: 1.4em;
+    border-top: 1px solid $border;
+  }
 }
 
 .math-buttons button {

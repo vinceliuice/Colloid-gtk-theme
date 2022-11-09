@@ -1644,8 +1644,7 @@ headerbar {
     spinbutton,
     button,
     menubutton,
-    stackswitcher,
-    separator:not(.sidebar) {
+    stackswitcher {
       margin-top: 0;
       margin-bottom: 0;
     }
@@ -4938,7 +4937,7 @@ windowcontrols {
   background-color: $primary;
 }
 
-.monospace { font-family: monospace; }
+// .monospace { font-family: monospace; }
 
 
 /**********************
