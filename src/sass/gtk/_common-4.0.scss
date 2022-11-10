@@ -2060,11 +2060,13 @@ popover.menu {
 /************
  * Popovers *
  ************/
-popover.background {
-  font: initial;
+popover {
+  &.background {
+    font: initial;
 
-  &, &:backdrop {
-    background-color: transparent;
+    &, &:backdrop {
+      background-color: transparent;
+    }
   }
 
   > arrow,
@@ -2082,14 +2084,6 @@ popover.background {
       border: 1px solid highlight($surface);
       background-clip: border-box;
       box-shadow: 0 0 0 1px $window-border, $shadow-z5;
-    }
-
-    &:backdrop {
-      @if $rimless == 'true' {
-        box-shadow: $shadow-z3;
-      } @else {
-        box-shadow: $shadow-z3, 0 0 0 1px $window-border;
-      }
     }
   }
 
@@ -4753,12 +4747,32 @@ colorchooser .popover.osd {
  **********************/
 window {
   border: none;
-  transition: $transition-shadow;
 
   &.csd {
     border-radius: $window-radius;
     outline-offset: -1px;
     outline: 1px solid highlight($background);
+    margin: 0;
+
+    @if $rimless == 'true' {
+      box-shadow: $shadow-z16, 0 0 36px transparent;
+    } @else {
+      box-shadow: $shadow-z16, 0 0 0 1px $window-border, 0 0 36px transparent;
+    }
+
+    &:backdrop {
+      // the transparent shadow here is to enforce that the shadow extents don't
+      // change when we go to backdrop, to prevent jumping windows.
+      // The biggest shadow should be in the same order then in the active state
+      // or the jumping will happen during the transition.
+      transition: $transition-shadow;
+
+      @if $rimless == 'true' {
+        box-shadow: $shadow-z4, 0 0 36px transparent;
+      } @else {
+        box-shadow: $shadow-z4, 0 0 0 1px $window-border, 0 0 36px transparent;
+      }
+    }
 
     &.maximized,
     &.fullscreen,
@@ -4766,24 +4780,9 @@ window {
     &.tiled-top,
     &.tiled-right,
     &.tiled-bottom,
-    &.tiled-left { border-radius: 0; }
-  }
-
-  @if $rimless == 'true' {
-    box-shadow: $shadow-z16, 0 0 36px transparent;
-  } @else {
-    box-shadow: $shadow-z16, 0 0 0 1px $window-border, 0 0 36px transparent;
-  }
-
-  &:backdrop {
-    // the transparent shadow here is to enforce that the shadow extents don't
-    // change when we go to backdrop, to prevent jumping windows.
-    // The biggest shadow should be in the same order then in the active state
-    // or the jumping will happen during the transition.
-    @if $rimless == 'true' {
-      box-shadow: $shadow-z4, 0 0 36px transparent;
-    } @else {
-      box-shadow: $shadow-z4, 0 0 0 1px $window-border, 0 0 36px transparent;
+    &.tiled-left {
+      border-radius: 0;
+      transition: none;
     }
   }
 

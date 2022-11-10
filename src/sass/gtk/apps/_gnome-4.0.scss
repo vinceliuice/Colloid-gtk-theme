@@ -99,6 +99,12 @@ window.dialog {
 //
 
 .display-container {
+  &.card {
+    border-radius: 0;
+    box-shadow: none;
+    border-width: 0 0 1px 0;
+  }
+
   .history-view { background-color: $base; }
 
   #displayitem {
@@ -115,19 +121,6 @@ window.dialog {
   &.text-button {
     padding-left: $space-size * 2 + 4px;
     padding-right: $space-size * 2 + 4px;
-  }
-}
-
-.small .card {
-  border-radius: 0;
-  box-shadow: none;
-
-  &.forecast-card {
-    border-width: 1px 0;
-  }
-
-  &.display-container {
-    border-width: 0 0 1px 0;
   }
 }
 
@@ -1167,6 +1160,7 @@ $weather_forecast_color: #ae7b03;
 .forecast-card {
   transition: border-radius 100ms ease-out;
   border-radius: $corner-radius;
+  border-width: 1px 0;
 }
 
 .forecast-card separator {
