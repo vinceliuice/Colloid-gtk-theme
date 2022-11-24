@@ -509,9 +509,7 @@ theme_tweaks() {
 }
 
 uninstall_link() {
-  [[ -L "${HOME}/.config/gtk-4.0/assets" ]] && rm -rf "${HOME}/.config/gtk-4.0/assets" && echo -e "\nUninstall ${HOME}/.config/gtk-4.0/assets link ..."
-  [[ -L "${HOME}/.config/gtk-4.0/gtk.css" ]] && rm -rf "${HOME}/.config/gtk-4.0/gtk.css" && echo -e "Uninstall ${HOME}/.config/gtk-4.0/gtk.css link ..."
-  [[ -L "${HOME}/.config/gtk-4.0/gtk-dark.css" ]] && rm -rf "${HOME}/.config/gtk-4.0/gtk-dark.css" && echo -e "Uninstall ${HOME}/.config/gtk-4.0/gtk-dark.css link ..."
+  rm -rf "${HOME}/.config/gtk-4.0/"{assets,windows-assets,gtk.css,gtk-dark.css} && echo -e "\nUninstall ${HOME}/.config/gtk-4.0 links ..."
 }
 
 link_libadwaita() {

@@ -1052,6 +1052,11 @@ toolbar {
   border-width: 0 1px 1px;
   border-color: $divider;
   background-color: $base-alt;
+
+  .frame & {
+    border-width: 1px 0 0;
+    background-color: transparent;
+  }
 }
 
 searchbar > revealer > box,
@@ -1311,6 +1316,11 @@ searchbar > revealer > box {
     padding: $space-size $space-size * 2;
     border-radius: $window-radius $window-radius 0 0;
     box-shadow: inset 0 1px highlight($titlebar);
+    background-color: $titlebar;
+
+    &:backdrop {
+      background-color: $titlebar-backdrop;
+    }
 
     .tiled &,
     .maximized &,
@@ -1631,14 +1641,11 @@ menubar,
 
   &:backdrop {
     color: $titlebar-text-secondary;
+    background-color: $titlebar-backdrop;
   }
 
   .csd & {
     transition: $transition;
-
-    &:backdrop {
-      background-color: $titlebar-backdrop;
-    }
   }
 
   > menuitem {
@@ -1903,16 +1910,22 @@ notebook {
     border-radius: $modal-radius + $space-size;
   }
 
-  &.frame frame {
-    > border {
+  &.frame {
+    scrolledwindow.frame {
       border: none;
-      border-radius: $modal-radius;
     }
 
-    > list {
-      // @extend %circular_list;
+    frame {
+      > border {
+        border: none;
+        border-radius: $modal-radius;
+      }
 
-      row.activatable { border-radius: $corner-radius; }
+      > list {
+        // @extend %circular_list;
+
+        row.activatable { border-radius: $corner-radius; }
+      }
     }
   }
 
@@ -2405,7 +2418,7 @@ treeview.view {
     padding: 0;
     margin: 0;
 
-    &:not(:hover):not(:disabled):not(:checked):not(:indeterminate) {
+    &:not(:disabled):not(:checked):not(:indeterminate) {
       background-color: $divider;
     }
 
@@ -2414,7 +2427,7 @@ treeview.view {
     }
   }
 
-  &:selected, &:selected:focus {
+  &, &:hover, &:selected {
     radio, check {
       &:checked, &:indeterminate {
         background-color: $assets-color;
@@ -3651,7 +3664,6 @@ colorchooser .popover.osd {
 decoration {
   transition: $transition-shadow;
   border-radius: $window-radius;
-  // background-color: $background;
 
   @if $rimless == 'true' {
     box-shadow: $shadow-z16, 0 0 36px transparent;

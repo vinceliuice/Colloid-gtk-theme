@@ -98,12 +98,20 @@ window.dialog {
 // Calculator
 //
 
-.history-view { background-color: $base; }
+.display-container {
+  &.card {
+    border-radius: 0;
+    box-shadow: none;
+    border-width: 0 0 1px 0;
+  }
 
-.sourceview {
-  padding: 0 12px 8px 0;
-  font-size: 1.4em;
-  border-top: 1px solid $border;
+  .history-view { background-color: $base; }
+
+  #displayitem {
+    padding: 0 12px 8px 0;
+    font-size: 1.4em;
+    border-top: 1px solid $border;
+  }
 }
 
 .math-buttons button {
@@ -113,19 +121,6 @@ window.dialog {
   &.text-button {
     padding-left: $space-size * 2 + 4px;
     padding-right: $space-size * 2 + 4px;
-  }
-}
-
-.small .card {
-  border-radius: 0;
-  box-shadow: none;
-
-  &.forecast-card {
-    border-width: 1px 0;
-  }
-
-  &.display-container {
-    border-width: 0 0 1px 0;
   }
 }
 
@@ -1127,11 +1122,10 @@ window > contents > leaflet { // Gnome control center
 // Gnome Weather
 //
 
-@define-color weather_temp_chart_fill_color: #{rgba(248, 228, 92, 0.5)};
-@define-color weather_temp_chart_stroke_color: #{rgba(246, 211, 45, 1.0)};
-
-@define-color weather_thermometer_warm_color: #{if($variant == 'light', $yellow-dark, $yellow-light)};
-@define-color weather_thermometer_cold_color: #{if($variant == 'light', $blue-dark, $blue-light)};
+@define-color weather_temp_chart_fill_color #{rgba($warning, 0.5)};
+@define-color weather_temp_chart_stroke_color #{darken($warning, 10%)};
+@define-color weather_thermometer_warm_color #{if($variant == 'light', $yellow-dark, $yellow-light)};
+@define-color weather_thermometer_cold_color #{if($variant == 'light', $blue-dark, $blue-light)};
 
 $weather_thermometer_high_color: $yellow-light;
 $weather_thermometer_low_color: $blue-light;
@@ -1166,6 +1160,7 @@ $weather_forecast_color: #ae7b03;
 .forecast-card {
   transition: border-radius 100ms ease-out;
   border-radius: $corner-radius;
+  border-width: 1px 0;
 }
 
 .forecast-card separator {
@@ -1481,14 +1476,6 @@ window.dialog {
       > row {
         &:first-child, &:last-child { border-radius: 0; }
       }
-    }
-  }
-}
-
-window.aboutdialog {
-  stack scrolledwindow.frame > {
-    &, viewport.view {
-      border-radius: $window-radius - $space-size;
     }
   }
 }
