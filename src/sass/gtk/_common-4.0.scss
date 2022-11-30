@@ -2008,10 +2008,6 @@ popover.menu {
     }
   }
 
-  &.background separator {
-    margin: $space-size 0;
-  }
-
   arrow.left,
   radio.left,
   check.left {
@@ -2024,30 +2020,6 @@ popover.menu {
   check.right {
     margin-left: 0;
     margin-right: 0;
-  }
-
-  modelbutton {
-    transition: background-color $duration $ease-out;
-    min-height: $menuitem-size - $space-size;
-    min-width: $menuitem-size * 2;
-    padding: $space-size / 2 $space-size * 1.5;
-    color: $text;
-    font: initial;
-    border-radius: $corner-radius;
-    @extend %button-flat-simple;
-
-    &:focus:not(:hover) {
-      transition: none;
-      box-shadow: none;
-      outline: none;
-    }
-
-    &:disabled { color: $text-disabled; }
-
-    arrow {
-      &.left { -gtk-icon-source: -gtk-icontheme("go-previous-symbolic"); }
-      &.right { -gtk-icon-source: -gtk-icontheme("go-next-symbolic"); }
-    }
   }
 
   label.title {
@@ -2132,6 +2104,39 @@ popover {
   button.model {
     min-height: 32px;
     padding: 0 8px;
+  }
+
+  modelbutton {
+    transition: background-color $duration $ease-out;
+    min-height: $menuitem-size - $space-size;
+    min-width: $menuitem-size * 2;
+    padding: $space-size / 2 $space-size * 1.5;
+    color: $text;
+    font: initial;
+    border-radius: $corner-radius;
+    @extend %button-flat-simple;
+
+    &:focus:not(:hover) {
+      transition: none;
+      box-shadow: none;
+      outline: none;
+    }
+
+    &:disabled { color: $text-disabled; }
+
+    accelerator {
+      color: $text-disabled;
+      margin-left: $space-size * 5;
+
+      &:disabled {
+        color: $divider;
+      }
+    }
+
+    arrow {
+      &.left { -gtk-icon-source: -gtk-icontheme("go-previous-symbolic"); }
+      &.right { -gtk-icon-source: -gtk-icontheme("go-next-symbolic"); }
+    }
   }
 
   .osd &,
@@ -3061,7 +3066,6 @@ scale {
       min-height: $slider_size;
       min-width: $slider_size;
       margin: $slider_margin;
-
       transition: all $duration $ease-out;
       border-radius: $circular-radius;
       color: $primary;

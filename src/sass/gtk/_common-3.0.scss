@@ -1649,7 +1649,7 @@ menubar,
   }
 
   > menuitem {
-    transition: $transition;
+    transition: none;
     min-height: 20px;
     padding: 4px 8px;
     color: $titlebar-text-secondary;
@@ -1666,6 +1666,11 @@ menubar,
     &:disabled { color: $titlebar-text-secondary-disabled; }
 
     label:disabled { color: inherit; } // to inherit the above color
+
+    > window.background.csd.popup > decoration,
+    > window.background.csd.popup > menu {
+      border-radius: 0 0 $menu-radius $menu-radius;
+    }
 
     > window.popup.background > menu {
       menuitem { transition: none; }
