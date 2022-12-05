@@ -2176,6 +2176,7 @@ magnifier {
 
   &:hover:not(:checked):not(:selected) {
     @include button(flat-hover);
+    box-shadow: none;
   }
 
   &:disabled {
@@ -3962,8 +3963,8 @@ columnview {
 .app-notification {
   @extend %toolbar_osd;
   margin: $space-size;
-  border-spacing: $space-size;
-  padding: $space-size;
+  border-spacing: 0;
+  padding: 0;
   border: none;
   background-image: none;
 
@@ -3972,6 +3973,8 @@ columnview {
 
     &.text-button:not(:disabled) { color: $primary; }
   }
+
+  > box > label { margin-left: $space-size * 1.5; }
 
   &.frame,
   border { border: none; }

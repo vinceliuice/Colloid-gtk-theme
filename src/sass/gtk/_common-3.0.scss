@@ -997,7 +997,7 @@ toolbar {
   @at-root %toolbar_osd, &.osd {
     transition: $transition-shadow;
     padding: $space-size;
-    border-radius: $corner-radius;
+    border-radius: $window-radius;
     box-shadow: $shadow-z4, inset 0 1px highlight($surface);
     background-color: $surface;
 
@@ -3025,6 +3025,8 @@ row {
 
     &.text-button:not(:disabled) { color: $primary; }
   }
+
+  > box > label { margin-left: $space-size * 1.5; }
 
   &.frame,
   border { border-style: none; }
