@@ -1,17 +1,10 @@
 .quick-settings {
   padding: $base_padding * 3 !important;
   border-radius: $base_radius + $base_padding * 3 !important;
+  margin-top: $base_padding !important;
 
   .icon-button, .button {
     padding: $base_padding * 1.75;
-  }
-
-  &.popup-menu {
-    border-radius: $base_radius + $base_padding * 3 !important;
-  }
-
-  .popup-menu-content {
-    padding: $base_padding * 2 !important;
   }
 }
 
