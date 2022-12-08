@@ -1902,15 +1902,14 @@ popover.background {
 }
 
 notebook {
+  background-color: $base;
+
   frame > paned > & > header,
   &.frame > header { background-color: $fill; }
 
-  &, &.frame {
-    background-color: $base;
-    border-radius: $modal-radius + $space-size;
-  }
-
   &.frame {
+    border-radius: $modal-radius + $space-size;
+
     scrolledwindow.frame {
       border: none;
     }
