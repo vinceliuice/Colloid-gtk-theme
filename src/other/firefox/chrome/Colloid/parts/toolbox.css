@@ -14,15 +14,26 @@
 }
 
 #nav-bar, #PersonalToolbar, #toolbar-menubar, #TabsToolbar, findbar {
-	border: 0 !important;
+	border: none !important;
 	background: var(--gnome-toolbar-background) !important;
 }
+
 #nav-bar, #PersonalToolbar, #toolbar-menubar, #TabsToolbar {
 	border-bottom: 1px solid var(--gnome-toolbar-border-color) !important;
 }
+
 findbar {
 	border-top: 1px solid var(--gnome-toolbar-border-color) !important;
 }
+
+#toolbar-menubar[autohide="true"][inactive="true"]:not([customizing="true"]) {
+	min-height: 0 !important;
+	height: 0 !important;
+	padding: 0 !important;
+	appearance: none !important;
+	border-bottom: none !important;
+}
+
 #nav-bar:-moz-window-inactive,
 #PersonalToolbar:-moz-window-inactive, 
 #toolbar-menubar:-moz-window-inactive, 
