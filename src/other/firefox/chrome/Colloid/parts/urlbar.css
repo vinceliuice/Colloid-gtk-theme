@@ -127,10 +127,10 @@ toolbarspring {
 }
 
 /* Fixed size for some urlbar-icon */
-#star-button.urlbar-icon,
-#reader-mode-button > .urlbar-icon {
-	padding: 3px 0 !important;
-}
+/*#star-button.urlbar-icon,*/
+/*#reader-mode-button > .urlbar-icon {*/
+/*	padding: 3px 0 !important;*/
+/*}*/
 
 /* Search mode indicator */
 #urlbar-search-mode-indicator,
