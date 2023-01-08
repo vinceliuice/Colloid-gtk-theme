@@ -1166,6 +1166,13 @@ $weather_forecast_color: #ae7b03;
   background-color: $border;
 }
 
+#daily-forecast-box {
+  > separator:last-child {
+    background-color: transparent;
+    min-width: 0;
+  }
+}
+
 #conditions-grid,
 #attributionGrid {
   margin-left: $space-size * 3;
