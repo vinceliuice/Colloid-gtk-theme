@@ -95,7 +95,7 @@
 	border-width: 0;
   color: $text;
   background: $fill;
-  
+
   .cosmic-folder-edit-button:hover {
     background: $divider;
   }
@@ -146,4 +146,79 @@
 
 .pop-shell-tab-urgent {
   background: $error;
+}
+
+//
+// Blur my shell
+//
+
+#panel.light-panel,
+#panel.dark-panel,
+#panel.transparent-panel {
+  .panel-button {
+    color: on(dark, secondary) !important;
+
+    &.clock-display {
+      .clock {
+        color: on(dark, secondary) !important;
+      }
+    }
+
+    &:hover {
+      color: on(dark, secondary) !important;
+      background-color: on(dark, divider) !important;
+
+      &.clock-display {
+        .clock {
+          background-color: on(dark, divider) !important;
+        }
+      }
+    }
+
+    &:active, &:checked, &:focus {
+      color: on(dark) !important;
+      background-color: on(dark, track) !important;
+
+      &.clock-display {
+        .clock {
+          background-color: on(dark, track) !important;
+        }
+      }
+    }
+
+    &:hover, &:active, &:overview, &:focus, &:checked {
+      &.clock-display {
+        background-color: transparent !important;
+
+        .clock {
+          color: on(dark) !important;
+        }
+      }
+    }
+  }
+}
+
+.overview-components-transparent,
+.overview-components-light,
+.overview-components-dark {
+  .search-entry {
+    caret-color: on(dark) !important;
+
+    .search-entry-icon {
+      color: on(dark, secondary) !important;
+    }
+
+    StLabel.hint-text {
+      color: on(dark, track) !important;
+    }
+  }
+
+  .search-section-content {
+    border-radius: $icon_radius;
+  }
+
+  .search-section-separator {
+    height: 0 !important;
+    background-color: transparent !important;
+  }
 }
