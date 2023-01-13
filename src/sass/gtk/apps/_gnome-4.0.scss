@@ -1160,11 +1160,17 @@ $weather_forecast_color: #ae7b03;
 .forecast-card {
   transition: border-radius 100ms ease-out;
   border-radius: $corner-radius;
-  border-width: 1px 0;
 }
 
 .forecast-card separator {
   background-color: $border;
+}
+
+#daily-forecast-box {
+  > separator:last-child {
+    background-color: transparent;
+    min-width: 0;
+  }
 }
 
 #conditions-grid,
@@ -1177,6 +1183,7 @@ $weather_forecast_color: #ae7b03;
   margin-left: 0;
   margin-right: 0;
   border-radius: 0;
+  border-width: 1px 0;
 }
 
 .forecast-temperature-label {

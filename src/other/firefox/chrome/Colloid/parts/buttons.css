@@ -12,7 +12,7 @@
 
 /* Buttons */
 menulist,
-#nav-bar toolbarbutton:not(#urlbar-zoom-button):not(.subviewbutton),
+#nav-bar toolbarbutton:not(#urlbar-zoom-button),
 .subviewbutton.panel-subview-footer,
 .panel-footer button,
 #downloadsPanel-mainView .download-state .downloadButton,
@@ -59,7 +59,7 @@ button.close,
 }
 
 /* Flat Buttons */
-#nav-bar toolbarbutton:not(#urlbar-zoom-button):not(.subviewbutton),
+#nav-bar toolbarbutton:not(#urlbar-zoom-button),
 .close-icon:not(.tab-close-button),
 button.close,
 #protections-popup-info-button,
@@ -68,7 +68,7 @@ button.close,
 }
 
 /* Buttons with margins */
-#nav-bar toolbarbutton:not(#urlbar-zoom-button):not(.subviewbutton),
+#nav-bar toolbarbutton:not(#urlbar-zoom-button),
 .notification-button,
 .subviewbutton.panel-subview-footer:not(:only-of-type),
 .panel-footer button:not(:only-of-type) {
@@ -166,7 +166,7 @@ menulist:hover .menulist-label-box,
 }
 
 /* Hover flat buttons */
-#nav-bar toolbarbutton:not(#urlbar-zoom-button):not(.subviewbutton):not([open]):not([disabled="true"]):not([checked]):hover,
+#nav-bar toolbarbutton:not(#urlbar-zoom-button):not([open]):not([disabled="true"]):not([checked]):hover,
 .close-icon:not(.tab-close-button):hover,
 button.close:hover,
 #protections-popup-info-button:hover,
@@ -199,12 +199,13 @@ menulist[open] .menulist-label-box,
 .dialog-button-box button:not([disabled="true"]):active,
 #editBMPanel_newFolderButton:active {
 	background: var(--gnome-button-active-background) !important;
+	box-shadow: none !important;
 }
 
 /* Active flat buttons */
-#nav-bar toolbarbutton:not(#urlbar-zoom-button):not(.subviewbutton):not([disabled="true"]):not(#hack):active,
-#nav-bar toolbarbutton:not(#urlbar-zoom-button):not(.subviewbutton):not(.subviewbutton):not([disabled="true"])[open],
-#nav-bar toolbarbutton:not(#urlbar-zoom-button):not(.subviewbutton):not([disabled="true"])[checked],
+#nav-bar toolbarbutton:not(#urlbar-zoom-button):not([disabled="true"]):not(#hack):active,
+#nav-bar toolbarbutton:not(#urlbar-zoom-button):not([disabled="true"])[open],
+#nav-bar toolbarbutton:not(#urlbar-zoom-button):not([disabled="true"])[checked],
 .close-icon:not(.tab-close-button):active,
 button.close:active,
 #protections-popup-info-button:not(#hack):active,
@@ -212,6 +213,7 @@ button.close:active,
 .permission-popup-permission-remove-button:active,
 #item-choose button:active {
 	background: var(--gnome-button-flat-active-background) !important;
+	box-shadow: none !important;
 }
 
 /* Disabled buttons */
@@ -223,7 +225,7 @@ button.close:active,
 }
 
 /* Inactive window buttons */
-#nav-bar toolbarbutton:not(#urlbar-zoom-button):not(.subviewbutton):-moz-window-inactive,
+#nav-bar toolbarbutton:not(#urlbar-zoom-button):-moz-window-inactive,
 .findbar-container toolbarbutton:-moz-window-inactive,
 #sidebar-switcher-target:-moz-window-inactive,
 #viewButton:-moz-window-inactive,
@@ -240,7 +242,7 @@ button.close:active,
 }
 
 /* Combined buttons */
-#nav-bar .toolbaritem-combined-buttons toolbarbutton:not(:last-of-type):not(#hack),
+#nav-bar .toolbaritem-combined-buttons:not(.unified-extensions-item) toolbarbutton:not(:last-of-type):not(#hack),
 #appMenu-popup .toolbaritem-combined-buttons toolbarbutton:not(:last-of-type):not(#appMenu-zoomEnlarge-button),
 #context-navigation menuitem:not(:last-of-type),
 .findbar-container toolbarbutton.findbar-find-previous,
@@ -252,7 +254,7 @@ button.close:active,
 	margin-right: 0 !important;
 }
 
-#nav-bar .toolbaritem-combined-buttons toolbarbutton:not(:first-of-type):not(#hack),
+#nav-bar .toolbaritem-combined-buttons:not(.unified-extensions-item) toolbarbutton:not(:first-of-type):not(#hack),
 #appMenu-popup .toolbaritem-combined-buttons toolbarbutton:not(:first-of-type):not(#appMenu-fullscreen-button),
 #context-navigation menuitem:not(:first-of-type),
 .findbar-container toolbarbutton.findbar-find-previous,

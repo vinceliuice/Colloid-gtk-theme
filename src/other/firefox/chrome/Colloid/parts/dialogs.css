@@ -8,13 +8,17 @@ window {
 
 /* Browser dialog prompts center */
 .dialogOverlay {
-    display: grid;
+	display: grid;
 	place-content: center;
 	 justify-content: center;
 	grid-auto-rows: min(90%, var(--doc-height-px));
 }
-.dialogOverlay[topmost="true"], #window-modal-dialog::backdrop {
+.dialogOverlay[topmost="true"]:not(.dialogOverlay-window-modal-dialog-subdialog), #window-modal-dialog::backdrop {
 	background-color: rgba(0, 0, 0, .5) !important;
+}
+
+#window-modal-dialog {
+	margin-top: auto !important;
 }
 
 /* Dialog */
@@ -29,15 +33,18 @@ window[role="dialog"] {
 	box-shadow: var(--gnome-menu-shadow) !important;
 	padding: 0 !important;
 }
-dialog {	
+dialog {
 	padding: 0 !important;
 }
 
 /* Content */
 .dialog-content-box {
 	padding: 24px;
+	padding-bottom: 0;
 }
 #titleContainer {
+	padding: 6px !important;
+	margin-top: 6px !important;
 	justify-content: center !important;
 }
 .titleIcon {
@@ -46,31 +53,37 @@ dialog {
 
 /* Buttons */
 .dialog-button-box {
+	padding: 3px;
 	display: flex !important;
+	border-top: 1px solid var(--gnome-toolbar-border-color) !important;
 }
 
 .dialog-button-box button:not(#hack) {
 	height: auto !important;
 	max-height: unset !important;
 	padding: 10px 14px !important;
-	margin: 0 !important;
-	border-radius: 0 !important;
+	margin: 3px !important;
+	border-radius: 6px !important;
 	flex: 1;
-	border-bottom: 0 !important;
+	border: none !important;
 }
 
+/*.dialog-button-box button:not(:last-of-type) {*/
+/*	border-right: 1px solid var(--gnome-toolbar-border-color) !important;*/
+/*}*/
+
 /* Buttons borders - only suppor for cancel/ok */
-.dialog-button-box button[dlgtype="accept"] {
-	border-right: 0 !important;
-	border-left: 0 !important;
-}
-.dialog-button-box button[dlgtype="cancel"]:not(#hack) {
-	border-left: 0 !important;
-}
+/*.dialog-button-box button[dlgtype="accept"] {*/
+/*	border-right: 0 !important;*/
+/*	border-left: 0 !important;*/
+/*}*/
+/*.dialog-button-box button[dlgtype="cancel"]:not(#hack) {*/
+/*	border-left: 0 !important;*/
+/*}*/
 
 /* Hadler dialog */
 #os-default-handler image {
-	display: none !important;	
+	display: none !important;
 }
 #os-default-handler .name {
 	font-weight: normal !important;

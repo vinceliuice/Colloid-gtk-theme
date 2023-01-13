@@ -405,42 +405,42 @@ install_package() {
 }
 
 tweaks_temp() {
-  cp -rf ${SRC_DIR}/sass/_tweaks.scss ${SRC_DIR}/sass/_tweaks-temp.scss
+  cp -rf "${SRC_DIR}/sass/_tweaks.scss" "${SRC_DIR}/sass/_tweaks-temp.scss"
 }
 
 compact_size() {
-  sed -i "/\$compact:/s/false/true/" ${SRC_DIR}/sass/_tweaks-temp.scss
+  sed -i "/\$compact:/s/false/true/" "${SRC_DIR}/sass/_tweaks-temp.scss"
 }
 
 nord_color() {
-  sed -i "/\@import/s/color-palette-default/color-palette-nord/" ${SRC_DIR}/sass/_tweaks-temp.scss
-  sed -i "/\$colorscheme:/s/default/nord/" ${SRC_DIR}/sass/_tweaks-temp.scss
+  sed -i "/\@import/s/color-palette-default/color-palette-nord/" "${SRC_DIR}/sass/_tweaks-temp.scss"
+  sed -i "/\$colorscheme:/s/default/nord/" "${SRC_DIR}/sass/_tweaks-temp.scss"
 }
 
 dracula_color() {
-  sed -i "/\@import/s/color-palette-default/color-palette-dracula/" ${SRC_DIR}/sass/_tweaks-temp.scss
-  sed -i "/\$colorscheme:/s/default/dracula/" ${SRC_DIR}/sass/_tweaks-temp.scss
+  sed -i "/\@import/s/color-palette-default/color-palette-dracula/" "${SRC_DIR}/sass/_tweaks-temp.scss"
+  sed -i "/\$colorscheme:/s/default/dracula/" "${SRC_DIR}/sass/_tweaks-temp.scss"
 }
 
 blackness_color() {
-  sed -i "/\$blackness:/s/false/true/" ${SRC_DIR}/sass/_tweaks-temp.scss
+  sed -i "/\$blackness:/s/false/true/" "${SRC_DIR}/sass/_tweaks-temp.scss"
 }
 
 border_rimless() {
-  sed -i "/\$rimless:/s/false/true/" ${SRC_DIR}/sass/_tweaks-temp.scss
+  sed -i "/\$rimless:/s/false/true/" "${SRC_DIR}/sass/_tweaks-temp.scss"
 }
 
 normal_winbutton() {
-  sed -i "/\$window_button:/s/mac/normal/" ${SRC_DIR}/sass/_tweaks-temp.scss
+  sed -i "/\$window_button:/s/mac/normal/" "${SRC_DIR}/sass/_tweaks-temp.scss"
 }
 
 gnome_shell_version() {
-  cp -rf ${SRC_DIR}/sass/gnome-shell/_common.scss ${SRC_DIR}/sass/gnome-shell/_common-temp.scss
+  cp -rf "${SRC_DIR}/sass/gnome-shell/_common.scss" "${SRC_DIR}/sass/gnome-shell/_common-temp.scss"
 
-  sed -i "/\widgets/s/40-0/${GS_VERSION}/" ${SRC_DIR}/sass/gnome-shell/_common-temp.scss
+  sed -i "/\widgets/s/40-0/${GS_VERSION}/" "${SRC_DIR}/sass/gnome-shell/_common-temp.scss"
 
   if [[ "${GS_VERSION}" == '3-28' ]]; then
-    sed -i "/\extensions/s/40-0/${GS_VERSION}/" ${SRC_DIR}/sass/gnome-shell/_common-temp.scss
+    sed -i "/\extensions/s/40-0/${GS_VERSION}/" "${SRC_DIR}/sass/gnome-shell/_common-temp.scss"
   fi
 }
 
@@ -473,7 +473,7 @@ theme_color() {
         ;;
     esac
     tweaks_temp
-    sed -i "/\$theme:/s/default/${theme_color}/" ${SRC_DIR}/sass/_tweaks-temp.scss
+    sed -i "/\$theme:/s/default/${theme_color}/" "${SRC_DIR}/sass/_tweaks-temp.scss"
   fi
 }
 
@@ -535,7 +535,7 @@ link_theme() {
   for theme in "${themes[@]}"; do
     for color in "${lcolors[@]}"; do
       for size in "${sizes[@]}"; do
-        link_libadwaita "${dest:-$DEST_DIR}" "${_name:-$THEME_NAME}" "$theme" "$color" "$size" "$ctype"
+        link_libadwaita "${dest:-$DEST_DIR}" "${name:-$THEME_NAME}" "$theme" "$color" "$size" "$ctype"
       done
     done
   done
@@ -578,8 +578,8 @@ install_theme() {
   for theme in "${themes[@]}"; do
     for color in "${colors[@]}"; do
       for size in "${sizes[@]}"; do
-        install "${dest:-$DEST_DIR}" "${_name:-$THEME_NAME}" "$theme" "$color" "$size" "$ctype" "$window"
-        make_gtkrc "${dest:-$DEST_DIR}" "${_name:-$THEME_NAME}" "$theme" "$color" "$size" "$ctype" "$window"
+        install "${dest:-$DEST_DIR}" "${name:-$THEME_NAME}" "$theme" "$color" "$size" "$ctype" "$window"
+        make_gtkrc "${dest:-$DEST_DIR}" "${name:-$THEME_NAME}" "$theme" "$color" "$size" "$ctype" "$window"
       done
     done
   done
@@ -609,7 +609,7 @@ uninstall_theme() {
   for theme in "${themes[@]}"; do
     for color in "${colors[@]}"; do
       for size in "${sizes[@]}"; do
-        uninstall "${dest:-$DEST_DIR}" "${_name:-$THEME_NAME}" "$theme" "$color" "$size" "$ctype"
+        uninstall "${dest:-$DEST_DIR}" "${name:-$THEME_NAME}" "$theme" "$color" "$size" "$ctype"
       done
     done
   done

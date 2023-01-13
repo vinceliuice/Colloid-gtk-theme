@@ -45,7 +45,8 @@
   padding: $base_padding * 3;
   border: none;
   box-shadow: none;
-  background: none;
+  background-color: transparent !important;
+  background-image: none !important;
   text-shadow: none;
   color: on(black, secondary);
 }
