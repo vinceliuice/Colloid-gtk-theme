@@ -8,7 +8,7 @@ window {
 
 /* Browser dialog prompts center */
 .dialogOverlay {
-    display: grid;
+	display: grid;
 	place-content: center;
 	 justify-content: center;
 	grid-auto-rows: min(90%, var(--doc-height-px));
@@ -29,7 +29,7 @@ window[role="dialog"] {
 	box-shadow: var(--gnome-menu-shadow) !important;
 	padding: 0 !important;
 }
-dialog {	
+dialog {
 	padding: 0 !important;
 }
 
@@ -70,7 +70,7 @@ dialog {
 
 /* Hadler dialog */
 #os-default-handler image {
-	display: none !important;	
+	display: none !important;
 }
 #os-default-handler .name {
 	font-weight: normal !important;

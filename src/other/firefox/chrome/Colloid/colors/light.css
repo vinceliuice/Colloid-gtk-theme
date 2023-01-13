@@ -8,7 +8,7 @@
 :root {
 	/* Browser area before a page starts loading */
 	--gnome-browser-before-load-background: #F7F7F7;
-	
+
 	/* Accent */
 	--gnome-accent-bg: #5b9bf8;
 	--gnome-accent: #3c84f7;

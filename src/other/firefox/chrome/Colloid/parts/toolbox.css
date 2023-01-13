@@ -26,10 +26,6 @@ findbar {
 	border-top: 1px solid var(--gnome-toolbar-border-color) !important;
 }
 
-.findbar-container {
-	height: 46px !important;
-}
-
 #toolbar-menubar[autohide="true"][inactive="true"]:not([customizing="true"]) {
 	min-height: 0 !important;
 	height: 0 !important;
