@@ -134,13 +134,11 @@ for theme in '' '-Purple' '-Pink' '-Red' '-Orange' '-Yellow' '-Green' '-Teal' '-
       sed -i "s/#5b9bf8/${theme_color_light}/g" "thumbnail${theme}${type}.svg"
       sed -i "s/#f2f2f2/${panel_light}/g" "thumbnail${theme}${type}.svg"
       sed -i "s/#212121/${panel_dark}/g" "thumbnail${theme}${type}.svg"
-      sed -i "s/thumbnail/thumbnail${theme}${type}/g" "thumbnail${theme}${type}.svg"
     elif [[ "$theme" != '' ]]; then
       rm -rf "thumbnail${theme}.svg"
       cp -rf "thumbnail.svg" "thumbnail${theme}.svg"
       sed -i "s/#3c84f7/${theme_color_dark}/g" "thumbnail${theme}.svg"
       sed -i "s/#5b9bf8/${theme_color_light}/g" "thumbnail${theme}.svg"
-      sed -i "s/thumbnail/thumbnail${theme}/g" "thumbnail${theme}.svg"
     fi
   done
 done
