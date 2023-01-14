@@ -317,3 +317,25 @@ panelview > toolbarseparator:not([orient="vertical"]),
 #identity-popup-clear-sitedata-footer toolbarseparator:not([orient="vertical"]) {
 	margin-top: 0 !important;
 }
+
+/* Alltabs Popup Menu*/
+.all-tabs-item {
+	--arrowpanel-menuitem-margin-inline: 0 !important;
+	--arrowpanel-menuitem-border-radius: 6px !important;
+}
+
+.all-tabs-item:hover {
+	background-color: transparent !important;
+}
+
+.all-tabs-item:hover:active {
+	background-color: transparent !important;
+}
+
+.all-tabs-item image {
+	margin: 0 0 0 6px !important;
+}
+
+.all-tabs-item label {
+	margin: 0 6px 0 0 !important;
+}
