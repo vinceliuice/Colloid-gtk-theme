@@ -1667,10 +1667,10 @@ menubar,
 
     label:disabled { color: inherit; } // to inherit the above color
 
-    > window.background.csd.popup > decoration,
-    > window.background.csd.popup > menu {
-      border-radius: 0 0 $menu-radius $menu-radius;
-    }
+    // > window.background.csd.popup > decoration,
+    // > window.background.csd.popup > menu {
+    //   border-radius: 0 0 $menu-radius $menu-radius;
+    // }
 
     > window.popup.background > menu {
       menuitem { transition: none; }
