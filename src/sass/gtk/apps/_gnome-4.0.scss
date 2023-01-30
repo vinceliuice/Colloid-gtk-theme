@@ -1471,6 +1471,24 @@ panelstatusbar {
 }
 
 //
+// Amberol
+//
+
+playlistview {
+  scrollbar {
+    &.overlay-indicator {
+      &.dragging,
+      &.hovering { background-color: transparent; }
+    }
+  }
+
+  queuerow {
+    picture.cover,
+    image.card { border: none; }
+  }
+}
+
+//
 // dialogs
 //
 
