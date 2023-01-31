@@ -55,6 +55,10 @@ dialog {
 	margin: 0 6px !important;
 }
 
+#bookmarkpropertiesdialog #editBookmarkPanelContent {
+	padding-inline: 6px !important;
+	margin-inline: 6px !important;
+}
 /* Buttons */
 .dialog-button-box {
 	padding: 3px;
