@@ -38,7 +38,7 @@ dialog {
 }
 
 /* Content */
-.dialog-content-box {
+.dialog-content-box, #dialogGrid {
 	padding: 24px;
 	padding-bottom: 0;
 }
@@ -49,6 +49,10 @@ dialog {
 }
 .titleIcon {
 	background-color: transparent !important;
+}
+
+#commonDialog[subdialog] description, #commonDialog[subdialog] checkbox {
+	margin: 0 6px !important;
 }
 
 /* Buttons */

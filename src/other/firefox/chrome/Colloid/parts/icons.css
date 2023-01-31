@@ -352,6 +352,10 @@ treechildren::-moz-tree-image(query, OrganizerQuery_history____v) {
 .install-icon {
 	list-style-image: url("../icons/application-x-addon-symbolic.svg") !important;
 }
+/* Extensions button */
+#unified-extensions-button {
+	list-style-image: url("../icons/application-x-addon-symbolic.svg") !important;
+}
 /* Find button */
 #find-button {
 	list-style-image: url("../icons/edit-find-symbolic.svg") !important;
@@ -685,6 +689,7 @@ treechildren::-moz-tree-image {
 	#email-link-button .toolbarbutton-icon,
 	#print-button .toolbarbutton-icon,
 	#add-ons-button .toolbarbutton-icon,
+	#unified-extensions-button .toolbarbutton-icon,
 	#find-button .toolbarbutton-icon,
 	#bookmarks-menu-button .toolbarbutton-icon,
 	#history-panelmenu .toolbarbutton-icon,
