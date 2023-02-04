@@ -1045,6 +1045,14 @@ toolbar {
   }
 }
 
+.toolbar {
+  background-color: $base-alt;
+
+  frame & {
+    border-top: 1px solid $border;
+  }
+}
+
 // searchbar, location-bar & inline-toolbar
 .inline-toolbar {
   padding: $space-size;
