@@ -165,9 +165,23 @@ window#whiskermenu-window {
 .thunar {
   toolbar { box-shadow: inset 0 -1px $border; }
 
-  .standard-view.frame { border-style: none; }
+  .standard-view.frame {
+    border: none;
 
-  .sidebar .view:not(:selected) { background-color: transparent; }
+    widget.view {
+      // padding: $space-size; // Not work ?
+
+      &:selected {
+        @extend %selected_items;
+      }
+    }
+  }
+
+  scrolledwindow.frame.sidebar {
+    border-top: none;
+  }
+
+  // .sidebar .view:not(:selected) { background-color: transparent; }
 
   .path-bar.linked:not(.vertical) > button.path-bar-button {
     margin-left: 2px;

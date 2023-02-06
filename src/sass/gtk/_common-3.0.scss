@@ -1510,14 +1510,12 @@ treeview.view {
 
   // FIXME: Avoid transparency background-color being slightly darker
   &:selected {
-    background-image: image($overlay-checked);
-    background-color: $base;
+    background-color: mix($text, $base, 15%);
     color: $text;
   }
 
   .csd &:selected {
     @extend %selected_items;
-    background-image: none;
   }
 
   rubberband { @extend rubberband; } // to avoid borders being overridden by the previously set props
