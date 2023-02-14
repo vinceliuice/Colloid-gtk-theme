@@ -268,10 +268,14 @@ $menu_item_radius: $corner-radius;
 %menu {
   padding: 0;
   color: $text;
-  background-color: $popover;
+  // background-color: $popover;
   border-radius: $menu-radius;
   margin: $space-size;
-  box-shadow: 0 5px 12px rgba(black, 0.35);
+  box-shadow: none;
+
+  @if $rimless == 'false' and  $variant == 'dark' {
+    border: 1px solid $window-border;
+  }
 
   &-arrow { icon-size: 16px; }
 
@@ -296,21 +300,17 @@ $menu_item_radius: $corner-radius;
   .popup-menu-content {
     padding: $space-size;
     border-radius: $menu-radius;
-    background-clip: padding-box;
     background-color: $popover;
+    box-shadow: 0 5px 12px rgba(black, 0.35);
 
-    @if $rimless == 'false' {
-      box-shadow: inset 0 0 0 1px highlight($popover);
-
-      @if $variant == 'dark' {
-        border: 1px solid $window-border;
-      }
+    @if $rimless == 'false' and $variant == 'dark' {
+      border: 1px solid highlight($popover);
     }
   }
 
   .popup-menu-item {
-    padding: $space-size $space-size*2;
-    spacing: $space-size*2;
+    padding: $space-size $space-size * 2;
+    spacing: $space-size * 2;
     border-radius: $menu_item_radius;
 
     &:hover, &:active {
@@ -676,15 +676,12 @@ $menu_item_radius: $corner-radius;
 //
 
 //calendar-background allows the date applet calendar to be themed separately from other applet menus*/
-.calendar-background {
-}
-
 .calendar-main-box {
-  margin: 0 $space-size;
+  margin: 0 .8em;
 }
 
 .calendar {
-  padding: $space-size $space-size * 2;
+  // padding: $space-size $space-size * 2;
   spacing-rows: 0px;
   spacing-columns: 0px;
 }
@@ -714,15 +711,15 @@ $menu_item_radius: $corner-radius;
 .calendar-month-label {
   color: $text;
   font-weight: bold;
-  margin: 0 2px;
-  padding: 2px; // label centering
+  padding-bottom: 8px;
+  padding-top: 8px;
 }
 
 .calendar-change-month-back,
 .calendar-change-month-forward {
-  width: 24px;
-  height: 24px;
-  margin: 0;
+  width: 2.4em;
+  height: 2.4em;
+  margin: 2px 0;
   padding: 0;
   border-radius: $circular-radius;
 
@@ -759,8 +756,8 @@ $menu_item_radius: $corner-radius;
 
 .calendar-day-base {
   text-align: center;
-  width: 28px;
-  height: 28px;
+  width: 2.4em;
+  height: 2.4em;
   padding: 0;
   margin: 2px;
   border-radius: $circular-radius;
@@ -814,12 +811,12 @@ $menu_item_radius: $corner-radius;
 }
 
 .calendar-week-number {
-  width: 20px;
-  height: 20px;
-  margin: 6px 0;
+  width: 2.4em;
+  height: 2.4em;
+  margin: 0;
   color: $track;
   font-weight: bold;
-  background-color: $fill;
+  background-color: transparent;
   border-radius: $circular-radius;
 
   StLabel {
@@ -839,9 +836,6 @@ $menu_item_radius: $corner-radius;
   background-gradient-start: $fill;
   background-gradient-end: $fill;
   color: $text-secondary;
-}
-
-.calendar-events-no-events-box {
 }
 
 .calendar-events-no-events-button {
@@ -879,9 +873,6 @@ $menu_item_radius: $corner-radius;
 
 .calendar-events-event-container {
   padding: 2px;
-}
-
-.calendar-events-scrollbox {
 }
 
 .calendar-events-main-box .separator {
@@ -1658,6 +1649,21 @@ $menu_item_radius: $corner-radius;
 
   &-thumbnail-menu {
     padding: $space-size;
+    margin: $space-size;
+    background-color: $popover;
+    border-radius: $menu-radius;
+    background-clip: padding-box;
+
+    @if $rimless == 'false' {
+      box-shadow: 0 5px 12px rgba(black, 0.35), inset 0 0 0 1px highlight($popover);
+
+      @if $variant == 'dark' {
+        border: 1px solid $window-border;
+      }
+    } @else {
+      box-shadow: 0 5px 12px rgba(black, 0.35);
+    }
+
 
     .item-box {
       padding: $space-size;
