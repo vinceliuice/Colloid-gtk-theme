@@ -1653,17 +1653,11 @@ $menu_item_radius: $corner-radius;
     background-color: $popover;
     border-radius: $menu-radius;
     background-clip: padding-box;
+    box-shadow: 0 5px 12px rgba(black, 0.35);
 
-    @if $rimless == 'false' {
-      box-shadow: 0 5px 12px rgba(black, 0.35), inset 0 0 0 1px highlight($popover);
-
-      @if $variant == 'dark' {
-        border: 1px solid $window-border;
-      }
-    } @else {
-      box-shadow: 0 5px 12px rgba(black, 0.35);
+    @if $rimless == 'false' and $variant == 'dark' {
+      border: 1px solid $window-border;
     }
-
 
     .item-box {
       padding: $space-size;
