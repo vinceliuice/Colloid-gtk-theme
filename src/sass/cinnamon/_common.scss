@@ -305,6 +305,7 @@ $menu_item_radius: $corner-radius;
 
     @if $rimless == 'false' and $variant == 'dark' {
       border: 1px solid highlight($popover);
+      background-clip: border-box;
     }
   }
 
@@ -1652,7 +1653,7 @@ $menu_item_radius: $corner-radius;
     margin: $space-size;
     background-color: $popover;
     border-radius: $menu-radius;
-    background-clip: padding-box;
+    background-clip: border-box;
     box-shadow: 0 5px 12px rgba(black, 0.35);
 
     @if $rimless == 'false' and $variant == 'dark' {
