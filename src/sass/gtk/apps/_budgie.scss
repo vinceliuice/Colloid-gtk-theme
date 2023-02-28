@@ -36,15 +36,24 @@
     box-shadow: $shadow-z4, 0 0 0 1px $window-border;
     background-clip: border-box;
   } @else {
-    border: 1px solid $border;
-    box-shadow: $shadow-z4;
-    background-clip: padding-box;
+    border-color: $popover;
+    box-shadow: $shadow-z4, 0 0 0 1px $border;
+    background-clip: border-box;
   }
 
   background-color: $popover;
   border-radius: $menu-radius;
 
-  .container, list, row { padding: 0; }
+  frame.container {
+    padding: $space-size;
+    border: none;
+
+    .container {
+      padding: 0;
+    }
+  }
+
+  list, row { padding: 0; }
 
   separator { margin: $space-size / 2 0; }
 
@@ -128,11 +137,58 @@
     scrolledwindow > viewport.frame > list > row.activatable > button.flat {
       border-radius: 0;
     }
+
+    list.left-overlay-menu {
+      border-radius: $menu-radius;
+      background-color: $base;
+      padding: $space-size;
+      margin: $space-size;
+
+      @if $rimless == 'true' {
+        border: none;
+        box-shadow: $shadow-z4;
+      } @else if $variant == 'dark' {
+        border: 1px solid highlight($surface);
+        box-shadow: $shadow-z4, 0 0 0 1px $window-border;
+        background-clip: border-box;
+      } @else {
+        box-shadow: $shadow-z4, 0 0 0 1px $border;
+      }
+
+      > row.activatable {
+        border-radius: $corner-radius;
+
+        &:not(:last-child) {
+          margin-bottom: $space-size / 2;
+        }
+
+        button.menuitem {
+          border-radius: $corner-radius;
+        }
+      }
+    }
+
+    .budgie-menu-footer {
+      border-top: 1px solid $border;
+      padding: $space-size;
+
+      button.flat {
+        padding: $space-size / 2;
+        border-radius: $corner-radius;
+
+        &.image-button {
+          border-radius: $circular-radius;
+          padding: $space-size;
+          min-height: 16px;
+          min-width: 16px;
+          margin-left: $space-size;
+          background-clip: border-box;
+        }
+      }
+    }
   }
 
   &.user-menu {
-    .container { padding: $space-size; }
-
     list,
     row { // reset styling
       border: none;
@@ -157,20 +213,14 @@
   //   separator { margin: $space-size / 2 0; }
   // }
 
-  &.caffeine-popover {
-    frame > .container {
-      padding: $space-size;
-    }
-  }
+  // &.caffeine-popover {
+  // }
 
   &.night-light-indicator {
-    .container { padding: $space-size / 2; }
     .view-header { margin: 0 $space-size; }
   }
 
   &.places-menu {
-    .container { padding: $space-size / 2; }
-
     .name-button {
       image {
         &:dir(ltr) { margin-right: $space-size / 2; }
@@ -197,8 +247,6 @@
   }
 
   &.workspace-popover {
-    // .container { padding: $space-size; }
-
     flowboxchild { padding: 0; }
   }
 }
@@ -303,6 +351,51 @@
 
   &.transparent { background-color: rgba($panel, 0.75); }
 
+  .icon-tasklist {
+    button.launcher {
+      &:checked, &:active { color: on($panel); }
+    }
+  }
+
+  .bottom & {
+    &.dock-mode {
+      border-radius: $window-radius $window-radius 0 0;
+
+      .icon-tasklist {
+        > box > revealer {
+          &:first-child > button.launcher { border-top-left-radius: $window-radius; }
+          &:last-child > button.launcher { border-top-right-radius: $window-radius; }
+        }
+      }
+    }
+  }
+
+  .left & {
+    &.dock-mode {
+      border-radius: 0 $window-radius $window-radius 0;
+
+      .icon-tasklist {
+        .launcher {
+          &:first-child { border-top-right-radius: $window-radius; }
+          &:last-child { border-bottom-right-radius: $window-radius; }
+        }
+      }
+    }
+  }
+
+  .right & {
+    &.dock-mode {
+      border-radius: $window-radius 0 0 $window-radius;
+
+      .icon-tasklist {
+        .launcher {
+          &:first-child { border-top-left-radius: $window-radius; }
+          &:last-child { border-bottom-left-radius: $window-radius; }
+        }
+      }
+    }
+  }
+
   button {
     @extend %button-flat-simple;
     color: on($panel, secondary);
@@ -338,14 +431,42 @@
 
   &.vertical button { padding: 4px 0; }
 
-  separator { background-color: on($panel, track); }
+  separator { background-color: on($panel, divider); }
 
   // used to indicate unread notifications
   .alert { color: $destructive; }
 
-  // End Section needs to be fancy
-  // .end-region {
-  //   background-color: rgba(0,0,0, 0.2);
+  // // Add padding for panel indicators icons
+  // > box > widget > widget {
+  //   > image, // normal
+  //   > stack > image, // Screenshot
+  //   > box > image { // Places
+  //     margin-left: 6px;
+  //     margin-right: 6px;
+  //   }
+  //
+  //   > box > image + label { // Reset for mailneg
+  //     margin-left: -4px;
+  //   }
+  //
+  //   > box { // keyboard Layout
+  //     > widget > image { margin-left: 6px; }
+  //     > stack > widget > label { margin-right: 6px; }
+  //   }
+  //
+  //   > box > widget > widget > image { // Status
+  //     margin-left: 2px;
+  //     margin-right: 2px;
+  //   }
+  // }
+  //
+  // // Time label
+  // .budgie-clock-applet,
+  // .budgie-calendar-applet {
+  //   > widget > box {
+  //     padding-left: 3px;
+  //     padding-right: 3px;
+  //   }
   // }
 
   // budgie-pixel-saver-applet
@@ -377,6 +498,10 @@
       &:hover, &:active {
         color: on($panel);
       }
+    }
+
+    menu separator {
+      background-color: $border;
     }
   }
 
@@ -561,6 +686,12 @@ $pos_list: ((top, bottom), (bottom, top), (left, right), (right, left));
       }
     }
   }
+
+  levelbar {
+    &, trough, block {
+      border-radius: $circular-radius;
+    }
+  }
 }
 
 // Calendar
@@ -588,6 +719,12 @@ calendar.raven-calendar {
 
     @extend %button-on-dark;
   }
+}
+
+image.raven-mpris {
+  background-color: $divider;
+  color: $text-secondary;
+  border-radius: $corner-radius;
 }
 
 // notification list
