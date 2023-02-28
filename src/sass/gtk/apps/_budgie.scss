@@ -357,6 +357,12 @@
     }
   }
 
+  .top & {
+    &.dock-mode {
+      border-radius: 0 0 $window-radius $window-radius;
+    }
+  }
+
   .bottom & {
     &.dock-mode {
       border-radius: $window-radius $window-radius 0 0;
