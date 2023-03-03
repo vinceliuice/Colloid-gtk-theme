@@ -813,7 +813,7 @@ window.background.csd.unified {
 /*************
  * Rhythmbox *
  *************/
-%image-button {
+%rhythmbox-image-button {
   min-height: 24px;
   min-width: 24px;
   padding: ($medium-size - 24px) / 2;
@@ -860,7 +860,7 @@ window.solid-csd > box.vertical > box.vertical {
     > toolitem > .linked > button,
     > toolitem > box.horizontal > button {
       @extend %circular-button;
-      @extend %image-button;
+      @extend %rhythmbox-image-button;
     }
   }
 
@@ -877,21 +877,30 @@ window.solid-csd > box.vertical > box.vertical {
 window.background > box.vertical > toolbar.primary-toolbar {
   > toolitem {
     > .linked > button.image-button.raised { // 'shuffle/repeat'
-      @extend %circular-button;
-      @extend %image-button;
+      // @extend %circular-button;
+      // @extend %rhythmbox-image-button;
+      @include button(normal);
 
-      > widget > box > image { padding: 0; }
+      &:hover { @include button(hover); }
+
+      &:active { @include button(active); }
+
+      &:disabled { @include button(disabled); }
+
+      &:checked { @include button(checked); }
+
+      > widget > box > image { padding: 0 3px; }
     }
 
     button.flat.scale { // 'volume'
-      @extend %circular-button;
-      @extend %image-button;
+      // @extend %circular-button;
+      @extend %rhythmbox-image-button;
     }
 
     > box.horizontal:not(.linked) > button.toggle,
     > .linked > button:not(.toggle):not(.raised):not(.flat) {
       @extend %circular-button;
-      @extend %image-button;
+      @extend %rhythmbox-image-button;
     }
   }
 }

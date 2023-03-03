@@ -81,24 +81,32 @@ tab > stack {
 	display: none;
 }
 
-#tabbrowser-tabs[movingtab=true] #tabbrowser-arrowscrollbox::after  {
+#tabbrowser-tabs[movingtab=true] #tabbrowser-arrowscrollbox::after {
 	bottom: unset;
 	top: 38px;
 }
 
-/* Tab separators */
-.tabbrowser-tab:not([selected], :hover, [last-visible-tab="true"], [beforeselected-visible="true"], [beforehovered="true"])::after {
-	content: "";
-	display: block;
-	border-left: 1px solid var(--gnome-toolbar-border-color) !important;
-/*	height: 26px;*/
-	position: absolute;
-	top: 10px;
-	bottom: 10px;
+/* Tabs separators */
+.tabbrowser-tab {
+	border-width: 1px !important;
+	border-left: 1px solid transparent !important;
 }
 
-.tabbrowser-tab::after {
-	right: -1px;
+.tabbrowser-tab + .tabbrowser-tab:not([selected], :hover) {
+	border-image: linear-gradient(
+		to bottom,
+		transparent 0,
+		transparent 20%,
+		var(--gnome-tabbar-tab-border-color) 20%,
+		var(--gnome-tabbar-tab-border-color) 80%,
+		transparent 80%,
+		transparent 100%) 1 !important;
+}
+
+.tabbrowser-tab[selected] + .tabbrowser-tab,
+.tabbrowser-tab:hover + .tabbrowser-tab,
+.tabbrowser-tab[pinned] + .tabbrowser-tab {
+	border-image: none !important;
 }
 
 /* Space between tabs */
@@ -106,6 +114,10 @@ tab > stack {
 /*	border: none !important;*/
 	padding-inline: 0 !important;
 	padding: 3px 2px 3px !important;
+}
+
+#tabbrowser-tabs[haspinnedtabs]:not([positionpinnedtabs]) > #tabbrowser-arrowscrollbox > .tabbrowser-tab[first-visible-unpinned-tab] {
+	margin-inline-start: 6px !important;
 }
 
 /* Tab labels */
