@@ -294,8 +294,18 @@ toolbarseparator, menuseparator {
 	padding: 0 !important;
 	margin: 6px 0 !important;
 }
+
 #PlacesToolbar menupopup[placespopup="true"] menuseparator::before {
 	border: 0 !important;
+}
+
+toolbarbutton menupopup[placespopup] menuseparator {
+	padding-top: 0 !important;
+	padding-bottom: 0 !important;
+}
+
+toolbarbutton menupopup[placespopup] menuseparator::before {
+	border-top: 0 !important;
 }
 
 toolbarseparator:not([orient="vertical"]), menupopup menuseparator {
