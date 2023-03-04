@@ -808,7 +808,7 @@ image.raven-mpris {
 
 .drop-shadow {
   margin: 5px 9px;
-  padding: 3px;
+  padding: $space-size;
   border-radius: $window-radius;
   box-shadow: $shadow-z4, inset 0 1px highlight($surface);
   background-color: $surface;
