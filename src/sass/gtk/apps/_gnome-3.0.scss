@@ -950,6 +950,7 @@ window.background > box > .sidebar-paned {
     }
 
     > grid > paned > box,
+    > box > grid > paned > box,
     > notebook > stack > grid > paned > box {
       > scrolledwindow {
         &:not(:last-child) {
