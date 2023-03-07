@@ -3100,7 +3100,11 @@ calendar {
  ***********/
 messagedialog { // Message Dialog styling
   &.background {
-    background-color: $surface;
+    @if $variant == 'dark' {
+      background-color: transparent;
+    } @else {
+      background-color: $surface;
+    }
 
     &.csd { // rounded bottom border styling for csd version
       border-bottom-left-radius: $window-radius;
@@ -3108,16 +3112,14 @@ messagedialog { // Message Dialog styling
     }
   }
 
-  .titlebar {
-    min-height: $small-size;
-    border-style: none;
-    box-shadow: none;
-    background-color: $surface;
-    color: $text;
+  &, &.background.csd {
+    .titlebar {
+      border: none;
+      box-shadow: none;
 
-    &:backdrop {
-      background-color: $surface;
-      color: $text-secondary;
+      &, &:backdrop {
+        background-color: transparent;
+      }
     }
   }
 
@@ -3753,7 +3755,7 @@ decoration {
     border: none;
   }
 
-  messagedialog.csd & {
+  messagedialog.background.csd & {
     border-radius: $window-radius;
 
     @if $variant == 'dark' {

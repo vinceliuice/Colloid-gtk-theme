@@ -821,6 +821,8 @@ window.background.csd.unified {
 }
 
 .sidebar-paned .inline-toolbar.horizontal.sidebar-toolbar {
+  box-shadow: inset 0 1px $border;
+
   button.image-button {
     border-radius: $circular-radius;
 
@@ -852,8 +854,9 @@ window.csd > box.vertical > box.vertical,
 window.solid-csd > box.vertical > box.vertical {
   > toolbar.horizontal {
     padding: $space-size;
-    // margin: -1px 0;
+    margin: -1px 0;
     border-bottom: none;
+    border-top: 1px solid $border;
     box-shadow: none;
     background-color: transparent;
 
@@ -861,6 +864,7 @@ window.solid-csd > box.vertical > box.vertical {
     > toolitem > box.horizontal > button {
       @extend %circular-button;
       @extend %rhythmbox-image-button;
+      margin: $space-size 0;
     }
   }
 
@@ -875,6 +879,8 @@ window.solid-csd > box.vertical > box.vertical {
 // hard-coded spacing depends on non-scalable unit,
 // seems cover-art widget is the most biggest thing?
 window.background > box.vertical > toolbar.primary-toolbar {
+  padding: 0 $space-size * 2 0 $space-size;
+
   > toolitem {
     > .linked > button.image-button.raised { // 'shuffle/repeat'
       // @extend %circular-button;
@@ -901,6 +907,61 @@ window.background > box.vertical > toolbar.primary-toolbar {
     > .linked > button:not(.toggle):not(.raised):not(.flat) {
       @extend %circular-button;
       @extend %rhythmbox-image-button;
+    }
+  }
+}
+
+window.background > box > .sidebar-paned {
+  > paned > box > notebook > stack > box {
+    > grid > grid > grid,
+    > box > grid > grid > grid,
+    > notebook > stack > grid > grid > grid { // Button box part
+      border-bottom: 1px solid $border;
+      padding: $space-size;
+      margin: -6px;
+    }
+
+    > grid > grid > box,
+    > box > grid > grid > box,
+    > notebook > stack > grid > grid > box { // Search box part
+      border-bottom: 1px solid $border;
+      padding: 0 $space-size $space-size;
+      margin: 0 -6px -6px 0;
+    }
+
+    > grid > paned > box,
+    > notebook > stack > grid > paned > box {
+      > scrolledwindow {
+        &:not(:last-child) {
+          border-right: 1px solid $border;
+          margin-right: -1px;
+        }
+      }
+    }
+  }
+
+  > paned > box > notebook > stack > box > box {
+    > grid > grid > grid,
+    > box > grid > grid > grid,
+    > notebook > stack > grid > grid > grid {
+      border-bottom: 1px solid $border;
+      padding: $space-size / 2;
+      margin: -1px -6px -6px;
+    }
+
+    > grid > paned > box,
+    > notebook > stack > grid > paned > box {
+      > scrolledwindow {
+        &:not(:last-child) {
+          border-right: 1px solid $border;
+          margin-right: -1px;
+        }
+      }
+    }
+
+    > paned > box:first-child > box {
+      padding: 0 $space-size $space-size;
+      border-bottom: 1px solid $border;
     }
   }
 }
