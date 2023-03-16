@@ -904,8 +904,7 @@ splitbutton {
   }
 
   > menubutton > button {
-    padding-left: $space-size - 2px;
-    padding-right: $space-size - 2px;
+    padding: ($medium-size - 24px) / 2 ($medium-size - 16px) / 2;
   }
 
   // Since the inner button doesn't have any style classes on it,
