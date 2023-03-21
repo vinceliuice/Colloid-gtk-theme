@@ -3100,15 +3100,17 @@ calendar {
  ***********/
 messagedialog { // Message Dialog styling
   &.background {
-    @if $variant == 'dark' {
-      background-color: transparent;
-    } @else {
-      background-color: $surface;
-    }
+    background-color: if($variant == 'dark', background(f), background(c));
 
     &.csd { // rounded bottom border styling for csd version
       border-bottom-left-radius: $window-radius;
       border-bottom-right-radius: $window-radius;
+
+      @if $variant == 'dark' {
+        background-color: transparent;
+      } @else {
+        background-color: $surface;
+      }
     }
   }
 
