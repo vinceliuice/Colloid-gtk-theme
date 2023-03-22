@@ -137,15 +137,33 @@ window#whiskermenu-window {
 }
 
 #XfceNotifyWindow {
+  background-color: $base;
+  border-radius: $window-radius;
+
   @if $rimless == 'true' {
-    box-shadow: $shadow-z4;
+    border: none;
+    box-shadow: none;
   } @else {
-    box-shadow: $shadow-z4, 0 0 0 1px $window-border;
+    border: 1px solid $window-border;
+    box-shadow: inset 0 0 0 1px highlight($base);
   }
 
   buttonbox { padding: 0; }
 
   label#summary { font-weight: bold; }
+}
+
+dialog.xfsm-logout-dialog {
+  border-radius: $window-radius;
+  background-color: if($opacity == 'solid', $popover, rgba($popover, 0.97));
+
+  @if $rimless == 'true' {
+    border: none;
+    box-shadow: none;
+  } @else {
+    border: 1px solid $window-border;
+    box-shadow: inset 0 0 0 1px highlight($base);
+  }
 }
 
 // Xfwm4's alt-tab dialog, aka "tabwin"
