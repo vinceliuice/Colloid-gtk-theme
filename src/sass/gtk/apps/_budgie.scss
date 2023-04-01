@@ -822,6 +822,10 @@ image.raven-mpris {
   background-color: $surface;
   border: none;
   padding: 0;
+
+  > box > grid {
+    padding: $space-size * 4;
+  }
 }
 
 // Session Dialog
@@ -859,6 +863,10 @@ image.raven-mpris {
 .budgie-polkit-dialog {
   .message { color: $text-secondary; }
   .failure { color: $destructive; }
+
+  > box > grid {
+    padding-bottom: 0;
+  }
 }
 
 // Run Dialog
