@@ -105,6 +105,14 @@
     }
   }
 
+  &.background.csd .toolbar {
+    border-radius: 0 0 $window-radius $window-radius;
+  }
+
+  &.background.csd.maximized .toolbar {
+    border-radius: 0;
+  }
+
   .view {
     selection,
     &:selected {
