@@ -1687,9 +1687,10 @@ headerbar {
 
   &.default-decoration {
     min-height: $medium-size;
-    // padding: $space-size;
-    box-shadow: inset 0 1px highlight($titlebar);
+    padding: 0;
+    box-shadow: none;
     border: none;
+    outline: none;
 
     windowcontrols {
       button,
@@ -4791,6 +4792,12 @@ window {
       border-radius: 0;
       transition: none;
     }
+
+    &.maximized,
+    &.fullscreen {
+      box-shadow: none;
+      outline: none;
+    }
   }
 
   &.solid-csd {
@@ -4801,11 +4808,6 @@ window {
     border: 1px solid $solid-border;
 
     &:backdrop { background-color: $titlebar-backdrop; }
-  }
-
-  &.ssd {
-    // just doing borders, wm draws actual shadows
-    box-shadow: 0 0 0 1px $border;
   }
 }
 
