@@ -1,7 +1,7 @@
 #! /usr/bin/env bash
 
 for theme in '' '-Purple' '-Pink' '-Red' '-Orange' '-Yellow' '-Green' '-Teal' '-Grey'; do
-  for type in '' '-Nord' '-Dracula'; do
+  for type in '' '-Nord' '-Dracula' '-Gruvbox'; do
     case "$theme" in
       '')
         theme_color_dark='#3c84f7'
@@ -44,6 +44,7 @@ for theme in '' '-Purple' '-Pink' '-Red' '-Orange' '-Yellow' '-Green' '-Teal' '-
     if [[ "$type" == '-Nord' ]]; then
       panel_light='#f0f1f4'
       panel_dark='#1c1f26'
+
       case "$theme" in
         '')
           theme_color_dark='#5e81ac'
@@ -87,6 +88,7 @@ for theme in '' '-Purple' '-Pink' '-Red' '-Orange' '-Yellow' '-Green' '-Teal' '-
     if [[ "$type" == '-Dracula' ]]; then
       panel_light='#f0f1f4'
       panel_dark='#1c1e26'
+
       case "$theme" in
         '')
           theme_color_dark='#a679ec'
@@ -123,6 +125,50 @@ for theme in '' '-Purple' '-Pink' '-Red' '-Orange' '-Yellow' '-Green' '-Teal' '-
         -Grey)
           theme_color_dark='#3c3f51'
           theme_color_light='#d9dae3'
+          ;;
+      esac
+    fi
+
+    if [[ "$type" == '-Gruvbox' ]]; then
+      panel_light='#fbf1c7'
+      panel_dark='#282524'
+
+      case "$theme" in
+        '')
+          theme_color_dark='#458588'
+          theme_color_light='#83a598'
+          ;;
+        -Purple)
+          theme_color_dark='#ab62b1'
+          theme_color_light='#d386cd'
+          ;;
+        -Pink)
+          theme_color_dark='#b16286'
+          theme_color_light='#d3869b'
+          ;;
+        -Red)
+          theme_color_dark='#cc241d'
+          theme_color_light='#fb4934'
+          ;;
+        -Orange)
+          theme_color_dark='#d65d0e'
+          theme_color_light='#fe8019'
+          ;;
+        -Yellow)
+          theme_color_dark='#d79921'
+          theme_color_light='#fabd2f'
+          ;;
+        -Green)
+          theme_color_dark='#98971a'
+          theme_color_light='#b8bb26'
+          ;;
+        -Teal)
+          theme_color_dark='#689d6a'
+          theme_color_light='#8ec07c'
+          ;;
+        -Grey)
+          theme_color_dark='#3c3836'
+          theme_color_light='#a89984'
           ;;
       esac
     fi

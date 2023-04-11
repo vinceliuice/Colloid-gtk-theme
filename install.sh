@@ -63,7 +63,7 @@ OPTIONS:
   -u, --uninstall         Uninstall/Remove installed themes or links
 
   --tweaks                Specify versions for tweaks [(nord/dracula)|black|rimless|normal] (only nord and dracula can not mix use with!)
-                          1. [nord/dracula]:     Nord/Dracula ColorScheme version
+                          1. [nord|dracula|gruvbox]:     Nord|Dracula|gruvbox ColorSchemes version
                           2. black:    Blackness color version
                           3. rimless:  Remove the 1px border about windows and menus
                           4. normal:   Normal windows button style (titlebuttons: max/min/close)
@@ -326,6 +326,12 @@ while [[ $# -gt 0 ]]; do
             echo -e "Dracula ColorScheme version! ..."
             shift
             ;;
+          gruvbox)
+            gruvbox="true"
+            ctype="-Gruvbox"
+            echo -e "Gruvbox ColorScheme version! ..."
+            shift
+            ;;
           black)
             blackness="true"
             echo -e "Blackness version! ..."
@@ -422,6 +428,11 @@ dracula_color() {
   sed -i "/\$colorscheme:/s/default/dracula/" "${SRC_DIR}/sass/_tweaks-temp.scss"
 }
 
+gruvbox_color() {
+  sed -i "/\@import/s/color-palette-default/color-palette-gruvbox/" "${SRC_DIR}/sass/_tweaks-temp.scss"
+  sed -i "/\$colorscheme:/s/default/gruvbox/" "${SRC_DIR}/sass/_tweaks-temp.scss"
+}
+
 blackness_color() {
   sed -i "/\$blackness:/s/false/true/" "${SRC_DIR}/sass/_tweaks-temp.scss"
 }
@@ -494,6 +505,10 @@ theme_tweaks() {
     dracula_color
   fi
 
+  if [[ "$gruvbox" = "true" ]] ; then
+    gruvbox_color
+  fi
+
   if [[ "$blackness" = "true" ]] ; then
     blackness_color
   fi
@@ -564,7 +579,7 @@ clean_theme() {
   for theme in '' '-purple' '-pink' '-red' '-orange' '-yellow' '-green' '-teal' '-grey'; do
     for color in '' '-light' '-dark'; do
       for size in '' '-compact'; do
-        for type in '' '-nord' '-dracula'; do
+        for type in '' '-nord' '-dracula' '-gruvbox'; do
           for screen in '' '-hdpi' '-xhdpi'; do
             clean "${dest:-${DEST_DIR}}" "${name:-${THEME_NAME}}" "${theme}" "${color}" "${size}" "${type}" "${screen}"
           done

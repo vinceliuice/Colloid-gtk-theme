@@ -2,7 +2,7 @@
 
 for theme in '' '-Purple' '-Pink' '-Red' '-Orange' '-Yellow' '-Green' '-Teal' '-Grey'; do
   for color in '' '-Dark'; do
-    for type in '' '-Nord' '-Dracula'; do
+    for type in '' '-Nord' '-Dracula' '-Gruvbox'; do
       if [[ "$color" == '' ]]; then
         case "$theme" in
           '')
@@ -101,6 +101,40 @@ for theme in '' '-Purple' '-Pink' '-Red' '-Orange' '-Yellow' '-Green' '-Teal' '-
               ;;
           esac
         fi
+
+        if [[ "$type" == '-Gruvbox' ]]; then
+          background_color='#fbf1c7'
+
+          case "$theme" in
+            '')
+              theme_color='#458588'
+              ;;
+            -Purple)
+              theme_color='#ab62b1'
+              ;;
+            -Pink)
+              theme_color='#b16286'
+              ;;
+            -Red)
+              theme_color='#cc241d'
+              ;;
+            -Orange)
+              theme_color='#d65d0e'
+              ;;
+            -Yellow)
+              theme_color='#d79921'
+              ;;
+            -Green)
+              theme_color='#98971a'
+              ;;
+            -Teal)
+              theme_color='#689d6a'
+              ;;
+            -Grey)
+              theme_color='#3c3836'
+              ;;
+          esac
+        fi
       else
         case "$theme" in
           '')
@@ -196,6 +230,40 @@ for theme in '' '-Purple' '-Pink' '-Red' '-Orange' '-Yellow' '-Green' '-Teal' '-
               ;;
             -Grey)
               theme_color='#d9dae3'
+              ;;
+          esac
+        fi
+
+        if [[ "$type" == '-Gruvbox' ]]; then
+          background_color='#282524'
+
+          case "$theme" in
+            '')
+              theme_color='#83a598'
+              ;;
+            -Purple)
+              theme_color='#d386cd'
+              ;;
+            -Pink)
+              theme_color='#d3869b'
+              ;;
+            -Red)
+              theme_color='#fb4934'
+              ;;
+            -Orange)
+              theme_color='#fe8019'
+              ;;
+            -Yellow)
+              theme_color='#fabd2f'
+              ;;
+            -Green)
+              theme_color='#b8bb26'
+              ;;
+            -Teal)
+              theme_color='#8ec07c'
+              ;;
+            -Grey)
+              theme_color='#a89984'
               ;;
           esac
         fi
