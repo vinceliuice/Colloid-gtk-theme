@@ -97,7 +97,7 @@ $screenshot_ui_button_red: $error;
   background-color: transparent;
   &:hover, &:focus { background-color: lighten($osd, 10%);}
   &:active { background-color: $track;}
-  &:checked { background-color: white; color: black;}
+  &:checked { background-color: $white; color: $black;}
   &:insensitive { color: transparentize(on($osd), 0.5);}
 
   border-radius: $modal_radius - $screenshot_ui_shot_cast_spacing;
@@ -122,13 +122,13 @@ $screenshot_ui_button_red: $error;
   }
 
   .screenshot-ui-area-indicator-selection {
-    border: 2px white;
+    border: 2px solid $white;
   }
 }
 
 .screenshot-ui-area-selector-handle {
   border-radius: $circular_radius;
-  background-color: white;
+  background-color: $primary;
   box-shadow: 0 1px 3px 2px rgba(0,0,0, .2);
   width: 24px;
   height: 24px;
@@ -158,7 +158,7 @@ $screenshot_ui_button_red: $error;
 .screenshot-ui-window-selector-check {
   transition-duration: 200ms;
   color: transparent;
-  border-radius: 99px;
+  border-radius: $circular_radius;
   border-width: 12px;
   icon-size: 24px;
 }
@@ -190,7 +190,7 @@ $screenshot_ui_button_red: $error;
   &:active { background-color: rgba(0,0,0,.7);}
   &:checked {
     background-color: transparent;
-    border: 2px white;
+    border: 2px solid $white;
   }
 }
 

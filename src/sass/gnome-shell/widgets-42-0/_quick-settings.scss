@@ -5,6 +5,10 @@
 
   .icon-button, .button {
     padding: $base_padding * 1.75;
+
+    > StIcon {
+      icon-size: $base_icon_size;
+    }
   }
 }
 
@@ -163,7 +167,10 @@
     border-radius: $base_radius;
     @extend %button;
 
-    > StIcon { -st-icon-style: symbolic; }
+    > StIcon {
+      -st-icon-style: symbolic;
+      icon-size: $base_icon_size;
+    }
   }
 
   & .power-item {
