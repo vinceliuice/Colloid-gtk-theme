@@ -62,7 +62,7 @@ OPTIONS:
   -r, --remove,
   -u, --uninstall         Uninstall/Remove installed themes or links
 
-  --tweaks                Specify versions for tweaks [(nord/dracula)|black|rimless|normal] (only nord and dracula can not mix use with!)
+  --tweaks                Specify versions for tweaks
                           1. [nord|dracula|gruvbox]:     Nord|Dracula|gruvbox ColorSchemes version
                           2. black:    Blackness color version
                           3. rimless:  Remove the 1px border about windows and menus
