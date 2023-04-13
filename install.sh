@@ -525,7 +525,7 @@ theme_tweaks() {
 }
 
 uninstall_link() {
-  rm -rf "${HOME}/.config/gtk-4.0/"{assets,windows-assets,gtk.css,gtk-dark.css} && echo -e "\nUninstall ${HOME}/.config/gtk-4.0 links ..."
+  rm -rf "${HOME}/.config/gtk-4.0/"{assets,windows-assets,gtk.css,gtk-dark.css}
 }
 
 link_libadwaita() {

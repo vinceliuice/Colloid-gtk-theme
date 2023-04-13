@@ -1384,7 +1384,8 @@ headerbar {
   // add vertical margins to common widget on the headerbar to avoid them spanning the whole height
   entry,
   spinbutton,
-  button {
+  button,
+  stackswitcher {
     margin-top: $space-size;
     margin-bottom: $space-size;
   }
@@ -2962,6 +2963,10 @@ list {
     > row {
       border-radius: $corner-radius;
     }
+  }
+
+  paned scrolledwindow > viewport.frame > & {
+    background-color: transparent;
   }
 }
 
