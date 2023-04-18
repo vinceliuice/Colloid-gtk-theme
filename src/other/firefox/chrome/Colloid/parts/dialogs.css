@@ -19,6 +19,10 @@ window {
 
 #window-modal-dialog {
 	margin-top: auto !important;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
 }
 
 /* Dialog */
@@ -32,7 +36,9 @@ window[role="dialog"] {
 	border: 0 !important;
 	box-shadow: var(--gnome-menu-shadow) !important;
 	padding: 0 !important;
+	border-radius: 12px !important;
 }
+
 dialog {
 	padding: 0 !important;
 }
