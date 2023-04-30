@@ -24,8 +24,12 @@
 
     min-height: 16px;
     min-width: 16px;
-    padding: 0;
+    padding: 0 $space-size;
     border-radius: 0;
+
+    &.flat.toggle {
+      padding: 0 $space-size;
+    }
   }
 
   .tasklist button {

@@ -88,6 +88,7 @@
     background-color: $button !important;
     padding: $base_padding $base_padding * 1.75;
     border: none !important;
+    color: $text;
 
     &:hover {
       background-color: $divider !important;

@@ -1695,9 +1695,9 @@ menubar,
 // otherwise the background bleeds out of the menu edges
 .background.popup { background-color: transparent; }
 
-menu,
-.menu,
-.context-menu {
+// .menu,
+// .context-menu,
+menu {
   margin: $space-size; // See https://bugzilla.gnome.org/show_bug.cgi?id=591258
   padding: $space-size;
   background-color: $surface;
@@ -1780,8 +1780,8 @@ menu,
     }
 
     &.bottom {
-      margin-top: 4px * 2;
-      margin-bottom: -4px * 3;
+      margin-top: 8px;
+      margin-bottom: -12px;
       // border-top: 1px solid $divider;
       border-radius: $corner-radius;
       -gtk-icon-source: -gtk-icontheme('pan-down-symbolic');
@@ -3695,8 +3695,9 @@ colorchooser .popover.osd {
  * Window Decorations *
  **********************/
 decoration {
-  transition: $transition-shadow;
+  transition: none;
   border-radius: $window-radius;
+  border: none;
 
   @if $rimless == 'true' {
     box-shadow: $shadow-z16, 0 0 36px transparent;
@@ -3713,14 +3714,15 @@ decoration {
   }
 
   // this is used for the resize cursor area
-  margin: 8px;
+  margin: 10px;
 
   &:backdrop {
+    transition: $transition-shadow;
+
     // the transparent shadow here is to enforce that the shadow extents don't
     // change when we go to backdrop, to prevent jumping windows.
     // The biggest shadow should be in the same order then in the active state
     // or the jumping will happen during the transition.
-
     @if $rimless == 'true' {
       box-shadow: $shadow-z4, 0 0 36px transparent;
     } @else {
@@ -3728,13 +3730,17 @@ decoration {
     }
   }
 
-  .maximized &,
-  .fullscreen &,
   .tiled &,
   .tiled-top &,
   .tiled-right &,
   .tiled-bottom &,
   .tiled-left & { border-radius: 0; }
+
+  .maximized &,
+  .fullscreen & {
+    border-radius: 0;
+    box-shadow: none;
+  }
 
   .popup & {
     box-shadow: none;
