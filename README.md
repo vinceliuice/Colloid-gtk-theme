@@ -2,6 +2,11 @@
 
 ![Colloid](colloid.png?raw=true)
 
+- Icon theme used in the screeenshot: `tela-cricle-blue`
+- Font used in the screenshot: `maple-mono`
+
+----
+
 ## Requirements
 
 - GTK `>=3.20`
