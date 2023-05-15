@@ -4768,11 +4768,10 @@ window {
     outline: 1px solid highlight($background);
     margin: 0;
 
-    @if $rimless == 'true' {
-      box-shadow: $shadow-z16, 0 0 36px transparent;
-    } @else {
-      box-shadow: $shadow-z16, 0 0 0 1px $window-border, 0 0 36px transparent;
-    }
+    box-shadow: $shadow-z16,
+      0 1px 2px transparent,
+      0 3px 4px transparent,
+      0 1px 6px transparent;
 
     &:backdrop {
       // the transparent shadow here is to enforce that the shadow extents don't
@@ -4781,11 +4780,10 @@ window {
       // or the jumping will happen during the transition.
       transition: $transition-shadow;
 
-      @if $rimless == 'true' {
-        box-shadow: $shadow-z4, 0 0 36px transparent;
-      } @else {
-        box-shadow: $shadow-z4, 0 0 0 1px $window-border, 0 0 36px transparent;
-      }
+      box-shadow: $shadow-z16,
+                    0 3px 8px transparent,
+                    0 10px 18px transparent,
+                    0 8px 24px transparent;
     }
 
     &.maximized,
