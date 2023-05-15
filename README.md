@@ -1,6 +1,6 @@
 This theme is based off of https://github.com/vinceliuice/Colloid-gtk-theme
 
-## Colloid gtk theme
+## Colloid gtk ayu theme
 
 ![Colloid](colloid.png?raw=true)
 
