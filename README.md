@@ -1,9 +1,14 @@
-## Colloid gtk theme
+# Colloid gtk theme
 
 ![Colloid](colloid.png?raw=true)
 
-- Icon theme used in the screeenshot: `tela-cricle-blue`
+- Icon theme used in the screeenshot: `tela-cricle-blue` (obfuscated for neutrality/privacy)
 - Font used in the screenshot: `maple-mono`
+
+Install with the default dark variant (no nord/darcula) to get the intended result. accent color used here is yellow.
+
+
+### _Below is the original README.md. Some info might not be relevant for this fork._
 
 ----
 
