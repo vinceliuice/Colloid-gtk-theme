@@ -165,9 +165,16 @@ tab {
 	justify-items: center;
 }
 
-/* Adjust tab label width */
+/* Center tab content */
 .tab-label-container {
 	min-width: 0 !important;
+	max-width: min-content !important;
+}
+.tabbrowser-tab:not([pinned]) .tab-icon-stack {
+	margin-left: auto !important;
+}
+.tab-close-button {
+	margin-left: auto;
 }
 
 /* Put tab close button to the right */
@@ -219,6 +226,10 @@ tab {
 
 .tab-icon-stack:is([soundplaying], [muted], [activemedia-blocked]) image {
 	margin: auto !important;
+}
+
+#alltabs-button {
+	display: none;
 }
 
 /* Always show the muted icon when poresent */

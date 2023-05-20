@@ -116,14 +116,14 @@ panelview {
 
 /* Panel arrow */
 .panel-arrowcontent {
-	background: var(--arrowpanel-background) !important;
+	background: var(--gnome-menu-background) !important;
 	border: 1px solid rgba(255, 255, 255, 0.1) !important;
 	border-radius: 12px !important;
 	color: var(--gnome-toolbar-color) !important;
 	box-shadow: 0 0 0 1px var(--gnome-menu-border-color)!important;
 }
 .panel-arrow {
-	fill: var(--arrowpanel-background) !important;
+	fill: var(--gnome-menu-background) !important;
 	stroke: var(--gnome-menu-border-color) !important;
 	display: -moz-inline-box !important;
 }

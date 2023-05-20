@@ -39,7 +39,8 @@ button.close,
 .permission-popup-permission-remove-button,
 .button.connect-device,
 #item-choose button,
-#editBMPanel_newFolderButton {
+#editBMPanel_newFolderButton,
+.unified-extensions-item-menu-button {
 	-moz-appearance: none !important;
 	background: var(--gnome-button-background) !important;
 	border-radius: 6px !important;
@@ -63,7 +64,8 @@ button.close,
 .close-icon:not(.tab-close-button),
 button.close,
 #protections-popup-info-button,
-.permission-popup-permission-remove-button {
+.permission-popup-permission-remove-button,
+.unified-extensions-item-menu-button {
 	background: transparent !important;
 }
 
@@ -171,7 +173,8 @@ menulist:hover .menulist-label-box,
 button.close:hover,
 #protections-popup-info-button:hover,
 .permission-popup-permission-remove-button:hover,
-#item-choose button:hover {
+#item-choose button:hover,
+.unified-extensions-item-menu-button:hover {
 	outline: 0 !important;
 	background: var(--gnome-button-flat-hover-background) !important;
 }
@@ -211,7 +214,8 @@ button.close:active,
 #protections-popup-info-button:not(#hack):active,
 #protections-popup-info-button:not(#hack)[checked],
 .permission-popup-permission-remove-button:active,
-#item-choose button:active {
+#item-choose button:active,
+.unified-extensions-item-menu-button:active {
 	background: var(--gnome-button-flat-active-background) !important;
 	box-shadow: none !important;
 }
@@ -266,7 +270,7 @@ button.close:active,
 	margin-left: 0 !important;
 }
 
-#nav-bar .toolbaritem-combined-buttons {
+#nav-bar .toolbaritem-combined-buttons:not(.unified-extensions-item) {
 	margin-left: 0 !important;
 	margin-right: 0 !important;
 }
