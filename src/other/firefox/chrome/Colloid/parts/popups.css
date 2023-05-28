@@ -25,7 +25,8 @@ menu menupopup {
 	border-radius: 12px !important;
 	box-shadow: var(--gnome-menu-shadow) !important;
 	padding: 6px !important;
-	margin: 0 !important;
+	margin-top: 3px !important;
+	margin-left: 0 !important;
 }
 
 menuitem[type="checkbox"] image, menuitem[type="radio"] image {
@@ -51,6 +52,7 @@ panel {
 	--arrowpanel-border-color: var(--gnome-menu-border-color) !important;
 	--arrowpanel-border-radius: 12px !important;
 	--gnome-menu-padding: 6px;
+	--panel-shadow: var(--gnome-menu-shadow) !important;
 }
 panelview {
 	border-radius: 12px !important;
@@ -70,12 +72,16 @@ panelview {
 .protections-popup-section,
 #protections-popup-mainView-panel-header-section,
 .permission-popup-section,
-.identity-popup-section,
+.identity-popup-section {
+	padding: 0 var(--gnome-menu-padding) var(--gnome-menu-padding) !important;
+}
+
 .popup-notification-header-container,
 .popup-notification-body-container,
 .popup-notification-footer-container {
-	padding: 0 var(--gnome-menu-padding) var(--gnome-menu-padding) !important;
+	padding: var(--gnome-menu-padding) !important;
 }
+
 :is(
 	.panel-header, .panel-footer,
 	.panel-subview-body,

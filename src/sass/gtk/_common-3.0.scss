@@ -1325,6 +1325,7 @@ searchbar > revealer > box {
     border-radius: $window-radius $window-radius 0 0;
     border: none;
     background-color: $titlebar;
+    background-image: none;
     box-shadow: inset 0 1px highlight($titlebar);
 
     &:backdrop {

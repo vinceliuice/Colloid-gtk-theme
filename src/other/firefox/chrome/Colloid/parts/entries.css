@@ -15,7 +15,7 @@
 	-moz-appearance: none !important;
 	background: var(--gnome-entry-background) !important;
 	border: none !important;
-	border-radius: 8px !important;
+	border-radius: 6px !important;
 	box-shadow: none !important;
 	color: var(--gnome-entry-color) !important;
 	height: 34px !important;
@@ -39,7 +39,7 @@
 #editBMPanel_tagsField:focus-visible {
 	outline: 2px solid var(--gnome-focused-urlbar-border-color) !important;
 	outline-offset: -2px;
-	-moz-outline-radius: 8px;
+	-moz-outline-radius: 6px;
 }
 
 /* Inactive window entries */
@@ -60,7 +60,7 @@
 	border-right-width: 0 !important;
 }
 .findbar-textbox:not(.minimal)[focused], .findbar-textbox:not(.minimal):focus {
-	-moz-outline-radius: 5px 0 0 5px !important;
+	-moz-outline-radius: 6px 0 0 6px !important;
 }
 
 /* Entry button */

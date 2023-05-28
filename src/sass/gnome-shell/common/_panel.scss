@@ -8,6 +8,8 @@
   color: $panel-text-secondary;
   font-feature-settings: "tnum";
   transition-duration: 250ms;
+  box-shadow: none;
+  border: none;
   @include fontsize($font_size - 1);
 
   // the rounded outset corners

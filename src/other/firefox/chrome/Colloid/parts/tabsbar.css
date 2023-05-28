@@ -398,7 +398,7 @@ tab {
 
 /* Pinned tab size */
 .tabbrowser-tab[pinned] {
-	max-width: 36px !important;
+	max-width: 40px !important;
 }
 
 /* Remove container bottom line indicator */
