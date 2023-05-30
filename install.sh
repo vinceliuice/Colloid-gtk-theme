@@ -65,10 +65,11 @@ OPTIONS:
   -u, --uninstall         Uninstall/Remove installed themes or links
 
   --tweaks                Specify versions for tweaks
-                          1. [nord|dracula|gruvbox]:     Nord|Dracula|gruvbox ColorSchemes version
-                          2. black:    Blackness color version
-                          3. rimless:  Remove the 1px border about windows and menus
-                          4. normal:   Normal windows button style (titlebuttons: max/min/close)
+                          1. [nord|dracula|gruvbox]   Nord|Dracula|gruvbox ColorSchemes version
+                          2. black                    Blackness color version
+                          3. rimless                  Remove the 1px border about windows and menus
+                          4. normal                   Normal windows button style like gnome default theme (titlebuttons: max/min/close)
+                          5. float                    Floating gnome-shell panel style
 
   -h, --help              Show help
 EOF
@@ -350,6 +351,11 @@ while [[ $# -gt 0 ]]; do
             echo -e "Normal window button version! ..."
             shift
             ;;
+          float)
+            float="true"
+            echo -e "Install Floating Gnome-Shell Panel version! ..."
+            shift
+            ;;
           -*)
             break
             ;;
@@ -447,6 +453,10 @@ normal_winbutton() {
   sed -i "/\$window_button:/s/mac/normal/" "${SRC_DIR}/sass/_tweaks-temp.scss"
 }
 
+float_panel() {
+  sed -i "/\$float:/s/false/true/" "${SRC_DIR}/sass/_tweaks-temp.scss"
+}
+
 gnome_shell_version() {
   cp -rf "${SRC_DIR}/sass/gnome-shell/_common.scss" "${SRC_DIR}/sass/gnome-shell/_common-temp.scss"
 
@@ -521,6 +531,10 @@ theme_tweaks() {
 
   if [[ "$normal" = "true" ]] ; then
     normal_winbutton
+  fi
+
+  if [[ "$float" = "true" ]] ; then
+    float_panel
   fi
 }
 
