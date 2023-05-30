@@ -170,8 +170,6 @@
     border-left-width: 0;
   }
 
-  .calendar-work-day {}
-
   .calendar-nonwork-day {
     color: $text-disabled;
     font-weight: bold;
@@ -246,15 +244,17 @@
 .events-button {
   .events-box {
     spacing: $base_spacing;
+    color: $text-disabled;
   }
 
   .events-list {
     spacing: 2 * $base_spacing;
     text-shadow: none;
+    color: $text-disabled;
   }
 
   .events-title {
-    color: $text-disabled;
+    color: $text-secondary;
     font-weight: bold;
     text-shadow: none;
   }
