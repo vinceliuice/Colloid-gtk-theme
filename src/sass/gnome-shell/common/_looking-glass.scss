@@ -3,33 +3,43 @@
 // Dialog
 #LookingGlassDialog {
   background-color: $base;
-  spacing: 4px;
   padding: 0;
-  border: none;
-  border-radius: $base_radius;
+  spacing: $base_padding;
+  margin: $base_padding;
+  border-radius: $window_radius;
   box-shadow: 0 3px 8px 0 rgba(black, 0.25);
   color: $text;
 
+  @if $rimless == 'false' {
+    border: 1px solid $window-border;
+  } @else { border: none; }
+
   & > #Toolbar {
-    padding: 0 8px;
+    padding: 0 $base_padding;
     border: none;
-    border-radius: 0;
-    background-color: $background;
+    border-radius: $window_radius $window_radius 0 0;
+    background-color: $fill;
     box-shadow: inset 0 -1px 0 $border;
+    spacing: $base_padding;
   }
 
-  .labels { spacing: 0; }
+  .labels { 
+    spacing: $base_padding;
+  }
+
   .notebook-tab {
-    -natural-hpadding: 12px;
-    -minimum-hpadding: 6px;
+    -natural-hpadding: $base_padding*2;
+    -minimum-hpadding: $base_padding*2;
     font-weight: bold;
     color: $text-disabled;
     padding-left: 16px;
     padding-right: 16px;
     min-height: $item_size;
-    padding: 0 32px;
+    padding: $base_padding / 2 $base_padding * 5;
     transition-duration: 100ms;
-    border-bottom-width: 0;
+    border: none;
+    background-color: transparent;
+    border-radius: 0;
 
     &:hover {
       background-color: $fill;
@@ -45,8 +55,9 @@
       text-shadow: none;
     }
   }
-  StBoxLayout#EvalBox { padding: 4px; spacing: 4px; }
-  StBoxLayout#ResultsArea { spacing: 4px; }
+
+  StBoxLayout#EvalBox { padding: 4px; spacing: $base_padding; padding: $base_padding; }
+  StBoxLayout#ResultsArea { spacing: $base_padding; padding: $base_padding; }
 }
 
 .lg-dialog {
@@ -55,25 +66,31 @@
     selection-background-color: $primary;
     selected-color: on($primary);
   }
+
   .shell-link {
     color: $link;
     &:hover { color: lighten($link, 10%); }
     &:active { color: darken($link, 10%); }
    }
+
   .actor-link {
-    color: $text-secondary;
+    color: $text-disabled;
     &:hover { color: $text; }
     &:active { color: $text-secondary; }
+
+    & StIcon { icon-size: 12px; }
    }
 }
 
 .lg-completions-text {
   font-size: .9em;
   font-style: italic;
+  color: $text-secondary;
 }
 
 .lg-obj-inspector-title {
   spacing: $base_spacing;
+  color: $text-secondary;
 }
 
 .lg-obj-inspector-button {
@@ -86,35 +103,66 @@
 }
 
 // Extensions
-#lookingGlassExtensions { padding: $base_padding; }
+#lookingGlassExtensions {
+  padding: $base_padding;
+  color: $text-secondary;
+}
 
 .lg-extensions-list {
   padding: $base_padding;
   spacing: $base_padding;
+  color: $text-secondary;
 }
 
 .lg-extension {
   border: none;
   border-radius: $base_radius;
-  background-color: $background;
+  background-color: $fill;
+  color: $text-secondary;
   padding: $base_padding * 2;
+
+  &:hover {
+    color: $text;
+    background-color: $divider;
+  }
+
+  &:active {
+    color: $text;
+    background-color: $track;
+  }
 }
 
 .lg-extension-name {
-  font-weight: bold;
+  @extend %heading;
 }
 
 .lg-extension-meta {
   spacing: $base_spacing;
+  color: $text-secondary;
 }
 
 // Inspector
 #LookingGlassPropertyInspector {
-  color: $text_secondary;
+  color: $text-secondary;
   background: $base;
   border: none;
   border-radius: $base_radius;
   padding: $base_padding;
   margin: 5px 8px 11px;
   box-shadow: 0 3px 8px 0 rgba(black, 0.25);
+}
+
+.lg-debug-flag-button {
+  StLabel { padding: $base_padding, 2 * $base_padding; }
+
+  color: $text-secondary;
+
+  &:hover { color: $text; }
+  &:active { color: $text; }
+}
+
+.lg-debug-flags-header {
+  padding-top: 2 * $base_padding;
+  padding: $base_padding;
+  @extend %title_2;
 }
