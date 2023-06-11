@@ -11,7 +11,7 @@
 }
 
 /* Buttons */
-menulist,
+xul|menulist,
 #nav-bar toolbarbutton:not(#urlbar-zoom-button),
 .subviewbutton.panel-subview-footer,
 .panel-footer button,
@@ -55,6 +55,7 @@ button.close,
 	font: menu !important;
 	-moz-box-align: center !important;
 }
+
 .subviewbutton-iconic {
 	-moz-box-pack: center !important;
 }
@@ -81,7 +82,6 @@ button.close,
 }
 
 /* Text buttons */
-menulist,
 .subviewbutton.panel-subview-footer,
 .panel-footer button,
 #appMenu-popup .panel-banner-item,
@@ -100,6 +100,11 @@ menulist,
 #editBMPanel_newFolderButton {
 	padding: 2px 16px !important;
 }
+
+xul|menulist {
+	padding: 0 10px !important;
+}
+
 .subviewbutton.panel-subview-footer label,
 .panel-footer button,
 #appMenu-popup .panel-banner-item .toolbarbutton-text,
