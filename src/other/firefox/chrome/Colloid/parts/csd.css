@@ -74,7 +74,8 @@
 /* Remove close and minimize buttons from fullscreen buttons */
 :root[tabsintitlebar][inFullscreen] #window-controls #close-button,
 :root[tabsintitlebar][inFullscreen] #window-controls #minimize-button,
-:root[tabsintitlebar][inFullscreen] #titlebar .titlebar-buttonbox-container {
+:root[tabsintitlebar][inFullscreen] #titlebar .titlebar-buttonbox-container .titlebar-min,
+:root[tabsintitlebar][inFullscreen] #titlebar .titlebar-buttonbox-container .titlebar-close {
 	display: none !important;
 }
 
@@ -128,11 +129,12 @@
 	width: 16px !important;
 }
 
+:root[tabsintitlebar][inFullscreen] #titlebar .titlebar-button,
 :root[tabsintitlebar][inFullscreen] #window-controls toolbarbutton {
 	border-radius: 6px !important;
-	height: 32px;
+	height: 32px !important;
 	margin: 0 4px !important;
-	width: 32px;
+	width: 32px !important;
 }
 
 :root[tabsintitlebar] #titlebar toolbarbutton > .toolbarbutton-icon {

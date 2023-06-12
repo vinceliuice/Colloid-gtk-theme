@@ -121,3 +121,6 @@
 #urlbar[focused="true"]:not([suppress-focus-border]) > #urlbar-background {
 	outline: 0 !important;
 }
+#notification-popup-box {
+	height: 34px !important;
+}

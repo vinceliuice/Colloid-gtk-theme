@@ -37,6 +37,18 @@ menuitem[disabled="true"]:hover, menupopup menu[disabled="true"]:hover {
 	background: transparent !important;
 }
 
+@media (-moz-gtk-non-native-menus) or (-moz-non-native-content-theme) {
+	menuitem:is([type="checkbox"], [checked="true"]) .menu-iconic-icon {
+		appearance: none !important;
+		-moz-default-appearance: none !important;
+	}
+
+	menuitem[type="radio"] .menu-iconic-icon {
+		appearance: none !important;
+		-moz-default-appearance: none !important;
+	}
+}
+
 /* Adjust popovers position */
 panel[type=arrow] {
 	margin-top: 3px !important;
