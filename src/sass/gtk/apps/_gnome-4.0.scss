@@ -604,6 +604,15 @@ screenshot-carousel button,
   padding: $space-size / 2 $space-size * 1.5;
 }
 
+flowboxchild {
+  &.card {
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    background: none;
+  }
+}
+
 button.card.category-tile {
   padding: $space-size * 3.5;
   border: none;
@@ -611,12 +620,14 @@ button.card.category-tile {
   min-width: 140px;
   font-weight: 900;
   font-size: larger;
+  box-shadow: $shadow-z3;
 
   &.category-tile-iconless {
     padding: $space-size * 1.5 $space-size * 2.5;
     min-width: 130px;
     font-size: 105%;
     font-weight: normal;
+    box-shadow: none;
   }
 
   // Styling for specific category buttons.
@@ -725,7 +736,6 @@ clamp.large .category-tile:not(.category-tile-iconless) {
 
 // The rest of the featured-tile CSS is loaded at runtime in gs-feature-tile.c
 .featured-tile {
-  all: unset;
   padding: 0;
   box-shadow: none;
   color: $text;

@@ -4608,7 +4608,7 @@ tooltip {
     // see https://bugzilla.gnome.org/show_bug.cgi?id=736155 for details.
     background-color: $tooltip;
     color: on($tooltip);
-    box-shadow: $shadow-z3;
+    box-shadow: $shadow-z5;
     border-radius: $corner-radius;
     margin: 2px 6px 8px 6px;
   }
