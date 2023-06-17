@@ -26,6 +26,14 @@
   }
 }
 
+dialog.background {
+  > .dialog-vbox > scrolledwindow > viewport.frame {
+    > list {
+      border-right: 1px solid $solid-border;
+    }
+  }
+}
+
 // Budgie popover
 .budgie-popover {
   @if $rimless == 'true' {

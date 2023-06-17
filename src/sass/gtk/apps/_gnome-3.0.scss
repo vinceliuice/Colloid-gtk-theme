@@ -646,6 +646,7 @@ window.background.csd {
 
 dialog.background.csd {
   > box.vertical.dialog-vbox { // wifi setting
+    > stack > notebook,
     > notebook > stack > box.horizontal > notebook > stack {
       border-radius: 0 0 $window-radius $window-radius;
     }
