@@ -222,3 +222,14 @@
     background-color: transparent !important;
   }
 }
+
+// Dash to panel
+.dashtopanelMainPanel {
+  .show-apps .overview-icon {
+    color: $panel-text !important;
+  }
+
+  &:overview, #panel, .dash-background {
+    background-color: transparent !important;
+  }
+}

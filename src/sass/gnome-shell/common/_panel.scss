@@ -30,8 +30,8 @@
 
   // panel menus
   .panel-button {
-    -natural-hpadding: 12px;
-    -minimum-hpadding: 12px;
+    -natural-hpadding: $base_padding * 2;
+    -minimum-hpadding: $base_padding;
     font-weight: bold;
     color: $panel-text-secondary;
     transition-duration: 150ms;
@@ -58,6 +58,26 @@
         } @else {
           border: $base_padding / 2 solid transparent;
         }
+      }
+    }
+
+    &.screen-recording-indicator {
+      box-shadow: inset 0 0 0 100px $error;
+    }
+
+    &.screen-sharing-indicator {
+      box-shadow: inset 0 0 0 100px $warning;
+      StBoxLayout { margin: 0 $base_padding; }
+    }
+
+    &.screen-recording-indicator,
+    &.screen-sharing-indicator {
+      StBoxLayout {
+        spacing: $base_padding;
+      }
+
+      StIcon {
+        icon-size: $base_icon_size;
       }
     }
 
