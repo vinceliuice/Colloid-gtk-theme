@@ -615,8 +615,8 @@ install_theme() {
     done
   done
 
-  if has_command xfce4-popup-whiskermen; then
-    sed -i "s|.*menu-opacity=.*|menu-opacity=0|" "$HOME/.config/xfce4/panel/whiskermenu"*".rc"
+  if (which xfce4-popup-whiskermenu 2> /dev/null); then
+    sed -i "s|.*menu-opacity=.*|menu-opacity=95|" "$HOME/.config/xfce4/panel/whiskermenu"*".rc"
   fi
 
   if (pgrep xfce4-session &> /dev/null); then
