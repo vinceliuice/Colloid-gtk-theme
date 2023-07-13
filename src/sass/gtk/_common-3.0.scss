@@ -3459,7 +3459,7 @@ infobar {
     &:backdrop > revealer > box {
       background-color: $base;
 
-      &, link:link, flowboxchild { color: on($primary); }
+      &, link:link, flowboxchild { color: $primary; }
 
       button {
         &.text-button:not(:disabled):not(.suggested-action):not(.destructive-action) { color: $primary; }
