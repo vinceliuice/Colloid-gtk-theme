@@ -171,11 +171,11 @@ $nautilus: $base-alt;
 
     &.text-button {
       min-width: 0;
-      // border-radius: $circular_radius;
+      // border-radius: $circular-radius;
     }
 
     &.text-button.image-button {
-      // border-radius: $circular_radius;
+      // border-radius: $circular-radius;
       image:not(:only-child) { margin: 0; }
     }
 

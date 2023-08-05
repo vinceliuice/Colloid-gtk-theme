@@ -592,7 +592,7 @@ screenshot-carousel button,
 
 .origin-rounded-box {
   background-color: $divider;
-  border-radius: $circular_radius;
+  border-radius: $circular-radius;
   padding: $space-size - 2px;
 }
 
@@ -990,7 +990,7 @@ carousel.card {
   padding: $space-size;
   font-size: 18px;
   font-weight: bold;
-  border-radius: $circular_radius;
+  border-radius: $circular-radius;
 
   &.large {
     font-size: 24px;
@@ -1224,7 +1224,7 @@ WeatherThermometer > label.low {
 }
 
 button.osd.circular {
-  border-radius: $circular_radius;
+  border-radius: $circular-radius;
   min-width: $small-size;
   min-height: $small-size;
 }
@@ -1256,11 +1256,11 @@ image.circular {
   min-width: $medium-size;
   min-height: $medium-size;
   padding: 0;
-  border-radius: $circular_radius;
+  border-radius: $circular-radius;
 }
 
 // WeatherThermometerScale {
-//   border-radius: $circular_radius;
+//   border-radius: $circular-radius;
 //   background-image: linear-gradient(to bottom, $weather_thermometer_warm_color, $weather_thermometer_cold_color);
 //   margin: 0 36px;
 //   padding: 0;
