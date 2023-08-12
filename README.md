@@ -46,11 +46,11 @@ Run the following commands in the terminal:
 -u, --uninstall         Uninstall/Remove installed themes or links
 
 --tweaks                Specify versions for tweaks
-                        1. [nord|dracula|gruvbox]   Nord|Dracula|gruvbox ColorSchemes version
-                        2. black                    Blackness color version
-                        3. rimless                  Remove the 1px border about windows and menus
-                        4. normal                   Normal windows button style like gnome default theme (titlebuttons: max/min/close)
-                        5. float                    Floating gnome-shell panel style
+                        1. [nord|dracula|gruvbox|all]  (Nord/Dracula/gruvbox/all) ColorSchemes version
+                        2. black                       Blackness color version
+                        3. rimless                     Remove the 1px border about windows and menus
+                        4. normal                      Normal windows button style like gnome default theme (titlebuttons: max/min/close)
+                        5. float                       Floating gnome-shell panel style
 
 -h, --help              Show help
 ```
