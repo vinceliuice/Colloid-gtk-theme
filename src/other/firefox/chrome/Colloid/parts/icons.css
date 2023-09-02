@@ -71,12 +71,21 @@ button.close::before,
 	color: white !important;
 }
 
+menuitem[type="radio"] .menu-iconic-icon,
+menuitem[type="checkbox"] .menu-iconic-icon {
+	-moz-appearance: none !important;
+}
+
 /* Menu checkbox */
 menuitem[type="checkbox"] {
 	list-style-image: none !important;
 }
 menuitem[type="checkbox"][checked="true"] {
 	list-style-image: url("../icons/select-symbolic.svg") !important;
+}
+menuitem[type="checkbox"] .menu-iconic-icon {
+	border-radius: 3px;
+	border: 1px solid var(--gnome-inactive-toolbar-icon-fill);
 }
 menuitem[type="checkbox"][disabled="true"] .menu-iconic-icon {
 	opacity: 0.5;

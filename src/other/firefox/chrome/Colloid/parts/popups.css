@@ -284,6 +284,7 @@ menupopup menu:not([disabled="true"]):is(:active, [_moz-menuactive]),
 	-moz-box-align: center !important;
 	-moz-box-pack: start !important;
 }
+
 .subviewbutton-back + h1 {
 	font-weight: bold !important;
 	left: 0 !important;
@@ -307,14 +308,16 @@ toolbarseparator, menuseparator {
 	appearance: none !important;
 }
 
-#PlacesToolbar menupopup[placespopup="true"] menuseparator {
-	border-top: 1px solid var(--gnome-menu-separator-color) !important;
-	padding: 0 !important;
-	margin: 6px 0 !important;
+menuseparator::before {
+	border: 0 !important;
 }
 
-#PlacesToolbar menupopup[placespopup="true"] menuseparator::before {
-	border: 0 !important;
+#PlacesToolbar menupopup[placespopup="true"] menuseparator {
+	border-top: 1px solid var(--gnome-menu-separator-color) !important;
+	border-bottom: 0 !important;
+	background: none !important;
+	padding: 0 !important;
+	margin: 3px 0 !important;
 }
 
 toolbarbutton menupopup[placespopup] menuseparator {
@@ -322,14 +325,13 @@ toolbarbutton menupopup[placespopup] menuseparator {
 	padding-bottom: 0 !important;
 }
 
-toolbarbutton menupopup[placespopup] menuseparator::before {
-	border-top: 0 !important;
-}
-
 toolbarseparator:not([orient="vertical"]), menupopup menuseparator {
 	border-top: 1px solid var(--gnome-menu-separator-color) !important;
+	border-bottom: 0 !important;
+	background: none !important;
 	margin: 6px 0 !important;
 }
+
 toolbarseparator[orient="vertical"] {
 	margin: 0 6px !important;
 }
@@ -337,11 +339,13 @@ toolbarseparator[orient="vertical"] {
 .panel-subview-body + toolbarseparator:not([orient="vertical"]) {
 	margin: 0 0 6px !important;
 }
+
 panelview > toolbarseparator:not([orient="vertical"]),
 #identity-popup-clear-sitedata-footer toolbarseparator:not([orient="vertical"]),
 #identity-popup-more-info-footer toolbarseparator:not([orient="vertical"]){
 	margin: 6px !important;
 }
+
 #identity-popup-clear-sitedata-footer toolbarseparator:not([orient="vertical"]) {
 	margin-top: 0 !important;
 }
