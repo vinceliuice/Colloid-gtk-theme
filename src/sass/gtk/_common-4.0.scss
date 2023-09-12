@@ -4841,19 +4841,19 @@ window {
 %mac_window_button {
   min-height: 16px;
   min-width: 16px;
-  padding: 0;
-  margin: 0 $space-size - 2px;
+  padding: ($medium-size - 16px) / 2 0;
+  margin-left: $space-size - 2px;
+  margin-right: $space-size - 2px;
 
   &.minimize, &.maximize, &.close {
     color: transparent;
+    background: none;
 
-    image { padding: 0; }
-
-    &:hover {
+    &:hover, &:active {
       box-shadow: none;
     }
 
-    &:active {
+    &:active > image {
       box-shadow: inset 0 0 0 9999px rgba(black, if($topbar == 'dark', 0.25, 0.12));
     }
 
@@ -4862,7 +4862,7 @@ window {
     }
 
     &:backdrop {
-      background-color: $titlebar-track;
+      > image { background-color: $titlebar-track; }
 
       &:hover, &:active {
         color: $titlebar-text-disabled;
@@ -4871,25 +4871,25 @@ window {
   }
 
   &.minimize { // Window minimize button
-    background-color: $titlebutton-min;
+    > image { background-color: $titlebutton-min; }
 
-    &:active {
+    &:active > image {
       background-color: mix($titlebar-text, $titlebutton-min, 25%);
     }
   }
 
   &.maximize { // Window maximize button
-    background-color: $titlebutton-max;
+    > image { background-color: $titlebutton-max; }
 
-    &:active {
+    &:active > image {
       background-color: mix($titlebar-text, $titlebutton-max, 25%);
     }
   }
 
   &.close { // Window close button
-    background-color: $titlebutton-close;
+    > image { background-color: $titlebutton-close; }
 
-    &:active {
+    &:active > image {
       background-color: mix($titlebar-text, $titlebutton-close, 25%);
     }
   }
@@ -4898,23 +4898,30 @@ window {
 %normal_window_button {
   min-height: 22px;
   min-width: 22px;
-  padding: 0;
-  margin: 0 $space-size - 2px;
+  padding: ($medium-size - 22px) / 2 0;
+  margin-left: $space-size - 2px;
+  margin-right: $space-size - 2px;
 
   &.minimize, &.maximize, &.close {
     color: $titlebar-text-secondary;
-    background-color: gtkalpha(currentColor, 0.1);
 
-    image { padding: 0; }
+    &, &:hover, &:active, &:backdrop {
+      background: none;
+      box-shadow: none;
+    }
+
+    > image { background-color: gtkalpha(currentColor, 0.1); }
 
     &:hover {
       color: $titlebar-text;
-      background-color: gtkalpha(currentColor, 0.15);
+
+      > image { background-color: gtkalpha(currentColor, 0.15); }
     }
 
     &:active {
       color: $titlebar-text;
-      background-color: gtkalpha(currentColor, 0.2);
+
+      > image { background-color: gtkalpha(currentColor, 0.2); }
     }
 
     &:backdrop {
@@ -4931,24 +4938,29 @@ windowcontrols {
   &:not(.empty) {
     &.start:dir(ltr),
     &.end:dir(rtl) {
-      margin-right: $window-space;
-      margin-left: $window-space;
+      margin-right: $space-size;
+      margin-left: $space-size;
     }
 
     &.start:dir(rtl),
     &.end:dir(ltr) {
-      margin-left: $window-space;
-      margin-right: $window-space;
+      margin-left: $space-size;
+      margin-right: $space-size;
     }
   }
 
-  button:not(.suggested-action):not(.destructive-action) {
+  > button:not(.suggested-action):not(.destructive-action) {
     @extend %circular-button;
 
     @if $window_button == 'mac' {
       @extend %mac_window_button;
     } @else {
       @extend %normal_window_button;
+    }
+
+    > image {
+      border-radius: 100%;
+      padding: 0;
     }
   }
 }
