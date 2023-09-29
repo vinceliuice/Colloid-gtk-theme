@@ -466,6 +466,11 @@ frame.gedit-map-frame > border {
   }
 }
 
+leaflet list.navigation-sidebar {
+  background-color: $base-alt;
+  border-bottom-left-radius: $window-radius;
+}
+
 .tweak {
   // padding-top: 3px;
   padding: 3px;
@@ -480,23 +485,13 @@ frame.gedit-map-frame > border {
   background-image: image($base);
 }
 
-.tweak-startup,
-.tweak-startup:hover {
-  // background-color: lighter(shade(@theme_bg_color, 0.9));
-  background-image: image($base);
-}
-
 .tweak-group-startup {
-  // background-color: @view_separators;
-  background-image: image($base);
-  // border: 1px solid $frame;
-
+  padding: 0;
   @extend %circular_list;
 
-  row { @extend %circular_row; }
+  > row { @extend %circular_row; }
 
-  row.tweak-startup {
-    border-radius: $corner-radius;
+  > row.tweak-startup {
     background-color: transparent;
     background-image: none;
   }
@@ -504,8 +499,9 @@ frame.gedit-map-frame > border {
 
 // Workaround for 3.26
 list {
-  &.tweak-group {
+  &.tweak-group, &#ListBoxTweakGroup {
     list {
+      padding: 0;
       @extend %circular_list;
 
       row { @extend %circular_row; }
@@ -677,7 +673,7 @@ hdyleaflet, leaflet, box.horizontal > stack.background {
   }
 
   > box.vertical > scrolledwindow > viewport.frame {
-    list:not(.view):not(.tweak-group) {
+    list:not(.view):not(.tweak-group):not(.tweak-group-startup) {
       padding: $space-size / 2;
 
       row.activatable {

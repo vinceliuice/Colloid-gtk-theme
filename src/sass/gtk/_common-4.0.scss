@@ -3442,20 +3442,27 @@ scrolledwindow {
   }
 
   // Overflow indication, works similarly to the overshoot, the size if fixed tho.
-  // @at-root undershoot {
-  //   &.top { @include undershoot(top); }
-  //
-  //   &.bottom { @include undershoot(bottom); }
-  //
-  //   &.left { @include undershoot(left); }
-  //
-  //   &.right { @include undershoot(right); }
-  // }
+  &.undershoot-top {
+    @include undershoot(top);
+  }
 
-  @at-root junction { // the small square between two scrollbars
+  &.undershoot-bottom {
+    @include undershoot(bottom);
+  }
+
+  &.undershoot-start {
+    &:dir(ltr) { @include undershoot(left); }
+    &:dir(rtl) { @include undershoot(right); }
+  }
+
+  &.undershoot-end {
+    &:dir(ltr) { @include undershoot(right); }
+    &:dir(rtl) { @include undershoot(left); }
+  }
+
+  > junction { // the small square between two scrollbars
     border: none;
-    // background-color: $base;
-    background-image: none;
+    background-color: $base;
   }
 }
 
@@ -4348,14 +4355,16 @@ separator.sidebar {
   padding: $space-size * 0.75 0; //only vertical padding. horizontal row size would clip
   border-right: none;
 
-  &, &.view {
+  &, &.view, &.view:disabled {
     background-color: transparent;
     color: inherit;
   }
 
   &.background {
-    background-color: $base-alt;
-    color: $text-secondary;
+    &, &:disabled {
+      background-color: $base-alt;
+      color: $text-secondary;
+    }
   }
 
   > separator {
@@ -4775,15 +4784,11 @@ window {
 
     @if $rimless == 'true' {
       box-shadow: $shadow-z16,
-      0 2px 3px -1px rgba(black, 0),
-      0 4px 3px 0 rgba(black, 0),
-      0 1px 6px 0 rgba(black, 0);
+      0 0 36px transparent;
     } @else {
       box-shadow: $shadow-z16,
-      0 0 0 1px $window-border,
-      0 2px 3px -1px rgba(black, 0),
-      0 4px 3px 0 rgba(black, 0),
-      0 1px 6px 0 rgba(black, 0);
+      0 0 36px transparent,
+      0 0 0 1px $window-border;
     }
 
     &:backdrop {
@@ -4795,15 +4800,11 @@ window {
 
       @if $rimless == 'true' {
         box-shadow: $shadow-z4,
-        0 8px 6px -5px rgba(black, 0),
-        0 16px 15px 2px rgba(black, 0),
-        0 6px 18px 5px rgba(black, 0);
+        0 0 36px transparent;
       } @else {
         box-shadow: $shadow-z4,
-        0 0 0 1px $window-border,
-        0 8px 6px -5px rgba(black, 0),
-        0 16px 15px 2px rgba(black, 0),
-        0 6px 18px 5px rgba(black, 0);
+        0 0 36px transparent,
+        0 0 0 1px $window-border;
       }
     }
 
@@ -4833,6 +4834,12 @@ window {
     border: 1px solid $solid-border;
 
     &:backdrop { background-color: $titlebar-backdrop; }
+  }
+
+  // server-side decorations as used by mutter
+  &.ssd {
+    // just doing borders, wm draws actual shadows
+    box-shadow: 0 0 0 1px $border;
   }
 }
 
