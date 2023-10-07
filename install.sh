@@ -120,9 +120,9 @@ install() {
   cp -r "${SRC_DIR}/assets/gnome-shell/theme${theme}${scheme}/"*.svg                         "${THEME_DIR}/gnome-shell/assets"
 
   cd "${THEME_DIR}/gnome-shell"
-  ln -s assets/no-events.svg no-events.svg
-  ln -s assets/process-working.svg process-working.svg
-  ln -s assets/no-notifications.svg no-notifications.svg
+  ln -sf assets/no-events.svg no-events.svg
+  ln -sf assets/process-working.svg process-working.svg
+  ln -sf assets/no-notifications.svg no-notifications.svg
 
   mkdir -p                                                                                   "${THEME_DIR}/gtk-2.0"
   # cp -r "${SRC_DIR}/main/gtk-2.0/gtkrc${theme}${ELSE_DARK:-}${scheme}"                       "${THEME_DIR}/gtk-2.0/gtkrc"
@@ -155,7 +155,7 @@ install() {
   cp -r "${SRC_DIR}/main/metacity-1/metacity-theme-3${window}.xml"                           "${THEME_DIR}/metacity-1/metacity-theme-3.xml"
   cp -r "${SRC_DIR}/assets/metacity-1/assets${window}"                                       "${THEME_DIR}/metacity-1/assets"
   cp -r "${SRC_DIR}/assets/metacity-1/thumbnail${ELSE_DARK:-}.png"                           "${THEME_DIR}/metacity-1/thumbnail.png"
-  cd "${THEME_DIR}/metacity-1" && ln -s metacity-theme-3.xml metacity-theme-1.xml && ln -s metacity-theme-3.xml metacity-theme-2.xml
+  cd "${THEME_DIR}/metacity-1" && ln -sf metacity-theme-3.xml metacity-theme-1.xml && ln -sf metacity-theme-3.xml metacity-theme-2.xml
 
   mkdir -p                                                                                   "${THEME_DIR}/xfwm4"
   cp -r "${SRC_DIR}/assets/xfwm4/assets${ELSE_LIGHT:-}${scheme}${window}/"*.png              "${THEME_DIR}/xfwm4"
