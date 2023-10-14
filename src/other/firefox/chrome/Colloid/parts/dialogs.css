@@ -31,7 +31,7 @@ window {
 	margin-top: 0 !important;
 }
 
-window[role="dialog"] {
+dialog[subdialog] {
 	background: var(--gnome-toolbar-background) !important;
 	border: 0 !important;
 	box-shadow: var(--gnome-menu-shadow) !important;
@@ -44,15 +44,26 @@ dialog {
 }
 
 /* Content */
-.dialog-content-box, #dialogGrid {
+.dialog-content-box,
+#dialogGrid {
 	padding: 24px;
 	padding-bottom: 0;
 }
+
+#description-box {
+	margin: 24px 24px 0 !important;
+}
+
+#rememberContainer {
+	margin: 0 24px 16px !important;
+}
+
 #titleContainer {
 	padding: 6px !important;
 	margin-top: 6px !important;
 	justify-content: center !important;
 }
+
 .titleIcon {
 	background-color: transparent !important;
 }
@@ -65,6 +76,7 @@ dialog {
 	padding-inline: 6px !important;
 	margin-inline: 6px !important;
 }
+
 /* Buttons */
 .dialog-button-box {
 	padding: 3px;
@@ -80,6 +92,14 @@ dialog {
 	border-radius: 6px !important;
 	flex: 1;
 	border: none !important;
+}
+
+.dialog-button-box .button-spacer {
+	display: none !important;
+}
+
+.expander-down, .expander-up {
+	padding: 9px 6px !important;
 }
 
 /*.dialog-button-box button:not(:last-of-type) {*/

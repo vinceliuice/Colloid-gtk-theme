@@ -12,6 +12,11 @@
 	padding: 0 1px 0 4px !important;
 }
 
+/* Fix subviewbutton icon buttons alignment */
+.subviewbutton.subviewbutton-iconic:not(.subviewbutton-back) {
+	justify-content: center !important;
+}
+
 /* Fix hover background */
 .toolbarbutton-badge-stack:not(#hack), .toolbarbutton-icon:not(#hack), .toolbarbutton-text:not(#hack) {
 	background: transparent !important;
@@ -22,9 +27,18 @@
 	display: -moz-box !important;
 }
 
+/* Fix unified-extensions-item margin */
+toolbar .unified-extensions-item {
+  margin-inline: 0 3px !important;
+}
+
 /* menulist */
 #label-box:not([native]) {
-	font-weight: 400 !important;
+    font-weight: 400 !important;
+	padding: 0 8px;
+}
+dropmarker:not([native]) {
+	margin-right: 8px;
 }
 
 /* Overrides: Make the back button the same as other buttons */
@@ -172,6 +186,11 @@ button.close.ghost-button {
 	font-size: 1em !important;
 }
 
+/* Sidebar header button sizing */
+#sidebar-switcher-target {
+	flex: unset !important;
+}
+
 /* Sidebar header button arrow opacity */
 #sidebar-switcher-arrow {
 	opacity: 1 !important;
@@ -238,6 +257,7 @@ button.close.ghost-button {
 /* Downloads button */
 #downloads-indicator-progress-inner {
 	background: conic-gradient(var(--gnome-toolbar-icon-fill) var(--download-progress-pcent), transparent var(--download-progress-pcent)) !important;
+	background-color: var(--gnome-button-active-background) !important;
 }
 #downloads-indicator-progress-outer,
 #downloads-indicator-start-image,
@@ -253,6 +273,20 @@ button.close.ghost-button {
 #downloads-indicator-finish-image {
 	background: var(--gnome-toolbar-icon-fill) !important;
 }
+
+#downloads-button[progress="true"] #downloads-indicator-progress-outer {
+  visibility: visible !important;
+}
+#downloads-button:not([progress="true"]) #downloads-indicator-icon {
+  visibility: visible !important;
+}
+
+/* Stop/Reload button */
+#stop-reload-button .toolbarbutton-icon {
+	margin-top: -2px !important;
+}
+
+/* Toolbar Animations */
 #downloads-button .toolbarbutton-animatable-box {
 	top: 8px !important;
 	left: 8px !important;
@@ -263,21 +297,13 @@ button.close.ghost-button {
 	height: 16px !important;
 	width: 16px !important;
 }
-#downloads-button .toolbarbutton-animatable-image {
-	--anim-steps: 1 !important;
-	transform: none !important;
-	list-style-image: none !important;
-}
-
-/* Stop/Reload button */
-#stop-reload-button  .toolbarbutton-animatable-image:not(#hack) {
+#downloads-button .toolbarbutton-animatable-image,
+#stop-reload-button  .toolbarbutton-animatable-image:not(#hack),
+#nav-bar-overflow-button  .toolbarbutton-animatable-image:not(#hack) {
 	--anim-steps: 1 !important;
 	transform: none !important;
 	list-style-image: none !important;
 	display: none !important;
-}
-#stop-reload-button .toolbarbutton-icon {
-	margin-top: -2px !important;
 }
 
 /* Panel banner */
@@ -306,4 +332,11 @@ button.customizationmode-button {
 }
 .customization-uidensity-menuitem:last-of-type {
 	margin: 3px 3px !important;
+}
+
+/* OPTIONAL: Hide unified-extensions-button */
+@supports -moz-bool-pref("gnomeTheme.hideUnifiedExtensions") {
+	#unified-extensions-button {
+		display: none;
+	}
 }

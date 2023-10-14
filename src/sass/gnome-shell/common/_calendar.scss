@@ -131,6 +131,7 @@
     &:active { background-color: $track; }
   }
 
+  .calendar-day,
   .calendar-day-base {
     @include fontsize($font_size - 1);
     text-align: center;
@@ -143,12 +144,17 @@
     border: none;
     font-feature-settings: "tnum";
 
-    &:hover, &:focus { background-color: $divider; }
+    &:hover, &:focus {
+      background-color: $divider;
+      box-shadow: none;
+    }
 
     &:active, &:selected {
       color: $text;
       background-color: $track;
-      border-color: transparent; //avoid jumparound due to today
+      border: none !important; //avoid jumparound due to today
+      box-shadow: none !important;
+      outline: none !important;
     }
 
     &.calendar-day-heading {  //day of week heading
@@ -156,6 +162,12 @@
       color: $text-disabled;
       @include fontsize($font_size - 1);
     }
+  }
+
+  &.calendar-weekday {}
+
+  &.calendar-weekend {
+    color: $text-disabled;
   }
 
   .calendar-day { //border collapse hack - see calendar.js
@@ -170,11 +182,9 @@
     border-left-width: 0;
   }
 
-  .calendar-work-day {}
-
   .calendar-nonwork-day {
     color: $text-disabled;
-    font-weight: bold;
+    font-weight: normal;
   }
 
   // Today
@@ -208,6 +218,7 @@
   .calendar-day-with-events {
     color: $text-secondary;
     background-image: url("assets/calendar-today.svg");
+    background-size: contain;
 
     &.calendar-work-day {
       color: $text-secondary;
@@ -215,9 +226,10 @@
     }
   }
 
+  .calendar-other-month,
   .calendar-other-month-day {
-    color: $text-secondary-disabled;
-    opacity: 0.5;
+    color: $text-secondary-disabled !important;
+    font-weight: normal;
   }
 
   .calendar-week-number {
@@ -246,15 +258,17 @@
 .events-button {
   .events-box {
     spacing: $base_spacing;
+    color: $text-disabled;
   }
 
   .events-list {
     spacing: 2 * $base_spacing;
     text-shadow: none;
+    color: $text-disabled;
   }
 
   .events-title {
-    color: $text-disabled;
+    color: $text-secondary;
     font-weight: bold;
     text-shadow: none;
   }

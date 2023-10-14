@@ -126,6 +126,16 @@ toolbarspring {
 	fill-opacity: 1 !important;
 }
 
+#identity-box:hover, #tracking-protection-icon-container:hover,
+.urlbar-page-action:hover, #urlbar-go-button:hover, .search-go-button:hover {
+	background: var(--gnome-button-flat-hover-background) !important;
+}
+
+#identity-box:active, #tracking-protection-icon-container:active,
+.urlbar-page-action:active, #urlbar-go-button:active, .search-go-button:active {
+	background: var(--gnome-button-flat-active-background) !important;
+}
+
 /* Fixed size for some urlbar-icon */
 /*#star-button.urlbar-icon,*/
 /*#reader-mode-button > .urlbar-icon {*/

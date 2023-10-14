@@ -270,20 +270,6 @@ popover.event-popover > contents {
   }
 }
 
-// Edit dialog's header button
-.sources-button {
-  margin-top: 0;
-  margin-bottom: 0;
-  border-radius: 0;
-  border-top-style: none;
-  border-bottom-style: none;
-
-  &:hover:not(:backdrop) {
-    background-image: none;
-    text-shadow: none;
-  }
-}
-
 // defeats the ugly hover effect of the calendar color dot on buttons
 .calendar-color-image {
   -gtk-icon-filter: none;
@@ -312,7 +298,7 @@ datechooser {
   navigator {
     label { font-weight: bold; }
 
-    button, button.image-button {
+    button.toggle, button.image-button {
       min-height: $medium-size;
       min-width: $medium-size;
       padding: 0;
@@ -505,13 +491,19 @@ monthpopover > box {
 }
 
 // Agenda View CSS
-agenda-view list {
-  > row {
-    padding: 2px $space-size * 2;
+agenda-view {
+  list {
+    > row {
+      padding: 2px $space-size * 2;
+    }
+
+    > label {
+      padding: $space-size $space-size * 2;
+    }
   }
 
-  > label {
-    padding: $space-size $space-size * 2;
+  > scrolledwindow > viewport > list.background {
+    background-color: transparent;
   }
 }
 
@@ -536,8 +528,48 @@ datechooser {
   }
 }
 
-menubutton stack > box {
-  border-spacing: $space-size;
+menubutton {
+  &.sources-button {
+    margin-top: 0;
+    margin-bottom: 0;
+    border-radius: 0;
+    border-top-style: none;
+    border-bottom-style: none;
+    
+    &:hover:not(:backdrop) {
+      background-image: none;
+      text-shadow: none;
+    }
+
+    > button {
+      border-radius: 0;
+
+      .title {
+        font-size: 10pt;
+        font-weight: normal;
+        padding: 0 $space-size;
+      }
+
+      .subtitle {
+        font-size: 8pt;
+        padding: 0 $space-size;
+      }
+
+      .calendar-color-image {
+        -gtk-icon-size: 12px;
+      }
+    }
+  }
+
+  stack > box {
+    border-spacing: $space-size;
+  }
+
+  .topbar headerbar &.sources-button {
+    > button {
+      border-radius: 0 0 $corner-radius $corner-radius;
+    }
+  }
 }
 
 //
@@ -592,7 +624,7 @@ screenshot-carousel button,
 
 .origin-rounded-box {
   background-color: $divider;
-  border-radius: $circular_radius;
+  border-radius: $circular-radius;
   padding: $space-size - 2px;
 }
 
@@ -604,6 +636,15 @@ screenshot-carousel button,
   padding: $space-size / 2 $space-size * 1.5;
 }
 
+.card flowboxchild {
+  &.card {
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    background: none;
+  }
+}
+
 button.card.category-tile {
   padding: $space-size * 3.5;
   border: none;
@@ -611,12 +652,14 @@ button.card.category-tile {
   min-width: 140px;
   font-weight: 900;
   font-size: larger;
+  box-shadow: $shadow-z3;
 
   &.category-tile-iconless {
     padding: $space-size * 1.5 $space-size * 2.5;
     min-width: 130px;
     font-size: 105%;
     font-weight: normal;
+    box-shadow: none;
   }
 
   // Styling for specific category buttons.
@@ -725,7 +768,6 @@ clamp.large .category-tile:not(.category-tile-iconless) {
 
 // The rest of the featured-tile CSS is loaded at runtime in gs-feature-tile.c
 .featured-tile {
-  all: unset;
   padding: 0;
   box-shadow: none;
   color: $text;
@@ -980,7 +1022,7 @@ carousel.card {
   padding: $space-size;
   font-size: 18px;
   font-weight: bold;
-  border-radius: $circular_radius;
+  border-radius: $circular-radius;
 
   &.large {
     font-size: 24px;
@@ -1214,7 +1256,7 @@ WeatherThermometer > label.low {
 }
 
 button.osd.circular {
-  border-radius: $circular_radius;
+  border-radius: $circular-radius;
   min-width: $small-size;
   min-height: $small-size;
 }
@@ -1246,11 +1288,11 @@ image.circular {
   min-width: $medium-size;
   min-height: $medium-size;
   padding: 0;
-  border-radius: $circular_radius;
+  border-radius: $circular-radius;
 }
 
 // WeatherThermometerScale {
-//   border-radius: $circular_radius;
+//   border-radius: $circular-radius;
 //   background-image: linear-gradient(to bottom, $weather_thermometer_warm_color, $weather_thermometer_cold_color);
 //   margin: 0 36px;
 //   padding: 0;

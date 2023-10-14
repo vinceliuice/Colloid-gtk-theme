@@ -15,17 +15,24 @@
 .xfce4-panel.background {
   border: none; // Sadly the border is hard-coded
   background-color: $panel;
-  color: on($panel, secondary);
+  color: $panel-text-secondary;
   font-weight: 500;
 
   button {
     @extend %button-flat;
-    @extend %button-on-dark;
-
     min-height: 16px;
     min-width: 16px;
     padding: 0 $space-size;
     border-radius: 0;
+    color: $panel-text-secondary;
+
+    &:hover, &:active, &:checked {
+      color: $panel-text;
+    }
+
+    &:disabled {
+      color: $panel-text-secondary-disabled;
+    }
 
     &.flat.toggle {
       padding: 0 $space-size;

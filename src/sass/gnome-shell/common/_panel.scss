@@ -2,13 +2,21 @@
 // a.k.a. the panel
 
 #panel {
-  background-color: $panel;
   font-weight: bold;
-  height: $item_size;
   color: $panel-text-secondary;
   font-feature-settings: "tnum";
   transition-duration: 250ms;
+  box-shadow: none;
+  border: none;
   @include fontsize($font_size - 1);
+
+  @if $float == 'true' {
+    background-color: transparent;
+    height: $item_size + $base_margin * 2;
+  } @else {
+    background-color: $panel;
+    height: $item_size + 2px;
+  }
 
   // the rounded outset corners
   .panel-corner {
@@ -22,27 +30,61 @@
 
   // panel menus
   .panel-button {
-    -natural-hpadding: 12px;
-    -minimum-hpadding: 6px;
+    -natural-hpadding: $base_padding * 2;
+    -minimum-hpadding: $base_padding;
     font-weight: bold;
     color: $panel-text-secondary;
     transition-duration: 150ms;
     border-radius: $circular_radius;
     text-shadow: none;
-    border: 2px solid transparent;
+
+    @if $float == 'true' {
+      border: $base_margin solid transparent;
+      box-shadow: inset 0 0 0 1000px $panel;
+    } @else {
+      border: $base_padding / 2 solid transparent;
+    }
 
     &.clock-display {
+      box-shadow: none;
+
       .clock {
         transition-duration: 150ms;
-        border: 2px solid transparent;
         border-radius: $circular_radius;
+
+        @if $float == 'true' {
+          border: $base_margin solid transparent;
+          box-shadow: inset 0 0 0 1000px $panel;
+        } @else {
+          border: $base_padding / 2 solid transparent;
+        }
+      }
+    }
+
+    &.screen-recording-indicator {
+      box-shadow: inset 0 0 0 100px $error;
+    }
+
+    &.screen-sharing-indicator {
+      box-shadow: inset 0 0 0 100px $warning;
+      StBoxLayout { margin: 0 $base_padding; }
+    }
+
+    &.screen-recording-indicator,
+    &.screen-sharing-indicator {
+      StBoxLayout {
+        spacing: $base_padding;
+      }
+
+      StIcon {
+        icon-size: $base_icon_size;
       }
     }
 
     &:hover {
       color: $panel-text;
       background-color: transparent;
-      box-shadow: inset 0 0 0 1000px overlay($panel, hover);
+      box-shadow: inset 0 0 0 1000px mix($panel-text, $panel, 15%);
 
       &.clock-display {
         box-shadow: none;
@@ -50,7 +92,7 @@
 
         .clock {
           color: $panel-text;
-          box-shadow: inset 0 0 0 1000px overlay($panel, hover);
+          box-shadow: inset 0 0 0 1000px mix($panel-text, $panel, 15%);
         }
       }
     }
@@ -59,7 +101,7 @@
       &, &:hover {
         background-color: transparent;
         color: $panel-text;
-        box-shadow: inset 0 0 0 1000px overlay($panel, active);
+        box-shadow: inset 0 0 0 1000px mix($panel-text, $panel, 25%);
       }
 
       &.clock-display {
@@ -67,7 +109,7 @@
         color: $panel-text-secondary;
 
         .clock {
-          box-shadow: inset 0 0 0 1000px overlay($panel, active);
+          box-shadow: inset 0 0 0 1000px mix($panel-text, $panel, 25%);
           color: $panel-text;
         }
       }
@@ -85,14 +127,28 @@
     .system-status-icon {
       icon-size: $base_icon_size;
       padding: $base_padding;
-      margin: 0 $base_margin;
+      margin: 0;
       -st-icon-style: symbolic;
     }
 
-    .panel-status-indicators-box .system-status-icon,
-    .panel-status-menu-box .system-status-icon {
-      margin: 0;
+    .appindicator-trayicons-box {
+      margin: 0 $base_padding;
     }
+
+    // .panel-status-indicators-box .system-status-icon,
+    // .panel-status-menu-box .system-status-icon {
+    //   margin: 0;
+    // }
+
+    // .panel-status-indicators-box,
+    // .panel-status-menu-box {
+    //   spacing: $base_padding / 2;
+    // }
+  
+    // // spacing between power icon and (optional) percentage label
+    // .power-status.panel-status-indicators-box {
+    //   spacing: 0;
+    // }
 
     // app menu icon
     .app-menu-icon {
@@ -102,6 +158,17 @@
 
     &#panelActivities {
       -natural-hpadding: $base_padding * 3;
+
+      StBoxLayout {
+        spacing: $base_padding;
+      }
+
+      .workspace-dot {
+        border-radius: $circular_radius;
+        min-width: 8px;
+        min-height: 8px;
+        background-color: on($panel-solid);
+      }
     }
   }
 
@@ -147,6 +214,12 @@
           }
         }
       }
+
+      &#panelActivities {
+        .workspace-dot {
+          background-color: on(dark);
+        }
+      }
     }
 
     .panel-corner {
@@ -156,14 +229,11 @@
     }
   }
 
-  .panel-status-indicators-box,
-  .panel-status-menu-box {
-    spacing: 2px;
-  }
-
-  // spacing between power icon and (optional) percentage label
-  .power-status.panel-status-indicators-box {
-    spacing: 0;
+  // Input indicators
+  Gjs_status_keyboard_InputSourceIndicator.panel-button, // Ibus
+  Gjs_appindicatorsupport_rgcjonas_gmail_com_indicatorStatusIcon_AppIndicatorsIndicatorStatusIcon.panel-button { // Fcitx
+    -natural-hpadding: 12px + $base_padding !important;
+    -minimum-hpadding: 12px + $base_padding !important;
   }
 
   // indicator for active

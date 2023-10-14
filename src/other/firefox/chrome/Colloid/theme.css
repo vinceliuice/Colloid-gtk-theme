@@ -34,3 +34,12 @@
 	content: "Colloid firefox theme";
 	padding: 9px 9px 9px 50px;
 }
+
+#customization-container {
+	background-color: var(--gnome-browser-before-load-background) !important;
+	color: var(--gnome-toolbar-color) !important;
+}
+
+#customization-container:-moz-lwtheme {
+	background-image: linear-gradient(var(--gnome-toolbar-background), var(--gnome-toolbar-background)) !important;
+}
