@@ -1461,7 +1461,7 @@ button.combo:only-child {
 // searchbar
 searchbar > revealer > box {
   padding: $space-size;
-  border-spacing: $space-size;
+  border-spacing: 0;
   border-style: solid;
   border-width: 0 0 1px;
   border-color: $divider;
@@ -3537,7 +3537,7 @@ frame {
 
 actionbar > revealer > box {
   padding: $space-size;
-  border-spacing: $space-size;
+  border-spacing: 0;
   box-shadow: inset 0 1px $border;
   background-color: $base;
   background-clip: border-box;
@@ -5211,7 +5211,7 @@ shortcut > .keycap {
 stackswitcher {
   min-height: 0;
   padding: $space-size / 2;
-  margin: $space-size 0;
+  // margin: $space-size 0;
   border-radius: $corner-radius + $space-size / 2;
   background-color: $fill;
   border: none;
