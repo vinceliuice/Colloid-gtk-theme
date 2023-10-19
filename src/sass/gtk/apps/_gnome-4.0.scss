@@ -56,6 +56,10 @@
   background-color: $titlebar-fill;
   border-radius: $corner-radius;
   margin: $space-size 0;
+
+  .content-pane & {
+    background-color: $fill;
+  }
 }
 
 #NautilusPathButton {
@@ -69,6 +73,10 @@
       background: none;
       box-shadow: none;
     }
+  }
+
+  .content-pane &.current-dir {
+    color: $text;
   }
 
   &:first-child { margin-left: 0; }
@@ -1437,12 +1445,17 @@ popover.background.global-search {
 }
 
 panelframeswitcher {
-  padding: $space-size / 2;
+  padding: $space-size;
+  min-height: $medium-size;
 }
 
 .frameheader.header {
-  min-height: $small-size;
-  background-color: $base-alt;
+  // min-height: $small-size;
+  background-color: $titlebar;
+
+  &:backdrop {
+    background-color: $titlebar-backdrop;
+  }
 
   > button {
     border: none;
@@ -1462,6 +1475,8 @@ panelframeswitcher {
       .end-action {
         padding: 0;
         border-left: 1px solid $border;
+
+        button { margin: $space-size; }
       }
 
       tabbox {
@@ -1530,6 +1545,23 @@ playlistview {
     picture.cover,
     image.card { border: none; }
   }
+}
+
+//
+// Console
+//
+
+.exit-info {
+  padding: 6px;
+  border-top: 2px solid $primary;
+  background: rgba($primary, 0.9);
+  color: on($primary);
+}
+
+.error .exit-info {
+  border-top: 2px solid $error;
+  background: rgba($error, 0.9);
+  color: on($error);
 }
 
 //

@@ -380,12 +380,16 @@ toolbarview.undershoot-bottom scrolledwindow {
 // Sidebar
 .unfolded stacksidebar.sidebar { border: none; }
 
+$sidebar: if($topbar == 'dark' and $variant == 'light', $titlebar, $base-alt);
+$sidebar-backdrop: if($topbar == 'dark' and $variant == 'light', $titlebar-backdrop, $background);
+
 .sidebar-pane {
-  background-color: $base-alt;
-  color: $text;
+  background-color: $sidebar;
+  color: on($sidebar);
 
   &:backdrop {
-    background-color: $background;
+    color: on($sidebar, disabled);
+    background-color: $sidebar-backdrop;
     transition: background-color $duration $ease-out;
   }
 
@@ -395,6 +399,7 @@ toolbarview.undershoot-bottom scrolledwindow {
   }
 
   .toolbar,
+  .sidebar,
   .navigation-sidebar,
   searchbar > revealer > box {
     background-color: transparent;
@@ -402,23 +407,199 @@ toolbarview.undershoot-bottom scrolledwindow {
     border: none;
   }
 
+  @if $topbar == 'dark' and $variant == 'light' {
+    button:not(.suggested-action):not(.destructive-action) { @extend %titlebar-button; }
+
+    entry { @extend %titlebar-entry; }
+
+    .dim-label { color: on($sidebar, disabled); }
+  
+    .navigation-sidebar {
+      > row {
+        color: on($sidebar, secondary);
+  
+        &:hover, &:active, &:focus, &:selected {
+          color: on($sidebar);
+        }
+  
+        &:disabled {
+          color: on($sidebar, secondary-disabled);
+        }
+  
+        button { @extend %titlebar-button; }
+      }
+    }
+  
+    placessidebar {
+      background-color: transparent;
+
+      .navigation-sidebar {
+        > row {
+          color: on($sidebar, secondary);
+
+          image.sidebar-icon,
+          label.sidebar-label {
+            color: on($sidebar, secondary);
+          }
+
+          &:hover, &:active, &:focus, &:selected {
+            color: on($sidebar);
+
+            image.sidebar-icon,
+            label.sidebar-label {
+              color: on($sidebar);
+            }
+          }
+
+          &:disabled {
+            color: on($sidebar, secondary-disabled);
+
+            image.sidebar-icon,
+            label.sidebar-label {
+              color: on($sidebar, secondary-disabled);
+            }
+          }
+
+          button { @extend %titlebar-button; }
+        }
+      }
+    }
+  
+    scrollbar {
+      background-color: transparent;
+  
+      > range > trough {
+        > slider {
+          background-color: on($sidebar, disabled);
+    
+          &:hover { background-color: on($sidebar, secondary); }
+    
+          &:active { background-color: on($sidebar); }
+    
+          &:disabled { background-color: on($sidebar, secondary-disabled); }
+        }
+      }
+  
+      &.overlay-indicator {
+        &:not(.dragging):not(.hovering) {
+          > range > trough > slider {
+            border: none;
+          }
+        }
+  
+        &.dragging,
+        &.hovering {
+          background-color: transparent;
+        }
+      }
+    }
+  }
+
   banner > revealer > widget {
-    background-color: gtkmix($primary, $base-alt, 30%);
+    background-color: gtkmix($primary, $sidebar, 30%);
     color: $text;
 
     &:backdrop {
-      background-color: gtkmix($primary, $base-alt, 30%);
+      background-color: gtkmix($primary, $sidebar, 30%);
+    }
+  }
+}
+
+%content-button-reset {
+  color: $text-secondary;
+
+  &:hover, &:focus:not(:hover):not(:active), &:active, &:checked { color: $text; }
+
+  &:disabled { color: $text-secondary-disabled; }
+
+  &:checked {
+    &:disabled {
+      color: $text-disabled;
+    }
+  }
+
+  &:backdrop {
+    color: $text-disabled;
+
+    &:focus, &:hover, &:active { color: $text-secondary; }
+
+    &:disabled { color: $text-secondary-disabled; }
+
+    &:checked {
+      color: $text-secondary;
+
+      &:disabled { color: $text-secondary-disabled; }
     }
   }
 }
 
 .content-pane {
-  tabbar {
-    tab {
-      &:checked:not(:active), &:selected:not(:active) {
-        background-color: $overlay-selected;
-        color: $text;
-        box-shadow: none;
+  @if $topbar == 'dark' and $variant == 'light' {
+    headerbar {
+      color: $text;
+
+      .subtitle,
+      .dim-label {
+        color: $text-secondary;
+
+        &:backdrop { color: $text-disabled; }
+      }
+
+      @if $window_button == 'mac' {
+        button:not(.suggested-action):not(.destructive-action):not(.close):not(.minimize):not(.maximize) {
+          @extend %content-button-reset;
+        }
+
+        windowcontrols {
+          > button:not(.suggested-action):not(.destructive-action) {
+            &.minimize, &.maximize, &.close {
+              &:backdrop {
+                > image { background-color: $track; }
+
+                &:hover, &:active {
+                  color: $text-disabled;
+                }
+              }
+            }
+          }
+        }
+      } @else {
+        button:not(.suggested-action):not(.destructive-action) {
+          @extend %content-button-reset;
+        }
+      }
+
+      entry {
+        background-color: $fill;
+        color: $text-secondary;
+
+        &:hover, &:focus-within {
+          color: $text;
+        }
+
+        &:disabled {
+          background-color: $fill;
+          color: $text-disabled;
+        }
+
+        > text {
+          > placeholder {
+            color: $text-disabled;
+          }
+
+          > block-cursor {
+            color: $fill;
+            background-color: $text;
+          }
+        }
+
+        > image {
+          color: $text-secondary;
+
+          &:hover, &:active { color: $text; }
+
+          &:disabled { color: $text-disabled; }
+        }
       }
     }
   }
@@ -448,41 +629,6 @@ toolbarview.undershoot-bottom scrolledwindow {
 .sidebar-pane,
 .content-pane .sidebar-pane,
 .sidebar-pane .content-pane {
-  toolbarview.undershoot-top scrolledwindow {
-    @include undershoot(top);
-  }
-
-  toolbarview.undershoot-bottom scrolledwindow {
-    @include undershoot(bottom);
-  }
-
-  scrolledwindow {
-    &.undershoot-top {
-      @include undershoot(top);
-    }
-
-    &.undershoot-bottom {
-      @include undershoot(bottom)
-    }
-
-    &.undershoot-start {
-      &:dir(ltr) { @include undershoot(left); }
-      &:dir(rtl) { @include undershoot(right); }
-    }
-
-    &.undershoot-end {
-      &:dir(ltr) { @include undershoot(right); }
-      &:dir(rtl) { @include undershoot(left); }
-    }
-  }
-
-  flap,
-  leaflet,
-  navigation-view,
-  overlay-split-view {
-    @include transition-shadows($frame);
-  }
-
   &:dir(ltr), &.end:dir(rtl) {
     &, banner > revealer > widget {
       box-shadow: none;
@@ -499,18 +645,223 @@ toolbarview.undershoot-bottom scrolledwindow {
 }
 
 .sidebar-pane,
+.content-pane,
+.content-pane .sidebar-pane,
+.sidebar-pane .content-pane {
+  toolbarview.undershoot-top scrolledwindow {
+    @include undershoot(top, $style: 'border');
+  }
+
+  toolbarview.undershoot-bottom scrolledwindow {
+    @include undershoot(bottom, $style: 'border');
+  }
+
+  scrolledwindow {
+    &.undershoot-top {
+      @include undershoot(top, $style: 'border');
+    }
+
+    &.undershoot-bottom {
+      @include undershoot(bottom, $style: 'border');
+    }
+
+    &.undershoot-start {
+      &:dir(ltr) { @include undershoot(left, $style: 'border'); }
+      &:dir(rtl) { @include undershoot(right, $style: 'border'); }
+    }
+
+    &.undershoot-end {
+      &:dir(ltr) { @include undershoot(right, $style: 'border'); }
+      &:dir(rtl) { @include undershoot(left, $style: 'border'); }
+    }
+  }
+
+  flap,
+  leaflet,
+  navigation-view,
+  overlay-split-view {
+    @include transition-shadows($frame);
+  }
+}
+
+.sidebar-pane,
 .content-pane {
-  headerbar {
+  headerbar, .top-bar {
     &, &:backdrop {
       background-color: transparent;
       box-shadow: none;
+    }
+  }
+
+  tabbar {
+    .box {
+      &, &:backdrop {
+        background-color: transparent;
+        box-shadow: none;
+      }
+    }
+
+    tab {
+      color: $text-secondary;
+
+      &:hover:not(:selected), &:active {
+        color: $text;
+      }
+
+      &:selected:not(:active) {
+        background-color: $overlay-selected;
+        color: $text;
+        box-shadow: none;
+      }
+
+      &:disabled {
+        color: $text-secondary-disabled;
+      }
+    }
+
+    button.image-button {
+      color: $text-secondary;
+
+      &:hover, &:active {
+        color: $text;
+      }
+
+      &:disabled {
+        color: $text-secondary-disabled;
+      }
     }
   }
 }
 
 // Gnome >= 45.0
 .top-bar {
+  box-shadow: inset 0 -1px $border;
+  background-color: $titlebar;
+
+  &:backdrop {
+    background-color: $titlebar-backdrop;
+  }
+
   .collapse-spacing {
     padding: 0;
+  }
+}
+
+
+// ThemeSelector
+themeselector, // Gnome text editor
+panelthemeselector { // Gnome builder
+  margin: $space-size * 1.5;
+
+  checkbutton {
+    padding: 0;
+    min-height: 44px;
+    min-width: 44px;
+    padding: 1px;
+    background-clip: content-box;
+    border-radius: $circular-radius;
+    box-shadow: inset 0 0 0 1px $border;
+
+    &.follow:checked,
+    &.light:checked,
+    &.dark:checked {
+      box-shadow: inset 0 0 0 2px $primary;
+    }
+
+    &.follow {
+      background-image: linear-gradient(to bottom right, #ffffff 50%, #202020 50%);
+    }
+
+    &.light {
+      background-color: #ffffff;
+    }
+
+    &.dark {
+      background-color: #202020;
+    }
+
+    &.theme-selector radio {
+      -gtk-icon-source: none;
+      border: none;
+      background: none;
+      box-shadow: none;
+      min-height: 20px;
+      min-width: 20px;
+      padding: 0;
+
+      &:hover, &:active, &:checked {
+        background-color: transparent;
+      }
+
+      &:checked {
+        -gtk-icon-size: 20px;
+        -gtk-icon-source: -gtk-scaled(-gtk-recolor(url("assets/scalable/checkbox-checked-symbolic.svg")), -gtk-recolor(url("assets/scalable/checkbox-checked-symbolic@2.svg")));
+        color: on($primary);
+        background-color: $primary;
+
+        &, &:hover, &:active {
+          box-shadow: 0 2px 3px -1px rgba(black, 0.08), 0 1px 2px 0 rgba(black, 0.1);
+        }
+      }
+    }
+  }
+}
+
+themeswitcher { // Gnome console
+  padding: $space-size;
+
+  .check {
+    min-height: 20px;
+    min-width: 20px;
+    background: none;
+    padding: 0;
+    margin: 0;
+    border-radius: $circular-radius;
+    color: on($primary);
+    background-color: $primary;
+
+    &, &:hover, &:active {
+      box-shadow: 0 2px 3px -1px rgba(black, 0.08), 0 1px 2px 0 rgba(black, 0.1);
+    }
+  }
+
+  checkbutton {
+    padding: 0;
+    min-height: 44px;
+    min-width: 44px;
+    padding: 1px;
+    background-clip: content-box;
+    border-radius: $circular-radius;
+    box-shadow: inset 0 0 0 1px $border;
+
+    &:checked {
+      box-shadow: inset 0 0 0 2px $primary;
+    }
+
+    radio {
+      &, &:hover, &:active, &:checked, &:checked:hover, &:checked:active {
+        background-color: transparent;
+        border: none;
+        background: none;
+        box-shadow: none;
+        color: transparent;
+        -gtk-icon-source: none;
+        -gtk-icon-size: 0;
+      }
+    }
+
+    &.system {
+      background: linear-gradient(-45deg, #1e1e1e 50%, white 50%);
+    }
+
+    &.light {
+      color: gtkalpha(black, .8);
+      background-color: white;
+    }
+
+    &.dark {
+      color: white;
+      background-color: #1e1e1e;
+    }
   }
 }
