@@ -413,7 +413,7 @@ function has_command() {
 
 #  Install needed packages
 install_package() {
-  if [ ! "$(which sassc 2> /dev/null)" ]; then
+  if ! has_command sassc; then
     echo sassc needs to be installed to generate the css.
     if has_command zypper; then
       sudo zypper in sassc
