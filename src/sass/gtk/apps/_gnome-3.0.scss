@@ -468,14 +468,10 @@ frame.gedit-map-frame > border {
 
 leaflet list.navigation-sidebar {
   background-color: $base-alt;
-  border-bottom-left-radius: $window-radius;
-}
 
-.tweak {
-  // padding-top: 3px;
-  padding: 3px;
-
-  &.title:hover { box-shadow: none; }
+  window.background.csd:not(.maximized) & {
+    border-bottom-left-radius: $window-radius;
+  }
 }
 
 .tweak-group-white,

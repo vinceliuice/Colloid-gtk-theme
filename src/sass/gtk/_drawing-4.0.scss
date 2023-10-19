@@ -306,7 +306,7 @@
   }
   
   #{$_selector} undershoot.#{$p} {
-    box-shadow: none;
+    box-shadow: inset $_border_pos $border;
     background: linear-gradient(to $_direction, gtkalpha($c, .75), transparent 4px);
   }
 }
@@ -325,7 +325,7 @@
 
 @mixin transition-shadows($color) {
   > dimming {
-    background: none;
+    background: $color;
   }
   
   > border {

@@ -298,7 +298,9 @@ datechooser {
   navigator {
     label { font-weight: bold; }
 
-    button.toggle, button.image-button {
+    button.flat,
+    button.toggle,
+    button.image-button {
       min-height: $medium-size;
       min-width: $medium-size;
       padding: 0;
@@ -645,7 +647,7 @@ screenshot-carousel button,
   }
 }
 
-button.card.category-tile {
+.category-tile.card {
   padding: $space-size * 3.5;
   border: none;
   border-radius: $corner-radius;
