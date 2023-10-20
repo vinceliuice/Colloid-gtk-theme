@@ -3029,14 +3029,19 @@ row {
   // @extend %osd;
   @extend %toolbar_osd;
   margin: 8px;
+  padding: $space-size $space-size * 2.5; 
 
   button {
     @extend %button-flat;
 
+    &.flat:last-child {
+      margin-right: -$space-size * 1.5;
+    }
+
     &.text-button:not(:disabled) { color: $primary; }
   }
 
-  > box > label { margin-left: $space-size * 1.5; }
+  // > box > label { margin-left: $space-size * 1.5; }
 
   &.frame,
   border { border-style: none; }
