@@ -216,7 +216,7 @@ label {
     color: $text-secondary;
   }
 
-  selection { @extend %selected_items_primary; }
+  selection { @extend %selected_items_color; }
 
   &:disabled {
     color: $text-disabled;
@@ -746,7 +746,7 @@ button.color {
 /*********
  * Links *
  *********/
-*:link, %links {
+*:link, link, %links {
   color: $link;
 }
 
@@ -2049,8 +2049,9 @@ notebook {
     &.top,
     &.bottom {
       tabs {
-        // padding-left: 8px;
-        // padding-right: 8px;
+        > tab + tab {
+          margin-left: $space-size / 2;
+        }
 
         &:not(:only-child) {
           &:first-child { margin-left: 0; }
@@ -2065,8 +2066,9 @@ notebook {
     &.left,
     &.right {
       tabs {
-        // padding-top: 8px;
-        // padding-bottom: 8px;
+        > tab + tab {
+          margin-top: $space-size / 2;
+        }
 
         &:not(:only-child) {
           &:first-child { margin-top: 0; }
@@ -2076,6 +2078,12 @@ notebook {
 
         tab.reorderable-page { border-style: solid; }
       }
+    }
+
+    > button.image-button {
+      min-height: $small-size;
+      min-width: $small-size;
+      padding: $space-size / 2;
     }
   }
 
@@ -2320,6 +2328,8 @@ radio {
     box-shadow: 0 0 0 6px $divider;
     background-color: rgba($text, 0.20);
   }
+
+  &:focus { outline: none; }
 
   &:disabled {
     background-color: $fill;
