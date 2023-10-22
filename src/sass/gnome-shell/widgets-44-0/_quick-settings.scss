@@ -135,7 +135,7 @@
   .icon-button {
     background-color: transparent;
     color: $text !important;
-    padding: $base_padding;
+    padding: $base_padding * 1.5;
 
     &:hover {
       background-color: $fill;
