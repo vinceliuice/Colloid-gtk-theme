@@ -871,13 +871,27 @@ image.raven-mpris {
 .budgie-run-dialog {
   @extend %budgie_dialog;
 
-  &.background, > decoration {
+  &.background,
+  &.background.csd > decoration {
     border-radius: $window-radius;
   }
 
-  > decoration {
+  &.background {
+    @if $rimless == 'true' {
+      box-shadow: inset 0 1px highlight($surface);
+    } @else {
+      box-shadow: inset 0 0 0 1px highlight($surface);
+    }
+  }
+
+  &.background.csd > decoration {
     border: none;
-    box-shadow: $shadow-z16, 0 0 0 1px $window-border;
+
+    @if $rimless == 'true' {
+      box-shadow: $shadow-z16;
+    } @else {
+      box-shadow: $shadow-z16, 0 0 0 1px $window-border;
+    }
   }
 
   label:not(:last-child),
@@ -917,17 +931,24 @@ image.raven-mpris {
     }
   }
 
-  &.background.csd {
+  &.background {
     border-radius: $window-radius;
-  }
-
-  > decoration {
-    border: none;
 
     @if $rimless == 'true' {
-      box-shadow: $shadow-z16, inset 0 1px highlight($surface);
+      box-shadow: inset 0 1px highlight($surface);
     } @else {
-      box-shadow: $shadow-z16, inset 0 1px highlight($surface), 0 0 0 1px $window-border;
+      box-shadow: inset 0 0 0 1px highlight($surface);
+    }
+  }
+
+  &.background.csd > decoration {
+    border: none;
+    border-radius: $window-radius;
+
+    @if $rimless == 'true' {
+      box-shadow: $shadow-z16;
+    } @else {
+      box-shadow: $shadow-z16, 0 0 0 1px $window-border;
     }
   }
 }
