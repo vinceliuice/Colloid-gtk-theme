@@ -184,13 +184,16 @@ dialog.background {
         padding: $space-size / 2;
         border-radius: $corner-radius;
 
+        &.user-icon-button { padding-right: $space-size * 1.5; }
+
         &.image-button {
           border-radius: $circular-radius;
           padding: $space-size;
           min-height: 16px;
           min-width: 16px;
-          margin-left: $space-size;
+          margin-left: $space-size * 1.5;
           background-clip: border-box;
+          
         }
       }
     }
