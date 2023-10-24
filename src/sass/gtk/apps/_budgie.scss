@@ -848,7 +848,7 @@ image.raven-mpris {
   @if $rimless == 'true' {
     box-shadow: $shadow-z16, inset 0 1px highlight($surface);
   } @else {
-    box-shadow: $shadow-z16, inset 0 1px highlight($surface), 0 0 0 1px $window-border;
+    box-shadow: $shadow-z16, inset 0 0 0 1px highlight($surface), 0 0 0 1px $window-border;
   }
 }
 
