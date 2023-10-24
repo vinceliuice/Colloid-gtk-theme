@@ -805,7 +805,9 @@ image.raven-mpris {
 }
 
 // Notifications
-.budgie-notification-window { background-color: transparent; }
+.budgie-notification-window {
+  background-color: transparent;
+}
 
 .budgie-notification {
   .notification-title { font-size: 120%; }
@@ -830,7 +832,7 @@ image.raven-mpris {
 
 // Internal part of the Switcher
 .budgie-switcher {
-  @extend .budgie-notification;
+  @extend .budgie-notification-window;
 }
 
 .budgie-panel {
