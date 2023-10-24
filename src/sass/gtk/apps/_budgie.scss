@@ -366,20 +366,22 @@ dialog.background {
     }
   }
 
+  $dock-radius: 18px;
+
   .top & {
     &.dock-mode {
-      border-radius: 0 0 $window-radius $window-radius;
+      border-radius: 0 0 $dock-radius $dock-radius;
     }
   }
 
   .bottom & {
     &.dock-mode {
-      border-radius: $window-radius $window-radius 0 0;
+      border-radius: $dock-radius $dock-radius 0 0;
 
       .icon-tasklist {
         > box > revealer {
-          &:first-child > button.launcher { border-top-left-radius: $window-radius; }
-          &:last-child > button.launcher { border-top-right-radius: $window-radius; }
+          &:first-child > button.launcher { border-top-left-radius: $dock-radius; }
+          &:last-child > button.launcher { border-top-right-radius: $dock-radius; }
         }
       }
     }
@@ -387,12 +389,12 @@ dialog.background {
 
   .left & {
     &.dock-mode {
-      border-radius: 0 $window-radius $window-radius 0;
+      border-radius: 0 $dock-radius $dock-radius 0;
 
       .icon-tasklist {
         .launcher {
-          &:first-child { border-top-right-radius: $window-radius; }
-          &:last-child { border-bottom-right-radius: $window-radius; }
+          &:first-child { border-top-right-radius: $dock-radius; }
+          &:last-child { border-bottom-right-radius: $dock-radius; }
         }
       }
     }
@@ -400,12 +402,12 @@ dialog.background {
 
   .right & {
     &.dock-mode {
-      border-radius: $window-radius 0 0 $window-radius;
+      border-radius: $dock-radius 0 0 $dock-radius;
 
       .icon-tasklist {
         .launcher {
-          &:first-child { border-top-left-radius: $window-radius; }
-          &:last-child { border-bottom-left-radius: $window-radius; }
+          &:first-child { border-top-left-radius: $dock-radius; }
+          &:last-child { border-bottom-left-radius: $dock-radius; }
         }
       }
     }
