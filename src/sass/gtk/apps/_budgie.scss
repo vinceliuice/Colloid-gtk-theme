@@ -885,14 +885,25 @@ image.raven-mpris {
     font-size: 120%;
   }
 
-  .linked > button {
+  buttonbox.linked > button {
     padding: 8px 16px;
     border-top: 1px solid $divider;
     border-radius: 0;
     @extend %button-flat-simple;
 
-    &:first-child { border-bottom-left-radius: $window-radius; }
-    &:last-child { border-bottom-right-radius: $window-radius; }
+    &.suggested-action:not(:disabled) { color: $suggested; }
+
+    &.destructive-action:not(:disabled) { color: $destructive; }
+
+    &:first-child {
+      border-bottom-left-radius: $window-radius;
+      border-top-left-radius: 0;
+    }
+
+    &:last-child {
+      border-bottom-right-radius: $window-radius;
+      border-top-right-radius: 0;
+    }
   }
 }
 
