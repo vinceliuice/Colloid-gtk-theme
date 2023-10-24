@@ -275,8 +275,7 @@ dialog.background {
     .right & { border-top-width: 1px; }
   }
 
-  .workspace-item,
-  .workspace-add-button {
+  .workspace-item {
     border: 0 solid on($panel, divider);
 
     .top &,
@@ -297,11 +296,13 @@ dialog.background {
   }
 
   .workspace-add-button {
-    &:hover { box-shadow: none; }
+    border-radius: $corner-radius;
 
-    &:active { background-image: none; }
-
-    &:active image { margin: 1px 0 -1px; }
+    .budgie-panel & {
+      min-height: 24px;
+      min-width: 24px;
+      padding: 0;
+    }
   }
 
   .workspace-icon-button {
@@ -441,9 +442,9 @@ dialog.background {
     }
   }
 
-  &.horizontal button { padding: 0 4px; }
+  &.horizontal button { padding: 0 $space-size; }
 
-  &.vertical button { padding: 4px 0; }
+  &.vertical button { padding: $space-size 0; }
 
   separator { background-color: on($panel, divider); }
 
@@ -834,11 +835,16 @@ image.raven-mpris {
 }
 
 .drop-shadow {
-  margin: 5px 9px;
+  margin: 36px;
   padding: $space-size;
   border-radius: $window-radius;
-  box-shadow: $shadow-z4, inset 0 1px highlight($surface);
   background-color: $surface;
+
+  @if $rimless == 'true' {
+    box-shadow: $shadow-z16, inset 0 1px highlight($surface);
+  } @else {
+    box-shadow: $shadow-z16, inset 0 1px highlight($surface), 0 0 0 1px $window-border;
+  }
 }
 
 %budgie_dialog {
@@ -895,6 +901,16 @@ image.raven-mpris {
 
   &.background.csd {
     border-radius: $window-radius;
+  }
+
+  > decoration {
+    border: none;
+
+    @if $rimless == 'true' {
+      box-shadow: $shadow-z16, inset 0 1px highlight($surface);
+    } @else {
+      box-shadow: $shadow-z16, inset 0 1px highlight($surface), 0 0 0 1px $window-border;
+    }
   }
 }
 
