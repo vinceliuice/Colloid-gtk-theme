@@ -63,7 +63,7 @@ dialog.background {
 
   list, row { padding: 0; }
 
-  separator { margin: $space-size / 2 0; }
+  separator.horizontal { margin: $space-size / 2 0; }
 
   border { border: none; }
 
@@ -80,13 +80,35 @@ dialog.background {
 
   // AppMenu (Elementary)
   scrolledwindow.sidebar:not(.categories) {
-    background-color: $fill;
+    background: none;
     border-right: none;
-    border-bottom-left-radius: $menu-radius;
 
-    list > row.activatable {
-      @extend %row_activatable;
-      padding: $space-size ($space-size + 2px);
+    list {
+      background-color: $fill;
+      border-radius: $corner-radius / 2;
+      padding: $space-size / 2 0;
+
+      > row.activatable {
+        @extend %row_activatable;
+        padding: $space-size ($space-size + 2px);
+      }
+    }
+  }
+
+  scrolledwindow.sidebar + separator {
+    margin: 0;
+    background-color: transparent;
+    min-width: 0;
+    min-height: 0;
+  }
+
+  scrolledwindow.sidebar + separator + scrolledwindow {
+    margin-left: $space-size / 2;
+
+    list {
+      > row.activatable {
+        border-radius: $corner-radius / 2;
+      }
     }
   }
 
@@ -96,25 +118,6 @@ dialog.background {
 
     &:hover { background-color: $overlay-hover; }
     &:selected { background-color: $overlay-active; }
-  }
-
-  &.bottom scrolledwindow.sidebar:not(.categories) {
-    padding-top: $menu-radius;
-    border-top-left-radius: $menu-radius;
-    border-bottom-left-radius: 0;
-  }
-
-  > frame.container > grid.horizontal > grid.horizontal {
-    > widget > grid.horizontal > stack {
-      border-top: 1px solid $divider;
-    }
-  }
-
-  &.bottom > frame.container > grid.horizontal > grid.horizontal {
-    > widget > grid.horizontal > stack {
-      border-top: none;
-      border-bottom: 1px solid $divider;
-    }
   }
 
   &.budgie-menu { // Budgie AppMenu
@@ -220,9 +223,10 @@ dialog.background {
     }
   }
 
-  // &.sound-popover {
-  //   separator { margin: $space-size / 2 0; }
-  // }
+  &.sound-popover {
+    .container { padding: 0; }
+    separator { margin: $space-size / 2 0; }
+  }
 
   // &.caffeine-popover {
   // }
