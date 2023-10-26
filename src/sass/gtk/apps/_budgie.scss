@@ -16,7 +16,8 @@
   }
 
   buttonbox.inline-toolbar {
-    border-style: none none solid;
+    border: none;
+    border-bottom: 1px solid $border;
 
     button {
       border-radius: $corner-radius;
@@ -111,6 +112,8 @@ dialog.background {
       }
     }
   }
+
+  button.flat.switcher { @extend %circular-button; }
 
   treeview.view.sidebar {
     border-right: none;
@@ -936,7 +939,7 @@ image.raven-mpris {
   }
 
   &.background {
-    border-radius: $window-radius;
+    border-radius: $window-radius + $space-size;
 
     @if $rimless == 'true' {
       box-shadow: inset 0 1px highlight($surface);
@@ -947,7 +950,7 @@ image.raven-mpris {
 
   &.background.csd > decoration {
     border: none;
-    border-radius: $window-radius;
+    border-radius: $window-radius + $space-size;
 
     @if $rimless == 'true' {
       box-shadow: $shadow-z16;
