@@ -71,12 +71,21 @@ button.close::before,
 	color: white !important;
 }
 
+menuitem[type="radio"] .menu-iconic-icon,
+menuitem[type="checkbox"] .menu-iconic-icon {
+	-moz-appearance: none !important;
+}
+
 /* Menu checkbox */
 menuitem[type="checkbox"] {
 	list-style-image: none !important;
 }
 menuitem[type="checkbox"][checked="true"] {
 	list-style-image: url("../icons/select-symbolic.svg") !important;
+}
+menuitem[type="checkbox"] .menu-iconic-icon {
+	border-radius: 3px;
+	border: 1px solid var(--gnome-inactive-toolbar-icon-fill);
 }
 menuitem[type="checkbox"][disabled="true"] .menu-iconic-icon {
 	opacity: 0.5;
@@ -110,6 +119,7 @@ menuitem[type="radio"][disabled="true"] .menu-iconic-icon {
 :root[tabsintitlebar] #titlebar .titlebar-buttonbox .titlebar-min .toolbarbutton-icon {
 	list-style-image: url("../icons/window-minimize-symbolic.svg") !important;
 }
+:root[tabsintitlebar][inFullscreen] #titlebar .titlebar-buttonbox .titlebar-restore .toolbarbutton-icon,
 :root[tabsintitlebar][inFullscreen] #window-controls #restore-button .toolbarbutton-icon {
 	list-style-image: url("../icons/view-restore-symbolic.svg") !important;
 }
@@ -504,6 +514,10 @@ treechildren::-moz-tree-image(query, OrganizerQuery_history____v) {
 	list-style-image: url("../icons/reader-mode.svg") !important;
 }
 
+#picture-in-picture-button > .urlbar-icon {
+	list-style-image: url("../icons/picture-in-picture-open.svg") !important;
+}
+
 #permissions-granted-icon {
 	list-style-image: url("../icons/permissions-granted.svg") !important;
 }
@@ -777,6 +791,7 @@ treechildren::-moz-tree-image {
 	#permissions-granted-icon,
 	#tracking-protection-icon-animatable-image,
 	#reader-mode-button > .urlbar-icon,
+	#picture-in-picture-button > .urlbar-icon,
 	#star-button:not([starred]),
 	#context-bookmarkpage:not([starred]) .menu-iconic-icon,
 	#geo-sharing-icon[sharing], .geo-icon,

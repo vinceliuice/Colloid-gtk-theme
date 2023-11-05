@@ -21,14 +21,14 @@
     padding: 4px 8px;
     min-height: $item_size - $base_padding;
     border-radius: $circular_radius;
-    caret-color: on($primary);
+    caret-color: on($osd);
 
-    @include entry(flat-normal, $tc: on($primary));
-    &:focus { @include entry(flat-focus, $tc: on($primary)); }
-    &:insensitive { @include entry(flat-insensitive, $tc: on($primary, disabled)); }
+    @include entry(flat-normal, $tc: on($osd));
+    &:focus { @include entry(flat-focus, $tc: on($osd)); }
+    &:insensitive { @include entry(flat-insensitive, $tc: on($osd, disabled)); }
 
     StLabel.hint-text {
-      color: on($primary, disabled);
+      color: on($osd, disabled);
     }
   }
 
