@@ -56,6 +56,10 @@
   background-color: $titlebar-fill;
   border-radius: $corner-radius;
   margin: $space-size 0;
+
+  .content-pane & {
+    background-color: $fill;
+  }
 }
 
 #NautilusPathButton {
@@ -69,6 +73,10 @@
       background: none;
       box-shadow: none;
     }
+  }
+
+  .content-pane &.current-dir {
+    color: $text;
   }
 
   &:first-child { margin-left: 0; }
@@ -298,7 +306,9 @@ datechooser {
   navigator {
     label { font-weight: bold; }
 
-    button.toggle, button.image-button {
+    button.flat,
+    button.toggle,
+    button.image-button {
       min-height: $medium-size;
       min-width: $medium-size;
       padding: 0;
@@ -645,7 +655,7 @@ screenshot-carousel button,
   }
 }
 
-button.card.category-tile {
+.category-tile.card {
   padding: $space-size * 3.5;
   border: none;
   border-radius: $corner-radius;
@@ -660,6 +670,7 @@ button.card.category-tile {
     font-size: 105%;
     font-weight: normal;
     box-shadow: none;
+    background-color: $fill;
   }
 
   // Styling for specific category buttons.
@@ -1435,12 +1446,17 @@ popover.background.global-search {
 }
 
 panelframeswitcher {
-  padding: $space-size / 2;
+  padding: $space-size;
+  min-height: $medium-size;
 }
 
 .frameheader.header {
-  min-height: $small-size;
-  background-color: $base-alt;
+  // min-height: $small-size;
+  background-color: $titlebar;
+
+  &:backdrop {
+    background-color: $titlebar-backdrop;
+  }
 
   > button {
     border: none;
@@ -1460,6 +1476,8 @@ panelframeswitcher {
       .end-action {
         padding: 0;
         border-left: 1px solid $border;
+
+        button { margin: $space-size; }
       }
 
       tabbox {
@@ -1528,6 +1546,23 @@ playlistview {
     picture.cover,
     image.card { border: none; }
   }
+}
+
+//
+// Console
+//
+
+.exit-info {
+  padding: 6px;
+  border-top: 2px solid $primary;
+  background: rgba($primary, 0.9);
+  color: on($primary);
+}
+
+.error .exit-info {
+  border-top: 2px solid $error;
+  background: rgba($error, 0.9);
+  color: on($error);
 }
 
 //

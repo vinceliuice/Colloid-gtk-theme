@@ -273,7 +273,7 @@
 }
 
 
-@mixin undershoot($p, $c: $frame, $neighbor: false) {
+@mixin undershoot($p, $c: $frame, $neighbor: false, $style: 'compact') {
 //
 // undershoot
 //
@@ -304,10 +304,15 @@
   } @else {
     @error "Unknown position #{$p}"
   }
-  
+
   #{$_selector} undershoot.#{$p} {
-    box-shadow: none;
-    background: linear-gradient(to $_direction, gtkalpha($c, .75), transparent 4px);
+    @if $style == 'compact' {
+      box-shadow: none;
+    } @else {
+      box-shadow: inset $_border_pos $shade;
+    }
+
+    background: linear-gradient(to $_direction, gtkalpha($c, .75), transparent $space-size);
   }
 }
 
@@ -325,7 +330,7 @@
 
 @mixin transition-shadows($color) {
   > dimming {
-    background: none;
+    background: $color;
   }
   
   > border {

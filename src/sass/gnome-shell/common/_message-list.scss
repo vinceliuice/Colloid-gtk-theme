@@ -125,7 +125,7 @@
 
 // album-art
 .media-message-cover-icon {
-  icon-size: 48px;
+  icon-size: 32px !important;
   border-radius: $base_radius;
 
   &.fallback {

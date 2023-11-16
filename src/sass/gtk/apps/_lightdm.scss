@@ -33,10 +33,10 @@
 #login_window,
 #shutdown_dialog,
 #restart_dialog {
-  margin: 8px;
   border-radius: $corner-radius;
   box-shadow: $shadow-z4, inset 0 1px highlight($surface);
   background-color: $surface;
+  color: $text;
 }
 
 // the top half of the login-window, in GtkDialog terms, the content
@@ -50,6 +50,19 @@
 
   // the entries, one for the username, one for the password
   entry {}
+
+  GtkComboBox {
+    background: none;
+
+    .button {
+      &, &:hover, &:active, &:focus {
+        padding: 0;
+        background: none;
+        border-style: none;
+        box-shadow: none;
+      }
+    }
+  }
 }
 
 // the buttons, alternatively this could also be done with a simple ".lightdm-gtk-greeter button"
@@ -63,10 +76,13 @@
 
 // the user's avatar box
 #user_image {
+  padding: 3px;
+  border-radius: 3px;
 }
 
 // the border around the user's avatar box
 #user_image_border {
+  border-radius: 3px;
 }
 
 // the lower half of the login-window, in GtkDialog terms the buttonbox or action area
@@ -93,5 +109,5 @@
 
 // the warning, in case a wrong password is entered or something else goes wrong according to PAM
 #greeter_infobar {
-  // font-weight: bold;
+  font-weight: bold;
 }

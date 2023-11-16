@@ -64,6 +64,9 @@ $button-close: if($variant == 'light', #ed5d5d, #f44d4d);
 $button-max: if($variant == 'light', #43db68, #4be772);
 $button-min: if($variant == 'light', #e3d93b, #e8f467);
 
+// Link
+$links: #5bbae3;
+
 // Theme
 $default-light: $purple-light;
 $default-dark: $purple-dark;

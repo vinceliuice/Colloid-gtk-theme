@@ -95,6 +95,7 @@
   padding: 0;
   margin: 0;
   text-shadow: none;
+  color: $text-secondary;
   // border-radius: $base_radius;
 
   // month
@@ -112,7 +113,7 @@
   // prev/next month icons
   .calendar-change-month-back,
   .calendar-change-month-forward {
-    padding: 0 0 !important;
+    padding: 0 !important;
     margin: ($base_padding / 2) 0 !important;
 
     StIcon {
@@ -135,10 +136,10 @@
   .calendar-day-base {
     @include fontsize($font_size - 1);
     text-align: center;
-    width: $item_size + 2px;
-    height: $item_size + 2px;
-    padding: 0;
-    margin: 2px;
+    width: $item_size + 2px !important;
+    height: $item_size + 2px !important;
+    padding: 0 !important;
+    margin: 2px !important;
     border-radius: $circular_radius;
     color: $text-secondary;
     border: none;
@@ -164,10 +165,12 @@
     }
   }
 
-  &.calendar-weekday {}
+  .calendar-day {
+    &.calendar-weekday {}
 
-  &.calendar-weekend {
-    color: $text-disabled;
+    &.calendar-weekend {
+      color: $text-disabled !important;
+    }
   }
 
   .calendar-day { //border collapse hack - see calendar.js
@@ -183,7 +186,7 @@
   }
 
   .calendar-nonwork-day {
-    color: $text-disabled;
+    color: $text-disabled !important;
     font-weight: normal;
   }
 
@@ -216,12 +219,12 @@
   }
 
   .calendar-day-with-events {
-    color: $text-secondary;
+    color: $text-disabled !important;
     background-image: url("assets/calendar-today.svg");
     background-size: contain;
 
     &.calendar-work-day {
-      color: $text-secondary;
+      color: $text-disabled !important;
       font-weight: bold;
     }
   }

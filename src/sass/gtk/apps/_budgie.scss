@@ -16,7 +16,8 @@
   }
 
   buttonbox.inline-toolbar {
-    border-style: none none solid;
+    border: none;
+    border-bottom: 1px solid $border;
 
     button {
       border-radius: $corner-radius;
@@ -63,7 +64,7 @@ dialog.background {
 
   list, row { padding: 0; }
 
-  separator { margin: $space-size / 2 0; }
+  separator.horizontal { margin: $space-size / 2 0; }
 
   border { border: none; }
 
@@ -80,15 +81,39 @@ dialog.background {
 
   // AppMenu (Elementary)
   scrolledwindow.sidebar:not(.categories) {
-    background-color: $fill;
+    background: none;
     border-right: none;
-    border-bottom-left-radius: $menu-radius;
 
-    list > row.activatable {
-      @extend %row_activatable;
-      padding: $space-size ($space-size + 2px);
+    list {
+      background-color: $fill;
+      border-radius: $corner-radius / 2;
+      padding: $space-size / 2 0;
+
+      > row.activatable {
+        @extend %row_activatable;
+        padding: $space-size ($space-size + 2px);
+      }
     }
   }
+
+  scrolledwindow.sidebar + separator {
+    margin: 0;
+    background-color: transparent;
+    min-width: 0;
+    min-height: 0;
+  }
+
+  scrolledwindow.sidebar + separator + scrolledwindow {
+    margin-left: $space-size / 2;
+
+    list {
+      > row.activatable {
+        border-radius: $corner-radius / 2;
+      }
+    }
+  }
+
+  button.flat.switcher { @extend %circular-button; }
 
   treeview.view.sidebar {
     border-right: none;
@@ -96,25 +121,6 @@ dialog.background {
 
     &:hover { background-color: $overlay-hover; }
     &:selected { background-color: $overlay-active; }
-  }
-
-  &.bottom scrolledwindow.sidebar:not(.categories) {
-    padding-top: $menu-radius;
-    border-top-left-radius: $menu-radius;
-    border-bottom-left-radius: 0;
-  }
-
-  > frame.container > grid.horizontal > grid.horizontal {
-    > widget > grid.horizontal > stack {
-      border-top: 1px solid $divider;
-    }
-  }
-
-  &.bottom > frame.container > grid.horizontal > grid.horizontal {
-    > widget > grid.horizontal > stack {
-      border-top: none;
-      border-bottom: 1px solid $divider;
-    }
   }
 
   &.budgie-menu { // Budgie AppMenu
@@ -184,13 +190,16 @@ dialog.background {
         padding: $space-size / 2;
         border-radius: $corner-radius;
 
+        &.user-icon-button { padding-right: $space-size * 1.5; }
+
         &.image-button {
           border-radius: $circular-radius;
           padding: $space-size;
           min-height: 16px;
           min-width: 16px;
-          margin-left: $space-size;
+          margin-left: $space-size * 1.5;
           background-clip: border-box;
+          
         }
       }
     }
@@ -217,9 +226,10 @@ dialog.background {
     }
   }
 
-  // &.sound-popover {
-  //   separator { margin: $space-size / 2 0; }
-  // }
+  &.sound-popover {
+    .container { padding: 0; }
+    separator { margin: $space-size / 2 0; }
+  }
 
   // &.caffeine-popover {
   // }
@@ -275,8 +285,7 @@ dialog.background {
     .right & { border-top-width: 1px; }
   }
 
-  .workspace-item,
-  .workspace-add-button {
+  .workspace-item {
     border: 0 solid on($panel, divider);
 
     .top &,
@@ -297,11 +306,13 @@ dialog.background {
   }
 
   .workspace-add-button {
-    &:hover { box-shadow: none; }
+    border-radius: $corner-radius;
 
-    &:active { background-image: none; }
-
-    &:active image { margin: 1px 0 -1px; }
+    .budgie-panel & {
+      min-height: 24px;
+      min-width: 24px;
+      padding: 0;
+    }
   }
 
   .workspace-icon-button {
@@ -365,20 +376,22 @@ dialog.background {
     }
   }
 
+  $dock-radius: 18px;
+
   .top & {
     &.dock-mode {
-      border-radius: 0 0 $window-radius $window-radius;
+      border-radius: 0 0 $dock-radius $dock-radius;
     }
   }
 
   .bottom & {
     &.dock-mode {
-      border-radius: $window-radius $window-radius 0 0;
+      border-radius: $dock-radius $dock-radius 0 0;
 
       .icon-tasklist {
         > box > revealer {
-          &:first-child > button.launcher { border-top-left-radius: $window-radius; }
-          &:last-child > button.launcher { border-top-right-radius: $window-radius; }
+          &:first-child > button.launcher { border-top-left-radius: $dock-radius; }
+          &:last-child > button.launcher { border-top-right-radius: $dock-radius; }
         }
       }
     }
@@ -386,12 +399,12 @@ dialog.background {
 
   .left & {
     &.dock-mode {
-      border-radius: 0 $window-radius $window-radius 0;
+      border-radius: 0 $dock-radius $dock-radius 0;
 
       .icon-tasklist {
         .launcher {
-          &:first-child { border-top-right-radius: $window-radius; }
-          &:last-child { border-bottom-right-radius: $window-radius; }
+          &:first-child { border-top-right-radius: $dock-radius; }
+          &:last-child { border-bottom-right-radius: $dock-radius; }
         }
       }
     }
@@ -399,12 +412,12 @@ dialog.background {
 
   .right & {
     &.dock-mode {
-      border-radius: $window-radius 0 0 $window-radius;
+      border-radius: $dock-radius 0 0 $dock-radius;
 
       .icon-tasklist {
         .launcher {
-          &:first-child { border-top-left-radius: $window-radius; }
-          &:last-child { border-bottom-left-radius: $window-radius; }
+          &:first-child { border-top-left-radius: $dock-radius; }
+          &:last-child { border-bottom-left-radius: $dock-radius; }
         }
       }
     }
@@ -441,9 +454,9 @@ dialog.background {
     }
   }
 
-  &.horizontal button { padding: 0 4px; }
+  &.horizontal button { padding: 0 $space-size; }
 
-  &.vertical button { padding: 4px 0; }
+  &.vertical button { padding: $space-size 0; }
 
   separator { background-color: on($panel, divider); }
 
@@ -779,8 +792,29 @@ image.raven-mpris {
   }
 }
 
+.raven-notifications-group {
+  .raven-notifications-group-header {
+    padding-left: $space-size;
+  }
+
+  list > row {
+    border-radius: $corner-radius;
+    padding: $space-size;
+
+    .notification-clone {
+      padding-left: $space-size;
+    }
+
+    button.flat {
+      @extend %circular-button;
+    }
+  }
+}
+
 // Notifications
-.budgie-notification-window { background-color: transparent; }
+.budgie-notification-window {
+  background-color: transparent;
+}
 
 .budgie-notification {
   .notification-title { font-size: 120%; }
@@ -805,7 +839,7 @@ image.raven-mpris {
 
 // Internal part of the Switcher
 .budgie-switcher {
-  @extend .budgie-notification;
+  @extend .budgie-notification-window;
 }
 
 .budgie-panel {
@@ -815,20 +849,22 @@ image.raven-mpris {
 }
 
 .drop-shadow {
-  margin: 5px 9px;
+  margin: 36px;
   padding: $space-size;
   border-radius: $window-radius;
-  box-shadow: $shadow-z4, inset 0 1px highlight($surface);
   background-color: $surface;
 
-  button { @extend %button-flat-simple; }
-
-  .linked > button { border-radius: $window-radius; }
+  @if $rimless == 'true' {
+    box-shadow: $shadow-z16, inset 0 1px highlight($surface);
+  } @else {
+    box-shadow: $shadow-z16, inset 0 0 0 1px highlight($surface), 0 0 0 1px $window-border;
+  }
 }
 
 %budgie_dialog {
   background-color: $surface;
   border: none;
+  box-shadow: none;
   padding: 0;
 
   > box > grid {
@@ -842,13 +878,27 @@ image.raven-mpris {
 .budgie-run-dialog {
   @extend %budgie_dialog;
 
-  &.background, & > decoration {
+  &.background,
+  &.background.csd > decoration {
     border-radius: $window-radius;
   }
 
-  & > decoration {
+  &.background {
+    @if $rimless == 'true' {
+      box-shadow: inset 0 1px highlight($surface);
+    } @else {
+      box-shadow: inset 0 0 0 1px highlight($surface);
+    }
+  }
+
+  &.background.csd > decoration {
     border: none;
-    box-shadow: $shadow-z16, 0 0 0 1px $window-border;
+
+    @if $rimless == 'true' {
+      box-shadow: $shadow-z16;
+    } @else {
+      box-shadow: $shadow-z16, 0 0 0 1px $window-border;
+    }
   }
 
   label:not(:last-child),
@@ -856,14 +906,57 @@ image.raven-mpris {
     font-size: 120%;
   }
 
-  .linked.horizontal > button {
+  buttonbox.linked > button {
     padding: 8px 16px;
     border-top: 1px solid $divider;
     border-radius: 0;
     @extend %button-flat-simple;
 
-    &:first-child { border-bottom-left-radius: $window-radius; }
-    &:last-child { border-bottom-right-radius: $window-radius; }
+    &.suggested-action:not(:disabled) { color: $suggested; }
+
+    &.destructive-action:not(:disabled) { color: $destructive; }
+
+    &:first-child {
+      border-bottom-left-radius: $window-radius;
+      border-top-left-radius: 0;
+    }
+
+    &:last-child {
+      border-bottom-right-radius: $window-radius;
+      border-top-right-radius: 0;
+    }
+  }
+}
+
+// Power Dialog
+.budgie-power-dialog {
+  .titlebar {
+    &, &:backdrop {
+      background-color: transparent;
+      box-shadow: none;
+      border: none;
+    }
+  }
+
+  &.background {
+    border-radius: $window-radius + $space-size;
+
+    @if $rimless == 'true' {
+      box-shadow: inset 0 1px highlight($surface);
+    } @else {
+      box-shadow: inset 0 0 0 1px highlight($surface);
+    }
+  }
+
+  &.background.csd > decoration {
+    border: none;
+    border-radius: $window-radius + $space-size;
+
+    @if $rimless == 'true' {
+      box-shadow: $shadow-z16;
+    } @else {
+      box-shadow: $shadow-z16, 0 0 0 1px $window-border;
+    }
   }
 }
 

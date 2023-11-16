@@ -131,7 +131,7 @@ $entry:                                 if($variant == 'dark', on($background, s
 // Misc colors
 //
 
-$link:                                  $blue-dark;
+$link:                                  $links;
 $link-visited:                          if($variant == 'light', $purple-dark, $purple-light);
 
 $warning:                               if($variant == 'light', $yellow-dark, $yellow-light);
@@ -147,8 +147,9 @@ $assets-color:                          $primary;
   $assets-color:                        if($variant == 'light', $green-dark, $green-light);
 }
 
-$frame:                                 if($variant == 'light', rgba($black, 0.12), rgba($black, 0.20));
-$border:                                if($variant == 'light', rgba($black, 0.12), rgba($black, 0.25));
+$frame:                                 if($variant == 'light', rgba($black, 0.12), rgba($black, 0.25));
+$border:                                if($variant == 'light', rgba($black, 0.12), rgba($white, 0.12));
+$shade:                                 if($variant == 'light', rgba($black, 0.08), rgba($white, 0.08));
 $window-border:                         if($variant == 'light', rgba($black, 0.12), rgba($black, 0.75));
 $solid-border:                          if($variant == 'light', mix(black, $base, 12%), mix(white, $base, 12%));
 $border-alt:                            rgba($black, 0.16); // darker border color for Chrome and Firefox

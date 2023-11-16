@@ -94,3 +94,38 @@ UnityPanelWidget,
   animation: spin 1s linear infinite;
   color: $primary;
 }
+
+// slick greeter
+.lightdm {
+  &.menu {
+    background-image: none;
+    background-color: rgba(black, 0.45);
+    border: none;
+    border-radius: $window-radius;
+    padding: 0;
+    color: white;
+
+    .menuitem *,
+    .menuitem.check:active,
+    .menuitem.radio:active {
+      color: white;
+    }
+  }
+
+  &.menubar {
+    color: transparentize(white, 0.2);
+    background-image: none;
+    background-color: transparentize(black, 0.5);
+
+    & > .menuitem {
+      padding: 2px 6px;
+    }
+  }
+
+  &-combo .menu {
+    background-color: $base;
+    border-radius: 0;
+    padding: 0;
+    color: $text;
+  }
+}

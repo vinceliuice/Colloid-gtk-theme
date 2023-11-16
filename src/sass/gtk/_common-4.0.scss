@@ -290,6 +290,19 @@ entry {
 
     // &.search { border-radius: $circular-radius; }
 
+    > text {
+      > placeholder {
+        color: $text-disabled;
+      }
+
+      > block-cursor {
+        color: $fill;
+        background-color: $text;
+      }
+
+      > selection { @extend %selected_items_primary; }
+    }
+
     &.flat {
       &:focus-within, &:disabled, &:hover, & {
         min-height: 0;
@@ -301,7 +314,7 @@ entry {
       }
     }
 
-    image { // icons inside the entry
+    > image { // icons inside the entry
       color: $text-secondary;
 
       &:hover, &:active { color: $text; }
@@ -317,13 +330,9 @@ entry {
       }
     }
 
-    undershoot {
-      &.left { @include undershoot(left); }
-
-      &.right { @include undershoot(right); }
+    &.password image.caps-lock-indicator {
+      opacity: 0.35;
     }
-
-    > text > selection { @extend %selected_items_primary; }
 
     // entry error and warning style
     @each $e_type, $e_color in (error, $error),
@@ -348,12 +357,16 @@ entry {
           outline: none;
         }
 
-        > text > selection {
-          background-color: rgba($e_color, 0.25);
-          color: $e_color;
+        > text {
+          > selection {
+            background-color: rgba($e_color, 0.25);
+            color: $e_color;
+          }
+
+          > cursor-handle > contents { background-color: currentColor; }
         }
 
-        image {
+        > image {
           color: rgba($e_color, 0.75);
 
           &:hover, &:active { color: $e_color; }
@@ -369,6 +382,10 @@ entry {
     margin: 0 -4px;
     border-bottom: 2px solid $primary;
     background-color: transparent;
+  }
+
+  .osd & > progress > trough > progress {
+    border-color: on($osd, fill);
   }
 
   button.image-button {
@@ -699,12 +716,13 @@ button {
 
   // big standalone buttons like in Documents pager
   &.osd {
-    min-width: $small-size;
-    min-width: $small-size;
+    min-height: 24px;
+    min-width: 24px;
     padding: ($medium-size - 24px) / 2;
     box-shadow: none;
     background-color: rgba(black, 0.35);
     color: white;
+    margin: 0;
 
     > image {
       padding: 0;
@@ -1444,7 +1462,7 @@ button.combo:only-child {
 // searchbar
 searchbar > revealer > box {
   padding: $space-size;
-  border-spacing: $space-size;
+  border-spacing: 0;
   border-style: solid;
   border-width: 0 0 1px;
   border-color: $divider;
@@ -1464,7 +1482,7 @@ searchbar > revealer > box {
   color: $titlebar-text-secondary;
   border: none;
 
-  &:hover, &:active, &:checked { color: $titlebar-text; }
+  &:hover, &:focus:not(:hover):not(:active), &:active, &:checked { color: $titlebar-text; }
 
   &:disabled { color: $titlebar-text-secondary-disabled; }
 
@@ -1492,14 +1510,29 @@ searchbar > revealer > box {
 
 %titlebar-entry {
   background-color: $titlebar-fill;
-  color: $titlebar-text;
+  color: $titlebar-text-secondary;
+
+  &:hover, &:focus-within {
+    color: $titlebar-text;
+  }
 
   &:disabled {
     background-color: $titlebar-fill;
     color: $titlebar-text-disabled;
   }
 
-  image {
+  > text {
+    > placeholder {
+      color: $titlebar-text-disabled;
+    }
+
+    > block-cursor {
+      color: $titlebar-fill;
+      background-color: $titlebar-text;
+    }
+  }
+
+  > image {
     color: $titlebar-text-secondary;
 
     &:hover, &:active { color: $titlebar-text; }
@@ -1510,7 +1543,7 @@ searchbar > revealer > box {
 
 headerbar {
   transition: background-color $duration $ease-out, color $duration $ease-out;
-  box-shadow: inset 0 -1px $divider;
+  box-shadow: inset 0 -1px $border;
   background-color: $titlebar;
   color: $titlebar-text;
   min-height: $large-size;
@@ -1522,6 +1555,7 @@ headerbar {
   &:backdrop {
     background-color: $titlebar-backdrop;
     color: $titlebar-text-secondary;
+    box-shadow: inset 0 -1px $border;
 
     &:disabled { color: $titlebar-text-secondary-disabled; }
   }
@@ -1574,6 +1608,7 @@ headerbar {
   // add vertical margins to common widget on the headerbar to avoid them spanning the whole height
   entry,
   spinbutton,
+  splitbutton,
   button,
   menubutton,
   stackswitcher,
@@ -1603,6 +1638,13 @@ headerbar {
       color: $titlebar-text-disabled;
       opacity: 1;
     }
+  }
+
+  button.star {
+    min-height: 24px;
+    min-width: 24px;
+    padding: ($medium-size - 24px) / 2;
+    @extend %circular-button;
   }
 
   entry { @extend %titlebar-entry; }
@@ -2199,7 +2241,7 @@ magnifier {
     box-shadow: none;
   }
 
-  &:checked:not(:active), &:selected:not(:active) {
+  &:selected:not(:active) {
     transition: $transition,
                 border-image $ripple-fade-in-duration $ease-out,
                 background-size 0ms,
@@ -2440,40 +2482,117 @@ $tab_needs_attention_gradient: radial-gradient(ellipse at bottom,
                               gtkalpha($primary, 0) 20px);
 }
 
+%tabbar_tab {
+  min-height: $small-size;
+  min-width: $small-size;
+  padding: $space-size / 2 $space-size;
+  border: none;
+  background-clip: padding-box;
+  font-weight: 500;
+  border-radius: $modal-radius;
+  @include button(flat-normal);
+  color: $titlebar-text-secondary;
+
+  &:hover:not(:selected) {
+    @include button(flat-hover);
+    box-shadow: none;
+    color: $titlebar-text;
+  }
+
+  &:disabled {
+    @include button(flat-disabled);
+    color: $titlebar-text-secondary-disabled;
+  }
+
+  &:active {
+    @include button(flat-active);
+    box-shadow: none;
+    color: $titlebar-text;
+  }
+
+  &:selected:not(:active) {
+    transition: $transition,
+                border-image $ripple-fade-in-duration $ease-out,
+                background-size 0ms,
+                background-image 0ms,
+                background-color 0ms;
+    background-color: if($topbar == 'light', $base, rgba(white, 0.15));
+    color: $titlebar-text;
+    box-shadow: 0 1px 3px rgba(black, 0.1);
+
+    &:disabled { color: $titlebar-text-disabled; }
+  }
+}
+
 tabbar {
   > revealer > box {
     box-shadow: none;
   }
 
   .box {
+    background-color: $titlebar;
+    background-image: none;
+    padding: 0;
+    margin: 0;
+    border-radius: 0;
     min-height: $medium-size;
-    border-bottom: none;
-    background: none;
+    border: none;
+    box-shadow: none;
+
+    &:backdrop {
+      background-color: $titlebar-backdrop;
+      transition: background-color $duration $ease-out;
+
+      > scrolledwindow,
+      > .start-action,
+      > .end-action {
+        filter: none;
+        transition: none;
+      }
+    }
   }
 
-  scrolledwindow.pinned {
-    undershoot {
-      border: 0 solid $border;
+  tabbox {
+    padding: 0;
+    margin: 0;
+    min-height: $medium-size;
+
+    > background {
+      background: none;
     }
 
-    &:dir(rtl) undershoot.left {
-      border-left-width: 1px;
-    }
+    > separator {
+      margin: 9px 0;
+      transition: opacity 150ms ease-in-out;
 
-    &:dir(ltr) undershoot.right {
-      border-right-width: 1px;
-    }
-
-    tabbox {
-      > background {
-        &:dir(ltr) {
-          box-shadow: inset -1px 0 $border;
-        }
-
-        &:dir(rtl) {
-          box-shadow: inset 1px 0 $border;
-        }
+      &.hidden {
+        opacity: 0;
       }
+    }
+
+    > tabboxchild {
+      padding: 0;
+      margin: 0;
+    }
+  }
+
+  tab {
+    @extend %tabbar_tab;
+    padding: $space-size;
+    margin: $space-size 2px;
+
+    &.needs-attention {
+      background-image: $tab_needs_attention_gradient;
+
+      &:hover {
+        background-image: image(gtkalpha(currentColor, .03)), $tab_needs_attention_gradient;
+      }
+    }
+  }
+
+  tabbox.single-tab tab {
+    &, &:hover, &:active {
+      background: none;
     }
   }
 
@@ -2497,114 +2616,51 @@ tabbar {
     @include need-attention-gradient("left");
   }
 
-  tabbox {
-    background-color: $fill;
-    background-image: none;
-    padding: 0;
-    margin: 0;
-    border-radius: 0;
-    border-bottom: 1px solid $border;
-
-    > background {
-      background: none;
-    }
-
-    > separator {
-      margin: 9px 0;
-      min-width: 1px;
-      transition: opacity 150ms ease-in-out;
-
-      &.hidden {
-        opacity: 0;
-      }
-    }
-
-    > tabboxchild {
-      margin: 0 -3px;
-      padding: 0;
-
-      > tab {
-        @extend %tabs_tab;
-        margin: 3px;
-      }
-    }
-  }
-
-  tab {
-    @extend %tabs_tab;
-
-    &.needs-attention {
-      background-image: $tab_needs_attention_gradient;
-
-      &:hover {
-        background-image: image(gtkalpha(currentColor, .03)), $tab_needs_attention_gradient;
-      }
-    }
-  }
-
   .start-action,
   .end-action {
-    background-color: $fill;
-    background-clip: padding-box;
-    border-color: $border;
-    border-style: solid;
-    transition: background 150ms ease-in-out;
-
-    button {
-      border: none;
-      border-radius: 0;
-    }
+    padding: 6px 5px;
   }
 
   .start-action:dir(ltr),
   .end-action:dir(rtl) {
-    border-right-width: 1px;
+    padding-right: 0;
   }
 
   .start-action:dir(rtl),
   .end-action:dir(ltr) {
-    border-left-width: 1px;
+    padding-left: 0;
   }
 
-  &:not(.inline) {
-    scrolledwindow.pinned {
-      undershoot {
-        border-color: $border;
-      }
-    }
+  &.inline {
+    @extend %tabbar-inline;
+  }
+}
 
-    undershoot {
-      &.left {
-        @include undershoot-gradient("right", $titlebar);
-      }
+%tabbar-inline .box {
+  background-color: transparent;
+  color: inherit;
+  box-shadow: none;
+  padding-bottom: 0;
 
-      &.right {
-        @include undershoot-gradient("left", $titlebar);
-      }
-    }
+  &:backdrop {
+    background-color: transparent;
+    transition: none;
 
-    .needs-attention-left undershoot.left {
-      @include need-attention-gradient("right");
+    > scrolledwindow,
+    > .start-action,
+    > .end-action {
+      filter: none;
+      transition: none;
     }
+  }
+}
 
-    .needs-attention-right undershoot.right {
-      @include need-attention-gradient("left");
-    }
-
-    tabbox > background {
-      background-color: $titlebar;
-    }
-
-    .start-action,
-    .end-action {
-      background-color: gtkalpha($titlebar, .6);
-      border-color: $border;
-    }
-
-    &:backdrop .box {
-      background-color: $titlebar-backdrop;
-      transition: $transition;
-    }
+%tabbar-shrunk {
+  tabbox,
+  .start-action,
+  .end-action {
+    padding-top: $space-size / 2;
+    padding-bottom: $space-size / 2;
   }
 }
 
@@ -2638,16 +2694,105 @@ dnd {
       min-width: $small-size;
       min-height: $small-size;
       border-radius: $circular-radius;
+      color: $titlebar-text-secondary;
 
-      &.tab-close-button {
-        margin-right: -$space-size / 2;
+      &:hover, &:active {
+        color: $titlebar-text;
       }
+
+      &:disabled {
+        color: $titlebar-text-secondary-disabled;
+      }
+    }
+
+    indicator {
+      min-height: 2px;
+      border-radius: 2px;
+      background: gtkalpha($primary, 0.5);
+      transform: translateY(4px);
     }
   }
 }
 
+tabthumbnail {
+  border-radius: $corner-radius;
+
+  > box {
+    margin: $space-size;
+  }
+
+  &:drop(active) {
+    box-shadow: inset 0 0 0 2px gtkalpha($drop_target_color, .4);
+    background-color: gtkalpha($drop_target_color, .1);
+  }
+
+  transition: $transition-shadow;
+
+  .needs-attention {
+    &:dir(ltr) { transform: translate(8px, -8px); }
+    &:dir(rtl) { transform: translate(-8px, -8px); }
+
+    > widget {
+      background: $primary;
+      min-width: $space-size * 2;
+      min-height: $space-size * 2;
+      border-radius: $modal-radius;
+      margin: $space-size / 2;
+      box-shadow: 0 1px 2px gtkalpha($primary, .4);
+    }
+  }
+
+  .card {
+    background: none;
+    border: none;
+    box-shadow: none;
+    color: inherit;
+
+    picture {
+      outline: 1px solid $border;
+      outline-offset: -1px;
+      border-radius: $corner-radius;
+    }
+  }
+
+  &.pinned .card {
+    background-color: $fill;
+    color: $text;
+  }
+
+  .icon-title-box {
+    border-spacing: $space-size;
+  }
+
+  .tab-unpin-icon {
+    margin: $space-size;
+    min-width: 24px;
+    min-height: 24px;
+  }
+
+  button.circular {
+    margin: $space-size;
+    background-color: $fill;
+    min-width: 24px;
+    min-height: 24px;
+
+    &:hover {
+      background-color: $overlay-hover;
+    }
+
+    &:active {
+      background-color: $overlay-active;
+    }
+  }
+}
+
+taboverview > .overview  .new-tab-button {
+  margin: 18px;
+}
+
 tabview:drop(active),
-tabbox:drop(active) {
+tabbox:drop(active),
+tabgrid:drop(active) {
   box-shadow: none;
 }
 
@@ -2718,14 +2863,14 @@ scrollbar {
       > range > trough > slider {
         min-width: 4px;
         min-height: 4px;
-        margin: 4px - 1px;
+        margin: 0;
         border: 1px solid rgba($base, 0.3);
       }
 
       button {
         min-width: 4px;
         min-height: 4px;
-        margin: 4px - 1px;
+        margin: 0;
         border: 1px solid rgba($base, 0.3);
         border-radius: $circular-radius;
         background-color: $text-disabled;
@@ -2749,7 +2894,7 @@ scrollbar {
     }
 
     &.dragging,
-    &.hovering { background-color: rgba($surface, 0.9); }
+    &.hovering { background-color: $fill; }
   }
 
   &.horizontal > range > trough > slider { min-width: $_slider_min_length; }
@@ -3400,7 +3545,7 @@ frame {
 
 actionbar > revealer > box {
   padding: $space-size;
-  border-spacing: $space-size;
+  border-spacing: 0;
   box-shadow: inset 0 1px $border;
   background-color: $base;
   background-clip: border-box;
@@ -3429,19 +3574,24 @@ scrolledwindow {
     viewport.frame list { border: none; }
   }
 
-  // This is used when content is touch-dragged past boundaries.
-  // draws a box on top of the content, the size changes programmatically.
-  @at-root overshoot {
-    &.top { @include overshoot(top); }
+  > overshoot {
+    &.top {
+      @include overshoot(top);
+    }
 
-    &.bottom { @include overshoot(bottom); }
+    &.bottom {
+      @include overshoot(bottom);
+    }
 
-    &.left { @include overshoot(left); }
+    &.left {
+      @include overshoot(left);
+    }
 
-    &.right { @include overshoot(right); }
+    &.right {
+      @include overshoot(right);
+    }
   }
 
-  // Overflow indication, works similarly to the overshoot, the size if fixed tho.
   &.undershoot-top {
     @include undershoot(top);
   }
@@ -3460,9 +3610,10 @@ scrolledwindow {
     &:dir(rtl) { @include undershoot(left); }
   }
 
-  > junction { // the small square between two scrollbars
+  > undershoot {
+    background-image: none;
+    box-shadow: none;
     border: none;
-    background-color: $base;
   }
 }
 
@@ -3651,7 +3802,7 @@ row {
 
   &:selected {
     background-color: $overlay-selected;
-    color: inherit; // for overlays
+    color: $text;
     box-shadow: none;
 
     &:hover {
@@ -3666,15 +3817,11 @@ row {
       &:hover { background-color: $overlay-focus-hover; }
     }
 
-    image,
-    label { color: $text; }
-
     button image,
     button label { color: inherit; }
 
     &:disabled {
-      image,
-      label { color: $text-disabled; }
+      color: $text-disabled;
     }
   }
 }
@@ -3739,11 +3886,6 @@ row {
 
 // AdwEntryRow
 row.entry {
-  &:not(:selected).activatable.focused:hover,
-  &:not(:selected).activatable.focused:active {
-    background-color: transparent;
-  }
-
   .edit-icon, .indicator {
     min-width: 24px;
     min-height: 24px;
@@ -3765,6 +3907,49 @@ row.entry {
       font-family: monospace;
     }
   }
+}
+
+row.spin {
+  spinbutton {
+    background: none;
+    border-spacing: $space-size;
+    box-shadow: none;
+
+    &, &:focus {
+      outline: none;
+    }
+
+    > button.image-button.up:not(.flat):not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque):last-child,
+    > button.image-button.down:not(.flat):not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque) {
+      &, &:dir(ltr):last-child, &:dir(rtl):first-child {
+        @extend %button-basic;
+        @extend %circular-button;
+        min-width: 30px;
+        min-height: 30px;
+        margin: 10px 2px;
+        border: none;
+      }
+    }
+  }
+
+  &:disabled spinbutton {
+    > button.image-button.up:not(.flat):not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque):last-child,
+    > button.image-button.down:not(.flat):not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque) {
+      &, &:dir(ltr):last-child, &:dir(rtl):first-child {
+        &:disabled {
+          filter: none;
+        }
+      }
+    }
+  }
+}
+
+row.entry,
+row.spin {
+  &:not(:selected).activatable.focused:hover,
+  &:not(:selected).activatable.focused:active {
+    background-color: transparent;
+  }
 
   @each $e_type, $e_color in (error,   $error),
                              (warning, $warning),
@@ -3776,6 +3961,15 @@ row.entry {
         > selection:focus-within { background-color: gtkalpha($e_color, .2); }
 
         > cursor-handle > contents { background-color: currentColor; }
+      }
+
+      .dim-label, .subtitle {
+        opacity: 1;
+      }
+
+      .suggested-action {
+        background-color: $e_color;
+        color: on($e_color);
       }
     }
   }
@@ -4200,9 +4394,18 @@ window.messagedialog {
     border-spacing: 10px;
   }
 
-  .response-area > box > button {
+  .response-area button {
     @extend %button-flat;
     @extend %dialog_action_button;
+    margin: 0;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
 
     &.suggested {
       color: $primary;
@@ -4210,35 +4413,6 @@ window.messagedialog {
 
     &.destructive {
       color: $destructive;
-    }
-  }
-
-  &.csd:not(.solid-csd) {
-    border-radius: $window-radius;
-
-    .response-area {
-      > box.horizontal > button {
-        margin: 0;
-
-        &:first-child {
-          margin-left: 0;
-        }
-
-        &:last-child {
-          margin-right: 0;
-        }
-      }
-
-      > box.vertical > button {
-        margin-top: 0;
-        margin-bottom: 0;
-
-      &:last-child {
-        border-bottom-left-radius: $window-radius;
-        border-bottom-right-radius: $window-radius;
-        margin-bottom: 0;
-      }
-    }
     }
   }
 }
@@ -4278,36 +4452,36 @@ filechooserbutton:drop(active) {
   border-style: none;
   background-color: $base-alt;
 
-  &:not(separator) {
-    &:dir(ltr),
-    &.left,
-    &.left:dir(rtl) {
-      border-right: 1px solid $border;
-      border-left-style: none;
-    }
-
-    &:dir(rtl),
-    &.right {
-      border-left: 1px solid $border;
-      border-right-style: none;
-    }
-  }
-
   listview.view,
   list {
     background-color: transparent;
     color: inherit;
   }
 
-  paned & { &.left, &.right, &.left:dir(rtl), &:dir(rtl), &:dir(ltr), & { border-style: none; }}
+  // paned & { &.left, &.right, &.left:dir(rtl), &:dir(rtl), &:dir(ltr), & { border-style: none; }}
 }
 
 stacksidebar {
+  &.sidebar {
+    &:dir(ltr),
+    &.left,
+    &.left:dir(rtl) {
+      box-shadow: inset -1px 0 $border;
+    }
+
+    &:dir(rtl),
+    &.right,
+    &.right:dir(ltr) {
+      box-shadow: inset 1px 0 $border;
+    }
+  }
+
   + separator.vertical,
   separator.horizontal { @extend %hide_separators; }
 
+  .sidebar-pane &.sidebar,
   leaflet.unfolded > box > &.sidebar {
-    border: none;
+    box-shadow: none;
   }
 
   list {
@@ -4401,6 +4575,9 @@ placessidebar {
     }
 
     image.sidebar-icon {
+      color: inherit;
+      opacity: 0.75;
+
       &:dir(ltr) { padding-right: 8px; }
       &:dir(rtl) { padding-left: 8px; }
     }
@@ -5044,7 +5221,7 @@ shortcut > .keycap {
 stackswitcher {
   min-height: 0;
   padding: $space-size / 2;
-  margin: $space-size 0;
+  // margin: $space-size 0;
   border-radius: $corner-radius + $space-size / 2;
   background-color: $fill;
   border: none;
