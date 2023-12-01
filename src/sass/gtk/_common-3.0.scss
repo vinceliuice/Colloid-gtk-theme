@@ -3132,15 +3132,11 @@ messagedialog { // Message Dialog styling
       border-bottom-left-radius: $window-radius;
       border-bottom-right-radius: $window-radius;
 
-      @if $variant == 'dark' {
-        background-color: transparent;
-      } @else {
-        background-color: $surface;
-      }
+      background-color: $surface;
 
       .titlebar {
         &, &:backdrop {
-          background-color: if($variant == 'dark', transparent, $surface);
+          background-color: if($variant == 'dark', $base, $surface);
         }
       }
     }
