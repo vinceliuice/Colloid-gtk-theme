@@ -89,6 +89,12 @@
   }
 }
 
+navigation-view-page {
+  > toolbarview > scrolledwindow > viewport > clamp > box.medium > box > stack > button {
+    margin-top: $space-size * 2;
+  }
+}
+
 //
 // Gnome Control Center
 //
@@ -99,6 +105,12 @@ window.dialog {
       border-width: 0 0 0 1px;
       border-radius: 0;
     }
+  }
+}
+
+.background-thumbnail {
+  > button.remove-button {
+    margin: $space-size;
   }
 }
 
