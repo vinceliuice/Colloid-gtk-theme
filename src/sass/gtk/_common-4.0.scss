@@ -2241,7 +2241,7 @@ magnifier {
     box-shadow: none;
   }
 
-  &:selected:not(:active) {
+  &:checked {
     transition: $transition,
                 border-image $ripple-fade-in-duration $ease-out,
                 background-size 0ms,
@@ -2537,7 +2537,7 @@ tabbar {
     border-radius: 0;
     min-height: $medium-size;
     border: none;
-    box-shadow: none;
+    box-shadow: inset 0 -1px $border;
 
     &:backdrop {
       background-color: $titlebar-backdrop;
@@ -2562,7 +2562,7 @@ tabbar {
     }
 
     > separator {
-      margin: 9px 0;
+      margin: $space-size * 1.5 0;
       transition: opacity 150ms ease-in-out;
 
       &.hidden {
