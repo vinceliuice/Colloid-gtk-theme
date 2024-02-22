@@ -9,7 +9,7 @@ INDEX="assets.txt"
 ./make-assets.sh
 
 for theme in '' '-Purple' '-Pink' '-Red' '-Orange' '-Yellow' '-Green' '-Teal' '-Grey'; do
-  for type in '' '-Nord' '-Dracula' '-Gruvbox'; do
+  for type in '' '-Nord' '-Dracula' '-Gruvbox' '-Everforest'; do
     ASSETS_DIR="assets${theme}${type}"
     SRC_FILE="assets${theme}${type}.svg"
 

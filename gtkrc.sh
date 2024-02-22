@@ -107,6 +107,36 @@ make_gtkrc() {
           ;;
       esac
     fi
+    if [[ "$ctype" == "-Everforest" ]]; then
+      case "$theme" in
+        '')
+          theme_color='#9cb575'
+          ;;
+        -Purple)
+          theme_color='#cb8eab'
+          ;;
+        -Pink)
+          theme_color='#b16286'
+          ;;
+        -Red)
+          theme_color='#db7375'
+          ;;
+        -Orange)
+          theme_color='#db8d6a'
+          ;;
+        -Yellow)
+          theme_color='#d0b174'
+          ;;
+        -Green)
+          theme_color='#9cb575'
+          ;;
+        -Teal)
+          theme_color='#78b587'
+          ;;
+        -Grey)
+          theme_color='#7A8478'
+      esac
+    fi
   else
     case "$theme" in
       '')
@@ -201,6 +231,38 @@ make_gtkrc() {
           ;;
       esac
     fi
+
+    if [[ "$ctype" == '-Everforest' ]]; then
+      case "$theme" in 
+        '')
+          theme_color='#A7C080'
+          ;;
+        -Purple)
+          theme_color='#D699B6'
+          ;;
+        -Pink)
+          theme_color='#d3869b'
+          ;;
+        -Red)
+          theme_color='#E67E80'
+          ;;
+        -Orange)
+          theme_color='#E69875'
+          ;;
+        -Yellow)
+          theme_color='#DBBC7F'
+          ;;
+        -Green)
+          theme_color='#A7C080'
+          ;;
+        -Teal)
+          theme_color='#83C092'
+          ;;
+        -Grey)
+          theme_color='#9DA9A0'
+          ;;
+      esac
+    fi
   fi
 
   if [[ "$blackness" == 'true' ]]; then
@@ -229,6 +291,14 @@ make_gtkrc() {
         titlebar_light='#f0f1f4'
         titlebar_dark='#020203'
         ;;
+      -Everforest)
+        background_light='#fffbef'
+        background_dark='#1e2326'
+        background_darker='#232a2e'
+        background_alt='#293136'
+        titlebar_light='#f2efdf'
+        titlebar_dark='#020203'
+        ;;
     esac
   else
     case "$ctype" in
@@ -255,6 +325,14 @@ make_gtkrc() {
         background_alt='#3c3f51'
         titlebar_light='#f0f1f4'
         titlebar_dark='#1f2029'
+        ;;
+      -Everforest)
+        background_light='#fffbef'
+        background_dark='#232A2E'
+        background_darker='#343F44'
+        background_alt='#3D484D'
+        background_light='#f2efdf'
+        background_dark='#1e2326'
         ;;
     esac
   fi
