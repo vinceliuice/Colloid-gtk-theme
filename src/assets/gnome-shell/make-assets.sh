@@ -166,40 +166,40 @@ for theme in '' '-Purple' '-Pink' '-Red' '-Orange' '-Yellow' '-Green' '-Teal' '-
     if [[ "$type" == '-Everforest' ]]; then
       case "$theme" in 
         '')
-          theme_color_light='#A7C080'
-          theme_color_dark='#9cb575'
+          theme_color_light='#3a94c5'
+          theme_color_dark='#'
           ;;
         -Purple)
-          theme_color_light='#D699B6'
+          theme_color_light='#DF69ba'
           theme_color_dark='#cb8eab'
           ;;
         -Pink)
-          theme_color_light='#d3869b'
+          theme_color_light='#df69ba'
           theme_color_dark='#b16286'
           ;;
         -Red)
-          theme_color_light='#E67E80'
+          theme_color_light='#f85553'
           theme_color_dark='#db7375'
           ;;
         -Orange)
-          theme_color_light='#E69875'
+          theme_color_light='#f57d26'
           theme_color_dark='#db8d6a'
           ;;
         -Yellow)
-          theme_color_light='#DBBC7F'
+          theme_color_light='#dfa000'
           theme_color_dark='#d0b174'
           ;;
         -Green)
-          theme_color_light='#A7C080'
+          theme_color_light='#8da101'
           theme_color_dark='#9cb575'
           ;;
         -Teal)
-          theme_color_light='#83C092'
+          theme_color_light='#35a77c'
           theme_color_dark='#78b587'
           ;;
         -Grey)
-          theme_color_light='#9DA9A0'
-          theme_color_dark='#7A8478'
+          theme_color_light='#708089'
+          theme_color_dark='#939f91'
           ;;
       esac
     fi

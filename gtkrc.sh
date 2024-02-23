@@ -110,7 +110,7 @@ make_gtkrc() {
     if [[ "$ctype" == "-Everforest" ]]; then
       case "$theme" in
         '')
-          theme_color='#9cb575'
+          theme_color='#7fbbb3'
           ;;
         -Purple)
           theme_color='#cb8eab'
@@ -235,31 +235,31 @@ make_gtkrc() {
     if [[ "$ctype" == '-Everforest' ]]; then
       case "$theme" in 
         '')
-          theme_color='#A7C080'
+          theme_color='#3A94c5'
           ;;
         -Purple)
-          theme_color='#D699B6'
+          theme_color='#bd93f9'
           ;;
         -Pink)
-          theme_color='#d3869b'
+          theme_color='#DF69ba'
           ;;
         -Red)
-          theme_color='#E67E80'
+          theme_color='#f85552'
           ;;
         -Orange)
-          theme_color='#E69875'
+          theme_color='#F57D26'
           ;;
         -Yellow)
-          theme_color='#DBBC7F'
+          theme_color='#DFA000'
           ;;
         -Green)
-          theme_color='#A7C080'
+          theme_color='#8da101'
           ;;
         -Teal)
-          theme_color='#83C092'
+          theme_color='#35a77c'
           ;;
         -Grey)
-          theme_color='#9DA9A0'
+          theme_color='#708089'
           ;;
       esac
     fi
@@ -331,7 +331,7 @@ make_gtkrc() {
         background_dark='#232A2E'
         background_darker='#343F44'
         background_alt='#3D484D'
-        background_light='#f2efdf'
+        background_light='#edeada'
         background_dark='#1e2326'
         ;;
     esac
