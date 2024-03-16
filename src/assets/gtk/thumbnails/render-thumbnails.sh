@@ -6,7 +6,7 @@ OPTIPNG="/usr/bin/optipng"
 ./make-thumbnails.sh
 
 for theme in '' '-Purple' '-Pink' '-Red' '-Orange' '-Yellow' '-Green' '-Teal' '-Grey'; do
-  for type in '' '-Nord' '-Dracula' '-Gruvbox'; do
+  for type in '' '-Nord' '-Dracula' '-Gruvbox' '-Everforest'; do
     SRC_FILE="thumbnail${theme}${type}.svg"
     for color in '' '-Dark'; do
             echo

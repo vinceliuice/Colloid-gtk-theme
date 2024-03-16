@@ -1,7 +1,7 @@
 #! /usr/bin/env bash
 
 for color in '' '-Light'; do
-  for type in '' '-Nord' '-Dracula' '-Gruvbox'; do
+  for type in '' '-Nord' '-Dracula' '-Gruvbox' '-Everforest'; do
     if [[ "$type" == '-Nord' ]]; then
       headerbar_light='#f0f1f4'
       headerbar_dark='#252632'
@@ -30,6 +30,16 @@ for color in '' '-Light'; do
       close_color='#cc241d'
       max_color='#98971a'
       min_color='#d79921'
+    fi
+
+    if [[ "$type" == '-Everforest' ]]; then
+      headerbar_light='#fbf1c7'
+      headerbar_dark='#232A2E'
+      headerbar_backdrop_light='#f9f5d7'
+      headerbar_backdrop_dark='#2D353B'
+      close_color='#E67E80'
+      max_color='#A7C080'
+      min_color='#DBBC7F'
     fi
 
     for window in '' '-Normal'; do

@@ -24,7 +24,7 @@ SASSC_OPT="-M -t expanded"
 
 THEME_NAME=Colloid
 THEME_VARIANTS=('' '-Purple' '-Pink' '-Red' '-Orange' '-Yellow' '-Green' '-Teal' '-Grey')
-SCHEME_VARIANTS=('' '-Nord' '-Dracula' '-Gruvbox')
+SCHEME_VARIANTS=('' '-Nord' '-Dracula' '-Gruvbox', '-Everforest')
 COLOR_VARIANTS=('' '-Light' '-Dark')
 SIZE_VARIANTS=('' '-Compact')
 
@@ -66,7 +66,7 @@ OPTIONS:
   -u, --uninstall         Uninstall/Remove installed themes or links
 
   --tweaks                Specify versions for tweaks
-                          1. [nord|dracula|gruvbox|all]  Nord|Dracula|gruvbox|all ColorSchemes version
+                          1. [nord|dracula|gruvbox|everforest|all]  Nord|Dracula|gruvbox|everforet|all ColorSchemes version
                           2. black                       Blackness color version
                           3. rimless                     Remove the 1px border about windows and menus
                           4. normal                      Normal windows button style like gnome default theme (titlebuttons: max/min/close)
@@ -337,6 +337,12 @@ while [[ $# -gt 0 ]]; do
             echo -e "Gruvbox ColorScheme version! ..."
             shift
             ;;
+          everforest)
+            colorscheme='true'
+            schemes+=("${SCHEME_VARIANTS[4]}")
+            echo -e "Everforest ColorScheme version! ..."
+            shift
+            ;;
           all)
             colorscheme='true'
             schemes+=("${SCHEME_VARIANTS[@]}")
@@ -449,6 +455,9 @@ color_schemes() {
       -Gruvbox)
         scheme_color='gruvbox'
         ;;
+      -Everforest)
+        scheme_color='everforest'
+        ;;
     esac
     sed -i "/\@import/s/color-palette-default/color-palette-${scheme_color}/" "${SRC_DIR}/sass/_tweaks-temp.scss"
     sed -i "/\$colorscheme:/s/default/${scheme_color}/" "${SRC_DIR}/sass/_tweaks-temp.scss"
@@ -525,7 +534,7 @@ theme_tweaks() {
   if [[ "$compact" = "true" ]]; then
     compact_size
   fi
-
+ 
   if [[ "$colorscheme" = "true" ]] ; then
     color_schemes
   fi
@@ -606,7 +615,7 @@ clean_theme() {
   for theme in '' '-purple' '-pink' '-red' '-orange' '-yellow' '-green' '-teal' '-grey'; do
     for color in '' '-light' '-dark'; do
       for size in '' '-compact'; do
-        for scheme in '' '-nord' '-dracula' '-gruvbox'; do
+        for scheme in '' '-nord' '-dracula' '-gruvbox' '-everforest'; do
           for screen in '' '-hdpi' '-xhdpi'; do
             clean "${dest:-${DEST_DIR}}" "${name:-${THEME_NAME}}" "${theme}" "${color}" "${size}" "${scheme}" "${screen}"
           done
