@@ -812,52 +812,103 @@ image.raven-mpris {
 }
 
 // Notifications
+
+.drop-shadow {
+  margin: 12px;
+  padding: $space-size;
+  border-radius: $window-radius;
+  background-color: $surface;
+
+  @if $rimless == 'true' {
+    box-shadow: $shadow-z6, inset 0 1px highlight($surface);
+  } @else {
+    box-shadow: $shadow-z6, inset 0 0 0 1px highlight($surface), 0 0 0 1px $window-border;
+  }
+}
+
 .budgie-notification-window {
-  background-color: transparent;
+  background: none;
 }
 
 .budgie-notification {
-  .notification-title { font-size: 120%; }
+  .notification-title {
+    font-size: 110%;
+    color: $text;
+  }
 
   .notification-body { color: $text-secondary; }
 }
 
 // On Screen Display in Budgie
 .budgie-osd-window {
-  @extend .budgie-notification-window;
+  background: none;
+
+  > box {
+    border-radius: $window-radius;
+    padding: $space-size / 2;
+    margin: 0;
+  }
 }
 
 // Internal part of the OSD
 .budgie-osd {
-  .budgie-osd-text { font-size: 120%; }
+  color: $text;
+  .budgie-osd-text { font-size: 110%; }
 }
 
 // Alt+tab switcher in Budgie
 .budgie-switcher-window {
   @extend .budgie-notification-window;
+
+  .drop-shadow {
+    border-radius: $window-radius;
+    padding: 0;
+  }
+
+  > box {
+    padding: $space-size;
+    border-radius: $window-radius;
+  }
+
+  // Flowbox
+  flowbox {
+    color: $text;
+    padding: 0;
+    border-spacing: 0;
+  }
+
+  flowboxchild {
+    padding: $space-size;
+    margin: 0;
+    color: $text;
+    border-radius: $corner-radius;
+    transition: background-color 75ms ease-out;
+
+    &:hover {
+      color: $text;
+      background-color: $overlay-hover;
+    }
+
+    &:active {
+      color: $text;
+      background-color: $overlay-active;
+    }
+
+    &:selected {
+      color: $text;
+      background-color: $overlay-checked;
+    }
+  }
 }
 
 // Internal part of the Switcher
 .budgie-switcher {
-  @extend .budgie-notification-window;
+  @extend .budgie-notification;
 }
 
 .budgie-panel {
   .lock-keys {
     image:disabled { color: on($panel, secondary-disabled); }
-  }
-}
-
-.drop-shadow {
-  margin: 36px;
-  padding: $space-size;
-  border-radius: $window-radius;
-  background-color: $surface;
-
-  @if $rimless == 'true' {
-    box-shadow: $shadow-z16, inset 0 1px highlight($surface);
-  } @else {
-    box-shadow: $shadow-z16, inset 0 0 0 1px highlight($surface), 0 0 0 1px $window-border;
   }
 }
 
@@ -903,7 +954,7 @@ image.raven-mpris {
 
   label:not(:last-child),
   .dialog-title {
-    font-size: 120%;
+    font-size: 110%;
   }
 
   buttonbox.linked > button {
@@ -973,7 +1024,7 @@ image.raven-mpris {
 // Run Dialog
 .budgie-run-dialog {
   entry.search {
-    font-size: 120%;
+    font-size: 110%;
     padding: $space-size 8px + $space-size;
     border-image: none;
     box-shadow: none;

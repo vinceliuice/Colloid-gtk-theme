@@ -1,21 +1,29 @@
 // IBus Candidate Popup
 .candidate-popup-boxpointer {
-  -arrow-border-radius: 2px;
+  -arrow-border-radius: $menu_radius;
   -arrow-background-color: transparent;
   -arrow-border-width: 0;
   -arrow-border-color: transparent;
   -arrow-base: 64px;
-  -arrow-rise: 12px;
+  -arrow-rise: 3px;
+  border-radius: $menu_radius;
+  box-shadow: 0 3px 3px -2px rgba(black, if($variant == 'light', 0.1, 0.18));
 }
 
 .candidate-popup-content {
-  @extend %theme_dialogs;
   color: $text-secondary;
-  box-shadow: 0 3px 6px 0 rgba(black, 0.35);
+  box-shadow: none;
   border: none;
-  margin: ($base_padding / 2) 8px;
+  margin: 0;
   padding: $base_padding;
   spacing: $base_padding;
+  background-color: $popover;
+  border-radius: $menu_radius;
+
+  @if $rimless == 'false' {
+    border: 1px solid $window-border;
+    box-shadow: inset 0 0 0 1px highlight($popover);
+  } @else { border: none; }
 }
 
 .candidate-index {

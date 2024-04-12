@@ -1,8 +1,7 @@
 /* Entries */
 
 StEntry, %entry {
-  min-height: $item_size;
-  padding: 2px $base_padding * 2;
+  padding: $base_padding $base_padding * 2;
   margin: $base_margin / 2;
   border-width: 0;
   border-radius: $base_radius;
