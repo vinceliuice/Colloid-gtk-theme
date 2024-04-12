@@ -794,7 +794,7 @@ panelthemeselector { // Gnome builder
 
       &:checked {
         -gtk-icon-size: 20px;
-        -gtk-icon-source: -gtk-scaled(-gtk-recolor(url("assets/scalable/checkbox-checked-symbolic.svg")), -gtk-recolor(url("assets/scalable/checkbox-checked-symbolic@2.svg")));
+        -gtk-icon-source: -gtk-scaled(-gtk-recolor(url("assets/checkbox-checked-symbolic.svg")), -gtk-recolor(url("assets/checkbox-checked-symbolic@2.svg")));
         color: on($primary);
         background-color: $primary;
 

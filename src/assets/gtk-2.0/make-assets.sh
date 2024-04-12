@@ -136,7 +136,7 @@ for theme in '' '-Purple' '-Pink' '-Red' '-Orange' '-Yellow' '-Green' '-Teal' '-
         fi
 
         if [[ "$type" == "-Everforest" ]]; then
-          background_color='#fffbef'     
+          background_color='#fffbef'
           case "$theme" in 
             '')
               theme_color='#A7C080'
@@ -166,7 +166,6 @@ for theme in '' '-Purple' '-Pink' '-Red' '-Orange' '-Yellow' '-Green' '-Teal' '-
               theme_color='#9DA9A0'
               ;;
           esac
-     
         fi
 
       else
@@ -333,7 +332,6 @@ for theme in '' '-Purple' '-Pink' '-Red' '-Orange' '-Yellow' '-Green' '-Teal' '-
             -Grey)
               theme_color='#7A8478'
           esac
-
         fi
       fi
 

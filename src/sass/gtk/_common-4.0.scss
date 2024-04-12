@@ -2995,8 +2995,8 @@ switch {
   @each $s, $as in ('', '-unchecked'),
                    (':checked', '-checked') {
     &#{$s} {
-      -gtk-icon-source: -gtk-scaled(url("assets/selectionmode-checkbox#{$as}#{$asset-suffix}.png"),
-                                    url("assets/selectionmode-checkbox#{$as}#{$asset-suffix}@2.png"));
+      -gtk-icon-source: -gtk-scaled(url("assets/selectionmode-checkbox#{$as}#{$asset-suffix}.svg"),
+                                    url("assets/selectionmode-checkbox#{$as}#{$asset-suffix}@2.svg"));
     }
   }
 }
@@ -3097,16 +3097,16 @@ radio {
 check {
   -gtk-icon-size: 20px;
 
-  &:checked { -gtk-icon-source: -gtk-scaled(-gtk-recolor(url("assets/scalable/checkbox-checked-symbolic.svg")), -gtk-recolor(url("assets/scalable/checkbox-checked-symbolic@2.svg"))); }
-  &:indeterminate { -gtk-icon-source: -gtk-scaled(-gtk-recolor(url("assets/scalable/checkbox-mixed-symbolic.svg")), -gtk-recolor(url("assets/scalable/checkbox-mixed-symbolic@2.svg"))); }
+  &:checked { -gtk-icon-source: -gtk-scaled(-gtk-recolor(url("assets/checkbox-checked-symbolic.svg")), -gtk-recolor(url("assets/checkbox-checked-symbolic@2.svg"))); }
+  &:indeterminate { -gtk-icon-source: -gtk-scaled(-gtk-recolor(url("assets/checkbox-mixed-symbolic.svg")), -gtk-recolor(url("assets/checkbox-mixed-symbolic@2.svg"))); }
 }
 
 %radio,
 radio {
   -gtk-icon-size: 20px;
 
-  &:checked { -gtk-icon-source: -gtk-scaled(-gtk-recolor(url("assets/scalable/radio-checked-symbolic.svg")), -gtk-recolor(url("assets/scalable/radio-checked-symbolic@2.svg"))); }
-  &:indeterminate { -gtk-icon-source: -gtk-scaled(-gtk-recolor(url("assets/scalable/radio-mixed-symbolic.svg")), -gtk-recolor(url("assets/scalable/radio-mixed-symbolic@2.svg"))); }
+  &:checked { -gtk-icon-source: -gtk-scaled(-gtk-recolor(url("assets/radio-checked-symbolic.svg")), -gtk-recolor(url("assets/radio-checked-symbolic@2.svg"))); }
+  &:indeterminate { -gtk-icon-source: -gtk-scaled(-gtk-recolor(url("assets/radio-mixed-symbolic.svg")), -gtk-recolor(url("assets/radio-mixed-symbolic@2.svg"))); }
 }
 
 %small_check,
@@ -3117,8 +3117,8 @@ popover.menu check {
   min-width: 16px;
   -gtk-icon-size: 16px;
 
-  &:checked { -gtk-icon-source: -gtk-scaled(-gtk-recolor(url("assets/scalable/small-checkbox-checked-symbolic.svg")), -gtk-recolor(url("assets/scalable/small-checkbox-checked-symbolic@2.svg"))); }
-  &:indeterminate { -gtk-icon-source: -gtk-scaled(-gtk-recolor(url("assets/scalable/small-checkbox-mixed-symbolic.svg")), -gtk-recolor(url("assets/scalable/small-checkbox-mixed-symbolic@2.svg"))); }
+  &:checked { -gtk-icon-source: -gtk-scaled(-gtk-recolor(url("assets/small-checkbox-checked-symbolic.svg")), -gtk-recolor(url("assets/small-checkbox-checked-symbolic@2.svg"))); }
+  &:indeterminate { -gtk-icon-source: -gtk-scaled(-gtk-recolor(url("assets/small-checkbox-mixed-symbolic.svg")), -gtk-recolor(url("assets/small-checkbox-mixed-symbolic@2.svg"))); }
 }
 
 %small_radio,
@@ -3129,8 +3129,8 @@ popover.menu radio {
   min-width: 16px;
   -gtk-icon-size: 16px;
 
-  &:checked { -gtk-icon-source: -gtk-scaled(-gtk-recolor(url("assets/scalable/small-radio-checked-symbolic.svg")), -gtk-recolor(url("assets/scalable/small-radio-checked-symbolic@2.svg"))); }
-  &:indeterminate { -gtk-icon-source: -gtk-scaled(-gtk-recolor(url("assets/scalable/small-radio-mixed-symbolic.svg")), -gtk-recolor(url("assets/scalable/small-radio-mixed-symbolic@2.svg"))); }
+  &:checked { -gtk-icon-source: -gtk-scaled(-gtk-recolor(url("assets/small-radio-checked-symbolic.svg")), -gtk-recolor(url("assets/small-radio-checked-symbolic@2.svg"))); }
+  &:indeterminate { -gtk-icon-source: -gtk-scaled(-gtk-recolor(url("assets/small-radio-mixed-symbolic.svg")), -gtk-recolor(url("assets/small-radio-mixed-symbolic@2.svg"))); }
 }
 
 // ANIMATION:
@@ -3350,14 +3350,14 @@ scale {
             &#{$state} {
               $_scale_asset: 'assets/scale-#{$dir_infix}-#{$marks_infix}-slider#{$state_infix}#{$asset-suffix}';
 
-              background-image: -gtk-scaled(url('#{$_scale_asset}.png'), url('#{$_scale_asset}@2.png'));
+              background-image: -gtk-scaled(url('#{$_scale_asset}.svg'), url('#{$_scale_asset}@2.svg'));
             }
           }
 
           &:active {
             $_scale_asset: 'assets/scale-#{$dir_infix}-#{$marks_infix}-slider#{$asset-suffix}';
 
-            background-image: -gtk-scaled(url('#{$_scale_asset}.png'), url('#{$_scale_asset}@2.png'));
+            background-image: -gtk-scaled(url('#{$_scale_asset}.svg'), url('#{$_scale_asset}@2.svg'));
           }
         }
       }
@@ -5194,7 +5194,7 @@ windowcontrols {
 // touch selection handlebars for the Popover.osd above
 cursor-handle {
   color: $primary;
-  -gtk-icon-source: -gtk-recolor(url("assets/scalable/cursor-handle-symbolic.svg"));
+  -gtk-icon-source: -gtk-recolor(url("assets/cursor-handle-symbolic.svg"));
 
   &.insertion-cursor:dir(ltr), &.insertion-cursor:dir(rtl) {
     padding-top: 6px;

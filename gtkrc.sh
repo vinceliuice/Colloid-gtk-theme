@@ -4,7 +4,7 @@ make_gtkrc() {
   local theme="${3}"
   local color="${4}"
   local size="${5}"
-  local ctype="${6}"
+  local scheme="${6}"
   local window="${7}"
 
   [[ "${color}" == '-Light' ]] && local ELSE_LIGHT="${color}"
@@ -44,7 +44,7 @@ make_gtkrc() {
         ;;
     esac
 
-    if [[ "$ctype" == '-Nord' ]]; then
+    if [[ "$scheme" == '-Nord' ]]; then
       case "$theme" in
         '')
           theme_color='#5e81ac'
@@ -76,7 +76,7 @@ make_gtkrc() {
       esac
     fi
 
-    if [[ "$ctype" == '-Dracula' ]]; then
+    if [[ "$scheme" == '-Dracula' ]]; then
       case "$theme" in
         '')
           theme_color='#a679ec'
@@ -107,7 +107,7 @@ make_gtkrc() {
           ;;
       esac
     fi
-    if [[ "$ctype" == "-Everforest" ]]; then
+    if [[ "$scheme" == "-Everforest" ]]; then
       case "$theme" in
         '')
           theme_color='#7fbbb3'
@@ -168,7 +168,7 @@ make_gtkrc() {
         ;;
     esac
 
-    if [[ "$ctype" == '-Nord' ]]; then
+    if [[ "$scheme" == '-Nord' ]]; then
       case "$theme" in
         '')
           theme_color='#89a3c2'
@@ -200,7 +200,7 @@ make_gtkrc() {
       esac
     fi
 
-    if [[ "$ctype" == '-Dracula' ]]; then
+    if [[ "$scheme" == '-Dracula' ]]; then
       case "$theme" in
         '')
           theme_color='#bd93f9'
@@ -232,7 +232,7 @@ make_gtkrc() {
       esac
     fi
 
-    if [[ "$ctype" == '-Everforest' ]]; then
+    if [[ "$scheme" == '-Everforest' ]]; then
       case "$theme" in 
         '')
           theme_color='#3A94c5'
@@ -266,7 +266,7 @@ make_gtkrc() {
   fi
 
   if [[ "$blackness" == 'true' ]]; then
-    case "$ctype" in
+    case "$scheme" in
       '')
         background_light='#FFFFFF'
         background_dark='#0F0F0F'
@@ -301,7 +301,7 @@ make_gtkrc() {
         ;;
     esac
   else
-    case "$ctype" in
+    case "$scheme" in
       '')
         background_light='#FFFFFF'
         background_dark='#2C2C2C'

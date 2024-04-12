@@ -6,6 +6,7 @@ REPO_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)"
 SRC_DIR="${REPO_DIR}/src"
 
 source "${REPO_DIR}/gtkrc.sh"
+source "${REPO_DIR}/assets.sh"
 
 ROOT_UID=0
 DEST_DIR=
@@ -117,65 +118,39 @@ install() {
   cp -r "${SRC_DIR}/main/gnome-shell/pad-osd.css"                                            "${THEME_DIR}/gnome-shell"
   sassc $SASSC_OPT "${SRC_DIR}/main/gnome-shell/gnome-shell${color}.scss"                    "${THEME_DIR}/gnome-shell/gnome-shell.css"
 
-  cp -r "${SRC_DIR}/assets/gnome-shell/common-assets"                                        "${THEME_DIR}/gnome-shell/assets"
-  cp -r "${SRC_DIR}/assets/gnome-shell/assets${ELSE_DARK:-}/"*.svg                           "${THEME_DIR}/gnome-shell/assets"
-  cp -r "${SRC_DIR}/assets/gnome-shell/theme${theme}${scheme}/"*.svg                         "${THEME_DIR}/gnome-shell/assets"
-
-  cd "${THEME_DIR}/gnome-shell"
-  ln -sf assets/no-events.svg no-events.svg
-  ln -sf assets/process-working.svg process-working.svg
-  ln -sf assets/no-notifications.svg no-notifications.svg
-
   mkdir -p                                                                                   "${THEME_DIR}/gtk-2.0"
   # cp -r "${SRC_DIR}/main/gtk-2.0/gtkrc${theme}${ELSE_DARK:-}${scheme}"                       "${THEME_DIR}/gtk-2.0/gtkrc"
   cp -r "${SRC_DIR}/main/gtk-2.0/common/"*'.rc'                                              "${THEME_DIR}/gtk-2.0"
-  cp -r "${SRC_DIR}/assets/gtk-2.0/assets-common${ELSE_DARK:-}"                              "${THEME_DIR}/gtk-2.0/assets"
-  cp -r "${SRC_DIR}/assets/gtk-2.0/assets${theme}${ELSE_DARK:-}${scheme}/"*"png"              "${THEME_DIR}/gtk-2.0/assets"
 
   mkdir -p                                                                                   "${THEME_DIR}/gtk-3.0"
-  cp -r "${SRC_DIR}/assets/gtk/assets${theme}${scheme}"                                      "${THEME_DIR}/gtk-3.0/assets"
-  cp -r "${SRC_DIR}/assets/gtk/scalable"                                                     "${THEME_DIR}/gtk-3.0/assets"
-  cp -r "${SRC_DIR}/assets/gtk/thumbnails/thumbnail${theme}${scheme}${ELSE_DARK:-}.png"      "${THEME_DIR}/gtk-3.0/thumbnail.png"
   sassc $SASSC_OPT "${SRC_DIR}/main/gtk-3.0/gtk${color}.scss"                                "${THEME_DIR}/gtk-3.0/gtk.css"
   sassc $SASSC_OPT "${SRC_DIR}/main/gtk-3.0/gtk-Dark.scss"                                   "${THEME_DIR}/gtk-3.0/gtk-dark.css"
 
   mkdir -p                                                                                   "${THEME_DIR}/gtk-4.0"
-  cp -r "${SRC_DIR}/assets/gtk/assets${theme}${scheme}"                                      "${THEME_DIR}/gtk-4.0/assets"
-  cp -r "${SRC_DIR}/assets/gtk/scalable"                                                     "${THEME_DIR}/gtk-4.0/assets"
-  cp -r "${SRC_DIR}/assets/gtk/thumbnails/thumbnail${theme}${scheme}${ELSE_DARK:-}.png"      "${THEME_DIR}/gtk-4.0/thumbnail.png"
   sassc $SASSC_OPT "${SRC_DIR}/main/gtk-4.0/gtk${color}.scss"                                "${THEME_DIR}/gtk-4.0/gtk.css"
   sassc $SASSC_OPT "${SRC_DIR}/main/gtk-4.0/gtk-Dark.scss"                                   "${THEME_DIR}/gtk-4.0/gtk-dark.css"
 
   mkdir -p                                                                                   "${THEME_DIR}/cinnamon"
-  cp -r "${SRC_DIR}/assets/cinnamon/common-assets"                                           "${THEME_DIR}/cinnamon/assets"
-  cp -r "${SRC_DIR}/assets/cinnamon/assets${ELSE_DARK:-}/"*'.svg'                            "${THEME_DIR}/cinnamon/assets"
-  cp -r "${SRC_DIR}/assets/cinnamon/theme${theme}${scheme}/"*'.svg'                          "${THEME_DIR}/cinnamon/assets"
   sassc $SASSC_OPT "${SRC_DIR}/main/cinnamon/cinnamon${color}.scss"                          "${THEME_DIR}/cinnamon/cinnamon.css"
-  cp -r "${SRC_DIR}/assets/cinnamon/thumbnails/thumbnail${theme}${scheme}${color}.png"       "${THEME_DIR}/cinnamon/thumbnail.png"
 
   mkdir -p                                                                                   "${THEME_DIR}/metacity-1"
   cp -r "${SRC_DIR}/main/metacity-1/metacity-theme-3${window}.xml"                           "${THEME_DIR}/metacity-1/metacity-theme-3.xml"
-  cp -r "${SRC_DIR}/assets/metacity-1/assets${window}"                                       "${THEME_DIR}/metacity-1/assets"
-  cp -r "${SRC_DIR}/assets/metacity-1/thumbnail${ELSE_DARK:-}.png"                           "${THEME_DIR}/metacity-1/thumbnail.png"
   cd "${THEME_DIR}/metacity-1" && ln -sf metacity-theme-3.xml metacity-theme-1.xml && ln -sf metacity-theme-3.xml metacity-theme-2.xml
 
   mkdir -p                                                                                   "${THEME_DIR}/xfwm4"
-  cp -r "${SRC_DIR}/assets/xfwm4/assets${ELSE_LIGHT:-}${scheme}${window}/"*.png              "${THEME_DIR}/xfwm4"
   cp -r "${SRC_DIR}/main/xfwm4/themerc${ELSE_LIGHT:-}"                                       "${THEME_DIR}/xfwm4/themerc"
   mkdir -p                                                                                   "${THEME_DIR}-hdpi/xfwm4"
-  cp -r "${SRC_DIR}/assets/xfwm4/assets${ELSE_LIGHT:-}${scheme}${window}-hdpi/"*.png         "${THEME_DIR}-hdpi/xfwm4"
   cp -r "${SRC_DIR}/main/xfwm4/themerc${ELSE_LIGHT:-}"                                       "${THEME_DIR}-hdpi/xfwm4/themerc"
   sed -i "s/button_offset=6/button_offset=9/"                                                "${THEME_DIR}-hdpi/xfwm4/themerc"
   mkdir -p                                                                                   "${THEME_DIR}-xhdpi/xfwm4"
-  cp -r "${SRC_DIR}/assets/xfwm4/assets${ELSE_LIGHT:-}${scheme}${window}-xhdpi/"*.png        "${THEME_DIR}-xhdpi/xfwm4"
   cp -r "${SRC_DIR}/main/xfwm4/themerc${ELSE_LIGHT:-}"                                       "${THEME_DIR}-xhdpi/xfwm4/themerc"
   sed -i "s/button_offset=6/button_offset=12/"                                               "${THEME_DIR}-xhdpi/xfwm4/themerc"
 
   mkdir -p                                                                                   "${THEME_DIR}/plank"
   if [[ "$color" == '-Light' ]]; then
-    cp -r "${SRC_DIR}/main/plank/theme-Light${scheme}/"*                                      "${THEME_DIR}/plank"
+    cp -r "${SRC_DIR}/main/plank/theme-Light${scheme}/"*                                     "${THEME_DIR}/plank"
   else
-    cp -r "${SRC_DIR}/main/plank/theme-Dark${scheme}/"*                                       "${THEME_DIR}/plank"
+    cp -r "${SRC_DIR}/main/plank/theme-Dark${scheme}/"*                                      "${THEME_DIR}/plank"
   fi
 }
 
@@ -634,6 +609,7 @@ install_theme() {
         for scheme in "${schemes[@]}"; do
           install "${dest:-$DEST_DIR}" "${name:-$THEME_NAME}" "$theme" "$color" "$size" "$scheme" "$window"
           make_gtkrc "${dest:-$DEST_DIR}" "${name:-$THEME_NAME}" "$theme" "$color" "$size" "$scheme" "$window"
+          make_assets "${dest:-$DEST_DIR}" "${name:-$THEME_NAME}" "$theme" "$color" "$size" "$scheme" "$window"
         done
       done
     done
