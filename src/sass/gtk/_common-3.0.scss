@@ -3131,12 +3131,11 @@ messagedialog { // Message Dialog styling
     &.csd { // rounded bottom border styling for csd version
       border-bottom-left-radius: $window-radius;
       border-bottom-right-radius: $window-radius;
-
-      background-color: $surface;
+      background-color: if($variant == 'dark', background(f), background(c));
 
       .titlebar {
         &, &:backdrop {
-          background-color: if($variant == 'dark', $base, $surface);
+          background-color: if($variant == 'dark', background(f), background(c));
         }
       }
     }
