@@ -3120,22 +3120,22 @@ calendar {
  ***********/
 messagedialog { // Message Dialog styling
   &.background {
-    background-color: if($variant == 'dark', background(f), background(c));
+    background-color: $surface;
 
     .titlebar {
       &, &:backdrop {
-        background-color: if($variant == 'dark', background(f), background(c));
+        background-color: $surface;
       }
     }
 
     &.csd { // rounded bottom border styling for csd version
       border-bottom-left-radius: $window-radius;
       border-bottom-right-radius: $window-radius;
-      background-color: if($variant == 'dark', background(f), background(c));
+      background-color: $surface;
 
       .titlebar {
         &, &:backdrop {
-          background-color: if($variant == 'dark', background(f), background(c));
+          background-color: $surface;
         }
       }
     }
