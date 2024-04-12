@@ -1,7 +1,7 @@
 #! /usr/bin/env bash
 
 for theme in '' '-Purple' '-Pink' '-Red' '-Orange' '-Yellow' '-Green' '-Teal' '-Grey'; do
-  for type in '' '-Nord' '-Dracula' '-Gruvbox'; do
+  for type in '' '-Nord' '-Dracula' '-Gruvbox' '-Everforest'; do
     case "$theme" in
       '')
         theme_color_dark='#3c84f7'
@@ -134,10 +134,56 @@ for theme in '' '-Purple' '-Pink' '-Red' '-Orange' '-Yellow' '-Green' '-Teal' '-
     fi
 
     if [[ "$type" == '-Gruvbox' ]]; then
-      background_light='#fbf1c7'
-      background_dark='#282524'
-      base_dark='#211f1e'
-      surface_dark='#3c3836'
+      background_light='#D3C6AA'
+      background_dark='#232A2E'
+      base_dark='#2D353B'
+      surface_dark='#343F44'
+
+      case "$theme" in
+         '')
+          theme_color_light='#A7C080'
+          theme_color_dark='#9cb575'
+          ;;
+        -Purple)
+          theme_color_light='#D699B6'
+          theme_color_dark='#cb8eab'
+          ;;
+        -Pink)
+          theme_color_light='#d3869b'
+          theme_color_dark='#b16286'
+          ;;
+        -Red)
+          theme_color_light='#E67E80'
+          theme_color_dark='#db7375'
+          ;;
+        -Orange)
+          theme_color_light='#E69875'
+          theme_color_dark='#db8d6a'
+          ;;
+        -Yellow)
+          theme_color_light='#DBBC7F'
+          theme_color_dark='#d0b174'
+          ;;
+        -Green)
+          theme_color_light='#A7C080'
+          theme_color_dark='#9cb575'
+          ;;
+        -Teal)
+          theme_color_light='#83C092'
+          theme_color_dark='#78b587'
+          ;;
+        -Grey)
+          theme_color_light='#9DA9A0'
+          theme_color_dark='#7A8478'
+          ;;
+      esac
+    fi
+
+    if [[ "$type" == '-Everforest' ]]; then
+      background_light='#fffbef'
+      background_dark='#2D353B'
+      base_dark='#232A2E'
+      surface_dark='#343F44'
 
       case "$theme" in
         '')
@@ -178,6 +224,7 @@ for theme in '' '-Purple' '-Pink' '-Red' '-Orange' '-Yellow' '-Green' '-Teal' '-
           ;;
       esac
     fi
+
 
     if [[ "$type" != '' ]]; then
       cp -rf "assets.svg" "assets${theme}${type}.svg"
