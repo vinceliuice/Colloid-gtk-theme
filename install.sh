@@ -25,7 +25,7 @@ SASSC_OPT="-M -t expanded"
 
 THEME_NAME=Colloid
 THEME_VARIANTS=('' '-Purple' '-Pink' '-Red' '-Orange' '-Yellow' '-Green' '-Teal' '-Grey')
-SCHEME_VARIANTS=('' '-Nord' '-Dracula' '-Gruvbox', '-Everforest')
+SCHEME_VARIANTS=('' '-Nord' '-Dracula' '-Gruvbox' '-Everforest')
 COLOR_VARIANTS=('' '-Light' '-Dark')
 SIZE_VARIANTS=('' '-Compact')
 
@@ -658,7 +658,7 @@ if [[ "$uninstall" == 'true' ]]; then
     echo && uninstall_theme && uninstall_link
   fi
 else
-  clean_theme && install_package && tweaks_temp && gnome_shell_version && install_theme
+  install_package && tweaks_temp && gnome_shell_version && install_theme
   if [[ "$libadwaita" == 'true' ]]; then
     uninstall_link && link_theme
   fi
