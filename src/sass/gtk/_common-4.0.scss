@@ -3543,19 +3543,33 @@ frame {
   statusbar & > border { border: none; } // for backward compatibility
 }
 
-actionbar > revealer > box {
-  padding: $space-size;
-  border-spacing: 0;
-  box-shadow: inset 0 1px $border;
-  background-color: $base;
-  background-clip: border-box;
-  border: none;
+actionbar {
+  &.toolbar { // reset
+    background-color: transparent;
+    padding: 0;
+    border-spacing: 0;
+    border: none;
+    box-shadow: none;
 
-  button, entry,
-  menubutton, menubutton > button,
-  splitbutton, splitbutton > button,
-  spinbutton {
-    margin: 0;
+    > revealer > box {
+      background-color: $base-alt;
+    }
+  }
+
+  > revealer > box {
+    padding: $space-size;
+    border-spacing: 0;
+    box-shadow: inset 0 1px $border;
+    background-color: $base;
+    background-clip: border-box;
+    border: none;
+  
+    button, entry,
+    menubutton, menubutton > button,
+    splitbutton, splitbutton > button,
+    spinbutton {
+      margin: 0;
+    }
   }
 }
 
