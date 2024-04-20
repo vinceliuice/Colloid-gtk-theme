@@ -1384,6 +1384,8 @@ button.combo:only-child {
 
   button { @extend %button-flat; }
 
+  .linked button { @extend %button-basic; }
+
   // on OSD
   .osd & { background-color: transparent; }
 

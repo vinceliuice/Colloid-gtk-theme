@@ -119,7 +119,7 @@ window.dialog {
 //
 
 .display-container {
-  &.card {
+  .small &.card {
     border-radius: 0;
     box-shadow: none;
     border-width: 0 0 1px 0;
