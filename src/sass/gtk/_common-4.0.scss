@@ -1740,19 +1740,20 @@ headerbar {
     box-shadow: none;
     border: none;
     outline: none;
-    background-image: image($titlebar);
-  
-    &:backdrop {
-      background-image: image($titlebar-backdrop);
-    }
 
     windowcontrols {
-      button,
-      menubutton {
-        min-width: 16px;
-        min-height: 16px;
-        margin: 0;
-        padding: 0;
+      > button {
+        @if $window_button == 'mac' {
+          min-width: 16px;
+          min-height: 16px;
+          margin: 0 $space-size - 2px;
+          padding: 0;
+        } @else {
+          min-width: 22px;
+          min-height: 22px;
+          margin: 0 $space-size - 2px;
+          padding: 0;
+        }
       }
 
       menubutton button {
@@ -2952,11 +2953,6 @@ switch {
 
   &:disabled { opacity: 0.5; }
 
-  // hide on/off icons for >=3.24.5
-  image {
-    margin: -8px;
-  }
-
   > slider {
     transition: all $duration $ease-out;
     min-width: $small-size - 6px;
@@ -3747,7 +3743,6 @@ row {
     background-repeat: no-repeat;
     background-position: center;
     background-size: 1000% 1000%;
-    outline: none;
 
     &:focus {
       color: $text;

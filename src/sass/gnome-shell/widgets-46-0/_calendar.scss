@@ -26,6 +26,10 @@
   padding: $base_padding / 2;
 }
 
+.datemenu-popover {
+  border-radius: $base_radius + $base_padding * 2 !important;
+}
+
 // Calendar menu side column
 .datemenu-calendar-column {
   spacing: $base_spacing;

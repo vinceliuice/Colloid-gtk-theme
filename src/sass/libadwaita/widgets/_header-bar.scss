@@ -1,0 +1,336 @@
+headerbar {
+  min-height: $large_size;
+  background-color: $headerbar_backdrop_color;
+  color: $headerbar_fg_color;
+  box-shadow: inset 0 -1px $headerbar_border_color;
+  margin: 0 -1px;
+  @extend %toolbar;
+
+  > windowhandle > box {
+    padding: $base_padding $base_padding + 1px;
+
+    > box.start,
+    > box.end {
+      border-spacing: $base_padding;
+    }
+
+    &, > widget {
+      > box.start:dir(ltr),
+      > box.end:dir(rtl) {
+        margin-right: $base_padding;
+      }
+
+      > box.start:dir(rtl),
+      > box.end:dir(ltr) {
+        margin-left: $base_padding;
+      }
+    }
+  }
+
+  &:backdrop {
+    background-color: $headerbar_bg_color;
+    transition: background-color $backdrop_transition;
+
+    > windowhandle {
+      // opacity looks weird with GtkSwitch, but filter works fine
+      filter: opacity(0.5);
+
+      transition: filter $backdrop_transition;
+    }
+  }
+
+  &.default-decoration {
+    padding: 0;
+    margin: 0;
+    box-shadow: none;
+    border: none;
+    min-height: $medium_size;
+
+    > windowhandle > box {
+      padding: $base_padding / 2;
+    }
+
+    windowcontrols {
+      > button {
+        @if $window_button == 'mac' {
+          min-width: 16px;
+          min-height: 16px;
+          margin: 0 $base_padding - 2px;
+          padding: 0;
+        } @else {
+          min-width: 22px;
+          min-height: 22px;
+          margin: 0 $base_padding - 2px;
+          padding: 0;
+        }
+      }
+
+      > .icon {
+        margin: $base_padding;
+      }
+    }
+  }
+}
+
+window > {
+  .titlebar:not(.flat) {
+    box-shadow: inset 0 -1px $headerbar_border_color;
+  }
+
+  .titlebar headerbar:not(.flat) {
+    box-shadow: inset 0 -1px $headerbar_border_color;
+  }
+
+  headerbar.titlebar,
+  .titlebar headerbar {
+    min-height: $large_size;
+
+    > windowhandle > box {
+      padding-bottom: $base_padding;
+    }
+
+    &.default-decoration {
+      min-height: $medium_size;
+
+      > windowhandle > box {
+        padding: $base_padding / 2;
+      }
+    }
+  }
+}
+
+%headerbar-flat {
+  background: none;
+  box-shadow: none;
+  color: inherit;
+  min-height: $large_size;
+
+  > windowhandle > box {
+    padding-bottom: $base_padding;
+  }
+
+  &.default-decoration {
+    min-height: $medium_size;
+
+    > windowhandle > box {
+      padding: $base_padding / 2;
+    }
+  }
+}
+
+%headerbar-inline {
+  @extend %headerbar-flat;
+
+  &:backdrop {
+    transition: none;
+
+    > windowhandle {
+      filter: none;
+      transition: none;
+    }
+  }
+
+  window.devel & > windowhandle {
+    background-image: none;
+  }
+}
+
+%headerbar-shrunk {
+  min-height: $large_size - $base_padding;
+
+  > windowhandle > box {
+    padding-top: $base_padding / 2;
+    padding-bottom: $base_padding / 2;
+  }
+
+  &.default-decoration {
+    min-height: $medium_size;
+
+    > windowhandle > box {
+      padding-top: 0px;
+      padding-bottom: 0px;
+    }
+  }
+}
+
+.titlebar:not(headerbar) {
+  separator { background-color: $headerbar_border_color; }
+}
+
+/*********************
+ * GtkWindowControls *
+ *********************/
+
+$titlebutton_min: $button-min;
+$titlebutton_max: $button-max;
+$titlebutton_close: $button-close;
+
+%mac_window_button {
+  min-height: 16px;
+  min-width: 16px;
+  padding: ($medium_size - 16px) / 2 0;
+  margin-left: $base_padding - 2px;
+  margin-right: $base_padding - 2px;
+  box-shadow: none;
+
+  &.minimize, &.maximize, &.close {
+    color: transparent;
+    background: none;
+
+    &:hover, &:active {
+      box-shadow: none;
+    }
+
+    &:active > image {
+      background-color: gtkalpha(black, if($topbar == 'dark', 0.25, 0.12));
+    }
+
+    &:hover, &:active {
+      color: if($colorscheme != 'dracula', white, rgba(black, 0.5));
+    }
+
+    &:backdrop {
+      > image { background-color: gtkalpha($headerbar_fg_color, 0.3); }
+
+      &:hover, &:active {
+        color: gtkalpha($headerbar_fg_color, 0.45);
+      }
+    }
+  }
+
+  &.minimize { // Window minimize button
+    > image { background-color: $titlebutton_min; }
+
+    &:active > image {
+      background-color: gtkmix($headerbar_fg_color, $titlebutton_min, 25%);
+    }
+  }
+
+  &.maximize { // Window maximize button
+    > image { background-color: $titlebutton_max; }
+
+    &:active > image {
+      background-color: gtkmix($headerbar_fg_color, $titlebutton_max, 25%);
+    }
+  }
+
+  &.close { // Window close button
+    > image { background-color: $titlebutton_close; }
+
+    &:active > image {
+      background-color: gtkmix($headerbar_fg_color, $titlebutton_close, 25%);
+    }
+  }
+}
+
+%normal_window_button {
+  min-height: 22px;
+  min-width: 22px;
+  padding: ($medium-size - 22px) / 2 0;
+  margin-left: $base_padding - 2px;
+  margin-right: $base_padding - 2px;
+
+  &.minimize, &.maximize, &.close {
+    color: gtkalpha($headerbar_fg_color, 0.75);
+
+    &, &:hover, &:active, &:backdrop {
+      background: none;
+      box-shadow: none;
+    }
+
+    > image { background-color: gtkalpha(currentColor, 0.1); }
+
+    &:hover {
+      color: $headerbar_fg_color;
+
+      > image { background-color: gtkalpha(currentColor, 0.15); }
+    }
+
+    &:active {
+      color: $headerbar_fg_color;
+
+      > image { background-color: gtkalpha(currentColor, 0.2); }
+    }
+
+    &:backdrop {
+      opacity: 0.65;
+    }
+  }
+}
+
+windowcontrols {
+  border-spacing: $base_padding;
+
+  &:not(.empty) {
+    &.start:dir(ltr),
+    &.end:dir(rtl) {
+      margin-right: $base_padding;
+      margin-left: $base_padding;
+    }
+
+    &.start:dir(rtl),
+    &.end:dir(ltr) {
+      margin-left: $base_padding;
+      margin-right: $base_padding;
+    }
+  }
+
+  > button {
+    @if $window_button == 'mac' {
+      @extend %mac_window_button;
+    } @else {
+      @extend %normal_window_button;
+    }
+
+    > image {
+      padding: 0;
+      border-radius: 100%;
+      transition: $button_transition;
+    }
+  }
+
+  > .icon {
+    margin: 9px;
+  }
+}
+
+/******************
+ * AdwWindowTitle *
+ ******************/
+
+headerbar,
+windowtitle {
+  .title {
+    padding-left: 12px;
+    padding-right: 12px;
+    font-weight: bold;
+  }
+
+  .subtitle {
+    font-size: smaller;
+    padding-left: 12px;
+    padding-right: 12px;
+    @extend .dim-label;
+  }
+}
+
+windowtitle {
+  margin-top: -6px;
+  margin-bottom: -6px;
+  min-height: 12px;
+}
+
+// Development versions of apps to use a differently styled headerbar
+
+window.devel {
+  headerbar > windowhandle {
+    background-image: cross-fade(5% -gtk-recolor(url("assets/devel-symbolic.svg")),
+                                 image(transparent));
+    background-repeat: repeat-x;
+  }
+
+  dialog headerbar > windowhandle {
+    background-image: unset;
+    background-repeat: unset;
+  }
+}

@@ -557,6 +557,17 @@ link_libadwaita() {
   ln -sf "${THEME_DIR}/gtk-4.0/gtk-dark.css"                                    "${HOME}/.config/gtk-4.0/gtk-dark.css"
 }
 
+install_libadwaita() {
+  rm -rf "${HOME}/.config/gtk-4.0/"{assets,gtk.css,gtk-dark.css}
+
+  echo -e "\nInstalling theme into '${HOME}/.config/gtk-4.0' for libadwaita..."
+
+  mkdir -p                                                                      "${HOME}/.config/gtk-4.0"
+  cp -r "${SRC_DIR}/assets/gtk/assets"                                          "${HOME}/.config/gtk-4.0"
+  cp -r "${SRC_DIR}/assets/gtk/symbolics/"*'.svg'                               "${HOME}/.config/gtk-4.0/assets"
+  sassc $SASSC_OPT "${SRC_DIR}/main/libadwaita/libadwaita.scss"                 "${HOME}/.config/gtk-4.0/gtk.css"
+}
+
 link_theme() {
   for theme in "${themes[@]}"; do
     for color in "${lcolors[@]}"; do
@@ -660,7 +671,7 @@ if [[ "$uninstall" == 'true' ]]; then
 else
   install_package && tweaks_temp && gnome_shell_version && install_theme
   if [[ "$libadwaita" == 'true' ]]; then
-    uninstall_link && link_theme
+    uninstall_link && install_libadwaita
   fi
 fi
 

@@ -1,0 +1,46 @@
+//
+// Nautilus
+//
+.nautilus-window {
+  .floating-bar {
+    min-height: 32px;
+    padding: 0;
+    margin: $base_padding;
+    border-style: none;
+    border-radius: $button_radius;
+    background-color: $accent_color;
+    color: $accent_fg_color;
+    box-shadow: $shadow-z3;
+
+    button {
+      margin: (32px - $small_size) / 2;
+      color: $accent_fg_color;
+
+      @extend %small_button;
+    }
+  }
+}
+
+#NautilusQueryEditor { // search entry
+  > menubutton {
+    margin: $base_padding 0;
+
+    > button.image-button {
+      min-width: 24px;
+      min-height: 24px;
+      padding: $medium_size / 2 - $base_padding - 12px;
+    }
+  }
+}
+
+#NautilusPathBar {
+  background-color: gtkalpha(currentColor, 0.05);
+  border-radius: $button_radius;
+  padding: 0;
+}
+
+#NautilusPathButton {
+  margin: 0;
+  border-radius: $button_radius;
+  @extend %button_basic_flat;
+}

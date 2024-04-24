@@ -1,0 +1,1595 @@
+
+//
+// Nautilus
+//
+.nautilus-window {
+  placesview {
+    label { color: $text-secondary; }
+  }
+
+  .nautilus-grid-view {
+    child.activatable {
+      @extend %row_activatable;
+    }
+  }
+
+  .floating-bar {
+    min-height: 32px;
+    padding: 0;
+    margin: $space-size;
+    border-style: none;
+    border-radius: $corner-radius;
+    background-color: $primary;
+    color: on($primary);
+    box-shadow: $shadow-z3;
+
+    button {
+      margin: (32px - $small-size) / 2;
+      color: on($primary);
+
+      @extend %small-button;
+    }
+  }
+}
+
+#NautilusQueryEditor { // search entry
+  > menubutton > button.image-button {
+    min-width: 24px;
+    min-height: 24px;
+  }
+
+  > text, > box, > menubutton > button.image-button {
+    margin: $space-size 0;
+  }
+}
+
+#NautilusQueryEditorTag {
+  background-color: $divider;
+
+  > button.image-button {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+#NautilusPathBar {
+  background-color: $titlebar-fill;
+  border-radius: $corner-radius;
+  margin: $space-size 0;
+
+  .content-pane & {
+    background-color: $fill;
+  }
+}
+
+#NautilusPathButton {
+  margin: 0 $space-size / 2;
+  border-radius: $corner-radius;
+
+  &.current-dir {
+    color: $titlebar-text;
+
+    &:hover, &:active {
+      background: none;
+      box-shadow: none;
+    }
+  }
+
+  .content-pane &.current-dir {
+    color: $text;
+  }
+
+  &:first-child { margin-left: 0; }
+}
+
+#NautilusViewCell {
+  clamp box {
+    margin: 0;
+    border-spacing: 0;
+  }
+}
+
+navigation-view-page {
+  > toolbarview > scrolledwindow > viewport > clamp > box.medium > box > stack > button {
+    margin-top: $space-size * 2;
+  }
+}
+
+//
+// Gnome Control Center
+//
+
+window.dialog {
+  > box > stack > box > box {
+    > notebook.frame {
+      border-width: 0 0 0 1px;
+      border-radius: 0;
+    }
+  }
+}
+
+.background-thumbnail {
+  > button.remove-button {
+    margin: $space-size;
+  }
+}
+
+//
+// Calculator
+//
+
+.display-container {
+  .small &.card {
+    border-radius: 0;
+    box-shadow: none;
+    border-width: 0 0 1px 0;
+  }
+
+  .history-view { background-color: $base; }
+
+  #displayitem {
+    padding: 0 12px 8px 0;
+    font-size: 1.4em;
+    border-top: 1px solid $border;
+  }
+}
+
+.math-buttons button {
+  font-size: 1.1em;
+  padding: 2px $space-size;
+
+  &.text-button {
+    padding-left: $space-size * 2 + 4px;
+    padding-right: $space-size * 2 + 4px;
+  }
+}
+
+leaflet {
+  button.number-button {
+    background-color: rgba($text, 0.1);
+
+    &:hover {
+      background-color: rgba($text, 0.2);
+    }
+
+    &:active {
+      background-color: rgba($text, 0.3);
+    }
+  }
+}
+
+//
+// Calendar
+//
+
+// labels
+label {
+  &.primary-label, &.month-name, &.secondary-label {
+    font-size: 16pt;
+    font-weight: bold;
+    padding: $space-size * 2;
+  }
+
+  &.primary-label, &.month-name {
+    color: $primary;
+  }
+
+  &.secondary-label {
+    color: $text-disabled;
+  }
+}
+
+calendar-view {
+  font-size: 10pt;
+
+  &:selected {
+    color: $primary;
+    font-weight: bold;
+  }
+}
+
+calendar-view.header,
+label.header {
+  font-size: 10pt;
+  font-weight: bold;
+  color: $text-disabled;
+}
+
+calendar-view.current,
+weekgrid.current {
+  background-color: gtkalpha($primary, 0.3);
+}
+
+popover.events {
+  background-color: $popover;
+  padding: 0;
+
+  box {
+    border-top-left-radius: $corner-radius;
+    border-top-right-radius: $corner-radius;
+  }
+
+  list {
+    background-color: $base;
+    border-radius: $corner-radius;
+  }
+
+  scrolledwindow {
+    border-width: 0;
+  }
+
+  button {
+    border-radius: $corner-radius;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-style: solid none none;
+    box-shadow: none;
+  }
+}
+
+// Event widget
+event {
+  margin: 1px;
+  font-size: 0.9rem;
+
+  widget.content {
+    margin: 4px;
+  }
+
+  &.timed,
+  &:not(.slanted):not(.slanted-start):not(.slanted-end) {
+    border-radius: $corner-radius;
+  }
+
+  &.timed widget.edge {
+    border-radius: $corner-radius / 2;
+    min-width: 5px;
+  }
+
+  &.slanted-start,
+  &.slanted-end:dir(rtl) {
+    padding-left: $space-size * 2 + 4px;
+    border-radius: 0 $corner-radius / 2 $corner-radius / 2 0;
+  }
+
+  &.slanted-end,
+  &.slanted-start:dir(rtl) {
+    padding-right: $space-size * 2 + 4px;
+    border-radius: $corner-radius / 2 0 0 $corner-radius / 2;
+  }
+
+  &:not(.timed).color-dark {
+    color: white;
+    outline-color: rgba(0, 0, 0, 0.3);
+  }
+
+  &.timed,
+  &:not(.timed).color-light {
+    color: gtkalpha(black, 0.75);
+    outline-color: rgba(255, 255, 255, 0.5);
+  }
+
+}
+
+// Event Popover
+popover.event-popover,
+popover.event-popover > contents {
+  padding: 0;
+}
+
+.search-viewport {
+  background-color: $base;
+}
+
+// calendar popover
+.calendar-list {
+  background-color: transparent;
+
+  > list {
+    border-radius: 4px;
+  }
+}
+
+// defeats the ugly hover effect of the calendar color dot on buttons
+.calendar-color-image {
+  -gtk-icon-filter: none;
+}
+
+// adds a subtle shadow to the calendar color dot when it makes sense
+image.calendar-color-image,
+button:active:not(:backdrop) .calendar-color-image,
+button:checked:not(:backdrop) .calendar-color-image,
+.calendars-list .calendar-color-image:not(:backdrop):not(:disabled),
+.calendar-list .calendar-color-image:not(:backdrop):not(:disabled),
+.sources-button:not(:backdrop):not(:disabled) .calendar-color-image {
+  -gtk-icon-shadow: 0 1px gtkalpha(black, 0.1);
+}
+
+// Date chooser
+
+// month/year controls
+datechooser {
+  navigator { // add some space between the two controls
+    margin-right: $space-size;
+    margin-left: $space-size;
+    margin-bottom: $space-size;
+  }
+
+  navigator {
+    label { font-weight: bold; }
+
+    button.flat,
+    button.toggle,
+    button.image-button {
+      min-height: $medium-size;
+      min-width: $medium-size;
+      padding: 0;
+    }
+  }
+
+  // day names and week numbers
+  .weeknum, .weekday {
+    color: $text-disabled;
+    font-size: smaller;
+  }
+
+  // days
+  button.day {
+    font-size: 10pt;
+    font-weight: normal;
+    margin: $space-size / 2;
+    padding: 0;
+    min-height: $medium-size;
+    min-width: $medium-size;
+    transition: none;
+
+    dot {
+      background-color: $text;
+      border-radius: 50%;
+      min-height: $space-size / 2;
+      min-width: $space-size / 2;
+    }
+
+    &:selected, &.today:selected {
+      background-color: $primary;
+      color: on($primary);
+      font-weight: bold;
+
+      dot { background-color: on($primary); }
+    }
+
+    &.today {
+      color: $primary;
+
+      dot { background-color: $primary; }
+    }
+
+    &.other-month {
+      &:not(:hover),
+      &:backdrop {
+        color: gtkalpha(currentColor, 0.1);
+
+        dot { background-color: gtkalpha(currentColor, 0.1); }
+      }
+
+      &:hover:not(:backdrop) {
+        color: $text-disabled;
+
+        dot { background-color: $text-disabled; }
+      }
+    }
+  }
+}
+
+// Week View CSS
+.week-header {
+  padding: 0;
+
+  & > box:first-child {
+    border-bottom: 1px solid $border;
+  }
+
+  .week-number {
+    font-size: 16pt;
+    font-weight: bold;
+    padding: $space-size * 2 $space-size * 2 $space-size * 3 $space-size * 2;
+    color: $track;
+  }
+
+  &.week-temperature {
+    font-size: 10pt;
+    font-weight: bold;
+    color: $text-disabled;
+  }
+
+  &.lines {
+    color: $border;
+  }
+}
+
+weekhourbar > label {
+  font-size: 10pt;
+  padding: 4px $space-size;
+}
+
+.week-view .lines {
+  color: $border;
+}
+
+weekgrid > widget.now-strip {
+  background-color: gtkalpha($primary, 0.8);
+  margin: 0 0 0 1px;
+  min-height: 3px;
+}
+
+weekgrid,
+.week-header {
+  &:selected, &.dnd {
+    background-color: gtkalpha($primary, 0.25);
+  }
+}
+
+// Month cell
+monthcell {
+  border: solid 1px $border;
+  border-width: 1px 0 0 1px;
+  background-color: transparent;
+  transition: background-color 200ms;
+
+  &:hover:not(.out-of-month):not(.today) {
+    background-color: $base-alt;
+    transition: background-color 200ms;
+    color: $text;
+  }
+
+  &:selected {
+    background-color: gtkalpha($primary, 0.1);
+
+    &:hover {
+      background-color: gtkalpha($primary, 0.2);
+    }
+
+    label.day-label { font-weight: bold; }
+  }
+
+  &:nth-child(7n + 1) { border-left-width: 0; }
+
+  &.today {
+    background-color: gtkalpha($primary, 0.2);
+
+    &:hover {
+      background-color: gtkalpha($primary, 0.3);
+      color: $primary;
+    }
+
+    &:selected {
+      background-color: gtkalpha($primary, 0.25);
+
+      &:hover {
+        background-color: gtkalpha($primary, 0.35);
+      }
+    }
+  }
+
+  label {
+    color: $text;
+    font-size: 0.9rem;
+
+    &.day-label {
+      font-size: 1rem;
+    }
+  }
+
+  &.out-of-month {
+    background-color: $fill;
+
+    label {
+      color: $text-secondary;
+    }
+  }
+
+  button {
+    padding: 0 $space-size;
+    border-radius: 0;
+    border-bottom: none;
+    border-right: none;
+  }
+}
+
+// Month popover
+monthpopover > box {
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+}
+
+.notes-section box > textview {
+  border-radius: $corner-radius;
+  padding: $space-size;
+
+  > text {
+    background: none;
+  }
+}
+
+// Agenda View CSS
+agenda-view {
+  list {
+    > row {
+      padding: 2px $space-size * 2;
+    }
+
+    > label {
+      padding: $space-size $space-size * 2;
+    }
+  }
+
+  > scrolledwindow > viewport > list.background {
+    background-color: transparent;
+  }
+}
+
+label.no-events {
+  font-style: italic;
+}
+
+// Search
+searchbutton > popover > arrow {
+  background: none;
+  border: none;
+}
+
+// Month selector
+datechooser {
+  padding: $space-size;
+
+  .current-week {
+    background: gtkalpha($titlebar, 0.7);
+    color: on($titlebar);
+    border-radius: $corner-radius;
+  }
+}
+
+menubutton {
+  &.sources-button {
+    margin-top: 0;
+    margin-bottom: 0;
+    border-radius: 0;
+    border-top-style: none;
+    border-bottom-style: none;
+    
+    &:hover:not(:backdrop) {
+      background-image: none;
+      text-shadow: none;
+    }
+
+    > button {
+      border-radius: 0;
+
+      .title {
+        font-size: 10pt;
+        font-weight: normal;
+        padding: 0 $space-size;
+      }
+
+      .subtitle {
+        font-size: 8pt;
+        padding: 0 $space-size;
+      }
+
+      .calendar-color-image {
+        -gtk-icon-size: 12px;
+      }
+    }
+  }
+
+  stack > box {
+    border-spacing: $space-size;
+  }
+
+  .topbar headerbar &.sources-button {
+    > button {
+      border-radius: 0 0 $corner-radius $corner-radius;
+    }
+  }
+}
+
+//
+// Contacts
+//
+
+.contacts-contact-list list.navigation-sidebar {
+  background: none;
+}
+
+//
+// Gnome Software
+//
+
+.details-page {
+  margin: $space-size * 4 0px;
+}
+
+.installed-overlay-box {
+  font-size: smaller;
+  background-color: $primary;
+  border-radius: 0;
+  color: on($primary);
+  text-shadow: 0 1px 0 rgba(black, 0.2);
+}
+
+screenshot-carousel box.frame {
+  border-width: 1px 0;
+  border-radius: 0;
+}
+
+screenshot-carousel button,
+.featured-carousel button {
+  margin: $space-size * 2;
+}
+
+.screenshot-image-main .image1,
+.screenshot-image-main .image2 {
+  margin-top: $space-size;
+  margin-bottom: $space-size * 2;
+  margin-left: $space-size;
+  margin-right: $space-size;
+}
+
+.app-tile-label {
+  font-size: 105%;
+}
+
+.review-textbox {
+  padding: $space-size;
+}
+
+.origin-rounded-box {
+  background-color: $divider;
+  border-radius: $circular-radius;
+  padding: $space-size - 2px;
+}
+
+.origin-beta {
+  color: $warning;
+}
+
+.origin-button > button {
+  padding: $space-size / 2 $space-size * 1.5;
+}
+
+.card flowboxchild {
+  &.card {
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    background: none;
+  }
+}
+
+.category-tile.card {
+  padding: $space-size * 3.5;
+  border: none;
+  border-radius: $corner-radius;
+  min-width: 140px;
+  font-weight: 900;
+  font-size: larger;
+  box-shadow: $shadow-z3;
+
+  &.category-tile-iconless {
+    padding: $space-size * 1.5 $space-size * 2.5;
+    min-width: 130px;
+    font-size: 105%;
+    font-weight: normal;
+    box-shadow: none;
+    background-color: $fill;
+  }
+
+  // Styling for specific category buttons.
+  &.category-create {
+    background: linear-gradient(180deg, #ce8cd7 0%, #2861c6 100%);
+    color: white;
+
+    &:hover {
+      background: linear-gradient(180deg, shade(#ce8cd7, 1.07) 0%, shade(#2861c6, 1.1) 100%);
+      color: white;
+    }
+
+    &:active {
+      background: linear-gradient(180deg, shade(#ce8cd7, .95) 0%, shade(#2861c6, .95) 100%);
+      color: white;
+    }
+  }
+
+  &.category-develop {
+    background: #5e5c64;
+    color: white;
+
+    &:hover {
+      background: shade(#5e5c64, 1.2);
+      color: white;
+    }
+
+    &:active {
+      background-color: shade(#5e5c64, .95);
+      color: white;
+    }
+  }
+
+  &.category-learn {
+    background: linear-gradient(180deg, #2ec27e 30%, #27a66c 100%);
+    color: white;
+
+    &:hover {
+      background: linear-gradient(180deg, shade(#2ec27e, 1.06) 30%, shade(#27a66c, 1.06) 100%);
+      color: white;
+    }
+
+    &:active {
+      background: linear-gradient(180deg, shade(#2ec27e, .95) 30%, shade(#27a66c, .95) 100%);
+      color: white;
+    }
+  }
+
+  &.category-play {
+    background: linear-gradient(75deg, #f9e2a7 0%, #eb5ec3 50%, #6d53e0 100%);
+    color: #393484;
+
+    &:hover {
+      background: linear-gradient(75deg, shade(#f9e2a7, 1.07) 0%, shade(#eb5ec3, 1.07) 50%, shade(#6d53e0, 1.07) 100%);
+      color: #393484;
+    }
+
+    &:active {
+      background: linear-gradient(75deg, shade(#f9e2a7, .97) 0%, shade(#eb5ec3, .95) 50%, shade(#6d53e0, 1.07) 100%);
+      color: #393484;
+    }
+  }
+
+  &.category-socialize {
+    background: linear-gradient(90deg, #ef4e9b 0%, #f77466 100%);
+    color: $text-secondary;
+
+    &:hover {
+      background: linear-gradient(90deg, shade(#ef4e9b, 1.08) 0%, shade(#f77466, 1.08) 100%);
+    }
+
+    &:active {
+      background: linear-gradient(90deg, shade(#ef4e9b, .95) 0%, shade(#f77466, .95) 100%);
+    }
+  }
+
+  &.category-work {
+    padding: 1px; /* FIXME: work around https://gitlab.gnome.org/GNOME/gtk/-/issues/4324 */
+    color: #1c71d8;
+    background-color:#fdf8d7;
+    background-image: linear-gradient($border 1px, transparent 1px),
+             linear-gradient(90deg, $border 1px, transparent 1px);
+    background-size: 10px 10px, 10px 10px;
+    background-position: -1px -4px, center -1px;
+
+    &:hover {
+      color: #1c71d8;
+      background-color: lighten(#fdf8d7, 5%);
+      background-image: linear-gradient($border 1px, transparent 1px),
+               linear-gradient(90deg, $border 1px, transparent 1px);
+    }
+
+    &:active {
+      color: #1c71d8;
+      background-color: darken(#fdf8d7, 5%);
+      background-image: linear-gradient($border 1px, transparent 1px),
+               linear-gradient(90deg, $border 1px, transparent 1px);
+    }
+  }
+}
+
+clamp.medium .category-tile:not(.category-tile-iconless),
+clamp.large .category-tile:not(.category-tile-iconless) {
+  font-size: larger;
+}
+
+// The rest of the featured-tile CSS is loaded at runtime in gs-feature-tile.c
+.featured-tile {
+  padding: 0;
+  box-shadow: none;
+  color: $text;
+
+  label.title-1 {
+    margin-top: $space-size;
+    margin-bottom: $space-size;
+  }
+
+  &.narrow label.title-1 {
+    font-size: 16pt;
+  }
+}
+
+.application-details-infobar {
+  &, &.info {
+    background-color: $fill;
+    color: $text;
+    border: 1px solid $border;
+  }
+
+  &.warning {
+    background-color: $warning;
+    color: on($warning);
+    border: 1px solid on($warning, divider);
+  }
+}
+
+@keyframes install-progress-unknown-move {
+  0% { background-position: 0%; }
+  50% { background-position: 100%; }
+  100% { background-position: 0%; }
+}
+
+.application-details-description .button {
+  padding-left: $space-size * 4;
+  padding-right: $space-size * 4;
+}
+
+.install-progress {
+  background-image: linear-gradient(to top, $primary 2px, gtkalpha($primary, 0) 2px);
+  background-repeat: no-repeat;
+  background-position: 0 bottom;
+  background-size: 0;
+  transition: none;
+}
+
+.install-progress:dir(rtl) { background-position: 100% bottom; }
+
+.review-row > * {
+  margin: $space-size * 2;
+}
+
+.review-row button { font-size: smaller; }
+
+.review-row .vote-buttons button {
+  margin-right: -1px;
+}
+
+// this is the separator between yes and no vote buttons, gtk+ 3.20 only
+.review-row .vote-buttons button:not(:first-child) {
+  border-image: linear-gradient(to top, $border, $border) 0 0 0 1 / 5px 0 5px 1px;
+}
+
+.review-row .vote-buttons button:hover,
+.review-row .vote-buttons button:active,
+.review-row .vote-buttons button:hover + button,
+.review-row .vote-buttons button:active + button {
+  border-image: none;
+}
+
+review-bar {
+  color: $text-disabled;
+  background-image: none;
+  background-color: $track;
+}
+
+.review-histogram star-image {
+  color: $text-disabled;
+}
+
+.version-arrow-label {
+  font-size: x-small;
+}
+
+.overview-more-button {
+  font-size: smaller;
+  padding: 0 $space-size * 2 + 4px;
+}
+
+.app-row-origin-text {
+  font-size: smaller;
+}
+
+.app-listbox-header {
+  padding: $space-size;
+  border-bottom: 1px solid $border;
+}
+
+.image-list {
+  background-color: transparent;
+}
+
+box.star {
+  background-color: transparent;
+  background-image: none;
+}
+
+button.star {
+  outline-offset: 0;
+  background-color: transparent;
+  background-image: none;
+  border-image: none;
+  border-radius: 0;
+  border-width: 0;
+  padding: 0;
+  box-shadow: none;
+  outline-offset: -1px;
+}
+
+star-image {
+  color: $yellow-dark;
+}
+
+.dimmer-label {
+  opacity: 0.25;
+}
+
+.update-failed-details {
+  font-family: Monospace;
+  font-size: smaller;
+  padding: $space-size * 2 + 4px;
+}
+
+.upgrade-banner {
+  padding: 0px;
+  border-radius: $corner-radius;
+  border: none;
+}
+
+.upgrade-banner-background {
+  background: linear-gradient(to bottom, $green-light, $blue-light);
+  color: white;
+}
+
+.upgrade-buttons #button_upgrades_install {
+  padding-left: $space-size * 2 + 4px;
+  padding-right: $space-size * 2 + 4px;
+}
+
+scrolledwindow.list-page > viewport > clamp > box {
+  margin: $space-size * 4 $space-size * 2;
+  border-spacing: $space-size * 4;
+}
+
+.update-preferences preferencesgroup > box > box {
+  margin-top: $space-size * 3;
+}
+
+.section > label:not(:first-child) { margin-top: $space-size; }
+
+.section > box:not(:first-child) { margin-top: $space-size * 2; }
+
+clamp.status-page {
+	margin: $space-size * 6 $space-size * 2;
+}
+
+clamp.status-page .iconbox {
+  min-height: 128px;
+  min-width: 128px;
+}
+
+clamp.status-page .icon {
+  color: $text-disabled;
+  min-height: 32px;
+  min-width: 32px;
+}
+
+clamp.status-page .icon:not(:last-child) {
+  margin-bottom: $space-size * 6;
+}
+
+clamp.status-page .title:not(:last-child) {
+  margin-bottom: $space-size * 2;
+}
+
+app-context-bar {
+  .context-tile {
+    border: 1px solid $border;
+    background-color: transparent;
+    border-radius: 0;
+    padding: $space-size * 4 $space-size * 2 $space-size * 3.5 $space-size * 2;
+    outline-offset: 5px;
+    transition-property: outline, outline-offset, background-image;
+    border-bottom: none;
+    border-right: none;
+
+    &:hover {
+      background-image: none;
+      background-color: $overlay-hover;
+    }
+
+    &.keyboard-activating,
+    &:active {
+      background-color: $overlay-active;
+    }
+
+    &:focus:focus-visible {
+      outline-offset: -1px;
+    }
+  }
+
+  &.horizontal box:first-child .context-tile:first-child,
+  &.vertical .context-tile:first-child {
+    border-left: none;
+  }
+
+  &.horizontal .context-tile,
+  &.vertical box:first-child .context-tile {
+  	border-top: none;
+  }
+
+  > box:not(:first-child) > button.flat {
+    border-radius: 0;
+
+    &:last-child {
+      border-radius: 0 $corner-radius $corner-radius 0;
+    }
+  }
+
+  > box:first-child > button.flat {
+    border-radius: 0;
+
+    &:first-child {
+      border-radius: $corner-radius 0 0 $corner-radius;
+    }
+  }
+
+  > box > button.flat {
+    border-left-color: $border;
+  }
+}
+
+carousel.card {
+  border: none;
+  background-color: $fill;
+}
+
+.context-tile-lozenge {
+  min-height: 28px;
+  min-width: 28px;
+  padding: $space-size;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: $circular-radius;
+
+  &.large {
+    font-size: 24px;
+    padding: 16px;
+    min-width: 24px;  /* 60px minus the left and right padding */
+    min-height: 24px;  /* 60px minus the top and bottom padding */
+  }
+
+  &.wide-image image {
+    margin-top: -28px;
+    margin-bottom: -28px;
+  }
+
+  image { -gtk-icon-style: symbolic; }
+
+  &.grey {
+    color: $text;
+    background-color: $divider;
+  }
+
+  &.green, &.details-rating-0 {
+    color: darken($success, 15%);
+    background-color: rgba($success, 0.15);
+  }
+
+  &.blue,
+  &.details-rating-5 {
+    color: $blue-light;
+    background-color: rgba($blue-light, 0.15);
+  }
+
+  &.yellow, &.details-rating-12 {
+    color: darken($warning, 15%);
+    background-color: rgba($warning, 0.15);
+  }
+
+  &.details-rating-15 {
+    color: $orange-light;
+    background-color: rgba($orange-light, .15);
+  }
+
+  &.red, &.details-rating-18 {
+    color: darken($error, 15%);
+    background-color: rgba($error, 0.15);
+  }
+}
+
+.eol-red {
+  font-weight: bold;
+  color: $error;
+}
+
+window.narrow .app-title {
+  font-size: 16pt;
+}
+
+window.narrow .app-developer {
+  font-size: small;
+}
+
+.install-progress-label {
+  font-size: smaller;
+  font-feature-settings: "tnum";
+}
+
+scrolledwindow.fake-adw-status-page > viewport > box { margin: $space-size * 6 $space-size * 2; }
+scrolledwindow.fake-adw-status-page > viewport > box > clamp:not(:last-child) > box { margin-bottom: $space-size * 6; }
+scrolledwindow.fake-adw-status-page > viewport > box > clamp > box > .icon:not(:last-child) { margin-bottom: $space-size * 6; }
+scrolledwindow.fake-adw-status-page > viewport > box > clamp > box > .title:not(:last-child) { margin-bottom: $space-size * 2; }
+
+statuspage.icon-dropshadow image.icon {
+	-gtk-icon-shadow: 0 1px 12px rgba(0,0,0,0.05),
+	                  0 -1px rgba(0,0,0,0.05),
+	                  1px 0 rgba(0,0,0,0.1),
+	                  0 1px rgba(0,0,0,0.3),
+	                  -1px 0 rgba(0,0,0,0.1);
+}
+
+window.info scrollbar.vertical {
+  margin-top: 48px;
+  background: none;
+  box-shadow: none;
+}
+
+window.info scrollbar.vertical trough {
+  margin-top: 0;
+}
+
+// GsAppRow
+row.app > box.header {
+  margin-left: $space-size * 2;
+  margin-right: $space-size * 2;
+}
+
+row.app > box.header {
+  border-spacing: $space-size * 2;
+}
+
+row.app > box.header > image {
+  margin-top: $space-size * 2;
+  margin-bottom: $space-size * 2;
+}
+
+row.app label.warning {
+  color: $error;
+}
+
+// GtkSpinner
+
+// Ensure the spinner is hidden before the animation is triggered.
+@keyframes pre-delay {
+  from { opacity: 0; }
+  to { opacity: 0; }
+}
+
+@keyframes fade-in {
+  from { filter: opacity(0%); }
+}
+
+/* Give a fade-in animation to spinners. */
+spinner.fade-in:checked {
+  animation: pre-delay 0.5s linear 1, fade-in 1s linear 1, spin 1s linear infinite;
+  animation-delay: 0s, 0.5s, 0.5s;
+}
+
+// Leaflets
+window > contents > leaflet { // Gnome control center
+  > box > stack.background {
+    background-color: transparent;
+    background-image: linear-gradient(to bottom,
+                                      transparent,
+                                      transparent $large-size,
+                                      $background $large-size,
+                                      $background);
+  }
+}
+
+//
+// Gnome Weather
+//
+
+@define-color weather_temp_chart_fill_color #{rgba($warning, 0.5)};
+@define-color weather_temp_chart_stroke_color #{darken($warning, 10%)};
+@define-color weather_thermometer_warm_color #{if($variant == 'light', $yellow-dark, $yellow-light)};
+@define-color weather_thermometer_cold_color #{if($variant == 'light', $blue-dark, $blue-light)};
+
+$weather_thermometer_high_color: $yellow-light;
+$weather_thermometer_low_color: $blue-light;
+$weather_forecast_color: #ae7b03;
+
+#places-label {
+  font-weight: bold;
+}
+
+#temperature-label {
+  font-size: 32pt;
+  font-weight: 900;
+  margin-left: 9px;
+}
+
+#conditions-grid *:backdrop {
+  color: $text-secondary;
+}
+
+.content-view.cell {
+  font-weight: bold;
+}
+
+#locationEntry {
+  margin: $space-size;
+}
+
+.weather-popover {
+  margin-top: $space-size;
+}
+
+.forecast-card {
+  transition: border-radius 100ms ease-out;
+  border-radius: $corner-radius;
+}
+
+.forecast-card separator {
+  background-color: $border;
+}
+
+#daily-forecast-box {
+  > separator:last-child {
+    background-color: transparent;
+    min-width: 0;
+  }
+}
+
+#conditions-grid,
+#attributionGrid {
+  margin-left: $space-size * 3;
+  margin-right: $space-size * 3;
+}
+
+#weather-page .small .forecast-card {
+  margin-left: 0;
+  margin-right: 0;
+  border-radius: 0;
+  border-width: 1px 0;
+}
+
+.forecast-temperature-label {
+  font-weight: bold;
+  color: $weather_forecast_color;
+}
+
+WeatherThermometer {
+  margin-bottom: $space-size * 2;
+}
+
+WeatherThermometer > label.high {
+  font-weight: bold;
+  color: $weather_thermometer_high_color;
+}
+
+WeatherThermometer > label.low {
+  font-weight: bold;
+  color: $weather_thermometer_low_color;
+}
+
+.forecast-button {
+  margin: 0 $space-size * 2;
+}
+
+.forecast-graphic {
+  margin: $space-size * 3;
+}
+
+button.osd.circular {
+  border-radius: $circular-radius;
+  min-width: $small-size;
+  min-height: $small-size;
+}
+
+button.osd.circular > image {
+  padding: 0;
+}
+
+scrolledwindow.inline list,
+scrolledwindow.inline listview {
+  background: none;
+  color: inherit;
+}
+
+scrolledwindow.inline undershoot.top {
+  box-shadow: inset 0 1px $border;
+}
+
+.search-view {
+  background-color: $blue-dark;
+  color: on($blue-dark);
+}
+
+.search-view menubutton button:focus:focus-visible {
+  outline-color: rgba(white, 0.3);
+}
+
+image.circular {
+  min-width: $medium-size;
+  min-height: $medium-size;
+  padding: 0;
+  border-radius: $circular-radius;
+}
+
+// WeatherThermometerScale {
+//   border-radius: $circular-radius;
+//   background-image: linear-gradient(to bottom, $weather_thermometer_warm_color, $weather_thermometer_cold_color);
+//   margin: 0 36px;
+//   padding: 0;
+// }
+
+//
+// Gnome Clocks
+//
+
+.large-button {
+  padding: $space-size;
+}
+
+// alarms
+.alarm-time {
+  font-size: 2.5em;
+  font-weight: 300;
+}
+
+.clocks-ampm-toggle-button,
+.clocks-secondary-standalone-label {
+  font-size: 18pt;
+}
+
+.clocks-standalone-label,
+.clocks-ringing-label {
+  font-size: 6em;
+  font-weight: 300;
+}
+
+.clocks-ringing-title {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.clocks-alarm-setup-time {
+  font-size: 32pt;
+}
+
+// Timer Panel
+.clocks-timer-label,
+.clocks-spinbutton {
+  font-size: 48pt;
+}
+
+// disguise insensitive spinbuttons as normal labels
+.timer-panel .timer-header {
+  font-size: 20pt;
+  font-weight: 300;
+}
+
+.timer-countdown {
+  font-size: 40pt;
+  font-weight: 300;
+}
+
+/* Stopwatch Panel */
+.lap-time {
+  font-weight: bold;
+}
+
+.stopped-stopwatch label,
+.running-stopwatch label,
+.paused-stopwatch label {
+  font-size: 70px;
+  font-weight: lighter;
+}
+
+.stopped-stopwatch .seconds-label {
+  font-weight: 300;
+}
+
+.running-stopwatch .seconds-label,
+.running-stopwatch .miliseconds-label {
+  color: $primary;
+}
+
+.stopped-stopwatch .miliseconds-label,
+.running-stopwatch .miliseconds-label,
+.paused-stopwatch .miliseconds-label {
+  font-size: 50px;
+}
+
+.running-stopwatch .seconds-label,
+.paused-stopwatch .seconds-label {
+  font-weight: 300;
+}
+
+// World
+.clock-location {
+  font-weight: bolder;
+}
+
+.hidden {
+  opacity: 0;
+}
+
+.clock-time {
+  font-size: 2em;
+  padding: 0.2em 0.5em;
+  border-radius: 1em;
+}
+
+.none .clock-time {
+  background: gtkalpha(currentColor, 0.2);
+}
+
+.night .clock-time {
+  color: $blue-dark;
+  background-color: gtkalpha($blue-light, 0.25);
+}
+
+.naut .clock-time,
+.astro .clock-time {
+  color: $orange-dark;
+  background-color: gtkalpha($orange-light, 0.25);
+}
+
+.civil .clock-time,
+.day .clock-time {
+  color: $yellow-dark;
+  background: gtkalpha($yellow-light, 0.25);
+}
+
+//
+// Builder
+//
+
+headerbar splitbutton {
+  notification button {
+    margin: 0;
+    min-height: $small-size;
+    min-width: $small-size;
+    padding: 0;
+  }
+}
+
+popover.background.global-search {
+  > arrow, > contents { padding: 0; }
+}
+
+panelframeswitcher {
+  padding: $space-size;
+  min-height: $medium-size;
+}
+
+.frameheader.header {
+  // min-height: $small-size;
+  background-color: $titlebar;
+
+  &:backdrop {
+    background-color: $titlebar-backdrop;
+  }
+
+  > button {
+    border: none;
+    margin: 0;
+    padding: $space-size / 2;
+  }
+
+  tabbar.inline {
+    > revealer > box {
+      min-height: $small-size;
+
+      .start-action {
+        padding: 0;
+        border: none;
+      }
+
+      .end-action {
+        padding: 0;
+        border-left: 1px solid $border;
+
+        button { margin: $space-size; }
+      }
+
+      tabbox {
+        border: none;
+        background: none;
+      }
+    }
+  }
+}
+
+panelstatusbar {
+  > menubutton > button,
+  > paneltogglebutton button { border-radius: 0; }
+}
+
+// Setting window
+.style-variant {
+  padding: 0 $space-size * 2;
+
+  button.toggle {
+    padding: 0;
+
+    &, &:hover, &:focus, &:active, &:checked {
+      background: none;
+      outline: none;
+      border: none;
+      box-shadow: none;
+    }
+
+    > stylevariantpreview > .wallpaper {
+      border-radius: $corner-radius;
+      outline-color: transparent;
+      outline-width: 3px;
+      outline-offset: $space-size / 2;
+      outline-style: solid;
+      box-shadow: none;
+    }
+
+    &:hover > stylevariantpreview > .wallpaper {
+      outline-color: $fill;
+    }
+
+    &:active > stylevariantpreview > .wallpaper {
+      outline-color: $track;
+    }
+
+    &:checked > stylevariantpreview > .wallpaper {
+      outline-color: $primary;
+    }
+  }
+}
+
+//
+// Amberol
+//
+
+playlistview {
+  scrollbar {
+    &.overlay-indicator {
+      &.dragging,
+      &.hovering { background-color: transparent; }
+    }
+  }
+
+  queuerow {
+    picture.cover,
+    image.card { border: none; }
+  }
+}
+
+//
+// Console
+//
+
+.exit-info {
+  padding: 6px;
+  border-top: 2px solid $primary;
+  background: rgba($primary, 0.9);
+  color: on($primary);
+}
+
+.error .exit-info {
+  border-top: 2px solid $error;
+  background: rgba($error, 0.9);
+  color: on($error);
+}
+
+//
+// dialogs
+//
+
+window.dialog {
+  > .dialog-vbox > box > scrolledwindow > viewport > widget {
+    > list.boxed-list {
+      border: none;
+      border-radius: 0;
+
+      > row {
+        &:first-child, &:last-child { border-radius: 0; }
+      }
+    }
+  }
+}

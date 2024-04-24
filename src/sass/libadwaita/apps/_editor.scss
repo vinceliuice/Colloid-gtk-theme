@@ -1,0 +1,11 @@
+//
+// Text Editor
+//
+
+window.org-gnome-TextEditor {
+  popover.open-popover {
+    > contents {
+      padding: 0;
+    }
+  }
+}
