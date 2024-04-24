@@ -226,9 +226,8 @@ treeview.view {
   }
 
   > header > button {
-    padding-left: 4px;
-    padding-right: 4px;
-    border-bottom: 1px solid $border_color;
+    padding-left: $base_padding;
+    padding-right: $base_padding;
   }
 
   &.progressbar { // progress bar in treeviews

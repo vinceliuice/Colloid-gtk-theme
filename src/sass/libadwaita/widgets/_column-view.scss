@@ -7,11 +7,12 @@ columnview {
 
   > header > button {
     @extend %undecorated_button;
-    padding: $base_padding / 2 $base_padding;
+    padding: $base_padding / 2 $base_padding * 1.5;
     border-radius: 0;
     box-shadow: none;
     line-height: 100%;
     border-left: 1px solid $border_color;
+    border-bottom: 1px solid $border_color;
 
     &:first-child {
       border-left-width: 0;
