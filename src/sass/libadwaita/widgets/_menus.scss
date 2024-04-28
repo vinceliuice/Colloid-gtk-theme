@@ -171,8 +171,8 @@ popover.menu {
     > row {
       border-radius: $menuitem_radius;
       padding: 0 $menu_padding;
-      min-height: 32px;
-      min-width: 40px;
+      min-height: $menuitem_size;
+      min-width: $large_size;
 
       &:selected {
         background: none;
@@ -213,7 +213,7 @@ popover.menu {
     > row {
       margin: 0 $menu_margin;
 
-      padding: 9px $menu_padding;
+      padding: $menu_padding;
       min-height: 0;
     }
   }

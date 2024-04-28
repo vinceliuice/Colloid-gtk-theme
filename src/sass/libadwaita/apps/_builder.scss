@@ -6,6 +6,21 @@ popover.background.global-search {
   > arrow, > contents { padding: 0; }
 }
 
+popover.background.pages-popover {
+  listview > row {
+    padding: $base_padding;
+
+    button {
+      margin: 0;
+    }
+
+    check {
+      margin: 4px 2px;
+      -gtk-icon-size: 12px;
+    }
+  }
+}
+
 panelresizer .top-bar {
   box-shadow: inset 0 -1px $border_color;
 }

@@ -7,8 +7,8 @@ $asset_suffix: if($variant == 'dark', '-dark', '');
 //
 
 $base_padding: if($compact == 'false', 6px, 4px);
-$menu_margin: 6px; //margin around menuitems & sidebar items
-$menu_padding: 12px; //inner menuitem padding
+$menu_margin: $base_padding; //margin around menuitems & sidebar items
+$menu_padding: $base_padding * 2; //inner menuitem padding
 
 $small_size: if($compact == 'false', 24px, 22px);
 $medium_size: if($compact == 'false', 36px, 32px);

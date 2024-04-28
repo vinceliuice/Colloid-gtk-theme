@@ -135,6 +135,11 @@ button {
     min-width: 24px;
     padding-left: ($medium_size - 24px) / 2;
     padding-right: ($medium_size - 24px) / 2;
+
+    &.close-button {
+      padding: 0;
+      border-radius: $circular_radius;
+    }
   }
 
   &.text-button {
@@ -294,7 +299,7 @@ button {
     min-width: 34px;
     min-height: 34px;
     padding: 0;
-    border-radius: 9999px;
+    border-radius: $circular_radius;
 
     label { padding: 0; }
   }
@@ -302,7 +307,7 @@ button {
   @at-root %pill_button,
   &.pill {
     padding: 10px 32px;
-    border-radius: 9999px;
+    border-radius: $circular_radius;
   }
 
   &.card {
