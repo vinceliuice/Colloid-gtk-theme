@@ -68,7 +68,7 @@ Run the following commands in the terminal:
 
 Default ColorSchemes themes will follow the system style now !
 
-<video id="video" controls="" preload="none">
+<video width="320" controls loop>
   <source id="screencast" src="screencast.mp4" type="video/mp4">
 </videos>
 
