@@ -60,6 +60,18 @@ Run the following commands in the terminal:
 
 ![tweaks](tweaks.png?raw=true)
 
+### Fix for Libadwaita
+
+```sh
+./install.sh -l
+```
+
+Default ColorSchemes themes will follow the system style now !
+
+<video id="video" controls="" preload="none">
+  <source id="screencast" src="screencast.mp4" type="video/mp4">
+</videos>
+
 ### Flatpak Installation
 
 Automatically install your host GTK+ theme as a Flatpak. Use this:
