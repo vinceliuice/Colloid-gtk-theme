@@ -511,7 +511,7 @@ theme_tweaks() {
   if [[ "$compact" = "true" ]]; then
     compact_size
   fi
- 
+
   if [[ "$colorscheme" = "true" ]] ; then
     color_schemes
   fi
@@ -534,7 +534,7 @@ theme_tweaks() {
 }
 
 uninstall_link() {
-  rm -rf "${HOME}/.config/gtk-4.0/"{assets,windows-assets,gtk.css,gtk-dark.css}
+  rm -rf "${HOME}/.config/gtk-4.0/"{assets,windows-assets,gtk.css,gtk-dark.css,gtk-Light.css,gtk-Dark.css}
 }
 
 link_libadwaita() {
@@ -558,6 +558,15 @@ link_libadwaita() {
 }
 
 install_libadwaita() {
+  local dest="${1}"
+  local name="${2}"
+  local theme="${3}"
+  local color="${4}"
+  local size="${5}"
+  local scheme="${6}"
+
+  theme_tweaks
+
   rm -rf "${HOME}/.config/gtk-4.0/"{assets,gtk.css,gtk-dark.css}
 
   echo -e "\nInstalling theme into '${HOME}/.config/gtk-4.0' for libadwaita..."
@@ -565,7 +574,12 @@ install_libadwaita() {
   mkdir -p                                                                      "${HOME}/.config/gtk-4.0"
   cp -r "${SRC_DIR}/assets/gtk/assets"                                          "${HOME}/.config/gtk-4.0"
   cp -r "${SRC_DIR}/assets/gtk/symbolics/"*'.svg'                               "${HOME}/.config/gtk-4.0/assets"
-  sassc $SASSC_OPT "${SRC_DIR}/main/libadwaita/libadwaita.scss"                 "${HOME}/.config/gtk-4.0/gtk.css"
+
+  if [[ "$colorscheme" = "true" || "$blackness" = "true" ]] ; then
+    sassc $SASSC_OPT "${SRC_DIR}/main/libadwaita/libadwaita${color}.scss"       "${HOME}/.config/gtk-4.0/gtk.css"
+  else
+    sassc $SASSC_OPT "${SRC_DIR}/main/libadwaita/libadwaita-Light.scss"         "${HOME}/.config/gtk-4.0/gtk.css"
+  fi
 }
 
 link_theme() {
@@ -574,6 +588,18 @@ link_theme() {
       for size in "${sizes[@]}"; do
         for scheme in "${schemes[@]}"; do
           link_libadwaita "${dest:-$DEST_DIR}" "${name:-$THEME_NAME}" "$theme" "$color" "$size" "$scheme"
+        done
+      done
+    done
+  done
+}
+
+libadwaita_theme() {
+  for theme in "${themes[@]}"; do
+    for color in "${lcolors[@]}"; do
+      for size in "${sizes[@]}"; do
+        for scheme in "${schemes[@]}"; do
+          install_libadwaita "${dest:-$DEST_DIR}" "${name:-$THEME_NAME}" "$theme" "$color" "$size" "$scheme"
         done
       done
     done
@@ -663,15 +689,18 @@ uninstall_theme() {
 
 if [[ "$uninstall" == 'true' ]]; then
   if [[ "$libadwaita" == 'true' ]]; then
-    echo -e "\nUninstall ${HOME}/.config/gtk-4.0 links ..."
+    echo -e "\nUninstall libadwaita theme from ${HOME}/.config/gtk-4.0 ..."
     uninstall_link
   else
     echo && uninstall_theme && uninstall_link
   fi
 else
-  install_package && tweaks_temp && gnome_shell_version && install_theme
+  install_package && tweaks_temp
+
   if [[ "$libadwaita" == 'true' ]]; then
-    uninstall_link && install_libadwaita
+    uninstall_link && libadwaita_theme
+  else
+    gnome_shell_version && install_theme
   fi
 fi
 

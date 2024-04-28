@@ -52,22 +52,13 @@ colorswatch {
     }
   }
 
-  @if $contrast == 'high' {
-    > overlay {
-      box-shadow: inset 0 0 0 1px gtkalpha($view_fg_color, .5);
-    }
-  }
-
   &.dark > overlay {
     color: white;
   }
 
   &.light > overlay {
     color: transparentize(black, .25);
-
-    @if $contrast != 'high' {
-      box-shadow: inset 0 0 0 1px gtkalpha($view_fg_color, 0.1);
-    }
+    box-shadow: inset 0 0 0 1px gtkalpha($view_fg_color, 0.1);
   }
 
   &:drop(active) {

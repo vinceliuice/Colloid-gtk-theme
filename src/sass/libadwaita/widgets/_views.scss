@@ -54,10 +54,6 @@ gridview > child {
 
   &:selected {
     background-color: $view_selected_color;
-
-    @if $contrast == 'high' {
-      box-shadow: inset 0 0 0 1px $border_color;
-    }
   }
 }
 
@@ -70,11 +66,5 @@ gridview > child.activatable {
     &:hover { background-color: $view_selected_hover_color; }
 
     &:active { background-color: $view_selected_active_color; }
-  }
-
-  @if $contrast == 'high' {
-    &:hover, &:active {
-      box-shadow: inset 0 0 0 1px $border_color;
-    }
   }
 }

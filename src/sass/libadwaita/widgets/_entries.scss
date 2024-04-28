@@ -59,12 +59,12 @@ entry {
     }
 
     > image { // icons inside the entry
-      opacity: if($contrast == 'high', .85, .7);
+      opacity: .7;
 
       &:hover { opacity: 1; }
 
       &:active {
-        opacity: if($contrast == 'high', .9, .8);
+        opacity: .8;
       }
 
       &.left { margin-right: 6px; }

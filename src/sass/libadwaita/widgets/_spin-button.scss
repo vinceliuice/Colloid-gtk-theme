@@ -16,7 +16,7 @@ spinbutton {
     box-shadow: none;
 
     border-style: solid;
-    border-color: gtkalpha(currentColor, if($contrast == 'high', .5, .1));
+    border-color: gtkalpha(currentColor, .1);
   }
 
   &:not(.vertical) {

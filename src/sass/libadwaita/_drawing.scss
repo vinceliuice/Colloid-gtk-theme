@@ -374,14 +374,6 @@
     background: $color;
   }
 
-  @if $contrast == 'high' {
-    > border {
-      min-width: 1px;
-      min-height: 1px;
-      background: $border_color;
-    }
-  }
-
   > shadow {
     min-width: 56px;
     min-height: 56px;

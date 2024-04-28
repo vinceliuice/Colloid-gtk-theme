@@ -33,14 +33,6 @@ popover.emoji-picker emoji {
   &:active {
     background: $active_color;
   }
-
-  @if $contrast == 'high' {
-    &:focus,
-    &:hover,
-    &:active {
-      box-shadow: inset 0 0 0 1px $border_color;
-    }
-  }
 }
 
 popover.emoji-picker scrolledwindow.view {
@@ -79,13 +71,5 @@ emoji-completion-row {
 
   &:active {
     background-color: $active_color; // matching buttons
-  }
-
-  @if $contrast == 'high' {
-    &:focus,
-    &:hover,
-    &:active {
-      box-shadow: inset 0 0 0 1px $border_color;
-    }
   }
 }

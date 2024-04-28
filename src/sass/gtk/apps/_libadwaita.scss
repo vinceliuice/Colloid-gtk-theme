@@ -380,9 +380,6 @@ toolbarview.undershoot-bottom scrolledwindow {
 // Sidebar
 .unfolded stacksidebar.sidebar { border: none; }
 
-$sidebar: if($topbar == 'dark' and $variant == 'light', $titlebar, $base-alt);
-$sidebar-backdrop: if($topbar == 'dark' and $variant == 'light', $titlebar-backdrop, $background);
-
 .sidebar-pane {
   background-color: $sidebar;
   color: on($sidebar);
