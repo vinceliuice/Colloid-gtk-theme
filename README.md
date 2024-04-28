@@ -68,8 +68,8 @@ Run the following commands in the terminal:
 
 Default ColorSchemes themes will follow the system style now !
 
-<video width="320" controls loop>
-  <source id="screencast" src="screencast.mp4" type="video/mp4">
+<video width="1080" controls loop>
+  <source src="screencast.mp4" type="video/mp4">
 </videos>
 
 ### Flatpak Installation
