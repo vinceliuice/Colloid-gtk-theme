@@ -194,10 +194,10 @@ stacksidebar row {
     }
   }
 
-  padding: $menu-margin 0; //only vertical padding. horizontal row size would clip
+  padding: $menu_margin 0; //only vertical padding. horizontal row size would clip
 
   > separator {
-    margin: $menu-margin;
+    margin: $menu_margin;
     background: none;
   }
 
@@ -205,6 +205,6 @@ stacksidebar row {
     min-height: 36px;
     padding: 0 8px;
     border-radius: $menuitem_radius;
-    margin: 0 $menu_margin 2px;
+    margin: 0 $menu_margin $base_padding / 2;
   }
 }
