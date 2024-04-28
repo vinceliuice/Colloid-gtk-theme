@@ -51,7 +51,7 @@ make_assets() {
       ;;
   esac
 
-    if [[ "$scheme" == '-Nord' ]]; then
+  if [[ "$scheme" == '-Nord' ]]; then
       case "$theme" in
         '')
           theme_color_dark='#5e81ac'
@@ -90,9 +90,9 @@ make_assets() {
           theme_color_light='#d9dce3'
           ;;
       esac
-    fi
+  fi
 
-    if [[ "$scheme" == '-Dracula' ]]; then
+  if [[ "$scheme" == '-Dracula' ]]; then
       case "$theme" in
         '')
           theme_color_dark='#a679ec'
@@ -131,9 +131,9 @@ make_assets() {
           theme_color_light='#d9dae3'
           ;;
       esac
-    fi
+  fi
 
-    if [[ "$scheme" == '-Gruvbox' ]]; then
+  if [[ "$scheme" == '-Gruvbox' ]]; then
       case "$theme" in
         '')
           theme_color_dark='#458588'
@@ -172,9 +172,9 @@ make_assets() {
           theme_color_light='#a89984'
           ;;
       esac
-    fi
+  fi
 
-    if [[ "$scheme" == '-Everforest' ]]; then
+  if [[ "$scheme" == '-Everforest' ]]; then
       case "$theme" in
         '')
           theme_color_dark='#458588'
@@ -213,10 +213,10 @@ make_assets() {
           theme_color_light='#a89984'
           ;;
       esac 
-    fi
+  fi
 
   if [[ "$blackness" == 'true' ]]; then
-    case "$ctype" in
+    case "$scheme" in
       '')
         background_light='#FFFFFF'
         background_dark='#0F0F0F'
@@ -238,6 +238,13 @@ make_assets() {
         titlebar_light='#f0f1f4'
         titlebar_dark='#020203'
         ;;
+      -Gruvbox)
+        background_light='#f9f5d7'
+        background_dark='#0f0e0e'
+        background_dark_alt='#121110'
+        titlebar_light='#fbf1c7'
+        titlebar_dark='#0d0907'
+        ;;
       -Everforest)
         background_light='#fffbef'
         background_dark='#1e2326'
@@ -247,7 +254,7 @@ make_assets() {
         ;;
     esac
   else
-    case "$ctype" in
+    case "$scheme" in
       '')
         background_light='#ffffff'
         background_dark='#2c2c2c'
@@ -268,6 +275,13 @@ make_assets() {
         background_dark_alt='#343746'
         titlebar_light='#f0f1f4'
         titlebar_dark='#1f2029'
+        ;;
+      -Gruvbox)
+        background_light='#f9f5d7'
+        background_dark='#282524'
+        background_dark_alt='#3c3836'
+        titlebar_light='#fbf1c7'
+        titlebar_dark='#242220'
         ;;
       -Everforest)
         background_light='#fffbef'

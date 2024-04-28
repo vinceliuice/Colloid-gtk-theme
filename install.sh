@@ -607,39 +607,6 @@ libadwaita_theme() {
   done
 }
 
-clean() {
-  local dest="${1}"
-  local name="${2}"
-  local theme="${3}"
-  local color="${4}"
-  local size="${5}"
-  local scheme="${6}"
-  local screen="${7}"
-
-  local THEME_DIR="${1}/${2}${3}${4}${5}${6}${7}"
-
-  if [[ ${theme} == '' && ${color} == '' && ${size} == '' && ${scheme} == '' ]]; then
-    cleantheme='none'
-  elif [[ -d ${THEME_DIR} ]]; then
-    rm -rf ${THEME_DIR}
-    echo -e "Find: ${THEME_DIR} ! removing it ..."
-  fi
-}
-
-clean_theme() {
-  for theme in '' '-purple' '-pink' '-red' '-orange' '-yellow' '-green' '-teal' '-grey'; do
-    for color in '' '-light' '-dark'; do
-      for size in '' '-compact'; do
-        for scheme in '' '-nord' '-dracula' '-gruvbox' '-everforest'; do
-          for screen in '' '-hdpi' '-xhdpi'; do
-            clean "${dest:-${DEST_DIR}}" "${name:-${THEME_NAME}}" "${theme}" "${color}" "${size}" "${scheme}" "${screen}"
-          done
-        done
-      done
-    done
-  done
-}
-
 install_theme() {
   for theme in "${themes[@]}"; do
     for color in "${colors[@]}"; do

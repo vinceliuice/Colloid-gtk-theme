@@ -1688,7 +1688,7 @@ $menu_item_radius: $corner-radius;
     z-index: 120;
     text-shadow: none;
     color: on($primary);
-    padding: 0;
+    padding: 0 1px;
   }
 
   &-button-label {
