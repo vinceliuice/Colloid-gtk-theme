@@ -717,25 +717,6 @@ button {
   &:dir(rtl) { background-position: left 3px; }
 }
 
-// menu buttons
-modelbutton.flat,
-.menuitem.button.flat {
-  min-height: $menuitem-size;
-  padding: 0 8px;
-  border-radius: $corner-radius;
-  color: $text;
-
-  @extend %button-flat-simple;
-
-  &:selected { @extend %selected_items; }
-}
-
-modelbutton.flat arrow {
-  &.left { -gtk-icon-source: -gtk-icontheme("pan-start-symbolic"); }
-
-  &.right { -gtk-icon-source: -gtk-icontheme("pan-end-symbolic"); }
-}
-
 button.color {
   min-height: $small-size;
   min-width: $small-size;
@@ -1828,7 +1809,7 @@ popover.background {
     }
   }
 
-  > stack { margin: 0; } // remove extra padding from menu style popovers
+  > stack { margin: -4px; } // remove extra padding from menu style popovers
 
   > toolbar { margin: 0; }
 
@@ -1871,6 +1852,28 @@ popover.background {
     border-radius: $corner-radius;
 
     // &:checked { color: $primary; }
+  }
+
+  // menu buttons
+  modelbutton.flat,
+  .menuitem.button.flat {
+    min-height: $menuitem-size;
+    padding: 0 8px;
+    border-radius: $corner-radius;
+    color: $text;
+    @extend %button-flat-simple;
+
+    &:selected { @extend %selected_items; }
+  }
+
+  modelbutton.flat + modelbutton.flat,
+  modelbutton.flat + box.vertical,
+  .menuitem.button.flat + .menuitem.button.flat { margin-top: 2px; }
+
+  modelbutton.flat arrow {
+    &.left { -gtk-icon-source: -gtk-icontheme("pan-start-symbolic"); }
+
+    &.right { -gtk-icon-source: -gtk-icontheme("pan-end-symbolic"); }
   }
 
   separator { margin: $space-size / 2 0; }
@@ -3278,6 +3281,8 @@ stacksidebar.sidebar {
     padding: 0 $space-size / 2;
     border-radius: $corner-radius;
 
+    + row { margin-top: $space-size / 2; }
+
     &:selected {
       background-color: $primary;
       color: on($primary);
@@ -3287,8 +3292,6 @@ stacksidebar.sidebar {
         color: on($primary);
       }
     }
-
-    + row { margin-top: $space-size / 2; }
 
     > label {
       padding-left: $space-size;
@@ -3331,6 +3334,8 @@ placessidebar.sidebar {
     margin: 0; // Remove unwanted hard-coded vertical margins with -1px
     padding: 0;
     border-radius: $corner-radius;
+
+    + row { margin-top: $space-size / 2; }
 
     // Using margins/padding directly in the SidebarRow
     // will make the animation of the new bookmark row jump

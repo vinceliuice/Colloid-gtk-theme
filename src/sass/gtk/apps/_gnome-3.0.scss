@@ -469,6 +469,8 @@ frame.gedit-map-frame > border {
 leaflet list.navigation-sidebar {
   background-color: $base-alt;
 
+  > row + row { margin-top: $space-size / 2; }
+
   window.background.csd:not(.maximized) & {
     border-bottom-left-radius: $window-radius;
   }
@@ -588,10 +590,12 @@ window.background.csd {
 
         list { // left-pane
           background-color: transparent;
-          padding: $space-size / 2;
+          padding: $space-size;
 
-          row.activatable {
+          > row.activatable {
             border-radius: $corner-radius;
+
+            + row { margin-top: $space-size / 2; }
 
             &:not(:hover):not(:active):not(:selected) {
               background-color: transparent;
