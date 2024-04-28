@@ -70,7 +70,7 @@ Default ColorSchemes themes will follow the system style now !
 
 <video width="1080" controls loop>
   <source src="screencast.mp4" type="video/mp4">
-</videos>
+</video>
 
 ### Flatpak Installation
 
