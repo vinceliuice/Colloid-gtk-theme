@@ -245,7 +245,7 @@ StScrollBar {
 // Tooltip
 //
 #Tooltip {
-  border-radius: $circular-radius;
+  border-radius: $window-radius;
   padding: $space-size $space-size * 2;
   background-color: $tooltip;
   color: on($tooltip);
@@ -886,11 +886,10 @@ $menu_item_radius: $corner-radius;
 .calendar-event-button {
   margin: $space-size 0 $space-size 0;
   border-radius: $corner-radius;
+  background-color: $fill;
 
   &:hover {
-    background-gradient-direction: vertical;
-    background-gradient-start: $fill;
-    background-gradient-end: $fill;
+    background-color: $divider;
     box-shadow: none;
   }
 }
