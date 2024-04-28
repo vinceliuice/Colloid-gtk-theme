@@ -40,7 +40,8 @@ Run the following commands in the terminal:
 -c, --color VARIANT...  Specify color variant(s) [standard|light|dark] (Default: All variants)
 -s, --size VARIANT...   Specify size variant [standard|compact] (Default: standard variant)
 
--l, --libadwaita        Link installed gtk-4.0 theme to config folder for all libadwaita app use this theme
+-l, --libadwaita        Install specify gtk-4.0 theme into config folder (~/.config/gtk-4.0) for all gtk4 apps use this theme
+                        (Default ColorSchemes themes will follow the system style, [nord|dracula|gruvbox|everforest|black] not support this)
 
 -r, --remove,
 -u, --uninstall         Uninstall/Remove installed themes or links
