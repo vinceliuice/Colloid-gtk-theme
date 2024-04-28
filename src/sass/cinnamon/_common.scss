@@ -960,8 +960,8 @@ $menu_item_radius: $corner-radius;
   spacing-columns: $space-size*1.5;
   margin-from-right-edge-of-screen: $space-size*3;
   width: 28em;
-  color: $text;
-  background-color: rgba($base, 0.8);
+  color: on($tooltip);
+  background-color: $tooltip;
   box-shadow: 0 5px 12px rgba(black, 0.35);
   margin: 7px 12px 17px 12px;
 
@@ -976,12 +976,12 @@ $menu_item_radius: $corner-radius;
   .popup-menu & {
     border: none;
     border-radius: $corner-radius;
-    background-color: rgba($text, 0.05);
+    background-color: $fill;
     box-shadow: none;
     margin: 0;
 
     &:hover {
-      background-color: rgba($text, 0.1);
+      background-color: $divider;
       box-shadow: 0 3px 8px rgba(black, 0.15);
     }
 
@@ -997,7 +997,7 @@ $menu_item_radius: $corner-radius;
 
   &.multi-line-notification {
     padding-bottom: $space-size*2;
-    color: $text;
+    color: on($tooltip);
   }
 
   &-scrollview {
@@ -1016,7 +1016,7 @@ $menu_item_radius: $corner-radius;
 .notification {
   &-with-image {
     min-height: 159px;
-    color: $text;
+    color: on($tooltip);
   }
 
   &-button, &-icon-button {
