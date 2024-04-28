@@ -58,8 +58,6 @@ Run the following commands in the terminal:
 
 > For more information, run: `./install.sh --help`
 
-![tweaks](tweaks.png?raw=true)
-
 ### Fix for Libadwaita
 
 ```sh
@@ -69,6 +67,8 @@ Run the following commands in the terminal:
 Default ColorSchemes themes will follow the system style now !
 
 https://github.com/vinceliuice/Colloid-gtk-theme/assets/7604295/d5c24086-08bc-45a4-b4d9-124c02249216
+
+![tweaks](tweaks.png?raw=true)
 
 ### Flatpak Installation
 
