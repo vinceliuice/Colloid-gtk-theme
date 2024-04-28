@@ -3,12 +3,12 @@ switch {
   border-radius: $circular_radius;
   padding: $base_padding / 2;
   background-color: $trough_color;
-  transition: all $duration $ease-out;
+  transition: background-color $duration $ease_out;
 
   &:hover { background-color: $trough_hover_color; }
   &:active { background-color: $trough_active_color; }
 
-  // @include focus-ring($offset: 1px, $outer: true);
+  @include focus-ring($offset: 1px, $outer: true);
 
   &:disabled {
     filter: opacity($disabled_opacity);
@@ -19,12 +19,14 @@ switch {
     min-height: $small_size - 6px;
     border-radius: 50%;
     background-color: $slider_color;
-    box-shadow: $shadow-z3;
+    box-shadow: 0 2px 3px rgba(black, 0.15), 0 0 0 0 transparent;
+    transition: box-shadow 100ms $ease_out,
+                background-color $duration $ease_out;
   }
 
   &:hover > slider,
   &:active > slider {
-    box-shadow: 0 0 0 6px gtkalpha(currentColor, .1);
+    box-shadow: 0 2px 3px transparent, 0 0 0 6px gtkalpha(currentColor, .1);
   }
 
   &:checked {
@@ -35,6 +37,7 @@ switch {
     &:active { background-image: image(transparentize(black, .8)); }
 
     > slider {
+      color: $window_fg_color;
       background-color: $slider_hover_color;
     }
   }
