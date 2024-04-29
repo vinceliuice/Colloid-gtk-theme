@@ -461,6 +461,8 @@ frame.gedit-map-frame > border {
 
   separator { @extend %hide_separators; }
 
+  > row + row { margin-top: $space-size / 2; }
+
   .csd & {
     border-bottom-left-radius: $window-radius;
   }
