@@ -1767,6 +1767,18 @@ window#GearyMainWindow.background.csd {
   }
 }
 
+.geary-main-window {
+  @if $variant == 'light' and $topbar == 'dark' {
+    leaflet > separator {
+      background-repeat: no-repeat;
+      background-image: linear-gradient(to bottom, $titlebar 0,
+                                                   $titlebar $large-size,
+                                                   transparent $large-size,
+                                                   transparent 100%);
+    }
+  }
+}
+
 preferencesgroup, .geary-accounts-editor-pane {
   list {
     @extend %circular_list;
