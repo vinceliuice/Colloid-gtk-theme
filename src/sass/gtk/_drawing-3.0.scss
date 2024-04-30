@@ -57,6 +57,34 @@
     background-color: $entry;
     color: $text-disabled;
   }
+  
+  @if $t == solid {
+    transition: $transition, box-shadow $ripple-fade-out-duration $ease-out;
+    box-shadow: inset 0 0 0 2px transparent;
+    background-color: mix($text, $base, 5%);
+    color: $text;
+  }
+
+  @if $t == solid-hover {
+    background-color: mix($text, $base, 10%);
+    box-shadow: inset 0 0 0 2px $overlay-hover;
+  }
+
+  @if $t == solid-focus {
+    background-color: mix($text, $base, 8%);
+    box-shadow: inset 0 0 0 2px if($fc == $primary, $track, $fc);
+  }
+
+  @if $t == solid-checked {
+    background-color: mix($text, $base, 5%);
+    box-shadow: inset 0 0 0 2px if($fc == $primary, $primary, $fc);
+  }
+
+  @if $t == solid-disabled {
+    box-shadow: inset 0 0 0 2px transparent;
+    background-color: mix($text, $base, 3%);
+    color: $text-disabled;
+  }
 
   @if $t == raised-normal {
     transition: $transition, box-shadow $ripple-fade-out-duration $ease-out;

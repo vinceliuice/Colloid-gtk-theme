@@ -283,69 +283,79 @@ spinner {
 /****************
  * Text Entries *
  ****************/
+
+%entry_basic {
+  min-height: $medium-size;
+  padding: 0 8px;
+  border-radius: $corner-radius;
+  caret-color: currentColor; // this shouldn't be needed.
+
+  @include entry(normal);
+
+  &:focus { @include entry(checked); }
+
+  &:drop(active) { @include entry(hover); }
+
+  &:disabled { @include entry(disabled); }
+}
+
 %entry,
 entry {
-  %entry_basic, & {
-    min-height: $medium-size;
-    padding: 0 8px;
-    border-radius: $corner-radius;
-    caret-color: currentColor; // this shouldn't be needed.
+  @extend %entry_basic;
 
-    @include entry(normal);
+  .background:not(.csd) & {
+    @include entry(solid);
 
-    &:focus { @include entry(checked); }
+    &:focus { @include entry(solid-checked); }
 
-    &:drop(active) { @include entry(hover); }
+    &:drop(active) { @include entry(solid-hover); }
 
-    &:disabled { @include entry(disabled); }
+    &:disabled { @include entry(solid-disabled); }
+  }
 
-    &.flat {
-      min-height: 0;
-      padding: 2px;
-      border-radius: 0;
-      background-color: transparent;
+  &.flat {
+    min-height: 0;
+    padding: 2px;
+    border-radius: 0;
+    background-color: transparent;
+  }
+
+  image { // icons inside the entry
+    color: $text-secondary;
+
+    &:hover, &:active { color: $text; }
+
+    &:disabled { color: $text-disabled; }
+
+    &.left {
+      margin-left: ($medium-size - 16px) / 2 - 8px;
+      margin-right: 6px;
     }
 
-    image { // icons inside the entry
-      color: $text-secondary;
-
-      &:hover, &:active { color: $text; }
-
-      &:disabled { color: $text-disabled; }
-
-      &.left {
-        margin-left: ($medium-size - 16px) / 2 - 8px;
-        margin-right: 6px;
-      }
-
-      &.right {
-        margin-left: 6px;
-        margin-right: ($medium-size - 16px) / 2 - 8px;
-      }
+    &.right {
+      margin-left: 6px;
+      margin-right: ($medium-size - 16px) / 2 - 8px;
     }
+  }
 
-    undershoot {
-      &.left { @include undershoot(left); }
+  undershoot {
+    &.left { @include undershoot(left); }
 
-      &.right { @include undershoot(right); }
+    &.right { @include undershoot(right); }
+  }
+
+  selection { @extend %selected_items_primary; }
+
+  // entry error and warning style
+  @each $e_type, $e_color in (error, $error),
+                             (warning, $warning) {
+    &.#{$e_type} {
+      @include entry(normal, $e_color);
+
+      &:focus { @include entry(checked, $e_color); }
+
+      &:disabled { @include entry(disabled, $e_color); }
     }
-
-    selection { @extend %selected_items_primary; }
-
-    // entry error and warning style
-    @each $e_type, $e_color in (error, $error),
-                               (warning, $warning) {
-      &.#{$e_type} {
-        @include entry(normal, $e_color);
-
-        &:focus { @include entry(checked, $e_color); }
-
-        &:disabled { @include entry(disabled, $e_color); }
-      }
-    }
-
-    // .osd & {
-    // }
   }
 
   progress {
