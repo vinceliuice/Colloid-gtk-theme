@@ -94,9 +94,10 @@ $dash_spacing: $base_margin * 0.5;
   background-color: rgba(black, 0.75);
   border-radius: $circular_radius;
   padding: $base_padding $base_padding * 2;
+  margin: $base_margin * 2;
   box-shadow: none;
   border: none;
   text-align: center;
-  -y-offset: $base_margin * 3; // distance from the dash edge
+  -y-offset: $base_margin; // distance from the dash edge
   -x-offset: 8px;
 }
