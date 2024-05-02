@@ -298,8 +298,8 @@ make_gtkrc() {
         background_dark='#232A2E'
         background_darker='#343F44'
         background_alt='#3D484D'
-        background_light='#edeada'
-        background_dark='#1e2326'
+        titlebar_light='#edeada'
+        titlebar_dark='#1e2326'
         ;;
     esac
   fi
