@@ -299,7 +299,6 @@ spinner {
   &:disabled { @include entry(disabled); }
 }
 
-%entry,
 entry {
   @extend %entry_basic;
 
@@ -355,6 +354,14 @@ entry {
       &:focus { @include entry(checked, $e_color); }
 
       &:disabled { @include entry(disabled, $e_color); }
+
+      image {
+        color: on($e_color, secondary);
+
+        &:hover, &:active { color: on($e_color); }
+
+        &:disabled { color: on($e_color, disabled); }
+      }
     }
   }
 
@@ -761,43 +768,44 @@ button.link {
  * GtkSpinButton *
  *****************/
 spinbutton {
-  &:not(.vertical) {
-    // in this horizontal configuration, the whole spinbutton
-    // behaves as the entry, so we extend the entry styling
-    // and nuke the style on the internal entry
-    @extend %entry;
+  // in this horizontal configuration, the whole spinbutton
+  // behaves as the entry, so we extend the entry styling
+  // and nuke the style on the internal entry
+  @extend %entry_basic;
+  padding: 0;
 
-    padding: 0;
+  > entry, .background:not(.csd) & > entry {
+    min-width: $large-size - 8px * 2;
+    // reset all the other props since the spinbutton node is styled here
+    margin: 0;
+    border-radius: 0;
+    border-image: none;
 
-    entry {
-      min-width: $large-size - 8px * 2;
-      // reset all the other props since the spinbutton node is styled here
-      margin: 0;
-      border-image: none;
-      border-radius: 0;
+    &, &:focus, &:disabled {
+      border: none;
       box-shadow: none;
       background-color: transparent;
     }
+  }
 
-    button {
-      @extend %button-flat-simple;
-      @extend %small-button;
+  > button {
+    @extend %button-flat-simple;
+    @extend %small-button;
 
-      // margin: $space-size;
-      border: solid $space-size transparent;
+    // margin: $space-size;
+    border: solid $space-size transparent;
 
-      // Remove unwanted focus indicator
-      &:focus:not(:hover):not(:active):not(:disabled) {
-        box-shadow: inset 0 0 0 9999px transparent;
-        color: $text-secondary;
-      }
-
-      &.up:dir(ltr),
-      &.down:dir(rtl) { margin-left: -$space-size / 2; }
-
-      &.up:dir(rtl),
-      &.down:dir(ltr) { margin-right: -$space-size / 2; }
+    // Remove unwanted focus indicator
+    &:focus:not(:hover):not(:active):not(:disabled) {
+      box-shadow: inset 0 0 0 9999px transparent;
+      color: $text-secondary;
     }
+
+    &.up:dir(ltr),
+    &.down:dir(rtl) { margin-left: -$space-size / 2; }
+
+    &.up:dir(rtl),
+    &.down:dir(ltr) { margin-right: -$space-size / 2; }
   }
 
   // OSD horizontal
@@ -811,40 +819,18 @@ spinbutton {
 
     // FIXME: this should not be set at all, but otherwise it gets the wrong
     // color
-    @extend %entry;
+    padding: $space-size / 2;
 
-    padding: 0;
-
-    &:disabled { color: $text-disabled; }
-
-    entry {
+    > entry {
       margin: 0;
-      border-image: none;
-      border-radius: 0;
-      box-shadow: none;
-      background-color: transparent;
-
-      min-height: $medium-size;
-      min-width: $large-size - $space-size;
       padding: 0;
+      min-height: $medium-size;
+      min-width: 0;
     }
 
-    button {
-      @extend %button-flat-simple;
-      @extend %small-button;
-      padding: 0;
-
-      border: solid $space-size transparent;
-
-      // Remove unwanted focus indicator
-      &:focus:not(:hover):not(:active) {
-        box-shadow: inset 0 0 0 9999px transparent;
-        color: $text-secondary;
-      }
-
-      &.up { margin: 0 $space-size/2; }
-
-      &.down { margin: 0 $space-size/2; }
+    > button {
+      &.up { margin: 0; }
+      &.down { margin: 0; }
     }
   }
 
