@@ -15,10 +15,17 @@ popover {
     background-color: $popover_bg_color;
     color: $popover_fg_color;
     background-clip: border-box;
-    border: 1px solid gtkmix(white, $popover_bg_color, 8%);
-    box-shadow: 0 1px 5px 1px transparentize(black, .91),
-                0 2px 14px 3px transparentize(black, .95),
-                0 0 0 1px $headerbar_darker_shade_color;
+
+    @if $rimless == 'true' {
+      border: none;
+      box-shadow: 0 1px 5px 1px transparentize(black, .91),
+                  0 2px 14px 3px transparentize(black, .95);
+    } @else {
+      border: 1px solid gtkmix(white, $popover_bg_color, 8%);
+      box-shadow: 0 1px 5px 1px transparentize(black, .91),
+                  0 2px 14px 3px transparentize(black, .95),
+                  0 0 0 1px $headerbar_darker_shade_color;
+    }
   }
 
   > contents {

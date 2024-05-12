@@ -2,12 +2,18 @@ headerbar {
   min-height: $large_size;
   background-color: $headerbar_backdrop_color;
   color: $headerbar_fg_color;
-  box-shadow: inset 0 -1px $headerbar_border_color;
-  margin: 0 -1px;
+  margin: 0;
   @extend %toolbar;
 
+  @if $rimless == 'false' {
+    box-shadow: inset 0 -1px $headerbar_border_color;
+  } @else {
+    border-radius: $window-radius $window-radius 0 0;
+    box-shadow: inset 0 -1px $headerbar_border_color, inset 0 1px $window_outline_color;
+  }
+
   > windowhandle > box {
-    padding: $base_padding $base_padding + 1px;
+    padding: $base_padding;
 
     > box.start,
     > box.end {
@@ -42,9 +48,14 @@ headerbar {
   &.default-decoration {
     padding: 0;
     margin: 0;
-    box-shadow: none;
     border: none;
     min-height: $medium_size;
+
+    @if $rimless == 'false' {
+      box-shadow: none;
+    } @else {
+      box-shadow: inset 0 1px $window_outline_color;
+    }
 
     > windowhandle > box {
       padding: $base_padding / 2;
@@ -69,6 +80,18 @@ headerbar {
         margin: $base_padding;
       }
     }
+  }
+
+  .maximized &,
+  .fullscreen &,
+  .tiled &,
+  .tiled-top &,
+  .tiled-right &,
+  .tiled-bottom &,
+  .tiled-left &,
+  .solid-csd & {
+    border-radius: 0;
+    box-shadow: inset 0 -1px $headerbar_border_color;
   }
 }
 
@@ -99,11 +122,33 @@ window > {
   }
 }
 
+leaflet:first-child > headerbar {
+  & + separator {
+    background-color: $headerbar_backdrop_color;
+
+    @if $rimless == 'false' {
+      box-shadow: inset 0 -1px $headerbar_border_color;
+    } @else {
+      box-shadow: inset 0 -1px $headerbar_border_color, inset 0 1px $window_outline_color;
+    }
+
+    &:backdrop {
+      background-color: $headerbar_bg_color;
+      transition: background-color $backdrop_transition;
+    }
+  }
+}
+
 %headerbar-flat {
   background: none;
-  box-shadow: none;
   color: inherit;
   min-height: $large_size;
+
+  @if $rimless == 'false' {
+    box-shadow: none;
+  } @else {
+    box-shadow: inset 0 1px $window_outline_color;
+  }
 
   > windowhandle > box {
     padding-bottom: $base_padding;
@@ -115,6 +160,17 @@ window > {
     > windowhandle > box {
       padding: $base_padding / 2;
     }
+  }
+
+  .maximized &,
+  .fullscreen &,
+  .tiled &,
+  .tiled-top &,
+  .tiled-right &,
+  .tiled-bottom &,
+  .tiled-left &,
+  .solid-csd & {
+    box-shadow: none;
   }
 }
 

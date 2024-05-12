@@ -8,6 +8,12 @@
     transition: background-color $backdrop_transition;
   }
 
+  @if $rimless == 'true' {
+    headerbar {
+      border-top-right-radius: 0;
+    }
+  }
+
   flap,
   leaflet,
   navigation-view,
@@ -78,6 +84,12 @@
     transition: background-color $backdrop_transition;
   }
 
+  @if $rimless == 'true' {
+    headerbar {
+      border-radius: 0;
+    }
+  }
+
   toolbarview.undershoot-top scrolledwindow {
     @include undershoot(top, $secondary_sidebar_shade_color);
   }
@@ -132,6 +144,12 @@
     &, banner > revealer > widget {
       box-shadow: inset 1px 0 $sidebar_border_color;
     }
+  }
+}
+
+@if $rimless == 'true' {
+  .content-pane headerbar {
+    border-top-left-radius: 0;
   }
 }
 

@@ -1545,27 +1545,37 @@ searchbar > revealer > box {
 
 headerbar {
   transition: background-color $duration $ease-out, color $duration $ease-out;
-  box-shadow: inset 0 -1px $border;
   background-color: $titlebar;
   color: $titlebar-text;
   min-height: $large-size;
   padding: 0;
   margin: 0;
 
+  @if $rimless == 'false' {
+    box-shadow: inset 0 -1px $border;
+  } @else {
+    border-radius: $window-radius $window-radius 0 0;
+    box-shadow: inset 0 -1px $border, inset 0 1px highlight($titlebar);
+  }
+
   &:disabled { color: $titlebar-text-disabled; }
 
   &:backdrop {
     background-color: $titlebar-backdrop;
     color: $titlebar-text-secondary;
-    box-shadow: inset 0 -1px $border;
 
     &:disabled { color: $titlebar-text-secondary-disabled; }
   }
 
   &.flat, &.flat:backdrop {
     background: none;
-    box-shadow: none;
     transition: none;
+
+    @if $rimless == 'false' {
+      box-shadow: none;
+    } @else {
+      box-shadow: inset 0 1px highlight($titlebar);
+    }
   }
 
   .title {
@@ -1737,9 +1747,14 @@ headerbar {
     min-height: $medium-size;
     padding: 0;
     margin: 0;
-    box-shadow: none;
     border: none;
     outline: none;
+
+    @if $rimless == 'false' {
+      box-shadow: none;
+    } @else {
+      box-shadow: inset 0 1px highlight($titlebar);
+    }
 
     windowcontrols {
       > button {
@@ -1765,10 +1780,20 @@ headerbar {
     }
   }
 
+  .maximized &,
+  .fullscreen &,
+  .tiled &,
+  .tiled-top &,
+  .tiled-right &,
+  .tiled-bottom &,
+  .tiled-left & {
+    box-shadow: inset 0 -1px $border;
+  }
+
   .solid-csd & {
     &:dir(rtl), &:dir(ltr) { // specificity bump
       border-radius: 0;
-      box-shadow: none; // just remove the highlight
+      box-shadow: inset 0 -1px $border; // just remove the highlight
     }
   }
 }
@@ -4984,15 +5009,16 @@ window {
 
   &.csd {
     border-radius: $window-radius;
-    outline-offset: -1px;
-    outline: 1px solid highlight($background);
     margin: 0;
     transition: none;
 
     @if $rimless == 'true' {
+      outline: 0 none transparent;
       box-shadow: $shadow-z16,
       0 0 36px transparent;
     } @else {
+      outline-offset: -1px;
+      outline: 1px solid highlight($background);
       box-shadow: $shadow-z16,
       0 0 36px transparent,
       0 0 0 1px $window-border;

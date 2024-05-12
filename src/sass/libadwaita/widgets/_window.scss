@@ -5,13 +5,14 @@ window {
   &.csd {
     margin: 0;
     border-radius: $window_radius;
-    outline: 1px solid $window_outline_color;
-    outline-offset: -1px;
 
     @if $rimless == 'true' {
+      outline: 0 none transparent;
       box-shadow: $shadow-z16,
       0 0 36px transparent;
     } @else {
+      outline-offset: -1px;
+      outline: 1px solid $window_outline_color;
       box-shadow: $shadow-z16,
       0 0 36px transparent,
       0 0 0 1px $headerbar_darker_shade_color;
