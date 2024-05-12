@@ -81,6 +81,10 @@ placesview {
 filechooser {
   box-shadow: 0 1px $border_color;
 
+  #pathbarbox {
+    border-bottom: 1px solid $border_color;
+  }
+
   // Make the toolbar buttons flat like on an actual toolbar
   #pathbarbox > stack > box > {
     button,

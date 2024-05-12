@@ -8,7 +8,7 @@
 // These are the colors apps are can override. We define the defaults here and
 // define variables for them in _colors.scss
 
-@if $theme != 'default' {
+@if $theme != 'default' or $colortype == 'fixed' {
 // The main accent color and the matching text value
 @define-color accent_bg_color #{$primary};
 @define-color accent_fg_color #{on($primary)};
@@ -33,7 +33,7 @@
 @define-color error_fg_color #{on($error)};
 @define-color error_color #{$error};
 
-@if $colorscheme != 'default' or $blackness == 'true' {
+@if $colorscheme != 'default' or $blackness == 'true' or $colortype == 'fixed' {
 // Window
 @define-color window_bg_color #{$background};
 @define-color window_fg_color #{$text};
@@ -45,7 +45,7 @@
 // Header bar, search bar, tab bar
 @define-color headerbar_bg_color #{$titlebar-backdrop};
 @define-color headerbar_fg_color #{$titlebar-text};
-@define-color headerbar_border_color #{$border};
+@define-color headerbar_border_color #{$titlebar-text};
 @define-color headerbar_backdrop_color #{$titlebar};
 @define-color headerbar_shade_color #{if($variant == 'light', transparentize(black, .88), transparentize(black, .64))};
 @define-color headerbar_darker_shade_color #{$window-border};

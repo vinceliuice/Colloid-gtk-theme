@@ -20,8 +20,8 @@ tabbar {
   }
 
   tabbox {
-    padding-bottom: 6px;
-    padding-top: 6px;
+    padding-bottom: $base_padding;
+    padding-top: $base_padding;
     min-height: 34px;
 
     > tabboxchild {
@@ -30,8 +30,8 @@ tabbar {
     }
 
     > separator {
-      margin-top: 3px;
-      margin-bottom: 3px;
+      margin-top: 5px;
+      margin-bottom: 5px;
       transition: opacity 150ms ease-in-out;
 
       &.hidden {
@@ -69,7 +69,7 @@ tabbar {
 
   .start-action,
   .end-action {
-    padding: 6px 5px;
+    padding: $base_padding;
   }
 
   .start-action:dir(ltr),
@@ -110,8 +110,8 @@ tabbar {
   tabbox,
   .start-action,
   .end-action {
-    padding-top: 3px;
-    padding-bottom: 3px;
+    padding-top: 0;
+    padding-bottom: $base_padding;
   }
 }
 
@@ -139,7 +139,7 @@ dnd {
       margin: 0;
       min-width: 24px;
       min-height: 24px;
-      border-radius: 99px;
+      border-radius: $circular_radius;
     }
 
     indicator {
@@ -159,7 +159,7 @@ tabthumbnail {
   border-radius: $card_radius + 4px;
 
   > box {
-    margin: 6px;
+    margin: $base_padding;
   }
 
   &:drop(active) {
@@ -178,7 +178,7 @@ tabthumbnail {
       min-width: 12px;
       min-height: 12px;
       border-radius: 8px;
-      margin: 3px;
+      margin: $base_padding / 2;
       box-shadow: 0 1px 2px gtkalpha($accent_color, .4);
     }
   }
@@ -200,17 +200,17 @@ tabthumbnail {
   }
 
   .icon-title-box {
-    border-spacing: 6px;
+    border-spacing: $base_padding;
   }
 
   .tab-unpin-icon {
-    margin: 6px;
+    margin: $base_padding;
     min-width: 24px;
     min-height: 24px;
   }
 
   button.circular {
-    margin: 6px;
+    margin: $base_padding;
     background-color: gtkalpha($thumbnail_bg_color, .75);
     min-width: 24px;
     min-height: 24px;

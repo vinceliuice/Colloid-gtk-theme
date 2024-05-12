@@ -30,7 +30,7 @@ COLOR_VARIANTS=('' '-Light' '-Dark')
 SIZE_VARIANTS=('' '-Compact')
 
 if [[ "$(command -v gnome-shell)" ]]; then
-  gnome-shell --version
+  echo && gnome-shell --version
   SHELL_VERSION="$(gnome-shell --version | cut -d ' ' -f 3 | cut -d . -f -1)"
   if [[ "${SHELL_VERSION:-}" -ge "46" ]]; then
     GS_VERSION="46-0"
@@ -63,11 +63,11 @@ OPTIONS:
 
   -s, --size VARIANT      Specify size variant [standard|compact] (Default: standard variant)
 
-  -l, --libadwaita        Install specify gtk-4.0 theme into config folder (~/.config/gtk-4.0) for all gtk4 apps use this theme
-                          (Default ColorSchemes theme will follow the system style, nord|dracula|gruvbox|everforest|black not support this)
-
-  -r, --remove,
-  -u, --uninstall         Uninstall/Remove installed themes or links
+  -l, --libadwaita        Install specify gtk-4.0 theme into config folder ($HOME/.config/gtk-4.0) for all gtk4 apps use this theme
+                          Default ColorSchemes theme will follow the system style (light/dark mode switch), nord|dracula|gruvbox|everforest|black ColorSchemes not support this
+                          Options for default ColorSchemes:
+                          1. system                      Default option (using system colors for light/dark mode switching)
+                          2. fixed                       Using fixed theme colors (that will break light/dark mode switch)
 
   --tweaks                Specify versions for tweaks
                           1. [nord|dracula|gruvbox|everforest|all]  Nord|Dracula|gruvbox|everforet|all ColorSchemes version
@@ -75,6 +75,9 @@ OPTIONS:
                           3. rimless                     Remove the 1px border about windows and menus
                           4. normal                      Normal windows button style like gnome default theme (titlebuttons: max/min/close)
                           5. float                       Floating gnome-shell panel style
+
+  -r, --remove,
+  -u, --uninstall         Uninstall/Remove installed themes or links
 
   -h, --help              Show help
 EOF
@@ -166,7 +169,7 @@ while [[ $# -gt 0 ]]; do
     -d|--dest)
       dest="${2}"
       if [[ ! -d "${dest}" ]]; then
-        echo "Destination directory does not exist. Let's make a new one..."
+        echo -e "\nDestination directory does not exist. Let's make a new one..."
         mkdir -p ${dest}
       fi
       shift 2
@@ -182,6 +185,27 @@ while [[ $# -gt 0 ]]; do
     -l|--libadwaita)
       libadwaita="true"
       shift
+      for type in "${@}"; do
+        case "${type}" in
+          system)
+            echo -e "\nUse system default colors for light/dark mode switch."
+            shift
+            ;;
+          fixed)
+            colortype='fixed'
+            echo -e "\nUse fixed theme colors but that will break light/dark mode switch."
+            shift
+            ;;
+          -*|--*)
+            break
+            ;;
+          *)
+            echo -e "\nERROR: Unrecognized type variant '$1'."
+            echo -e "\nTry '$0 --help' for more information."
+            exit 1
+            ;;
+        esac
+      done
       ;;
     -c|--color)
       shift
@@ -206,8 +230,8 @@ while [[ $# -gt 0 ]]; do
             break
             ;;
           *)
-            echo "ERROR: Unrecognized color variant '$1'."
-            echo "Try '$0 --help' for more information."
+            echo -e "\nERROR: Unrecognized color variant '$1'."
+            echo -e "\nTry '$0 --help' for more information."
             exit 1
             ;;
         esac
@@ -262,8 +286,8 @@ while [[ $# -gt 0 ]]; do
             break
             ;;
           *)
-            echo "ERROR: Unrecognized theme variant '$1'."
-            echo "Try '$0 --help' for more information."
+            echo -e "\nERROR: Unrecognized theme variant '$1'."
+            echo -e "\nTry '$0 --help' for more information."
             exit 1
             ;;
         esac
@@ -286,8 +310,8 @@ while [[ $# -gt 0 ]]; do
             break
             ;;
           *)
-            echo "ERROR: Unrecognized size variant '${1:-}'."
-            echo "Try '$0 --help' for more information."
+            echo -e "\nERROR: Unrecognized size variant '${1:-}'."
+            echo -e "\nTry '$0 --help' for more information."
             exit 1
             ;;
         esac
@@ -300,25 +324,25 @@ while [[ $# -gt 0 ]]; do
           nord)
             colorscheme='true'
             schemes+=("${SCHEME_VARIANTS[1]}")
-            echo -e "Nord ColorScheme version! ..."
+            echo -e "\nNord ColorScheme version! ..."
             shift
             ;;
           dracula)
             colorscheme='true'
             schemes+=("${SCHEME_VARIANTS[2]}")
-            echo -e "Dracula ColorScheme version! ..."
+            echo -e "\nDracula ColorScheme version! ..."
             shift
             ;;
           gruvbox)
             colorscheme='true'
             schemes+=("${SCHEME_VARIANTS[3]}")
-            echo -e "Gruvbox ColorScheme version! ..."
+            echo -e "\nGruvbox ColorScheme version! ..."
             shift
             ;;
           everforest)
             colorscheme='true'
             schemes+=("${SCHEME_VARIANTS[4]}")
-            echo -e "Everforest ColorScheme version! ..."
+            echo -e "\nEverforest ColorScheme version! ..."
             shift
             ;;
           all)
@@ -328,31 +352,31 @@ while [[ $# -gt 0 ]]; do
             ;;
           black)
             blackness="true"
-            echo -e "Blackness version! ..."
+            echo -e "\nBlackness version! ..."
             shift
             ;;
           rimless)
             rimless="true"
-            echo -e "Rimless version! ..."
+            echo -e "\nRimless version! ..."
             shift
             ;;
           normal)
             normal="true"
             window="-Normal"
-            echo -e "Normal window button version! ..."
+            echo -e "\nNormal window button version! ..."
             shift
             ;;
           float)
             float="true"
-            echo -e "Install Floating Gnome-Shell Panel version! ..."
+            echo -e "\nInstall Floating Gnome-Shell Panel version! ..."
             shift
             ;;
           -*)
             break
             ;;
           *)
-            echo "ERROR: Unrecognized tweaks variant '$1'."
-            echo "Try '$0 --help' for more information."
+            echo -e "\nERROR: Unrecognized tweaks variant '$1'."
+            echo -e "\nTry '$0 --help' for more information."
             exit 1
             ;;
         esac
@@ -363,8 +387,8 @@ while [[ $# -gt 0 ]]; do
       exit 0
       ;;
     *)
-      echo "ERROR: Unrecognized installation option '$1'."
-      echo "Try '$0 --help' for more information."
+      echo -e "\nERROR: Unrecognized installation option '$1'."
+      echo -e "\nTry '$0 --help' for more information."
       exit 1
       ;;
   esac
@@ -444,6 +468,10 @@ color_schemes() {
   fi
 }
 
+color_type() {
+  sed -i "/\$colortype:/s/system/fixed/" "${SRC_DIR}/sass/_tweaks-temp.scss"
+}
+
 blackness_color() {
   sed -i "/\$blackness:/s/false/true/" "${SRC_DIR}/sass/_tweaks-temp.scss"
 }
@@ -515,6 +543,10 @@ theme_tweaks() {
     compact_size
   fi
 
+  if [[ "$colortype" = "fixed" ]] ; then
+    color_type
+  fi
+
   if [[ "$colorscheme" = "true" ]] ; then
     color_schemes
   fi
@@ -552,7 +584,7 @@ link_libadwaita() {
 
   rm -rf "${HOME}/.config/gtk-4.0/"{assets,gtk.css,gtk-dark.css}
 
-  echo -e "\nLink '$THEME_DIR/gtk-4.0' to '${HOME}/.config/gtk-4.0' for libadwaita..."
+  echo -e "\nLink '${THEME_DIR}/gtk-4.0' to '${HOME}/.config/gtk-4.0' for libadwaita...\n"
 
   mkdir -p                                                                      "${HOME}/.config/gtk-4.0"
   ln -sf "${THEME_DIR}/gtk-4.0/assets"                                          "${HOME}/.config/gtk-4.0/assets"
@@ -572,13 +604,13 @@ libadwaita_theme() {
 
   rm -rf "${HOME}/.config/gtk-4.0/"{assets,gtk.css,gtk-dark.css}
 
-  echo -e "\nInstalling theme into '${HOME}/.config/gtk-4.0' for libadwaita..."
+  echo -e "\nInstalling ${2}${3}${4}${5}${6} theme into '${HOME}/.config/gtk-4.0' for libadwaita..."
 
   mkdir -p                                                                      "${HOME}/.config/gtk-4.0"
   cp -r "${SRC_DIR}/assets/gtk/assets"                                          "${HOME}/.config/gtk-4.0"
   cp -r "${SRC_DIR}/assets/gtk/symbolics/"*'.svg'                               "${HOME}/.config/gtk-4.0/assets"
 
-  if [[ "$colorscheme" = "true" || "$blackness" = "true" ]] ; then
+  if [[ "$colorscheme" = "true" || "$blackness" = "true" || "$colortype" = "fixed" ]] ; then
     sassc $SASSC_OPT "${SRC_DIR}/main/libadwaita/libadwaita${color}.scss"       "${HOME}/.config/gtk-4.0/gtk.css"
   else
     sassc $SASSC_OPT "${SRC_DIR}/main/libadwaita/libadwaita-Light.scss"         "${HOME}/.config/gtk-4.0/gtk.css"
@@ -665,7 +697,8 @@ if [[ "$uninstall" == 'true' ]]; then
     echo && uninstall_theme && uninstall_libadwaita
   fi
 else
-  install_package && tweaks_temp && gnome_shell_version && install_theme
+  install_package && tweaks_temp
+  gnome_shell_version && echo && install_theme
 
   if [[ "$libadwaita" == 'true' ]]; then
     uninstall_libadwaita && install_libadwaita
