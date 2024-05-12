@@ -21,7 +21,7 @@ radio {
   min-width: 20px;
   -gtk-icon-size: 20px;
   padding: 0;
-  box-shadow: 0 0 0 6px transparent;
+  box-shadow: 0 0 0 0 transparent;
   background-color: gtkalpha(currentColor, 0.12);
   transition: $transition,
               box-shadow $ripple-fade-out-duration / 2 $ease-out;
@@ -44,8 +44,15 @@ radio {
     color: $accent_fg_color;
     box-shadow: none;
 
-    &:hover { background-image: image(gtkalpha(currentColor, 0.1)); }
-    &:active { background-image: image(gtkalpha(currentColor, 0.2)); }
+    &:hover {
+      background-image: image(gtkalpha(currentColor, 0.1));
+      box-shadow: 0 0 0 6px gtkalpha($accent_bg_color, 0.05);
+    }
+
+    &:active {
+      background-image: image(gtkalpha(currentColor, 0.2));
+      box-shadow: 0 0 0 6px gtkalpha($accent_bg_color, 0.12);
+    }
   }
 
   &:disabled {
@@ -88,3 +95,10 @@ checkbutton.selection-mode {
     &:dir(rtl) { margin-left: $base_padding; }
   }
 }
+
+// ANIMATION:
+// this is made with those pretty convoluted transitions, since checks and radios have to animate only on state changes,
+// the transformation is set on the active state and it get reset on the checked state.
+check:not(:checked):active { -gtk-icon-transform: rotate(90deg); }
+
+// radio:not(:checked):active { -gtk-icon-transform: scale(0); }
