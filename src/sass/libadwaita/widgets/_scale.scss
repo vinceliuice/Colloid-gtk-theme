@@ -36,14 +36,14 @@ scale {
 
     > slider {
       background-color: $slider_color;
-      box-shadow: 0 0 0 1px $_slider_border_color, 0 2px 4px transparentize(black, .8);
-
+      box-shadow: 0 0 0 2px $fill_color, 0 0 0 0 transparent;
       border-radius: 100%;
+      transition: $transition-shadow;
 
       // the slider is inside the trough, so to have make it bigger there's a negative margin
-      min-width: 20px;
-      min-height: 20px;
-      margin: -8px;
+      min-width: 16px;
+      min-height: 16px;
+      margin: -7px;
     }
   }
 
@@ -57,6 +57,7 @@ scale {
 
       > slider {
         background-color: $slider_hover_color;
+        box-shadow: 0 0 0 2px $fill_color, 0 0 0 8px gtkalpha($text_color, 0.12);
       }
     }
   }
@@ -76,7 +77,7 @@ scale {
     filter: opacity($disabled_opacity);
 
     > trough > slider {
-      box-shadow: 0 0 0 1px $_slider_border_color, 0 2px 4px transparent;
+      box-shadow: 0 0 0 2px gtkmix($fill_color, $window_bg_color, 50%);
       outline-color: transparentize(black, .8);
     }
   }
@@ -111,10 +112,10 @@ scale {
 
       // Adjust box-shadow for the 45deg rotation, for 0px 2px we ideally want
       // 1/√2px 1/√2px, round that to 1px 1px
-      box-shadow: 0 0 0 1px $_slider_border_color, 1px 1px 4px transparentize(black, .8);
+      box-shadow: 0 0 0 2px $fill_color;
 
       &:disabled {
-        box-shadow: 0 0 0 1px $_slider_border_color, 1px 1px 4px transparent;
+        box-shadow: 0 0 0 2px gtkmix($fill_color, $window_bg_color, 50%);
       }
     }
   }

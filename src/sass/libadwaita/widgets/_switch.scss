@@ -1,4 +1,6 @@
 switch {
+  $switch_slider_color: white;
+
   // similar to GtkScale
   border-radius: $circular_radius;
   padding: $base_padding / 2;
@@ -18,7 +20,7 @@ switch {
     min-width: $small_size - 6px;
     min-height: $small_size - 6px;
     border-radius: 50%;
-    background-color: $slider_color;
+    background-color: $switch_slider_color;
     box-shadow: 0 2px 3px rgba(black, 0.15), 0 0 0 0 transparent;
     transition: box-shadow 100ms $ease_out,
                 background-color $duration $ease_out;
@@ -38,7 +40,7 @@ switch {
 
     > slider {
       color: $window_fg_color;
-      background-color: $slider_hover_color;
+      background-color: $switch_slider_color;
     }
   }
 
