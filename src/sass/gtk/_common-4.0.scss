@@ -766,18 +766,18 @@ button {
 
       &:hover {
         box-shadow: inset 0 0 0 9999px transparent,
-                    0 2px (4px * .6) -1px rgba($b_color, 0.2),
-                    0 4px (5px * .6) 0 rgba($b_color, 0.14),
-                    0 1px (10px * .6) 0 rgba($b_color, 0.12);
+                    0 2px (4px * .6) -1px rgba(black, 0.1),
+                    0 4px (5px * .6) 0 rgba(black, 0.07),
+                    0 1px (10px * .6) 0 rgba(black, 0.06);
       }
 
       &:checked { background-color: mix(on($b_color), $b_color, percentage(0.3)); }
 
       &:checked:hover {
         box-shadow: inset 0 0 0 9999px transparent,
-                    0 3px 3px -3px rgba($b_color, 0.3),
-                    0 2px 3px -1px rgba($b_color, 0.24),
-                    0 2px 5px 0 rgba($b_color, 0.12);
+                    0 3px 3px -3px rgba(black, 0.15),
+                    0 2px 3px -1px rgba(black, 0.12),
+                    0 2px 5px 0 rgba(black, 0.06);
       }
 
       &:focus { box-shadow: 0 0 0 2px rgba($b_color, 0.35); }
@@ -1796,6 +1796,10 @@ headerbar {
       box-shadow: inset 0 -1px $border; // just remove the highlight
     }
   }
+}
+
+.titlebar:not(headerbar) {
+  box-shadow: none;
 }
 
 window.devel {
@@ -2979,20 +2983,25 @@ switch {
   &:disabled { opacity: 0.5; }
 
   > slider {
-    transition: all $duration $ease-out;
+    transition: $transition-shadow;
     min-width: $small-size - 6px;
     min-height: $small-size - 6px;
     margin: $space-size / 2;
     border-radius: $circular-radius;
     outline: none;
-    box-shadow: $shadow-z3;
+    box-shadow: 0 0 0 0 transparent, $shadow-z3;
     background-color: white;
     border: none;
   }
 
   &:focus slider,
   &:hover slider,
-  &:focus:hover slider { box-shadow: 0 0 0 6px $divider; }
+  &:focus:hover slider {
+    box-shadow: 0 0 0 6px $divider,
+                0 3px 3px -2px transparent,
+                0 2px 3px -1px transparent,
+                0 1px 4px 0 transparent;
+  }
 }
 
 
@@ -3567,6 +3576,9 @@ frame {
 }
 
 actionbar {
+  box-shadow: none;
+  border: none;
+
   &.toolbar { // reset
     background-color: transparent;
     padding: 0;
