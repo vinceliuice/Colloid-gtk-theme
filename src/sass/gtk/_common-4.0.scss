@@ -1788,6 +1788,10 @@ headerbar {
   .tiled-bottom &,
   .tiled-left & {
     box-shadow: inset 0 -1px $border;
+
+    &.default-decoration {
+      box-shadow: none;
+    }
   }
 
   .solid-csd & {
