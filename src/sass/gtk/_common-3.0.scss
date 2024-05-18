@@ -2913,6 +2913,7 @@ separator {
   border-radius: $corner-radius + 1px;
   box-shadow: none;
   border: 1px solid $divider;
+  background-color: $surface;
 
   > separator {
     background: none;

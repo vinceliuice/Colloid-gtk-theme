@@ -3697,6 +3697,7 @@ separator {
   border-radius: $corner-radius + 1px;
   box-shadow: none;
   border: 1px solid $border;
+  background-color: $surface;
 }
 
 %circular_row {
