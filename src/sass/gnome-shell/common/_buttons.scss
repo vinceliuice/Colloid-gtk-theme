@@ -16,6 +16,14 @@
   &:insensitive { @include button(flat-insensitive); }
 }
 
+%default_button {
+  @include button(normal, $bc:$primary, $tc:on($primary),);
+  &:focus { @include button(focus, $bc:$primary, $tc:on($primary)); }
+  &:hover { @include button(hover, $bc:$primary, $tc:on($primary)); }
+  &:insensitive { @include button(insensitive, $bc:$primary, $tc:on($primary)); }
+  &:active { @include button(active, $bc:$primary, $tc:on($primary),); }
+}
+
 .button {
   min-height: 20px;
   padding: $base_padding $base_padding * 2;
@@ -24,6 +32,37 @@
   @extend %button;
 
   .popup-menu & {
+    @extend %flat_button;
+  }
+
+  // default style
+  &.default {
+    @extend %default_button;
+  }
+
+  // flat style
+  &.flat {
+    @extend %flat_button;
+  }
+}
+
+.icon-button {
+  border-radius: $circular_radius;
+  padding: $base_padding;
+  min-height: $scalable_icon_size;
+
+  StIcon {
+    icon-size: $scalable_icon_size;
+    -st-icon-style: symbolic;
+  }
+
+  // default style
+  &.default {
+    @extend %default_button;
+  }
+
+  // flat style
+  &.flat {
     @extend %flat_button;
   }
 }

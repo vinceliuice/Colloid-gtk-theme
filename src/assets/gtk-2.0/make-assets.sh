@@ -1,8 +1,7 @@
 #! /usr/bin/env bash
-
 for theme in '' '-Purple' '-Pink' '-Red' '-Orange' '-Yellow' '-Green' '-Teal' '-Grey'; do
   for color in '' '-Dark'; do
-    for type in '' '-Nord' '-Dracula' '-Gruvbox'; do
+    for type in '' '-Nord' '-Dracula' '-Gruvbox' '-Everforest'; do
       if [[ "$color" == '' ]]; then
         case "$theme" in
           '')
@@ -135,6 +134,40 @@ for theme in '' '-Purple' '-Pink' '-Red' '-Orange' '-Yellow' '-Green' '-Teal' '-
               ;;
           esac
         fi
+
+        if [[ "$type" == "-Everforest" ]]; then
+          background_color='#fffbef'
+          case "$theme" in 
+            '')
+              theme_color='#A7C080'
+              ;;
+            -Purple)
+              theme_color='#D699B6'
+              ;;
+            -Pink)
+              theme_color='#d3869b'
+              ;;
+            -Red)
+              theme_color='#E67E80'
+              ;;
+            -Orange)
+              theme_color='#E69875'
+              ;;
+            -Yellow)
+              theme_color='#DBBC7F'
+              ;;
+            -Green)
+              theme_color='#A7C080'
+              ;;
+            -Teal)
+              theme_color='#83C092'
+              ;;
+            -Grey)
+              theme_color='#9DA9A0'
+              ;;
+          esac
+        fi
+
       else
         case "$theme" in
           '')
@@ -265,6 +298,39 @@ for theme in '' '-Purple' '-Pink' '-Red' '-Orange' '-Yellow' '-Green' '-Teal' '-
             -Grey)
               theme_color='#a89984'
               ;;
+          esac
+        fi
+
+        if [[ "$type" == '-Everforest' ]]; then
+          background_color='#232A2E'
+
+          case "$theme" in
+            '')
+              theme_color='#9cb575'
+              ;;
+            -Purple)
+              theme_color='#cb8eab'
+              ;;
+            -Pink)
+              theme_color='#b16286'
+              ;;
+            -Red)
+              theme_color='#db7375'
+              ;;
+            -Orange)
+              theme_color='#db8d6a'
+              ;;
+            -Yellow)
+              theme_color='#d0b174'
+              ;;
+            -Green)
+              theme_color='#9cb575'
+              ;;
+            -Teal)
+              theme_color='#78b587'
+              ;;
+            -Grey)
+              theme_color='#7A8478'
           esac
         fi
       fi

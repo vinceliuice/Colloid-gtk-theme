@@ -18,9 +18,9 @@
   color: $text-secondary !important;
   padding: 0;
   font-weight: normal;
-  border-radius: $menu_radius;
-  box-shadow: 0 3px 8px -5px rgba(black, 0.12);
-  margin: $base_padding $base_padding 8px;
+  border-radius: $base_radius + $base_padding * 3;
+  box-shadow: 0 3px 5px -2px rgba(black, if($variant == 'light', 0.1, 0.18));
+  margin: $base_padding 6px 8px;
   @include fontsize($font_size - 1);
 
   .popup-menu-content {

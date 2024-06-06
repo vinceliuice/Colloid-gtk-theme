@@ -1,0 +1,119 @@
+//
+// Builder
+//
+
+popover.background.global-search {
+  > arrow, > contents { padding: 0; }
+}
+
+popover.background.pages-popover {
+  listview > row {
+    padding: $base_padding;
+
+    button {
+      margin: 0;
+    }
+
+    check {
+      margin: 4px 2px;
+      -gtk-icon-size: 12px;
+    }
+  }
+}
+
+panelresizer .top-bar {
+  box-shadow: inset 0 -1px $border_color;
+}
+
+.frameheader.header {
+  min-height: $large_size;
+  padding: 0;
+  border: none;
+  border-bottom: 1px solid $border_color;
+  background-color: $headerbar_backdrop_color;
+
+  &:backdrop {
+    background-color: $headerbar_bg_color;
+  }
+
+  tabbar.inline {
+    tabbox > tabboxchild {
+      margin: 0;
+    }
+  }
+}
+
+panelframeswitcher {
+  &.frameheader.header { padding: 0 $base_padding; }
+
+  > button.toggle.image-button {
+    border: none;
+    margin: $base_padding 0;
+  }
+}
+
+panelstatusbar {
+  box-shadow: inset 0 1px $border_color;
+
+  > menubutton > button,
+  > paneltogglebutton button {
+    border-radius: 0;
+    @extend %button_basic_flat;
+  }
+}
+
+panelwidget entry.statusbar {
+  background-color: $window_bg_color;
+  border-radius: 0;
+  outline: none;
+  box-shadow: none;
+  border-top: 1px solid $border_color;
+
+  &:focus-within {
+    outline: none;
+  }
+}
+
+.IdeTweaksWindow,
+.org-gnome-Builder {
+  .boxed-list {
+    box-shadow: inset 0 0 0 1px gtkalpha(currentColor, 0.08);
+  }
+}
+
+// Setting window
+.style-variant {
+  padding: 0 $base_padding * 2;
+
+  button.toggle {
+    padding: 0;
+
+    &, &:hover, &:focus, &:active, &:checked {
+      background: none;
+      outline: none;
+      border: none;
+      box-shadow: none;
+    }
+
+    > stylevariantpreview > .wallpaper {
+      border-radius: $button_radius;
+      outline-color: transparent;
+      outline-width: 3px;
+      outline-offset: $base_padding / 2;
+      outline-style: solid;
+      box-shadow: none;
+    }
+
+    &:hover > stylevariantpreview > .wallpaper {
+      outline-color: gtkalpha(currentColor, 0.05);
+    }
+
+    &:active > stylevariantpreview > .wallpaper {
+      outline-color: gtkalpha(currentColor, 0.15);
+    }
+
+    &:checked > stylevariantpreview > .wallpaper {
+      outline-color: $accent_color;
+    }
+  }
+}

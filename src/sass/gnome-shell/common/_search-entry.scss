@@ -1,8 +1,7 @@
 // Search entry
 %search-entry, .search-entry {
-  width: 320px;
-  min-height: $item_size;
-  padding: 0 $base_padding * 2;
+  width: 24em;
+  padding: $base_padding $base_padding * 2;
   color: $text-secondary;
   transition-duration: 150ms;
   border-radius: $base_radius;

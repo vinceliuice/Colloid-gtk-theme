@@ -461,6 +461,8 @@ frame.gedit-map-frame > border {
 
   separator { @extend %hide_separators; }
 
+  > row + row { margin-top: $space-size / 2; }
+
   .csd & {
     border-bottom-left-radius: $window-radius;
   }
@@ -468,6 +470,8 @@ frame.gedit-map-frame > border {
 
 leaflet list.navigation-sidebar {
   background-color: $base-alt;
+
+  > row + row { margin-top: $space-size / 2; }
 
   window.background.csd:not(.maximized) & {
     border-bottom-left-radius: $window-radius;
@@ -588,10 +592,12 @@ window.background.csd {
 
         list { // left-pane
           background-color: transparent;
-          padding: $space-size / 2;
+          padding: $space-size;
 
-          row.activatable {
+          > row.activatable {
             border-radius: $corner-radius;
+
+            + row { margin-top: $space-size / 2; }
 
             &:not(:hover):not(:active):not(:selected) {
               background-color: transparent;
@@ -1757,6 +1763,18 @@ window#GearyMainWindow.background.csd {
 
     .geary-composer-box {
       actionbar > revealer > box { border-bottom-left-radius: 0; }
+    }
+  }
+}
+
+.geary-main-window {
+  @if $variant == 'light' and $topbar == 'dark' {
+    leaflet > separator {
+      background-repeat: no-repeat;
+      background-image: linear-gradient(to bottom, $titlebar 0,
+                                                   $titlebar $large-size,
+                                                   transparent $large-size,
+                                                   transparent 100%);
     }
   }
 }

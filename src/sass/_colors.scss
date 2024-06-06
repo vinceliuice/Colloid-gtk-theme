@@ -7,6 +7,19 @@
   @return unquote("alpha(#{$c}, #{$a})");
 }
 
+@function gtkmix($c1,$c2,$r) {
+  $ratio: 1 -  $r / 100%; // match SCSS mix()
+  @return unquote("mix(#{$c1},#{$c2},#{$ratio})");
+}
+
+@function gtkshade($c,$s) {
+  @return unquote("shade(#{$c},#{$s})");
+}
+
+@function gtkcolor($c) {
+  @return unquote("@#{$c}");
+}
+
 @function on($color, $state: 'primary') {
   // Allow 'light' or 'dark' to $color
   @if ($color == 'light') { $color: $white; }
@@ -120,6 +133,8 @@ $scrim-inverse:                         rgba($white, 0.1);
 $titlebar:                              if($topbar == 'dark', background(e), background(c));
 $titlebar-backdrop:                     if($topbar == 'dark', background(g), background(b));
 $titlebar-primary:                      if($topbar == 'dark' and $theme == 'grey' and $variant == 'light', lighten($primary, 15%), $primary);
+$sidebar:                               if($topbar == 'dark' and $variant == 'light', $titlebar, $base-alt);
+$sidebar-backdrop:                      if($topbar == 'dark' and $variant == 'light', $titlebar-backdrop, $background);
 $popover:                               if($variant == 'light', background(a), background(g));
 $panel-solid:                           if($topbar == 'dark', background(e), background(c)); // for Unity panel which doesn't allow translucent colors
 $panel:                                 rgba($panel-solid, $panel_opacity);

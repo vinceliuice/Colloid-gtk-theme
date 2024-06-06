@@ -24,10 +24,10 @@ $cakeisalie: "This stylesheet is generated, DO NOT EDIT";
  */
 
 // Stage
-// stage {
-//   @include fontsize($font_size);
-//   color: $text;
-// }
+stage {
+  @include fontsize($font_size);
+  color: $text;
+}
 
 /* General Typography */
 

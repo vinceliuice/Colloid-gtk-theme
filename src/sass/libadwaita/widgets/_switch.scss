@@ -1,0 +1,57 @@
+switch {
+  $switch_slider_color: white;
+
+  // similar to GtkScale
+  border-radius: $circular_radius;
+  padding: $base_padding / 2;
+  background-color: $trough_color;
+  transition: background-color $duration $ease_out;
+
+  &:hover { background-color: $trough_hover_color; }
+  &:active { background-color: $trough_active_color; }
+
+  @include focus-ring($offset: 1px, $outer: true);
+
+  &:disabled {
+    filter: opacity($disabled_opacity);
+  }
+
+  > slider {
+    min-width: $small_size - 6px;
+    min-height: $small_size - 6px;
+    border-radius: 50%;
+    background-color: $switch_slider_color;
+    box-shadow: 0 2px 3px rgba(black, 0.15), 0 0 0 0 transparent;
+    transition: box-shadow 100ms $ease_out,
+                background-color $duration $ease_out;
+  }
+
+  &:hover > slider,
+  &:active > slider {
+    box-shadow: 0 2px 3px transparent, 0 0 0 6px gtkalpha(currentColor, .1);
+  }
+
+  &:checked {
+    color: $accent_fg_color;
+    background-color: $accent_bg_color;
+
+    &:hover { background-image: image(gtkalpha(currentColor, .1)); }
+    &:active { background-image: image(transparentize(black, .8)); }
+
+    > slider {
+      color: $window_fg_color;
+      background-color: $switch_slider_color;
+    }
+  }
+
+  .osd & {
+    &:focus:focus-visible {
+      outline-color: $osd_focus_color;
+    }
+
+    &:checked {
+      background-color: transparentize($osd_fill_bg_color, .15);
+      color: $osd_fill_fg_color;
+    }
+  }
+}

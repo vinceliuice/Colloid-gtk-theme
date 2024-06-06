@@ -766,18 +766,18 @@ button {
 
       &:hover {
         box-shadow: inset 0 0 0 9999px transparent,
-                    0 2px (4px * .6) -1px rgba($b_color, 0.2),
-                    0 4px (5px * .6) 0 rgba($b_color, 0.14),
-                    0 1px (10px * .6) 0 rgba($b_color, 0.12);
+                    0 2px (4px * .6) -1px rgba(black, 0.1),
+                    0 4px (5px * .6) 0 rgba(black, 0.07),
+                    0 1px (10px * .6) 0 rgba(black, 0.06);
       }
 
       &:checked { background-color: mix(on($b_color), $b_color, percentage(0.3)); }
 
       &:checked:hover {
         box-shadow: inset 0 0 0 9999px transparent,
-                    0 3px 3px -3px rgba($b_color, 0.3),
-                    0 2px 3px -1px rgba($b_color, 0.24),
-                    0 2px 5px 0 rgba($b_color, 0.12);
+                    0 3px 3px -3px rgba(black, 0.15),
+                    0 2px 3px -1px rgba(black, 0.12),
+                    0 2px 5px 0 rgba(black, 0.06);
       }
 
       &:focus { box-shadow: 0 0 0 2px rgba($b_color, 0.35); }
@@ -1384,6 +1384,8 @@ button.combo:only-child {
 
   button { @extend %button-flat; }
 
+  .linked button { @extend %button-basic; }
+
   // on OSD
   .osd & { background-color: transparent; }
 
@@ -1543,27 +1545,37 @@ searchbar > revealer > box {
 
 headerbar {
   transition: background-color $duration $ease-out, color $duration $ease-out;
-  box-shadow: inset 0 -1px $border;
   background-color: $titlebar;
   color: $titlebar-text;
   min-height: $large-size;
   padding: 0;
   margin: 0;
 
+  @if $rimless == 'false' {
+    box-shadow: inset 0 -1px $border;
+  } @else {
+    border-radius: $window-radius $window-radius 0 0;
+    box-shadow: inset 0 -1px $border, inset 0 1px highlight($titlebar);
+  }
+
   &:disabled { color: $titlebar-text-disabled; }
 
   &:backdrop {
     background-color: $titlebar-backdrop;
     color: $titlebar-text-secondary;
-    box-shadow: inset 0 -1px $border;
 
     &:disabled { color: $titlebar-text-secondary-disabled; }
   }
 
   &.flat, &.flat:backdrop {
     background: none;
-    box-shadow: none;
     transition: none;
+
+    @if $rimless == 'false' {
+      box-shadow: none;
+    } @else {
+      box-shadow: inset 0 1px highlight($titlebar);
+    }
   }
 
   .title {
@@ -1735,22 +1747,28 @@ headerbar {
     min-height: $medium-size;
     padding: 0;
     margin: 0;
-    box-shadow: none;
     border: none;
     outline: none;
-    background-image: image($titlebar);
-  
-    &:backdrop {
-      background-image: image($titlebar-backdrop);
+
+    @if $rimless == 'false' {
+      box-shadow: none;
+    } @else {
+      box-shadow: inset 0 1px highlight($titlebar);
     }
 
     windowcontrols {
-      button,
-      menubutton {
-        min-width: 16px;
-        min-height: 16px;
-        margin: 0;
-        padding: 0;
+      > button {
+        @if $window_button == 'mac' {
+          min-width: 16px;
+          min-height: 16px;
+          margin: 0 $space-size - 2px;
+          padding: 0;
+        } @else {
+          min-width: 22px;
+          min-height: 22px;
+          margin: 0 $space-size - 2px;
+          padding: 0;
+        }
       }
 
       menubutton button {
@@ -1762,12 +1780,30 @@ headerbar {
     }
   }
 
+  .maximized &,
+  .fullscreen &,
+  .tiled &,
+  .tiled-top &,
+  .tiled-right &,
+  .tiled-bottom &,
+  .tiled-left & {
+    box-shadow: inset 0 -1px $border;
+
+    &.default-decoration {
+      box-shadow: none;
+    }
+  }
+
   .solid-csd & {
     &:dir(rtl), &:dir(ltr) { // specificity bump
       border-radius: 0;
-      box-shadow: none; // just remove the highlight
+      box-shadow: inset 0 -1px $border; // just remove the highlight
     }
   }
+}
+
+.titlebar:not(headerbar) {
+  box-shadow: none;
 }
 
 window.devel {
@@ -2241,7 +2277,7 @@ magnifier {
     box-shadow: none;
   }
 
-  &:selected:not(:active) {
+  &:checked {
     transition: $transition,
                 border-image $ripple-fade-in-duration $ease-out,
                 background-size 0ms,
@@ -2537,7 +2573,7 @@ tabbar {
     border-radius: 0;
     min-height: $medium-size;
     border: none;
-    box-shadow: none;
+    box-shadow: inset 0 -1px $border;
 
     &:backdrop {
       background-color: $titlebar-backdrop;
@@ -2562,7 +2598,7 @@ tabbar {
     }
 
     > separator {
-      margin: 9px 0;
+      margin: $space-size * 1.5 0;
       transition: opacity 150ms ease-in-out;
 
       &.hidden {
@@ -2950,26 +2986,26 @@ switch {
 
   &:disabled { opacity: 0.5; }
 
-  // hide on/off icons for >=3.24.5
-  image {
-    margin: -8px;
-  }
-
   > slider {
-    transition: all $duration $ease-out;
+    transition: $transition-shadow;
     min-width: $small-size - 6px;
     min-height: $small-size - 6px;
     margin: $space-size / 2;
     border-radius: $circular-radius;
     outline: none;
-    box-shadow: $shadow-z3;
+    box-shadow: 0 0 0 0 transparent, $shadow-z3;
     background-color: white;
     border: none;
   }
 
   &:focus slider,
   &:hover slider,
-  &:focus:hover slider { box-shadow: 0 0 0 6px $divider; }
+  &:focus:hover slider {
+    box-shadow: 0 0 0 6px $divider,
+                0 3px 3px -2px transparent,
+                0 2px 3px -1px transparent,
+                0 1px 4px 0 transparent;
+  }
 }
 
 
@@ -2995,8 +3031,8 @@ switch {
   @each $s, $as in ('', '-unchecked'),
                    (':checked', '-checked') {
     &#{$s} {
-      -gtk-icon-source: -gtk-scaled(url("assets/selectionmode-checkbox#{$as}#{$asset-suffix}.png"),
-                                    url("assets/selectionmode-checkbox#{$as}#{$asset-suffix}@2.png"));
+      -gtk-icon-source: -gtk-scaled(url("assets/selectionmode-checkbox#{$as}#{$asset-suffix}.svg"),
+                                    url("assets/selectionmode-checkbox#{$as}#{$asset-suffix}@2.svg"));
     }
   }
 }
@@ -3097,16 +3133,16 @@ radio {
 check {
   -gtk-icon-size: 20px;
 
-  &:checked { -gtk-icon-source: -gtk-scaled(-gtk-recolor(url("assets/scalable/checkbox-checked-symbolic.svg")), -gtk-recolor(url("assets/scalable/checkbox-checked-symbolic@2.svg"))); }
-  &:indeterminate { -gtk-icon-source: -gtk-scaled(-gtk-recolor(url("assets/scalable/checkbox-mixed-symbolic.svg")), -gtk-recolor(url("assets/scalable/checkbox-mixed-symbolic@2.svg"))); }
+  &:checked { -gtk-icon-source: -gtk-scaled(-gtk-recolor(url("assets/checkbox-checked-symbolic.svg")), -gtk-recolor(url("assets/checkbox-checked-symbolic@2.svg"))); }
+  &:indeterminate { -gtk-icon-source: -gtk-scaled(-gtk-recolor(url("assets/checkbox-mixed-symbolic.svg")), -gtk-recolor(url("assets/checkbox-mixed-symbolic@2.svg"))); }
 }
 
 %radio,
 radio {
   -gtk-icon-size: 20px;
 
-  &:checked { -gtk-icon-source: -gtk-scaled(-gtk-recolor(url("assets/scalable/radio-checked-symbolic.svg")), -gtk-recolor(url("assets/scalable/radio-checked-symbolic@2.svg"))); }
-  &:indeterminate { -gtk-icon-source: -gtk-scaled(-gtk-recolor(url("assets/scalable/radio-mixed-symbolic.svg")), -gtk-recolor(url("assets/scalable/radio-mixed-symbolic@2.svg"))); }
+  &:checked { -gtk-icon-source: -gtk-scaled(-gtk-recolor(url("assets/radio-checked-symbolic.svg")), -gtk-recolor(url("assets/radio-checked-symbolic@2.svg"))); }
+  &:indeterminate { -gtk-icon-source: -gtk-scaled(-gtk-recolor(url("assets/radio-mixed-symbolic.svg")), -gtk-recolor(url("assets/radio-mixed-symbolic@2.svg"))); }
 }
 
 %small_check,
@@ -3117,8 +3153,8 @@ popover.menu check {
   min-width: 16px;
   -gtk-icon-size: 16px;
 
-  &:checked { -gtk-icon-source: -gtk-scaled(-gtk-recolor(url("assets/scalable/small-checkbox-checked-symbolic.svg")), -gtk-recolor(url("assets/scalable/small-checkbox-checked-symbolic@2.svg"))); }
-  &:indeterminate { -gtk-icon-source: -gtk-scaled(-gtk-recolor(url("assets/scalable/small-checkbox-mixed-symbolic.svg")), -gtk-recolor(url("assets/scalable/small-checkbox-mixed-symbolic@2.svg"))); }
+  &:checked { -gtk-icon-source: -gtk-scaled(-gtk-recolor(url("assets/small-checkbox-checked-symbolic.svg")), -gtk-recolor(url("assets/small-checkbox-checked-symbolic@2.svg"))); }
+  &:indeterminate { -gtk-icon-source: -gtk-scaled(-gtk-recolor(url("assets/small-checkbox-mixed-symbolic.svg")), -gtk-recolor(url("assets/small-checkbox-mixed-symbolic@2.svg"))); }
 }
 
 %small_radio,
@@ -3129,8 +3165,8 @@ popover.menu radio {
   min-width: 16px;
   -gtk-icon-size: 16px;
 
-  &:checked { -gtk-icon-source: -gtk-scaled(-gtk-recolor(url("assets/scalable/small-radio-checked-symbolic.svg")), -gtk-recolor(url("assets/scalable/small-radio-checked-symbolic@2.svg"))); }
-  &:indeterminate { -gtk-icon-source: -gtk-scaled(-gtk-recolor(url("assets/scalable/small-radio-mixed-symbolic.svg")), -gtk-recolor(url("assets/scalable/small-radio-mixed-symbolic@2.svg"))); }
+  &:checked { -gtk-icon-source: -gtk-scaled(-gtk-recolor(url("assets/small-radio-checked-symbolic.svg")), -gtk-recolor(url("assets/small-radio-checked-symbolic@2.svg"))); }
+  &:indeterminate { -gtk-icon-source: -gtk-scaled(-gtk-recolor(url("assets/small-radio-mixed-symbolic.svg")), -gtk-recolor(url("assets/small-radio-mixed-symbolic@2.svg"))); }
 }
 
 // ANIMATION:
@@ -3227,7 +3263,7 @@ scale {
       border-radius: $circular-radius;
       color: $primary;
       background-color: $base;
-      box-shadow: inset 0 0 0 2px $primary;
+      box-shadow: inset 0 0 0 2px $primary, 0 0 0 8px transparent;
 
       &:hover {
         box-shadow: inset 0 0 0 2px $primary, 0 0 0 8px $divider;
@@ -3350,14 +3386,14 @@ scale {
             &#{$state} {
               $_scale_asset: 'assets/scale-#{$dir_infix}-#{$marks_infix}-slider#{$state_infix}#{$asset-suffix}';
 
-              background-image: -gtk-scaled(url('#{$_scale_asset}.png'), url('#{$_scale_asset}@2.png'));
+              background-image: -gtk-scaled(url('#{$_scale_asset}.svg'), url('#{$_scale_asset}@2.svg'));
             }
           }
 
           &:active {
             $_scale_asset: 'assets/scale-#{$dir_infix}-#{$marks_infix}-slider#{$asset-suffix}';
 
-            background-image: -gtk-scaled(url('#{$_scale_asset}.png'), url('#{$_scale_asset}@2.png'));
+            background-image: -gtk-scaled(url('#{$_scale_asset}.svg'), url('#{$_scale_asset}@2.svg'));
           }
         }
       }
@@ -3543,19 +3579,36 @@ frame {
   statusbar & > border { border: none; } // for backward compatibility
 }
 
-actionbar > revealer > box {
-  padding: $space-size;
-  border-spacing: 0;
-  box-shadow: inset 0 1px $border;
-  background-color: $base;
-  background-clip: border-box;
+actionbar {
+  box-shadow: none;
   border: none;
 
-  button, entry,
-  menubutton, menubutton > button,
-  splitbutton, splitbutton > button,
-  spinbutton {
-    margin: 0;
+  &.toolbar { // reset
+    background-color: transparent;
+    padding: 0;
+    border-spacing: 0;
+    border: none;
+    box-shadow: none;
+
+    > revealer > box {
+      background-color: $base-alt;
+    }
+  }
+
+  > revealer > box {
+    padding: $space-size;
+    border-spacing: 0;
+    box-shadow: inset 0 1px $border;
+    background-color: $base;
+    background-clip: border-box;
+    border: none;
+  
+    button, entry,
+    menubutton, menubutton > button,
+    splitbutton, splitbutton > button,
+    spinbutton {
+      margin: 0;
+    }
   }
 }
 
@@ -3644,6 +3697,7 @@ separator {
   border-radius: $corner-radius + 1px;
   box-shadow: none;
   border: 1px solid $border;
+  background-color: $surface;
 }
 
 %circular_row {
@@ -3719,27 +3773,6 @@ row {
   color: $text-secondary;
   background-clip: padding-box;
 
-  label.subtitle {
-    font-size: smaller;
-    @extend .dim-label;
-  }
-
-  > box.header {
-    margin-left: $space-size * 2;
-    margin-right: $space-size * 2;
-    min-height: $large-size;
-
-    > .icon:disabled {
-      filter: opacity(0.35);
-    }
-
-    > box.title {
-      margin-top: $space-size;
-      margin-bottom: $space-size;
-      border-spacing: $space-size / 2;
-    }
-  }
-
   @at-root %row_activatable, &.activatable {
     transition: $transition,
                 background-size $ripple-fade-out-duration $ease-out,
@@ -3752,7 +3785,6 @@ row {
     background-repeat: no-repeat;
     background-position: center;
     background-size: 1000% 1000%;
-    outline: none;
 
     &:focus {
       color: $text;
@@ -3882,10 +3914,37 @@ row {
       &:dir(rtl) { margin-left: $space-size; }
     }
   }
+
+  &.property > box.header > box.title > {
+    .title {
+      @extend .caption;
+      @extend .dim-label;
+    }
+
+    .subtitle {
+      font-size: inherit;
+      opacity: 1;
+    }
+  }
 }
 
 // AdwEntryRow
 row.entry {
+  &:not(:selected).activatable.focused:hover,
+  &:not(:selected).activatable.focused:active {
+    background-color: transparent;
+  }
+
+  &:disabled {
+    text {
+      opacity: 0.45;
+    }
+
+    .dim-label, .subtitle {
+      opacity: 1;
+    }
+  }
+
   .edit-icon, .indicator {
     min-width: 24px;
     min-height: 24px;
@@ -3910,6 +3969,11 @@ row.entry {
 }
 
 row.spin {
+  &:not(:selected).activatable.focused:hover,
+  &:not(:selected).activatable.focused:active {
+    background-color: transparent;
+  }
+
   spinbutton {
     background: none;
     border-spacing: $space-size;
@@ -3995,6 +4059,14 @@ row.combo {
 
   popover > contents {
     min-width: 120px;
+
+    .combo-searchbar {
+      margin: 6px;
+
+      + scrolledwindow {
+        @include undershoot(top, $border);
+      }
+    }
   }
 }
 
@@ -4954,15 +5026,16 @@ window {
 
   &.csd {
     border-radius: $window-radius;
-    outline-offset: -1px;
-    outline: 1px solid highlight($background);
     margin: 0;
     transition: none;
 
     @if $rimless == 'true' {
+      outline: 0 none transparent;
       box-shadow: $shadow-z16,
       0 0 36px transparent;
     } @else {
+      outline-offset: -1px;
+      outline: 1px solid highlight($background);
       box-shadow: $shadow-z16,
       0 0 36px transparent,
       0 0 0 1px $window-border;
@@ -5177,7 +5250,7 @@ windowcontrols {
 // touch selection handlebars for the Popover.osd above
 cursor-handle {
   color: $primary;
-  -gtk-icon-source: -gtk-recolor(url("assets/scalable/cursor-handle-symbolic.svg"));
+  -gtk-icon-source: -gtk-recolor(url("assets/cursor-handle-symbolic.svg"));
 
   &.insertion-cursor:dir(ltr), &.insertion-cursor:dir(rtl) {
     padding-top: 6px;

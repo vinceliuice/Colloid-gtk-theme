@@ -1,0 +1,72 @@
+
+window {
+  border: none;
+
+  &.csd {
+    margin: 0;
+    border-radius: $window_radius;
+
+    @if $rimless == 'true' {
+      outline: 0 none transparent;
+      box-shadow: $shadow-z16,
+      0 0 36px transparent;
+    } @else {
+      outline-offset: -1px;
+      outline: 1px solid $window_outline_color;
+      box-shadow: $shadow-z16,
+      0 0 36px transparent,
+      0 0 0 1px $headerbar_darker_shade_color;
+    }
+
+    &:backdrop {
+      // the transparent shadow here is to enforce that the shadow extents don't
+      // change when we go to backdrop, to prevent jumping windows.
+      // The biggest shadow should be in the same order then in the active state
+      // or the jumping will happen during the transition.
+      transition: box-shadow $backdrop_transition;
+
+      @if $rimless == 'true' {
+        box-shadow: $shadow-z4,
+        0 0 36px transparent;
+      } @else {
+        box-shadow: $shadow-z4,
+        0 0 36px transparent,
+        0 0 0 1px $headerbar_darker_shade_color;
+      }
+    }
+
+    // &.dialog.message,
+    // &.messagedialog { }
+
+    &.tiled,
+    &.tiled-top,
+    &.tiled-left,
+    &.tiled-right,
+    &.tiled-bottom {
+      border-radius: 0;
+      outline: none;
+    }
+
+    &.maximized,
+    &.fullscreen {
+      border-radius: 0;
+      outline: none;
+      box-shadow: none;
+      transition: none;
+    }
+  }
+
+  &.solid-csd {
+    margin: 0;
+    padding: 2px;
+    border-radius: 0;
+    background-color: $headerbar_bg_color;
+    border: 1px solid $headerbar_darker_shade_color;
+  }
+
+  // server-side decorations as used by mutter
+  &.ssd {
+    // just doing borders, wm draws actual shadows
+    box-shadow: 0 0 0 1px $headerbar_darker_shade_color;
+  }
+}

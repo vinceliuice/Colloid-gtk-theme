@@ -1,0 +1,386 @@
+// Drawing mixins
+
+// generic drawing of more complex things
+
+//
+// Ripple keyframes
+//
+
+@keyframes ripple {
+  to {
+    background-size: 1000% 1000%;
+  }
+}
+
+@keyframes ripple-on-slider {
+  to {
+    background-size: auto, 1000% 1000%;
+  }
+}
+
+@keyframes ripple-on-headerbar {
+  from {
+    background-image: radial-gradient(circle, $accent_color 0%, transparent 0%);
+  }
+
+  to {
+    background-image: radial-gradient(circle, $accent_color 100%, transparent 100%);
+  }
+}
+
+//
+// Helper mixin for drawing visible focus rings
+//
+// If $target is specified, the focus ring is applied to the specified child element.
+// If $outer is true, the focus ring extends outward. Otherwise, it extends inward.
+// If $within is true, use focus-within instead of focus:focus-visible
+//
+@mixin focus-ring($target: null, $width: 2px, $offset: -$width, $outer: false, $focus-state: ':focus:focus-visible', $fc: $focus_border_color, $transition: null) {
+  & #{$target} {
+    outline: 0 solid transparent;
+    outline-offset: if($outer, $offset + 4px, $offset + $width + 4px);
+    transition: $focus_transition, $transition;
+  }
+
+  &#{$focus-state} #{$target} {
+    outline-color: $fc;
+    outline-width: $width;
+    outline-offset: $offset;
+  }
+}
+
+@mixin entry($t, $fc: $accent_color) {
+//
+// entry
+//
+// $t: entry type
+// $fc: focus color
+//
+
+  @if $t == normal {
+    transition: $transition,
+                outline $ripple_fade_out_duration $ease_out,
+                box-shadow $ripple_fade_out_duration $ease_out;
+    box-shadow: inset 0 0 0 2px transparent;
+    background-color: if($fc == $accent_color, $button_color, rgba($fc, 0.1));
+    color: if($fc == $accent_color, $secondary_text_color, rgba($fc, 0.75));
+    outline: 0 solid transparent;
+    outline-offset: 2px;
+  }
+
+  @if $t == hover {
+    transition: $transition,
+                box-shadow $ripple_fade_out_duration $ease_out;
+    background-color: $button_hover_color;
+    box-shadow: inset 0 0 0 2px $button_hover_color;
+    color: if($fc == $accent_color, $text_color, $fc);
+    outline: 0 solid transparent;
+    outline-offset: 2px;
+  }
+
+  @if $t == focus {
+    background-color: $button_focus_color;
+    box-shadow: inset 0 0 0 2px transparent;
+    color: if($fc == $accent_color, $text_color, $fc);
+    outline: 2px solid if($fc == $accent_color, $track, $fc);
+    outline-offset: -2px;
+  }
+
+  @if $t == checked {
+    transition: $transition,
+                outline $ripple_fade_out_duration $ease_out,
+                box-shadow $ripple_fade_out_duration $ease_out;
+    background-color: if($fc == $accent_color, $button_color, rgba($fc, 0.1));
+    box-shadow: inset 0 0 0 2px transparent;
+    color: if($fc == $accent_color, $text_color, $fc);
+    outline: 2px solid if($fc == $accent_color, $accent_color, $fc);
+    outline-offset: -2px;
+  }
+
+  @if $t == disabled {
+    box-shadow: inset 0 0 0 2px transparent;
+    background-color: if($fc == $accent_color, $button_color, rgba($fc, 0.1));
+    color: if($fc == $accent_color, $disabled_text_color, rgba($fc, 0.35));
+    outline: none;
+  }
+
+  @if $t == raised-normal {
+    transition: $transition, box-shadow $ripple_fade_out_duration $ease_out;
+    border-image: none;
+    box-shadow: inset 0 0 0 2px transparent;
+    background-color: if($fc == $accent_color, $surface, $fc);
+    color: if($fc == $accent_color, $text, on($fc));
+  }
+
+  @if $t == raised-hover {
+    box-shadow: inset 0 0 0 2px $button_hover_color;
+  }
+
+  @if $t == raised-focus {
+    border-image: none;
+    box-shadow: inset 0 0 0 2px if($fc == $accent_color, $accent_color, $fc);
+  }
+
+  @if $t == raised-disabled {
+    box-shadow: inset 0 0 0 2px transparent;
+    background-color: $base-alt;
+    color: $disabled_text_color;
+  }
+}
+
+
+@mixin button($t) {
+//
+// button
+//
+// $t: button type
+//
+
+  @if $t == normal {
+    transition: $transition,
+                background-size $ripple_fade_out_duration $ease_out,
+                background-image $ripple-fade-out-opacity-duration $ease_out,
+                outline $ripple_fade_out_duration $ease_out;
+    background-color: $button_color;
+    background-image: radial-gradient(circle, transparent 10%, transparent 0%);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 1000% 1000%;
+    outline: 0 solid transparent;
+    outline-offset: 2px;
+    color: $text_color;
+  }
+
+  @if $t == hover {
+    background-color: $button_hover_color;
+    color: $text_color;
+    outline: 0 solid transparent;
+  }
+
+  @if $t == focus {
+    outline: 2px solid gtkalpha($accent_color, 0.35);
+    outline-offset: 0;
+  }
+
+  @if $t == active {
+    transition: $transition,
+                background-size 0ms,
+                background-image 0ms,
+                border 0ms;
+    animation: ripple $ripple_fade_in_duration $ease_out forwards;
+    background-image: radial-gradient(circle, $button_hover_color 10%, transparent 0%);
+    background-size: 0% 0%;
+    background-color: $button_hover_color;
+    color: $text_color;
+    outline: 0 solid transparent;
+  }
+
+  @if $t == disabled {
+    background-color: $button_color;
+    color: $disabled_text_color;
+    outline-color: transparent;
+  }
+
+  @if $t == checked {
+    background-color: $accent_color;
+    color: $accent_fg_color;
+  }
+
+  @if $t == checked-hover {
+    outline-color: transparent;
+    background-color: gtkmix($accent_fg_color, $accent_color, 5%);
+    color: $accent_fg_color;
+  }
+
+  @if $t == checked-active {
+    animation: none;
+    outline-color: transparent;
+    background-color: gtkmix($accent_fg_color, $accent_color, 12%);
+    background-image: none;
+    color: $accent_fg_color;
+  }
+
+  @if $t == checked-disabled {
+    outline-color: transparent;
+    background-color: gtkalpha($accent_color, 0.35);
+    color: gtkalpha($accent_fg_color, 0.35);
+  }
+
+  @if $t == flat-normal {
+    transition: $transition,
+                border-image $ripple_fade_in_duration $ease_out,
+                background-size $ripple_fade_out_duration $ease_out,
+                background-image $ripple_fade_out_opacity_duration $ease_out,
+                outline $ripple_fade_out_duration $ease_out;
+    background-image: radial-gradient(circle, transparent 10%, transparent 0%);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 1000% 1000%;
+    background-color: transparent;
+    outline: 0 solid transparent;
+    outline-offset: 2px;
+    color: $secondary_text_color;
+  }
+
+  @if $t == flat-hover {
+    background-color: $button_hover_color;
+    color: $text_color;
+  }
+
+  @if $t == flat-focus {
+    color: $text_color;
+    outline: 2px solid $button_color;
+    outline-offset: -2px;
+  }
+
+  @if $t == flat-active {
+    transition: $transition,
+                border-image $ripple_fade_in_duration $ease_out,
+                background-size 0ms,
+                background-image 0ms;
+    animation: ripple $ripple_fade_in_duration $ease_out forwards;
+    background-image: radial-gradient(circle, $button_hover_color 10%, transparent 0%);
+    background-size: 0% 0%;
+    background-color: $button_hover_color;
+    color: $text_color;
+  }
+
+  @if $t == flat-disabled {
+    color: $secondary_disabled_text_color;
+    background-color: transparent;
+  }
+
+  @if $t == flat-checked {
+    background-color: $button_checked_color;
+    color: $text_color;
+  }
+
+  @if $t == flat-checked-hover {
+    background-color: $button_checked_hover_color;
+    color: $text_color;
+  }
+
+  @if $t == flat-checked-active {
+    animation: none;
+    outline-color: transparent;
+    background-color: $button_checked_active_color;
+    background-image: none;
+    color: $text_color;
+  }
+
+  @if $t == flat-checked-disabled {
+    background-color: $button_checked_color;
+    color: $disabled_text_color;
+  }
+}
+
+@mixin undershoot($p, $c: $shade_color, $neighbor: false, $style: default) {
+//
+// undershoot
+//
+// $p: position
+// $c: shade color
+// $neighbor: use ~ instead of >
+//
+// possible $p values:
+// top, bottom, right, left
+//
+
+  $_border_pos: '';
+  $_direction: '';
+  $_selector: if($neighbor, '~', '>');
+
+  @if $p==top {
+    $_direction: bottom;
+    $_border_pos: 0 1px;
+  } @else if $p==bottom {
+    $_direction: top;
+    $_border_pos: 0 -1px;
+  } @else if $p==left {
+    $_direction: right;
+    $_border_pos: 1px 0;
+  } @else if $p==right {
+    $_direction: left;
+    $_border_pos: -1px 0;
+  } @else {
+    @error "Unknown position #{$p}"
+  }
+
+  #{$_selector} undershoot.#{$p} {
+    @if $style==default {
+      box-shadow: none;
+    } @else if $style==frame {
+      box-shadow: inset $_border_pos $border_color;
+    }
+
+    background: linear-gradient(to $_direction, gtkalpha($c, .75), transparent 6px);
+  }
+}
+
+@mixin overshoot($p) {
+//
+// overshoot
+//
+// $p: position
+//
+// possible $p values:
+// top, bottom, right, left
+//
+
+  $_small_gradient_length: 3%;
+  $_big_gradient_length: 50%;
+
+  $_small_gradient_size: 100% $_small_gradient_length;
+  $_big_gradient_size: 100% $_big_gradient_length;
+
+  @if $p==right or $p==left {
+    $_small_gradient_size: $_small_gradient_length 100%;
+    $_big_gradient_size: $_big_gradient_length 100%;
+  }
+
+  $_small_gradient: radial-gradient(farthest-side at $p,
+                                    gtkalpha(currentColor, 0.12) 85%,
+                                    gtkalpha(currentColor, 0));
+
+  $_big_gradient: radial-gradient(farthest-side at $p,
+                                  gtkalpha(currentColor, 0.05),
+                                  gtkalpha(currentColor, 0));
+
+  background-image: $_small_gradient, $_big_gradient;
+  background-size: $_small_gradient_size, $_big_gradient_size;
+
+  background-repeat: no-repeat;
+  background-position: $p;
+
+  background-color: transparent; // reset some properties to be sure to not inherit them somehow
+  border: none;                  //
+  box-shadow: none;              //
+}
+
+@mixin background-shadow($direction, $color) {
+  background-image:
+    linear-gradient($direction,
+                    gtkalpha($color, 0.7),
+                    gtkalpha($color, 0.14) 40px,
+                    gtkalpha($color, 0) 56px),
+    linear-gradient($direction,
+                    gtkalpha($color, 0.4),
+                    gtkalpha($color, 0.14) 7px,
+                    gtkalpha($color, 0) 24px);
+}
+
+@mixin transition-shadows($color) {
+  > dimming {
+    background: $color;
+  }
+
+  > shadow {
+    min-width: 56px;
+    min-height: 56px;
+
+    &.left  { @include background-shadow(to right,  $color); }
+    &.right { @include background-shadow(to left,   $color); }
+    &.up    { @include background-shadow(to bottom, $color); }
+    &.down  { @include background-shadow(to top,    $color); }
+  }
+}

@@ -1,0 +1,324 @@
+%toolbar {
+  button:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque) {
+    &.arrow-button,
+    &.image-button,
+    &.image-text-button {
+      @extend %button_basic_flat;
+    }
+  }
+
+  &.osd button:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque) {
+    &:focus:focus-visible {
+      outline-color: $osd_focus_color;
+    }
+  }
+
+  menubutton:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque) {
+    &.image-button > button {
+      @extend %button_basic_flat;
+    }
+  }
+
+  .linked button:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque) {
+    &.arrow-button,
+    &.image-button,
+    &.image-text-button {
+      @extend %button_basic_raised;
+    }
+  }
+
+  menubutton.raised > button:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque) {
+    &.arrow-button,
+    &.image-button,
+    &.image-text-button {
+      @extend %button_basic_raised;
+    }
+  }
+
+  menubutton.suggested-action,
+  menubutton.destructive-action,
+  menubutton.opaque {
+    > button:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque) {
+      @extend %opaque_button;
+
+      color: inherit;
+      background-color: transparent;
+    }
+  }
+
+  splitbutton:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque) {
+    @extend %flat_split_button;
+  }
+
+  switch {
+    margin-top: 4px;
+    margin-bottom: 4px;
+  }
+
+  // Reset styles for popovers
+  popover {
+    button:not(.flat):not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque) {
+      &.arrow-button,
+      &.image-button,
+      &.image-text-button {
+        @extend %button_basic_raised;
+      }
+    }
+
+    menubutton:not(.flat):not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque) {
+      &.image-button > button {
+        @extend %button_basic_raised;
+      }
+    }
+  }
+}
+
+.toolbar {
+  padding: $base_padding;
+  border-spacing: $base_padding;
+  @extend %toolbar;
+
+  // stand-alone OSD toolbars
+  &.osd {
+    padding: $base_padding * 2;
+    border-radius: $card_radius;
+  }
+}
+
+%toolbar-shrunk {
+  padding-top: $base_padding;
+  padding-bottom: $base_padding;
+}
+
+/****************
+ * GtkSearchBar *
+ ****************/
+
+searchbar {
+  > revealer > box {
+    padding: $base_padding $base_padding $base_padding + 1px $base_padding;
+    background-color: $headerbar_backdrop_color;
+    color: $headerbar_fg_color;
+    box-shadow: inset 0 -1px $headerbar_border_color;
+
+    &:backdrop {
+      background-color: $headerbar_bg_color;
+      transition: background-color $backdrop_transition;
+
+      > * {
+        filter: opacity(.5);
+        transition: filter $backdrop_transition;
+      }
+    }
+
+    @extend %toolbar;
+
+   .close {
+      min-width: 18px;
+      min-height: 18px;
+      padding: 4px;
+      border-radius: 50%;
+      @extend %button_basic_flat;
+
+      &:dir(ltr) {
+        margin-left: 10px;
+        margin-right: 4px;
+      }
+
+      &:dir(rtl) {
+        margin-left: 4px;
+        margin-right: 10px;
+      }
+    }
+  }
+
+  &.inline {
+    @extend %searchbar-inline;
+  }
+}
+
+%searchbar-flat > revealer > box {
+  background-color: transparent;
+  color: inherit;
+  box-shadow: none;
+  padding-bottom: $base_padding;
+}
+
+%searchbar-inline {
+  @extend %searchbar-flat;
+
+  > revealer > box:backdrop {
+    background-color: transparent;
+    transition: none;
+
+    > * {
+      filter: none;
+      transition: none;
+    }
+  }
+}
+
+%searchbar-shrunk > revealer > box {
+  padding-top: $base_padding;
+  padding-bottom: $base_padding;
+}
+
+/****************
+ * GtkActionBar *
+ ****************/
+
+actionbar > revealer > box {
+  background-color: $headerbar_backdrop_color;
+  color: $headerbar_fg_color;
+  box-shadow: inset 0 1px $headerbar_border_color;
+  padding: $base_padding + 1px $base_padding $base_padding $base_padding;
+  @extend %toolbar;
+
+  &, > box.start, > box.end {
+    border-spacing: $base_padding;
+  }
+
+  &:backdrop {
+    background-color: $headerbar_bg_color;
+    transition: background-color $backdrop_transition;
+
+    > * {
+      filter: opacity(.5);
+      transition: filter $backdrop_transition;
+    }
+  }
+}
+
+%actionbar-inline > revealer > box {
+  background-color: transparent;
+  color: inherit;
+  box-shadow: none;
+  padding-top: $base_padding;
+
+  &:backdrop {
+    background-color: transparent;
+    transition: none;
+
+    > * {
+      filter: none;
+      transition: none;
+    }
+  }
+}
+
+%actionbar-shrunk > revealer > box {
+  padding-top: $base_padding;
+  padding-bottom: $base_padding;
+}
+
+/*************
+ * AdwBanner *
+ *************/
+banner > revealer > widget {
+  /* There are 2 more instances in _sidebars.css, keep in sync with that */
+  background-color: gtkmix($accent_bg_color, $window_bg_color, 30%);
+  color: $window_fg_color;
+  padding: $base_padding;
+
+  &:backdrop {
+    background-color: gtkmix($accent_bg_color, $window_bg_color, 15%);
+    transition: background-color $backdrop_transition;
+
+    > label, > button {
+      filter: opacity(.5);
+      transition: filter $backdrop_transition;
+    }
+  }
+}
+
+/******************
+ * AdwToolbarView *
+ ******************/
+toolbarview {
+  > .top-bar,
+  > .bottom-bar {
+    headerbar { @extend %headerbar-inline; }
+    searchbar { @extend %searchbar-inline; }
+    actionbar { @extend %actionbar-inline; }
+    menubar   { @extend %menubar-inline; }
+    tabbar    { @extend %tabbar-inline; }
+
+    .collapse-spacing {
+      padding-top: 0;
+      padding-bottom: 0;
+
+      headerbar {
+        @extend %headerbar-shrunk;
+        padding-top: $base_padding / 2;
+        padding-bottom: $base_padding / 2;
+      }
+
+      searchbar { @extend %searchbar-shrunk; }
+      actionbar { @extend %actionbar-shrunk; }
+      menubar   { @extend %menubar-shrunk; }
+      .toolbar  { @extend %toolbar-shrunk; }
+      tabbar    { @extend %tabbar-shrunk; }
+
+      viewswitcherbar { @extend %viewswitcherbar-shrunk; }
+    }
+  }
+
+  &.undershoot-top    scrolledwindow { @include undershoot(top); }
+  &.undershoot-bottom scrolledwindow { @include undershoot(bottom); }
+
+  window.devel & > .top-bar {
+    background-image: cross-fade(5% -gtk-recolor(url("assets/devel-symbolic.svg")),
+                                 image(transparent));
+    background-repeat: repeat-x;
+  }
+
+  window.devel dialog & > .top-bar {
+    background-image: unset;
+    background-repeat: unset;
+  }
+
+  > .top-bar,
+  > .bottom-bar {
+    background-color: $headerbar_backdrop_color;
+    color: $headerbar_fg_color;
+
+    &:backdrop {
+      background-color: $headerbar_bg_color;
+      transition: background-color $backdrop_transition;
+
+      > windowhandle {
+        filter: opacity(.5);
+        transition: filter $backdrop_transition;
+      }
+    }
+  }
+
+  > .top-bar {
+    box-shadow: 0 1px $border_color;
+
+    &.border {
+      box-shadow: 0 1px $border_color;
+    }
+  }
+
+  > .bottom-bar {
+    box-shadow: 0 -1px $border_color;
+
+    &.border {
+      box-shadow: 0 -1px $border_color;
+    }
+  }
+
+  .sidebar-pane &,
+  .content-pane &,
+  .about & { // reset
+    > .top-bar,
+    > .bottom-bar {
+      box-shadow: none;
+
+      &, &:backdrop {
+        background-color: transparent;
+      }
+    }
+  }
+}

@@ -4,7 +4,7 @@ make_gtkrc() {
   local theme="${3}"
   local color="${4}"
   local size="${5}"
-  local ctype="${6}"
+  local scheme="${6}"
   local window="${7}"
 
   [[ "${color}" == '-Light' ]] && local ELSE_LIGHT="${color}"
@@ -13,198 +13,211 @@ make_gtkrc() {
   local GTKRC_DIR="${SRC_DIR}/main/gtk-2.0"
   local THEME_DIR="${1}/${2}${3}${4}${5}${6}"
 
-  if [[ "${color}" != '-Dark' ]]; then
-    case "$theme" in
-      '')
-        theme_color='#3c84f7'
-        ;;
-      -Purple)
-        theme_color='#AB47BC'
-        ;;
-      -Pink)
-        theme_color='#EC407A'
-        ;;
-      -Red)
-        theme_color='#E53935'
-        ;;
-      -Orange)
-        theme_color='#F57C00'
-        ;;
-      -Yellow)
-        theme_color='#FBC02D'
-        ;;
-      -Green)
-        theme_color='#4CAF50'
-        ;;
-      -Teal)
-        theme_color='#009688'
-        ;;
-      -Grey)
-        theme_color='#464646'
-        ;;
-    esac
+  case "$theme" in
+    '')
+      theme_color_dark='#3c84f7'
+      theme_color_light='#5b9bf8'
+      ;;
+    -Purple)
+      theme_color_dark='#AB47BC'
+      theme_color_light='#BA68C8'
+      ;;
+    -Pink)
+      theme_color_dark='#EC407A'
+      theme_color_light='#F06292'
+      ;;
+    -Red)
+      theme_color_dark='#E53935'
+      theme_color_light='#F44336'
+      ;;
+    -Orange)
+      theme_color_dark='#F57C00'
+      theme_color_light='#FB8C00'
+      ;;
+    -Yellow)
+      theme_color_dark='#FBC02D'
+      theme_color_light='#FFD600'
+      ;;
+    -Green)
+      theme_color_dark='#4CAF50'
+      theme_color_light='#66BB6A'
+      ;;
+    -Teal)
+      theme_color_dark='#009688'
+      theme_color_light='#4DB6AC'
+      ;;
+    -Grey)
+      theme_color_dark='#464646'
+      theme_color_light='#DDDDDD'
+      ;;
+  esac
 
-    if [[ "$ctype" == '-Nord' ]]; then
+  if [[ "$scheme" == '-Nord' ]]; then
       case "$theme" in
         '')
-          theme_color='#5e81ac'
+          theme_color_dark='#5e81ac'
+          theme_color_light='#89a3c2'
           ;;
         -Purple)
-          theme_color='#b57daa'
+          theme_color_dark='#b57daa'
+          theme_color_light='#c89dbf'
           ;;
         -Pink)
-          theme_color='#cd7092'
+          theme_color_dark='#cd7092'
+          theme_color_light='#dc98b1'
           ;;
         -Red)
-          theme_color='#c35b65'
+          theme_color_dark='#c35b65'
+          theme_color_light='#d4878f'
           ;;
         -Orange)
-          theme_color='#d0846c'
+          theme_color_dark='#d0846c'
+          theme_color_light='#dca493'
           ;;
         -Yellow)
-          theme_color='#e4b558'
+          theme_color_dark='#e4b558'
+          theme_color_light='#eac985'
           ;;
         -Green)
-          theme_color='#82ac5d'
+          theme_color_dark='#82ac5d'
+          theme_color_light='#a0c082'
           ;;
         -Teal)
-          theme_color='#83b9b8'
+          theme_color_dark='#63a6a5'
+          theme_color_light='#83b9b8'
           ;;
         -Grey)
-          theme_color='#3a4150'
+          theme_color_dark='#3a4150'
+          theme_color_light='#d9dce3'
           ;;
       esac
-    fi
+  fi
 
-    if [[ "$ctype" == '-Dracula' ]]; then
+  if [[ "$scheme" == '-Dracula' ]]; then
       case "$theme" in
         '')
-          theme_color='#a679ec'
+          theme_color_dark='#a679ec'
+          theme_color_light='#bd93f9'
           ;;
         -Purple)
-          theme_color='#a679ec'
+          theme_color_dark='#a679ec'
+          theme_color_light='#bd93f9'
           ;;
         -Pink)
-          theme_color='#f04cab'
+          theme_color_dark='#f04cab'
+          theme_color_light='#ff79c6'
           ;;
         -Red)
-          theme_color='#f44d4d'
+          theme_color_dark='#f44d4d'
+          theme_color_light='#ff5555'
           ;;
         -Orange)
-          theme_color='#f8a854'
+          theme_color_dark='#f8a854'
+          theme_color_light='#ffb86c'
           ;;
         -Yellow)
-          theme_color='#e8f467'
+          theme_color_dark='#e8f467'
+          theme_color_light='#f1fa8c'
           ;;
         -Green)
-          theme_color='#4be772'
+          theme_color_dark='#4be772'
+          theme_color_light='#50fa7b'
           ;;
         -Teal)
-          theme_color='#20eed9'
+          theme_color_dark='#20eed9'
+          theme_color_light='#50fae9'
           ;;
         -Grey)
-          theme_color='#3c3f51'
+          theme_color_dark='#3c3f51'
+          theme_color_light='#d9dae3'
           ;;
       esac
-    fi
-  else
-    case "$theme" in
-      '')
-        theme_color='#5b9bf8'
-        ;;
-      -Purple)
-        theme_color='#BA68C8'
-        ;;
-      -Pink)
-        theme_color='#F06292'
-        ;;
-      -Red)
-        theme_color='#F44336'
-        ;;
-      -Orange)
-        theme_color='#FB8C00'
-        ;;
-      -Yellow)
-        theme_color='#FFD600'
-        ;;
-      -Green)
-        theme_color='#66BB6A'
-        ;;
-      -Teal)
-        theme_color='#4DB6AC'
-        ;;
-      -Grey)
-        theme_color='#DDDDDD'
-        ;;
-    esac
+  fi
 
-    if [[ "$ctype" == '-Nord' ]]; then
+  if [[ "$scheme" == '-Gruvbox' ]]; then
       case "$theme" in
         '')
-          theme_color='#89a3c2'
+          theme_color_dark='#458588'
+          theme_color_light='#83a598'
           ;;
         -Purple)
-          theme_color='#c89dbf'
+          theme_color_dark='#ab62b1'
+          theme_color_light='#d386cd'
           ;;
         -Pink)
-          theme_color='#dc98b1'
+          theme_color_dark='#b16286'
+          theme_color_light='#d3869b'
           ;;
         -Red)
-          theme_color='#d4878f'
+          theme_color_dark='#cc241d'
+          theme_color_light='#fb4934'
           ;;
         -Orange)
-          theme_color='#dca493'
+          theme_color_dark='#d65d0e'
+          theme_color_light='#fe8019'
           ;;
         -Yellow)
-          theme_color='#eac985'
+          theme_color_dark='#d79921'
+          theme_color_light='#fabd2f'
           ;;
         -Green)
-          theme_color='#a0c082'
+          theme_color_dark='#98971a'
+          theme_color_light='#b8bb26'
           ;;
         -Teal)
-          theme_color='#83b9b8'
+          theme_color_dark='#689d6a'
+          theme_color_light='#8ec07c'
           ;;
         -Grey)
-          theme_color='#d9dce3'
+          theme_color_dark='#3c3836'
+          theme_color_light='#a89984'
           ;;
       esac
-    fi
+  fi
 
-    if [[ "$ctype" == '-Dracula' ]]; then
+  if [[ "$scheme" == '-Everforest' ]]; then
       case "$theme" in
         '')
-          theme_color='#bd93f9'
+          theme_color_dark='#458588'
+          theme_color_light='#83a598'
           ;;
         -Purple)
-          theme_color='#bd93f9'
+          theme_color_dark='#ab62b1'
+          theme_color_light='#d386cd'
           ;;
         -Pink)
-          theme_color='#ff79c6'
+          theme_color_dark='#b16286'
+          theme_color_light='#d3869b'
           ;;
         -Red)
-          theme_color='#ff5555'
+          theme_color_dark='#cc241d'
+          theme_color_light='#fb4934'
           ;;
         -Orange)
-          theme_color='#ffb86c'
+          theme_color_dark='#d65d0e'
+          theme_color_light='#fe8019'
           ;;
         -Yellow)
-          theme_color='#f1fa8c'
+          theme_color_dark='#d79921'
+          theme_color_light='#fabd2f'
           ;;
         -Green)
-          theme_color='#50fa7b'
+          theme_color_dark='#98971a'
+          theme_color_light='#b8bb26'
           ;;
         -Teal)
-          theme_color='#50fae9'
+          theme_color_dark='#689d6a'
+          theme_color_light='#8ec07c'
           ;;
         -Grey)
-          theme_color='#d9dae3'
+          theme_color_dark='#3c3836'
+          theme_color_light='#a89984'
           ;;
-      esac
-    fi
+      esac 
   fi
 
   if [[ "$blackness" == 'true' ]]; then
-    case "$ctype" in
+    case "$scheme" in
       '')
         background_light='#FFFFFF'
         background_dark='#0F0F0F'
@@ -229,9 +242,25 @@ make_gtkrc() {
         titlebar_light='#f0f1f4'
         titlebar_dark='#020203'
         ;;
+      -Gruvbox)
+        background_light='#f9f5d7'
+        background_dark='#0f0e0e'
+        background_darker='#121110'
+        background_alt='#211f1e'
+        titlebar_light='#fbf1c7'
+        titlebar_dark='#0d0907'
+        ;;
+      -Everforest)
+        background_light='#fffbef'
+        background_dark='#1e2326'
+        background_darker='#232a2e'
+        background_alt='#293136'
+        titlebar_light='#f2efdf'
+        titlebar_dark='#020203'
+        ;;
     esac
   else
-    case "$ctype" in
+    case "$scheme" in
       '')
         background_light='#FFFFFF'
         background_dark='#2C2C2C'
@@ -256,6 +285,22 @@ make_gtkrc() {
         titlebar_light='#f0f1f4'
         titlebar_dark='#1f2029'
         ;;
+      -Gruvbox)
+        background_light='#f9f5d7'
+        background_dark='#282524'
+        background_darker='#3c3836'
+        background_alt='#504945'
+        titlebar_light='#fbf1c7'
+        titlebar_dark='#242220'
+        ;;
+      -Everforest)
+        background_light='#fffbef'
+        background_dark='#232A2E'
+        background_darker='#343F44'
+        background_alt='#3D484D'
+        titlebar_light='#edeada'
+        titlebar_dark='#1e2326'
+        ;;
     esac
   fi
 
@@ -265,11 +310,11 @@ make_gtkrc() {
   sed -i "s/#464646/${background_alt}/g"                                        "${THEME_DIR}/gtk-2.0/gtkrc"
 
   if [[ "${color}" == '-Dark' ]]; then
-    sed -i "s/#5b9bf8/${theme_color}/g"                                         "${THEME_DIR}/gtk-2.0/gtkrc"
+    sed -i "s/#5b9bf8/${theme_color_light}/g"                                   "${THEME_DIR}/gtk-2.0/gtkrc"
     sed -i "s/#3C3C3C/${background_darker}/g"                                   "${THEME_DIR}/gtk-2.0/gtkrc"
     sed -i "s/#242424/${titlebar_dark}/g"                                       "${THEME_DIR}/gtk-2.0/gtkrc"
   else
-    sed -i "s/#3c84f7/${theme_color}/g"                                         "${THEME_DIR}/gtk-2.0/gtkrc"
+    sed -i "s/#3c84f7/${theme_color_dark}/g"                                    "${THEME_DIR}/gtk-2.0/gtkrc"
     sed -i "s/#F2F2F2/${titlebar_light}/g"                                      "${THEME_DIR}/gtk-2.0/gtkrc"
   fi
 }

@@ -1,0 +1,71 @@
+// Default Theme Color Palette Everforest
+// Red
+$red-light: #E67E80;
+$red-dark: #f85552;
+
+// Pink (missing on evereforset picked from gruvbox)
+$pink-light: #d3869b;
+$pink-dark: #b16286;
+
+// Purple
+$purple-light: #D699B6;
+$purple-dark: #df69ba;
+
+// Blue
+$blue-light: #7fbbb3;
+$blue-dark: #3a94c5;
+
+// Teal (aqua)
+$teal-light: #83C092; 
+$teal-dark: #35a77c;
+
+// Green
+$green-light: #A7C080;
+$green-dark: #8da101;
+
+// Yellow
+$yellow-light: #DBBC7F;
+$yellow-dark: #dfa000;
+
+// Orange
+$orange-light: #E69875;
+$orange-dark: #f57d26;
+
+// Grey
+$grey-050: #f8fafc;
+$grey-100: #f0f1f4;
+$grey-150: #eaecf0;
+$grey-200: #d9dce3;
+$grey-250: #c4c9d4;
+$grey-300: #b5bcc9;
+$grey-350: #929cb0;
+$grey-400: #8e99ae;
+$grey-450: #74819a;
+$grey-500: #616d85;
+$grey-550: #464f62;
+$grey-600: #3a4150;
+$grey-650: #333a47;
+$grey-700: #242932;
+$grey-750: #1e222a;
+$grey-800: #1c1f26;
+$grey-850: #0f1115;
+$grey-900: #0d0e11;
+$grey-950: #020203;
+
+// White
+$white: #ffffff;
+
+// Black
+$black: #000000;
+
+// Button
+$button-close: if($variant == 'light', #E67E80, #ff9c9e);
+$button-max: if($variant == 'light', #93ac6c, #b6cf8f);
+$button-min: if($variant == 'light', #d6b77a, #eacb8e);
+
+// Link
+$links: #5bbae3;
+
+// Theme
+$default-light: $blue-light;
+$default-dark: $blue-dark;

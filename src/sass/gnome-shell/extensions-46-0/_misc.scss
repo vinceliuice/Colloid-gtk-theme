@@ -1,0 +1,235 @@
+
+//  OpenWeather Extension
+.openweather {
+  &-button,
+  &-button-action,
+  &-menu-button-container,
+  &-button-box {
+    border: 1px solid transparent;
+  }
+
+  &-provider {
+    // generic text buttons are allocated with y-expand-ed
+    padding: 0 16px;
+    font-weight: 500;
+    border: 1px solid transparent;
+  }
+
+  &-current {
+    &-icon,
+    &-summary,
+    &-summarybox {
+      background: none;
+      color: $text;
+    }
+
+    &-databox-values {
+      background: none;
+      color: $text-disabled;
+    }
+
+    &-databox-captions {
+      background: none;
+      color: $text-disabled;
+    }
+  }
+
+  &-forecast {
+    &-icon,
+    &-summary {
+      background: none;
+      color: $text-secondary;
+    }
+
+    &-day,
+    &-temperature {
+      background: none;
+      color: $text-disabled;
+    }
+  }
+
+  &-sunrise-icon,
+  &-sunset-icon,
+  &-build-icon { color: $text-secondary; }
+}
+
+//
+// Cosmic desktop (Pop_OS)
+//
+
+.cosmic-dock {
+  #dock {
+    border-radius: $icon_radius !important;
+    border: none !important;
+    margin: 6px !important;
+    background-color: $dash_background_color !important;
+    box-shadow: inset 0 1px rgba(white, 0.08) !important;
+
+    .dash-background {
+      background-color: transparent !important;
+      margin-bottom: 0 !important;
+      padding: 0;
+      box-shadow: none !important;
+    }
+  }
+}
+
+.cosmic-application-dialog {
+  border-radius: $menu_radius;
+  box-shadow: 0 3px 6px rgba(black, 0.08);
+  background-color: $popover;
+  color: $text;
+
+  .overview-icon {
+    color: $text;
+  }
+}
+
+.cosmic-applications-separator {
+	background: $border;
+}
+
+.cosmic-folder-edit-button {
+	box-shadow: none;
+	border-radius: $base_radius;
+	border-width: 0;
+  color: $text;
+  background: $fill;
+
+  .cosmic-folder-edit-button:hover {
+    background: $divider;
+  }
+}
+
+.cosmic-applications-icon {
+	color: $text-secondary;
+}
+
+.cosmic-applications-folder-title {
+	color: $text-secondary;
+}
+
+.cosmic-applications-available {
+	color: $text;
+}
+
+// pop-shell
+.pop-shell-active-hint {
+  border-style: solid;
+  border-color: $warning;
+  border-radius: $base_radius;
+  box-shadow: none;
+}
+
+.pop-shell-overlay {
+  background-color: rgba($primary, 0.3);
+}
+
+.pop-shell-search-element:select{
+  background: $divider;
+  border-radius: $base_radius;
+  color: $text;
+}
+
+.pop-shell-tab {
+  border: 1px solid $border;
+  color: $text;
+}
+
+.pop-shell-tab-active {
+  background: $warning;
+}
+
+.pop-shell-tab-inactive {
+  background: rgba($warning, 0.35);
+}
+
+.pop-shell-tab-urgent {
+  background: $error;
+}
+
+//
+// Blur my shell
+//
+
+#panel.light-panel,
+#panel.dark-panel,
+#panel.transparent-panel {
+  .panel-button {
+    color: on(dark, secondary) !important;
+
+    &.clock-display {
+      .clock {
+        color: on(dark, secondary) !important;
+      }
+    }
+
+    &:hover {
+      color: on(dark, secondary) !important;
+      background-color: on(dark, divider) !important;
+
+      &.clock-display {
+        .clock {
+          background-color: on(dark, divider) !important;
+        }
+      }
+    }
+
+    &:active, &:checked, &:focus {
+      color: on(dark) !important;
+      background-color: on(dark, track) !important;
+
+      &.clock-display {
+        .clock {
+          background-color: on(dark, track) !important;
+        }
+      }
+    }
+
+    &:hover, &:active, &:overview, &:focus, &:checked {
+      &.clock-display {
+        background-color: transparent !important;
+
+        .clock {
+          color: on(dark) !important;
+        }
+      }
+    }
+  }
+}
+
+.overview-components-transparent,
+.overview-components-light,
+.overview-components-dark {
+  .search-entry {
+    caret-color: on(dark) !important;
+
+    .search-entry-icon {
+      color: on(dark, secondary) !important;
+    }
+
+    StLabel.hint-text {
+      color: on(dark, track) !important;
+    }
+  }
+
+  .search-section-content {
+    border-radius: $icon_radius;
+  }
+
+  .search-section-separator {
+    height: 0 !important;
+    background-color: transparent !important;
+  }
+}
+
+// Dash to panel
+.dashtopanelMainPanel {
+  .show-apps .overview-icon {
+    color: $panel-text !important;
+  }
+
+  &:overview, #panel, .dash-background {
+    background-color: transparent !important;
+  }
+}

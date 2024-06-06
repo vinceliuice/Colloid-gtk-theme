@@ -1,0 +1,104 @@
+checkbutton {
+  border-spacing: $base_padding / 2 + 1px;
+  border-radius: $button_radius + 3px;
+  padding: $base_padding / 2;
+
+  @include focus-ring();
+
+  .osd &:focus:focus-visible {
+    outline-color: $osd_focus_color;
+  }
+
+  &.text-button {
+    // this is for a nice focus on check and radios text
+    padding: $base_padding / 2 + 1px;
+  }
+}
+
+check,
+radio {
+  min-height: 20px;
+  min-width: 20px;
+  -gtk-icon-size: 20px;
+  padding: 0;
+  box-shadow: 0 0 0 0 transparent;
+  background-color: gtkalpha(currentColor, 0.12);
+  transition: $transition,
+              box-shadow $ripple-fade-out-duration / 2 $ease-out;
+
+  &:not(:checked):not(:indeterminate) {
+    &:hover {
+      box-shadow: 0 0 0 6px gtkalpha(currentColor, 0.05);
+      background-color: gtkalpha(currentColor, 0.15);
+    }
+  
+    &:active {
+      box-shadow: 0 0 0 6px gtkalpha(currentColor, 0.12);
+      background-color: gtkalpha(currentColor, 0.20);
+    }
+  }
+
+  &:checked,
+  &:indeterminate {
+    background-color: $accent_bg_color;
+    color: $accent_fg_color;
+    box-shadow: none;
+
+    &:hover {
+      background-image: image(gtkalpha(currentColor, 0.1));
+      box-shadow: 0 0 0 6px gtkalpha($accent_bg_color, 0.05);
+    }
+
+    &:active {
+      background-image: image(gtkalpha(currentColor, 0.2));
+      box-shadow: 0 0 0 6px gtkalpha($accent_bg_color, 0.12);
+    }
+  }
+
+  &:disabled {
+    filter: opacity($disabled_opacity);
+  }
+
+  .osd & {
+    &:checked,
+    &:indeterminate {
+      background-color: $osd_fill_bg_color;
+      color: $osd_fill_fg_color;
+    }
+  }
+}
+
+check {
+  border-radius: 100%;
+
+  &:checked { -gtk-icon-source: -gtk-scaled(-gtk-recolor(url("assets/checkbox-checked-symbolic.svg")), -gtk-recolor(url("assets/checkbox-checked-symbolic@2.svg"))); }
+  &:indeterminate { -gtk-icon-source: -gtk-scaled(-gtk-recolor(url("assets/checkbox-mixed-symbolic.svg")), -gtk-recolor(url("assets/checkbox-mixed-symbolic@2.svg"))); }
+}
+
+radio {
+  border-radius: 100%;
+
+  &:checked { -gtk-icon-source: -gtk-scaled(-gtk-recolor(url("assets/radio-checked-symbolic.svg")), -gtk-recolor(url("assets/radio-checked-symbolic@2.svg"))); }
+  &:indeterminate { -gtk-icon-source: -gtk-scaled(-gtk-recolor(url("assets/radio-mixed-symbolic.svg")), -gtk-recolor(url("assets/radio-mixed-symbolic@2.svg"))); }
+}
+
+checkbutton.selection-mode {
+  border-radius: $circular_radius;
+
+  check, radio {
+    padding: $base_padding / 2;
+    border-radius: $circular_radius;
+  }
+
+  label {
+    &:dir(ltr) { margin-right: $base_padding; }
+    &:dir(rtl) { margin-left: $base_padding; }
+  }
+}
+
+// ANIMATION:
+// this is made with those pretty convoluted transitions, since checks and radios have to animate only on state changes,
+// the transformation is set on the active state and it get reset on the checked state.
+check:not(:checked):active { -gtk-icon-transform: rotate(90deg); }
+
+// radio:not(:checked):active { -gtk-icon-transform: scale(0); }

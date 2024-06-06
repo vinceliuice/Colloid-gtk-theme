@@ -183,6 +183,16 @@
     StLabel, StIcon { color: on(dark, secondary); }
 
     .panel-button {
+      @if $float == 'true' {
+        box-shadow: inset 0 0 0 1000px overlay(dark, normal);
+      }
+
+      &.clock-display {
+        .clock {
+          box-shadow: inset 0 0 0 1000px overlay(dark, normal);
+        }
+      }
+
       &:hover {
         color: on(dark);
         background-color: transparent;
@@ -231,6 +241,7 @@
 
   // Input indicators
   Gjs_status_keyboard_InputSourceIndicator.panel-button, // Ibus
+  Gjs_appindicatorsupport_rgcjonas_gmail_com_indicatorStatusIcon_IndicatorStatusIcon.panel-button,
   Gjs_appindicatorsupport_rgcjonas_gmail_com_indicatorStatusIcon_AppIndicatorsIndicatorStatusIcon.panel-button { // Fcitx
     -natural-hpadding: 12px + $base_padding !important;
     -minimum-hpadding: 12px + $base_padding !important;
