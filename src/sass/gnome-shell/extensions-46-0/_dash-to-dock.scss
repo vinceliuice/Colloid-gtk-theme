@@ -18,7 +18,7 @@
     color: white;
     background-color: rgba(black, 0.75);
     text-align: center;
-    padding: 0.4em 0.5em;
+    padding: 0.2em 0.4em;
   }
 
   .notification-badge {
@@ -29,7 +29,7 @@
     box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.25);
     border-radius: $circular-radius;
     margin: 2px 3px 5px;
-    padding: 3px;
+    padding: 0.2em 0.4em;
     font-weight: bold;
     text-align: center;
   }
@@ -276,9 +276,22 @@
       background-color: $panel;
     }
 
+    .overview-tile,
+    .show-apps {
+      .overview-icon {
+        color: $panel-text;
+      }
+
+      &:focus .overview-icon { background-color: $panel-fill; }
+      &:hover .overview-icon { background-color: $panel-divider; }
+      &:active .overview-icon { background-color: $panel-track; }
+      &:checked .overview-icon { background-color: $panel-divider; }
+    }
+
     .app-grid-running-dot {
-      margin-bottom: 6px !important;
-      margin-top: 0 !important;
+      margin: 0 !important;
+      offset-y: 0 !important;
+      background-color: $panel-text-disabled;
     }
 
     StWidget.focused .app-grid-running-dot {
@@ -297,8 +310,24 @@
   &:overview #dash { // overview-mode #1
     background: none;
 
+    .overview-tile,
+    .show-apps {
+      .overview-icon {
+        color: on($osd);
+      }
+
+      &:focus .overview-icon { background-color: on($osd, fill); }
+      &:hover .overview-icon { background-color: on($osd, divider); }
+      &:active .overview-icon { background-color: on($osd, track); }
+      &:checked .overview-icon { background-color: on($osd, divider); }
+    }
+
     .dash-background {
-      background-color: on(dark, divider);
+      background-color: on($osd, divider);
+    }
+
+    .app-grid-running-dot {
+      background-color: on($osd, disabled);
     }
 
     StWidget.focused .app-grid-running-dot {
