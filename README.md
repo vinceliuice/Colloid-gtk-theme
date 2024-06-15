@@ -40,14 +40,14 @@ Run the following commands in the terminal:
 -c, --color VARIANT...  Specify color variant(s) [standard|light|dark] (Default: All variants)
 -s, --size VARIANT...   Specify size variant [standard|compact] (Default: standard variant)
 
--l, --libadwaita        Install specify gtk-4.0 theme into config folder (~/.config/gtk-4.0) for all gtk4 apps use this theme
-                        Default ColorSchemes theme will follow the system style (light/dark mode switch), nord|dracula|gruvbox|everforest|black ColorSchemes not support this
+-l, --libadwaita        Install specify gtk-4.0 theme into config folder ($HOME/.config/gtk-4.0) for all gtk4 apps use this theme
+                        Default ColorSchemes theme will follow the system style (light/dark mode switch), all ColorSchemes versions not support this !
                         Options for default ColorSchemes:
                         1. system                      Default option (using system colors for light/dark mode switching)
                         2. fixed                       Using fixed theme colors (that will break light/dark mode switch)
 
 --tweaks                Specify versions for tweaks
-                        1. [nord|dracula|gruvbox|all]  (Nord/Dracula/gruvbox/all) ColorSchemes version
+                        1. [nord|dracula|gruvbox|everforest|catppuccin|all]  (Nord/Dracula/Gruvbox/Everforet/Catppuccin/all) ColorSchemes version
                         2. black                       Blackness color version
                         3. rimless                     Remove the 1px border about windows and menus
                         4. normal                      Normal windows button style like gnome default theme (titlebuttons: max/min/close)
