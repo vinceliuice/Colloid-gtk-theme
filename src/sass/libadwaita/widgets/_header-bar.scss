@@ -50,6 +50,11 @@ headerbar {
     margin: 0;
     border: none;
     min-height: $medium_size;
+    background-color: $headerbar_backdrop_color;
+
+    &:backdrop {
+      background-color: $headerbar_bg_color;
+    }
 
     @if $rimless == 'false' {
       box-shadow: none;
@@ -114,6 +119,7 @@ window > {
 
     &.default-decoration {
       min-height: $medium_size;
+      box-shadow: none;
 
       > windowhandle > box {
         padding: $base_padding / 2;

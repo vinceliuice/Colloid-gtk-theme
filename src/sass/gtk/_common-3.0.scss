@@ -289,7 +289,6 @@ spinner {
   padding: 0 8px;
   border-radius: $corner-radius;
   caret-color: currentColor; // this shouldn't be needed.
-
   @include entry(normal);
 
   &:focus { @include entry(checked); }
@@ -4038,12 +4037,18 @@ stackswitcher {
 popover.emoji-picker {
   padding: 0;
 
-  entry {
+  &.background entry {
     border-bottom: 1px solid $divider;
     border-image: none;
     border-radius: 0;
     box-shadow: none;
     background-color: transparent;
+
+    &:focus {
+      border-bottom: 1px solid $primary;
+      box-shadow: inset 0 -1px $primary;
+      background-color: transparent;
+    }
   }
 
   scrolledwindow { border-bottom: 1px solid $divider; }

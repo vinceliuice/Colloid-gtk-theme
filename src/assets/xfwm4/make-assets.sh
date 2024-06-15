@@ -1,12 +1,12 @@
 #! /usr/bin/env bash
 
 for color in '' '-Light'; do
-  for type in '' '-Nord' '-Dracula' '-Gruvbox' '-Everforest'; do
+  for type in '' '-Nord' '-Dracula' '-Gruvbox' '-Everforest' '-Catppuccin'; do
     if [[ "$type" == '-Nord' ]]; then
       headerbar_light='#f0f1f4'
-      headerbar_dark='#252632'
+      headerbar_dark='#1e222a'
       headerbar_backdrop_light='#f8fafc'
-      headerbar_backdrop_dark='#2f3241'
+      headerbar_backdrop_dark='#242932'
       close_color='#bf616a'
       max_color='#a3be8c'
       min_color='#ebcb8b'
@@ -33,13 +33,23 @@ for color in '' '-Light'; do
     fi
 
     if [[ "$type" == '-Everforest' ]]; then
-      headerbar_light='#fbf1c7'
-      headerbar_dark='#232A2E'
-      headerbar_backdrop_light='#f9f5d7'
-      headerbar_backdrop_dark='#2D353B'
+      headerbar_light='#f0f1f4'
+      headerbar_dark='#1e222a'
+      headerbar_backdrop_light='#f8fafc'
+      headerbar_backdrop_dark='#242932'
       close_color='#E67E80'
       max_color='#A7C080'
       min_color='#DBBC7F'
+    fi
+
+    if [[ "$type" == '-Catppuccin' ]]; then
+      headerbar_light='#e6e9ef'
+      headerbar_dark='#24273a'
+      headerbar_backdrop_light='#eff1f5'
+      headerbar_backdrop_dark='#292c3c'
+      close_color='#ea999c'
+      max_color='#a6d189'
+      min_color='#e5c890'
     fi
 
     for window in '' '-Normal'; do

@@ -9,7 +9,7 @@ INDEX="assets.txt"
 
 for i in `cat $INDEX`; do
   for color in '' '-Light'; do
-    for type in '' '-Nord' '-Dracula' '-Gruvbox' '-Everforest'; do
+    for type in '' '-Nord' '-Dracula' '-Gruvbox' '-Everforest' '-Catppuccin'; do
       for window in '' '-Normal'; do
         for screen in '' '-hdpi' '-xhdpi'; do
           ASSETS_DIR="assets${color}${type}${window}${screen}"
@@ -47,7 +47,7 @@ for i in `cat $INDEX`; do
 done
 
 for color in '' '-Light'; do
-  for type in '' '-Nord' '-Dracula' '-Gruvbox' '-Everforest'; do
+  for type in '' '-Nord' '-Dracula' '-Gruvbox' '-Everforest' '-Catppuccin'; do
     for window in '' '-Normal'; do
       if [[ "${type}" == '' ]]; then
         echo "keep assets.svg file..."

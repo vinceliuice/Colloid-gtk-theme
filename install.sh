@@ -25,7 +25,7 @@ SASSC_OPT="-M -t expanded"
 
 THEME_NAME=Colloid
 THEME_VARIANTS=('' '-Purple' '-Pink' '-Red' '-Orange' '-Yellow' '-Green' '-Teal' '-Grey')
-SCHEME_VARIANTS=('' '-Nord' '-Dracula' '-Gruvbox' '-Everforest')
+SCHEME_VARIANTS=('' '-Nord' '-Dracula' '-Gruvbox' '-Everforest' '-Catppuccin')
 COLOR_VARIANTS=('' '-Light' '-Dark')
 SIZE_VARIANTS=('' '-Compact')
 
@@ -64,13 +64,13 @@ OPTIONS:
   -s, --size VARIANT      Specify size variant [standard|compact] (Default: standard variant)
 
   -l, --libadwaita        Install specify gtk-4.0 theme into config folder ($HOME/.config/gtk-4.0) for all gtk4 apps use this theme
-                          Default ColorSchemes theme will follow the system style (light/dark mode switch), nord|dracula|gruvbox|everforest|black ColorSchemes not support this
+                          Default ColorSchemes theme will follow the system style (light/dark mode switch), all ColorSchemes versions not support this !
                           Options for default ColorSchemes:
                           1. system                      Default option (using system colors for light/dark mode switching)
                           2. fixed                       Using fixed theme colors (that will break light/dark mode switch)
 
   --tweaks                Specify versions for tweaks
-                          1. [nord|dracula|gruvbox|everforest|all]  Nord|Dracula|gruvbox|everforet|all ColorSchemes version
+                          1. [nord|dracula|gruvbox|everforest|catppuccin|all]  (Nord/Dracula/Gruvbox/Everforet/Catppuccin/all) ColorSchemes version
                           2. black                       Blackness color version
                           3. rimless                     Remove the 1px border about windows and menus
                           4. normal                      Normal windows button style like gnome default theme (titlebuttons: max/min/close)
@@ -345,6 +345,12 @@ while [[ $# -gt 0 ]]; do
             echo -e "\nEverforest ColorScheme version! ..."
             shift
             ;;
+          catppuccin)
+            colorscheme='true'
+            schemes+=("${SCHEME_VARIANTS[5]}")
+            echo -e "\nCatppuccin ColorScheme version! ..."
+            shift
+            ;;
           all)
             colorscheme='true'
             schemes+=("${SCHEME_VARIANTS[@]}")
@@ -461,6 +467,9 @@ color_schemes() {
         ;;
       -Everforest)
         scheme_color='everforest'
+        ;;
+      -Catppuccin)
+        scheme_color='catppuccin'
         ;;
     esac
     sed -i "/\@import/s/color-palette-default/color-palette-${scheme_color}/" "${SRC_DIR}/sass/_tweaks-temp.scss"
