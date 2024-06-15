@@ -142,12 +142,12 @@ install() {
   cd "${THEME_DIR}/metacity-1" && ln -sf metacity-theme-3.xml metacity-theme-1.xml && ln -sf metacity-theme-3.xml metacity-theme-2.xml
 
   mkdir -p                                                                                   "${THEME_DIR}/xfwm4"
-  cp -r "${SRC_DIR}/main/xfwm4/themerc${ELSE_LIGHT:-}"                                       "${THEME_DIR}/xfwm4/themerc"
+  cp -r "${SRC_DIR}/main/xfwm4/themerc"                                                      "${THEME_DIR}/xfwm4/themerc"
   mkdir -p                                                                                   "${THEME_DIR}-hdpi/xfwm4"
-  cp -r "${SRC_DIR}/main/xfwm4/themerc${ELSE_LIGHT:-}"                                       "${THEME_DIR}-hdpi/xfwm4/themerc"
+  cp -r "${SRC_DIR}/main/xfwm4/themerc"                                                      "${THEME_DIR}-hdpi/xfwm4/themerc"
   sed -i "s/button_offset=6/button_offset=9/"                                                "${THEME_DIR}-hdpi/xfwm4/themerc"
   mkdir -p                                                                                   "${THEME_DIR}-xhdpi/xfwm4"
-  cp -r "${SRC_DIR}/main/xfwm4/themerc${ELSE_LIGHT:-}"                                       "${THEME_DIR}-xhdpi/xfwm4/themerc"
+  cp -r "${SRC_DIR}/main/xfwm4/themerc"                                                      "${THEME_DIR}-xhdpi/xfwm4/themerc"
   sed -i "s/button_offset=6/button_offset=12/"                                               "${THEME_DIR}-xhdpi/xfwm4/themerc"
 
   mkdir -p                                                                                   "${THEME_DIR}/plank"
