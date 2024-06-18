@@ -47,6 +47,7 @@
 
     &.clock-display {
       box-shadow: none;
+      background: none;
 
       .clock {
         transition-duration: 150ms;
@@ -62,11 +63,12 @@
     }
 
     &.screen-recording-indicator {
-      box-shadow: inset 0 0 0 100px $error;
+      box-shadow: inset 0 0 0 1000px $error;
     }
 
     &.screen-sharing-indicator {
-      box-shadow: inset 0 0 0 100px $warning;
+      box-shadow: inset 0 0 0 1000px $warning;
+
       StBoxLayout { margin: 0 $base_padding; }
     }
 
@@ -209,8 +211,16 @@
       }
 
       &.clock-display {
+        background-color: transparent;
+        box-shadow: none;
+
         .clock {
-          box-shadow: inset 0 0 0 1000px overlay(dark, normal);
+          @if $float == 'true' {
+            box-shadow: inset 0 0 0 1000px overlay(dark, normal);
+          } @else {
+            background-color: transparent;
+            box-shadow: none;
+          }
         }
       }
 
