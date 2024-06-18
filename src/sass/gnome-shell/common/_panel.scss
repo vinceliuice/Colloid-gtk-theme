@@ -86,13 +86,24 @@
       background-color: transparent;
       box-shadow: inset 0 0 0 1000px mix($panel-text, $panel, 15%);
 
+      @if $float == 'true' {
+        box-shadow: inset 0 0 0 1000px mix($panel-text, $panel, 15%);
+      } @else {
+        box-shadow: inset 0 0 0 1000px $panel-divider;
+      }
+
       &.clock-display {
         box-shadow: none;
         color: $panel-text-secondary;
 
         .clock {
           color: $panel-text;
-          box-shadow: inset 0 0 0 1000px mix($panel-text, $panel, 15%);
+
+          @if $float == 'true' {
+            box-shadow: inset 0 0 0 1000px mix($panel-text, $panel, 15%);
+          } @else {
+            box-shadow: inset 0 0 0 1000px $panel-divider;
+          }
         }
       }
     }
@@ -101,7 +112,12 @@
       &, &:hover {
         background-color: transparent;
         color: $panel-text;
-        box-shadow: inset 0 0 0 1000px mix($panel-text, $panel, 25%);
+
+        @if $float == 'true' {
+          box-shadow: inset 0 0 0 1000px mix($panel-text, $panel, 25%);
+        } @else {
+          box-shadow: inset 0 0 0 1000px $panel-track;
+        }
       }
 
       &.clock-display {
@@ -109,8 +125,13 @@
         color: $panel-text-secondary;
 
         .clock {
-          box-shadow: inset 0 0 0 1000px mix($panel-text, $panel, 25%);
           color: $panel-text;
+
+          @if $float == 'true' {
+            box-shadow: inset 0 0 0 1000px mix($panel-text, $panel, 25%);
+          } @else {
+            box-shadow: inset 0 0 0 1000px $panel-track;
+          }
         }
       }
     }
