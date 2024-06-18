@@ -343,12 +343,12 @@ make_gtkrc() {
         titlebar_dark='#242220'
         ;;
       -Everforest)
-        background_light='#fffbef'
-        background_dark='#232A2E'
-        background_darker='#343F44'
-        background_alt='#3D484D'
-        titlebar_light='#edeada'
-        titlebar_dark='#1e2326'
+        background_light='#fdf6e3'
+        background_dark='#2d353b'
+        background_darker='#343f44'
+        background_alt='#414b50'
+        titlebar_light='#f4f0d9'
+        titlebar_dark='#272e33'
         ;;
       -Catppuccin)
         background_light='#eff1f5'

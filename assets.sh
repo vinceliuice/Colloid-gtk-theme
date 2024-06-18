@@ -332,11 +332,11 @@ make_assets() {
         titlebar_dark='#242220'
         ;;
       -Everforest)
-        background_light='#fffbef'
-        background_dark='#232A2E'
-        background_dark_alt='#343F44'
-        background_light='#edeada'
-        background_dark='#1e2326'
+        background_light='#fdf6e3'
+        background_dark='#2d353b'
+        background_dark_alt='#343f44'
+        titlebar_light='#f4f0d9'
+        titlebar_dark='#272e33'
         ;;
       -Catppuccin)
         background_light='#eff1f5'

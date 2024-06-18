@@ -133,7 +133,7 @@ for theme in '' '-Purple' '-Pink' '-Red' '-Orange' '-Yellow' '-Green' '-Teal' '-
         fi
 
         if [[ "$type" == "-Everforest" ]]; then
-          background_color='#fffbef'
+          background_color='#fdf6e3'
           case "$theme" in 
             '')
               theme_color='#A7C080'
@@ -328,7 +328,7 @@ for theme in '' '-Purple' '-Pink' '-Red' '-Orange' '-Yellow' '-Green' '-Teal' '-
         fi
 
         if [[ "$type" == '-Everforest' ]]; then
-          background_color='#232A2E'
+          background_color='#272e33'
           case "$theme" in
             '')
               theme_color='#9cb575'

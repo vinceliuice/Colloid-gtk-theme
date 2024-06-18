@@ -33,10 +33,10 @@ for color in '' '-Light'; do
     fi
 
     if [[ "$type" == '-Everforest' ]]; then
-      headerbar_light='#f0f1f4'
-      headerbar_dark='#1e222a'
-      headerbar_backdrop_light='#f8fafc'
-      headerbar_backdrop_dark='#242932'
+      headerbar_light='#f4f0d9'
+      headerbar_dark='#272e33'
+      headerbar_backdrop_light='#fdf6e3'
+      headerbar_backdrop_dark='#2d353b'
       close_color='#E67E80'
       max_color='#A7C080'
       min_color='#DBBC7F'
