@@ -1,3 +1,6 @@
+:root {
+  --window-radius: #{$window_radius};
+}
 
 .background {
   color: $window_fg_color;

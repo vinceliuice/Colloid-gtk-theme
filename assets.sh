@@ -177,40 +177,40 @@ make_assets() {
   if [[ "$scheme" == '-Everforest' ]]; then
     case "$theme" in
       '')
-        theme_color_dark='#458588'
-        theme_color_light='#83a598'
+        theme_color_dark='#3a94c5'
+        theme_color_light='#7fbbb3'
         ;;
       -Purple)
-        theme_color_dark='#ab62b1'
-        theme_color_light='#d386cd'
+        theme_color_dark='#df69ba'
+        theme_color_light='#D699B6'
         ;;
       -Pink)
         theme_color_dark='#b16286'
         theme_color_light='#d3869b'
         ;;
       -Red)
-        theme_color_dark='#cc241d'
-        theme_color_light='#fb4934'
+        theme_color_dark='#f85552'
+        theme_color_light='#E67E80'
         ;;
       -Orange)
-        theme_color_dark='#d65d0e'
-        theme_color_light='#fe8019'
+        theme_color_dark='#f57d26'
+        theme_color_light='#E69875'
         ;;
       -Yellow)
-        theme_color_dark='#d79921'
-        theme_color_light='#fabd2f'
+        theme_color_dark='#dfa000'
+        theme_color_light='#DBBC7F'
         ;;
       -Green)
-        theme_color_dark='#98971a'
-        theme_color_light='#b8bb26'
+        theme_color_dark='#8da101'
+        theme_color_light='#A7C080'
         ;;
       -Teal)
-        theme_color_dark='#689d6a'
-        theme_color_light='#8ec07c'
+        theme_color_dark='#35a77c'
+        theme_color_light='#83C092'
         ;;
       -Grey)
-        theme_color_dark='#3c3836'
-        theme_color_light='#a89984'
+        theme_color_dark='#414b50'
+        theme_color_light='#e6e2cc'
         ;;
     esac
   fi
