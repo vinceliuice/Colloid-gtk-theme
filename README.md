@@ -71,6 +71,12 @@ Default ColorSchemes themes will follow the system style now ! (switch [light/da
 
 https://github.com/vinceliuice/Colloid-gtk-theme/assets/7604295/d5c24086-08bc-45a4-b4d9-124c02249216
 
+### ColorSchemes
+
+![colorschemes](colorschemes.png?raw=true)
+
+### Tweaks
+
 ![tweaks](tweaks.png?raw=true)
 
 ### Flatpak Installation
