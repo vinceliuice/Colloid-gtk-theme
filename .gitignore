@@ -11,3 +11,9 @@ src/main/gnome-shell/gnome-shell-Dark.css
 src/main/cinnamon/cinnamon.css
 src/main/cinnamon/cinnamon-Light.css
 src/main/cinnamon/cinnamon-Dark.css
+release/Colloid-Catppuccin.tar.xz
+release/Colloid-Dracula.tar.xz
+release/Colloid-Everforest.tar.xz
+release/Colloid-Gruvbox.tar.xz
+release/Colloid-Nord.tar.xz
+release/Colloid.tar.xz
