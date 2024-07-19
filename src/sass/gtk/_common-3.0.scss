@@ -1055,7 +1055,7 @@ searchbar > revealer > box,
 
 searchbar > revealer > box {
   // workaround: undo the GtkContainer:border-width and use CSS padding instead
-  margin: -$space-size;
+  margin: -6px;
 }
 
 
@@ -1366,7 +1366,7 @@ headerbar {
 
   > box.left,
   > box.right { // Titlebutton space
-    padding: 0 if($window_button == 'mac', $space-size, $space-size - 2px);
+    padding: 0 if($window_button == 'mac', 6px, 4px);
   }
 
   button:not(.suggested-action):not(.destructive-action) {
@@ -1689,7 +1689,7 @@ menu {
     transition: background-color $duration $ease-out;
     min-height: 20px;
     min-width: 40px;
-    padding: 4px 8px;
+    padding: ($menuitem-size - 20px) / 2 ($large-size - 40px) / 2;
     color: $text;
     font: initial;
     text-shadow: none;
@@ -3814,7 +3814,7 @@ decoration {
   min-height: 16px;
   min-width: 16px;
   padding: 0;
-  margin: 0 $space-size - 2px;
+  margin: 0 $space-size / 2 + 1px;
 
   &.minimize, &.maximize, &.close {
     color: transparent;
@@ -3870,7 +3870,7 @@ decoration {
   min-height: 22px;
   min-width: 22px;
   padding: 0;
-  margin: 0 $space-size - 2px;
+  margin: 0 $space-size / 2 + 1px;
 
   &.minimize, &.maximize, &.close {
     color: $titlebar-text-secondary;

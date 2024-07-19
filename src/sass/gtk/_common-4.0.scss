@@ -5099,8 +5099,8 @@ window {
   min-height: 16px;
   min-width: 16px;
   padding: ($medium-size - 16px) / 2 0;
-  margin-left: $space-size - 2px;
-  margin-right: $space-size - 2px;
+  margin-left: $space-size / 2 + 1px;
+  margin-right: $space-size / 2 + 1px;
 
   &.minimize, &.maximize, &.close {
     color: transparent;
