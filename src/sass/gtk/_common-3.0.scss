@@ -1634,7 +1634,7 @@ menubar,
   > menuitem {
     transition: none;
     min-height: 20px;
-    padding: 4px 8px;
+    padding: $space-size / 2 + 1px $space-size + 2px;
     color: $titlebar-text-secondary;
     border-radius: $corner-radius;
 
@@ -1689,7 +1689,7 @@ menu {
     transition: background-color $duration $ease-out;
     min-height: 20px;
     min-width: 40px;
-    padding: ($menuitem-size - 20px) / 2 ($large-size - 40px) / 2;
+    padding: ($menuitem-size - 20px) / 2 $space-size + 2px;
     color: $text;
     font: initial;
     text-shadow: none;
@@ -1931,8 +1931,6 @@ notebook {
       }
 
       > list {
-        // @extend %circular_list;
-
         row.activatable { border-radius: $corner-radius; }
       }
     }
@@ -3273,7 +3271,7 @@ stacksidebar.sidebar {
   }
 
   row {
-    min-height: 32px;
+    min-height: $medium_size;
     padding: 0 $space-size / 2;
     border-radius: $corner-radius;
 
@@ -3326,7 +3324,7 @@ placessidebar.sidebar {
 
   row {
     // Needs overriding of the GtkListBoxRow padding
-    min-height: 32px;
+    min-height: $medium_size;
     margin: 0; // Remove unwanted hard-coded vertical margins with -1px
     padding: 0;
     border-radius: $corner-radius;
