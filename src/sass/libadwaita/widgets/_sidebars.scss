@@ -159,16 +159,16 @@
 }
 
 stacksidebar row {
-  padding: 10px 4px;
+  padding: $base_padding + 4px $base_padding / 2 + 1px;
 
   > label {
-    padding-left: 6px;
-    padding-right: 6px;
+    padding-left: $base_padding;
+    padding-right: $base_padding;
   }
 
   &.needs-attention > label {
     @extend %needs_attention;
-    background-size: 6px 6px, 0 0;
+    background-size: $base_padding $base_padding, 0 0;
   }
 }
 
@@ -220,8 +220,8 @@ stacksidebar row {
   }
 
   > row {
-    min-height: 36px;
-    padding: 0 8px;
+    min-height: $medium_size;
+    padding: 0 $base_padding + 2px;
     border-radius: $menuitem_radius;
     margin: 0 $menu_margin $base_padding / 2;
   }

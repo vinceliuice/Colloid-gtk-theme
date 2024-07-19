@@ -124,13 +124,13 @@ row {
     min-height: 32px; /* should be tall even when only containing a label */
 
     > box {
-      border-spacing: 12px;
+      border-spacing: $base_padding * 2;
     }
   }
 
   > header {
-    padding-left: 12px;
-    padding-right: 12px;
+    padding-left: $base_padding * 2;
+    padding-right: $base_padding * 2;
   }
 }
 
@@ -145,19 +145,19 @@ row {
   }
 
   > box.header {
-    margin-left: 12px;
-    margin-right: 12px;
-    border-spacing: 6px;
-    min-height: 50px;
+    margin-left: $base_padding * 2;
+    margin-right: $base_padding * 2;
+    border-spacing: $base_padding;
+    min-height: $large_size + 2px;
 
     > .icon:disabled {
       filter: opacity($disabled_opacity);
     }
 
     > box.title {
-      margin-top: 6px;
-      margin-bottom: 6px;
-      border-spacing: 3px;
+      margin-top: $base_padding;
+      margin-bottom: $base_padding;
+      border-spacing: $base_padding / 2;
       padding: 0;
 
       // Specificity bump for header bar
@@ -171,13 +171,13 @@ row {
 
     > .prefixes,
     > .suffixes {
-      border-spacing: 6px;
+      border-spacing: $base_padding;
     }
 
     > .icon,
     > .prefixes {
-      &:dir(ltr) { margin-right: 6px; }
-      &:dir(rtl) { margin-left: 6px; }
+      &:dir(ltr) { margin-right: $base_padding; }
+      &:dir(rtl) { margin-left: $base_padding; }
     }
   }
 
@@ -210,9 +210,9 @@ row.entry {
   }
 
   .edit-icon, .indicator {
-    min-width: 24px;
-    min-height: 24px;
-    padding: 5px;
+    min-width: 22px;
+    min-height: 22px;
+    padding: $base_padding;
   }
 
   .edit-icon:disabled {
@@ -235,7 +235,7 @@ row.entry {
 row.spin {
   spinbutton {
     background: none;
-    border-spacing: 6px;
+    border-spacing: $base_padding;
     box-shadow: none;
 
     &, &:focus {
@@ -247,8 +247,8 @@ row.spin {
       &, &:dir(ltr):last-child, &:dir(rtl):first-child {
         @extend %button_basic;
         @extend %circular_button;
-        min-width: 30px;
-        min-height: 30px;
+        min-width: $menuitem_size;
+        min-height: $menuitem_size;
         margin: 10px 2px;
         border: none;
       }
@@ -325,7 +325,7 @@ row.combo {
     min-width: 120px;
 
     .combo-searchbar {
-      margin: 6px;
+      margin: $base_padding;
 
       + scrolledwindow {
         @include undershoot(top, $popover_shade_color);
@@ -444,10 +444,10 @@ row.expander {
 
 row.button {
   > box {
-    margin-left: 12px;
-    margin-right: 12px;
-    border-spacing: 6px;
-    min-height: 50px;
+    margin-left: $base_padding * 2;
+    margin-right: $base_padding * 2;
+    border-spacing: $base_padding;
+    min-height: $large_size + 2px;
   }
 
   .title {
@@ -510,7 +510,7 @@ list.boxed-list-separate {
   > row {
     @extend %boxed_list;
     border: none;
-    margin-bottom: 12px;
+    margin-bottom: $base_padding * 2;
 
     &:last-child {
       margin-bottom: 0;
