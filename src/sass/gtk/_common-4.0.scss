@@ -3733,7 +3733,7 @@ list {
   background-clip: padding-box;
 
   > row {
-    padding: $space-size;
+    padding: 2px;
     background-clip: padding-box;
   }
 
@@ -4619,7 +4619,7 @@ separator.sidebar {
 
   > row {
     min-height: $small-size;
-    padding: $space-size;
+    padding: $space-size / 2;
     border-radius: $corner-radius;
     margin: $space-size / 4 $space-size;
   }
