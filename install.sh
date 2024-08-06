@@ -14,6 +14,7 @@ DEST_DIR=
 scheme=
 window=
 
+# Destination directory
 if [[ "$UID" -eq "$ROOT_UID" ]]; then
   DEST_DIR="/usr/share/themes"
 elif [[ -n "$XDG_DATA_HOME" ]]; then

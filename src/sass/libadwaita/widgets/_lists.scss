@@ -10,12 +10,12 @@ list {
   border-color: $border_color;
 
   > row {
-    padding: $base_padding / 2;
+    padding: 2px;
     background-clip: padding-box;
   }
 
   > row.expander { padding: 0px; }
-  > row.expander .row-header { padding: $base_padding / 2; }
+  > row.expander .row-header { padding: 2px; }
 
   &.horizontal row.separator,
   &.separators.horizontal > row:not(.separator) {
@@ -32,7 +32,7 @@ list.frame { border-radius: $button_radius; }
 
 listview > header {
   @extend .heading;
-  padding: $base_padding / 2;
+  padding: 2px;
   padding-top: $base_padding * 3;
   padding-bottom: $base_padding;
 }
