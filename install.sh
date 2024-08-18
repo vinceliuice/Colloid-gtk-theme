@@ -19,6 +19,8 @@ if [[ "$UID" -eq "$ROOT_UID" ]]; then
   DEST_DIR="/usr/share/themes"
 elif [[ -n "$XDG_DATA_HOME" ]]; then
   DEST_DIR="$XDG_DATA_HOME/themes"
+elif [[ -d "$HOME/.themes" ]]; then
+  DEST_DIR="$HOME/.themes"
 elif [[ -d "$HOME/.local/share/themes" ]]; then
   DEST_DIR="$HOME/.local/share/themes"
 else
@@ -101,7 +103,7 @@ install() {
 
   local THEME_DIR="${1}/${2}${3}${4}${5}${6}"
 
-  [[ -d "${THEME_DIR}" ]] && rm -rf "${THEME_DIR}"
+  # [[ -d "${THEME_DIR}" ]] && rm -rf "${THEME_DIR}"
 
   echo "Installing '${THEME_DIR}'..."
 
@@ -686,8 +688,14 @@ uninstall() {
 
   local THEME_DIR="${1}/${2}${3}${4}${5}${6}"
 
+  if [[ "$uninstall" == 'true' ]]; then
+    type='Uninstall'
+  else
+    type='Clean'
+  fi
+
   if [[ -d "${THEME_DIR}" ]]; then
-    echo -e "Uninstall ${THEME_DIR}... "
+    echo -e "${type} ${THEME_DIR}... "
     rm -rf "${THEME_DIR}"{'','-hdpi','-xhdpi'}
   fi
 }
@@ -704,6 +712,17 @@ uninstall_theme() {
   done
 }
 
+clean_theme() {
+  if [[ "$UID" -eq "$ROOT_UID" ]]; then
+    uninstall_theme
+  else
+    local DEST_DIR="$HOME/.themes"
+    uninstall_theme
+    local DEST_DIR="$HOME/.local/share/themes"
+    uninstall_theme
+  fi
+}
+
 if [[ "$uninstall" == 'true' ]]; then
   if [[ "$libadwaita" == 'true' ]]; then
     echo -e "\nUninstall libadwaita theme from ${HOME}/.config/gtk-4.0 ..."
@@ -713,7 +732,7 @@ if [[ "$uninstall" == 'true' ]]; then
   fi
 else
   install_package && tweaks_temp
-  gnome_shell_version && echo && install_theme
+  gnome_shell_version && echo && clean_theme && install_theme
 
   if [[ "$libadwaita" == 'true' ]]; then
     uninstall_libadwaita && install_libadwaita

@@ -1,6 +1,6 @@
-/*********
- * Tilix *
- *********/
+//
+// Tilix *
+//
 overlay > revealer {
   &.left > scrolledwindow.frame,
   &.right > scrolledwindow.frame {
@@ -30,10 +30,9 @@ button.flat.tilix-small-button {
   min-width: $small-size - 4px * 2;
 }
 
-
-/**************
- * Terminator *
- **************/
+//
+// Terminator *
+//
 .terminator-terminal-window {
   paned > separator { background-color: $background; }
 
@@ -41,18 +40,17 @@ button.flat.tilix-small-button {
   notebook.frame { border-style: none; }
 }
 
-
-/*************
- * Ubitquity *
- *************/
+//
+// Ubitquity *
+//
 #live_installer .menubar progressbar trough {
   border-radius: 4px; // Adjust to hard-coded progress border-radius
   background-color: $titlebar-track-disabled;
 }
 
-/*********
- * Meld *
- ********/
+//
+// Meld *
+//
 .meld-notebook {
   &, > stack {
     background: none;
@@ -70,9 +68,9 @@ statusbar.meld-status-bar {
 }
 
 
-/***********
- * Eclipse *
- ***********/
+//
+// Eclipse *
+//
 window.background > box.vertical > scrolledwindow > widget toolbar {
   padding: 2px;
 
@@ -83,9 +81,9 @@ window.background > box.vertical > scrolledwindow > widget toolbar {
 }
 
 
-/************
- * Chromium *
- ************/
+//
+// Chromium *
+//
 window.background.chromium {
   background-color: $surface;
 
@@ -140,9 +138,9 @@ window.background.chromium {
 tooltip.background.chromium { background-color: rgba($tooltip, 1); }
 
 
-/***********
- * Firefox *
- ***********/
+//
+// Firefox *
+//
 #MozillaGtkWidget {
   decoration { border: none; }
 
@@ -255,9 +253,10 @@ window.background:not(.csd) {
   }
 }
 
-/************
- * Inkscape *
- ************/
+//
+// Inkscape *
+//
+
 #ToolboxCommon {
   > #AuxToolbox {
     #StyleSwatch { font-size: smaller; }
@@ -336,15 +335,15 @@ scrolledwindow#DialogNotebook {
 }
 
 
-/***********
- * Synapse *
- ***********/
+//
+// Synapse *
+//
 box.vertical > widget > widget:selected { @extend %selected_items; }
 
 
-/***************
- * Libreoffice *
- ***************/
+//
+// Libreoffice *
+//
 window.background {
   > grid > widget > widget > scrolledwindow > viewport > grid > box > box > frame > box {
     background-color: $base;
@@ -352,9 +351,9 @@ window.background {
 }
 
 
-/*********
- * Pamac *
- *********/
+//
+// Pamac *
+//
 window.background.csd {
   > box.vertical > overlay > stack > box.vertical > box.horizontal {
     > revealer > stack {
@@ -371,5 +370,15 @@ window.background.csd {
         }
       }
     }
+  }
+}
+
+//
+// KiCad / SLADE
+//
+
+window.background:not(.csd):not(.solid-csd) {
+  > button:not(:hover):not(:active):not(:checked):not(:disabled):not(.flat) { // Why this ?
+    background-color: $base-alt;
   }
 }
