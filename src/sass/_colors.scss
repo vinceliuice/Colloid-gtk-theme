@@ -158,10 +158,6 @@ $destructive:                           $error;
 
 $assets-color:                          $primary;
 
-@if $colorscheme == 'dracula' {
-  $assets-color:                        if($variant == 'light', $green-dark, $green-light);
-}
-
 $frame:                                 if($variant == 'light', rgba($black, 0.12), rgba($black, 0.25));
 $border:                                if($variant == 'light', rgba($black, 0.12), rgba($white, 0.12));
 $shade:                                 if($variant == 'light', rgba($black, 0.08), rgba($white, 0.08));
