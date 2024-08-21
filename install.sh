@@ -156,6 +156,12 @@ install() {
   cp -r "${SRC_DIR}/main/xfwm4/themerc"                                                      "${THEME_DIR}-xhdpi/xfwm4/themerc"
   sed -i "s/button_offset=6/button_offset=12/"                                               "${THEME_DIR}-xhdpi/xfwm4/themerc"
 
+  if [[ "$color" == '' ]]; then
+    sed -i "s/active_text_color_2/active_color_2/"                                           "${THEME_DIR}/xfwm4/themerc"
+    sed -i "s/active_text_color_2/active_color_2/"                                           "${THEME_DIR}-hdpi/xfwm4/themerc"
+    sed -i "s/active_text_color_2/active_color_2/"                                           "${THEME_DIR}-xhdpi/xfwm4/themerc"
+  fi
+
   mkdir -p                                                                                   "${THEME_DIR}/plank"
   if [[ "$color" == '-Light' ]]; then
     cp -r "${SRC_DIR}/main/plank/theme-Light${scheme}/"*                                     "${THEME_DIR}/plank"
