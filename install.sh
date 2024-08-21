@@ -103,7 +103,7 @@ install() {
 
   local THEME_DIR="${1}/${2}${3}${4}${5}${6}"
 
-  # [[ -d "${THEME_DIR}" ]] && rm -rf "${THEME_DIR}"
+  [[ -d "${THEME_DIR}" ]] && rm -rf "${THEME_DIR}"
 
   echo "Installing '${THEME_DIR}'..."
 
@@ -719,11 +719,9 @@ uninstall_theme() {
 }
 
 clean_theme() {
-  if [[ "$UID" -eq "$ROOT_UID" ]]; then
-    uninstall_theme
-  else
-    local DEST_DIR="$HOME/.themes"
-    uninstall_theme
+  if [[ "$UID" != "$ROOT_UID" ]]; then
+#    local DEST_DIR="$HOME/.themes"
+#    uninstall_theme
     local DEST_DIR="$HOME/.local/share/themes"
     uninstall_theme
   fi
