@@ -964,7 +964,7 @@ toolbar {
   padding: 2px 3px;
   background-color: $background;
 
-  button { @extend %button-flat; }
+  // box:not(.linked) button { @extend %button-flat; }
 
   // on OSD
   .osd & { background-color: transparent; }
