@@ -17,3 +17,6 @@ release/Colloid-Everforest.tar.xz
 release/Colloid-Gruvbox.tar.xz
 release/Colloid-Nord.tar.xz
 release/Colloid.tar.xz
+src/main/libadwaita/libadwaita-Dark.css
+src/main/libadwaita/libadwaita-Light.css
+src/main/libadwaita/libadwaita.css
