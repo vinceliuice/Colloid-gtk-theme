@@ -13,6 +13,7 @@
     padding: 8px;
     border-radius: $base_radius;
     border: 1px solid transparent;
+    background-color: $panel;
 
     &:outlined {
       background-color: $divider;
