@@ -301,16 +301,6 @@ spinner {
 entry {
   @extend %entry_basic;
 
-  .background:not(.csd) & {
-    @include entry(solid);
-
-    &:focus { @include entry(solid-checked); }
-
-    &:drop(active) { @include entry(solid-hover); }
-
-    &:disabled { @include entry(solid-disabled); }
-  }
-
   &.flat {
     min-height: 0;
     padding: 2px;

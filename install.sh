@@ -720,10 +720,19 @@ uninstall_theme() {
 
 clean_theme() {
   if [[ "$UID" != "$ROOT_UID" ]]; then
-#    local DEST_DIR="$HOME/.themes"
-#    uninstall_theme
-    local DEST_DIR="$HOME/.local/share/themes"
-    uninstall_theme
+    if [[ "$DEST_DIR" == "$HOME/.themes" ]]; then
+      local dest="$HOME/.local/share/themes"
+    fi
+
+    for theme in "${themes[@]}"; do
+      for color in "${colors[@]}"; do
+        for size in "${sizes[@]}"; do
+          for scheme in "${schemes[@]}"; do
+            uninstall "${dest}" "${name:-$THEME_NAME}" "$theme" "$color" "$size" "$scheme"
+          done
+        done
+      done
+    done
   fi
 }
 

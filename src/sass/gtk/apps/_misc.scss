@@ -139,7 +139,7 @@ tooltip.background.chromium { background-color: rgba($tooltip, 1); }
 
 
 //
-// Firefox *
+// Firefox
 //
 #MozillaGtkWidget {
   decoration { border: none; }
@@ -254,7 +254,7 @@ window.background:not(.csd) {
 }
 
 //
-// Inkscape *
+// Inkscape
 //
 
 #ToolboxCommon {
@@ -336,13 +336,13 @@ scrolledwindow#DialogNotebook {
 
 
 //
-// Synapse *
+// Synapse
 //
 box.vertical > widget > widget:selected { @extend %selected_items; }
 
 
 //
-// Libreoffice *
+// Libreoffice
 //
 window.background {
   > grid > widget > widget > scrolledwindow > viewport > grid > box > box > frame > box {
@@ -352,7 +352,7 @@ window.background {
 
 
 //
-// Pamac *
+// Pamac
 //
 window.background.csd {
   > box.vertical > overlay > stack > box.vertical > box.horizontal {
@@ -380,5 +380,17 @@ window.background.csd {
 window.background:not(.csd):not(.solid-csd) {
   > button:not(:hover):not(:active):not(:checked):not(:disabled):not(.flat) { // Why this ?
     background-color: $base-alt;
+  }
+}
+
+//
+// FileZilla
+//
+
+window.background:not(.csd) {
+  > box > widget > widget > widget > widget > widget > widget > widget > scrolledwindow {
+    entry:focus {
+      background-color: if($variant == 'light', mix(black, $background, 5%), mix(white, $background, 5%));
+    }
   }
 }
