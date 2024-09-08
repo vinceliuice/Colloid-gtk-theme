@@ -103,7 +103,7 @@ install() {
 
   local THEME_DIR="${1}/${2}${3}${4}${5}${6}"
 
-  [[ -d "${THEME_DIR}" ]] && rm -rf "${THEME_DIR}"
+  [[ -d "${THEME_DIR}" ]] && rm -rf "${THEME_DIR}"{'','-hdpi','-xhdpi'}
 
   echo "Installing '${THEME_DIR}'..."
 
@@ -155,12 +155,6 @@ install() {
   mkdir -p                                                                                   "${THEME_DIR}-xhdpi/xfwm4"
   cp -r "${SRC_DIR}/main/xfwm4/themerc"                                                      "${THEME_DIR}-xhdpi/xfwm4/themerc"
   sed -i "s/button_offset=6/button_offset=12/"                                               "${THEME_DIR}-xhdpi/xfwm4/themerc"
-
-  if [[ "$color" == '' ]]; then
-    sed -i "s/active_text_color_2/active_color_2/"                                           "${THEME_DIR}/xfwm4/themerc"
-    sed -i "s/active_text_color_2/active_color_2/"                                           "${THEME_DIR}-hdpi/xfwm4/themerc"
-    sed -i "s/active_text_color_2/active_color_2/"                                           "${THEME_DIR}-xhdpi/xfwm4/themerc"
-  fi
 
   mkdir -p                                                                                   "${THEME_DIR}/plank"
   if [[ "$color" == '-Light' ]]; then

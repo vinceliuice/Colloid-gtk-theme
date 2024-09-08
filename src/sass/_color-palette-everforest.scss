@@ -59,7 +59,7 @@ $white: #fffbef;
 $black: #1e2326;
 
 // Button
-$button-close: if($variant == 'light', #E67E80, #ff9c9e);
+$button-close: if($variant == 'light', #e67e80, #ff9c9e);
 $button-max: if($variant == 'light', #93ac6c, #b6cf8f);
 $button-min: if($variant == 'light', #d6b77a, #eacb8e);
 

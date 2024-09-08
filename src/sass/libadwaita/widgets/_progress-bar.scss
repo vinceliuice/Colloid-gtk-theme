@@ -1,4 +1,6 @@
 progressbar {
+  border-radius: $circular_radius;
+
   // sizing
   &.horizontal {
     > trough {
@@ -26,6 +28,7 @@ progressbar {
 
   > trough {
     @extend %scale_trough;
+    border-radius: $circular_radius;
 
     > progress {
       @extend %scale_highlight; /* share most of scales' */

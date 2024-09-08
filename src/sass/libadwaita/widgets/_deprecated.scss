@@ -227,6 +227,7 @@ treeview.view {
     &, &:selected {
       background-color: $accent_bg_color;
       color: $accent_fg_color;
+      border-radius: $circular_radius;
     }
 
     box-shadow: none;
@@ -234,6 +235,10 @@ treeview.view {
 
   &.trough { // progress bar trough in treeviews
     background-color: gtkalpha(currentColor, 0.1);
+
+    &, &:selected {
+      border-radius: $circular_radius;
+    }
   }
 
   ~ undershoot.top {

@@ -1,8 +1,8 @@
-button_offset=6
+button_offset=3
 button_spacing=0
 show_app_icon=false
 full_width_title=true
-frame_border_top=5
+frame_border_top=3
 maximized_offset=0
 
 active_text_color=active_text_color_2
