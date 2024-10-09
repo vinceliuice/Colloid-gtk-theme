@@ -44,3 +44,15 @@
   border-radius: $button_radius;
   @extend %button_basic_flat;
 }
+
+list.operations-list {
+  background: none;
+
+  > row {
+    &, &:hover, &:active, &:focus, &:selected {
+      background: none;
+      transition: none;
+      animation: none;
+    }
+  }
+}

@@ -291,6 +291,10 @@ toolbarview {
         transition: filter $backdrop_transition;
       }
     }
+
+    button.pill {
+      padding: ($medium_size - 24px) / 2 $small_size;
+    }
   }
 
   > .top-bar {

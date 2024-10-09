@@ -231,3 +231,19 @@ window.filechooser headerbar box.start + box.vertical {
   margin-bottom: -$base_padding;
   min-height: 12px;
 }
+
+
+.fr-sidebar {
+  > row {
+    padding: $base_padding $base_padding * 1.5;
+
+    &:not(.fr-sidebar-row) {
+      &, &:hover, &:active, &:focus, &:selected,
+      &:active:hover, &:focus:hover, &:selected:hover {
+        background: none;
+        animation: none;
+        transition: none;
+      }
+    }
+  }
+}

@@ -306,7 +306,7 @@ button {
 
   @at-root %pill_button,
   &.pill {
-    padding: 10px 32px;
+    padding: $base_padding * 1.5 $medium_size - 4px;
     border-radius: $circular_radius;
   }
 

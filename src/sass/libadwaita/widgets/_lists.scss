@@ -28,6 +28,10 @@ list {
   }
 }
 
+button listview.view {
+  background: none;
+}
+
 list.frame { border-radius: $button_radius; }
 
 listview > header {

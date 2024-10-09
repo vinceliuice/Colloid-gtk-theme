@@ -34,8 +34,9 @@ popover {
 
     > list,
     > .view,
-    > toolbar {
-      border-style: none;
+    > toolbar,
+    > scrolledwindow > viewport > list {
+      border: none;
       background-color: transparent;
     }
 

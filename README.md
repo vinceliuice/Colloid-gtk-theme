@@ -71,6 +71,14 @@ Default ColorSchemes themes will follow the system style now ! (switch [light/da
 
 https://github.com/vinceliuice/Colloid-gtk-theme/assets/7604295/d5c24086-08bc-45a4-b4d9-124c02249216
 
+### Fix for Flatpak
+
+```sh
+sudo flatpak override --filesystem=xdg-config/gtk-3.0 && sudo flatpak override --filesystem=xdg-config/gtk-4.0
+```
+
+If you use flatpak apps, you can run this to fix theme issue
+
 ### ColorSchemes
 
 ![colorschemes](colorschemes.png?raw=true)
@@ -79,7 +87,7 @@ https://github.com/vinceliuice/Colloid-gtk-theme/assets/7604295/d5c24086-08bc-45
 
 ![tweaks](tweaks.png?raw=true)
 
-### Flatpak Installation
+### Flatpak Installation (gtk-3.0)
 
 Automatically install your host GTK+ theme as a Flatpak. Use this:
 

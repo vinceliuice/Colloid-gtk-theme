@@ -131,3 +131,72 @@ $dim_label_opacity: 0.55;
 $dimmer_opacity: 0.3;
 $disabled_opacity: 0.45;
 $strong_disabled_opacity: 0.3;
+
+:root {
+  --accent-blue: #3584e4;
+  --accent-teal: #2190a4;
+  --accent-green: #3a944a;
+  --accent-yellow: #c88800;
+  --accent-orange: #ed5b00;
+  --accent-red: #e62d42;
+  --accent-pink: #d56199;
+  --accent-purple: #9141ac;
+  --accent-slate: #6f8396;
+
+  --accent-bg-color: @accent_bg_color;
+  --accent-fg-color: @accent_fg_color;
+
+  --destructive-bg-color: @destructive_bg_color;
+  --destructive-fg-color: @destructive_fg_color;
+
+  --success-bg-color: @success_bg_color;
+  --success-fg-color: @success_fg_color;
+
+  --warning-bg-color: @warning_bg_color;
+  --warning-fg-color: @warning_fg_color;
+
+  --error-bg-color: @error_bg_color;
+  --error-fg-color: @error_fg_color;
+
+  --window-bg-color: @window_bg_color;
+  --window-fg-color: @window_fg_color;
+
+  --view-bg-color: @view_bg_color;
+  --view-fg-color: @view_fg_color;
+
+  --headerbar-bg-color: @headerbar_bg_color;
+  --headerbar-fg-color: @headerbar_fg_color;
+  --headerbar-border-color: @headerbar_border_color;
+  --headerbar-backdrop-color: @headerbar_backdrop_color;
+  --headerbar-shade-color: @headerbar_shade_color;
+  --headerbar-darker-shade-color: @headerbar_darker_shade_color;
+
+  --sidebar-bg-color: @sidebar_bg_color;
+  --sidebar-fg-color: @sidebar_fg_color;
+  --sidebar-backdrop-color: @sidebar_backdrop_color;
+  --sidebar-border-color: @sidebar_border_color;
+  --sidebar-shade-color: @sidebar_shade_color;
+
+  --secondary-sidebar-bg-color: @secondary_sidebar_bg_color;
+  --secondary-sidebar-fg-color: @secondary_sidebar_fg_color;
+  --secondary-sidebar-backdrop-color: @secondary_sidebar_backdrop_color;
+  --secondary-sidebar-border-color: @secondary_sidebar_border_color;
+  --secondary-sidebar-shade-color: @secondary_sidebar_shade_color;
+
+  --card-bg-color: @card_bg_color;
+  --card-fg-color: @card_fg_color;
+  --card-shade-color: @card_shade_color;
+
+  --dialog-bg-color: @dialog_bg_color;
+  --dialog-fg-color: @dialog_fg_color;
+
+  --popover-bg-color: @popover_bg_color;
+  --popover-fg-color: @popover_fg_color;
+  --popover-shade-color: @popover_shade_color;
+
+  --thumbnail-bg-color: @thumbnail_bg_color;
+  --thumbnail-fg-color: @thumbnail_fg_color;
+
+  --shade-color: @shade_color;
+  --scrollbar-outline-color: @scrollbar_outline_color;
+}
