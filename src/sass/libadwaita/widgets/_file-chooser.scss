@@ -5,11 +5,11 @@ placessidebar {
 
     // Using margins/padding directly in the SidebarRow
     // will make the animation of the new bookmark row jump
-    > revealer { padding: 0 14px; }
+    > revealer { padding: 0 $base_padding * 2 + 2px; }
 
     image.sidebar-icon {
-      &:dir(ltr) { padding-right: 8px; }
-      &:dir(rtl) { padding-left: 8px; }
+      &:dir(ltr) { padding-right: $base_padding + 2px; }
+      &:dir(rtl) { padding-left: $base_padding + 2px; }
     }
 
     label.sidebar-label {
@@ -32,7 +32,7 @@ placessidebar {
     &:selected:active { box-shadow: none; }
 
     &.sidebar-placeholder-row {
-      padding: 0 8px;
+      padding: 0 $base_padding + 2px;
       min-height: 2px;
       background-image: image($drop_target_color);
       background-clip: content-box;
@@ -102,7 +102,7 @@ filechooser {
 
     // Icon + label buttons
     > box {
-      border-spacing: 4px;
+      border-spacing: $base_margin;
 
       > label {
         padding-left: 2px;

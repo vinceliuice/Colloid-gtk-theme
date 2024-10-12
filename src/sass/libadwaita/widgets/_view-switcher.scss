@@ -1,10 +1,10 @@
 viewswitcher {
-  border-spacing: 3px;
+  border-spacing: $base_padding / 2;
 
   &.narrow {
-    margin-top: -3px;
-    margin-bottom: -3px;
-    min-height: 6px;
+    margin-top: -$base_padding / 2;
+    margin-bottom: -$base_padding / 2;
+    min-height: $base_padding;
   }
 
   button.toggle {
@@ -13,19 +13,19 @@ viewswitcher {
     > stack > box {
       &.narrow {
         font-size: 0.75rem;
-        padding-top: 4px;
+        padding-top: $base_margin;
 
         > label {
           min-height: 18px;
-          padding-left: 3px;
-          padding-right: 3px;
+          padding-left: $base_padding / 2;
+          padding-right: $base_padding / 2;
           padding-bottom: 2px;
         }
       }
 
       &.wide {
-        padding: 2px 12px;
-        border-spacing: 6px;
+        padding: 2px $base_padding * 2;
+        border-spacing: $base_padding;
       }
     }
   }
@@ -38,12 +38,12 @@ viewswitcher {
 viewswitcherbar actionbar > revealer > box {
   padding-left: 0;
   padding-right: 0;
-  padding-top: 7px;
+  padding-top: $base_padding;
 }
 
 %viewswitcherbar-shrunk actionbar > revealer > box {
   // Not 0px because view switcher has negative margin
-  padding-top: 6px;
+  padding-top: $base_padding;
 }
 
 /************************
@@ -51,21 +51,21 @@ viewswitcherbar actionbar > revealer > box {
  ************************/
 
 viewswitchertitle {
-  margin-top: -6px;
-  margin-bottom: -6px;
+  margin-top: -$base_padding;
+  margin-bottom: -$base_padding;
 
   viewswitcher {
-    margin-left: 12px;
-    margin-right: 12px;
+    margin-left: $base_padding * 2;
+    margin-right: $base_padding 8 2;
 
     &.narrow {
-      margin-top: 3px;
-      margin-bottom: 3px;
+      margin-top: $base_padding / 2;
+      margin-bottom: $base_padding / 2;
     }
 
     &.wide {
-      margin-top: 6px;
-      margin-bottom: 6px;
+      margin-top: $base_padding;
+      margin-bottom: $base_padding;
     }
   }
 
@@ -109,8 +109,8 @@ indicatorbin {
     > indicator > label {
       font-size: 0.6rem;
       font-weight: bold;
-      padding-left: 4px;
-      padding-right: 4px;
+      padding-left: $base_margin;
+      padding-right: $base_margin;
       color: white;
     }
 

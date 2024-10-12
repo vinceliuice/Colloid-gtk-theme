@@ -152,7 +152,7 @@ infobar {
  .close {
     min-width: 18px;
     min-height: 18px;
-    padding: 4px;
+    padding: $base_margin;
     border-radius: 50%;
     @extend %button_basic_flat;
   }
@@ -163,7 +163,7 @@ infobar {
  ****************/
 
 statusbar {
-  padding: 6px 10px 6px 10px;
+  padding: $base_padding $base_padding + $base_margin;
 }
 
 /***************

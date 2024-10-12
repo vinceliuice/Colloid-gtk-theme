@@ -357,22 +357,22 @@ windowcontrols {
 headerbar,
 windowtitle {
   .title {
-    padding-left: 12px;
-    padding-right: 12px;
+    padding-left: $base_padding * 2;
+    padding-right: $base_padding * 2;
     font-weight: bold;
   }
 
   .subtitle {
     font-size: smaller;
-    padding-left: 12px;
-    padding-right: 12px;
+    padding-left: $base_padding * 2;
+    padding-right: $base_padding * 2;
     @extend .dim-label;
   }
 }
 
 windowtitle {
-  margin-top: -6px;
-  margin-bottom: -6px;
+  margin-top: -$base_padding;
+  margin-bottom: -$base_padding;
   min-height: 12px;
 }
 

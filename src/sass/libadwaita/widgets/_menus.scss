@@ -125,7 +125,7 @@ popover.menu {
 
   modelbutton {
     min-height: $menuitem_size;
-    min-width: 40px;
+    min-width: $medium_size + 4px;
     padding: 2px $menu_padding;
     border-radius: $menuitem_radius;
     @include button(flat-normal);
@@ -234,7 +234,7 @@ menubar {
 
     //nested submenus
     popover.menu popover.menu {
-      padding: 0 0 4px 0;
+      padding: 0 0 $base_margin 0;
     }
 
     popover.menu popover.menu > contents {

@@ -3,13 +3,13 @@ popover.emoji-picker > contents {
 }
 
 .emoji-searchbar {
-  padding: 6px;
+  padding: $base_padding;
 }
 
 .emoji-toolbar {
   // flowbox children already have 3px padding, so we only need 3px more to
   // get the regular 6px. We also don't need spacing, for the same reason.
-  padding: 3px;
+  padding: $base_padding / 2;
 }
 
 button.emoji-section.image-button:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque) {
@@ -22,7 +22,7 @@ button.emoji-section.image-button:not(.raised):not(.suggested-action):not(.destr
 
 popover.emoji-picker emoji {
   font-size: x-large;
-  padding: 6px;
+  padding: $base_padding;
   border-radius: $button_radius;
 
   &:focus,

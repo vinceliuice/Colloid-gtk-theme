@@ -296,8 +296,8 @@ button {
 
   @at-root %circular_button,
   &.circular { // force circular button shape
-    min-width: 34px;
-    min-height: 34px;
+    min-width: $medium_size - 2px;
+    min-height: $medium_size - 2px;
     padding: 0;
     border-radius: $circular_radius;
 
@@ -355,7 +355,7 @@ button {
 }
 
 button.color {
-  padding: 5px;
+  padding: $base_padding;
 
   > colorswatch:only-child {
     border-radius: 2.5px;
@@ -422,8 +422,8 @@ menubutton {
 
   &.image-button > button {
     min-width: 24px;
-    padding-left: 5px;
-    padding-right: 5px;
+    padding-left: $base_padding;
+    padding-right: $base_padding;
   }
 
   &.card > button {
@@ -460,31 +460,31 @@ splitbutton {
   }
 
   > separator {
-    margin-top: 6px;
-    margin-bottom: 6px;
+    margin-top: $base_padding;
+    margin-bottom: $base_padding;
     background: none;
   }
 
   > menubutton > button {
-    padding-left: 4px;
-    padding-right: 4px;
+    padding-left: $base_margin;
+    padding-right: $base_margin;
   }
 
   // Since the inner button doesn't have any style classes on it,
   // we have to add them manually
   &.image-button > button {
     min-width: 24px;
-    padding-left: 5px;
-    padding-right: 5px;
+    padding-left: $base_padding;
+    padding-right: $base_padding;
   }
 
   &.text-button.image-button > button,
   &.image-text-button > button {
-    padding-left: 9px;
-    padding-right: 9px;
+    padding-left: $base_padding * 1.5;
+    padding-right: $base_padding * 1.5;
 
     > box {
-      border-spacing: 6px;
+      border-spacing: $base_padding;
     }
   }
 

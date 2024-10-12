@@ -1,6 +1,6 @@
 dropdown {
   > button > box {
-    border-spacing: 6px;
+    border-spacing: $base_padding;
 
     > stack > row.activatable {
       &:hover, &:active { background: none; }
@@ -20,7 +20,7 @@ dropdown {
   }
 
   popover.menu {
-    padding-top: 6px;
+    padding-top: $base_padding;
 
     listview > row {
       min-width: 0;
@@ -28,7 +28,7 @@ dropdown {
 
     // dropdowns with searchboxes on top
     .dropdown-searchbar {
-      padding: 6px;
+      padding: $base_padding;
 
       + scrolledwindow {
         @include undershoot(top, $popover_shade_color);

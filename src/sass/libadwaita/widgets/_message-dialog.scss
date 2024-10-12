@@ -25,7 +25,7 @@ window.dialog.message {
       background-clip: padding-box;
 
       &.suggested-action {
-        color: $accent_color;
+        color: $accent_bg_color;
       }
 
       &.destructive-action {

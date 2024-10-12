@@ -71,7 +71,7 @@ columnview {
 
     // align horizontal sizing with header buttons
     > cell {
-      padding: 8px 6px;
+      padding: $base_padding + 2px $base_padding;
 
       &:not(:first-child) {
         border-left: 1px solid transparent;

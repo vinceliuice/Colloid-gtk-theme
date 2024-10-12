@@ -294,6 +294,8 @@ stacksidebar row {
  **********************/
 
 .navigation-sidebar {
+  padding: $base_padding 0; //only vertical padding. horizontal row size would clip
+
   &, &.view, &.view:disabled {
     background-color: transparent;
     color: inherit;
@@ -304,6 +306,18 @@ stacksidebar row {
       background-color: $window_bg_color;
       color: $window_fg_color;
     }
+  }
+
+  > row {
+    min-height: $medium_size;
+    padding: 0 $base_padding + 2px;
+    border-radius: $menuitem_radius;
+    margin: 0 $base_padding $base_padding / 2;
+  }
+
+  > separator {
+    margin: $base_padding;
+    background: none;
   }
 
   row {
@@ -327,19 +341,5 @@ stacksidebar row {
     &:selected {
       background-color: $selected_color;
     }
-  }
-
-  padding: $menu_margin 0; //only vertical padding. horizontal row size would clip
-
-  > separator {
-    margin: $menu_margin;
-    background: none;
-  }
-
-  > row {
-    min-height: $medium_size;
-    padding: 0 $base_padding + 2px;
-    border-radius: $menuitem_radius;
-    margin: 0 $menu_margin $base_padding / 2;
   }
 }

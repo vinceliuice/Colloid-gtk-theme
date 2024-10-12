@@ -10,8 +10,8 @@ tooltip {
     color: white;
   }
 
-  padding: 6px 10px;
-  border-radius: 9px;
+  padding: $base_padding $base_padding + $base_margin;
+  border-radius: $base_padding * 1.5;
   box-shadow: none; // otherwise it gets inherited by windowframe.csd
 
   > box {

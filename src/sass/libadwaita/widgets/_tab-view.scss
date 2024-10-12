@@ -22,7 +22,7 @@ tabbar {
   tabbox {
     padding-bottom: $base_padding;
     padding-top: $base_padding;
-    min-height: 34px;
+    min-height: $medium_size;
 
     > tabboxchild {
       @include focus-ring($focus-state: ':focus-within:focus-visible');
@@ -42,7 +42,7 @@ tabbar {
     > revealer > indicator {
       min-width: 2px;
       border-radius: 2px;
-      margin: 3px 6px;
+      margin: $base_padding / 2 $base_padding;
       background: gtkalpha($accent_color, 0.5);
     }
   }
@@ -130,15 +130,15 @@ dnd tab {
 tabbar,
 dnd {
   tab {
-    min-height: 26px;
-    padding: 4px;
+    min-height: 24px;
+    padding: ($medium_size - 24px) / 2;
     border-radius: $button_radius;
 
     button.image-button {
       padding: 0;
       margin: 0;
-      min-width: 24px;
-      min-height: 24px;
+      min-width: $small_size;
+      min-height: $small_size;
       border-radius: $circular_radius;
     }
 

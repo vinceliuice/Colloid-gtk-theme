@@ -37,9 +37,8 @@ separator {
 
 .app-notification {
   @extend %osd;
-
-  padding: 10px;
-  border-spacing: 10px;
+  padding: $base_padding + $base_margin;
+  border-spacing: $base_padding + $base_margin;
   border-radius: 0 0 $card_radius $card_radius;
   background-color: $osd_bg_color;
   background-image: linear-gradient(to bottom, transparentize(black, 0.8),

@@ -1,7 +1,6 @@
 spinbutton {
   @extend %entry;
   @extend .numeric;
-
   padding: 0;
   border-spacing: 0;
 
@@ -9,12 +8,9 @@ spinbutton {
   > button.image-button.up:not(.flat):not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque),
   > button.image-button.down:not(.flat):not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque) {
     @extend %button_basic_flat;
-
     margin: 0;
-
     border-radius: 0;
     box-shadow: none;
-
     border-style: solid;
     border-color: gtkalpha(currentColor, .1);
   }
@@ -22,7 +18,7 @@ spinbutton {
   &:not(.vertical) {
     > text {
       min-width: 28px;
-      padding: 6px;
+      padding: $base_padding;
     }
 
     /* :not here just to bump specificity above that of the list button styling */
