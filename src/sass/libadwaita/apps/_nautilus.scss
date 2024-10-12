@@ -38,7 +38,7 @@
   border-radius: $button_radius;
   padding: 0;
 
-  @if $colortype == 'fixed' {
+  @if $colorscheme != 'default' or $blackness == 'true' or $colortype == 'fixed' {
     color: $window_fg_color;
   }
 }
@@ -48,7 +48,7 @@
   border-radius: $button_radius;
   @extend %button_basic_flat;
 
-  @if $colortype == 'fixed' {
+  @if $colorscheme != 'default' or $blackness == 'true' or $colortype == 'fixed' {
     @extend %header_button_reset;
   }
 }

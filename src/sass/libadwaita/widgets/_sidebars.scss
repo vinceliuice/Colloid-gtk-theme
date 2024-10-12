@@ -194,13 +194,24 @@ stacksidebar row {
   }
 }
 
-@if $colortype == 'fixed' {
+@if $colorscheme != 'default' or $blackness == 'true' or $colortype == 'fixed' {
   .content-pane {
     headerbar {
       color: $window_fg_color;
 
-      button:not(.suggested-action):not(.destructive-action) {
-        @extend %header_button_reset;
+      button:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque) {
+        &,
+        &.arrow-button,
+        &.image-button,
+        &.image-text-button {
+          @extend %header_button_reset;
+        }
+      }
+
+      menubutton:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque) {
+        &.image-button > button {
+          @extend %header_button_reset;
+        }
       }
 
       entry {
@@ -208,7 +219,7 @@ stacksidebar row {
       }
 
       windowcontrols {
-        > button:not(.suggested-action):not(.destructive-action) {
+        > button:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque) {
           @if $window_button == 'mac' {
             &.minimize, &.maximize, &.close {
               color: transparent;
