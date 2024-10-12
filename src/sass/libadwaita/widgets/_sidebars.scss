@@ -172,6 +172,95 @@ stacksidebar row {
   }
 }
 
+%header_button_reset {
+  color: $window_fg_color;
+
+  &:focus:not(:hover):not(:active) { color: $window_fg_color; }
+
+  &:hover { color: $window_fg_color; }
+
+  &.keyboard-activating, &:active { color: $window_fg_color; }
+
+  &:disabled { color: $window_fg_color; }
+
+  &:checked {
+    color: $window_fg_color;
+
+    &:hover { color: $window_fg_color; }
+
+    &:active { color: $window_fg_color; }
+
+    &:disabled { color: $window_fg_color; }
+  }
+}
+
+@if $colortype == 'fixed' {
+  .content-pane {
+    headerbar {
+      color: $window_fg_color;
+
+      button:not(.suggested-action):not(.destructive-action) {
+        @extend %header_button_reset;
+      }
+
+      entry {
+        color: $window_fg_color;
+      }
+
+      windowcontrols {
+        > button:not(.suggested-action):not(.destructive-action) {
+          @if $window_button == 'mac' {
+            &.minimize, &.maximize, &.close {
+              color: transparent;
+
+              &:hover, &:active {
+                color: if($colorscheme != 'dracula', white, rgba(black, 0.5));
+              }
+
+              &:backdrop {
+                > image { background-color: gtkalpha($window_fg_color, 0.3); }
+          
+                &:hover, &:active {
+                  color: gtkalpha($window_fg_color, 0.45);
+                }
+              }
+            }
+          } @else {
+            &.minimize, &.maximize, &.close {
+              color: gtkalpha(currentColor, 0.75);
+
+              &:hover {
+                color: currentColor;
+              }
+
+              &:active {
+                color: currentColor;
+              }
+            }
+          }
+        }
+      }
+
+      switch {
+        background-color: gtkalpha($window_fg_color, .15);
+
+        &:hover { background-color: gtkalpha($window_fg_color, .2); }
+        &:active { background-color: gtkalpha($window_fg_color, .25); }
+
+        &:hover > slider,
+        &:active > slider {
+          box-shadow: 0 2px 3px transparent, 0 0 0 6px gtkalpha($window_fg_color, .1);
+        }
+
+        &:checked {
+          background-color: $accent_bg_color;
+        }
+      }
+    }
+  }
+}
+
+
 /**********************
  * Navigation Sidebar *
  **********************/

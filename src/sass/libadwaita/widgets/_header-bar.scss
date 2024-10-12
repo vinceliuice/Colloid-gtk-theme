@@ -239,10 +239,6 @@ $titlebutton_close: $button-close;
       box-shadow: none;
     }
 
-    &:active > image {
-      background-color: gtkalpha(black, if($topbar == 'dark', 0.25, 0.12));
-    }
-
     &:hover, &:active {
       color: if($colorscheme != 'dracula', white, rgba(black, 0.5));
     }
@@ -256,11 +252,13 @@ $titlebutton_close: $button-close;
     }
   }
 
+  $button-opacity: if($topbar == 'dark', 25%, 12%);
+
   &.minimize { // Window minimize button
     > image { background-color: $titlebutton_min; }
 
     &:active > image {
-      background-color: gtkmix($headerbar_fg_color, $titlebutton_min, 25%);
+      background-color: gtkmix(black, $titlebutton_min, $button-opacity);
     }
   }
 
@@ -268,7 +266,7 @@ $titlebutton_close: $button-close;
     > image { background-color: $titlebutton_max; }
 
     &:active > image {
-      background-color: gtkmix($headerbar_fg_color, $titlebutton_max, 25%);
+      background-color: gtkmix(black, $titlebutton_max, $button-opacity);
     }
   }
 
@@ -276,7 +274,7 @@ $titlebutton_close: $button-close;
     > image { background-color: $titlebutton_close; }
 
     &:active > image {
-      background-color: gtkmix($headerbar_fg_color, $titlebutton_close, 25%);
+      background-color: gtkmix(black, $titlebutton_close, $button-opacity);
     }
   }
 }
@@ -289,7 +287,7 @@ $titlebutton_close: $button-close;
   margin-right: $base_padding / 2 + 1px;
 
   &.minimize, &.maximize, &.close {
-    color: gtkalpha($headerbar_fg_color, 0.75);
+    color: gtkalpha(currentColor, 0.75);
 
     &, &:hover, &:active, &:backdrop {
       background: none;
@@ -299,13 +297,13 @@ $titlebutton_close: $button-close;
     > image { background-color: gtkalpha(currentColor, 0.1); }
 
     &:hover {
-      color: $headerbar_fg_color;
+      color: currentColor;
 
       > image { background-color: gtkalpha(currentColor, 0.15); }
     }
 
     &:active {
-      color: $headerbar_fg_color;
+      color: currentColor;
 
       > image { background-color: gtkalpha(currentColor, 0.2); }
     }
@@ -317,19 +315,19 @@ $titlebutton_close: $button-close;
 }
 
 windowcontrols {
-  border-spacing: 6px;
+  border-spacing: $base_padding;
 
   &:not(.empty) {
     &.start:dir(ltr),
     &.end:dir(rtl) {
-      margin-right: 6px;
-      margin-left: 6px;
+      margin-right: $base_padding;
+      margin-left: $base_padding;
     }
 
     &.start:dir(rtl),
     &.end:dir(ltr) {
-      margin-left: 6px;
-      margin-right: 6px;
+      margin-left: $base_padding;
+      margin-right: $base_padding;
     }
   }
 
@@ -348,7 +346,7 @@ windowcontrols {
   }
 
   > .icon {
-    margin: 9px;
+    margin: $base_padding * 1.5;
   }
 }
 

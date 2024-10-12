@@ -37,12 +37,20 @@
   background-color: gtkalpha(currentColor, 0.05);
   border-radius: $button_radius;
   padding: 0;
+
+  @if $colortype == 'fixed' {
+    color: $window_fg_color;
+  }
 }
 
 #NautilusPathButton {
   margin: 0;
   border-radius: $button_radius;
   @extend %button_basic_flat;
+
+  @if $colortype == 'fixed' {
+    @extend %header_button_reset;
+  }
 }
 
 list.operations-list {
