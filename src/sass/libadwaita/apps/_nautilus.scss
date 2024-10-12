@@ -1,22 +1,64 @@
 //
 // Nautilus
 //
-.nautilus-window {
-  .floating-bar {
-    min-height: 32px;
-    padding: 0;
-    margin: $base_padding;
-    border-style: none;
-    border-radius: $button_radius;
-    background-color: $accent_color;
+.floating-bar {
+  min-height: 32px;
+  padding: 0;
+  margin: $base_padding / 2;
+  border-style: none;
+  border-radius: $button_radius;
+  background-color: $accent_color;
+  color: $accent_fg_color;
+  box-shadow: $shadow-z3;
+
+  button {
+    margin: (32px - $small_size) / 2;
     color: $accent_fg_color;
-    box-shadow: $shadow-z3;
 
-    button {
-      margin: (32px - $small_size) / 2;
-      color: $accent_fg_color;
+    @extend %small_button;
+  }
+}
 
-      @extend %small_button;
+.nautilus-list-view {
+  columnview.view {
+    padding: 0;
+
+    > header > button {
+      border-top: 1px solid $border_color;
+
+      &:last-child {
+        padding-right: 24px;
+      }
+    }
+  }
+
+  listview.view {
+    padding: $base_padding;
+    margin: 0;
+    border-spacing: $base_padding / 2;
+
+    > row {
+      margin: 0;
+
+      > cell {
+        padding: $base_padding - 2px;
+
+        &:last-child {
+          padding-right: 24px;
+        }
+      }
+    }
+
+    #NautilusViewCell {
+      padding: 0;
+
+      button.star.circular {
+        margin: 0;
+        min-height: 24px;
+        min-width: 24px;
+        padding: $base_padding / 2;
+        border-radius: $circular_radius;
+      }
     }
   }
 }

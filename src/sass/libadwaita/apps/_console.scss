@@ -4,13 +4,13 @@
 
 .exit-info {
   padding: 6px;
-  border-top: 2px solid $primary;
-  background: rgba($primary, 0.9);
-  color: on($primary);
+  border-top: 2px solid $accent_color;
+  background: gtkalpha($accent_color, 0.9);
+  color: $accent_fg_color;
 }
 
 .error .exit-info {
-  border-top: 2px solid $error;
-  background: rgba($error, 0.9);
-  color: on($error);
+  border-top: 2px solid $error_color;
+  background: gtkalpha($error_color, 0.9);
+  color: $error_fg_color;
 }

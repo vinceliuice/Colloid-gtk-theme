@@ -3,15 +3,15 @@
 //
 
 .details-page {
-  margin: $space-size * 4 0px;
+  margin: $base_padding * 4 0px;
 }
 
 .installed-overlay-box {
   font-size: smaller;
-  background-color: $primary;
+  background-color: $accent_color;
   border-radius: 0;
-  color: on($primary);
-  text-shadow: 0 1px 0 rgba(black, 0.2);
+  color: $accent_fg_color;
+  text-shadow: 0 1px 0 gtkalpha(black, 0.2);
 }
 
 screenshot-carousel box.frame {
@@ -21,15 +21,15 @@ screenshot-carousel box.frame {
 
 screenshot-carousel button,
 .featured-carousel button {
-  margin: $space-size * 2;
+  margin: $base_padding * 2;
 }
 
 .screenshot-image-main .image1,
 .screenshot-image-main .image2 {
-  margin-top: $space-size;
-  margin-bottom: $space-size * 2;
-  margin-left: $space-size;
-  margin-right: $space-size;
+  margin-top: $base_padding;
+  margin-bottom: $base_padding * 2;
+  margin-left: $base_padding;
+  margin-right: $base_padding;
 }
 
 .app-tile-label {
@@ -37,13 +37,13 @@ screenshot-carousel button,
 }
 
 .review-textbox {
-  padding: $space-size;
+  padding: $base_padding;
 }
 
 .origin-rounded-box {
-  background-color: $divider;
-  border-radius: $circular-radius;
-  padding: $space-size - 2px;
+  background-color: $hover_color;
+  border-radius: $circular_radius;
+  padding: $base_padding - 2px;
 }
 
 .origin-beta {
@@ -51,7 +51,7 @@ screenshot-carousel button,
 }
 
 .origin-button > button {
-  padding: $space-size / 2 $space-size * 1.5;
+  padding: $base_padding / 2 $base_padding * 1.5;
 }
 
 .card flowboxchild {
@@ -64,21 +64,21 @@ screenshot-carousel button,
 }
 
 .category-tile.card {
-  padding: $space-size * 3.5;
+  padding: $base_padding * 3.5;
   border: none;
-  border-radius: $corner-radius;
+  border-radius: $button_radius;
   min-width: 140px;
   font-weight: 900;
   font-size: larger;
   box-shadow: $shadow-z3;
 
   &.category-tile-iconless {
-    padding: $space-size * 1.5 $space-size * 2.5;
+    padding: $base_padding * 1.5 $base_padding * 2.5;
     min-width: 130px;
     font-size: 105%;
     font-weight: normal;
     box-shadow: none;
-    background-color: $fill;
+    background-color: $button_color;
   }
 
   // Styling for specific category buttons.
@@ -144,7 +144,7 @@ screenshot-carousel button,
 
   &.category-socialize {
     background: linear-gradient(90deg, #ef4e9b 0%, #f77466 100%);
-    color: $text-secondary;
+    color: $secondary_text_color;
 
     &:hover {
       background: linear-gradient(90deg, shade(#ef4e9b, 1.08) 0%, shade(#f77466, 1.08) 100%);
@@ -159,23 +159,23 @@ screenshot-carousel button,
     padding: 1px; /* FIXME: work around https://gitlab.gnome.org/GNOME/gtk/-/issues/4324 */
     color: #1c71d8;
     background-color:#fdf8d7;
-    background-image: linear-gradient($border 1px, transparent 1px),
-             linear-gradient(90deg, $border 1px, transparent 1px);
+    background-image: linear-gradient($border_color 1px, transparent 1px),
+             linear-gradient(90deg, $border_color 1px, transparent 1px);
     background-size: 10px 10px, 10px 10px;
     background-position: -1px -4px, center -1px;
 
     &:hover {
       color: #1c71d8;
       background-color: lighten(#fdf8d7, 5%);
-      background-image: linear-gradient($border 1px, transparent 1px),
-               linear-gradient(90deg, $border 1px, transparent 1px);
+      background-image: linear-gradient($border_color 1px, transparent 1px),
+               linear-gradient(90deg, $border_color 1px, transparent 1px);
     }
 
     &:active {
       color: #1c71d8;
       background-color: darken(#fdf8d7, 5%);
-      background-image: linear-gradient($border 1px, transparent 1px),
-               linear-gradient(90deg, $border 1px, transparent 1px);
+      background-image: linear-gradient($border_color 1px, transparent 1px),
+               linear-gradient(90deg, $border_color 1px, transparent 1px);
     }
   }
 }
@@ -189,11 +189,11 @@ clamp.large .category-tile:not(.category-tile-iconless) {
 .featured-tile {
   padding: 0;
   box-shadow: none;
-  color: $text;
+  color: $text_color;
 
   label.title-1 {
-    margin-top: $space-size;
-    margin-bottom: $space-size;
+    margin-top: $base_padding;
+    margin-bottom: $base_padding;
   }
 
   &.narrow label.title-1 {
@@ -203,15 +203,15 @@ clamp.large .category-tile:not(.category-tile-iconless) {
 
 .application-details-infobar {
   &, &.info {
-    background-color: $fill;
-    color: $text;
-    border: 1px solid $border;
+    background-color: $button_color;
+    color: $text_color;
+    border: 1px solid $border_color;
   }
 
   &.warning {
-    background-color: $warning;
-    color: on($warning);
-    border: 1px solid on($warning, divider);
+    background-color: $warning_color;
+    color: $warning_fg_color;
+    border: 1px solid gtkalpha($warning_fg_color, 0.1);
   }
 }
 
@@ -222,12 +222,12 @@ clamp.large .category-tile:not(.category-tile-iconless) {
 }
 
 .application-details-description .button {
-  padding-left: $space-size * 4;
-  padding-right: $space-size * 4;
+  padding-left: $base_padding * 4;
+  padding-right: $base_padding * 4;
 }
 
 .install-progress {
-  background-image: linear-gradient(to top, $primary 2px, gtkalpha($primary, 0) 2px);
+  background-image: linear-gradient(to top, $accent_color 2px, gtkalpha($accent_color, 0) 2px);
   background-repeat: no-repeat;
   background-position: 0 bottom;
   background-size: 0;
@@ -237,7 +237,7 @@ clamp.large .category-tile:not(.category-tile-iconless) {
 .install-progress:dir(rtl) { background-position: 100% bottom; }
 
 .review-row > * {
-  margin: $space-size * 2;
+  margin: $base_padding * 2;
 }
 
 .review-row button { font-size: smaller; }
@@ -248,7 +248,7 @@ clamp.large .category-tile:not(.category-tile-iconless) {
 
 // this is the separator between yes and no vote buttons, gtk+ 3.20 only
 .review-row .vote-buttons button:not(:first-child) {
-  border-image: linear-gradient(to top, $border, $border) 0 0 0 1 / 5px 0 5px 1px;
+  border-image: linear-gradient(to top, $border_color, $border_color) 0 0 0 1 / 5px 0 5px 1px;
 }
 
 .review-row .vote-buttons button:hover,
@@ -259,13 +259,13 @@ clamp.large .category-tile:not(.category-tile-iconless) {
 }
 
 review-bar {
-  color: $text-disabled;
+  color: $disabled_text_color;
   background-image: none;
-  background-color: $track;
+  background-color: $secondary_disabled_text_color;
 }
 
 .review-histogram star-image {
-  color: $text-disabled;
+  color: $disabled_text_color;
 }
 
 .version-arrow-label {
@@ -274,7 +274,7 @@ review-bar {
 
 .overview-more-button {
   font-size: smaller;
-  padding: 0 $space-size * 2 + 4px;
+  padding: 0 $base_padding * 2 + 4px;
 }
 
 .app-row-origin-text {
@@ -282,8 +282,8 @@ review-bar {
 }
 
 .app-listbox-header {
-  padding: $space-size;
-  border-bottom: 1px solid $border;
+  padding: $base_padding;
+  border-bottom: 1px solid $border_color;
 }
 
 .image-list {
@@ -318,12 +318,12 @@ star-image {
 .update-failed-details {
   font-family: Monospace;
   font-size: smaller;
-  padding: $space-size * 2 + 4px;
+  padding: $base_padding * 2 + 4px;
 }
 
 .upgrade-banner {
   padding: 0px;
-  border-radius: $corner-radius;
+  border-radius: $button_radius;
   border: none;
 }
 
@@ -333,25 +333,25 @@ star-image {
 }
 
 .upgrade-buttons #button_upgrades_install {
-  padding-left: $space-size * 2 + 4px;
-  padding-right: $space-size * 2 + 4px;
+  padding-left: $base_padding * 2 + 4px;
+  padding-right: $base_padding * 2 + 4px;
 }
 
 scrolledwindow.list-page > viewport > clamp > box {
-  margin: $space-size * 4 $space-size * 2;
-  border-spacing: $space-size * 4;
+  margin: $base_padding * 4 $base_padding * 2;
+  border-spacing: $base_padding * 4;
 }
 
 .update-preferences preferencesgroup > box > box {
-  margin-top: $space-size * 3;
+  margin-top: $base_padding * 3;
 }
 
-.section > label:not(:first-child) { margin-top: $space-size; }
+.section > label:not(:first-child) { margin-top: $base_padding; }
 
-.section > box:not(:first-child) { margin-top: $space-size * 2; }
+.section > box:not(:first-child) { margin-top: $base_padding * 2; }
 
 clamp.status-page {
-	margin: $space-size * 6 $space-size * 2;
+	margin: $base_padding * 6 $base_padding * 2;
 }
 
 clamp.status-page .iconbox {
@@ -360,25 +360,25 @@ clamp.status-page .iconbox {
 }
 
 clamp.status-page .icon {
-  color: $text-disabled;
+  color: $disabled_text_color;
   min-height: 32px;
   min-width: 32px;
 }
 
 clamp.status-page .icon:not(:last-child) {
-  margin-bottom: $space-size * 6;
+  margin-bottom: $base_padding * 6;
 }
 
 clamp.status-page .title:not(:last-child) {
-  margin-bottom: $space-size * 2;
+  margin-bottom: $base_padding * 2;
 }
 
 app-context-bar {
   .context-tile {
-    border: 1px solid $border;
+    border: 1px solid $border_color;
     background-color: transparent;
     border-radius: 0;
-    padding: $space-size * 4 $space-size * 2 $space-size * 3.5 $space-size * 2;
+    padding: $base_padding * 4 $base_padding * 2 $base_padding * 3.5 $base_padding * 2;
     outline-offset: 5px;
     transition-property: outline, outline-offset, background-image;
     border-bottom: none;
@@ -386,12 +386,12 @@ app-context-bar {
 
     &:hover {
       background-image: none;
-      background-color: $overlay-hover;
+      background-color: $hover_color;
     }
 
     &.keyboard-activating,
     &:active {
-      background-color: $overlay-active;
+      background-color: $active_color;
     }
 
     &:focus:focus-visible {
@@ -413,7 +413,7 @@ app-context-bar {
     border-radius: 0;
 
     &:last-child {
-      border-radius: 0 $corner-radius $corner-radius 0;
+      border-radius: 0 $button_radius $button_radius 0;
     }
   }
 
@@ -421,27 +421,27 @@ app-context-bar {
     border-radius: 0;
 
     &:first-child {
-      border-radius: $corner-radius 0 0 $corner-radius;
+      border-radius: $button_radius 0 0 $button_radius;
     }
   }
 
   > box > button.flat {
-    border-left-color: $border;
+    border-left-color: $border_color;
   }
 }
 
 carousel.card {
   border: none;
-  background-color: $fill;
+  background-color: $button_color;
 }
 
 .context-tile-lozenge {
   min-height: 28px;
   min-width: 28px;
-  padding: $space-size;
+  padding: $base_padding;
   font-size: 18px;
   font-weight: bold;
-  border-radius: $circular-radius;
+  border-radius: $circular_radius;
 
   &.large {
     font-size: 24px;
@@ -458,40 +458,40 @@ carousel.card {
   image { -gtk-icon-style: symbolic; }
 
   &.grey {
-    color: $text;
-    background-color: $divider;
+    color: $text_color;
+    background-color: $hover_color;
   }
 
   &.green, &.details-rating-0 {
-    color: darken($success, 15%);
-    background-color: rgba($success, 0.15);
+    color: gtkmix(black, $success_color, 15%);
+    background-color: gtkalpha($success_color, 0.15);
   }
 
   &.blue,
   &.details-rating-5 {
     color: $blue-light;
-    background-color: rgba($blue-light, 0.15);
+    background-color: gtkalpha($blue-light, 0.15);
   }
 
   &.yellow, &.details-rating-12 {
-    color: darken($warning, 15%);
-    background-color: rgba($warning, 0.15);
+    color: gtkmix(black, $warning_color, 15%);
+    background-color: gtkalpha($warning_color, 0.15);
   }
 
   &.details-rating-15 {
     color: $orange-light;
-    background-color: rgba($orange-light, .15);
+    background-color: gtkalpha($orange-light, .15);
   }
 
   &.red, &.details-rating-18 {
-    color: darken($error, 15%);
-    background-color: rgba($error, 0.15);
+    color: gtkmix(black, $error_color, 15%);
+    background-color: gtkalpha($error_color, 0.15);
   }
 }
 
 .eol-red {
   font-weight: bold;
-  color: $error;
+  color: $error_color;
 }
 
 window.narrow .app-title {
@@ -507,10 +507,10 @@ window.narrow .app-developer {
   font-feature-settings: "tnum";
 }
 
-scrolledwindow.fake-adw-status-page > viewport > box { margin: $space-size * 6 $space-size * 2; }
-scrolledwindow.fake-adw-status-page > viewport > box > clamp:not(:last-child) > box { margin-bottom: $space-size * 6; }
-scrolledwindow.fake-adw-status-page > viewport > box > clamp > box > .icon:not(:last-child) { margin-bottom: $space-size * 6; }
-scrolledwindow.fake-adw-status-page > viewport > box > clamp > box > .title:not(:last-child) { margin-bottom: $space-size * 2; }
+scrolledwindow.fake-adw-status-page > viewport > box { margin: $base_padding * 6 $base_padding * 2; }
+scrolledwindow.fake-adw-status-page > viewport > box > clamp:not(:last-child) > box { margin-bottom: $base_padding * 6; }
+scrolledwindow.fake-adw-status-page > viewport > box > clamp > box > .icon:not(:last-child) { margin-bottom: $base_padding * 6; }
+scrolledwindow.fake-adw-status-page > viewport > box > clamp > box > .title:not(:last-child) { margin-bottom: $base_padding * 2; }
 
 statuspage.icon-dropshadow image.icon {
 	-gtk-icon-shadow: 0 1px 12px rgba(0,0,0,0.05),
@@ -532,17 +532,17 @@ window.info scrollbar.vertical trough {
 
 // GsAppRow
 row.app > box.header {
-  margin-left: $space-size * 2;
-  margin-right: $space-size * 2;
+  margin-left: $base_padding * 2;
+  margin-right: $base_padding * 2;
 }
 
 row.app > box.header {
-  border-spacing: $space-size * 2;
+  border-spacing: $base_padding * 2;
 }
 
 row.app > box.header > image {
-  margin-top: $space-size * 2;
-  margin-bottom: $space-size * 2;
+  margin-top: $base_padding * 2;
+  margin-bottom: $base_padding * 2;
 }
 
 row.app label.warning {
@@ -565,16 +565,4 @@ row.app label.warning {
 spinner.fade-in:checked {
   animation: pre-delay 0.5s linear 1, fade-in 1s linear 1, spin 1s linear infinite;
   animation-delay: 0s, 0.5s, 0.5s;
-}
-
-// Leaflets
-window > contents > leaflet { // Gnome control center
-  > box > stack.background {
-    background-color: transparent;
-    background-image: linear-gradient(to bottom,
-                                      transparent,
-                                      transparent $large-size,
-                                      $background $large-size,
-                                      $background);
-  }
 }

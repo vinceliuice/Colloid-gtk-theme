@@ -14,6 +14,19 @@
     }
   }
 
+  @if $colorscheme != 'default' or $blackness == 'true' or $colortype == 'fixed' {
+    listview,
+    list,
+    list.boxed-list {
+      background-color: gtkmix(white, $sidebar_bg_color, 5%);
+      color: $sidebar_fg_color;
+    }
+
+    list.boxed-list-separate {
+      color: $sidebar_fg_color;
+    }
+  }
+
   flap,
   leaflet,
   navigation-view,
@@ -46,6 +59,10 @@
 .sidebar-pane, .content-pane {
   toolbarview.undershoot-top scrolledwindow {
     @include undershoot(top, $sidebar_shade_color, $style: frame);
+
+    columnview.view ~ undershoot.top {
+      box-shadow: none;
+    }
   }
 
   toolbarview.undershoot-bottom scrolledwindow {
@@ -104,7 +121,7 @@
     }
 
     &.undershoot-bottom {
-      @include undershoot(bottom, $secondary_sidebar_shade_color)
+      @include undershoot(bottom, $secondary_sidebar_shade_color);
     }
 
     &.undershoot-start {

@@ -307,9 +307,9 @@
   }
 
   #{$_selector} undershoot.#{$p} {
-    @if $style==default {
+    @if $style == 'default' {
       box-shadow: none;
-    } @else if $style==frame {
+    } @else if $style == 'frame' {
       box-shadow: inset $_border_pos $border_color;
     }
 
