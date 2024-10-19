@@ -716,6 +716,8 @@ clean_theme() {
   if [[ "$UID" != "$ROOT_UID" ]]; then
     if [[ "$DEST_DIR" == "$HOME/.themes" ]]; then
       local dest="$HOME/.local/share/themes"
+    elif [[ "$DEST_DIR" == "$XDG_DATA_HOME/themes" || "$DEST_DIR" == "$HOME/.local/share/themes" ]]; then
+      local dest="$HOME/.themes"
     fi
 
     for theme in "${themes[@]}"; do
