@@ -16,7 +16,7 @@
 
   @if $colorscheme != 'default' or $blackness == 'true' or $colortype == 'fixed' {
     listview,
-    list,
+    list:not(.navigation-sidebar),
     list.boxed-list {
       background-color: gtkmix(white, $sidebar_bg_color, 5%);
       color: $sidebar_fg_color;
@@ -283,6 +283,23 @@ stacksidebar row {
         &:checked {
           background-color: $accent_bg_color;
         }
+      }
+    }
+
+    tabbar {
+      .box {
+        color: $window_fg_color;
+      }
+
+      tab {
+        color: $window_fg_color;
+
+        &:selected {
+          color: $window_fg_color;
+        }
+
+        &:hover { color: $window_fg_color; }
+        &:active { color: $window_fg_color; }
       }
     }
   }

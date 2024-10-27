@@ -106,8 +106,8 @@ $trough_active_color: gtkalpha(currentColor, .25);
 $fill_color: $accent_bg_color;
 $fill_text_color: $accent_fg_color;
 
-$slider_color: $headerbar_bg_color;
-$slider_hover_color: $headerbar_backdrop_color;
+$slider_color: $view_bg_color;
+$slider_hover_color: $window_bg_color;
 
 $osd_fg_color: transparentize(white, .1);
 $osd_text_color: white;

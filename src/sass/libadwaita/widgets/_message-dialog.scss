@@ -77,7 +77,53 @@ window.dialog-window.alert {
   }
 }
 
-window.messagedialog,
+window.messagedialog {
+  .message-area {
+    padding-top: $medium_size - 4px;
+    padding-bottom: $base_padding * 2;
+    border-spacing: $small_size;
+
+    &.has-heading.has-body {
+      border-spacing: $base_padding + 4px;
+
+      > .child {
+        margin-top: $base_padding + 2px;
+      }
+    }
+
+    > .heading-bin, > .body, > .child {
+      padding-left: $small_size;
+      padding-right: $small_size;
+    }
+  }
+
+  .response-area {
+    padding: $base_padding;
+    border-spacing: $base_padding;
+
+    > button {
+      min-height: $small_size;
+      min-width: $large_size + 12px;
+      padding: $base_padding + 2px $base_padding + 8px;
+      border-radius: $button_radius;
+      margin: 0;
+
+      &.suggested {
+        color: $accent_color;
+      }
+  
+      &.destructive {
+        color: $destructive_color;
+      }
+    }
+
+    > separator {
+      background: none;
+      margin: $base_padding / 2;
+    }
+  }
+}
+
 dialog.alert.floating {
   .message-area {
     padding-top: $medium_size - 4px;
@@ -106,7 +152,7 @@ dialog.alert.floating {
     > button {
       min-height: $small_size;
       min-width: $large_size + 12px;
-      padding: $base_padding + 4px $base_padding + 8px;
+      padding: $base_padding + 2px $base_padding + 8px;
       border-radius: $button_radius;
       margin: 0;
 
