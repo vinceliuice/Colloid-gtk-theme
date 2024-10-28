@@ -132,6 +132,7 @@ $dimmer_opacity: 0.3;
 $disabled_opacity: 0.45;
 $strong_disabled_opacity: 0.3;
 
+@if $gnome_version == 'new' {
 :root {
   --accent-blue: #3584e4;
   --accent-teal: #2190a4;
@@ -199,4 +200,5 @@ $strong_disabled_opacity: 0.3;
 
   --shade-color: @shade_color;
   --scrollbar-outline-color: @scrollbar_outline_color;
+}
 }

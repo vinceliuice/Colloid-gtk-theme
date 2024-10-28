@@ -27,58 +27,60 @@ preferencesgroup > box {
 
   .cutout-button { background-color: $dialog_bg_color; }
 
-  button.accent-button {
-    min-height: 24px;
-    min-width: 24px;
-    padding: $base_padding / 2;
-    border-radius: $circular_radius;
-    background: var(--accent-bg-color);
-    outline: none;
-    background-clip: content-box;
-    box-shadow: none;
-
-    &:hover { box-shadow: 0 0 0 3px $hover_color; }
-
-    &:checked { box-shadow: 0 0 0 3px $accent_color; }
-
-    &.blue, &.teal, &.green, &.yellow, &.orange, &.red, &.pink, &.purple, &.slate {
-      --accent-color: oklab(from var(--accent-bg-color) var(--standalone-color-oklab));
-    }
-    
-    &.blue {
-      --accent-bg-color: var(--accent-blue);
-    }
-    
-    &.teal {
-      --accent-bg-color: var(--accent-teal);
-    }
-    
-    &.green {
-      --accent-bg-color: var(--accent-green);
-    }
-    
-    &.yellow {
-      --accent-bg-color: var(--accent-yellow);
-    }
-    
-    &.orange {
-      --accent-bg-color: var(--accent-orange);
-    }
-    
-    &.red {
-      --accent-bg-color: var(--accent-red);
-    }
-    
-    &.pink {
-      --accent-bg-color: var(--accent-pink);
-    }
-    
-    &.purple {
-      --accent-bg-color: var(--accent-purple);
-    }
-    
-    &.slate {
-      --accent-bg-color: var(--accent-slate);
+  @if $gnome_version == 'new' {
+    button.accent-button {
+      min-height: 24px;
+      min-width: 24px;
+      padding: $base_padding / 2;
+      border-radius: $circular_radius;
+      background: var(--accent-bg-color);
+      outline: none;
+      background-clip: content-box;
+      box-shadow: none;
+  
+      &:hover { box-shadow: 0 0 0 3px $hover_color; }
+  
+      &:checked { box-shadow: 0 0 0 3px $accent_color; }
+  
+      &.blue, &.teal, &.green, &.yellow, &.orange, &.red, &.pink, &.purple, &.slate {
+        --accent-color: oklab(from var(--accent-bg-color) var(--standalone-color-oklab));
+      }
+      
+      &.blue {
+        --accent-bg-color: var(--accent-blue);
+      }
+      
+      &.teal {
+        --accent-bg-color: var(--accent-teal);
+      }
+      
+      &.green {
+        --accent-bg-color: var(--accent-green);
+      }
+      
+      &.yellow {
+        --accent-bg-color: var(--accent-yellow);
+      }
+      
+      &.orange {
+        --accent-bg-color: var(--accent-orange);
+      }
+      
+      &.red {
+        --accent-bg-color: var(--accent-red);
+      }
+      
+      &.pink {
+        --accent-bg-color: var(--accent-pink);
+      }
+      
+      &.purple {
+        --accent-bg-color: var(--accent-purple);
+      }
+      
+      &.slate {
+        --accent-bg-color: var(--accent-slate);
+      }
     }
   }
 }
