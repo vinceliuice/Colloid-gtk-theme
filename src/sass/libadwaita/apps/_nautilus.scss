@@ -4,7 +4,7 @@
 .floating-bar {
   min-height: 32px;
   padding: 0;
-  margin: $base_padding / 2;
+  margin: if($gnome_version == 'default', $base_padding, $base_padding / 2);
   border-style: none;
   border-radius: $button_radius;
   background-color: $accent_color;

@@ -288,6 +288,18 @@ window.background:not(.csd) {
   }
 }
 
+#TopToolbars .toolbar {
+  background: none;
+}
+
+#Statusbar {
+  padding-left: 8px;
+
+  spinbutton {
+    margin: 6px 0;
+  }
+}
+
 #CanvasTable {
   button {
     min-height: 16px;
