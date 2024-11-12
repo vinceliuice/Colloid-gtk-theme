@@ -65,7 +65,7 @@
 
 // message bubbles
 .message {
-  padding: 0;
+  padding: $base_spacing;
   margin: $base_spacing / 2;
   border-radius: $window_radius;
 
@@ -73,36 +73,18 @@
     border-radius: $base_radius;
     @extend %popover_bubble;
 
-    .notification-button {
-      &:first-child:ltr {
-        border-radius: 0 0 0 $base_radius;
-      }
-    
-      &:last-child:ltr {
-        border-radius: 0 0 $base_radius;
-      }
-    
-      &:first-child:rtl {
-        border-radius: 0 0 $base_radius;
-      }
-    
-      &:last-child:rtl {
-        border-radius: 0 0 0 $base_radius;
-      }
-    
-      &:first-child:last-child {
-        border-radius: 0 0 $base_radius $base_radius;
-      }
-    }
+    .notification-button { border-radius: $base_radius / 2; }
   }
 
   // message header
   .message-header {
     padding: 0 $scaled_padding;
-    margin: $base_padding;
-    margin-bottom: 0;
     spacing: $base_padding;
     color: $text-disabled;
+
+    // remove side padding to accommodate the close button
+    &:ltr { padding-right: 0; }
+    &:rtl { padding-left: 0; }
 
     // header source icon
     .message-source-icon {

@@ -408,23 +408,23 @@ while [[ $# -gt 0 ]]; do
   esac
 done
 
-if [[ "${#themes[@]}" -eq 0 ]] ; then
+if [[ "${#themes[@]}" -eq 0 ]]; then
   themes=("${THEME_VARIANTS[0]}")
 fi
 
-if [[ "${#colors[@]}" -eq 0 ]] ; then
+if [[ "${#colors[@]}" -eq 0 ]]; then
   colors=("${COLOR_VARIANTS[@]}")
 fi
 
-if [[ "${#lcolors[@]}" -eq 0 ]] ; then
+if [[ "${#lcolors[@]}" -eq 0 ]]; then
   lcolors=("${COLOR_VARIANTS[1]}")
 fi
 
-if [[ "${#sizes[@]}" -eq 0 ]] ; then
+if [[ "${#sizes[@]}" -eq 0 ]]; then
   sizes=("${SIZE_VARIANTS[0]}")
 fi
 
-if [[ "${#schemes[@]}" -eq 0 ]] ; then
+if [[ "${#schemes[@]}" -eq 0 ]]; then
   schemes=("${SCHEME_VARIANTS[0]}")
 fi
 

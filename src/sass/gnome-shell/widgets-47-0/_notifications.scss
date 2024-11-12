@@ -12,7 +12,8 @@ $notification_banner_width: 34em;
   color: $text-secondary;
   background-color: $popover;
   text-shadow: none;
-  border-radius: $menu_radius;
+  border-radius: $base_radius + $base_padding * 2;
+  padding: $base_padding;
 
   @if $rimless == 'false' and $variant == 'dark' {
     border: 1px solid $window-border;
@@ -29,10 +30,7 @@ $notification_banner_width: 34em;
 }
 
 .notification-buttons-bin {
-  background-color: transparent;
-  padding-top: 0;
   border: none;
-  border-top: 1px solid $border;
   spacing: 0;
 }
 
@@ -43,6 +41,7 @@ $notification_banner_width: 34em;
   color: $text-secondary;
   font-weight: 500;
   border: none;
+  border-radius: $base_radius;
 
   &:focus {
     background-color: transparent;
@@ -59,29 +58,5 @@ $notification_banner_width: 34em;
   &:active {
     background-color: $track;
     color: $text;
-  }
-
-  &:first-child:ltr {
-    border-radius: 0 0 0 $menu_radius;
-  }
-
-  &:last-child:ltr {
-    border-radius: 0 0 $menu_radius;
-    margin-right: 0 !important;
-  }
-
-  &:first-child:rtl {
-    border-radius: 0 0 $menu_radius;
-  }
-
-  &:last-child:rtl {
-    border-radius: 0 0 0 $menu_radius;
-    margin-left: 0 !important;
-  }
-
-  &:first-child:last-child {
-    border-radius: 0 0 $menu_radius $menu_radius;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
   }
 }
