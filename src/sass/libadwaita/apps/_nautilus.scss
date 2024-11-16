@@ -106,3 +106,10 @@ list.operations-list {
     }
   }
 }
+
+button.image-button.star {
+  min-height: 24px;
+  min-width: 24px;
+  padding: ($medium_size - 24px) / 2;
+  border-radius: $button_radius;
+}

@@ -2183,6 +2183,10 @@ popover {
     stack > box { padding: 0; }
 
     > box > button { margin: 0; }
+
+    > statuspage.compact > scrolledwindow > viewport > box {
+      margin: $space-size * 2;
+    }
   }
 
   // FIXME: Use the popover color instead of transparent as a workaround for .view
