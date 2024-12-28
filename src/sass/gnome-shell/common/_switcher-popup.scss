@@ -22,7 +22,7 @@
 
     &:selected {
       background-color: $primary;
-      color: on($primary);
+      color: $primary-text;
     }
   }
 

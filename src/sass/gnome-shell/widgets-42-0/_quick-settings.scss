@@ -35,16 +35,16 @@
 
   &:checked {
     background-color: $primary !important;
-    color: on($primary);
+    color: $primary-text;
 
     &:hover {
       background-color: mix($text, $primary, 6%) !important;
-      color: on($primary);
+      color: $primary-text;
     }
 
     &:active {
       background-color: mix($text, $primary, 15%) !important;
-      color: on($primary);
+      color: $primary-text;
     }
   }
 
@@ -145,7 +145,7 @@
 
       &.active {
         background-color: $primary !important;
-        color: on($primary);
+        color: $primary-text;
       }
     }
 

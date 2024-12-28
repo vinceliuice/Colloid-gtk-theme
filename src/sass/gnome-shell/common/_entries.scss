@@ -8,7 +8,7 @@ StEntry, %entry {
   color: $text;
   caret-color: $text;
   selection-background-color: $primary;
-  selected-color: on($primary);
+  selected-color: $primary-text;
   @include entry(normal);
   &:hover { @include entry(hover);}
   &:focus { @include entry(focus);}

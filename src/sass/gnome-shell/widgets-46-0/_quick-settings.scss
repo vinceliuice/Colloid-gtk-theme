@@ -38,16 +38,24 @@
 
   &:checked {
     background-color: $primary !important;
-    color: on($primary);
+    color: $primary-text;
 
     &:hover {
-      background-color: mix($text, $primary, 6%) !important;
-      color: on($primary);
+      color: $primary-text;
+      @if $gnome_version == 'default' {
+        background-color: mix($text, $primary, 6%) !important;
+      } @else {
+        background-color: st-mix($text, $primary, 6%) !important;
+      }
     }
 
     &:active {
-      background-color: mix($text, $primary, 15%) !important;
-      color: on($primary);
+      color: $primary-text;
+      @if $gnome_version == 'default' {
+        background-color: mix($text, $primary, 15%) !important;
+      } @else {
+        background-color: st-mix($text, $primary, 15%) !important;
+      }
     }
   }
 
@@ -100,16 +108,24 @@
   
     &:checked {
       background-color: $primary !important;
-      color: on($primary);
+      color: $primary-text;
   
       &:hover {
-        background-color: mix($text, $primary, 6%) !important;
-        color: on($primary);
+        color: $primary-text;
+        @if $gnome_version == 'default' {
+          background-color: mix($text, $primary, 6%) !important;
+        } @else {
+          background-color: st-mix($text, $primary, 6%) !important;
+        }
       }
   
       &:active {
-        background-color: mix($text, $primary, 15%) !important;
-        color: on($primary);
+        color: $primary-text;
+        @if $gnome_version == 'default' {
+          background-color: mix($text, $primary, 15%) !important;
+        } @else {
+          background-color: st-mix($text, $primary, 15%) !important;
+        }
       }
     }
 
@@ -183,7 +199,7 @@
 
       &.active {
         background-color: $primary !important;
-        color: on($primary);
+        color: $primary-text;
       }
     }
 

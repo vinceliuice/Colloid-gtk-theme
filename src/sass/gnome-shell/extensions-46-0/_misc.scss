@@ -122,7 +122,11 @@
 }
 
 .pop-shell-overlay {
-  background-color: rgba($primary, 0.3);
+  @if $gnome_version == 'default' {
+    background-color: transparentize($primary, 0.7);
+  } @else {
+    background-color: st-transparentize($primary, 0.7);
+  }
 }
 
 .pop-shell-search-element:select{

@@ -72,11 +72,18 @@ $default_key_bg_color: if($variant == 'light', #adb3bc, #4b4b4b);
   }
 
   &.enter-key { // enter key is suggested-action
-    color: on($primary);
+    color: $primary-text;
     background-color: $primary;
 
-    &:focus, &:hover { color: on($primary); background-color: lighten($primary, 5%); }
-    &:checked, &:active { color: on($primary); background-color: darken($primary, 10%); }
+    &:focus, &:hover, &:checked, &:active { color: $primary-text; }
+
+    @if $gnome_version == 'default' {
+      &:focus, &:hover { background-color: lighten($primary, 5%); }
+      &:checked, &:active { background-color: darken($primary, 10%); }
+    } @else {
+      &:focus, &:hover { background-color: st-lighten($primary, 5%); }
+      &:checked, &:active { background-color: st-darken($primary, 10%); }
+    }
   }
 
   &.shift-key-uppercase {

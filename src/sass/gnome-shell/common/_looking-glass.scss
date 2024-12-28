@@ -64,7 +64,7 @@
   StEntry {
     min-height: 22px;
     selection-background-color: $primary;
-    selected-color: on($primary);
+    selected-color: $primary-text;
   }
 
   .shell-link {

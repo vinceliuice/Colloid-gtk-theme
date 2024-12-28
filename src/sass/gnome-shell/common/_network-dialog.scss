@@ -45,7 +45,7 @@
 
   &:selected {
     background-color: $primary;
-    color: on($primary);
+    color: $primary-text;
   }
 
   &:hover, &:focus { background-color: $divider; }
