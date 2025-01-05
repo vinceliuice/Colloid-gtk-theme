@@ -17,6 +17,8 @@ if [ ! "$(which sassc 2> /dev/null)" ]; then
     sudo yum install sassc
   elif has_command pacman; then
     sudo pacman -S --noconfirm sassc
+  elif has_command xbps-install; then
+    sudo xbps-install -y sassc
   fi
 fi
 
