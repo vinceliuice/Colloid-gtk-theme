@@ -449,6 +449,8 @@ install_package() {
       sudo yum install sassc
     elif has_command pacman; then
       sudo pacman -S --noconfirm sassc
+    elif has_command xbps-install; then
+      sudo xbps-install -y sassc
     fi
   fi
 }
