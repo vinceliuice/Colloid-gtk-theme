@@ -1,5 +1,13 @@
 /* Buttons */
 
+$primary-text: $white;
+
+@if $gnome_version == 'new' and $colortype == 'system' {
+  $primary-text: $white;
+} @else {
+  $primary-text: on($primary);
+}
+
 %button {
   @include button(normal);
   &:focus { @include button(focus); }
