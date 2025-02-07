@@ -78,7 +78,7 @@
   .quick-toggle-icon { icon-size: $base_icon_size; }
 }
 
-.quick-menu-toggle {
+.quick-menu-toggle, .quick-toggle-has-menu {
   & .quick-toggle {
     min-width: auto;
     max-width: auto;
@@ -92,7 +92,7 @@
     &:rtl:last-child { border-radius: $base_radius; }
   }
 
-  .quick-toggle-arrow {
+  .quick-toggle-arrow, .quick-toggle-menu-button {
     background-color: $button !important;
     padding: $base_padding $base_padding * 1.75;
     border: none !important;
