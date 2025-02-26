@@ -293,10 +293,10 @@ window.background:not(.csd) {
 }
 
 #Statusbar {
-  padding-left: 8px;
+  padding: 3px 0 3px 8px;
 
-  spinbutton {
-    margin: 6px 0;
+  spinbutton, box > button.flat {
+    margin: 3px 0;
   }
 }
 
@@ -338,11 +338,24 @@ window.background:not(.csd) {
   }
 }
 
-scrolledwindow#DialogNotebook {
-  > viewport.frame > notebook.frame {
-    button.close-button {
-      image { padding: 4px; }
+window.bright.symbolic {
+  scrolledwindow > viewport.frame > notebook {
+    tabs > tab {
+      padding: $space-size / 2 $space-size;
+
+      button.close-button {
+        margin: 4px 0;
+      }
     }
+  }
+}
+
+popover#ContextMenu { // not use ?
+  border-radius: $menu-radius;
+  background-clip: content-box;
+
+  modelbutton.flat {
+    border-radius: $corner-radius;
   }
 }
 

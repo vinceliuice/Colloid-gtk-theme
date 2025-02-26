@@ -2012,7 +2012,7 @@ notebook {
       }
 
       // colors the button like the label, overridden otherwise
-      button.flat {
+      button.flat, button.close-button {
         @extend %small-button;
 
         &:last-child {
@@ -2024,11 +2024,6 @@ notebook {
           margin-left: $space-size - 12px;
           margin-right: $space-size;
         }
-      }
-
-      button.close-button {
-        min-width: $small-size;
-        min-height: $small-size;
       }
     }
 
