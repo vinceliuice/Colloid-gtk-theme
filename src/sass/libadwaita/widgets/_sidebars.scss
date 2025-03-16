@@ -14,6 +14,19 @@
     }
   }
 
+  @if $colorscheme != 'default' or $blackness == 'true' or $colortype == 'fixed' {
+    listview,
+    list:not(.navigation-sidebar),
+    list.boxed-list {
+      background-color: gtkmix(white, $sidebar_bg_color, 5%);
+      color: $sidebar_fg_color;
+    }
+
+    list.boxed-list-separate {
+      color: $sidebar_fg_color;
+    }
+  }
+
   flap,
   leaflet,
   navigation-view,
@@ -46,6 +59,10 @@
 .sidebar-pane, .content-pane {
   toolbarview.undershoot-top scrolledwindow {
     @include undershoot(top, $sidebar_shade_color, $style: frame);
+
+    columnview.view ~ undershoot.top {
+      box-shadow: none;
+    }
   }
 
   toolbarview.undershoot-bottom scrolledwindow {
@@ -104,7 +121,7 @@
     }
 
     &.undershoot-bottom {
-      @include undershoot(bottom, $secondary_sidebar_shade_color)
+      @include undershoot(bottom, $secondary_sidebar_shade_color);
     }
 
     &.undershoot-start {
@@ -159,24 +176,143 @@
 }
 
 stacksidebar row {
-  padding: 10px 4px;
+  padding: $base_padding + 4px $base_padding / 2 + 1px;
 
   > label {
-    padding-left: 6px;
-    padding-right: 6px;
+    padding-left: $base_padding;
+    padding-right: $base_padding;
   }
 
   &.needs-attention > label {
     @extend %needs_attention;
-    background-size: 6px 6px, 0 0;
+    background-size: $base_padding $base_padding, 0 0;
   }
 }
+
+%header_button_reset {
+  color: $window_fg_color;
+
+  &:focus:not(:hover):not(:active) { color: $window_fg_color; }
+
+  &:hover { color: $window_fg_color; }
+
+  &.keyboard-activating, &:active { color: $window_fg_color; }
+
+  &:disabled { color: $window_fg_color; }
+
+  &:checked {
+    color: $window_fg_color;
+
+    &:hover { color: $window_fg_color; }
+
+    &:active { color: $window_fg_color; }
+
+    &:disabled { color: $window_fg_color; }
+  }
+}
+
+@if $colorscheme != 'default' or $blackness == 'true' or $colortype == 'fixed' {
+  .content-pane {
+    headerbar {
+      color: $window_fg_color;
+
+      button:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque) {
+        &,
+        &.arrow-button,
+        &.image-button,
+        &.image-text-button {
+          @extend %header_button_reset;
+        }
+      }
+
+      menubutton:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque) {
+        &.image-button > button {
+          @extend %header_button_reset;
+        }
+      }
+
+      entry {
+        color: $window_fg_color;
+      }
+
+      windowcontrols {
+        > button:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque) {
+          @if $window_button == 'mac' {
+            &.minimize, &.maximize, &.close {
+              color: transparent;
+
+              &:hover, &:active {
+                color: if($colorscheme != 'dracula', white, rgba(black, 0.5));
+              }
+
+              &:backdrop {
+                > image { background-color: gtkalpha($window_fg_color, 0.3); }
+          
+                &:hover, &:active {
+                  color: gtkalpha($window_fg_color, 0.45);
+                }
+              }
+            }
+          } @else {
+            &.minimize, &.maximize, &.close {
+              color: gtkalpha(currentColor, 0.75);
+
+              &:hover {
+                color: currentColor;
+              }
+
+              &:active {
+                color: currentColor;
+              }
+            }
+          }
+        }
+      }
+
+      switch {
+        background-color: gtkalpha($window_fg_color, .15);
+
+        &:hover { background-color: gtkalpha($window_fg_color, .2); }
+        &:active { background-color: gtkalpha($window_fg_color, .25); }
+
+        &:hover > slider,
+        &:active > slider {
+          box-shadow: 0 2px 3px transparent, 0 0 0 6px gtkalpha($window_fg_color, .1);
+        }
+
+        &:checked {
+          background-color: $accent_bg_color;
+        }
+      }
+    }
+
+    tabbar {
+      .box {
+        color: $window_fg_color;
+      }
+
+      tab {
+        color: $window_fg_color;
+
+        &:selected {
+          color: $window_fg_color;
+        }
+
+        &:hover { color: $window_fg_color; }
+        &:active { color: $window_fg_color; }
+      }
+    }
+  }
+}
+
 
 /**********************
  * Navigation Sidebar *
  **********************/
 
 .navigation-sidebar {
+  padding: $base_padding 0; //only vertical padding. horizontal row size would clip
+
   &, &.view, &.view:disabled {
     background-color: transparent;
     color: inherit;
@@ -187,6 +323,18 @@ stacksidebar row {
       background-color: $window_bg_color;
       color: $window_fg_color;
     }
+  }
+
+  > row {
+    min-height: $medium_size;
+    padding: 0 $base_padding + 2px;
+    border-radius: $menuitem_radius;
+    margin: 0 $base_padding $base_padding / 2;
+  }
+
+  > separator {
+    margin: $base_padding;
+    background: none;
   }
 
   row {
@@ -210,19 +358,5 @@ stacksidebar row {
     &:selected {
       background-color: $selected_color;
     }
-  }
-
-  padding: $menu_margin 0; //only vertical padding. horizontal row size would clip
-
-  > separator {
-    margin: $menu_margin;
-    background: none;
-  }
-
-  > row {
-    min-height: 36px;
-    padding: 0 8px;
-    border-radius: $menuitem_radius;
-    margin: 0 $menu_margin $base_padding / 2;
   }
 }

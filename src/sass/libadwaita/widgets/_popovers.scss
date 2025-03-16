@@ -34,13 +34,18 @@ popover {
 
     > list,
     > .view,
-    > toolbar {
-      border-style: none;
+    > toolbar,
+    > scrolledwindow > viewport > list {
+      border: none;
       background-color: transparent;
     }
 
     separator {
       background-color: gtkalpha(currentColor, 0.08);
+    }
+
+    > statuspage.compact > scrolledwindow > viewport > box { // Nautilus popover
+      margin: $base_padding * 2;
     }
   }
 

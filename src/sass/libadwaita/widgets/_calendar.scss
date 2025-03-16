@@ -14,8 +14,8 @@ calendar {
   }
 
   > grid {
-    padding-left: 3px;
-    padding-bottom: 3px;
+    padding-left: $base_padding / 2;
+    padding-bottom: $base_padding / 2;
 
     > label.today {
       box-shadow: inset 0px -2px $border_color;
@@ -27,11 +27,11 @@ calendar {
 
     > label {
       @include focus-ring($focus-state: ':focus');
-      margin-top: 3px;
-      margin-right: 3px;
+      margin-top: $base_padding / 2;
+      margin-right: $base_padding / 2;
 
       &.day-number {
-        padding: 3px;
+        padding: $base_padding / 2;
 
         &:checked {
           border-radius: $button_radius;

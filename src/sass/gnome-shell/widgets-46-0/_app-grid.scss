@@ -132,7 +132,16 @@ $app_folder_size: 720px;
     > StIcon { icon-size: $base_icon_size; }
 
     &:hover { background-color: overlay($osd, hover); }
-    &:checked, &:active { background-color: $inverse-indicator; color: on($inverse-indicator); }
+
+    &:checked, &:active {
+      background-color: $inverse-indicator;
+
+      @if $gnome_version == 'default' {
+        color: on($inverse-indicator);
+      } @else {
+        color: if($theme == 'grey', rgba(black, 0.87), white);
+      }
+    }
   }
 
   .page-indicators {

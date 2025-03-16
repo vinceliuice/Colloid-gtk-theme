@@ -109,7 +109,7 @@ $app_icon_spacing: 6px;
   }
 
   &:checked {
-    color: on($primary);
+    color: $primary-text;
     background-color: $primary;
     box-shadow: none;
   }

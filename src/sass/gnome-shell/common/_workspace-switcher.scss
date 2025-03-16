@@ -30,7 +30,7 @@
 .ws-switcher-active-right {
   height: 52px;
   background-color: $primary;
-  color: on($primary);
+  color: $primary-text;
   border-radius: $base_radius + 3px;
   border: none;
 }

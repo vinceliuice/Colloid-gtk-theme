@@ -7,7 +7,7 @@
   border-radius: $base_radius;
   caret-color: $text;
   selection-background-color: $divider;
-  selected-color: on($primary) !important;
+  selected-color: $primary-text !important;
   @include entry(normal, $bc: $base);
 
   &:hover {

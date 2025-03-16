@@ -14,22 +14,37 @@
 }
 
 %last_dialog_button {
-  color: on($primary);
+  color: $primary-text;
   background-color: $primary;
 
   &:hover {
-    color: on($primary);
-    background-color: lighten($primary, 9%);
+    color: $primary-text;
+
+    @if $gnome_version == 'default' {
+      background-color: darken($primary, 9%);
+    } @else {
+      background-color: st-darken($primary, 9%);
+    }
   }
 
   &:active {
-    color: on($primary);
-    background-color: darken($primary, 5%);
+    color: $primary-text;
+
+    @if $gnome_version == 'default' {
+      background-color: darken($primary, 5%);
+    } @else {
+      background-color: st-darken($primary, 5%);
+    }
   }
 
   &:insensitive {
-    background-color: rgba($primary, 0.05);
-    color: rgba($primary, 0.35);
+    @if $gnome_version == 'default' {
+      background-color: transparentize($primary, 0.95);
+      color: transparentize($primary, 0.65);
+    } @else {
+      background-color: st-transparentize($primary, 0.95);
+      color: st-transparentize($primary, 0.65);
+    }
   }
 }
 
@@ -211,7 +226,7 @@
   &:hover, &:focus { background-color: overlay($popover, hover); }
   &:active {
     background-color: $primary;
-    color: on($primary);
+    color: $primary-text;
   }
 }
 

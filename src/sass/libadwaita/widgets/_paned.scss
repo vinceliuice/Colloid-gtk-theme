@@ -6,8 +6,8 @@ paned {
     background-size: 1px 1px;
 
     &.wide {
-      min-width: 5px;
-      min-height: 5px;
+      min-width: $base_padding;
+      min-height: $base_padding;
     }
   }
 

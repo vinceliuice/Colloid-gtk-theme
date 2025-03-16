@@ -17,7 +17,7 @@
 
   StEntry {
     selection-background-color: $primary;
-    selected-color: on($primary);
+    selected-color: $primary-text;
     padding: 4px 8px;
     min-height: $item_size - $base_padding;
     border-radius: $circular_radius;
@@ -37,16 +37,16 @@
   .modal-dialog-button {
     padding: 0 16px;
     border: none;
-    @include button(flat-normal, $tc: on($primary));
-    &:hover, &:focus { @include button(flat-hover, $tc: on($primary)); }
-    &:active { @include button(flat-active, $tc: on($primary)); }
-    &:insensitive { @include button(flat-insensitive, $tc: on($primary, disabled)); }
+    @include button(flat-normal, $tc: $primary-text);
+    &:hover, &:focus { @include button(flat-hover, $tc: $primary-text); }
+    &:active { @include button(flat-active, $tc: $primary-text); }
+    &:insensitive { @include button(flat-insensitive, $tc: rgba(white, 0.3)); }
 
     &:default {
-      @include button(normal, $tc: on($primary));
-      &:hover, &:focus { @include button(hover, $tc: on($primary)); }
-      &:active { @include button(active, $tc: on($primary)); }
-      &:insensitive { @include button(insensitive, $tc: on($primary, disabled)); }
+      @include button(normal, $tc: $primary-text);
+      &:hover, &:focus { @include button(hover, $tc: $primary-text); }
+      &:active { @include button(active, $tc: $primary-text); }
+      &:insensitive { @include button(insensitive, $tc: rgba(white, 0.3)); }
     }
   }
 

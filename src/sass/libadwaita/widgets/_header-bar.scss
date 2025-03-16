@@ -1,3 +1,4 @@
+
 headerbar {
   min-height: $large_size;
   background-color: $headerbar_backdrop_color;
@@ -114,6 +115,7 @@ window > {
 
     &.default-decoration {
       min-height: $medium_size;
+      box-shadow: none;
 
       > windowhandle > box {
         padding: $base_padding / 2;
@@ -225,8 +227,8 @@ $titlebutton_close: $button-close;
   min-height: 16px;
   min-width: 16px;
   padding: ($medium_size - 16px) / 2 0;
-  margin-left: $base_padding - 2px;
-  margin-right: $base_padding - 2px;
+  margin-left: $base_padding / 2 + 1px;
+  margin-right: $base_padding / 2 + 1px;
   box-shadow: none;
 
   &.minimize, &.maximize, &.close {
@@ -235,10 +237,6 @@ $titlebutton_close: $button-close;
 
     &:hover, &:active {
       box-shadow: none;
-    }
-
-    &:active > image {
-      background-color: gtkalpha(black, if($topbar == 'dark', 0.25, 0.12));
     }
 
     &:hover, &:active {
@@ -254,11 +252,13 @@ $titlebutton_close: $button-close;
     }
   }
 
+  $button-opacity: if($topbar == 'dark', 25%, 12%);
+
   &.minimize { // Window minimize button
     > image { background-color: $titlebutton_min; }
 
     &:active > image {
-      background-color: gtkmix($headerbar_fg_color, $titlebutton_min, 25%);
+      background-color: gtkmix(black, $titlebutton_min, $button-opacity);
     }
   }
 
@@ -266,7 +266,7 @@ $titlebutton_close: $button-close;
     > image { background-color: $titlebutton_max; }
 
     &:active > image {
-      background-color: gtkmix($headerbar_fg_color, $titlebutton_max, 25%);
+      background-color: gtkmix(black, $titlebutton_max, $button-opacity);
     }
   }
 
@@ -274,7 +274,7 @@ $titlebutton_close: $button-close;
     > image { background-color: $titlebutton_close; }
 
     &:active > image {
-      background-color: gtkmix($headerbar_fg_color, $titlebutton_close, 25%);
+      background-color: gtkmix(black, $titlebutton_close, $button-opacity);
     }
   }
 }
@@ -283,11 +283,11 @@ $titlebutton_close: $button-close;
   min-height: 22px;
   min-width: 22px;
   padding: ($medium-size - 22px) / 2 0;
-  margin-left: $base_padding - 2px;
-  margin-right: $base_padding - 2px;
+  margin-left: $base_padding / 2 + 1px;
+  margin-right: $base_padding / 2 + 1px;
 
   &.minimize, &.maximize, &.close {
-    color: gtkalpha($headerbar_fg_color, 0.75);
+    color: gtkalpha(currentColor, 0.75);
 
     &, &:hover, &:active, &:backdrop {
       background: none;
@@ -297,13 +297,13 @@ $titlebutton_close: $button-close;
     > image { background-color: gtkalpha(currentColor, 0.1); }
 
     &:hover {
-      color: $headerbar_fg_color;
+      color: currentColor;
 
       > image { background-color: gtkalpha(currentColor, 0.15); }
     }
 
     &:active {
-      color: $headerbar_fg_color;
+      color: currentColor;
 
       > image { background-color: gtkalpha(currentColor, 0.2); }
     }
@@ -346,7 +346,7 @@ windowcontrols {
   }
 
   > .icon {
-    margin: 9px;
+    margin: $base_padding * 1.5;
   }
 }
 
@@ -357,22 +357,22 @@ windowcontrols {
 headerbar,
 windowtitle {
   .title {
-    padding-left: 12px;
-    padding-right: 12px;
+    padding-left: $base_padding * 2;
+    padding-right: $base_padding * 2;
     font-weight: bold;
   }
 
   .subtitle {
     font-size: smaller;
-    padding-left: 12px;
-    padding-right: 12px;
+    padding-left: $base_padding * 2;
+    padding-right: $base_padding * 2;
     @extend .dim-label;
   }
 }
 
 windowtitle {
-  margin-top: -6px;
-  margin-bottom: -6px;
+  margin-top: -$base_padding;
+  margin-bottom: -$base_padding;
   min-height: 12px;
 }
 

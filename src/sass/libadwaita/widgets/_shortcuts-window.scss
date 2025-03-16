@@ -9,14 +9,14 @@ shortcuts-section {
 
 // shortcut window keys
 shortcut {
-  border-spacing: 6px;
-  border-radius: 6px;
+  border-spacing: $base_padding;
+  border-radius: $base_padding;
   @include focus-ring($outer: true, $offset: 4px);
 
   > .keycap {
     min-width: 20px;
     min-height: 25px;
-    padding: 2px 6px;
+    padding: 2px $base_padding;
 
     @extend %card;
 
@@ -26,7 +26,7 @@ shortcut {
 }
 
 shortcuts-section stackswitcher.circular {
-  border-spacing: 12px;
+  border-spacing: $base_padding * 2;
 
   > button.circular,
   > button.text-button.circular {
@@ -42,7 +42,7 @@ window.shortcuts {
     @extend %headerbar-shrunk;
 
     > windowhandle {
-      padding-top: 3px;
+      padding-top: $base_padding / 2;
     }
   }
 

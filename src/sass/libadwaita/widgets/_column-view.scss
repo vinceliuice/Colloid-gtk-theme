@@ -13,6 +13,7 @@ columnview {
     line-height: 100%;
     border-left: 1px solid $border_color;
     border-bottom: 1px solid $border_color;
+    background-clip: padding-box;
 
     &:first-child {
       border-left-width: 0;
@@ -70,7 +71,7 @@ columnview {
 
     // align horizontal sizing with header buttons
     > cell {
-      padding: 8px 6px;
+      padding: $base_padding + 2px $base_padding;
 
       &:not(:first-child) {
         border-left: 1px solid transparent;
@@ -97,7 +98,11 @@ columnview {
     padding-bottom: $base_padding / 2;
   }
 
-  @include undershoot(top, $shade_color, true);
+  @include undershoot(top, $shade_color, $neighbor: true, $style: default);
+
+  ~ undershoot.top {
+    box-shadow: none;
+  }
 }
 
 columnview row:not(:selected) cell editablelabel:not(.editing):focus-within {

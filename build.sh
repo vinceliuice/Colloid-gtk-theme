@@ -17,6 +17,8 @@ if [ ! "$(which sassc 2> /dev/null)" ]; then
     sudo yum install sassc
   elif has_command pacman; then
     sudo pacman -S --noconfirm sassc
+  elif has_command xbps-install; then
+    sudo xbps-install -y sassc
   fi
 fi
 
@@ -35,6 +37,8 @@ for color in "${_COLOR_VARIANTS[@]}"; do
   echo "==> Generating the 3.0 gtk${color}.css..."
   sassc $SASSC_OPT src/main/gtk-4.0/gtk${color}.{scss,css}
   echo "==> Generating the 4.0 gtk${color}.css..."
+  sassc $SASSC_OPT src/main/libadwaita/libadwaita${color}.{scss,css}
+  echo "==> Generating the libadwaita libadwaita${color}.css..."
   sassc $SASSC_OPT src/main/gnome-shell/gnome-shell${color}.{scss,css}
   echo "==> Generating the gnome-shell${color}.css..."
   sassc $SASSC_OPT src/main/cinnamon/cinnamon${color}.{scss,css}

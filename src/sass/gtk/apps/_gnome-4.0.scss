@@ -95,6 +95,13 @@ navigation-view-page {
   }
 }
 
+button.star {
+  min-height: 24px;
+  min-width: 24px;
+  padding: ($medium-size - 24px) / 2;
+  border-radius: $corner-radius;
+}
+
 //
 // Gnome Control Center
 //
@@ -899,18 +906,6 @@ box.star {
   background-image: none;
 }
 
-button.star {
-  outline-offset: 0;
-  background-color: transparent;
-  background-image: none;
-  border-image: none;
-  border-radius: 0;
-  border-width: 0;
-  padding: 0;
-  box-shadow: none;
-  outline-offset: -1px;
-}
-
 star-image {
   color: $yellow-dark;
 }
@@ -1592,4 +1587,12 @@ window.dialog {
       }
     }
   }
+}
+
+//
+// NG (DING)
+//
+
+window#desktopwindow.background {
+  background: none;
 }

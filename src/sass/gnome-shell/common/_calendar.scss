@@ -202,17 +202,25 @@
     }
 
     &:active {
-      background-color: darken($primary, 5%);
-      color: on($primary) !important;
+      @if $gnome_version == 'default' {
+        background-color: darken($primary, 5%);
+      } @else {
+        background-color: st-darken($primary, 5%);
+      }
+      color: $primary-text !important;
     }
 
     &:selected {
       background-color: $primary;
-      color: on($primary) !important;
+      color: $primary-text !important;
 
       &:hover, &:focus {
-        background-color: lighten($primary, 8%);
-        color: on($primary) !important;
+        @if $gnome_version == 'default' {
+          background-color: lighten($primary, 8%);
+        } @else {
+          background-color: st-lighten($primary, 8%);
+        }
+        color: $primary-text !important;
       }
     }
   }

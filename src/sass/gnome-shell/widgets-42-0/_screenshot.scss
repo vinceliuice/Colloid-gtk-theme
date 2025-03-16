@@ -166,17 +166,25 @@ $screenshot_ui_button_red: $error;
 .screenshot-ui-window-selector-window {
   &:hover {
     .screenshot-ui-window-selector-window-border {
-      border-color: darken($primary, 15%);
+      @if $gnome_version == 'default' {
+        border-color: darken($primary, 15%);
+      } @else {
+        border-color: st-darken($primary, 15%);
+      }
     }
   }
   &:checked {
     .screenshot-ui-window-selector-window-border {
       border-color: $primary;
-      background-color: transparentize($primary, 0.8);
+      @if $gnome_version == 'default' {
+        background-color: transparentize($primary, 0.8);
+      } @else {
+        background-color: st-transparentize($primary, 0.8);
+      }
     }
 
     .screenshot-ui-window-selector-check {
-      color: on($primary);
+      color: $primary-text;
       background-color: $primary;
     }
   }

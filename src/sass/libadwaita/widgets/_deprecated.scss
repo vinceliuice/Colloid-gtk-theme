@@ -152,7 +152,7 @@ infobar {
  .close {
     min-width: 18px;
     min-height: 18px;
-    padding: 4px;
+    padding: $base_margin;
     border-radius: 50%;
     @extend %button_basic_flat;
   }
@@ -163,7 +163,7 @@ infobar {
  ****************/
 
 statusbar {
-  padding: 6px 10px 6px 10px;
+  padding: $base_padding $base_padding + $base_margin;
 }
 
 /***************
@@ -227,6 +227,7 @@ treeview.view {
     &, &:selected {
       background-color: $accent_bg_color;
       color: $accent_fg_color;
+      border-radius: $circular_radius;
     }
 
     box-shadow: none;
@@ -234,6 +235,10 @@ treeview.view {
 
   &.trough { // progress bar trough in treeviews
     background-color: gtkalpha(currentColor, 0.1);
+
+    &, &:selected {
+      border-radius: $circular_radius;
+    }
   }
 
   ~ undershoot.top {

@@ -1,6 +1,10 @@
 // Rubberband for select-area screenshots
 .select-area-rubberband {
-  background-color: transparentize($primary, 0.7);
+  @if $gnome_version == 'default' {
+    background-color: transparentize($primary, 0.3);
+  } @else {
+    background-color: st-transparentize($primary, 0.3);
+  }
   border: 1px solid $primary;
   border-radius: $base_radius;
 }

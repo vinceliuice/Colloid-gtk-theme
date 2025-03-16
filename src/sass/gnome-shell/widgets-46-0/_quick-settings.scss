@@ -1,7 +1,7 @@
 .quick-settings {
   padding: $base_padding * 3 !important;
   border-radius: $base_radius + $base_padding * 3 !important;
-  margin-top: $base_padding + 4px !important;
+  margin-top: 4px !important;
 
   .icon-button, .button {
     padding: $base_padding * 1.75;
@@ -38,16 +38,24 @@
 
   &:checked {
     background-color: $primary !important;
-    color: on($primary);
+    color: $primary-text;
 
     &:hover {
-      background-color: mix($text, $primary, 6%) !important;
-      color: on($primary);
+      color: $primary-text;
+      @if $gnome_version == 'default' {
+        background-color: mix($text, $primary, 6%) !important;
+      } @else {
+        background-color: st-mix($text, $primary, 6%) !important;
+      }
     }
 
     &:active {
-      background-color: mix($text, $primary, 15%) !important;
-      color: on($primary);
+      color: $primary-text;
+      @if $gnome_version == 'default' {
+        background-color: mix($text, $primary, 15%) !important;
+      } @else {
+        background-color: st-mix($text, $primary, 15%) !important;
+      }
     }
   }
 
@@ -70,7 +78,7 @@
   .quick-toggle-icon { icon-size: $base_icon_size; }
 }
 
-.quick-menu-toggle {
+.quick-menu-toggle, .quick-toggle-has-menu {
   & .quick-toggle {
     min-width: auto;
     max-width: auto;
@@ -84,7 +92,7 @@
     &:rtl:last-child { border-radius: $base_radius; }
   }
 
-  .quick-toggle-arrow {
+  .quick-toggle-arrow, .quick-toggle-menu-button {
     background-color: $button !important;
     padding: $base_padding $base_padding * 1.75;
     border: none !important;
@@ -100,16 +108,24 @@
   
     &:checked {
       background-color: $primary !important;
-      color: on($primary);
+      color: $primary-text;
   
       &:hover {
-        background-color: mix($text, $primary, 6%) !important;
-        color: on($primary);
+        color: $primary-text;
+        @if $gnome_version == 'default' {
+          background-color: mix($text, $primary, 6%) !important;
+        } @else {
+          background-color: st-mix($text, $primary, 6%) !important;
+        }
       }
   
       &:active {
-        background-color: mix($text, $primary, 15%) !important;
-        color: on($primary);
+        color: $primary-text;
+        @if $gnome_version == 'default' {
+          background-color: mix($text, $primary, 15%) !important;
+        } @else {
+          background-color: st-mix($text, $primary, 15%) !important;
+        }
       }
     }
 
@@ -183,7 +199,7 @@
 
       &.active {
         background-color: $primary !important;
-        color: on($primary);
+        color: $primary-text;
       }
     }
 

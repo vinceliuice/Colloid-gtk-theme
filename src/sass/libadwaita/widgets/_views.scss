@@ -47,7 +47,7 @@ rubberband {
 
 flowbox > flowboxchild,
 gridview > child {
-  padding: 3px;
+  padding: $base_padding / 2;
   border-radius: $button_radius;
 
   @include focus-ring();

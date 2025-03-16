@@ -72,8 +72,8 @@ notebook {
     @at-root %notebook_vert_arrows {
       margin-left: -5px;
       margin-right: -5px;
-      padding-left: 4px;
-      padding-right: 4px;
+      padding-left: $base_margin;
+      padding-right: $base_margin;
 
       &.down { -gtk-icon-source: -gtk-icontheme('pan-start-symbolic'); }
 
@@ -95,8 +95,8 @@ notebook {
     @at-root %notebook_horz_arrows {
       margin-top: -5px;
       margin-bottom: -5px;
-      padding-top: 4px;
-      padding-bottom: 4px;
+      padding-top: $base_margin;
+      padding-bottom: $base_margin;
 
       &.down { -gtk-icon-source: -gtk-icontheme('pan-up-symbolic'); }
 
@@ -120,7 +120,7 @@ notebook {
       transition: $focus_transition;
       min-height: 30px;
       min-width: 30px;
-      padding: 3px 12px;
+      padding: $base_padding / 2 $base_padding * 2;
 
       font-weight: normal;
 
@@ -146,20 +146,20 @@ notebook {
         &:hover, &:active { color: currentColor; }
 
         padding: 0;
-        margin-top: 4px;
-        margin-bottom: 4px;
+        margin-top: $base_margin;
+        margin-bottom: $base_margin;
         // FIXME: generalize .small-button?
         min-width: 20px;
         min-height: 20px;
 
         &:last-child {
-          margin-left: 4px;
-          margin-right: -4px;
+          margin-left: $base_margin;
+          margin-right: -$base_margin;
         }
 
         &:first-child {
-          margin-left: -4px;
-          margin-right: 4px;
+          margin-left: -$base_margin;
+          margin-right: $base_margin;
         }
       }
     }
@@ -167,20 +167,20 @@ notebook {
     &.top,
     &.bottom {
       > tabs {
-        padding-left: 4px;
-        padding-right: 4px;
+        padding-left: $base_margin;
+        padding-right: $base_margin;
 
         &:not(:only-child) {
-          margin-left: 3px;
-          margin-right: 3px;
+          margin-left: $base_padding / 2;
+          margin-right: $base_padding / 2;
 
           &:first-child { margin-left: -1px; }
           &:last-child { margin-right: -1px; }
         }
 
         > tab {
-          margin-left: 4px;
-          margin-right: 4px;
+          margin-left: $base_margin;
+          margin-right: $base_margin;
         }
       }
     }
@@ -188,26 +188,26 @@ notebook {
     &.left,
     &.right {
       > tabs {
-        padding-top: 4px;
-        padding-bottom: 4px;
+        padding-top: $base_margin;
+        padding-bottom: $base_margin;
 
         &:not(:only-child) {
-          margin-top: 3px;
-          margin-bottom: 3px;
+          margin-top: $base_padding / 2;
+          margin-bottom: $base_padding / 2;
 
           &:first-child { margin-top: -1px; }
           &:last-child { margin-bottom: -1px; }
         }
 
         > tab {
-          margin-top: 4px;
-          margin-bottom: 4px;
+          margin-top: $base_margin;
+          margin-bottom: $base_margin;
         }
       }
     }
 
-    &.top > tabs > tab { padding-bottom: 4px; }
-    &.bottom > tabs > tab { padding-top: 4px; }
+    &.top > tabs > tab { padding-bottom: $base_margin; }
+    &.bottom > tabs > tab { padding-top: $base_margin; }
   }
 
   > stack:not(:only-child) { // the :not(:only-child) is for "hidden" notebooks

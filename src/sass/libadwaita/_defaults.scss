@@ -8,7 +8,7 @@
 // These are the colors apps are can override. We define the defaults here and
 // define variables for them in _colors.scss
 
-@if $theme != 'default' or $colortype == 'fixed' {
+@if $theme != 'default' or $colorscheme != 'default' or $colortype == 'fixed' {
 // The main accent color and the matching text value
 @define-color accent_bg_color #{$primary};
 @define-color accent_fg_color #{on($primary)};

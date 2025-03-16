@@ -3,8 +3,14 @@
 $ripple_size: 50px;
 
 .ripple-box {
-  background-color: rgba($primary, 0.35);
-  box-shadow: 0 0 2px 2px lighten($primary, 20%);
+  @if $gnome_version == 'default' {
+    background-color: transparentize($primary, 0.65);
+    box-shadow: 0 0 2px 2px lighten($primary, 20%);
+  } @else {
+    background-color: st-transparentize($primary, 0.65);
+    box-shadow: 0 0 2px 2px st-lighten($primary, 20%);
+  }
+
   // plus + 2px for the border (box-shadow)
   width: $ripple_size + 2px;
   height: $ripple_size + 2px;

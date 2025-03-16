@@ -67,8 +67,8 @@ entry {
         opacity: .8;
       }
 
-      &.left { margin-right: 6px; }
-      &.right { margin-left: 6px; }
+      &.left { margin-right: $base_padding; }
+      &.right { margin-left: $base_padding; }
     }
 
     &.password image.caps-lock-indicator {
@@ -84,7 +84,7 @@ entry {
   }
 
   > progress {
-    margin-bottom: 3px;
+    margin-bottom: $base_padding / 2;
 
     > trough > progress {
       background-color: transparent;

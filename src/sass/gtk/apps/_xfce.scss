@@ -40,9 +40,7 @@
   }
 
   .tasklist button {
-    // border-image: image(transparent) 0 0 2 / 0 0 2px;
-    //
-    // &:checked { border-image: image(currentColor) 0 0 2 / 0 0 2px; }
+    padding: 0 $space-size;
 
     image { padding: 4px; }
   }

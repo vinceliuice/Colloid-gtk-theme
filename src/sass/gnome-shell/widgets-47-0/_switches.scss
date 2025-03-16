@@ -1,0 +1,49 @@
+/* Switches */
+
+$switch_width: 46px;
+$switch_handle_size: 20px;
+
+.toggle-switch {
+  width: $switch_width;
+  border-radius: $circular-radius;
+  transition-duration: 100ms;
+  color: $text;
+  background: transparentize(if($variant == 'light', black, white), .85);
+
+  &:hover {
+    background: transparentize(if($variant == 'light', black, white), .8);
+  }
+
+  StIcon {
+    icon-size: $base_icon_size;
+  }
+
+  .handle {
+    margin: 3px;
+    width: $switch_handle_size;
+    height: $switch_handle_size;
+    border-radius: $circular-radius;
+    background: if($variant == 'light', white, mix(white, $background, 80%));
+    box-shadow: 0 2px 4px transparentize(black, .8);
+    transition-duration: 100ms;
+  }
+
+  &:checked {
+    background: $primary;
+    color: $primary-text;
+
+    &:hover {
+      @if $gnome_version == 'default' {
+        background-color: lighten($primary, 5%);
+        color: lighten($primary-text, 5%);
+      } @else {
+        background-color: st-lighten($primary, 5%);
+        color: st-lighten($primary-text, 5%);
+      }
+    }
+
+    .handle {
+      background: white;
+    }
+  }
+}

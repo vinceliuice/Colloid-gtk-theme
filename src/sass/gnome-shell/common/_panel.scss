@@ -47,6 +47,7 @@
 
     &.clock-display {
       box-shadow: none;
+      background: none;
 
       .clock {
         transition-duration: 150ms;
@@ -62,11 +63,12 @@
     }
 
     &.screen-recording-indicator {
-      box-shadow: inset 0 0 0 100px $error;
+      box-shadow: inset 0 0 0 1000px $error;
     }
 
     &.screen-sharing-indicator {
-      box-shadow: inset 0 0 0 100px $warning;
+      box-shadow: inset 0 0 0 1000px $warning;
+
       StBoxLayout { margin: 0 $base_padding; }
     }
 
@@ -86,13 +88,24 @@
       background-color: transparent;
       box-shadow: inset 0 0 0 1000px mix($panel-text, $panel, 15%);
 
+      @if $float == 'true' {
+        box-shadow: inset 0 0 0 1000px mix($panel-text, $panel, 15%);
+      } @else {
+        box-shadow: inset 0 0 0 1000px $panel-divider;
+      }
+
       &.clock-display {
         box-shadow: none;
         color: $panel-text-secondary;
 
         .clock {
           color: $panel-text;
-          box-shadow: inset 0 0 0 1000px mix($panel-text, $panel, 15%);
+
+          @if $float == 'true' {
+            box-shadow: inset 0 0 0 1000px mix($panel-text, $panel, 15%);
+          } @else {
+            box-shadow: inset 0 0 0 1000px $panel-divider;
+          }
         }
       }
     }
@@ -101,7 +114,12 @@
       &, &:hover {
         background-color: transparent;
         color: $panel-text;
-        box-shadow: inset 0 0 0 1000px mix($panel-text, $panel, 25%);
+
+        @if $float == 'true' {
+          box-shadow: inset 0 0 0 1000px mix($panel-text, $panel, 25%);
+        } @else {
+          box-shadow: inset 0 0 0 1000px $panel-track;
+        }
       }
 
       &.clock-display {
@@ -109,8 +127,13 @@
         color: $panel-text-secondary;
 
         .clock {
-          box-shadow: inset 0 0 0 1000px mix($panel-text, $panel, 25%);
           color: $panel-text;
+
+          @if $float == 'true' {
+            box-shadow: inset 0 0 0 1000px mix($panel-text, $panel, 25%);
+          } @else {
+            box-shadow: inset 0 0 0 1000px $panel-track;
+          }
         }
       }
     }
@@ -141,9 +164,13 @@
     // }
 
     // .panel-status-indicators-box,
-    // .panel-status-menu-box {
-    //   spacing: $base_padding / 2;
-    // }
+    .panel-status-menu-box {
+      padding: $base_padding;
+
+      .system-status-icon {
+        padding: 0;
+      }
+    }
   
     // // spacing between power icon and (optional) percentage label
     // .power-status.panel-status-indicators-box {
@@ -188,8 +215,16 @@
       }
 
       &.clock-display {
+        background-color: transparent;
+        box-shadow: none;
+
         .clock {
-          box-shadow: inset 0 0 0 1000px overlay(dark, normal);
+          @if $float == 'true' {
+            box-shadow: inset 0 0 0 1000px overlay(dark, normal);
+          } @else {
+            background-color: transparent;
+            box-shadow: none;
+          }
         }
       }
 

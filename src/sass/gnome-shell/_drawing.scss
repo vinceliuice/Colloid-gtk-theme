@@ -78,24 +78,24 @@
 
   @if $t == focus {
     color: $tc;
-    background-color: overlay($bc, focus);
     box-shadow: none !important;
+    background-color: if($bc == $primary, rgba(white, 0.08), overlay($bc, focus));
   }
 
   @if $t == hover {
     color: $tc;
-    background-color: overlay($bc, hover);
     box-shadow: none !important;
+    background-color: if($bc == $primary, rgba(white, 0.08), overlay($bc, hover));
   }
 
   @if $t == active {
     color: $tc;
-    background-color: overlay($bc, active);
     box-shadow: none !important;
+    background-color: if($bc == $primary, rgba(white, 0.12), overlay($bc, active));
   }
 
   @if $t == checked {
-    color: on($fc);
+    color: if($fc == $primary, white, on($fc));
     background-color: $fc;
     box-shadow: none !important;
   }

@@ -1,5 +1,13 @@
 /* Buttons */
 
+$primary-text: $white;
+
+@if $gnome_version == 'new' and $colortype == 'system' {
+  $primary-text: $white;
+} @else {
+  $primary-text: on($primary);
+}
+
 %button {
   @include button(normal);
   &:focus { @include button(focus); }
@@ -17,11 +25,11 @@
 }
 
 %default_button {
-  @include button(normal, $bc:$primary, $tc:on($primary),);
-  &:focus { @include button(focus, $bc:$primary, $tc:on($primary)); }
-  &:hover { @include button(hover, $bc:$primary, $tc:on($primary)); }
-  &:insensitive { @include button(insensitive, $bc:$primary, $tc:on($primary)); }
-  &:active { @include button(active, $bc:$primary, $tc:on($primary),); }
+  @include button(normal, $bc:$primary, $tc:$primary-text);
+  &:focus { @include button(focus, $bc:$primary, $tc:$primary-text); }
+  &:hover { @include button(hover, $bc:$primary, $tc:$primary-text); }
+  &:insensitive { @include button(insensitive, $bc:$primary, $tc:$primary-text); }
+  &:active { @include button(active, $bc:$primary, $tc:$primary-text); }
 }
 
 .button {

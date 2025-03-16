@@ -1,0 +1,87 @@
+//
+// Gnome Weather
+//
+
+#places-label {
+  font-weight: bold;
+}
+
+#temperature-label {
+  font-size: 32pt;
+  font-weight: 900;
+  margin-left: 9px;
+}
+
+#conditions-grid *:backdrop {
+  color: $secondary_text_color;
+}
+
+.content-view.cell {
+  font-weight: bold;
+}
+
+#locationEntry {
+  margin: $base_padding;
+}
+
+.weather-popover {
+  margin-top: $base_padding;
+}
+
+.forecast-card {
+  transition: border-radius 100ms ease-out;
+  border-radius: $button_radius;
+}
+
+.forecast-card separator {
+  background-color: $border_color;
+}
+
+#daily-forecast-box {
+  > separator:last-child {
+    background-color: transparent;
+    min-width: 0;
+  }
+}
+
+#conditions-grid,
+#attributionGrid {
+  margin-left: $base_padding * 3;
+  margin-right: $base_padding * 3;
+}
+
+#weather-page .small .forecast-card {
+  margin-left: 0;
+  margin-right: 0;
+  border-radius: 0;
+  border-width: 1px 0;
+}
+
+WeatherThermometer {
+  margin-bottom: $base_padding * 2;
+}
+
+.forecast-button {
+  margin: 0 $base_padding * 2;
+}
+
+.forecast-graphic {
+  margin: $base_padding * 3;
+}
+
+button.osd.circular {
+  border-radius: $circular_radius;
+  min-width: $small_size;
+  min-height: $small_size;
+  padding: $base_padding;
+}
+
+button.osd.circular > image {
+  padding: 0;
+}
+
+scrolledwindow.inline list,
+scrolledwindow.inline listview {
+  background: none;
+  color: inherit;
+}

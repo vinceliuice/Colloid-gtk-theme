@@ -105,22 +105,22 @@
 *:disabled { -gtk-icon-effect: dim; }
 
 .gtkstyle-fallback {
-  background-color: $background;
-  color: $text;
+  background-color: $titlebar;
+  color: $titlebar-text;
 
   &:hover {
-    background-color: darken($background, 5%);
-    color: $text;
+    background-color: darken($titlebar, 5%);
+    color: $titlebar-text;
   }
 
   &:active {
-    background-color: darken($background, 10%);
-    color: $text;
+    background-color: darken($titlebar, 10%);
+    color: $titlebar-text;
   }
 
   &:disabled {
-    background-color: $background;
-    color: $text-disabled;
+    background-color: $titlebar-backdrop;
+    color: $titlebar-text-disabled;
   }
 
   &:selected {
@@ -289,7 +289,6 @@ spinner {
   padding: 0 8px;
   border-radius: $corner-radius;
   caret-color: currentColor; // this shouldn't be needed.
-
   @include entry(normal);
 
   &:focus { @include entry(checked); }
@@ -301,16 +300,6 @@ spinner {
 
 entry {
   @extend %entry_basic;
-
-  .background:not(.csd) & {
-    @include entry(solid);
-
-    &:focus { @include entry(solid-checked); }
-
-    &:drop(active) { @include entry(solid-hover); }
-
-    &:disabled { @include entry(solid-disabled); }
-  }
 
   &.flat {
     min-height: 0;
@@ -519,8 +508,8 @@ treeview entry {
 
 button {
   min-height: 24px;
-  min-width: 16px;
-  padding: ($medium-size - 24px) / 2 ($medium-size - 16px) / 2;
+  min-width: 24px;
+  padding: ($medium-size - 24px) / 2 ($medium-size - 24px) / 2;
   border-radius: $corner-radius;
   font-weight: 500;
   @extend %button-basic;
@@ -965,7 +954,7 @@ toolbar {
   padding: 2px 3px;
   background-color: $background;
 
-  button { @extend %button-flat; }
+  // box:not(.linked) button { @extend %button-flat; }
 
   // on OSD
   .osd & { background-color: transparent; }
@@ -1056,7 +1045,7 @@ searchbar > revealer > box,
 
 searchbar > revealer > box {
   // workaround: undo the GtkContainer:border-width and use CSS padding instead
-  margin: -$space-size;
+  margin: -6px;
 }
 
 
@@ -1367,7 +1356,7 @@ headerbar {
 
   > box.left,
   > box.right { // Titlebutton space
-    padding: 0 if($window_button == 'mac', $space-size, $space-size - 2px);
+    padding: 0 if($window_button == 'mac', 6px, 4px);
   }
 
   button:not(.suggested-action):not(.destructive-action) {
@@ -1635,7 +1624,7 @@ menubar,
   > menuitem {
     transition: none;
     min-height: 20px;
-    padding: 4px 8px;
+    padding: $space-size / 2 + 1px $space-size + 2px;
     color: $titlebar-text-secondary;
     border-radius: $corner-radius;
 
@@ -1690,7 +1679,7 @@ menu {
     transition: background-color $duration $ease-out;
     min-height: 20px;
     min-width: 40px;
-    padding: 4px 8px;
+    padding: ($menuitem-size - 20px) / 2 $space-size + 2px;
     color: $text;
     font: initial;
     text-shadow: none;
@@ -1932,8 +1921,6 @@ notebook {
       }
 
       > list {
-        // @extend %circular_list;
-
         row.activatable { border-radius: $corner-radius; }
       }
     }
@@ -2025,7 +2012,7 @@ notebook {
       }
 
       // colors the button like the label, overridden otherwise
-      button.flat {
+      button.flat, button.close-button {
         @extend %small-button;
 
         &:last-child {
@@ -2037,11 +2024,6 @@ notebook {
           margin-left: $space-size - 12px;
           margin-right: $space-size;
         }
-      }
-
-      button.close-button {
-        min-width: $small-size;
-        min-height: $small-size;
       }
     }
 
@@ -3274,7 +3256,7 @@ stacksidebar.sidebar {
   }
 
   row {
-    min-height: 32px;
+    min-height: $medium_size;
     padding: 0 $space-size / 2;
     border-radius: $corner-radius;
 
@@ -3327,7 +3309,7 @@ placessidebar.sidebar {
 
   row {
     // Needs overriding of the GtkListBoxRow padding
-    min-height: 32px;
+    min-height: $medium_size;
     margin: 0; // Remove unwanted hard-coded vertical margins with -1px
     padding: 0;
     border-radius: $corner-radius;
@@ -3798,7 +3780,7 @@ decoration {
   min-height: 16px;
   min-width: 16px;
   padding: 0;
-  margin: 0 $space-size - 2px;
+  margin: 0 $space-size / 2 + 1px;
 
   &.minimize, &.maximize, &.close {
     color: transparent;
@@ -3854,7 +3836,7 @@ decoration {
   min-height: 22px;
   min-width: 22px;
   padding: 0;
-  margin: 0 $space-size - 2px;
+  margin: 0 $space-size / 2 + 1px;
 
   &.minimize, &.maximize, &.close {
     color: $titlebar-text-secondary;
@@ -4021,12 +4003,18 @@ stackswitcher {
 popover.emoji-picker {
   padding: 0;
 
-  entry {
+  &.background entry {
     border-bottom: 1px solid $divider;
     border-image: none;
     border-radius: 0;
     box-shadow: none;
     background-color: transparent;
+
+    &:focus {
+      border-bottom: 1px solid $primary;
+      box-shadow: inset 0 -1px $primary;
+      background-color: transparent;
+    }
   }
 
   scrolledwindow { border-bottom: 1px solid $divider; }

@@ -1982,7 +1982,7 @@ treeview.view {
 
   > header {
     > button {
-      @extend %row_activatable;
+      // @extend %row_activatable;
 
       padding: 2px 6px;
       border-style: none solid solid none;
@@ -2183,6 +2183,10 @@ popover {
     stack > box { padding: 0; }
 
     > box > button { margin: 0; }
+
+    > statuspage.compact > scrolledwindow > viewport > box {
+      margin: $space-size * 2;
+    }
   }
 
   // FIXME: Use the popover color instead of transparent as a workaround for .view
@@ -3733,7 +3737,7 @@ list {
   background-clip: padding-box;
 
   > row {
-    padding: $space-size;
+    padding: 2px;
     background-clip: padding-box;
   }
 
@@ -4619,7 +4623,7 @@ separator.sidebar {
 
   > row {
     min-height: $small-size;
-    padding: $space-size;
+    padding: $space-size / 2;
     border-radius: $corner-radius;
     margin: $space-size / 4 $space-size;
   }
@@ -5101,8 +5105,8 @@ window {
   min-height: 16px;
   min-width: 16px;
   padding: ($medium-size - 16px) / 2 0;
-  margin-left: $space-size - 2px;
-  margin-right: $space-size - 2px;
+  margin-left: $space-size / 2 + 1px;
+  margin-right: $space-size / 2 + 1px;
 
   &.minimize, &.maximize, &.close {
     color: transparent;
