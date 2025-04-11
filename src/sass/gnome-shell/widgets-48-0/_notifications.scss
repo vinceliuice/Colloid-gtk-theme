@@ -1,0 +1,62 @@
+/* Notifications & Message Tray */
+
+$notification_banner_height: 64px;
+$notification_banner_width: 34em;
+
+// Banner notifications
+.notification-banner {
+  min-height: $notification_banner_height;
+  width: $notification_banner_width;
+  margin: 12px 8px 8px;
+  border-radius: $base_radius;
+  color: $text-secondary;
+  background-color: $popover;
+  text-shadow: none;
+  border-radius: $base_radius + $base_padding * 2;
+  padding: $base_padding;
+
+  @if $rimless == 'false' and $variant == 'dark' {
+    border: 1px solid $window-border;
+    box-shadow: inset 0 0 0 1px highlight($popover);
+  } @else {
+    border: none;
+    box-shadow: 0 3px 6px rgba(black, 0.25);
+  }
+
+  &:hover, &:active, &:focus {
+    color: $text;
+    background-color: $popover;
+  }
+}
+
+.notification-buttons-bin {
+  border: none;
+  spacing: 0;
+}
+
+.notification-button {
+  min-height: $item_size + $base_padding;
+  padding: 0 $base_padding * 3;
+  background-color: $fill;
+  color: $text-secondary;
+  font-weight: 500;
+  border: none;
+  border-radius: $base_radius;
+
+  &:focus {
+    background-color: transparent;
+    color: $text;
+    box-shadow: inset 0 0 0 2px $divider;
+  }
+
+  &:hover, &:focus:hover {
+    background-color: $divider;
+    color: $text;
+    box-shadow: none;
+  }
+
+  &:active {
+    background-color: $track;
+    color: $text;
+  }
+}

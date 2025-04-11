@@ -2,7 +2,7 @@
 
 %theme_dialogs {
   background-color: $popover;
-  border-radius: $modal_radius + $base_padding / 2;
+  border-radius: $modal_radius + $base_padding;
 
   @if $rimless == 'false' {
     border: 1px solid $window-border;
@@ -68,7 +68,7 @@
 // modal dialog
 .modal-dialog {
   color: $text-secondary;
-  padding: $base_padding * 1.5;
+  padding: $base_padding * 2;
   @extend %theme_dialogs;
 
   .modal-dialog-content-box {

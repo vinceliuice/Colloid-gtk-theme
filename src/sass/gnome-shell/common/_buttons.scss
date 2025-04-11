@@ -56,8 +56,9 @@ $primary-text: $white;
 
 .icon-button {
   border-radius: $circular_radius;
-  padding: $base_padding;
+  padding: $scaled_padding * 2;
   min-height: $scalable_icon_size;
+  @extend %button;
 
   StIcon {
     icon-size: $scalable_icon_size;

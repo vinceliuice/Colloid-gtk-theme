@@ -17,11 +17,11 @@
   spacing-columns: $base_padding * 2;
 }
 
-.quick-toggle, .quick-menu-toggle {
+.quick-toggle, .quick-toggle-has-menu {
   border-radius: $base_radius;
   min-width: 12em;
   max-width: 12em;
-  min-height: 44px;
+  min-height: $scalable_icon_size * 3; // use icon size so the button scales
   border: none;
 }
 
@@ -59,7 +59,7 @@
     }
   }
 
-  & > StBoxLayout { spacing: $base_padding; }
+  & > StBoxLayout { spacing: $base_padding * 1.5; }
 
   /* Move padding into the box; this is to allow menu arrows
      to extend to the border */
@@ -68,31 +68,33 @@
   &:ltr > StBoxLayout { padding-left: $base_padding * 2.5; }
   &:rtl > StBoxLayout { padding-right: $base_padding * 2.5; }
 
-  .quick-toggle-title { font-weight: bold; }
+  .quick-toggle-title {
+    @extend %heading;
+  }
 
-  & StBoxLayout > .quick-toggle-subtitle {
+  .quick-toggle-subtitle {
+    @extend %caption;
     font-weight: normal;
-    font-size: 12px;
   }
 
   .quick-toggle-icon { icon-size: $base_icon_size; }
 }
 
-.quick-menu-toggle {
+.quick-toggle-has-menu {
   & .quick-toggle {
     min-width: auto;
     max-width: auto;
 
     &:ltr { border-radius: $base_radius 0 0 $base_radius; }
-    &:ltr > StBoxLayout { padding-right: $base_padding * 1.5; }
+    &:ltr > StBoxLayout { padding-right: $scaled_padding * 1.5; }
     &:rtl { border-radius: 0 $base_radius $base_radius 0; }
-    &:rtr > StBoxLayout { padding-left: $base_padding * 1.5; }
+    &:rtr > StBoxLayout { padding-left: $scaled_padding * 1.5; }
 
     &:ltr:last-child { border-radius: $base_radius; }
     &:rtl:last-child { border-radius: $base_radius; }
   }
 
-  .quick-toggle-arrow {
+  .quick-toggle-menu-button {
     background-color: $button !important;
     padding: $base_padding $base_padding * 1.75;
     border: none !important;
@@ -132,34 +134,23 @@
     &:ltr { border-radius: 0 $base_radius $base_radius 0; }
     &:rtl { border-radius: $base_radius 0 0 $base_radius; }
   }
+
+  .quick-toggle-separator {
+    width: 0;
+  }
 }
 
 .quick-slider {
   & > StBoxLayout { spacing: $base_padding; }
 
+  .icon-button {
+    padding: $base_padding + 2px;
+  }
+
   .slider-bin {
     &:focus { @include button(focus); }
-    min-height: 16px; // slider size
     padding: $base_padding;
     border-radius: $circular_radius;
-  }
-
-  .quick-toggle-icon {
-    icon-size: $base_icon_size;
-  }
-
-  .icon-button {
-    background-color: transparent;
-    color: $text !important;
-    padding: $base_padding * 1.5;
-
-    &:hover {
-      background-color: $fill;
-    }
-
-    &:active {
-      background-color: $divider;
-    }
   }
 }
 
@@ -167,8 +158,15 @@
   background-color: $popover !important;
   color: $text !important;
   border-radius: $base_radius + $base_padding * 2 !important;
-  padding: $base_padding * 2;
+  padding: $scaled_padding * 2;
   margin: $base_padding * 2 $base_padding * 3 0;
+  border: none;
+  box-shadow: 0 1px 3px rgba(black, 0.15);
+
+  &:insensitive {
+    // override insensitive style on submenu
+    @include button(normal);
+  }
 
   .popup-menu-item {
     border-radius: $base_radius !important;
@@ -183,16 +181,23 @@
       background-color: rgba($text, 0.2) !important;
     }
 
-    > StIcon { -st-icon-style: symbolic; }
+    > StIcon {
+      -st-icon-style: symbolic;
+      icon-size: $base_icon_size;
+    }
+  }
+
+  .popup-separator-menu-item {
+    padding: 0  !important;
   }
 
   & .header {
-    spacing-rows: 0.5 * $base_padding;
+    spacing-rows: $base_padding * 0.5;
     spacing-columns: $base_padding * 2;
-    padding-bottom: 2 * $base_padding;
+    padding-bottom: $base_padding * 2;
 
     & .icon {
-      icon-size: $base_icon_size * 1.5; // a non-standard symbolic size but ok
+      icon-size: $medium_icon_size; // a non-standard symbolic size but ok
       border-radius: $base_radius;
       padding: 1.5 * $base_padding;
       background-color: on($popover, divider) !important;
@@ -214,13 +219,10 @@
 }
 
 .quick-settings-system-item {
-  & > StBoxLayout { spacing: 2 * $base_padding; }
+  & > StBoxLayout { spacing: $base_padding * 2; }
 
   .icon-button {
-    background-color: $button;
-    color: $text;
     border-radius: $base_radius;
-    @extend %button;
 
     > StIcon {
       -st-icon-style: symbolic;
@@ -240,7 +242,7 @@
 }
 
 .nm-network-item {
-  .wireless-secure-icon { icon-size: 0.5 * $base_icon_size; }
+  .wireless-secure-icon { icon-size: $scalable_icon_size * 0.5; } // half-size symbolic
 }
 
 .bt-device-item {
@@ -256,10 +258,16 @@
 
 .device-subtitle { color: $text-disabled; }
 
+.keyboard-brightness-level {
+  spacing: $base_padding;
+
+  .button:checked { @extend %default_button; }
+}
+
 // background apps
 
 .background-apps-quick-toggle {
-  min-height: 40px;
+  min-height: to_em(40px);
   background-color: transparent;
 
   & StIcon { icon-size: $base_icon_size !important; }
@@ -269,13 +277,14 @@
   & .title { @extend %heading; }
   & .subtitle { @extend %caption; }
   & .popup-menu-icon {
-    icon-size: $base_icon_size * 2 !important;
+    icon-size: $medium_icon_size !important;
     -st-icon-style: regular !important;
   }
   & .icon-button {
-    @extend .icon-button;
     padding: $base_padding;
   }
-
+  & .spinner {
+    padding: $base_padding;
+  }
   &.popup-inactive-menu-item { color: $text; }
 }
