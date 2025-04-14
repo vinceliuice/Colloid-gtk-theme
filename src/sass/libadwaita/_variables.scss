@@ -12,8 +12,8 @@ $menu_margin: $base_padding; //margin around menuitems & sidebar items
 $menu_padding: $base_padding * 2; //inner menuitem padding
 
 $small_size: if($compact == 'false', 24px, 22px);
-$medium_size: if($compact == 'false', 36px, 32px);
-$large_size: if($compact == 'false', 48px, 40px);
+$medium_size: if($compact == 'false', 34px, 30px);
+$large_size: if($compact == 'false', 46px, 38px);
 
 $menuitem_size: if($compact == 'false', 28px, 24px);
 

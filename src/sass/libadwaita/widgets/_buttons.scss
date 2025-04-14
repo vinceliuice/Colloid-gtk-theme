@@ -154,11 +154,11 @@ button {
 
     > box,
     > box > box {
-      border-spacing: 4px;
+      border-spacing: $base_margin;
 
       > label {
-        padding-left: 2px;
-        padding-right: 2px;
+        padding-left: $base_margin / 2;
+        padding-right: $base_margin / 2;
       }
     }
   }
@@ -167,10 +167,10 @@ button {
     padding-left: $base_padding * 1.5;
     padding-right: $base_padding * 1.5;
 
-    > box { border-spacing: 4px; }
+    > box { border-spacing: $base_margin; }
 
     &.text-button {
-      > box { border-spacing: 4px; }
+      > box { border-spacing: $base_margin; }
     }
   }
 
@@ -183,8 +183,8 @@ button {
   // big standalone buttons like in Documents pager
   @at-root %osd_button,
   &.osd {
-    min-width: 32px;
-    min-height: 32px;
+    min-width: $medium_size;
+    min-height: $medium_size;
     @include focus-ring($outer: true, $offset: 1px, $transition: $button_transition);
 
     color: $osd_fg_color;
@@ -270,13 +270,13 @@ button {
     // padding added too.
 
     > label {
-      padding: 0 6px;
-      margin: 0 -6px;
+      padding: 0 $base_padding;
+      margin: 0 -$base_padding;
     }
 
     > image {
-      padding: 3px 6px;
-      margin: -3px -6px;
+      padding: $base_padding / 2 $base_padding;
+      margin: -$base_padding / 2 -$base_padding;
     }
 
     &.text-button { min-width: 100px; }
@@ -290,7 +290,7 @@ button {
   // hide separators
   &.font {
     separator { background-color: transparent; }
-    > box { border-spacing: 6px; }
+    > box { border-spacing: $base_padding; }
     > box > box > label { font-weight: bold; }
   }
 

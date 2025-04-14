@@ -7,7 +7,7 @@
   margin: if($gnome_version == 'default', $base_padding, $base_padding / 2);
   border-style: none;
   border-radius: $button_radius;
-  background-color: $accent_color;
+  background-color: $accent_bg_color;
   color: $accent_fg_color;
   box-shadow: $shadow-z3;
 

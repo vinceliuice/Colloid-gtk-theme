@@ -182,20 +182,20 @@
   }
 
   @if $t == checked {
-    background-color: $accent_color;
+    background-color: $accent_bg_color;
     color: $accent_fg_color;
   }
 
   @if $t == checked-hover {
     outline-color: transparent;
-    background-color: gtkmix($accent_fg_color, $accent_color, 5%);
+    background-color: gtkmix($accent_fg_color, $accent_bg_color, 5%);
     color: $accent_fg_color;
   }
 
   @if $t == checked-active {
     animation: none;
     outline-color: transparent;
-    background-color: gtkmix($accent_fg_color, $accent_color, 12%);
+    background-color: gtkmix($accent_fg_color, $accent_bg_color, 12%);
     background-image: none;
     color: $accent_fg_color;
   }
