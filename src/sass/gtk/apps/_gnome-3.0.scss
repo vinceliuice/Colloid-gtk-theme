@@ -82,23 +82,55 @@ $nautilus: $base-alt;
     &, placessidebar { border-radius: 0; }
   }
 
-  // Floating status bar
   .floating-bar {
-    min-height: 32px;
-    padding: 0;
     margin: $space-size;
-    border: none;
+    padding: 2px;
+    box-shadow: $shadow-z3;
     border-radius: $corner-radius;
     background-color: $primary;
     color: on($primary);
-    box-shadow: $shadow-z3;
+    border: none;
 
     button {
-      margin: (32px - $small-size) / 2;
-      color: on($primary);
-
-      @extend %small-button;
+      @extend %button-on-dark;
+      min-height: 16px;
+      min-width: 16px;
+      padding: 2px;
+      margin: $space-size - 4px;
     }
+  }
+}
+
+// Floating status bar
+.floating-bar {
+  min-height: 16px + $space-size * 2;
+  padding: 0;
+  // margin: $space-size;
+  border: 1px solid $solid-border;
+  border-radius: 0;
+  background-color: $base;
+  color: $text;
+  // box-shadow: $shadow-z3;
+
+  &.bottom.right {
+    border-top-left-radius: $corner-radius;
+    border-right: none;
+    border-bottom: none;
+  }
+
+  &.bottom.left {
+    border-top-right-radius: $corner-radius;
+    border-left: none;
+    border-bottom: none;
+  }
+
+  button {
+    min-height: 16px;
+    min-width: 16px;
+    padding: 0;
+    margin: $space-size;
+    border-radius: $circular-radius;
+    @extend %button-flat;
   }
 }
 

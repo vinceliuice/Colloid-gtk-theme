@@ -197,9 +197,15 @@ dialog.xfsm-logout-dialog {
 
     widget.view {
       // padding: $space-size; // Not work ?
+      border-radius: $corner-radius;
+    }
+
+    .view {
+      &:hover { color: $text; }
 
       &:selected {
-        @extend %selected_items;
+        color: on($primary);
+        background: $primary;
       }
     }
   }
