@@ -2,17 +2,21 @@
 // Nautilus
 //
 .floating-bar {
-  min-height: 32px;
-  padding: 0;
-  margin: if($gnome_version == 'default', $base_padding, $base_padding / 2);
+  min-height: $small_size;
+  padding: ($medium_size - $small_size) / 2;
+  margin: $base_padding;
   border-style: none;
   border-radius: $button_radius;
   background-color: $accent_bg_color;
   color: $accent_fg_color;
   box-shadow: $shadow-z3;
 
+  .nautilus-window & {
+    margin: if($gnome_version == 'default', $base_padding, $base_padding / 2);
+  }
+
   button {
-    margin: (32px - $small_size) / 2;
+    margin: 0;
     color: $accent_fg_color;
 
     @extend %small_button;
