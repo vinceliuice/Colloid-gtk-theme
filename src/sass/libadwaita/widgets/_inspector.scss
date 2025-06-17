@@ -1,0 +1,77 @@
+.accent-color-row color {
+  min-width: 16px;
+  min-height: 16px;
+  border-radius: 16px;
+}
+
+.accent-color-row color:disabled {
+  opacity: $disabled_opacity;
+}
+
+adaptive-preview {
+  headerbar.adaptive-mode-flat {
+    @extend .flat;
+  }
+
+  .device-view {
+    background: #101011;
+    color: white;
+    box-shadow: 0 0 0 2px RGB(255 255 255 / 15%);
+    margin: 2px;
+    padding: var(--top-bezel) var(--side-bezel) var(--bottom-bezel);
+    border-radius: var(--top-device-corner-radius)
+                   var(--top-device-corner-radius)
+                   var(--bottom-device-corner-radius)
+                   var(--bottom-device-corner-radius);
+
+    --window-radius: 0px;
+
+    /* Hack to make GtkGraphicsOffload disable offload in this case */
+    opacity: 99.9999999999999%;
+
+    &.custom {
+      padding: 0;
+      border-radius: 0;
+      margin: 0;
+      box-shadow: 0 2px 8px 2px RGB(0 0 0 / 7%),
+                  0 3px 20px 10px RGB(0 0 0 / 5%),
+                  0 6px 32px 16px RGB(0 0 0 / 2%),
+                  0 0 0 1px RGB(0 0 0 / 5%);
+    }
+
+    &.highlight {
+      background: oklab(from $accent_bg_color 0.5 a b);
+      box-shadow: none;
+
+      .screen-view .shell-top-bar,
+      .screen-view .shell-bottom-bar {
+        background: none;
+      }
+
+      &.custom {
+        box-shadow: 0 2px 8px 2px RGB(0 0 0 / 7%),
+                    0 3px 20px 10px RGB(0 0 0 / 5%),
+                    0 6px 32px 16px RGB(0 0 0 / 2%),
+                    0 0 0 3px oklab(from $accent_bg_color 0.5 a b);
+      }
+    }
+
+    .screen-view {
+      border-radius: var(--top-screen-corner-radius)
+                     var(--top-screen-corner-radius)
+                     var(--bottom-screen-corner-radius)
+                     var(--bottom-screen-corner-radius);
+
+      &.outline {
+        filter: drop-shadow( 3px 0 0 $accent_bg_color)
+                drop-shadow(-3px 0 0 $accent_bg_color)
+                drop-shadow(0  3px 0 $accent_bg_color)
+                drop-shadow(0 -3px 0 $accent_bg_color);
+      }
+
+      .shell-top-bar, .shell-bottom-bar {
+        background: black;
+      }
+    }
+  }
+}

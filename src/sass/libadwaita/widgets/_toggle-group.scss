@@ -1,0 +1,226 @@
+/******************
+ * AdwToggleGroup *
+ ******************/
+
+$toggle_transition: color 200ms $ease-out-quad,
+                    background 200ms $ease-out-quad,
+                    box-shadow 200ms $ease-out-quad;
+
+toggle-group {
+  ---group-padding: 3px;
+
+  background: $button_color;
+  border-radius: $button_radius;
+  padding: var(---group-padding);
+
+  &:disabled {
+    background-color: color-mix(in srgb, $button_color var(--disabled-opacity), transparent);
+  }
+
+  > toggle {
+    border-radius: calc(#{$button_radius} - var(---group-padding);
+    font-weight: bold;
+    min-width: 34px;
+    min-height: calc(34px - var(---group-padding) * 2);
+
+    &.image-button > image:disabled {
+      filter: opacity($strong_disabled_opacity);
+    }
+
+    &.text-button {
+      min-width: calc(18px + var(---group-padding) * 2);
+      padding-left: calc(11px - var(---group-padding));
+      padding-right: calc(11px - var(---group-padding));
+
+      > label:disabled {
+        filter: opacity($strong_disabled_opacity);
+      }
+    }
+
+    &.image-text-button {
+      min-width: calc(10px + var(---group-padding) * 2);
+      padding-left: calc(11px - var(---group-padding));
+      padding-right: calc(11px - var(---group-padding));
+
+      > buttoncontent > box > label {
+        padding: 0;
+      }
+
+      > buttoncontent > box > image:disabled,
+      > buttoncontent > box > label:disabled {
+        filter: opacity($strong_disabled_opacity);
+      }
+    }
+
+    @include focus-ring($transition: $toggle_transition, $outer: true, $offset: 0);
+
+    &:hover {
+      background-color: $hover_color;
+    }
+
+    &:active, &.keyboard-activating {
+      background-color: $active_color;
+    }
+
+    &:checked {
+      background-color: var(--active-toggle-bg-color);
+      color: var(--active-toggle-fg-color);
+      box-shadow: 0 1px 3px 1px RGB(0 0 6 / 7%),
+                  0 2px 6px 2px RGB(0 0 6 / 3%);
+
+      &:disabled {
+        background-color: color-mix(in srgb, var(--active-toggle-bg-color) var(--disabled-opacity), transparent);
+        box-shadow: none;
+      }
+    }
+  }
+
+  &.osd,
+  .osd & {
+    --active-toggle-bg-color: white;
+    --active-toggle-fg-color: rgb(0 0 0 / 80%);
+
+    &:not(.flat) > toggle:checked {
+      --accent-bg-color: rgb(0 0 0 / 75%);
+      --accent-fg-color: white;
+
+      --standalone-color-oklab: #{$standalone-color-oklab-light};
+      --accent-color: oklab(from var(--accent-bg-color) var(--standalone-color-oklab));
+      --destructive-color: oklab(from var(--destructive-bg-color) var(--standalone-color-oklab));
+      --success-color: oklab(from var(--success-bg-color) var(--standalone-color-oklab));
+      --warning-color: oklab(from var(--warning-bg-color) var(--standalone-color-oklab));
+      --error-color: oklab(from var(--error-bg-color) var(--standalone-color-oklab));
+
+      @include focus-ring($transition: $toggle_transition, $outer: true, $offset: 1px);
+
+      &:focus:focus-visible {
+        outline-color: color-mix(in srgb, RGB(255 255 255 / 75%) $focus_border_opacity, transparent);
+      }
+
+      box-shadow: 0 1px 3px 1px RGB(0 0 6 / 7%),
+                  0 2px 6px 2px RGB(0 0 6 / 3%);
+
+      &:disabled {
+        box-shadow: none;
+      }
+    }
+  }
+
+  &.vertical > toggle:not(.text-button):not(.image-text-button) {
+    min-width: calc(34px - var(---group-padding) * 2);
+  }
+
+  > separator {
+    transition: opacity 200ms $ease-out-quad;
+
+    &.horizontal {
+      margin: calc(6px - var(---group-padding)) 1px;
+    }
+
+    &.vertical {
+      margin: 1px calc(6px - var(---group-padding));
+    }
+
+    &.hidden {
+      opacity: 0;
+    }
+
+    &:disabled {
+      filter: Opacity(var(--disabled-opacity));
+    }
+  }
+
+  &.round {
+    border-radius: 17px;
+
+    toggle {
+      border-radius: calc(17px - var(---group-padding));
+
+      &.text-button,
+      &.image-text-button {
+        padding-left: calc(15px - var(---group-padding));
+        padding-right: calc(15px - var(---group-padding));
+      }
+    }
+
+    separator {
+      &.horizontal {
+        margin: calc(9px - var(---group-padding)) 1px;
+      }
+
+      &.vertical {
+        margin: 1px calc(9px - var(---group-padding));
+      }
+    }
+  }
+
+  &.flat {
+    ---group-padding: 0px;
+    background: none;
+    color: inherit;
+    box-shadow: none;
+
+    > toggle {
+      @include focus-ring($transition: $button_transition);
+
+      &:checked {
+        background-color: $selected_color;
+        color: inherit;
+        box-shadow: none;
+
+        &:hover {
+          background-color: $selected_hover_color;
+        }
+
+        &:active, &.keyboard-activating {
+          background-color: $selected_active_color;
+        }
+
+        &:disabled {
+          background-color: color-mix(in srgb, $selected_color var(--disabled-opacity), transparent);
+        }
+      }
+    }
+
+    > separator {
+      background: none;
+    }
+  }
+}
+
+/*************************
+ * AdwInlineViewSwitcher *
+ *************************/
+
+inline-view-switcher > toggle-group {
+  &.icons > toggle {
+    min-width: 34px;
+  }
+
+  &.labels > toggle {
+    min-width: calc(18px + var(---group-padding) * 2);
+
+    > widget > indicatorbin {
+      padding-left: calc(11px - var(---group-padding));
+      padding-right: calc(11px - var(---group-padding));
+
+      > label {
+        padding: 0 6px;
+      }
+
+      > indicator, > mask {
+        transform: translateY(2px);
+      }
+    }
+  }
+
+  &.both > toggle {
+    min-width: calc(10px + var(---group-padding) * 2);
+
+    > widget > box {
+      padding-left: calc(15px - var(---group-padding));
+      padding-right: calc(15px - var(---group-padding));
+      border-spacing: 6px;
+    }
+  }
+}

@@ -132,6 +132,9 @@ $dimmer_opacity: 0.3;
 $disabled_opacity: 0.45;
 $strong_disabled_opacity: 0.3;
 
+$standalone-color-oklab-light: Min(l, 0.5) a b;
+$standalone-color-oklab-dark: Max(l, 0.85) a b;
+
 @if $gnome_version == 'new' {
 :root {
   --accent-blue: #3584e4;
