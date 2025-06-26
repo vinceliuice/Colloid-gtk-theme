@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="32"
+   height="32"
+   viewBox="0 0 32 32"
+   version="1.1"
+   id="svg2"
+   sodipodi:docname="close-active.svg"
+   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs2" />
+  <sodipodi:namedview
+     id="namedview2"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="13.700194"
+     inkscape:cx="9.8903709"
+     inkscape:cy="18.795354"
+     inkscape:window-width="1600"
+     inkscape:window-height="831"
+     inkscape:window-x="0"
+     inkscape:window-y="37"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg2"
+     showgrid="false" />
+  <g
+     fill="#ffffff"
+     id="g2"
+     style="fill:#000000;fill-opacity:1">
+    <circle
+       cx="16"
+       cy="16"
+       r="16"
+       opacity="0.2"
+       id="circle2"
+       style="stroke-width:1.33328;opacity:0.08;fill:#000000;fill-opacity:1" />
+  </g>
+  <path
+     d="m 10.743741,10.000528 c -0.18994,0 -0.37988,0.07221 -0.525425,0.217804 -0.291088,0.291207 -0.291088,0.759999 0,1.051221 L 14.948763,16 10.218316,20.730447 c -0.291088,0.291208 -0.291088,0.76 0,1.051222 0.291089,0.291208 0.76003,0.291208 1.051237,0 L 16,17.051222 l 4.730447,4.730447 c 0.291088,0.291208 0.75997,0.291208 1.051237,0 0.291088,-0.291207 0.291088,-0.760001 0,-1.051222 L 17.051237,16 21.781684,11.269553 c 0.291088,-0.291207 0.291088,-0.76 0,-1.051221 -0.291089,-0.2912085 -0.76003,-0.2912085 -1.051237,0 L 16,14.948778 11.269553,10.218332 c -0.145544,-0.145604 -0.335485,-0.217804 -0.525425,-0.217804 z"
+     fill="#363636"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     stroke-width="2.8471"
+     style="paint-order:stroke fill markers;fill:#000000;fill-opacity:1;opacity:0.6"
+     id="path362" />
+</svg>
