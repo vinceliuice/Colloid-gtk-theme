@@ -82,7 +82,7 @@ OPTIONS:
                           2. fixed                       Using fixed theme colors (that will break light/dark mode switch)
 
   --tweaks                Specify versions for tweaks
-                          1. [nord|dracula|gruvbox|everforest|catppuccin|all]  (Nord/Dracula/Gruvbox/Everforet/Catppuccin/all) ColorSchemes version
+                          1. [nord|dracula|gruvbox|everforest|catppuccin|all]  (Nord/Dracula/Gruvbox/Everforest/Catppuccin/all) ColorSchemes version
                           2. black                       Blackness color version
                           3. rimless                     Remove the 1px border about windows and menus
                           4. normal                      Normal windows button style like gnome default theme (titlebuttons: max/min/close)
@@ -161,6 +161,10 @@ install() {
   mkdir -p                                                                                   "${THEME_DIR}-xhdpi/xfwm4"
   cp -r "${SRC_DIR}/main/xfwm4/themerc"                                                      "${THEME_DIR}-xhdpi/xfwm4/themerc"
   sed -i "s/button_offset=6/button_offset=12/"                                               "${THEME_DIR}-xhdpi/xfwm4/themerc"
+
+  mkdir -p                                                                                   "${THEME_DIR}/labwc"
+  cp "${SRC_DIR}/main/labwc/themerc${color}${scheme}"                                        "${THEME_DIR}/labwc/themerc"
+  cp -r "${SRC_DIR}/assets/labwc/assets${color}/"*.svg                                       "${THEME_DIR}/labwc/"
 
   mkdir -p                                                                                   "${THEME_DIR}/plank"
   if [[ "$color" == '-Light' ]]; then
