@@ -162,6 +162,10 @@ install() {
   cp -r "${SRC_DIR}/main/xfwm4/themerc"                                                      "${THEME_DIR}-xhdpi/xfwm4/themerc"
   sed -i "s/button_offset=6/button_offset=12/"                                               "${THEME_DIR}-xhdpi/xfwm4/themerc"
 
+  mkdir -p                                                                                   "${THEME_DIR}/labwc"
+  cp "${SRC_DIR}/main/labwc/themerc${color}${scheme}"                                        "${THEME_DIR}/labwc/themerc"
+  cp -r "${SRC_DIR}/assets/labwc/assets${color}/"*.svg                                       "${THEME_DIR}/labwc/"
+
   mkdir -p                                                                                   "${THEME_DIR}/plank"
   if [[ "$color" == '-Light' ]]; then
     cp -r "${SRC_DIR}/main/plank/theme-Light${scheme}/"*                                     "${THEME_DIR}/plank"

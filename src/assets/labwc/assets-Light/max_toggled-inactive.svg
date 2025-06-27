@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="32"
+   height="32"
+   viewBox="0 0 32 32"
+   version="1.1"
+   id="svg2"
+   sodipodi:docname="max_toggled-inactive.svg"
+   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs2" />
+  <sodipodi:namedview
+     id="namedview2"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="13.700194"
+     inkscape:cx="9.7443876"
+     inkscape:cy="18.795354"
+     inkscape:window-width="1600"
+     inkscape:window-height="831"
+     inkscape:window-x="0"
+     inkscape:window-y="37"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg2"
+     showgrid="false" />
+  <g
+     fill="#ffffff"
+     id="g2"
+     style="fill:#000000;fill-opacity:1">
+    <circle
+       cx="16"
+       cy="16"
+       r="16"
+       opacity="0.2"
+       id="circle2"
+       style="stroke-width:1.33328;opacity:0.08;fill:#000000;fill-opacity:1" />
+  </g>
+  <g
+     transform="matrix(1.5,0,0,1.5,-162.5,-1072.043)"
+     id="g2825">
+    <g
+       style="opacity:0.26;fill:#fafafa"
+       id="g2823">
+      <path
+         d="M 8,6 C 6.892,6 6,6.892 6,8 v 2 c 0,1.108 0.892,2 2,2 h 2 c 1.108,0 2,-0.892 2,-2 V 8 C 12,6.892 11.108,6 10,6 Z m 0,1 h 2 c 0.554,0 1,0.446 1,1 v 2 c 0,0.554 -0.446,1 -1,1 H 8 C 7.446,11 7,10.554 7,10 V 8 C 7,7.446 7.446,7 8,7"
+         style="opacity:1;fill:#000000;paint-order:stroke fill markers"
+         transform="translate(109,717.362)"
+         id="path2819" />
+      <path
+         d="M 10,4 C 8.892,4 8,4.892 8,6 H 9 C 9,5.446 9.446,5 10,5 h 2 c 0.554,0 1,0.446 1,1 v 2 c 0,0.554 -0.446,1 -1,1 v 1 c 1.108,0 2,-0.892 2,-2 V 6 C 14,4.892 13.108,4 12,4 Z"
+         opacity=".35"
+         style="opacity:0.35;fill:#000000;paint-order:stroke fill markers"
+         transform="translate(109,717.362)"
+         id="path2821" />
+    </g>
+  </g>
+</svg>
