@@ -87,6 +87,7 @@ OPTIONS:
                           3. rimless                     Remove the 1px border about windows and menus
                           4. normal                      Normal windows button style like gnome default theme (titlebuttons: max/min/close)
                           5. float                       Floating gnome-shell panel style
+                          6. sharp                       Sharp edges without rounded corners
 
   -r, --remove,
   -u, --uninstall         Uninstall/Remove installed themes or links
@@ -393,6 +394,11 @@ while [[ $# -gt 0 ]]; do
             echo -e "\nInstall Floating Gnome-Shell Panel version! ..."
             shift
             ;;
+          sharp)
+            sharp="true"
+            echo -e "\nSharp style version! ..."
+            shift
+            ;;
           -*)
             break
             ;;
@@ -531,6 +537,10 @@ gnome_shell_version() {
   fi
 }
 
+sharp_edges(){
+  sed -i "/\$sharp:/s/false/true/" "${SRC_DIR}/sass/_tweaks-temp.scss"
+}
+
 theme_color() {
   if [[ "$theme" != '' ]]; then
     case "$theme" in
@@ -598,6 +608,10 @@ theme_tweaks() {
 
   if [[ "$float" = "true" ]]; then
     float_panel
+  fi
+
+  if [[ "$sharp" = "true" ]]; then
+    sharp_edges
   fi
 }
 
