@@ -7,30 +7,28 @@ $toggle_transition: color 200ms $ease-out-quad,
                     box-shadow 200ms $ease-out-quad;
 
 toggle-group {
-  ---group-padding: 3px;
-
   background: $button_color;
-  border-radius: $button_radius;
-  padding: var(---group-padding);
+  border-radius: $button_radius + $base_padding / 2;
+  padding: $base_padding / 2;
 
   &:disabled {
-    background-color: color-mix(in srgb, $button_color var(--disabled-opacity), transparent);
+    background-color: color-mix(in srgb, $button_color 45%, transparent);
   }
 
   > toggle {
-    border-radius: calc(#{$button_radius} - var(---group-padding);
+    border-radius: $button_radius;
     font-weight: bold;
     min-width: 34px;
-    min-height: calc(34px - var(---group-padding) * 2);
+    min-height: 34px - $base_padding;
 
     &.image-button > image:disabled {
       filter: opacity($strong_disabled_opacity);
     }
 
     &.text-button {
-      min-width: calc(18px + var(---group-padding) * 2);
-      padding-left: calc(11px - var(---group-padding));
-      padding-right: calc(11px - var(---group-padding));
+      min-width: 18px - $base_padding;
+      padding-left: 11px - $base_padding / 2;
+      padding-right: 11px - $base_padding / 2;
 
       > label:disabled {
         filter: opacity($strong_disabled_opacity);
@@ -38,9 +36,9 @@ toggle-group {
     }
 
     &.image-text-button {
-      min-width: calc(10px + var(---group-padding) * 2);
-      padding-left: calc(11px - var(---group-padding));
-      padding-right: calc(11px - var(---group-padding));
+      min-width: 10px + $base_padding;
+      padding-left: 11px - $base_padding / 2;
+      padding-right: 11px - $base_padding / 2;
 
       > buttoncontent > box > label {
         padding: 0;
@@ -63,13 +61,12 @@ toggle-group {
     }
 
     &:checked {
-      background-color: var(--active-toggle-bg-color);
-      color: var(--active-toggle-fg-color);
-      box-shadow: 0 1px 3px 1px RGB(0 0 6 / 7%),
-                  0 2px 6px 2px RGB(0 0 6 / 3%);
+      background-color: $selected_color;
+      color: $card_fg_color;
+      box-shadow: none;
 
       &:disabled {
-        background-color: color-mix(in srgb, var(--active-toggle-bg-color) var(--disabled-opacity), transparent);
+        background-color: $hover_color;
         box-shadow: none;
       }
     }
@@ -81,24 +78,22 @@ toggle-group {
     --active-toggle-fg-color: rgb(0 0 0 / 80%);
 
     &:not(.flat) > toggle:checked {
-      --accent-bg-color: rgb(0 0 0 / 75%);
-      --accent-fg-color: white;
-
-      --standalone-color-oklab: #{$standalone-color-oklab-light};
-      --accent-color: oklab(from var(--accent-bg-color) var(--standalone-color-oklab));
-      --destructive-color: oklab(from var(--destructive-bg-color) var(--standalone-color-oklab));
-      --success-color: oklab(from var(--success-bg-color) var(--standalone-color-oklab));
-      --warning-color: oklab(from var(--warning-bg-color) var(--standalone-color-oklab));
-      --error-color: oklab(from var(--error-bg-color) var(--standalone-color-oklab));
-
       @include focus-ring($transition: $toggle_transition, $outer: true, $offset: 1px);
 
       &:focus:focus-visible {
-        outline-color: color-mix(in srgb, RGB(255 255 255 / 75%) $focus_border_opacity, transparent);
+        outline-color: color-mix(in srgb, #ffffff 25%, transparent);
       }
 
-      box-shadow: 0 1px 3px 1px RGB(0 0 6 / 7%),
-                  0 2px 6px 2px RGB(0 0 6 / 3%);
+      &, &:hover, &:active, &.keyboard-activating {
+        color: $osd_fg_color;
+      }
+
+      &:checked {
+        background-color: $accent_bg_color;
+        color: $accent_fg_color;
+      }
+
+      box-shadow: none;
 
       &:disabled {
         box-shadow: none;
@@ -107,18 +102,18 @@ toggle-group {
   }
 
   &.vertical > toggle:not(.text-button):not(.image-text-button) {
-    min-width: calc(34px - var(---group-padding) * 2);
+    min-width: 34px - $base_padding;
   }
 
   > separator {
     transition: opacity 200ms $ease-out-quad;
 
     &.horizontal {
-      margin: calc(6px - var(---group-padding)) 1px;
+      margin: $base_padding / 2 1px;
     }
 
     &.vertical {
-      margin: 1px calc(6px - var(---group-padding));
+      margin: 1px $base_padding / 2;
     }
 
     &.hidden {
@@ -126,7 +121,7 @@ toggle-group {
     }
 
     &:disabled {
-      filter: Opacity(var(--disabled-opacity));
+      filter: Opacity($disabled_opacity);
     }
   }
 
@@ -134,34 +129,47 @@ toggle-group {
     border-radius: 17px;
 
     toggle {
-      border-radius: calc(17px - var(---group-padding));
+      border-radius: 17px - $base_padding / 2;
 
       &.text-button,
       &.image-text-button {
-        padding-left: calc(15px - var(---group-padding));
-        padding-right: calc(15px - var(---group-padding));
+        padding-left: 15px - $base_padding;
+        padding-right: 15px - $base_padding;
       }
     }
 
     separator {
       &.horizontal {
-        margin: calc(9px - var(---group-padding)) 1px;
+        margin: $base_padding 1px;
       }
 
       &.vertical {
-        margin: 1px calc(9px - var(---group-padding));
+        margin: 1px $base_padding;
       }
     }
   }
 
   &.flat {
-    ---group-padding: 0px;
     background: none;
     color: inherit;
     box-shadow: none;
+    padding: 0;
 
     > toggle {
       @include focus-ring($transition: $button_transition);
+      min-height: 34px;
+  
+      &.text-button {
+        min-width: 18px;
+        padding-left: 11px - $base_padding / 2;
+        padding-right: 11px - $base_padding / 2;
+      }
+  
+      &.image-text-button {
+        min-width: 10px + $base_padding;
+        padding-left: 11px;
+        padding-right: 11px;
+      }
 
       &:checked {
         background-color: $selected_color;
