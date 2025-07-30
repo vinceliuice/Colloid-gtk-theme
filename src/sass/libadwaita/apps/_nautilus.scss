@@ -72,9 +72,9 @@
     margin: $base_padding 0;
 
     > button.image-button {
-      min-width: 24px;
-      min-height: 24px;
-      padding: $medium_size / 2 - $base_padding - 12px;
+      min-width: 16px;
+      min-height: 16px;
+      padding: $base_padding / 2;
     }
   }
 }

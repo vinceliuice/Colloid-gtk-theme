@@ -164,6 +164,22 @@ leaflet:first-child > headerbar {
     }
   }
 
+  windowcontrols > button {
+    @if $window_button =='mac' {
+      &.minimize, &.maximize, &.close {
+        &:backdrop {
+          > image {
+            background-color: gtkalpha($window_fg_color, 0.3);
+          }
+  
+          &:hover, &:active {
+            color: gtkalpha($window_fg_color, 0.45);
+          }
+        }
+      }
+    }
+  }
+
   .maximized &,
   .fullscreen &,
   .tiled &,
