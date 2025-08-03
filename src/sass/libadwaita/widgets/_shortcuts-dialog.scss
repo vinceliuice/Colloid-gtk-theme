@@ -1,0 +1,42 @@
+dialog.shortcuts {
+  preferencespage > scrolledwindow > viewport > clamp > box {
+    border-spacing: 18px;
+
+    preferencesgroup + preferencesgroup box.header {
+      margin-top: 6px;
+    }
+  }
+
+  .shortcut-row {
+    padding: 9px 12px;
+    min-height: 36px;
+
+    .title-box {
+      border-spacing: 3px;
+
+      > .subtitle {
+        @extend .caption;
+        @extend .dimmed;
+      }
+    }
+  }
+}
+
+shortcut-label {
+  &, > box {
+    border-spacing: 6px;
+  }
+
+  .keycap {
+    background: gtkalpha(currentColor, 0.1);
+    box-shadow: inset 0 -2px $border_color;
+
+    border-radius: 6px;
+    padding: 6px;
+    min-width: 20px;
+  }
+
+  > .dimmed {
+    padding: 6px 0;
+  }
+}
