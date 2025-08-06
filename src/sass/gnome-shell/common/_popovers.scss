@@ -17,18 +17,16 @@
   min-width: if($compact == 'true', 10em, 12em);
   color: $text-secondary !important;
   padding: 0;
-  font-weight: normal;
   border-radius: $base_radius + $base_padding * 3;
   box-shadow: 0 3px 5px -2px rgba(black, if($variant == 'light', 0.1, 0.18));
   margin: $base_padding 6px 8px;
-  @include fontsize($font_size - 1);
+  // @include fontsize($font_size - 1);
 
   .popup-menu-content {
     padding: $base_padding;
     background-color: $popover;
     border-radius: $menu_radius;
     margin: 0;
-    font-weight: normal;
 
     @if $rimless == 'false' {
       border: 1px solid $window-border;
@@ -43,11 +41,9 @@
     border-radius: $base_radius;
     margin: 0;
     transition-duration: 100ms;
-    font-weight: normal;
     background-color: transparent;
 
     &:checked {
-      font-weight: normal;
       border: none;
       box-shadow: none;
       color: $text !important;
