@@ -28,7 +28,8 @@ preferencesgroup > box {
   .cutout-button {
     background-color: $dialog_bg_color;
   }
-
+  
+  button.accent, // GDM Settings
   button.accent-button {
     min-height: 24px;
     min-width: 24px;

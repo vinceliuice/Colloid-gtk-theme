@@ -13,10 +13,12 @@ columnview {
     line-height: 100%;
     border-left: 1px solid $border_color;
     border-bottom: 1px solid $border_color;
+    border-top: none;
+    border-right: none;
     background-clip: padding-box;
 
     &:first-child {
-      border-left-width: 0;
+      border-left: none;
     }
 
     > box {

@@ -8,7 +8,7 @@
   transition-duration: 250ms;
   box-shadow: none;
   border: none;
-  @include fontsize($font_size - 1);
+  // @include fontsize($font_size - 1);
 
   @if $float == 'true' {
     background-color: transparent;

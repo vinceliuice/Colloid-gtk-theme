@@ -10,6 +10,10 @@ label {
   }
 }
 
+.dimmed {
+  opacity: $dim_label_opacity;
+}
+
 .dim-label {
   opacity: $dim_label_opacity;
 }
@@ -36,42 +40,40 @@ label {
 
 .title-1 {
   font-weight: 800;
-  font-size: 20pt;
+  font-size: 181%;
 }
 
 .title-2 {
   font-weight: 800;
-  font-size: 15pt;
+  font-size: 136%;
 }
 
 .title-3 {
   font-weight: 700;
-  font-size: 15pt;
+  font-size: 136%;
 }
 
 .title-4 {
   font-weight: 700;
-  font-size: 13pt;
+  font-size: 118%;
 }
 
 .heading {
   font-weight: 700;
-  font-size: 11pt;
 }
 
 .body {
   font-weight: 400;
-  font-size: 11pt;
 }
 
 .caption-heading {
   font-weight: 700;
-  font-size: 9pt;
+  font-size: 82%;
 }
 
 .caption {
   font-weight: 400;
-  font-size: 9pt;
+  font-size: 82%;
 }
 
 .monospace {

@@ -207,23 +207,48 @@ row.entry {
       opacity: $disabled_opacity;
     }
 
-    .dim-label, .subtitle {
+    .dimmed, .dim-label, .subtitle {
       opacity: 1;
     }
   }
 
-  .edit-icon, .indicator {
-    min-width: 22px;
-    min-height: 22px;
-    padding: $base_padding;
-  }
+  > box.header {
+    border-spacing: 0;
+    margin-left: $base_padding;
+    margin-right: $base_padding;
 
-  .edit-icon:disabled {
-    opacity: $strong_disabled_opacity;
-  }
+    > .editable-area {
+      padding: 0 $base_padding;
 
-  .indicator {
-    opacity: $dimmer_opacity;
+      > .edit-icon, > .indicator {
+        min-width: 24px;
+        min-height: 24px;
+        padding: $base_padding - 1px;
+      }
+
+      > .edit-icon, > .indicator, > .apply-button {
+        &:dir(ltr) { margin-left: $base_padding; }
+        &:dir(rtl) { margin-right: $base_padding; }
+      }
+
+      > .edit-icon:disabled {
+        opacity: $strong_disabled_opacity;
+      }
+
+      > .indicator {
+        opacity: $dimmer_opacity;
+      }
+    }
+
+    > .prefixes {
+      &:dir(ltr) { margin-left: $base_padding; }
+      &:dir(rtl) { margin-right: $base_padding; }
+    }
+
+    > .suffixes {
+      &:dir(ltr) { margin-right: $base_padding; }
+      &:dir(rtl) { margin-left: $base_padding; }
+    }
   }
 
   &.monospace {
@@ -451,6 +476,10 @@ row.button {
     margin-right: $base_padding * 2;
     border-spacing: $base_padding;
     min-height: $large_size + 2px;
+
+    > .icon:disabled {
+      filter: Opacity($disabled_opacity);
+    }
   }
 
   .title {
