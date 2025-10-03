@@ -1,7 +1,7 @@
 %toolbar {
   button:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque) {
     &.arrow-button,
-    &.image-button,
+    &.image-button:not(.close):not(.minimize):not(.maximize),
     &.image-text-button {
       @extend %button_basic_flat;
     }
@@ -21,7 +21,7 @@
 
   .linked button:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque) {
     &.arrow-button,
-    &.image-button,
+    &.image-button:not(.close):not(.minimize):not(.maximize),
     &.image-text-button {
       @extend %button_basic_raised;
     }
@@ -59,7 +59,7 @@
   popover {
     button:not(.flat):not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque) {
       &.arrow-button,
-      &.image-button,
+      &.image-button:not(.close):not(.minimize):not(.maximize),
       &.image-text-button {
         @extend %button_basic_raised;
       }
