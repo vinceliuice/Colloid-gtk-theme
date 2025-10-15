@@ -352,10 +352,12 @@ window.bright.symbolic {
 
 popover#ContextMenu { // not use ?
   border-radius: $menu-radius;
-  background-clip: content-box;
 
   modelbutton.flat {
     border-radius: $corner-radius;
+    transition: none; // Fixed Inkscape context menu background issue
+
+    &:hover, &:selected, &:focus { background-color: $primary; }
   }
 }
 
