@@ -78,6 +78,8 @@ window.dialog-window.alert {
 }
 
 window.messagedialog {
+  border-radius: $window_radius + $base_padding;
+
   .message-area {
     padding-top: $medium_size - 4px;
     padding-bottom: $base_padding * 2;
@@ -98,7 +100,7 @@ window.messagedialog {
   }
 
   .response-area {
-    padding: $base_padding;
+    padding: $base_padding * 2;
     border-spacing: $base_padding;
 
     > button {

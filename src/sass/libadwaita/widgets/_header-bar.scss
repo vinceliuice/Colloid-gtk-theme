@@ -249,10 +249,11 @@ $titlebutton_close: $button-close;
 
   &.minimize, &.maximize, &.close {
     color: transparent;
-    background: none;
 
-    &:hover, &:active {
+    &, &:hover, &:active, &:disabled {
       box-shadow: none;
+      background-color: transparent;
+      background-image: none;
     }
 
     &:hover, &:active {
@@ -347,7 +348,8 @@ windowcontrols {
     }
   }
 
-  > button {
+  > button:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque),
+  > button:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque).image-button {
     @if $window_button == 'mac' {
       @extend %mac_window_button;
     } @else {

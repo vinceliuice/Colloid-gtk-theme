@@ -12,7 +12,7 @@
   box-shadow: $shadow-z3;
 
   .nautilus-window & {
-    margin: if($gnome_version == 'default', $base_padding, $base_padding / 2);
+    margin: if($gnome_version =='default', $base_padding, $base_padding / 2);
   }
 
   button {
@@ -23,7 +23,35 @@
   }
 }
 
+.nautilus-grid-view {
+  child.activatable {
+    padding: 0;
+
+    #NautilusViewCell {
+      padding: 0;
+
+      clamp box {
+        margin: 0;
+        border-spacing: 0;
+      }
+
+      .icon-ui-labels-box {
+        margin: 0 0 $base_padding * 2;
+        border-spacing: 0;
+      }
+
+      .dim-label {
+        border-spacing: 0;
+      }
+    }
+  }
+}
+
 .nautilus-list-view {
+  padding: 0;
+  margin: 0;
+  border-spacing: 0;
+
   columnview.view {
     padding: 0;
 
@@ -40,7 +68,9 @@
     border-spacing: $base_padding / 2;
 
     > row {
+      padding: 0;
       margin: 0;
+      border-radius: $button_radius;
 
       > cell {
         padding: $base_padding - 2px;
@@ -48,6 +78,10 @@
         &:last-child {
           padding-right: 24px;
         }
+      }
+
+      &:nth-child(odd):not(:disabled) {
+        background-image: image(gtkalpha(currentColor, 0.015));
       }
     }
 
@@ -65,9 +99,11 @@
   }
 }
 
-#NautilusQueryEditor { // search entry
+#NautilusQueryEditor {
+
+  // search entry
   > menubutton {
-    margin: $base_padding 0;
+    margin: 2px 0;
 
     > button.image-button {
       min-width: 16px;
@@ -78,11 +114,11 @@
 }
 
 #NautilusPathBar {
-  background-color: gtkalpha(currentColor, 0.05);
+  background-color: $button_color;
   border-radius: $button_radius;
   padding: 0;
 
-  @if $colorscheme != 'default' or $blackness == 'true' or $colortype == 'fixed' {
+  @if $colorscheme !='default' or $blackness =='true' or $colortype =='fixed' {
     color: $window_fg_color;
   }
 }
@@ -92,7 +128,7 @@
   border-radius: $button_radius;
   @extend %button_basic_flat;
 
-  @if $colorscheme != 'default' or $blackness == 'true' or $colortype == 'fixed' {
+  @if $colorscheme !='default' or $blackness =='true' or $colortype =='fixed' {
     @extend %header_button_reset;
   }
 }

@@ -236,7 +236,8 @@ stacksidebar row {
       }
 
       windowcontrols {
-        > button:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque) {
+        > button:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque),
+        > button:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque).image-button {
           @if $window_button == 'mac' {
             &.minimize, &.maximize, &.close {
               color: transparent;

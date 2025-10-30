@@ -26,8 +26,13 @@ separator {
   &.spacer {
     background: none;
 
-    &.horizontal { min-width: 12px; }
-    &.vertical { min-height: 12px; }
+    &.horizontal {
+      min-width: 12px;
+    }
+
+    &.vertical {
+      min-height: 12px;
+    }
   }
 }
 
@@ -42,10 +47,12 @@ separator {
   border-radius: 0 0 $card_radius $card_radius;
   background-color: $osd_bg_color;
   background-image: linear-gradient(to bottom, transparentize(black, 0.8),
-                                               transparent 2px);
+      transparent 2px);
   background-clip: padding-box;
 
-  border { border: none; }
+  border {
+    border: none;
+  }
 }
 
 /**********
@@ -60,8 +67,13 @@ toast {
   border-spacing: $base_padding;
   padding: $base_padding;
 
-  &:dir(ltr) { padding-left: $base_padding * 2; }
-  &:dir(rtl) { padding-right: $base_padding * 2; }
+  &:dir(ltr) {
+    padding-left: $base_padding * 2;
+  }
+
+  &:dir(rtl) {
+    padding-right: $base_padding * 2;
+  }
 
   > widget {
     margin: 0 $base_padding;
@@ -211,4 +223,27 @@ leaflet,
 navigation-view,
 overlay-split-view {
   @include transition-shadows($shade_color);
+}
+
+/* PathBar */
+
+.pathbar {
+  background-color: $button_color;
+  border-radius: $button_radius;
+  padding: 0;
+
+  button {
+    margin: 0;
+    @extend %button_basic_flat;
+  }
+
+  headerbar & {
+    button {
+      margin: 0;
+
+      @if $colorscheme !='default' or $blackness =='true' or $colortype =='fixed' {
+        @extend %header_button_reset;
+      }
+    }
+  }
 }
