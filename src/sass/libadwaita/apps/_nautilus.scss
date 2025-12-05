@@ -28,7 +28,7 @@
     padding: 0;
 
     #NautilusViewCell {
-      padding: 0;
+      padding: $base_padding;
 
       clamp box {
         margin: 0;
