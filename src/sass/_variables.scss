@@ -25,6 +25,14 @@ $corner-radius: 6px;
 $menu-radius: $corner-radius + $space-size;
 $window-radius: $corner-radius + $space-size;
 $circular-radius: 9999px;
+@if $sharp == 'true' {
+  $corner-radius: 0px;
+  $modal-radius: 0px;
+  $menu-radius: 0px;
+  $window-radius: 0px;
+}
+
+
 
 //
 // Durations
