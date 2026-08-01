@@ -8,7 +8,7 @@
 
 stdenv.mkDerivation {
   pname = "colloid-gtk-theme";
-  version = "3.6.2";
+  version = "nix";
 
   src = ../.;
 
