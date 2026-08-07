@@ -159,7 +159,7 @@
   color: $text !important;
   border-radius: $base_radius + $base_padding * 2 !important;
   padding: $scaled_padding * 2;
-  margin: $base_padding * 2 $base_padding * 3 0;
+  margin-top: $base_padding * 2;
   border: none;
   box-shadow: 0 1px 3px rgba(black, 0.15);
 

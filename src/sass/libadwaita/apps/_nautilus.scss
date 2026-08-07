@@ -85,7 +85,7 @@
       }
     }
 
-    #NautilusViewCell {
+    #NautilusViewCell, .nautilus-view-cell {
       padding: 0;
 
       button.star.circular {
@@ -99,7 +99,7 @@
   }
 }
 
-#NautilusQueryEditor {
+#NautilusQueryEditor, .nautilus-query-editor {
 
   // search entry
   > menubutton {
@@ -113,7 +113,7 @@
   }
 }
 
-#NautilusPathBar {
+#NautilusPathBar, .nautilus-pathbar {
   background-color: $button_color;
   border-radius: $button_radius;
   padding: 0;
@@ -123,7 +123,7 @@
   }
 }
 
-#NautilusPathButton {
+#NautilusPathButton, .nautilus-path-button {
   margin: 0;
   border-radius: $button_radius;
   @extend %button_basic_flat;
