@@ -1151,6 +1151,130 @@ $menu_item_radius: $corner-radius;
 }
 
 //
+// Dialogs (.dialog / .prompt-dialog — Cinnamon Polkit and related modals)
+//
+.dialog {
+  color: $text;
+  background-color: $popover;
+  border-radius: $menu-radius;
+  border: 1px solid $border;
+  padding: $space-size * 3;
+  box-shadow: 0 3px 8px rgba(black, 0.45), 0 5px 18px rgba(black, 0.35);
+
+  .dialog-content-box {
+    margin-top: $space-size;
+    margin-bottom: $space-size * 2;
+    spacing: $space-size * 4;
+    max-width: 28em;
+  }
+
+  .confirm-dialog-title {
+    text-align: center;
+    font-weight: 800;
+    font-size: 1.3em;
+  }
+
+  .dialog-button {
+    font-weight: bold;
+    padding: $space-size * 2;
+    border-radius: $corner-radius;
+    border: none;
+    @include button(normal);
+
+    &:focus { @include button(focus); }
+    &:hover { @include button(hover); }
+    &:active, &:checked { @include button(active); }
+    &:insensitive { @include button(insensitive); }
+
+    &:default {
+      color: on($primary);
+      background-color: $primary;
+
+      &:focus, &:hover { color: on($primary); background-color: darken($primary, 8%); }
+      &:active, &:checked { color: on($primary); background-color: darken($primary, 12%); }
+      &:insensitive {
+        color: on($primary, disabled);
+        background-color: transparentize($primary, 0.7);
+      }
+    }
+
+    &:destructive-action {
+      color: on($destructive);
+      background-color: $destructive;
+
+      &:focus, &:hover { color: on($destructive); background-color: darken($destructive, 8%); }
+      &:active, &:checked { color: on($destructive); background-color: darken($destructive, 12%); }
+      &:insensitive {
+        color: on($destructive, disabled);
+        background-color: transparentize($destructive, 0.7);
+      }
+    }
+  }
+}
+
+.dialog-list {
+  spacing: $space-size * 3;
+
+  .dialog-list-title {
+    text-align: center;
+    font-weight: bold;
+  }
+
+  .dialog-list-scrollview { max-height: 200px; }
+
+  .dialog-list-box {
+    spacing: 1em;
+
+    .dialog-list-item {
+      spacing: 1em;
+
+      .dialog-list-item-title { font-weight: bold; }
+      .dialog-list-item-description {
+        color: $text-secondary;
+      }
+    }
+  }
+}
+
+.end-session-dialog {
+  min-width: 40em;
+
+  .dialog-content-box { spacing: 0; }
+
+  .dialog-list {
+    spacing: 0;
+
+    .dialog-list-title {
+      color: $warning;
+      background-color: transparentize($warning, 0.9);
+      padding: $space-size * 1.5;
+      border-radius: $corner-radius;
+      margin: $space-size / 2 0;
+    }
+  }
+}
+
+.message-dialog-content {
+  spacing: $space-size * 3;
+
+  .message-dialog-title {
+    text-align: center;
+    font-weight: 800;
+    font-size: 1.3em;
+
+    &.lightweight {
+      font-size: 1.1em;
+    }
+  }
+
+  .message-dialog-description,
+  .message-dialog-caption {
+    text-align: center;
+    color: $text-secondary;
+  }
+}
+
+//
 // Run dialog
 //
 .run-dialog {
@@ -1182,21 +1306,104 @@ $menu_item_radius: $corner-radius;
 
   &-entry {
     width: 21em;
+    height: 1.2em;
     padding: $space-size / 2 $space-size * 2;
     border-radius: $corner-radius;
-    caret-color: on($tooltip);
+    caret-color: $text;
     selected-color: on($primary);
     selection-background-color: $primary;
-    @include entry(osd);
-
-    &:focus { @include entry(osd-focus); }
+    @extend %entry;
   }
+
+  &-description {
+    text-align: center;
+    color: $text-secondary;
+
+    &.error { color: $error; }
+  }
+
+  .dialog-content-box { margin: $space-size / 2; }
 
   .modal-dialog-button-box {
     border: none;
     box-shadow: none;
     background: none;
     background-gradient-direction: none;
+  }
+}
+
+// Prompt / Polkit auth dialog
+.prompt-dialog {
+  width: 28em;
+
+  .dialog-content-box {
+    spacing: $space-size * 2;
+    margin-bottom: $space-size * 2;
+  }
+
+  &-password-entry {
+    width: 20em;
+    @extend %entry;
+  }
+
+  &-password-layout { spacing: $space-size; }
+
+  &-error-label,
+  &-info-label,
+  &-null-label {
+    text-align: center;
+    color: $text-secondary;
+  }
+
+  &-error-label { color: $error; }
+}
+
+.polkit-dialog-user-layout {
+  text-align: center;
+  spacing: 2px;
+  margin-bottom: $space-size;
+}
+
+.polkit-dialog-user-combo {
+  font-weight: bold;
+  border-radius: $corner-radius;
+  padding: $space-size $space-size * 5;
+  @include button(flat);
+
+  &:focus { @include button(focus); }
+  &:hover { @include button(hover); }
+  &:active, &:selected, &:checked { @include button(active); }
+  &:insensitive {
+    @include button(insensitive);
+    color: $text;
+  }
+}
+
+.audio-device-selection-dialog {
+  min-width: 24em;
+
+  .audio-selection-box {
+    spacing: $space-size * 2;
+
+    .audio-selection-device {
+      border-radius: $corner-radius;
+      @include button(flat);
+
+      &:focus { @include button(focus); }
+      &:hover { @include button(hover); }
+      &:active, &:selected, &:checked {
+        color: on($primary);
+        background-color: $primary;
+      }
+      &:insensitive { @include button(insensitive); }
+
+      .audio-selection-device-box {
+        padding: $space-size * 2;
+        spacing: $space-size * 2;
+      }
+
+      .audio-selection-device-icon { icon-size: 64px; }
+    }
   }
 }
 
