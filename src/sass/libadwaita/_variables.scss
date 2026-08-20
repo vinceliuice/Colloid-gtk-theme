@@ -27,6 +27,14 @@ $menuitem_radius: $button_radius;
 $window_radius: $button_radius + $base_padding;
 $popover_radius: $menuitem_radius + $base_padding;
 $circular_radius: 9999px;
+@if $sharp == "true" {
+  $button_radius: 0px;
+  $card_radius: 0px;
+  $menuitem_radius: 0px;
+  $window_radius: 0px;
+  $popover_radius: 0px;
+}
+
 
 //
 // Durations
